@@ -1,15 +1,23 @@
 [gd_scene format=3 uid="uid://i72vcloe75tq"]
 
+[ext_resource type="Script" uid="uid://dw0cwf47qubm3" path="res://src/3D/interactables/interractable.gd" id="1_ahwjy"]
+
 [sub_resource type="SphereShape3D" id="SphereShape3D_u6as8"]
+radius = 1.0
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_ahwjy"]
+viewport_path = NodePath("SubViewport")
 
 [node name="Interractable" type="Area3D" unique_id=1038079210]
+collision_layer = 4
+collision_mask = 0
+script = ExtResource("1_ahwjy")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=515757497]
 shape = SubResource("SphereShape3D_u6as8")
 
 [node name="Sprite3D" type="Sprite3D" parent="." unique_id=1012737652]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.66694474, 0)
 texture = SubResource("ViewportTexture_ahwjy")
 
 [node name="SubViewport" type="SubViewport" parent="." unique_id=1813980876]
