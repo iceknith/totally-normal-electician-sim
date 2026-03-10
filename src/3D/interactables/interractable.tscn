@@ -1,0 +1,45 @@
+[gd_scene format=3 uid="uid://i72vcloe75tq"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_u6as8"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_ahwjy"]
+
+[node name="Interractable" type="Area3D" unique_id=1038079210]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=515757497]
+shape = SubResource("SphereShape3D_u6as8")
+
+[node name="Sprite3D" type="Sprite3D" parent="." unique_id=1012737652]
+texture = SubResource("ViewportTexture_ahwjy")
+
+[node name="SubViewport" type="SubViewport" parent="." unique_id=1813980876]
+disable_3d = true
+transparent_bg = true
+
+[node name="PanelContainer" type="PanelContainer" parent="SubViewport" unique_id=1343590448]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -9.5
+offset_top = -16.5
+offset_right = 9.5
+offset_bottom = 16.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+
+[node name="MarginContainer" type="MarginContainer" parent="SubViewport/PanelContainer" unique_id=1126513910]
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="Label" type="Label" parent="SubViewport/PanelContainer/MarginContainer" unique_id=1437973236]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "E"
+horizontal_alignment = 1
