@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://dvyimxs1ptpgj"]
+
+[ext_resource type="PackedScene" uid="uid://m1vlj0bw46qk" path="res://src/3D/player/player.tscn" id="1_paykc"]
+
+[node name="test_level" type="Node3D" unique_id=513608235]
+
+[node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=971734756]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5005, 0)
+use_collision = true
+size = Vector3(9, 1, 8)
+
+[node name="Player" parent="." unique_id=192968154 instance=ExtResource("1_paykc")]
