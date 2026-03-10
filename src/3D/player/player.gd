@@ -5,6 +5,20 @@ const JUMP_VELOCITY = 4.5
 
 @export var look_sensitivity : float = 0.006
 
+func _ready() -> void:
+	# plus tard on voudra avoir des moments ou on libère le curseur pour pouvoir acceder à l'ui au lieu qu'il serve à tourner la drirection dans laquelle on regarde.
+	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+
+func _unhandled_input(event: InputEvent) -> void:
+	if Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
+		if event is InputEventMouseMotion:
+			# tourne le perso sur l'axe droite/gauche
+			rotate_y(-event.relative.x * look_sensitivity)
+			# tourne la caméra de haut en bas
+			%Camera3D.rotate_x(-event.relative.y * look_sensitivity)
+			# contraint la rotation de la caméra pour éviter que le joueur puisse se tordre le cou
+			%Camera3D.rotation.x = clamp(%Camera3D.rotation.x, deg_to_rad(-90), deg_to_rad(90))
+
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
 	if not is_on_floor():

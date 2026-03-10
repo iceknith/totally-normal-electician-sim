@@ -17,6 +17,7 @@ shape = SubResource("CapsuleShape3D_imvo1")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5205812, 0)
 
 [node name="Camera3D" type="Camera3D" parent="head" unique_id=913838045]
+unique_name_in_owner = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=330942890]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
