@@ -11,9 +11,13 @@ config_version=5
 [application]
 
 config/name="Totally Normal Electician Sim"
-run/main_scene="uid://dvyimxs1ptpgj"
+run/main_scene="uid://ckoy3puj6grj2"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
+
+[autoload]
+
+MainCommunicator="*uid://b0f1tnefpdrcm"
 
 [input]
 

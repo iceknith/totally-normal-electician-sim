@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://ckoy3puj6grj2"]
+
+[ext_resource type="Script" uid="uid://bf13x6omc7ij8" path="res://src/main.gd" id="1_gh0ne"]
+[ext_resource type="PackedScene" uid="uid://csincrgfh0ug4" path="res://src/3D/World.tscn" id="2_5q4o7"]
+
+[node name="Main" type="Node3D" unique_id=1571594318]
+script = ExtResource("1_gh0ne")
+
+[node name="World" parent="." unique_id=600883011 instance=ExtResource("2_5q4o7")]
+
+[node name="HUD" type="CanvasLayer" parent="." unique_id=410458702]
+
+[node name="Minigames" type="Control" parent="HUD" unique_id=1934620589]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
