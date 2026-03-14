@@ -1,0 +1,39 @@
+[gd_scene format=3 uid="uid://djias0ir5lwjr"]
+
+[ext_resource type="Script" uid="uid://d1yg64tb1q3bp" path="res://src/minigames/test_minigame.gd" id="1_nhl2k"]
+
+[node name="TestMinigame" type="Control" unique_id=92005161]
+physics_interpolation_mode = 0
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_nhl2k")
+metadata/_custom_type_script = "uid://dd5w2ptvu7pou"
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1872805990]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Button" type="Button" parent="." unique_id=98897769]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -99.0
+offset_top = -15.5
+offset_right = 99.0
+offset_bottom = 15.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Click to end minigame :C"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

@@ -11,9 +11,67 @@ config_version=5
 [application]
 
 config/name="Totally Normal Electician Sim"
-run/main_scene="uid://dvyimxs1ptpgj"
+run/main_scene="uid://ckoy3puj6grj2"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
+
+[autoload]
+
+MainCommunicator="*uid://b0f1tnefpdrcm"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/physics_collision_import_generator/plugin.cfg")
+
+[importer_defaults]
+
+scene={
+"_subresources": {},
+"animation/fps": 30,
+"animation/import": true,
+"animation/import_rest_as_RESET": false,
+"animation/remove_immutable_tracks": true,
+"animation/trimming": false,
+"blender/animation/always_sample": true,
+"blender/animation/group_tracks": true,
+"blender/animation/limit_playback": true,
+"blender/materials/export_materials": 1,
+"blender/materials/unpack_enabled": true,
+"blender/meshes/colors": false,
+"blender/meshes/export_bones_deforming_mesh_only": false,
+"blender/meshes/export_geometry_nodes_instances": false,
+"blender/meshes/gpu_instances": false,
+"blender/meshes/normals": true,
+"blender/meshes/skins": 2,
+"blender/meshes/tangents": true,
+"blender/meshes/uvs": true,
+"blender/nodes/active_collection_only": false,
+"blender/nodes/cameras": false,
+"blender/nodes/custom_properties": true,
+"blender/nodes/modifiers": 1,
+"blender/nodes/punctual_lights": false,
+"blender/nodes/visible": 0,
+"gltf/naming_version": 2,
+"import_script/path": "uid://boqq63mymoi05",
+"materials/extract": 0,
+"materials/extract_format": 0,
+"materials/extract_path": "",
+"meshes/create_shadow_meshes": true,
+"meshes/ensure_tangents": true,
+"meshes/force_disable_compression": false,
+"meshes/generate_lods": true,
+"meshes/light_baking": 1,
+"meshes/lightmap_texel_size": 0.2,
+"nodes/apply_root_scale": true,
+"nodes/import_as_skeleton_bones": false,
+"nodes/root_name": "",
+"nodes/root_scale": 1.0,
+"nodes/root_script": null,
+"nodes/root_type": "Node3D",
+"nodes/use_name_suffixes": true,
+"nodes/use_node_type_suffixes": true,
+"skins/use_named_skins": true
+}
 
 [input]
 
