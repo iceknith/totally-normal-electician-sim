@@ -5,16 +5,19 @@ const JUMP_VELOCITY = 4.5
 
 @export var look_sensitivity : float = 0.006
 
+var lock_camera:bool
+
 func _ready() -> void:
 	# plus tard on voudra avoir des moments ou on libère le curseur pour pouvoir acceder à l'ui au lieu qu'il serve à tourner la drirection dans laquelle on regarde.
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 
 func _unhandled_input(event: InputEvent) -> void:
 	if Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
-		if event is InputEventMouseMotion:
+		if event is InputEventMouseMotion and !lock_camera:
 			# tourne le perso sur l'axe droite/gauche
 			rotate_y(-event.relative.x * look_sensitivity)
 			# tourne la caméra de haut en bas
+
 			%Camera3D.rotate_x(-event.relative.y * look_sensitivity)
 			# contraint la rotation de la caméra pour éviter que le joueur puisse se tordre le cou
 			%Camera3D.rotation.x = clamp(%Camera3D.rotation.x, deg_to_rad(-90), deg_to_rad(90))
@@ -42,11 +45,17 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 	
 	# Handle Interactable Vision
-	interactable_vision_handler()
+	interactable_vision_handler(delta)
 
-func interactable_vision_handler() -> void: 
+func interactable_vision_handler(delta) -> void: 
 	# Handle the interactable vision
 	# Notifies an interactable object that it is being looked at
 	var collider:Area3D = $head/InteractableVision.get_collider()
 	if collider && (collider as Interractable):
 		collider.player_viewing()
+	
+
+
+	
+
+	

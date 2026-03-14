@@ -2,12 +2,17 @@ class_name Interractable extends Area3D
 
 @export var function_on_interract:Callable = func(): print("hey")
 @export var action:String = "interract"
+@export var camera_root:Node3D # the point the camera will turn to
+
 
 @onready var text_sprite:Sprite3D = $Sprite3D
 @onready var text_label:Label = $SubViewport/PanelContainer/MarginContainer/Label
 
 var was_viewed:bool = false
 var is_viewed:bool = false
+
+
+var is_interacted_with:bool = false
 
 func _ready() -> void:
 	set_key_text()
@@ -22,10 +27,12 @@ func _process(delta: float) -> void:
 		hide_text()
 	
 	# Listen for inputs if visible
+		
 	if is_viewed && Input.is_action_just_pressed(action):
 		function_on_interract.call()
+		is_interacted_with = true
 	
-	# Reset visibility
+# Reset visibility
 	was_viewed = is_viewed
 	is_viewed = false
 
@@ -38,3 +45,5 @@ func show_text():
 
 func hide_text():
 	text_sprite.hide()
+	
+	

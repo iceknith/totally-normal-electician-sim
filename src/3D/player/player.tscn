@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://m1vlj0bw46qk"]
 
 [ext_resource type="Script" uid="uid://b32ei6ddyi8kc" path="res://src/3D/player/player.gd" id="1_f043j"]
+[ext_resource type="Script" uid="uid://csqj305by4a8c" path="res://src/3D/player/Camera/playerCamera.gd" id="2_ihd86"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_imvo1"]
 
@@ -19,6 +20,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5205812, 0)
 
 [node name="Camera3D" type="Camera3D" parent="head" unique_id=913838045]
 unique_name_in_owner = true
+script = ExtResource("2_ihd86")
 
 [node name="InteractableVision" type="RayCast3D" parent="head" unique_id=771690805]
 target_position = Vector3(0, 0, -3)

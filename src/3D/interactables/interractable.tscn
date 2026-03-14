@@ -3,15 +3,16 @@
 [ext_resource type="Script" uid="uid://dw0cwf47qubm3" path="res://src/3D/interactables/interractable.gd" id="1_ahwjy"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_u6as8"]
-radius = 1.0
+radius = 0.65946823
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_ahwjy"]
 viewport_path = NodePath("SubViewport")
 
-[node name="Interractable" type="Area3D" unique_id=1038079210]
+[node name="Interractable" type="Area3D" unique_id=1038079210 node_paths=PackedStringArray("camera_root")]
 collision_layer = 4
 collision_mask = 0
 script = ExtResource("1_ahwjy")
+camera_root = NodePath("CameraRoot")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=515757497]
 shape = SubResource("SphereShape3D_u6as8")
@@ -51,3 +52,5 @@ layout_mode = 2
 size_flags_horizontal = 4
 text = "E"
 horizontal_alignment = 1
+
+[node name="CameraRoot" type="Node3D" parent="." unique_id=1541093927]

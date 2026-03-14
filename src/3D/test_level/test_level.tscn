@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://dvyimxs1ptpgj"]
 
+[ext_resource type="Script" uid="uid://ommn35y7o2k4" path="res://src/3D/test_level/test_level.gd" id="1_2wq4w"]
 [ext_resource type="PackedScene" uid="uid://m1vlj0bw46qk" path="res://src/3D/player/player.tscn" id="1_paykc"]
 [ext_resource type="PackedScene" uid="uid://i72vcloe75tq" path="res://src/3D/interactables/interractable.tscn" id="2_r0j4o"]
 
@@ -22,6 +23,7 @@ glow_enabled = true
 albedo_color = Color(0.65882355, 0, 0.62352943, 1)
 
 [node name="test_level" type="Node3D" unique_id=513608235]
+script = ExtResource("1_2wq4w")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=271751510]
 transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
