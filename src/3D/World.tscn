@@ -9,6 +9,9 @@
 [ext_resource type="PackedScene" uid="uid://dtparhw6m7xuv" path="res://assets/blender/tour.blend" id="6_awi42"]
 [ext_resource type="PackedScene" uid="uid://dnr2njhip2tbd" path="res://assets/blender/building3.blend" id="7_sm7yd"]
 [ext_resource type="PackedScene" uid="uid://djk16qy185471" path="res://assets/blender/building2.blend" id="8_00xeg"]
+[ext_resource type="Shader" uid="uid://d1mpjujlwkwhw" path="res://src/shaders/vhsTape.gdshader" id="10_23vqn"]
+[ext_resource type="Texture2D" uid="uid://85pcyxjjdgpl" path="res://assets/misc/ditherMatrix/arcade.png" id="11_ivkb3"]
+[ext_resource type="Script" uid="uid://c4gbdbfsdgnw7" path="res://src/shaders/shader_applyer.gd" id="12_e0nlv"]
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_bntx6"]
 
@@ -39,6 +42,22 @@ fog_depth_curve = 6.4980483
 [sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_co47k"]
 auto_exposure_scale = 0.3
 dof_blur_far_distance = 200.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_co47k"]
+shader = ExtResource("10_23vqn")
+shader_parameter/desaturation = 1.25
+shader_parameter/contrast = 1.5
+shader_parameter/brightness = 0.0
+shader_parameter/redify = 0.2
+shader_parameter/posterizationLevelsOut = Vector3(15, 15, 15)
+shader_parameter/ditherMatrixTexture = ExtResource("11_ivkb3")
+shader_parameter/ditherSize = 3
+shader_parameter/colorLevels = Vector3(10, 20, 20)
+shader_parameter/ditherSpeed = Vector2(0, 1)
+shader_parameter/displacementDirection = Vector2(0, 0)
+shader_parameter/displacementStrength = 0.0
+shader_parameter/noiseDirection = Vector2(0, 0)
+shader_parameter/noiseStrength = 0.1
 
 [node name="World" type="Node3D" unique_id=600883011]
 script = ExtResource("1_co47k")
@@ -85,3 +104,22 @@ shadow_blur = 3.021
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=167005089]
 environment = SubResource("Environment_00xeg")
 camera_attributes = SubResource("CameraAttributesPractical_co47k")
+
+[node name="ShaderCanvasLayer" type="CanvasLayer" parent="." unique_id=1482458820]
+
+[node name="ShaderColorRect" type="ColorRect" parent="ShaderCanvasLayer" unique_id=299498669]
+material = SubResource("ShaderMaterial_co47k")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+mouse_behavior_recursive = 1
+script = ExtResource("12_e0nlv")
+shader_properties = Dictionary[String, Array]({
+"colorLevels": [Vector3(20, 40, 40), Vector3(1, 5, 5)],
+"contrast": [1.0, 2.0],
+"desaturation": [1.0, 2.0],
+"redify": [0.2, 0.5]
+})

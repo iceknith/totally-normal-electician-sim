@@ -11,7 +11,7 @@ enum GameState {
 signal eow_meter_changed(new_eow_var:float)
 
 @export var end_of_world_max_time_mins:float = 20
-@export var end_of_world_change_interval_s:float = 0.5
+@export var end_of_world_change_interval_s:float = 0.1
 @onready var eow_delta:float = end_of_world_change_interval_s / (end_of_world_max_time_mins * 60)
 var eow_meter:float:
 	set(new_val):
@@ -91,11 +91,9 @@ func connect_eow_update_timer(node:Node, timer_timeout:Signal):
 	
 	for child in node.get_children():
 		if child.get("eow_meter") != null:
-			timer_timeout.connect(increment_eow_meter.bind(child))
+			print(child)
+			timer_timeout.connect(func(): child.eow_meter += eow_delta)
 		connect_eow_update_timer(child, timer_timeout)
-
-func increment_eow_meter(node:Node):
-	node.eow_meter += eow_delta
 
 func end_of_world():
 	print("world ended")

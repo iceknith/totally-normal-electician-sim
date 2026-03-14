@@ -5,8 +5,7 @@
 
 [node name="Main" type="Node3D" unique_id=1571594318]
 script = ExtResource("1_gh0ne")
-end_of_world_max_time_mins = 1.0
-end_of_world_change_interval_s = 0.1
+end_of_world_max_time_mins = 0.2
 
 [node name="World" parent="." unique_id=600883011 instance=ExtResource("2_5q4o7")]
 
