@@ -47,6 +47,6 @@ func _physics_process(delta: float) -> void:
 func interactable_vision_handler() -> void: 
 	# Handle the interactable vision
 	# Notifies an interactable object that it is being looked at
-	var collider:Area3D = $head/InteractableVision.get_collider()
+	var collider:Area3D = $head/Camera3D/InteractableVision.get_collider()
 	if collider && (collider as Interractable):
 		collider.player_viewing()
