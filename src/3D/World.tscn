@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://djias0ir5lwjr" path="res://src/minigames/test_minigame.tscn" id="4_gmgko"]
 [ext_resource type="PackedScene" uid="uid://dtparhw6m7xuv" path="res://assets/blender/tour.blend" id="6_awi42"]
 [ext_resource type="PackedScene" uid="uid://dnr2njhip2tbd" path="res://assets/blender/building3.blend" id="7_sm7yd"]
+[ext_resource type="PackedScene" uid="uid://djk16qy185471" path="res://assets/blender/building2.blend" id="8_00xeg"]
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_bntx6"]
 
@@ -50,11 +51,14 @@ transform = Transform3D(1, -1.4901161e-08, -1.4901161e-08, -1.4901161e-08, 1, -2
 mesh = SubResource("SphereMesh_gmgko")
 surface_material_override/0 = SubResource("StandardMaterial3D_l8jxy")
 
-[node name="tour-col" parent="." unique_id=275836546 instance=ExtResource("6_awi42")]
+[node name="tour-col" parent="." unique_id=1680520742 instance=ExtResource("6_awi42")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.342966, 10.967402, 47.789536)
 
-[node name="tour-col2" parent="." unique_id=442350157 instance=ExtResource("6_awi42")]
+[node name="tour-col2" parent="." unique_id=380495419 instance=ExtResource("6_awi42")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.904661, 10.639676, -21.708742)
 
-[node name="building3" parent="." unique_id=273936933 instance=ExtResource("7_sm7yd")]
-transform = Transform3D(1.2758372, 0, 3.7910736, 0, 4, 0, -3.7910736, 0, 1.2758372, -6.935251, 4.0050654, -13.89031)
+[node name="building3" parent="." unique_id=2022422390 instance=ExtResource("7_sm7yd")]
+transform = Transform3D(0.65227234, 0, 2.4134083, 0, 2.4999998, 0, -2.4134083, 0, 0.65227234, -8.9826565, 2.5526898, -15.576392)
+
+[node name="building2" parent="." unique_id=2050139080 instance=ExtResource("8_00xeg")]
+transform = Transform3D(1.0483925, 0, 2.2695532, 0, 2.5, 0, -2.2695532, 0, 1.0483925, -3.6280203, 2.4772282, -14.069152)
