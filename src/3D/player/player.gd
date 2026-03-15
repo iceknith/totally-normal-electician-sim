@@ -16,9 +16,9 @@ func _ready() -> void:
 			
 func _unhandled_input(event: InputEvent) -> void:
 	if Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
-		if event is InputEventMouseMotion :
+		if event is InputEventMouseMotion and !MainCommunicator.lock_camera:
 
-			
+					
 			rotation_y -= event.relative.x * look_sensitivity # tourne le perso sur l'axe droite/gauche
 			rotation_x -= event.relative.y * look_sensitivity 	# tourne la caméra de haut en bas
 			

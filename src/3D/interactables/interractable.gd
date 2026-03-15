@@ -3,11 +3,23 @@ class_name Interractable extends Area3D
 @export var function_on_interract:Callable = func(): print("hey")
 @export var action:String = "interract"
 
+
+enum AnimationOnInteraction {
+	TurnAndZoom,
+	Turn,
+	TurnWhileZoom,
+	Nothing
+}
+
+@export var InteractionAnimation :AnimationOnInteraction
+
+
 #Interaction Parameters
 @export var camera_root:Node3D # the point the camera will turn to
 @export var turn_to_when_interacting:bool
-@export var rotation_time:float = 1
-@export var zoom_time:float = 1
+@export var turn_time:float = 0.5
+@export var zoom_time:float = 0.5
+@export var zoom_intensity:float = 0.2
 @export var lock_camera_when_interact:bool = true
 
 
@@ -63,7 +75,12 @@ func get_player_camera(PlayerCam:Camera3D):
 	PlayerCamera = PlayerCam
 	
 func start_interaction():
-	pass
-	
+	if lock_camera_when_interact : #if options check locks camera movement when interacting with gameObject
+		MainCommunicator.lock_camera = true
+	match InteractionAnimation : 
+		AnimationOnInteraction.TurnAndZoom: 
+			PlayerCamera.turn_then_zoom(global_position, turn_time, zoom_time, zoom_intensity)
+		AnimationOnInteraction.TurnWhileZoom : 
+			PlayerCamera.turn_while_zoom(global_position, turn_time, zoom_time, zoom_intensity)
 	
 	
