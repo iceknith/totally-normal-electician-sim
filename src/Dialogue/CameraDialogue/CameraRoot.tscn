@@ -1,6 +1,0 @@
-[gd_scene format=3 uid="uid://cu6vf70djvrsp"]
-
-[ext_resource type="Script" uid="uid://dlxkcoia18cs6" path="res://src/Dialogue/CameraDialogue/camera_root.gd" id="1_8s1mb"]
-
-[node name="CameraRoot" type="Node" unique_id=325295455]
-script = ExtResource("1_8s1mb")

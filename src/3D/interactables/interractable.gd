@@ -11,16 +11,26 @@ enum AnimationOnInteraction {
 	Nothing
 }
 
+enum Interaction {
+	Nothing,
+	Dialogue,
+	Minigame
+}
 @export var InteractionAnimation :AnimationOnInteraction
+@export var interaction : Interaction
 
-
-#Interaction Parameters
+#Camera Interaction Parameters
 @export var camera_root:Node3D # the point the camera will turn to
-@export var turn_to_when_interacting:bool
 @export var turn_time:float = 0.5
 @export var zoom_time:float = 0.5
-@export var zoom_intensity:float = 0.2
+@export var zoom_intensity:float = 10
 @export var lock_camera_when_interact:bool = true
+
+
+@export var dialogue:String = "res://src/Dialogue/dialogueTest/testDialogue.dialogue"
+#Interaction Dialogue Parameters
+
+
 
 
 
@@ -53,7 +63,7 @@ func _process(delta: float) -> void:
 		
 	if is_viewed && Input.is_action_just_pressed(action):
 		function_on_interract.call()
-		start_interaction()
+		full_interaction()
 		is_interacted_with = true
 	
 # Reset visibility
@@ -74,13 +84,31 @@ func hide_text():
 func get_player_camera(PlayerCam:Camera3D):
 	PlayerCamera = PlayerCam
 	
-func start_interaction():
-	if lock_camera_when_interact : #if options check locks camera movement when interacting with gameObject
-		MainCommunicator.lock_camera = true
+func interaction_animation():
 	match InteractionAnimation : 
 		AnimationOnInteraction.TurnAndZoom: 
-			PlayerCamera.turn_then_zoom(global_position, turn_time, zoom_time, zoom_intensity)
+			PlayerCamera.turn_then_zoom(camera_root.global_position, turn_time, zoom_time, zoom_intensity)
 		AnimationOnInteraction.TurnWhileZoom : 
-			PlayerCamera.turn_while_zoom(global_position, turn_time, zoom_time, zoom_intensity)
+			PlayerCamera.turn_while_zoom(camera_root.global_position, turn_time, zoom_time, zoom_intensity)
+		AnimationOnInteraction.Turn : 
+			PlayerCamera.turn_to_look_at(camera_root.global_position, turn_time)
+
+func start_interaction():
+	match interaction : 
+		Interaction.Dialogue : 
+			MainCommunicator.signalMain.emit(
+			MainCommunicator.SignalType.CHANGE_GAMESTATE,\
+			MainCommunicator.GameState.Dialogue)
+			MainCommunicator.send_signal_to_main(MainCommunicator.SignalType.START_DIALOGUE, dialogue)
+			
+func full_interaction():
+	interaction_animation()
+	print("1 : ")
+	await interaction_animation()
+	print("2 : ")
+	start_interaction()
+
+			
+		
 	
 	

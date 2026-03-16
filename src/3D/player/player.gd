@@ -16,7 +16,7 @@ func _ready() -> void:
 			
 func _unhandled_input(event: InputEvent) -> void:
 	if Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
-		if event is InputEventMouseMotion and !MainCommunicator.lock_camera:
+		if event is InputEventMouseMotion and !in_interaction():
 
 					
 			rotation_y -= event.relative.x * look_sensitivity # tourne le perso sur l'axe droite/gauche
@@ -35,8 +35,8 @@ func _physics_process(delta: float) -> void:
 		velocity += get_gravity() * delta
 
 	# Handle jump.
-	if Input.is_action_just_pressed("jump") and is_on_floor():
-		velocity.y = JUMP_VELOCITY
+	#if Input.is_action_just_pressed("jump") and is_on_floor():
+		#velocity.y = JUMP_VELOCITY
 
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
@@ -62,7 +62,13 @@ func interactable_vision_handler(delta) -> void:
 		collider.player_viewing()
 		collider.get_player_camera(%Camera3D)
 		
-
+func in_interaction() -> bool: 
+	match MainCommunicator.current_state : 
+		MainCommunicator.GameState.Dialogue : 
+			return true 
+		MainCommunicator.GameState.MiniGame : 
+			return true
+	return false
 			
 	
 
