@@ -30,7 +30,31 @@ func _unhandled_input(event: InputEvent) -> void:
 			
 
 func _physics_process(delta: float) -> void:
-	# Add the gravity.
+	#Handles movement
+	if !in_interaction() : #check if we are in an interaction
+		manage_input(delta)
+		# Handle Interactable Vision
+		interactable_vision_handler(delta)
+
+func interactable_vision_handler(delta) -> void: 
+	# Handle the interactable vision
+	# Notifies an interactable object that it is being looked at
+	var collider:Area3D = $head/Camera3D/InteractableVision.get_collider()
+	if collider && (collider as Interractable):
+		collider.player_viewing()
+		collider.get_player_camera(%Camera3D)
+		
+func in_interaction() -> bool: 
+	match MainCommunicator.current_state : 
+		MainCommunicator.GameState.Dialogue : 
+			return true 
+		MainCommunicator.GameState.MiniGame :
+			return true
+	return false
+			
+			
+func manage_input(delta:float) -> void :
+		# Add the gravity.
 	if not is_on_floor():
 		velocity += get_gravity() * delta
 
@@ -51,25 +75,7 @@ func _physics_process(delta: float) -> void:
 	
 	move_and_slide()
 	
-	# Handle Interactable Vision
-	interactable_vision_handler(delta)
-
-func interactable_vision_handler(delta) -> void: 
-	# Handle the interactable vision
-	# Notifies an interactable object that it is being looked at
-	var collider:Area3D = $head/Camera3D/InteractableVision.get_collider()
-	if collider && (collider as Interractable):
-		collider.player_viewing()
-		collider.get_player_camera(%Camera3D)
-		
-func in_interaction() -> bool: 
-	match MainCommunicator.current_state : 
-		MainCommunicator.GameState.Dialogue : 
-			return true 
-		MainCommunicator.GameState.MiniGame : 
-			return true
-	return false
-			
+	
 	
 
 

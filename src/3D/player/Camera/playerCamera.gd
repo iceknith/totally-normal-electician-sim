@@ -72,6 +72,10 @@ func shake():
 	if shake_strength > 0 : 
 		h_offset = randf_range(-shake_strength, shake_strength)
 		v_offset = randf_range(-shake_strength, shake_strength)
+func shake_for(shake_strength, shake_duration):
+	shaking = true
+	await get_tree().create_timer(shake_duration).timeout
+	shaking = false
 	
 func lock_camera(): 
 	MainCommunicator.lock_camera = true # On lock la caméra
