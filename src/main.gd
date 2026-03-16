@@ -28,13 +28,16 @@ func _ready() -> void:
 	create_eow_timers()
 
 func connect_signals():
-	MainCommunicator.signalMain.connect(recieve_signal)
+	MainCommunicator.signalMain.connect(receive_signal)
+	
 
-func recieve_signal(type:String, data):
-	match type:
+func receive_signal(type, data):
+	print("received signal")
+	match type: #pour l'instant je vais pas toucher à ça parce que je veux pas tout casser
 		"show minigame": show_minigame(data)
 		"show game3D": show_game3D()
-		_: pass
+		MainCommunicator.SignalType.START_DIALOGUE : start_dialogue(data)
+	
 
 func reset_state():
 	# Reset minigames
@@ -94,6 +97,15 @@ func connect_eow_update_timer(node:Node, timer_timeout:Signal):
 			print(child)
 			timer_timeout.connect(func(): child.eow_meter += eow_delta)
 		connect_eow_update_timer(child, timer_timeout)
+
+func increment_eow_meter(node:Node):
+	node.eow_meter += eow_delta
+
+func update_game_state(state:GameState):
+	currentState = state
+
+func start_dialogue(dialogueFile:String):
+	DialogueManager.show_example_dialogue_balloon(load(dialogueFile))
 
 func end_of_world():
 	print("world ended")
