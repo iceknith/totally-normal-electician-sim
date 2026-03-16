@@ -59,6 +59,10 @@ shader_parameter/displacementStrength = 0.0
 shader_parameter/noiseDirection = Vector2(0, 0)
 shader_parameter/noiseStrength = 0.1
 
+[sub_resource type="Curve" id="Curve_e0nlv"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.5028463, 0.34999996), 1.7338572, 1.7338572, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 3
+
 [node name="World" type="Node3D" unique_id=600883011]
 script = ExtResource("1_co47k")
 
@@ -118,8 +122,8 @@ mouse_filter = 2
 mouse_behavior_recursive = 1
 script = ExtResource("12_e0nlv")
 shader_properties = Dictionary[String, Array]({
-"colorLevels": [Vector3(20, 40, 40), Vector3(1, 5, 5)],
-"contrast": [1.0, 2.0],
-"desaturation": [1.0, 2.0],
-"redify": [0.2, 0.5]
+"colorLevels": [Vector3(20, 40, 40), Vector3(1, 5, 5), SubResource("Curve_e0nlv")],
+"contrast": [1.0, 2.0, SubResource("Curve_e0nlv")],
+"desaturation": [1.0, 2.0, SubResource("Curve_e0nlv")],
+"redify": [0.2, 0.5, SubResource("Curve_e0nlv")]
 })
