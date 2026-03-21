@@ -4,6 +4,12 @@
 [ext_resource type="Script" uid="uid://csqj305by4a8c" path="res://src/3D/player/Camera/playerCamera.gd" id="2_ihd86"]
 [ext_resource type="PackedScene" uid="uid://cb5jqhnceqws" path="res://assets/blender/handforEOW.blend" id="3_41h8g"]
 
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_41h8g"]
+
+[sub_resource type="Curve" id="Curve_bxhrw"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_imvo1"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_f043j"]
@@ -11,6 +17,10 @@
 [node name="Player" type="CharacterBody3D" unique_id=192968154]
 collision_layer = 2
 script = ExtResource("1_f043j")
+walk_jitter_strength = 3.0
+walk_jitter_speed = 10.0
+walk_jitter_noise = SubResource("FastNoiseLite_41h8g")
+walk_jitter_curve = SubResource("Curve_bxhrw")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1591355017]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)

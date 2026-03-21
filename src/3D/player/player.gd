@@ -8,6 +8,14 @@ var rotation_y = 0
 var rotation_x = 0
 
 var lock_camera:bool
+var eow_meter:float = 0
+
+@export_group("Walk Jitter")
+@export var walk_jitter_strength:float = 0.5
+@export var walk_jitter_speed:float = 5
+@export var walk_jitter_noise:Noise
+@export var walk_jitter_curve:Curve
+var walk_jitter_noise_pos:float
 
 func _ready() -> void:
 	# plus tard on voudra avoir des moments ou on libère le curseur pour pouvoir acceder à l'ui au lieu qu'il serve à tourner la drirection dans laquelle on regarde.
@@ -33,13 +41,27 @@ func _physics_process(delta: float) -> void:
 
 	# Handle jump.
 	#if Input.is_action_just_pressed("jump") and is_on_floor():
-		#velocity.y = JUMP_VELOCITY
+	#	velocity.y = JUMP_VELOCITY
 
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	var input_dir := Input.get_vector("left", "right", "up", "down")
 	var direction := (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
-	if direction:
+	
+	if direction: 
+		# Add the random offset
+		var walk_jitter_wet:float = walk_jitter_curve.sample(eow_meter)
+		walk_jitter_noise_pos += delta * walk_jitter_speed * walk_jitter_wet
+		var jitter_offset:Vector2 = walk_jitter_strength * walk_jitter_wet * Vector2(
+						walk_jitter_noise.get_noise_2d(walk_jitter_noise_pos,0), 
+						walk_jitter_noise.get_noise_2d(0,walk_jitter_noise_pos)
+					)
+		direction += transform.basis * Vector3(jitter_offset.x, 0, jitter_offset.y)
+		
+		# Normalize but only if going too fast
+		if direction.length_squared() >= 1: direction = direction.normalized() 
+		
+		# Move the player
 		velocity.x = direction.x * SPEED
 		velocity.z = direction.z * SPEED
 	else:
