@@ -19,7 +19,7 @@ domain_warp_type = 1
 script = ExtResource("1_gh0ne")
 end_of_world_max_time_mins = 1.0
 mouse_jitter_speed = 300.0
-mouse_jitter_intensity = Vector2(750, 750)
+mouse_jitter_intensity = Vector2(1000, 1000)
 camera_jitter_amount = 0.5
 mouse_jitter_intensity_curve = SubResource("Curve_gh0ne")
 mouse_jitter_speed_curve = SubResource("Curve_5q4o7")
@@ -28,6 +28,7 @@ mouse_jitter_noise = SubResource("FastNoiseLite_gh0ne")
 [node name="World" parent="." unique_id=600883011 instance=ExtResource("2_5q4o7")]
 
 [node name="HUD" type="CanvasLayer" parent="." unique_id=410458702]
+layer = 2
 
 [node name="Minigames" type="Control" parent="HUD" unique_id=1934620589]
 layout_mode = 3

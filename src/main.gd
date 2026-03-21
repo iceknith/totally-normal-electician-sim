@@ -123,7 +123,7 @@ func update_game_state(state:GameState):
 	currentState = state
 
 func end_of_world():
-	print("world ended")
+	get_tree().quit()
 
 ### Runtime functions ###
 
