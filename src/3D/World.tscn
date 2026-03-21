@@ -86,20 +86,20 @@ shader_parameter/noiseDirection = Vector2(0, -0.03)
 shader_parameter/noiseStrength = 0.0
 
 [sub_resource type="Curve" id="Curve_e0nlv"]
-_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1, 1), 2.9379032, 0.0, 0, 0]
-point_count = 2
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.89972144, 0.49617904), 1.486036, 1.486036, 0, 0, Vector2(1, 1), 2.9379032, 0.0, 0, 0]
+point_count = 3
 
 [sub_resource type="Curve" id="Curve_yhicf"]
 _data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1, 1), 2.1689944, 0.0, 0, 0]
 point_count = 2
 
 [sub_resource type="Curve" id="Curve_ivwwh"]
-_data = [Vector2(0, 0), 0.0, 2.2667322, 0, 0, Vector2(1, 1), 0.06399506, 0.0, 0, 0]
+_data = [Vector2(0, 0), 0.0, -0.020783685, 0, 0, Vector2(1, 1), 2.8797717, 0.0, 0, 0]
 point_count = 2
 
 [sub_resource type="Curve" id="Curve_jqxng"]
-_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
-point_count = 2
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.88579386, 0.5529476), 0.73959315, 0.73959315, 0, 0, Vector2(1, 1), 5.254197, 0.0, 0, 0]
+point_count = 3
 
 [sub_resource type="Curve" id="Curve_lpsds"]
 _data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.7656442, 0.4535902), 0.115969695, 0.115969695, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
