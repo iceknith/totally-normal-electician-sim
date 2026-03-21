@@ -1,11 +1,12 @@
 [gd_scene format=3 uid="uid://csincrgfh0ug4"]
 
 [ext_resource type="PackedScene" uid="uid://m1vlj0bw46qk" path="res://src/3D/player/player.tscn" id="1_34ihj"]
-[ext_resource type="Script" path="res://src/3D/world.gd" id="1_co47k"]
+[ext_resource type="Script" uid="uid://dp5rxhie836us" path="res://src/3D/world.gd" id="1_co47k"]
 [ext_resource type="Texture2D" uid="uid://ccubsulhsdhv4" path="res://assets/map.png" id="1_l8jxy"]
 [ext_resource type="PackedScene" uid="uid://i72vcloe75tq" path="res://src/3D/interactables/interractable.tscn" id="2_gphh5"]
-[ext_resource type="Script" path="res://src/3D/interactables/minigameLaunchInterractable.gd" id="3_kp6b0"]
+[ext_resource type="Script" uid="uid://guu6r2nuivha" path="res://src/3D/interactables/minigameLaunchInterractable.gd" id="3_kp6b0"]
 [ext_resource type="PackedScene" uid="uid://dtparhw6m7xuv" path="res://assets/blender/tour.blend" id="6_awi42"]
+[ext_resource type="PackedScene" uid="uid://djias0ir5lwjr" path="res://src/minigames/test_minigame.tscn" id="6_e0nlv"]
 [ext_resource type="PackedScene" uid="uid://dnr2njhip2tbd" path="res://assets/blender/building3.blend" id="7_sm7yd"]
 [ext_resource type="PackedScene" uid="uid://djk16qy185471" path="res://assets/blender/building2.blend" id="8_00xeg"]
 [ext_resource type="Shader" uid="uid://d1mpjujlwkwhw" path="res://src/shaders/vhsTape.gdshader" id="10_23vqn"]
@@ -77,9 +78,8 @@ mesh = SubResource("PlaneMesh_kp6b0")
 
 [node name="Interractable" parent="." unique_id=1038079210 instance=ExtResource("2_gphh5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 1.1736013, -3)
-visible = false
 script = ExtResource("3_kp6b0")
-minigame = null
+minigame = ExtResource("6_e0nlv")
 InteractionAnimation = 3
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Interractable" unique_id=569833485]
@@ -128,6 +128,7 @@ shader_properties = Dictionary[String, Array]({
 "desaturation": [1.0, 2.0, SubResource("Curve_e0nlv")],
 "redify": [0.2, 0.5, SubResource("Curve_e0nlv")]
 })
+
 [node name="Interractable2" parent="." unique_id=42821563 instance=ExtResource("2_gphh5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.9999995, 1.3362136, 0.896065)
 interaction = 1

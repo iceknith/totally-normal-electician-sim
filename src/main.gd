@@ -10,17 +10,29 @@ enum GameState {
 
 signal eow_meter_changed(new_eow_var:float)
 
+@export_group("end of world meter (eow_meter)")
 @export var end_of_world_max_time_mins:float = 20
 @export var end_of_world_change_interval_s:float = 0.1
 @onready var eow_delta:float = end_of_world_change_interval_s / (end_of_world_max_time_mins * 60)
-var eow_meter:float:
-	set(new_val):
-		eow_meter = new_val
+var eow_meter:float
+
+@export_group("mouse jitter")
+@export var has_mouse_jitter:bool = true
+@export var mouse_jitter_speed:float = 5
+@export var mouse_jitter_intensity:Vector2 = Vector2.ONE * 10
+@export var camera_jitter_amount:float = 0.8
+@export var mouse_jitter_intensity_curve:Curve
+@export var mouse_jitter_speed_curve:Curve
+@export var mouse_jitter_noise:Noise
+var mouse_noise_pos:float
+var unhandled_mouse_offset:Vector2
 
 @onready var world3D:Node3D = $World
 @onready var minigame_container:Control = $HUD/Minigames
 
 var currentState:GameState = GameState.Game3D
+
+### Init ###
 
 func _ready() -> void:
 	connect_signals()
@@ -29,15 +41,15 @@ func _ready() -> void:
 
 func connect_signals():
 	MainCommunicator.signalMain.connect(receive_signal)
-	
 
 func receive_signal(type, data):
 	print("received signal")
 	match type: #pour l'instant je vais pas toucher à ça parce que je veux pas tout casser
-		"show minigame": show_minigame(data)
-		"show game3D": show_game3D()
+		MainCommunicator.SignalType.SHOW_MINIGAME: show_minigame(data)
+		MainCommunicator.SignalType.SHOW_GAME3D: show_game3D()
 		MainCommunicator.SignalType.START_DIALOGUE : start_dialogue(data)
-	
+
+### State Handlers ###
 
 func reset_state():
 	# Reset minigames
@@ -76,6 +88,12 @@ func show_minigame(minigameScene:PackedScene):
 func show_game3D():
 	reset_state()
 
+func start_dialogue(dialogueFile:String):
+	DialogueManager.show_example_dialogue_balloon(load(dialogueFile))
+
+
+### EOW Handlers ###
+
 func create_eow_timers():
 	var timer_eow = Timer.new()
 	var timer_eow_update = Timer.new()
@@ -92,10 +110,10 @@ func create_eow_timers():
 func connect_eow_update_timer(node:Node, timer_timeout:Signal):
 	if not node: return
 	
+	if node.get("eow_meter") != null:
+		timer_timeout.connect(func(): node.eow_meter += eow_delta)
+	
 	for child in node.get_children():
-		if child.get("eow_meter") != null:
-			print(child)
-			timer_timeout.connect(func(): child.eow_meter += eow_delta)
 		connect_eow_update_timer(child, timer_timeout)
 
 func increment_eow_meter(node:Node):
@@ -104,8 +122,28 @@ func increment_eow_meter(node:Node):
 func update_game_state(state:GameState):
 	currentState = state
 
-func start_dialogue(dialogueFile:String):
-	DialogueManager.show_example_dialogue_balloon(load(dialogueFile))
-
 func end_of_world():
 	print("world ended")
+
+### Runtime functions ###
+
+func _process(delta: float) -> void:
+	mouse_jitter_handler(delta)
+
+### Mouse jitter ###
+
+func mouse_jitter_handler(delta:float) -> void:
+	if has_mouse_jitter:
+		mouse_noise_pos += delta * mouse_jitter_speed * mouse_jitter_speed_curve.sample(eow_meter)
+		var rand_dir:Vector2 = Vector2(
+			mouse_jitter_noise.get_noise_2d(mouse_noise_pos, 0),
+			mouse_jitter_noise.get_noise_2d(mouse_noise_pos, 100),
+		)
+		var mouse_offset:Vector2 = mouse_jitter_intensity_curve.sample(eow_meter) * mouse_jitter_intensity * rand_dir * delta
+		var new_mouse_pos:Vector2 = get_viewport().get_mouse_position() + mouse_offset + unhandled_mouse_offset
+		unhandled_mouse_offset = new_mouse_pos - round(new_mouse_pos)
+		Input.warp_mouse(round(new_mouse_pos))
+		
+		var jitter_input = InputEventMouseMotion.new()
+		jitter_input.relative = mouse_offset * camera_jitter_amount
+		Input.parse_input_event(jitter_input)

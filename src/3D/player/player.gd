@@ -17,8 +17,6 @@ func _ready() -> void:
 func _unhandled_input(event: InputEvent) -> void:
 	if Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
 		if event is InputEventMouseMotion and !in_interaction():
-
-					
 			rotation_y -= event.relative.x * look_sensitivity # tourne le perso sur l'axe droite/gauche
 			rotation_x -= event.relative.y * look_sensitivity 	# tourne la caméra de haut en bas
 			
@@ -27,7 +25,6 @@ func _unhandled_input(event: InputEvent) -> void:
 			
 			rotation.y = rotation_y
 			%Camera3D.rotation.x = rotation_x
-			
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
