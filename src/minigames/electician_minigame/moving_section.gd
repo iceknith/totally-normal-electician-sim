@@ -30,7 +30,6 @@ func _draw() -> void:
 	draw_circle(ring_pos, ring_radius, ring_color)
 	draw_circle(player_pos, player_radius, player_color)
 
-
 func _process(delta: float) -> void:
 	# Move player
 	var player_dir:Vector2 = Input.get_vector("left", "right", "up", "down").normalized()
@@ -41,10 +40,6 @@ func _process(delta: float) -> void:
 	# Check player pos
 	if player_pos.distance_squared_to(ring_pos) > ring_radius**2:
 		failed.emit()
-		player_pos = size/2
-		ring_pos = size/2
-		player_velocity = Vector2.ZERO
-		ring_velocity = Vector2.ZERO
 	
 	# Move ring
 	ring_noise_pos += delta * ring_noise_speed
@@ -58,3 +53,9 @@ func _process(delta: float) -> void:
 	
 	# Redraw
 	queue_redraw()
+
+func reset() -> void:
+	player_pos = size/2
+	ring_pos = size/2
+	player_velocity = Vector2.ZERO
+	ring_velocity = Vector2.ZERO

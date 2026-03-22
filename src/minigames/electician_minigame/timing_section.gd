@@ -17,9 +17,6 @@ var cube_position_y:float = 0
 var cursor_position_y:float = size.y/2
 var current_cube_touched:bool = false
 
-func _ready() -> void:
-	pass
-
 func _draw() -> void:
 	# Draw first cube
 	var cube_rect:Rect2 = Rect2(0,cube_position_y - cube_size/2,size.x,cube_size)
@@ -50,10 +47,12 @@ func _process(delta: float) -> void:
 			current_cube_touched = true
 		else:
 			failed.emit()
-			cube_position_y = 0
 	
 	if cube_position_y - size.y/2 > cursor_size + cube_size && !current_cube_touched:
 		failed.emit()
-		cube_position_y = 0
 	
 	queue_redraw()
+
+func reset() -> void:
+	cube_position_y = 0
+	current_cube_touched  =false

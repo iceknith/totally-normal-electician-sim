@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://i72vcloe75tq" path="res://src/3D/interactables/interractable.tscn" id="2_gphh5"]
 [ext_resource type="Script" uid="uid://guu6r2nuivha" path="res://src/3D/interactables/minigameLaunchInterractable.gd" id="3_kp6b0"]
 [ext_resource type="PackedScene" uid="uid://dtparhw6m7xuv" path="res://assets/blender/tour.blend" id="6_awi42"]
-[ext_resource type="PackedScene" uid="uid://djias0ir5lwjr" path="res://src/minigames/test_minigame.tscn" id="6_e0nlv"]
+[ext_resource type="PackedScene" uid="uid://bgwp5tg6h76il" path="res://src/minigames/electician_minigame/electician_minigame.tscn" id="6_jqxng"]
 [ext_resource type="PackedScene" uid="uid://dnr2njhip2tbd" path="res://assets/blender/building3.blend" id="7_sm7yd"]
 [ext_resource type="PackedScene" uid="uid://djk16qy185471" path="res://assets/blender/building2.blend" id="8_00xeg"]
 [ext_resource type="Shader" uid="uid://d1mpjujlwkwhw" path="res://src/shaders/vhsTape.gdshader" id="10_23vqn"]
@@ -85,33 +85,33 @@ shader_parameter/noise = SubResource("NoiseTexture2D_lpsds")
 shader_parameter/noiseDirection = Vector2(0, -0.03)
 shader_parameter/noiseStrength = 0.0
 
-[sub_resource type="Curve" id="Curve_e0nlv"]
-_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.89972144, 0.49617904), 1.486036, 1.486036, 0, 0, Vector2(1, 1), 2.9379032, 0.0, 0, 0]
-point_count = 3
-
-[sub_resource type="Curve" id="Curve_yhicf"]
-_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1, 1), 2.1689944, 0.0, 0, 0]
-point_count = 2
-
 [sub_resource type="Curve" id="Curve_ivwwh"]
 _data = [Vector2(0, 0), 0.0, -0.020783685, 0, 0, Vector2(1, 1), 2.8797717, 0.0, 0, 0]
 point_count = 2
 
-[sub_resource type="Curve" id="Curve_jqxng"]
-_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.88579386, 0.5529476), 0.73959315, 0.73959315, 0, 0, Vector2(1, 1), 5.254197, 0.0, 0, 0]
-point_count = 3
-
-[sub_resource type="Curve" id="Curve_lpsds"]
-_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.7656442, 0.4535902), 0.115969695, 0.115969695, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+[sub_resource type="Curve" id="Curve_e0nlv"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.89972144, 0.49617904), 1.486036, 1.486036, 0, 0, Vector2(1, 1), 2.9379032, 0.0, 0, 0]
 point_count = 3
 
 [sub_resource type="Curve" id="Curve_5f2gp"]
 _data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1, 1), 3.3006797, 0.0, 0, 0]
 point_count = 2
 
+[sub_resource type="Curve" id="Curve_lpsds"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.7656442, 0.4535902), 0.115969695, 0.115969695, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 3
+
 [sub_resource type="Curve" id="Curve_clt24"]
 _data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.7246964, 0), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
 point_count = 3
+
+[sub_resource type="Curve" id="Curve_jqxng"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.88579386, 0.5529476), 0.73959315, 0.73959315, 0, 0, Vector2(1, 1), 5.254197, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="Curve" id="Curve_yhicf"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1, 1), 2.1689944, 0.0, 0, 0]
+point_count = 2
 
 [node name="World" type="Node3D" unique_id=600883011]
 script = ExtResource("1_co47k")
@@ -129,7 +129,7 @@ mesh = SubResource("PlaneMesh_kp6b0")
 [node name="Interractable" parent="." unique_id=1038079210 instance=ExtResource("2_gphh5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 1.1736013, -3)
 script = ExtResource("3_kp6b0")
-minigame = ExtResource("6_e0nlv")
+minigame = ExtResource("6_jqxng")
 InteractionAnimation = 3
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Interractable" unique_id=569833485]

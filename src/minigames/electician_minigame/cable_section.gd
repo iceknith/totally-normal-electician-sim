@@ -7,7 +7,7 @@ enum States {
 
 signal completed
 
-@export var colors:Array[Color] = [Color.LIGHT_CORAL, Color.LIGHT_BLUE, Color.LIGHT_GREEN, Color.LIGHT_PINK]
+@export var colors:Array[Color] = [Color.LIGHT_CORAL, Color.LIGHT_BLUE, Color.LIGHT_GREEN]
 @export var unselected_color:Color = Color.DARK_GRAY
 var cables:Array[Line2D]
 var images:Array[Array]
