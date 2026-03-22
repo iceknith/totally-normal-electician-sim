@@ -86,6 +86,7 @@ func get_next_dialogue_line(resource: DialogueResource, key: String = "", extra_
 	var line = await _get_next_dialogue_line(resource, key, extra_game_states, mutation_behaviour)
 	if line == null:
 		# End the conversation
+		MainCommunicator.current_state = MainCommunicator.GameState.Game3D 
 		dialogue_ended.emit(resource)
 	return line
 

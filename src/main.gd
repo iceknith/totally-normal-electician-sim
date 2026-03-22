@@ -48,8 +48,8 @@ func receive_signal(type, data):
 		MainCommunicator.SignalType.SHOW_MINIGAME: show_minigame(data)
 		MainCommunicator.SignalType.SHOW_GAME3D: show_game3D()
 		MainCommunicator.SignalType.START_DIALOGUE : start_dialogue(data)
-
-### State Handlers ###
+		MainCommunicator.SignalType.CHANGE_GAMESTATE : update_game_state(data)
+	
 
 func reset_state():
 	# Reset minigames
@@ -119,8 +119,15 @@ func connect_eow_update_timer(node:Node, timer_timeout:Signal):
 func increment_eow_meter(node:Node):
 	node.eow_meter += eow_delta
 
-func update_game_state(state:GameState):
-	currentState = state
+func update_game_state(state:MainCommunicator.GameState):
+	MainCommunicator.current_state = state
+	print(state)
+
+func start_dialogue(dialogueFile:String):
+	MainCommunicator.signalMain.emit(
+	MainCommunicator.SignalType.CHANGE_GAMESTATE,\
+	MainCommunicator.GameState.Dialogue)
+	DialogueManager.show_example_dialogue_balloon(load(dialogueFile))
 
 func end_of_world():
 	get_tree().quit()
