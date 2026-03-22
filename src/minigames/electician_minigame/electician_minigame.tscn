@@ -2,6 +2,8 @@
 
 [ext_resource type="Script" uid="uid://uaxvi0lb0o2m" path="res://src/minigames/electician_minigame/electician_minigame.gd" id="1_5ci1u"]
 [ext_resource type="PackedScene" uid="uid://b041k4vjl6pg1" path="res://src/minigames/electician_minigame/cableSection.tscn" id="2_5ci1u"]
+[ext_resource type="PackedScene" uid="uid://dxl4itljpgtn5" path="res://src/minigames/electician_minigame/timing_section.tscn" id="3_nmo0h"]
+[ext_resource type="PackedScene" uid="uid://dogrjgdvi4jl4" path="res://src/minigames/electician_minigame/moving_section.tscn" id="4_a2g5q"]
 
 [node name="ElecticianMinigame" type="Control" unique_id=1566750814]
 layout_mode = 3
@@ -37,19 +39,29 @@ theme_override_constants/margin_bottom = 30
 [node name="VFlowContainer" type="VFlowContainer" parent="MarginContainer" unique_id=977112199]
 layout_mode = 2
 size_flags_horizontal = 4
+theme_override_constants/h_separation = 30
 alignment = 1
 
 [node name="PanelContainer" type="PanelContainer" parent="MarginContainer/VFlowContainer" unique_id=2037701015]
+clip_contents = true
 custom_minimum_size = Vector2(400, 500)
 layout_mode = 2
 
 [node name="CableSection" parent="MarginContainer/VFlowContainer/PanelContainer" unique_id=206517582 instance=ExtResource("2_5ci1u")]
 layout_mode = 2
 
-[node name="Section2" type="ColorRect" parent="MarginContainer/VFlowContainer" unique_id=10278029]
+[node name="PanelContainer2" type="PanelContainer" parent="MarginContainer/VFlowContainer" unique_id=1620937927]
+clip_contents = true
+custom_minimum_size = Vector2(50, 500)
 layout_mode = 2
-color = Color(0.3779188, 0.37791887, 0.37791884, 1)
 
-[node name="Section3" type="ColorRect" parent="MarginContainer/VFlowContainer" unique_id=1916404004]
+[node name="TimingSection" parent="MarginContainer/VFlowContainer/PanelContainer2" unique_id=746000392 instance=ExtResource("3_nmo0h")]
 layout_mode = 2
-color = Color(0.3779188, 0.37791887, 0.37791884, 1)
+
+[node name="PanelContainer3" type="PanelContainer" parent="MarginContainer/VFlowContainer" unique_id=746472576]
+clip_contents = true
+custom_minimum_size = Vector2(400, 500)
+layout_mode = 2
+
+[node name="MovingSection" parent="MarginContainer/VFlowContainer/PanelContainer3" unique_id=5641690 instance=ExtResource("4_a2g5q")]
+layout_mode = 2

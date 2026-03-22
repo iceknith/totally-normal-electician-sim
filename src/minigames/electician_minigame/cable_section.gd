@@ -23,6 +23,7 @@ var cell_size:Vector2
 var circle_size:float
 
 var completed_count:int
+@onready var color_count = colors.size()
 
 var current_state:States = States.Idle
 var current_color:int
@@ -67,7 +68,7 @@ func init_color_buttons():
 		# First Image
 		var color = colors[i]
 		var start:Vector2 = get_random_available_circle()
-		if start == -Vector2.ONE: break
+		if start == -Vector2.ONE: color_count -= 1; break
 		set_circle_color(start, i)
 		var end:Vector2 = get_random_end_circle(start)
 		set_circle_color(end, i)
@@ -147,7 +148,8 @@ func _process(_delta: float) -> void:
 func get_circle_pos(pos:Vector2)->Vector2:
 	pos = clamp(pos, Vector2.ZERO, size)
 	var circle_pos = round((pos - cell_size/2)/cell_size)
-	if (circle_pos*cell_size + cell_size/2).distance_squared_to(pos) <= (circle_size/2)**2:
+	if (circle_pos*cell_size + cell_size/2).distance_squared_to(pos) <= (circle_size/2)**2 && \
+		circle_pos.x < grid_size.x && circle_pos.y < grid_size.y:
 		return circle_pos
 	return -Vector2.ONE
 
@@ -220,7 +222,7 @@ func validate_path(color_index:int):
 		set_circle_color(circle_pos, -2-colors.size()-color_index)
 	completed_count += 1
 	
-	if completed_count >= colors.size():
+	if completed_count >= color_count:
 		completed.emit()
 
 func unvalidate_path(color_index:int):
