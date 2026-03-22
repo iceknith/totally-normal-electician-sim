@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bgwp5tg6h76il"]
 
-[ext_resource type="Script" uid="uid://dd5w2ptvu7pou" path="res://src/minigames/minigame.gd" id="1_l4jc3"]
+[ext_resource type="Script" uid="uid://uaxvi0lb0o2m" path="res://src/minigames/electician_minigame/electician_minigame.gd" id="1_5ci1u"]
 [ext_resource type="PackedScene" uid="uid://b041k4vjl6pg1" path="res://src/minigames/electician_minigame/cableSection.tscn" id="2_5ci1u"]
 
 [node name="ElecticianMinigame" type="Control" unique_id=1566750814]
@@ -10,7 +10,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_l4jc3")
+script = ExtResource("1_5ci1u")
 metadata/_custom_type_script = "uid://dd5w2ptvu7pou"
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1525369528]

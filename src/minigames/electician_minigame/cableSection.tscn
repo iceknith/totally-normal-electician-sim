@@ -20,5 +20,6 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_tnqyn")
+unselected_color = Color(0.15857187, 0.15857187, 0.15857187, 1)
 button_image = SubResource("GradientTexture2D_ts4aa")
 cable_width = 20.0

@@ -7,7 +7,7 @@ enum States {
 
 signal completed
 
-@export var colors:Array[Color] = [Color.LIGHT_CORAL, Color.LIGHT_BLUE, Color.LIGHT_GREEN]
+@export var colors:Array[Color] = [Color.LIGHT_CORAL, Color.LIGHT_BLUE, Color.LIGHT_GREEN, Color.LIGHT_PINK]
 @export var unselected_color:Color = Color.DARK_GRAY
 var cables:Array[Line2D]
 var images:Array[Array]
@@ -17,6 +17,7 @@ var button_colors:Dictionary[Vector2,int]
 @export var button_image:Texture2D
 @export var cable_image:Texture2D
 @export var cable_width:float = 5
+@export var max_path_length:float = 3
 var border_size:Vector2
 var cell_size:Vector2
 var circle_size:float
@@ -35,7 +36,6 @@ func _ready() -> void:
 	border_size = cell_size - circle_size*Vector2.ONE
 	
 	# Create buttons
-	
 	var image:TextureRect = TextureRect.new()
 	image.texture = button_image
 	image.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
@@ -64,13 +64,71 @@ func _ready() -> void:
 
 func init_color_buttons():
 	for i in colors.size():
-		for j in 2:
-			var color = colors[i]
-			var index:Vector2 = Vector2(randi_range(0,grid_size.x-1), randi_range(0,grid_size.y-1))
-			while get_circle_color(index) != -1: index = Vector2(randi_range(0,grid_size.x-1), randi_range(0,grid_size.y-1))
-			var image:TextureRect = images[index.x][index.y]
+		# First Image
+		var color = colors[i]
+		var start:Vector2 = get_random_available_circle()
+		if start == -Vector2.ONE: break
+		set_circle_color(start, i)
+		var end:Vector2 = get_random_end_circle(start)
+		set_circle_color(end, i)
+		for pos in [start, end]:
+			var image:TextureRect = images[pos.x][pos.y]
 			image.modulate = color
-			set_circle_color(index, i)
+	remove_temp_marks()
+
+func get_random_available_circle() -> Vector2:
+	var i = 0
+	while i < 10:
+		i += 1
+		var available_pos:Vector2 = Vector2(randi_range(0,grid_size.x-1), randi_range(0,grid_size.y-1))
+		if get_circle_color(available_pos) == -1 && !get_available_directions(available_pos).is_empty(): 
+			return available_pos
+	for x in grid_size.x:
+		for y in grid_size.y:
+			var available_pos = Vector2(x,y)
+			if get_circle_color(available_pos) == -1 && !get_available_directions(available_pos).is_empty(): 
+				return available_pos
+	printerr("Error, couldn't find an adequate candidate")
+	return -Vector2.ONE
+
+func get_available_directions(pos) -> Array[Vector2]:
+	var result:Array[Vector2] = []
+	for x in [-1, 1]:
+		for y in [-1, 1]:
+			var new_pos:Vector2 = pos + Vector2(x,y)
+			# If is valid
+			if pos != new_pos && \
+				new_pos == new_pos.clamp(Vector2.ZERO, grid_size - Vector2.ONE) && \
+				get_circle_color(new_pos) == -1: 
+					result.append(new_pos)
+	if result.is_empty():
+		for x in [-1, 1]:
+			for y in [true, false]:
+				var new_pos:Vector2 = pos + Vector2(x,0)
+				if y: new_pos = pos + Vector2(0,x)
+				
+				# If is valid
+				if pos != new_pos && \
+					new_pos == new_pos.clamp(Vector2.ZERO, grid_size - Vector2.ONE) && \
+					get_circle_color(new_pos) == -1: 
+						result.append(new_pos)
+	return result
+
+func get_random_end_circle(start_circle:Vector2) -> Vector2:
+	var pos:Vector2 = start_circle
+	for i in range(max_path_length):
+		var available_dirs:Array[Vector2] = get_available_directions(pos)
+		if available_dirs.is_empty(): return pos
+		pos = available_dirs.pick_random()
+		set_circle_color(pos, -2)
+	return pos
+
+func remove_temp_marks():
+	for x in grid_size.x:
+		for y in grid_size.y:
+			var pos = Vector2(x,y)
+			if get_circle_color(pos) == -2: 
+				set_circle_color(pos, -1)
 
 func _draw() -> void:
 	# Debugging stuff:
@@ -124,6 +182,7 @@ func idle_handler():
 			var circle_color = get_circle_color(circle_pos)
 			if circle_color < -1:
 				unvalidate_path((-circle_color-2)%colors.size())
+				completed_count -= 1
 
 func cable_selected_handler():
 	var current_cable:Line2D = cables[current_color]
@@ -163,19 +222,15 @@ func validate_path(color_index:int):
 	
 	if completed_count >= colors.size():
 		completed.emit()
-		print("yaaay")
 
 func unvalidate_path(color_index:int):
 	var current_cable:Line2D = cables[color_index]
 	for pos in current_cable.points:
 		var circle_pos:Vector2 = get_circle_pos(pos)
 		var circle_color:int = get_circle_color(circle_pos)
-		var was_completed:bool = false
 		if circle_color == -2-color_index:
 			set_circle_color(circle_pos, -1)
 			images[circle_pos.x][circle_pos.y].modulate = unselected_color
 		elif circle_color == -2-colors.size()-color_index:
-			was_completed = true
 			set_circle_color(circle_pos, color_index)
-		if was_completed: completed_count -= 1
 	current_cable.clear_points()
