@@ -14,6 +14,10 @@
 [ext_resource type="Texture2D" uid="uid://85pcyxjjdgpl" path="res://assets/misc/ditherMatrix/arcade.png" id="11_ivkb3"]
 [ext_resource type="Script" uid="uid://c4gbdbfsdgnw7" path="res://src/shaders/shader_applyer.gd" id="12_e0nlv"]
 
+[sub_resource type="Curve" id="Curve_w7gwu"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1, 1), 2.0254266, 0.0, 0, 0]
+point_count = 2
+
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_bntx6"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_awi42"]
@@ -104,7 +108,7 @@ _data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.7656442, 0.4535902), 0.1159696
 point_count = 3
 
 [sub_resource type="Curve" id="Curve_clt24"]
-_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.7246964, 0), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.57918555, 0), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
 point_count = 3
 
 [sub_resource type="Curve" id="Curve_jqxng"]
@@ -117,8 +121,11 @@ point_count = 2
 
 [node name="World" type="Node3D" unique_id=600883011]
 script = ExtResource("1_co47k")
-skyTopStartAngle = Color(0.050980393, 0.5882353, 1, 1)
-skyBotStartAngle = Color(0.6666667, 0.9372549, 0.972549, 1)
+skyTopStartColor = Color(0.050980393, 0.5882353, 1, 1)
+skyBotStartColor = Color(0.6666667, 0.9372549, 0.972549, 1)
+skyTopEndColor = Color(0.6509804, 0.105882354, 0.14901961, 1)
+skyBotEndColor = Color(0.03529412, 0.039215688, 0.21568628, 1)
+skyChangeCurve = SubResource("Curve_w7gwu")
 
 [node name="Floor" type="StaticBody3D" parent="." unique_id=1672439933]
 
