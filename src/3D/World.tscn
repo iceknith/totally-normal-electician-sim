@@ -29,6 +29,8 @@ size = Vector2(496, 350.8)
 albedo_color = Color(0.65882355, 0, 0.62352943, 1)
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_00xeg"]
+sky_top_color = Color(0.65125984, 0.10719591, 0.14904715, 1)
+sky_horizon_color = Color(0.037180744, 0.03726213, 0.21720988, 1)
 
 [sub_resource type="Sky" id="Sky_co47k"]
 sky_material = SubResource("ProceduralSkyMaterial_00xeg")
@@ -69,18 +71,18 @@ seamless = true
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_co47k"]
 shader = ExtResource("10_23vqn")
-shader_parameter/desaturation = 2.0
-shader_parameter/contrast = 2.0
-shader_parameter/brightness = -0.2
-shader_parameter/redify = 0.1
-shader_parameter/posterizationLevelsOut = Vector3(1, 1, 1)
+shader_parameter/desaturation = 1.0
+shader_parameter/contrast = 0.9
+shader_parameter/brightness = 0.0
+shader_parameter/redify = 0.0
+shader_parameter/posterizationLevelsOut = Vector3(10, 10, 15)
 shader_parameter/ditherMatrixTexture = ExtResource("11_ivkb3")
 shader_parameter/ditherSize = 3
-shader_parameter/colorLevels = Vector3(1, 5, 5)
+shader_parameter/colorLevels = Vector3(10, 20, 20)
 shader_parameter/ditherSpeed = Vector2(0, 0)
 shader_parameter/displacementNoise = SubResource("NoiseTexture2D_ivwwh")
 shader_parameter/displacementDirection = Vector2(0.03, 0.03)
-shader_parameter/displacementStrength = 0.005
+shader_parameter/displacementStrength = 0.0
 shader_parameter/noise = SubResource("NoiseTexture2D_lpsds")
 shader_parameter/noiseDirection = Vector2(0, -0.03)
 shader_parameter/noiseStrength = 0.0
@@ -115,6 +117,8 @@ point_count = 2
 
 [node name="World" type="Node3D" unique_id=600883011]
 script = ExtResource("1_co47k")
+skyTopStartAngle = Color(0.050980393, 0.5882353, 1, 1)
+skyBotStartAngle = Color(0.6666667, 0.9372549, 0.972549, 1)
 
 [node name="Floor" type="StaticBody3D" parent="." unique_id=1672439933]
 
@@ -184,7 +188,7 @@ script = ExtResource("12_e0nlv")
 shader_properties = Dictionary[String, Array]({
 "brightness": [0.0, -0.1, SubResource("Curve_ivwwh")],
 "colorLevels": [Vector3(10, 20, 20), Vector3(1, 5, 5), SubResource("Curve_e0nlv")],
-"contrast": [0.9, 2.0, SubResource("Curve_e0nlv")],
+"contrast": [0.75, 2.0, SubResource("Curve_e0nlv")],
 "desaturation": [1.0, 2.0, SubResource("Curve_e0nlv")],
 "displacementStrength": [0.0, 0.005, SubResource("Curve_5f2gp")],
 "ditherSpeed": [Vector2(0, 0), Vector2(0, 3), SubResource("Curve_lpsds")],

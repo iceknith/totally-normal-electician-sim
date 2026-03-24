@@ -36,11 +36,14 @@ func _ready() -> void:
 	circle_size -= circle_size*min_border_perc
 	border_size = cell_size - circle_size*Vector2.ONE
 	
+	$Container.add_theme_constant_override("h_separation", border_size.x)
+	$Container.add_theme_constant_override("v_separation", border_size.y)
+	
 	# Create buttons
 	var image:TextureRect = TextureRect.new()
 	image.texture = button_image
 	image.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
-	image.size = circle_size * Vector2.ONE
+	image.custom_minimum_size = circle_size * Vector2.ONE
 	image.modulate = unselected_color
 	
 	for x in grid_size.x:
@@ -48,8 +51,9 @@ func _ready() -> void:
 		images.append(line)
 		for y in grid_size.y:
 			var new_img = image.duplicate()
-			new_img.position = get_screen_pos(Vector2(x,y))
-			add_child(new_img)
+			
+			#new_img.position = get_screen_pos(Vector2(x,y))
+			$Container.add_child(new_img)
 			line.append(new_img)
 	
 	# Create cables
@@ -146,10 +150,12 @@ func _process(_delta: float) -> void:
 		cable_selected_handler()
 
 func get_circle_pos(pos:Vector2)->Vector2:
-	pos = clamp(pos, Vector2.ZERO, size)
+	pos.x = clamp(pos.x, 0, size.x)
+	pos.y = clamp(pos.y, 0, size.y)
 	var circle_pos = round((pos - cell_size/2)/cell_size)
 	if (circle_pos*cell_size + cell_size/2).distance_squared_to(pos) <= (circle_size/2)**2 && \
 		circle_pos.x < grid_size.x && circle_pos.y < grid_size.y:
+		print(circle_pos)
 		return circle_pos
 	return -Vector2.ONE
 

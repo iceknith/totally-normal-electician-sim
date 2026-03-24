@@ -3,14 +3,16 @@
 [ext_resource type="Script" uid="uid://dnueratijeuk3" path="res://src/minigames/electician_minigame/cable_section.gd" id="1_tnqyn"]
 
 [sub_resource type="Gradient" id="Gradient_tnqyn"]
-offsets = PackedFloat32Array(0.99706745, 1)
+offsets = PackedFloat32Array(0.99120235, 1)
 colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 0)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_ts4aa"]
 gradient = SubResource("Gradient_tnqyn")
+width = 200
+height = 200
 fill = 1
 fill_from = Vector2(0.5, 0.5)
-fill_to = Vector2(0, 0.5)
+fill_to = Vector2(0, 0.517094)
 
 [node name="CableSection" type="Control" unique_id=206517582]
 layout_mode = 3
@@ -23,3 +25,14 @@ script = ExtResource("1_tnqyn")
 unselected_color = Color(0.15857187, 0.15857187, 0.15857187, 1)
 button_image = SubResource("GradientTexture2D_ts4aa")
 cable_width = 20.0
+
+[node name="Container" type="VFlowContainer" parent="." unique_id=775531090]
+layout_mode = 1
+anchors_preset = 13
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+last_wrap_alignment = 2
