@@ -88,10 +88,6 @@ func show_minigame(minigameScene:PackedScene):
 func show_game3D():
 	reset_state()
 
-func start_dialogue(dialogueFile:String):
-	DialogueManager.show_example_dialogue_balloon(load(dialogueFile))
-
-
 ### EOW Handlers ###
 
 func create_eow_timers():
@@ -121,7 +117,6 @@ func increment_eow_meter(node:Node):
 
 func update_game_state(state:MainCommunicator.GameState):
 	MainCommunicator.current_state = state
-	print(state)
 
 func start_dialogue(dialogueFile:String):
 	MainCommunicator.signalMain.emit(

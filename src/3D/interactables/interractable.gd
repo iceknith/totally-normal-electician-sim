@@ -30,10 +30,6 @@ enum Interaction {
 #Interaction Dialogue Parameters
 
 
-
-
-
-
 @onready var text_sprite:Sprite3D = $Sprite3D
 @onready var text_label:Label = $SubViewport/PanelContainer/MarginContainer/Label
 
