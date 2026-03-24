@@ -9,7 +9,6 @@ size = Vector2(128, 128)
 [node name="Interactables2d" type="Area2D" unique_id=1694580783]
 script = ExtResource("1_6n77t")
 interaction = 1
-action_type = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=82001972]
 shape = SubResource("RectangleShape2D_6n77t")

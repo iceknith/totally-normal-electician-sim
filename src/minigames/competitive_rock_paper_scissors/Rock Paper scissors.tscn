@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://c6lu1xsiprij5"]
+
+[node name="Rock Paper Scissors" type="Control" unique_id=213604419]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Background" type="ColorRect" parent="." unique_id=411163542]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.17254902, 0.14117648, 0.2509804, 1)
