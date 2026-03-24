@@ -155,7 +155,6 @@ func get_circle_pos(pos:Vector2)->Vector2:
 	var circle_pos = round((pos - cell_size/2)/cell_size)
 	if (circle_pos*cell_size + cell_size/2).distance_squared_to(pos) <= (circle_size/2)**2 && \
 		circle_pos.x < grid_size.x && circle_pos.y < grid_size.y:
-		print(circle_pos)
 		return circle_pos
 	return -Vector2.ONE
 

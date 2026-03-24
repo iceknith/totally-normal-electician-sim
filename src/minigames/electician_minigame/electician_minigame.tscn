@@ -30,6 +30,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_5ci1u")
+stage = 2
 cables_required = 3
 metadata/_custom_type_script = "uid://dd5w2ptvu7pou"
 
@@ -61,27 +62,28 @@ alignment = 1
 
 [node name="PanelContainer" type="PanelContainer" parent="MarginContainer/GamesContainer" unique_id=2037701015]
 clip_contents = true
-custom_minimum_size = Vector2(400, 500)
+custom_minimum_size = Vector2(450, 500)
 layout_mode = 2
-size_flags_horizontal = 3
+size_flags_horizontal = 6
 
-[node name="PanelContainer2" type="PanelContainer" parent="MarginContainer/GamesContainer" unique_id=1620937927]
+[node name="TimingContainer" type="PanelContainer" parent="MarginContainer/GamesContainer" unique_id=1620937927]
 clip_contents = true
 custom_minimum_size = Vector2(50, 500)
 layout_mode = 2
+size_flags_horizontal = 4
 
-[node name="TimingSection" parent="MarginContainer/GamesContainer/PanelContainer2" unique_id=746000392 instance=ExtResource("3_nmo0h")]
+[node name="TimingSection" parent="MarginContainer/GamesContainer/TimingContainer" unique_id=746000392 instance=ExtResource("3_nmo0h")]
 layout_mode = 2
 cube_travel_duration = 7.5
-cube_size = 150.0
+cube_duration = 1.5
 
-[node name="PanelContainer3" type="PanelContainer" parent="MarginContainer/GamesContainer" unique_id=746472576]
+[node name="MovingContainer" type="PanelContainer" parent="MarginContainer/GamesContainer" unique_id=746472576]
 clip_contents = true
-custom_minimum_size = Vector2(400, 500)
+custom_minimum_size = Vector2(450, 500)
 layout_mode = 2
-size_flags_horizontal = 3
+size_flags_horizontal = 6
 
-[node name="MovingSection" parent="MarginContainer/GamesContainer/PanelContainer3" unique_id=5641690 instance=ExtResource("4_a2g5q")]
+[node name="MovingSection" parent="MarginContainer/GamesContainer/MovingContainer" unique_id=5641690 instance=ExtResource("4_a2g5q")]
 layout_mode = 2
 ring_radius = 100.0
 ring_speed = 20.0
@@ -160,19 +162,19 @@ text = "Try again !"
 label_settings = SubResource("LabelSettings_gf3wi")
 
 [node name="InfoContainer" type="PanelContainer" parent="." unique_id=785610125]
-visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -200.0
-offset_top = -51.5
-offset_right = 200.0
-offset_bottom = 51.5
+offset_left = -210.0
+offset_top = -167.5
+offset_right = 210.0
+offset_bottom = 167.5
 grow_horizontal = 2
 grow_vertical = 2
+pivot_offset_ratio = Vector2(0.5, 0.5)
 
 [node name="MarginContainer" type="MarginContainer" parent="InfoContainer" unique_id=417354383]
 layout_mode = 2
@@ -181,7 +183,7 @@ theme_override_constants/margin_top = 10
 theme_override_constants/margin_right = 10
 theme_override_constants/margin_bottom = 10
 
-[node name="Label" type="Label" parent="InfoContainer/MarginContainer" unique_id=1498374110]
+[node name="InfoLabel" type="Label" parent="InfoContainer/MarginContainer" unique_id=1498374110]
 custom_minimum_size = Vector2(400, 0)
 layout_mode = 2
 text = "Connectez les fils de la même couleur avec [clic gauche]

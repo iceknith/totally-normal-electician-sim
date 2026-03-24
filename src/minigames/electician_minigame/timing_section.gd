@@ -4,7 +4,8 @@ signal failed
 
 @export_group("Mechanical")
 @export var cube_travel_duration:float = 5
-@export var cube_size:float = 50
+@export var cube_duration:float = 1
+@onready var cube_size_scale:float = cube_duration/cube_travel_duration
 
 @export_group("Visual")
 @export var cursor_size:float = 5
@@ -19,6 +20,7 @@ var current_cube_touched:bool = false
 
 func _draw() -> void:
 	# Draw first cube
+	var cube_size:float = size.y * cube_size_scale
 	var cube_rect:Rect2 = Rect2(0,cube_position_y - cube_size/2,size.x,cube_size)
 	var cube_color:Color = cube_initial_color
 	if abs(cube_position_y - size.y/2) <= (cursor_size + cube_size)/2: cube_color = cube_can_be_touched_color
@@ -37,6 +39,8 @@ func _draw() -> void:
 func _process(delta: float) -> void:
 	var speed = size.y / cube_travel_duration
 	cube_position_y += speed * delta
+	
+	var cube_size:float = size.y * cube_size_scale
 	
 	if cube_position_y - cube_size/2 >= size.y:
 		cube_position_y -= size.y

@@ -1,14 +1,30 @@
 extends Minigame
 
+enum Stages {
+	TutorialWires,
+	TutorialMovingCircle,
+	TutorialTiming,
+	FullGame
+}
+
 signal win
 
 @onready var cable_section:Node
-@onready var timing_section:Node = $MarginContainer/GamesContainer/PanelContainer2/TimingSection
-@onready var moving_section:Node = $MarginContainer/GamesContainer/PanelContainer3/MovingSection
+@onready var timing_section:Node = $MarginContainer/GamesContainer/TimingContainer/TimingSection
+@onready var moving_section:Node = $MarginContainer/GamesContainer/MovingContainer/MovingSection
 @onready var cable_validated_label:Label = $MarginContainer/CableValidated
 @onready var win_label:Label = $WinLabel
 @onready var yay_label:Label = $YayLabel
 @onready var lose_label:Label = $Loselabel
+@onready var info_label:Label = $InfoContainer/MarginContainer/InfoLabel
+@onready var info_container:Container = $InfoContainer
+
+@export var stage:Stages = Stages.TutorialWires
+@export var tutorialTexts:Dictionary[Stages, String] = {
+	Stages.TutorialWires : "Connectez les fils de la même couleur avec [clic gauche]\n-\nDéconnectez les fils avec [clic droit]",
+	Stages.TutorialMovingCircle : "Faites attention à ne pas déclencher un court circuit !\n-\nPour celà, restez dans le grand cercle en vous déplaçant avec vos contrôles de mouvement.",
+	Stages.TutorialTiming : "Attention à ne pas vous éléctriser !\n-\nPour celà, appuyez sur [Espace] lorsque le cube rouge devient rose."
+}
 
 @export var cables_required:int = 100
 var cables_validated:int:
@@ -22,9 +38,40 @@ func _ready() -> void:
 	win_label.scale = Vector2.ZERO
 	lose_label.scale = Vector2.ZERO
 	yay_label.scale = Vector2.ZERO
+	info_container.scale = Vector2.ZERO
 	
-	await  get_tree().process_frame
+	await get_tree().process_frame
 	reset_cable()
+	init_stage()
+
+func init_stage() -> void:
+	if stage == Stages.FullGame: return
+	
+	info_label.text = tutorialTexts[stage]
+	
+	var tween:Tween = create_tween()
+	tween.set_ease(Tween.EASE_IN_OUT).set_trans(Tween.TRANS_CIRC)
+	tween.tween_property(info_container, "scale", Vector2.ONE, 0.5)
+	tween.tween_interval(3)
+	
+	match stage:
+		Stages.TutorialWires:
+			$MarginContainer/GamesContainer/TimingContainer.queue_free()
+			$MarginContainer/GamesContainer/MovingContainer.queue_free()
+			cable_section.process_mode = Node.PROCESS_MODE_DISABLED
+			tween.tween_callback(func(): cable_section.process_mode = Node.PROCESS_MODE_INHERIT)
+		Stages.TutorialMovingCircle:
+			$MarginContainer/GamesContainer/TimingContainer.queue_free()
+			for section in [cable_section, moving_section]:
+				section.process_mode = Node.PROCESS_MODE_DISABLED
+				tween.tween_callback(func(): section.process_mode = Node.PROCESS_MODE_INHERIT)
+		Stages.TutorialTiming:
+			for section in [cable_section, moving_section, timing_section]:
+				section.process_mode = Node.PROCESS_MODE_DISABLED
+				tween.tween_callback(func(): section.process_mode = Node.PROCESS_MODE_INHERIT)
+	
+	tween.tween_property(info_container, "scale", Vector2.ZERO, 0.2)
+	
 
 func connect_signals() -> void:
 	#cable_section.completed.connect(on_cable_validated)
@@ -66,7 +113,7 @@ func reset_cable():
 
 func end_game():
 	for node:Control in [cable_section, moving_section, timing_section]:
-		node.process_mode = Node.PROCESS_MODE_DISABLED
+		if node: node.process_mode = Node.PROCESS_MODE_DISABLED
 	
 	var tween = create_tween()
 	tween.set_ease(Tween.EASE_IN_OUT).set_trans(Tween.TRANS_CIRC)
