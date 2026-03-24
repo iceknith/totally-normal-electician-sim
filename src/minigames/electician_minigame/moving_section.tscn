@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://dogrjgdvi4jl4"]
+
+[ext_resource type="Script" uid="uid://baguoa50vbb1k" path="res://src/minigames/electician_minigame/moving_section.gd" id="1_uiap2"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_uiap2"]
+
+[node name="MovingSection" type="Control" unique_id=5641690]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_uiap2")
+ring_direction_noise = SubResource("FastNoiseLite_uiap2")
