@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ciiwo24e6dlgq"
-path="res://.godot/imported/rockPaperScissors.png-a4b3a3d8c3aa8d8e4eec34f07fea2112.ctex"
+uid="uid://cye1bhonrbtg7"
+path="res://.godot/imported/Scissors.png-d6937e9c6aa983ba8f0a5f332b1f1517.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://src/minigames/competitive_rock_paper_scissors/asset/rockPaperScissors.png"
-dest_files=["res://.godot/imported/rockPaperScissors.png-a4b3a3d8c3aa8d8e4eec34f07fea2112.ctex"]
+source_file="res://src/minigames/competitive_rock_paper_scissors/asset/2D/Scissors.png"
+dest_files=["res://.godot/imported/Scissors.png-d6937e9c6aa983ba8f0a5f332b1f1517.ctex"]
 
 [params]
 

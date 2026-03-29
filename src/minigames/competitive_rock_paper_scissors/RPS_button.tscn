@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://boloxxts85tff"]
+
+[ext_resource type="Script" uid="uid://dlkwf2mcbiags" path="res://src/minigames/competitive_rock_paper_scissors/button_rps.gd" id="1_ai1ol"]
+
+[node name="ButtonRps" type="PanelContainer" unique_id=1570226314]
+custom_minimum_size = Vector2(128, 128)
+anchors_preset = -1
+anchor_right = 0.11100001
+anchor_bottom = 0.19800001
+offset_right = 0.12799072
+offset_bottom = -0.3040161
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("1_ai1ol")
+
+[node name="TextureButton" type="TextureButton" parent="." unique_id=99015314]
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[connection signal="pressed" from="TextureButton" to="." method="_on_texture_button_pressed"]

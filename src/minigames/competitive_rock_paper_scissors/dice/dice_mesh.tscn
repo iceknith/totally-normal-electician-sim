@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://denntcwkviw1u"]
+
+[ext_resource type="PackedScene" uid="uid://b54ucvtcxqbik" path="res://src/minigames/competitive_rock_paper_scissors/asset/3D/dice.blend" id="1_hgw5j"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hgw5j"]
+blend_mode = 4
+cull_mode = 1
+shading_mode = 0
+albedo_color = Color(0, 0, 0, 1)
+grow = true
+grow_amount = 0.1
+
+[node name="dice" unique_id=112483782 instance=ExtResource("1_hgw5j")]
+
+[node name="Cube" parent="." index="0" unique_id=928787712]
+material_overlay = SubResource("StandardMaterial3D_hgw5j")

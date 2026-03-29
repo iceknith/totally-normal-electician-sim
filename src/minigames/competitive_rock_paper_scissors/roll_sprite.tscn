@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://mecgfpfk6sbr"]
+
+[ext_resource type="Script" uid="uid://behhpi4nfwtk3" path="res://src/minigames/competitive_rock_paper_scissors/roll_sprite.gd" id="1_uhg2v"]
+[ext_resource type="Texture2D" uid="uid://cye1bhonrbtg7" path="res://src/minigames/competitive_rock_paper_scissors/asset/2D/Scissors.png" id="2_81c05"]
+[ext_resource type="Texture2D" uid="uid://1xxjx047eo4l" path="res://src/minigames/competitive_rock_paper_scissors/asset/2D/rock.png" id="3_67l4a"]
+[ext_resource type="Texture2D" uid="uid://dxx8mm38nnd8g" path="res://src/minigames/competitive_rock_paper_scissors/asset/2D/paper.png" id="4_vj57k"]
+
+[sub_resource type="Curve" id="Curve_81c05"]
+bake_resolution = 25
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.40714288, 0.7415731), 0.0, 0.0, 0, 0, Vector2(1, 0.078651786), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[node name="RollSprite" type="TextureRect" unique_id=771342945]
+custom_minimum_size = Vector2(128, 128)
+script = ExtResource("1_uhg2v")
+scissors_tex = ExtResource("2_81c05")
+rock_tex = ExtResource("3_67l4a")
+paper_tex = ExtResource("4_vj57k")
+total_duration = 5.0
+speed_curve = SubResource("Curve_81c05")
+final_choice_delay = 1.0

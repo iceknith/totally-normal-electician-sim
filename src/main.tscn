@@ -17,7 +17,7 @@ domain_warp_type = 1
 
 [node name="Main" type="Node3D" unique_id=1571594318]
 script = ExtResource("1_gh0ne")
-end_of_world_max_time_mins = 2.0
+end_of_world_max_time_mins = 1.0
 mouse_jitter_speed = 300.0
 mouse_jitter_intensity = Vector2(2000, 2000)
 camera_jitter_amount = 0.25
