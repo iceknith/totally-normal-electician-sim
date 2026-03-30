@@ -8,12 +8,17 @@ enum Choice{
 
 var my_choice:Choice = Choice.Rock
 
+
 func set_choice(choice:Choice) -> void :
 	my_choice = choice
 
 func set_texture(texture:Texture):
 	$TextureButton.texture_normal = texture
 	
+func play_flip_animation():
+	$AnimationPlayer.play("flip")
+	
+	return $AnimationPlayer.animation_finished
 	
 
 func setup_signals():

@@ -122,6 +122,7 @@ func _on_confirm_button_pressed():
 		is_rolling = true
 		opponent_choice = generate_opponent_choice()
 		update_choice_stock(player_choice)
+		last_player_choices.append(player_choice)
 		update_choice_stock(opponent_choice)
 		rolling_sprite.roll_sprites(opponent_choice)
 		chooseOption.clear()
@@ -190,25 +191,19 @@ func generate_opponent_choice():
 	match opponent : 
 		personPlaying.STANLEY : 
 			opponent_choice = opponent_choices[randi_range(0,choice_per_round -1)]
-		personPlaying.WILLY : 
+		personPlaying.WILLY : #il choisit tjrs le moins 
 			var choices_number = [null, null, null]
 			if (Choice.ROCK in opponent_choices) :choices_number[Choice.ROCK] = current_numbers[Choice.ROCK]
 			if (Choice.PAPER in opponent_choices) : choices_number[Choice.PAPER] =  current_numbers[Choice.PAPER]
 			if (Choice.SCISSORS  in opponent_choices) : choices_number[Choice.SCISSORS] =current_numbers[Choice.SCISSORS]
-			
-			print(opponent_choices)
+		
 			var min_index = opponent_choices[0]
-			print("min index : ", min_index)
 			for c in opponent_choices : 
-				print("choice number : ", choices_number[c])
-				print("current_numbers min index : ", current_numbers[min_index])
-				print("c : ", c)
-	
 				if choices_number[c] <= current_numbers[min_index] : 
 					min_index = c
 					opponent_choice = c
-				print("min index : ", min_index)
-			
+		personPlaying.BILLY : 
+			pass
 			
 	return opponent_choice
 
@@ -250,7 +245,7 @@ func _on_setup_button_pressed(): #setup la game définit le nombre de pierre pap
 		is_game_setup = true
 		show_points()
 		show_number_of_each()
-	
+
 
 
 func generate_choices(choice_number = total_choice_number): #génère les choix et les ajoute dans la liste

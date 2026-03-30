@@ -38,10 +38,12 @@ func roll_players(choices): # c'est une pondération pas des valeurs entre 0 et 
 				instance.set_texture(paper_tex)
 			Choice.SCISSORS : 
 				instance.set_texture(scissors_tex)
+		
 		var btn = instance.get_node("TextureButton")
 		btn.pressed.connect(update_player_choice.bind(i))
 		instance.set_choice(i)
 		add_child(instance)
+		await instance.play_flip_animation()
 	
 func update_player_choice(choice):
 	PlayerHasChosen.emit(choice)
