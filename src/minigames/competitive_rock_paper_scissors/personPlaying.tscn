@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://dt4mec201tdh3"]
+
+[ext_resource type="Script" uid="uid://c4x3hyhjs3y37" path="res://src/minigames/competitive_rock_paper_scissors/person_playing.gd" id="1_sou3k"]
+
+[node name="PersonPlaying" type="Node2D" unique_id=1040108193]
+script = ExtResource("1_sou3k")

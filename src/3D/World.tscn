@@ -30,12 +30,12 @@ albedo_color = Color(0.65882355, 0, 0.62352943, 1)
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_00xeg"]
 
-[sub_resource type="Sky" id="Sky_co47k"]
+[sub_resource type="Sky" id="Sky_jqxng"]
 sky_material = SubResource("ProceduralSkyMaterial_00xeg")
 
 [sub_resource type="Environment" id="Environment_00xeg"]
 background_mode = 2
-sky = SubResource("Sky_co47k")
+sky = SubResource("Sky_jqxng")
 ambient_light_source = 3
 reflected_light_source = 2
 fog_depth_curve = 6.4980483

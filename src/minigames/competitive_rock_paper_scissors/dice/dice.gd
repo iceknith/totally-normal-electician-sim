@@ -1,7 +1,7 @@
 class_name Dice extends RigidBody3D
 
 var start_pos
-var roll_strength = 70
+@export var roll_strength = 40
 var is_rolling:bool = false
 var has_rolled = false
 
@@ -33,11 +33,13 @@ func roll():
 	
 	is_rolling = true
 	
+func reset_rotation():
+	transform.basis = Basis() #reset_rotation
+	
 	
 
 
 func _on_sleeping_state_changed():
-	print("test")
 	if sleeping : 
 		var landed_on_side = false
 		for raycast in raycasts : 

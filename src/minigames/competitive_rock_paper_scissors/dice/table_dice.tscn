@@ -4,7 +4,7 @@
 [ext_resource type="Script" uid="uid://yvyes55pb2a8" path="res://src/minigames/competitive_rock_paper_scissors/dice/table_dice.gd" id="1_u7te3"]
 [ext_resource type="Shader" uid="uid://berjot2geo3xp" path="res://src/minigames/competitive_rock_paper_scissors/dice/table_dice_shader.gdshader" id="2_cvi6y"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_rq6uj"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_cvi6y"]
 render_priority = 5
 shader = ExtResource("2_cvi6y")
 shader_parameter/jitter_amount = 0.002
@@ -15,7 +15,7 @@ shader_parameter/edge_color = Color(0, 0, 0, 1)
 shader_parameter/edge_width = 2.84500013187762
 
 [sub_resource type="QuadMesh" id="QuadMesh_u4mv0"]
-material = SubResource("ShaderMaterial_rq6uj")
+material = SubResource("ShaderMaterial_cvi6y")
 flip_faces = true
 size = Vector2(2, 2)
 
@@ -23,9 +23,6 @@ size = Vector2(2, 2)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_8aa6w"]
 size = Vector3(15, 1, 15)
-
-[sub_resource type="BoxMesh" id="BoxMesh_u7te3"]
-size = Vector3(50, 1, 50)
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_8aa6w"]
 
@@ -46,6 +43,22 @@ size = Vector3(15, 10, 1)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_u4mv0"]
 size = Vector3(15, 10, 1)
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_cvi6y"]
+
+[sub_resource type="Sky" id="Sky_co47k"]
+sky_material = SubResource("ProceduralSkyMaterial_cvi6y")
+
+[sub_resource type="Environment" id="Environment_rq6uj"]
+background_mode = 2
+sky = SubResource("Sky_co47k")
+ambient_light_source = 3
+reflected_light_source = 2
+fog_depth_curve = 6.4980483
+
+[sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_u4mv0"]
+auto_exposure_scale = 0.3
+dof_blur_far_distance = 200.0
 
 [node name="TableDice" type="Node3D" unique_id=1789194565]
 script = ExtResource("1_u7te3")
@@ -68,9 +81,6 @@ physics_material_override = SubResource("PhysicsMaterial_33dt6")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="environment/Ground" unique_id=1266403508]
 shape = SubResource("BoxShape3D_8aa6w")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="environment/Ground" unique_id=327986870]
-mesh = SubResource("BoxMesh_u7te3")
 
 [node name="Wall" type="StaticBody3D" parent="environment" unique_id=1201116422]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.5, 2.5, 0)
@@ -100,7 +110,11 @@ physics_material_override = SubResource("PhysicsMaterial_rq6uj")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="environment/Wall4" unique_id=355740319]
 shape = SubResource("BoxShape3D_u4mv0")
 
-[node name="SpotLight3D" type="SpotLight3D" parent="." unique_id=1080021106]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 15, 0)
-light_energy = 5.0
-spot_range = 30.0
+[node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=199777813]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 15, 0)
+light_energy = 10.0
+omni_range = 40.0
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1042432947]
+environment = SubResource("Environment_rq6uj")
+camera_attributes = SubResource("CameraAttributesPractical_u4mv0")
