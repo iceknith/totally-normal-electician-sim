@@ -29,7 +29,6 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_25ab5")
 total_choice_number = 15
-opponent = 1
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1159379857]
 layout_mode = 1
