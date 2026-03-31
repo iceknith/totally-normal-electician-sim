@@ -1,10 +1,10 @@
-extends Control
+extends Minigame
 
 enum personPlaying
 {
 	STANLEY, # stanley chooses at random
 	WILLY, # willy choisit celui dont il y a le moins restants
-	BILLY # billy commence toujours avec pierre s'il peut, ensuite papier, puis ciseaux et après le premier round copie le 
+	BILLY # billy dans le premier round commence toujours par pierre < papier < ciseaux et après le premier round copie le 
 }
 enum Choice 
 {
@@ -33,7 +33,7 @@ enum Result{
 @onready var draw_label:Label = $DrawLabel
 @onready var win_label:Label = $EndGameLabel
 
-@export var number_of_rounds:int  = 3
+@export var rounds_number:int  = 3
 @export var points_to_win:int = 3
 @export var choice_per_round:int = 3
 
@@ -48,6 +48,7 @@ var choices:Array = []
 var opponents_points:int = 0
 var player_points:int = 0
 
+var current_round_number = 0
 
 @export var opponent:personPlaying = personPlaying.STANLEY
 
@@ -128,6 +129,7 @@ func _on_confirm_button_pressed():
 		chooseOption.clear()
 
 func show_winner():
+	current_round_number +=1
 	var winner = get_result(player_choice, opponent_choice)
 	match winner :
 		Result.DRAW : 
@@ -136,6 +138,8 @@ func show_winner():
 			player_wins()
 		Result.OPPONENT_WIN : 
 			player_loses()
+	if rounds_number == current_round_number : 
+		end_game()
 
 func reset():
 	choices = generate_shuffle_choice()
@@ -286,6 +290,7 @@ func show_points():
 	
 func _on_draw_button_pressed(): #si la game est setup et que le player a pas encore pioché ce tour, 
 	if !has_player_drawn and is_game_setup: 
+		player_choice = Choice.NOTHING
 		player_choices = choices.slice(0, choice_per_round) #on prend le nombre de carte dont on a besoin par round
 		opponent_choices = choices.slice(choice_per_round, choice_per_round*2)
 		print(opponent_choices)

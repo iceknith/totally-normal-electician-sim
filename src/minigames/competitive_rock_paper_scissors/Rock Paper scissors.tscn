@@ -28,7 +28,8 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_25ab5")
-total_choice_number = 15
+choice_per_round = 2
+total_choice_number = 8
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1159379857]
 layout_mode = 1

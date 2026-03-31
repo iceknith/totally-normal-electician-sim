@@ -13,6 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://pm28ohtf0hcf" path="res://assets/misc/screenshot_temp.png" id="10_jqxng"]
 [ext_resource type="Texture2D" uid="uid://85pcyxjjdgpl" path="res://assets/misc/ditherMatrix/arcade.png" id="11_ivkb3"]
 [ext_resource type="Script" uid="uid://c4gbdbfsdgnw7" path="res://src/shaders/shader_applyer.gd" id="12_e0nlv"]
+[ext_resource type="PackedScene" uid="uid://c6lu1xsiprij5" path="res://src/minigames/competitive_rock_paper_scissors/Rock Paper scissors.tscn" id="14_ivwwh"]
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_bntx6"]
 
@@ -199,6 +200,17 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.9999995, 1.3362136, 0.8960
 interaction = 1
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Interractable2" unique_id=2066216711]
+transform = Transform3D(1, -1.4901161e-08, -1.4901161e-08, -1.4901161e-08, 1, -2.9802322e-08, -1.4901161e-08, 0, 1, 0, 1.1920929e-07, 2.3841858e-07)
+mesh = SubResource("SphereMesh_gmgko")
+surface_material_override/0 = SubResource("StandardMaterial3D_l8jxy")
+
+[node name="Interractable3" parent="." unique_id=34859755 instance=ExtResource("2_gphh5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 1.4752015, 3.439649)
+script = ExtResource("3_kp6b0")
+minigame = ExtResource("14_ivwwh")
+interaction = 2
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Interractable3" unique_id=394755936]
 transform = Transform3D(1, -1.4901161e-08, -1.4901161e-08, -1.4901161e-08, 1, -2.9802322e-08, -1.4901161e-08, 0, 1, 0, 1.1920929e-07, 2.3841858e-07)
 mesh = SubResource("SphereMesh_gmgko")
 surface_material_override/0 = SubResource("StandardMaterial3D_l8jxy")
