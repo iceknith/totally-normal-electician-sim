@@ -1,0 +1,120 @@
+[gd_scene format=3 uid="uid://df1chr4x6st82"]
+
+[ext_resource type="PackedScene" uid="uid://khhmveyld8gk" path="res://src/minigames/competitive_rock_paper_scissors/dice/dice.tscn" id="1_8aa6w"]
+[ext_resource type="Script" uid="uid://yvyes55pb2a8" path="res://src/minigames/competitive_rock_paper_scissors/dice/table_dice.gd" id="1_u7te3"]
+[ext_resource type="Shader" uid="uid://berjot2geo3xp" path="res://src/minigames/competitive_rock_paper_scissors/dice/table_dice_shader.gdshader" id="2_cvi6y"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_cvi6y"]
+render_priority = 5
+shader = ExtResource("2_cvi6y")
+shader_parameter/jitter_amount = 0.002
+shader_parameter/jitter_speed = 1.0
+shader_parameter/depth_threshold = 0.4
+shader_parameter/color_threshold = 0.1
+shader_parameter/edge_color = Color(0, 0, 0, 1)
+shader_parameter/edge_width = 2.84500013187762
+
+[sub_resource type="QuadMesh" id="QuadMesh_u4mv0"]
+material = SubResource("ShaderMaterial_cvi6y")
+flip_faces = true
+size = Vector2(2, 2)
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_33dt6"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_8aa6w"]
+size = Vector3(15, 1, 15)
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_8aa6w"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_u7te3"]
+size = Vector3(1, 10, 15)
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_cvi6y"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_rq6uj"]
+size = Vector3(1, 10, 15)
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_u7te3"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_cvi6y"]
+size = Vector3(15, 10, 1)
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_rq6uj"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_u4mv0"]
+size = Vector3(15, 10, 1)
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_cvi6y"]
+
+[sub_resource type="Sky" id="Sky_co47k"]
+sky_material = SubResource("ProceduralSkyMaterial_cvi6y")
+
+[sub_resource type="Environment" id="Environment_rq6uj"]
+background_mode = 2
+sky = SubResource("Sky_co47k")
+ambient_light_source = 3
+reflected_light_source = 2
+fog_depth_curve = 6.4980483
+
+[sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_u4mv0"]
+auto_exposure_scale = 0.3
+dof_blur_far_distance = 200.0
+
+[node name="TableDice" type="Node3D" unique_id=1789194565]
+script = ExtResource("1_u7te3")
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=593351769]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 15, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Camera3D" unique_id=1488216242]
+extra_cull_margin = 10000.0
+mesh = SubResource("QuadMesh_u4mv0")
+
+[node name="Dice" parent="." unique_id=537834168 instance=ExtResource("1_8aa6w")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0)
+
+[node name="environment" type="Node3D" parent="." unique_id=2123008944]
+transform = Transform3D(1.386, 0, 0, 0, 1.634, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="Ground" type="StaticBody3D" parent="environment" unique_id=1184324979]
+physics_material_override = SubResource("PhysicsMaterial_33dt6")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="environment/Ground" unique_id=1266403508]
+shape = SubResource("BoxShape3D_8aa6w")
+
+[node name="Wall" type="StaticBody3D" parent="environment" unique_id=1201116422]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.5, 2.5, 0)
+physics_material_override = SubResource("PhysicsMaterial_8aa6w")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="environment/Wall" unique_id=454035658]
+shape = SubResource("BoxShape3D_u7te3")
+
+[node name="Wall2" type="StaticBody3D" parent="environment" unique_id=944227955]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.5, 2.5, 0)
+physics_material_override = SubResource("PhysicsMaterial_cvi6y")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="environment/Wall2" unique_id=1820515384]
+shape = SubResource("BoxShape3D_rq6uj")
+
+[node name="Wall3" type="StaticBody3D" parent="environment" unique_id=1686881984]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5, 7.5)
+physics_material_override = SubResource("PhysicsMaterial_u7te3")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="environment/Wall3" unique_id=1073199759]
+shape = SubResource("BoxShape3D_cvi6y")
+
+[node name="Wall4" type="StaticBody3D" parent="environment" unique_id=1798588017]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5, -7.5)
+physics_material_override = SubResource("PhysicsMaterial_rq6uj")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="environment/Wall4" unique_id=355740319]
+shape = SubResource("BoxShape3D_u4mv0")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=199777813]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 15, 0)
+light_energy = 10.0
+omni_range = 40.0
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1042432947]
+environment = SubResource("Environment_rq6uj")
+camera_attributes = SubResource("CameraAttributesPractical_u4mv0")

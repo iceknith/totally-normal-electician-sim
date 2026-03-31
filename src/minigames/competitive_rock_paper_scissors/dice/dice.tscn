@@ -1,0 +1,55 @@
+[gd_scene format=3 uid="uid://khhmveyld8gk"]
+
+[ext_resource type="Script" uid="uid://cvr1l45jpgg5u" path="res://src/minigames/competitive_rock_paper_scissors/dice/dice.gd" id="1_84tf4"]
+[ext_resource type="PackedScene" uid="uid://ntur3k32asgm" path="res://src/minigames/competitive_rock_paper_scissors/dice/dice_raycast.tscn" id="3_5bwso"]
+[ext_resource type="PackedScene" uid="uid://denntcwkviw1u" path="res://src/minigames/competitive_rock_paper_scissors/dice/dice_mesh.tscn" id="3_8ju0s"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_5bwso"]
+bounce = 0.3
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_8ju0s"]
+size = Vector3(2, 2, 2)
+
+[node name="Dice" type="RigidBody3D" unique_id=537834168]
+physics_material_override = SubResource("PhysicsMaterial_5bwso")
+gravity_scale = 2.0
+freeze = true
+script = ExtResource("1_84tf4")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=888700376]
+shape = SubResource("BoxShape3D_8ju0s")
+
+[node name="Raycasts" type="Node3D" parent="." unique_id=1660606641]
+
+[node name="DiceRaycast1" parent="Raycasts" unique_id=679450629 instance=ExtResource("3_5bwso")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
+opposite_side = 1
+
+[node name="DiceRaycast2" parent="Raycasts" unique_id=117639258 instance=ExtResource("3_5bwso")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 0)
+target_position = Vector3(-0.1, 0, 0)
+opposite_side = 4
+
+[node name="DiceRaycast3" parent="Raycasts" unique_id=1576757571 instance=ExtResource("3_5bwso")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+target_position = Vector3(0, 0.1, 0)
+opposite_side = 6
+
+[node name="DiceRaycast4" parent="Raycasts" unique_id=980349191 instance=ExtResource("3_5bwso")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0)
+target_position = Vector3(0.1, 0, 0)
+opposite_side = 2
+
+[node name="DiceRaycast5" parent="Raycasts" unique_id=1067807763 instance=ExtResource("3_5bwso")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1)
+target_position = Vector3(0, 0, 0.1)
+opposite_side = 5
+
+[node name="DiceRaycast6" parent="Raycasts" unique_id=1409154502 instance=ExtResource("3_5bwso")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1)
+target_position = Vector3(0, 0, -0.1)
+opposite_side = 3
+
+[node name="dice" parent="." unique_id=112483782 instance=ExtResource("3_8ju0s")]
+
+[connection signal="sleeping_state_changed" from="." to="." method="_on_sleeping_state_changed"]
