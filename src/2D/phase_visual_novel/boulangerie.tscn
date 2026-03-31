@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://d2b7b6sp2kyp2"]
+
+[ext_resource type="Texture2D" uid="uid://cxe54b1hwc0uy" path="res://assets/backgrounds/boulangerie_temporaire.jpg" id="1_wnlb3"]
+[ext_resource type="Script" uid="uid://csdcy81d7nmhj" path="res://src/2D/phase_visual_novel/visual_novel.gd" id="1_yjnoc"]
+[ext_resource type="PackedScene" uid="uid://bwcxew5ui0tpg" path="res://src/2D/interactables/Interactables2D.tscn" id="2_bgy4k"]
+
+[node name="Control" type="Control" unique_id=940681879]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_yjnoc")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1225841445]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_wnlb3")
+expand_mode = 1
+
+[node name="Interactables2d" parent="." unique_id=1694580783 instance=ExtResource("2_bgy4k")]
+position = Vector2(316, 260)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Interactables2d" unique_id=1059754285]
+polygon = PackedVector2Array(187, -36, 172, -60, 169, -88, 195, -101, 221, -93, 230, -72, 232, -37, 277, -21, 296, 75, 268, 121, 127, 131, 116, 47, 148, -21)

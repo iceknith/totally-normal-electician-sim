@@ -13,6 +13,8 @@
 [ext_resource type="Texture2D" uid="uid://pm28ohtf0hcf" path="res://assets/misc/screenshot_temp.png" id="10_jqxng"]
 [ext_resource type="Texture2D" uid="uid://85pcyxjjdgpl" path="res://assets/misc/ditherMatrix/arcade.png" id="11_ivkb3"]
 [ext_resource type="Script" uid="uid://c4gbdbfsdgnw7" path="res://src/shaders/shader_applyer.gd" id="12_e0nlv"]
+[ext_resource type="PackedScene" uid="uid://c6lu1xsiprij5" path="res://src/minigames/competitive_rock_paper_scissors/Rock Paper scissors.tscn" id="14_ivwwh"]
+[ext_resource type="PackedScene" uid="uid://d2b7b6sp2kyp2" path="res://src/2D/phase_visual_novel/boulangerie.tscn" id="14_lpsds"]
 
 [sub_resource type="Curve" id="Curve_w7gwu"]
 _data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1, 1), 2.0254266, 0.0, 0, 0]
@@ -155,36 +157,67 @@ shadow_blur = 3.021
 environment = SubResource("Environment_00xeg")
 camera_attributes = SubResource("CameraAttributesPractical_co47k")
 
-[node name="Monde" type="Node3D" parent="." unique_id=609111776]
+[node name="Objets" type="Node3D" parent="." unique_id=609111776]
 
-[node name="map" parent="Monde" unique_id=1309253486 instance=ExtResource("4_jqxng")]
+[node name="map" parent="Objets" unique_id=1309253486 instance=ExtResource("4_jqxng")]
 transform = Transform3D(2.45, 0, 0, 0, 2.45, 0, 0, 0, 2.45, 0.70040894, -0.46880817, 2.101181)
 
-[node name="Interractable" parent="Monde" unique_id=1038079210 instance=ExtResource("2_gphh5")]
+[node name="Interractable" parent="Objets" unique_id=1038079210 instance=ExtResource("2_gphh5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 1.1736013, -3)
 script = ExtResource("3_kp6b0")
 minigame = ExtResource("6_jqxng")
 InteractionAnimation = 3
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Monde/Interractable" unique_id=569833485]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Objets/Interractable" unique_id=569833485]
 transform = Transform3D(1, -1.4901161e-08, -1.4901161e-08, -1.4901161e-08, 1, -2.9802322e-08, -1.4901161e-08, 0, 1, 0, 1.1920929e-07, 2.3841858e-07)
 mesh = SubResource("SphereMesh_gmgko")
 surface_material_override/0 = SubResource("StandardMaterial3D_l8jxy")
 
-[node name="Interractable2" parent="Monde" unique_id=42821563 instance=ExtResource("2_gphh5")]
+[node name="Interractable2" parent="Objets" unique_id=42821563 instance=ExtResource("2_gphh5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.9999995, 1.3362136, 0.896065)
 interaction = 1
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Monde/Interractable2" unique_id=2066216711]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Objets/Interractable2" unique_id=2066216711]
 transform = Transform3D(1, -1.4901161e-08, -1.4901161e-08, -1.4901161e-08, 1, -2.9802322e-08, -1.4901161e-08, 0, 1, 0, 1.1920929e-07, 2.3841858e-07)
 mesh = SubResource("SphereMesh_gmgko")
 surface_material_override/0 = SubResource("StandardMaterial3D_l8jxy")
 
-[node name="tour" parent="Monde" unique_id=202530061 instance=ExtResource("6_awi42")]
+[node name="tour" parent="Objets" unique_id=202530061 instance=ExtResource("6_awi42")]
 transform = Transform3D(-0.38315305, 0, -0.11486399, 0, 0.4, 0, 0.11486399, 0, -0.38315305, 15.644254, 4.335824, -21.047028)
 
-[node name="maisontexture1" parent="Monde" unique_id=2056765095 instance=ExtResource("8_e0nlv")]
+[node name="maisontexture1" parent="Objets" unique_id=2056765095 instance=ExtResource("8_e0nlv")]
 transform = Transform3D(0.5750566, 0, 1.1658944, 0, 1.3, 0, -1.1658944, 0, 0.5750566, 20.472733, -1.3849573, -20.429337)
+
+[node name="Interractable3" parent="Objets" unique_id=260801796 instance=ExtResource("2_gphh5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.9999995, 1.3362136, 0.896065)
+interaction = 1
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Objets/Interractable3" unique_id=2098202578]
+transform = Transform3D(1, -1.4901161e-08, -1.4901161e-08, -1.4901161e-08, 1, -2.9802322e-08, -1.4901161e-08, 0, 1, 0, 1.1920929e-07, 2.3841858e-07)
+mesh = SubResource("SphereMesh_gmgko")
+surface_material_override/0 = SubResource("StandardMaterial3D_l8jxy")
+
+[node name="boulangerie" parent="Objets" unique_id=283819426 instance=ExtResource("2_gphh5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.0406445, 0.73993564, 3.2226076)
+script = ExtResource("3_kp6b0")
+minigame = ExtResource("14_lpsds")
+interaction = 2
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Objets/boulangerie" unique_id=2001306079]
+transform = Transform3D(1, -1.4901161e-08, -1.4901161e-08, -1.4901161e-08, 1, -2.9802322e-08, -1.4901161e-08, 0, 1, 0, 1.1920929e-07, 2.3841858e-07)
+mesh = SubResource("SphereMesh_gmgko")
+surface_material_override/0 = SubResource("StandardMaterial3D_l8jxy")
+
+[node name="Interractable4" parent="Objets" unique_id=34859755 instance=ExtResource("2_gphh5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 1.4752015, 3.439649)
+script = ExtResource("3_kp6b0")
+minigame = ExtResource("14_ivwwh")
+interaction = 2
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Objets/Interractable4" unique_id=394755936]
+transform = Transform3D(1, -1.4901161e-08, -1.4901161e-08, -1.4901161e-08, 1, -2.9802322e-08, -1.4901161e-08, 0, 1, 0, 1.1920929e-07, 2.3841858e-07)
+mesh = SubResource("SphereMesh_gmgko")
+surface_material_override/0 = SubResource("StandardMaterial3D_l8jxy")
 
 [node name="ShaderCanvasLayer" type="CanvasLayer" parent="." unique_id=1482458820]
 
@@ -218,3 +251,4 @@ shader_properties = Dictionary[String, Array]({
 "posterizationLevelsOut": [Vector3(10, 10, 15), Vector3(1, 1, 1), SubResource("Curve_jqxng")],
 "redify": [0.1, 0.5, SubResource("Curve_yhicf")]
 })
+metadata/_edit_use_anchors_ = true
