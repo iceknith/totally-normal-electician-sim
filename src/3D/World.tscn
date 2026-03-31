@@ -13,6 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://pm28ohtf0hcf" path="res://assets/misc/screenshot_temp.png" id="10_jqxng"]
 [ext_resource type="Texture2D" uid="uid://85pcyxjjdgpl" path="res://assets/misc/ditherMatrix/arcade.png" id="11_ivkb3"]
 [ext_resource type="Script" uid="uid://c4gbdbfsdgnw7" path="res://src/shaders/shader_applyer.gd" id="12_e0nlv"]
+[ext_resource type="PackedScene" uid="uid://c6lu1xsiprij5" path="res://src/minigames/competitive_rock_paper_scissors/Rock Paper scissors.tscn" id="14_ivwwh"]
 
 [sub_resource type="Curve" id="Curve_w7gwu"]
 _data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1, 1), 2.0254266, 0.0, 0, 0]
@@ -36,12 +37,12 @@ albedo_color = Color(0.65882355, 0, 0.62352943, 1)
 sky_top_color = Color(0.65125984, 0.10719591, 0.14904715, 1)
 sky_horizon_color = Color(0.037180744, 0.03726213, 0.21720988, 1)
 
-[sub_resource type="Sky" id="Sky_co47k"]
+[sub_resource type="Sky" id="Sky_jqxng"]
 sky_material = SubResource("ProceduralSkyMaterial_00xeg")
 
 [sub_resource type="Environment" id="Environment_00xeg"]
 background_mode = 2
-sky = SubResource("Sky_co47k")
+sky = SubResource("Sky_jqxng")
 ambient_light_source = 3
 reflected_light_source = 2
 fog_depth_curve = 6.4980483
@@ -57,7 +58,7 @@ fractal_type = 3
 fractal_octaves = 2
 fractal_ping_pong_strength = 100.0
 
-[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_ivwwh"]
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_jqxng"]
 noise = SubResource("FastNoiseLite_jqxng")
 seamless = true
 normalize = false
@@ -69,7 +70,7 @@ frequency = 0.016
 fractal_type = 0
 fractal_gain = 0.16
 
-[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_lpsds"]
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_ivwwh"]
 noise = SubResource("FastNoiseLite_ivwwh")
 seamless = true
 
@@ -84,10 +85,10 @@ shader_parameter/ditherMatrixTexture = ExtResource("11_ivkb3")
 shader_parameter/ditherSize = 3
 shader_parameter/colorLevels = Vector3(10, 20, 20)
 shader_parameter/ditherSpeed = Vector2(0, 0)
-shader_parameter/displacementNoise = SubResource("NoiseTexture2D_ivwwh")
+shader_parameter/displacementNoise = SubResource("NoiseTexture2D_jqxng")
 shader_parameter/displacementDirection = Vector2(0.03, 0.03)
-shader_parameter/displacementStrength = 0.0
-shader_parameter/noise = SubResource("NoiseTexture2D_lpsds")
+shader_parameter/displacementStrength = 0.005
+shader_parameter/noise = SubResource("NoiseTexture2D_ivwwh")
 shader_parameter/noiseDirection = Vector2(0, -0.03)
 shader_parameter/noiseStrength = 0.0
 
@@ -141,7 +142,7 @@ mesh = SubResource("PlaneMesh_kp6b0")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 1.1736013, -3)
 script = ExtResource("3_kp6b0")
 minigame = ExtResource("6_jqxng")
-InteractionAnimation = 3
+interaction = 2
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Interractable" unique_id=569833485]
 transform = Transform3D(1, -1.4901161e-08, -1.4901161e-08, -1.4901161e-08, 1, -2.9802322e-08, -1.4901161e-08, 0, 1, 0, 1.1920929e-07, 2.3841858e-07)
@@ -203,12 +204,24 @@ shader_properties = Dictionary[String, Array]({
 "posterizationLevelsOut": [Vector3(10, 10, 15), Vector3(1, 1, 1), SubResource("Curve_jqxng")],
 "redify": [0.1, 0.5, SubResource("Curve_yhicf")]
 })
+metadata/_edit_use_anchors_ = true
 
 [node name="Interractable2" parent="." unique_id=42821563 instance=ExtResource("2_gphh5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.9999995, 1.3362136, 0.896065)
 interaction = 1
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Interractable2" unique_id=2066216711]
+transform = Transform3D(1, -1.4901161e-08, -1.4901161e-08, -1.4901161e-08, 1, -2.9802322e-08, -1.4901161e-08, 0, 1, 0, 1.1920929e-07, 2.3841858e-07)
+mesh = SubResource("SphereMesh_gmgko")
+surface_material_override/0 = SubResource("StandardMaterial3D_l8jxy")
+
+[node name="Interractable3" parent="." unique_id=34859755 instance=ExtResource("2_gphh5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 1.4752015, 3.439649)
+script = ExtResource("3_kp6b0")
+minigame = ExtResource("14_ivwwh")
+interaction = 2
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Interractable3" unique_id=394755936]
 transform = Transform3D(1, -1.4901161e-08, -1.4901161e-08, -1.4901161e-08, 1, -2.9802322e-08, -1.4901161e-08, 0, 1, 0, 1.1920929e-07, 2.3841858e-07)
 mesh = SubResource("SphereMesh_gmgko")
 surface_material_override/0 = SubResource("StandardMaterial3D_l8jxy")

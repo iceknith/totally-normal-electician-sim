@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://ntur3k32asgm"]
+
+[ext_resource type="Script" uid="uid://ccusj1w2mg8gv" path="res://src/minigames/competitive_rock_paper_scissors/dice/dice_raycast.gd" id="1_4jqmv"]
+
+[node name="DiceRaycast" type="RayCast3D" unique_id=679450629]
+target_position = Vector3(0, -0.1, 0)
+script = ExtResource("1_4jqmv")
