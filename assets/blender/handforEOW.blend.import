@@ -4,12 +4,11 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://cb5jqhnceqws"
-path="res://.godot/imported/handforEOW.blend-426340b550ee0704e71c04cfc4c9d219.scn"
+valid=false
 
 [deps]
 
 source_file="res://assets/blender/handforEOW.blend"
-dest_files=["res://.godot/imported/handforEOW.blend-426340b550ee0704e71c04cfc4c9d219.scn"]
 
 [params]
 
