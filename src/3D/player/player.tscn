@@ -16,6 +16,7 @@ point_count = 3
 
 [node name="Player" type="CharacterBody3D" unique_id=192968154]
 collision_layer = 2
+floor_max_angle = 1.5707964
 script = ExtResource("1_f043j")
 walk_jitter_strength = 3.0
 walk_jitter_speed = 10.0
@@ -29,7 +30,7 @@ shape = SubResource("CapsuleShape3D_imvo1")
 [node name="head" type="Node3D" parent="." unique_id=1652027225]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5205812, 0)
 
-[node name="handforEOW" parent="head" unique_id=1420886163 instance=ExtResource("3_41h8g")]
+[node name="handforEOW" parent="head" unique_id=2056753208 instance=ExtResource("3_41h8g")]
 transform = Transform3D(-0.013734085, 0, -0.0990524, 0, 0.1, 0, 0.0990524, 0, -0.013734085, 0.6477792, -0.30266118, -0.5381017)
 
 [node name="Camera3D" type="Camera3D" parent="head" unique_id=913838045]
@@ -44,4 +45,5 @@ collide_with_bodies = false
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=330942890]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+cast_shadow = 0
 mesh = SubResource("CapsuleMesh_f043j")
