@@ -95,8 +95,8 @@ func on_cable_validated():
 
 func on_minigame_failed():
 	reset_cable()
-	timing_section.reset()
-	moving_section.reset()
+	if timing_section: timing_section.reset()
+	if moving_section: moving_section.reset()
 	
 	var tween = create_tween()
 	tween.set_ease(Tween.EASE_IN_OUT).set_trans(Tween.TRANS_CIRC)

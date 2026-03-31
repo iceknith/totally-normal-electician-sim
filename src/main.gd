@@ -144,8 +144,9 @@ func mouse_jitter_handler(delta:float) -> void:
 		var mouse_offset:Vector2 = mouse_jitter_intensity_curve.sample(eow_meter) * mouse_jitter_intensity * rand_dir * delta
 		var new_mouse_pos:Vector2 = get_viewport().get_mouse_position() + mouse_offset + unhandled_mouse_offset
 		unhandled_mouse_offset = new_mouse_pos - round(new_mouse_pos)
-		Input.warp_mouse(round(new_mouse_pos))
+		get_viewport().warp_mouse(new_mouse_pos)
 		
-		var jitter_input = InputEventMouseMotion.new()
-		jitter_input.relative = mouse_offset * camera_jitter_amount
-		Input.parse_input_event(jitter_input)
+		if currentState == GameState.Game3D:
+			var jitter_input = InputEventMouseMotion.new()
+			jitter_input.relative = mouse_offset * camera_jitter_amount
+			Input.parse_input_event(jitter_input)

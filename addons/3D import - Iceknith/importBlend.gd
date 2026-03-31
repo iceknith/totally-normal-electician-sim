@@ -16,3 +16,7 @@ func iterate(node:Node):
 
 func create_collision_shape(mesh:MeshInstance3D):
 	mesh.create_trimesh_collision()
+	for child in mesh.get_children():
+		if child as StaticBody3D:
+			var col:CollisionShape3D = child.get_node("CollisionShape3D")
+			col.shape.backface_collision = true

@@ -7,8 +7,8 @@
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_41h8g"]
 
 [sub_resource type="Curve" id="Curve_bxhrw"]
-_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
-point_count = 2
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.9247136, 0.49461734), 1.5201889, 1.5201889, 0, 0, Vector2(1, 1), 2.0359712, 0.0, 0, 0]
+point_count = 3
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_imvo1"]
 

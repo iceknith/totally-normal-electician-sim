@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://bxo5uvn1p5qg8"]
+[gd_scene format=3 uid="uid://dlcqpoyia3va4"]
 
 [ext_resource type="Script" uid="uid://bf13x6omc7ij8" path="res://src/main.gd" id="1_gh0ne"]
 [ext_resource type="PackedScene" uid="uid://csincrgfh0ug4" path="res://src/3D/World.tscn" id="2_5q4o7"]
@@ -17,9 +17,9 @@ domain_warp_type = 1
 
 [node name="Main" type="Node3D" unique_id=1571594318]
 script = ExtResource("1_gh0ne")
-end_of_world_max_time_mins = 1.0
+end_of_world_max_time_mins = 0.3
 mouse_jitter_speed = 300.0
-mouse_jitter_intensity = Vector2(2000, 2000)
+mouse_jitter_intensity = Vector2(1000, 1000)
 camera_jitter_amount = 0.25
 mouse_jitter_intensity_curve = SubResource("Curve_gh0ne")
 mouse_jitter_speed_curve = SubResource("Curve_5q4o7")
