@@ -30,7 +30,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_5ci1u")
-stage = 1
+stage = 3
 cables_required = 3
 metadata/_custom_type_script = "uid://dd5w2ptvu7pou"
 

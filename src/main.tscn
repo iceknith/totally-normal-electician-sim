@@ -4,8 +4,8 @@
 [ext_resource type="PackedScene" uid="uid://csincrgfh0ug4" path="res://src/3D/World.tscn" id="2_5q4o7"]
 
 [sub_resource type="Curve" id="Curve_gh0ne"]
-_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.04285714, 0), 0.0, 0.0, 0, 0, Vector2(0.043786984, 0.093723714), 0.09268125, 0.09268125, 0, 0, Vector2(0.050887574, 0.017059803), 0.0, 0.0, 0, 0, Vector2(0.7502959, 0.29907334), 0.88396657, 0.88396657, 0, 0, Vector2(1, 1), 2.47858, 0.0, 0, 0]
-point_count = 6
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.7502959, 0.29907334), 0.88396657, 0.88396657, 0, 0, Vector2(1, 1), 2.47858, 0.0, 0, 0]
+point_count = 3
 
 [sub_resource type="Curve" id="Curve_5q4o7"]
 _data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.26446283, 0.0053879023), 0.0, 0.0, 0, 0, Vector2(0.8016529, 0.18749994), 0.0, 0.0, 0, 0, Vector2(1, 1), 3.5207047, 0.0, 0, 0]

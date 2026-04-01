@@ -1,10 +1,10 @@
-extends Minigame
+class_name ElectricianMinigame extends Minigame
 
 enum Stages {
-	TutorialWires,
-	TutorialMovingCircle,
-	TutorialTiming,
-	FullGame
+	TutorialWires = 0,
+	TutorialMovingCircle = 1,
+	TutorialTiming = 2,
+	FullGame = 3
 }
 
 signal win
@@ -19,7 +19,7 @@ signal win
 @onready var info_label:Label = $InfoContainer/MarginContainer/InfoLabel
 @onready var info_container:Container = $InfoContainer
 
-@export var stage:Stages = Stages.TutorialWires
+@onready var stage:Stages = GlobalVars.electrician_minigame_current_stage
 @export var tutorialTexts:Dictionary[Stages, String] = {
 	Stages.TutorialWires : "Connectez les fils de la même couleur avec [clic gauche]\n-\nDéconnectez les fils avec [clic droit]",
 	Stages.TutorialMovingCircle : "Faites attention à ne pas déclencher un court circuit !\n-\nPour celà, restez dans le grand cercle en vous déplaçant avec vos contrôles de mouvement.",
@@ -43,6 +43,7 @@ func _ready() -> void:
 	await get_tree().process_frame
 	reset_cable()
 	init_stage()
+	
 
 func init_stage() -> void:
 	if stage == Stages.FullGame: return
@@ -112,8 +113,9 @@ func reset_cable():
 	cable_section.completed.connect(on_cable_validated)
 
 func end_game():
-	for node:Control in [cable_section, moving_section, timing_section]:
-		if node: node.process_mode = Node.PROCESS_MODE_DISABLED
+	if cable_section: cable_section.process_mode = Node.PROCESS_MODE_DISABLED
+	if moving_section: cable_section.process_mode = Node.PROCESS_MODE_DISABLED
+	if timing_section: cable_section.process_mode = Node.PROCESS_MODE_DISABLED
 	
 	var tween = create_tween()
 	tween.set_ease(Tween.EASE_IN_OUT).set_trans(Tween.TRANS_CIRC)
