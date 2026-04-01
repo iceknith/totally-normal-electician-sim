@@ -144,12 +144,12 @@ func mouse_jitter_handler(delta:float) -> void:
 		mouse_noise_pos += delta * mouse_jitter_speed * mouse_jitter_speed_curve.sample(eow_meter)
 		var rand_dir:Vector2 = Vector2(
 			mouse_jitter_noise.get_noise_2d(mouse_noise_pos, 0),
-			mouse_jitter_noise.get_noise_2d(mouse_noise_pos, 100),
+			mouse_jitter_noise.get_noise_2d(0, mouse_noise_pos),
 		)
 		var mouse_offset:Vector2 = mouse_jitter_intensity_curve.sample(eow_meter) * mouse_jitter_intensity * rand_dir * delta
 		var new_mouse_pos:Vector2 = get_viewport().get_mouse_position() + mouse_offset + unhandled_mouse_offset
 		unhandled_mouse_offset = new_mouse_pos - round(new_mouse_pos)
-		get_viewport().warp_mouse(new_mouse_pos)
+		get_viewport().warp_mouse(round(new_mouse_pos))
 		
 		if currentState == GameState.Game3D:
 			var jitter_input = InputEventMouseMotion.new()
