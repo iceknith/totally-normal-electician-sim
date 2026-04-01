@@ -52,6 +52,8 @@ dof_blur_far_distance = 200.0
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_l8jxy"]
 albedo_color = Color(0.65882355, 0, 0.62352943, 1)
 
+[sub_resource type="PrismMesh" id="PrismMesh_lpsds"]
+
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_jqxng"]
 noise_type = 5
 frequency = 0.0023
@@ -205,7 +207,7 @@ interaction = 2
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Objets/boulangerie" unique_id=2001306079]
 transform = Transform3D(1, -1.4901161e-08, -1.4901161e-08, -1.4901161e-08, 1, -2.9802322e-08, -1.4901161e-08, 0, 1, 0, 1.1920929e-07, 2.3841858e-07)
-mesh = SubResource("SphereMesh_gmgko")
+mesh = SubResource("PrismMesh_lpsds")
 surface_material_override/0 = SubResource("StandardMaterial3D_l8jxy")
 
 [node name="Interractable4" parent="Objets" unique_id=34859755 instance=ExtResource("2_gphh5")]
