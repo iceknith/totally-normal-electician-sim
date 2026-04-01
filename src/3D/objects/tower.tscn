@@ -95,7 +95,7 @@ InteractionAnimation = 3
 interaction = 2
 
 [node name="AlarmBot" type="OmniLight3D" parent="." unique_id=617167616]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.27965364, 1.5649719, -0.7064489)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3381364, 1.3172702, -0.81733996)
 light_color = Color(1, 0, 0, 1)
 light_energy = 0.0
 omni_range = 1.0
