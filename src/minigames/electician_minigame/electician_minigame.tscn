@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://bgwp5tg6h76il"]
 
 [ext_resource type="Script" uid="uid://uaxvi0lb0o2m" path="res://src/minigames/electician_minigame/electician_minigame.gd" id="1_5ci1u"]
+[ext_resource type="Texture2D" uid="uid://cmcjq2rksef24" path="res://assets/pixelart/backgroundwires.png" id="2_a2g5q"]
 [ext_resource type="PackedScene" uid="uid://dxl4itljpgtn5" path="res://src/minigames/electician_minigame/timing_section.tscn" id="3_nmo0h"]
 [ext_resource type="PackedScene" uid="uid://dogrjgdvi4jl4" path="res://src/minigames/electician_minigame/moving_section.tscn" id="4_a2g5q"]
 
@@ -30,7 +31,6 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_5ci1u")
-stage = 3
 cables_required = 3
 metadata/_custom_type_script = "uid://dd5w2ptvu7pou"
 
@@ -62,9 +62,23 @@ alignment = 1
 
 [node name="PanelContainer" type="PanelContainer" parent="MarginContainer/GamesContainer" unique_id=2037701015]
 clip_contents = true
-custom_minimum_size = Vector2(450, 500)
+custom_minimum_size = Vector2(500, 500)
 layout_mode = 2
 size_flags_horizontal = 6
+size_flags_vertical = 4
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/GamesContainer/PanelContainer" unique_id=531068233]
+layout_mode = 2
+theme_override_constants/margin_left = 40
+theme_override_constants/margin_top = 40
+theme_override_constants/margin_right = 40
+theme_override_constants/margin_bottom = 40
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/GamesContainer/PanelContainer" unique_id=1183150134]
+texture_filter = 1
+layout_mode = 2
+texture = ExtResource("2_a2g5q")
+expand_mode = 2
 
 [node name="TimingContainer" type="PanelContainer" parent="MarginContainer/GamesContainer" unique_id=1620937927]
 clip_contents = true

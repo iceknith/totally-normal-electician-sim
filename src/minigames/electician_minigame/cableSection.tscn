@@ -1,20 +1,17 @@
 [gd_scene format=3 uid="uid://b041k4vjl6pg1"]
 
 [ext_resource type="Script" uid="uid://dnueratijeuk3" path="res://src/minigames/electician_minigame/cable_section.gd" id="1_tnqyn"]
-
-[sub_resource type="Gradient" id="Gradient_tnqyn"]
-offsets = PackedFloat32Array(0.99120235, 1)
-colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 0)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_ts4aa"]
-gradient = SubResource("Gradient_tnqyn")
-width = 200
-height = 200
-fill = 1
-fill_from = Vector2(0.5, 0.5)
-fill_to = Vector2(0, 0.517094)
+[ext_resource type="Texture2D" uid="uid://dxlkwyg88gyyo" path="res://assets/pixelart/wireBlueBody.png" id="2_tjnga"]
+[ext_resource type="Texture2D" uid="uid://3gqia7skupq0" path="res://assets/pixelart/wireGreenBody.png" id="3_3sk35"]
+[ext_resource type="Texture2D" uid="uid://ckaqikjbim6g2" path="res://assets/pixelart/wireOrangeBody.png" id="4_u0dt7"]
+[ext_resource type="Texture2D" uid="uid://djhdt5wmb7gu1" path="res://assets/pixelart/wirePinkBody.png" id="5_d6hi7"]
+[ext_resource type="Texture2D" uid="uid://cd4fcxdf1gcit" path="res://assets/pixelart/dotBlue.png" id="6_c63jk"]
+[ext_resource type="Texture2D" uid="uid://c3fnskwfr8it4" path="res://assets/pixelart/dotGreen.png" id="7_osch5"]
+[ext_resource type="Texture2D" uid="uid://uipsqru6nyra" path="res://assets/pixelart/dotOrange.png" id="8_yrln3"]
+[ext_resource type="Texture2D" uid="uid://c4wtb7vtboawx" path="res://assets/pixelart/dotPink.png" id="9_3ltdq"]
 
 [node name="CableSection" type="Control" unique_id=206517582]
+texture_filter = 1
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -22,9 +19,10 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_tnqyn")
-unselected_color = Color(0.15857187, 0.15857187, 0.15857187, 1)
-button_image = SubResource("GradientTexture2D_ts4aa")
-cable_width = 20.0
+cable_textures = Array[Texture2D]([ExtResource("2_tjnga"), ExtResource("3_3sk35"), ExtResource("4_u0dt7"), ExtResource("5_d6hi7")])
+button_textures = Array[Texture2D]([ExtResource("6_c63jk"), ExtResource("7_osch5"), ExtResource("8_yrln3"), ExtResource("9_3ltdq")])
+min_border_perc = 0.4
+cable_width = 50.0
 
 [node name="Container" type="VFlowContainer" parent="." unique_id=775531090]
 layout_mode = 1

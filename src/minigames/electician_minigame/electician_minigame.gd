@@ -43,7 +43,6 @@ func _ready() -> void:
 	await get_tree().process_frame
 	reset_cable()
 	init_stage()
-	
 
 func init_stage() -> void:
 	if stage == Stages.FullGame: return
@@ -109,7 +108,7 @@ func on_minigame_failed():
 func reset_cable():
 	if cable_section: cable_section.queue_free()
 	cable_section = load("res://src/minigames/electician_minigame/cableSection.tscn").instantiate()
-	get_node("MarginContainer/GamesContainer/PanelContainer").add_child(cable_section)
+	get_node("MarginContainer/GamesContainer/PanelContainer/MarginContainer").add_child(cable_section)
 	cable_section.completed.connect(on_cable_validated)
 
 func end_game():
