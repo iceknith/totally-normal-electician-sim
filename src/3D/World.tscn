@@ -163,7 +163,7 @@ camera_attributes = SubResource("CameraAttributesPractical_co47k")
 [node name="Objets" type="Node3D" parent="." unique_id=609111776]
 
 [node name="map" parent="Objets" unique_id=1309253486 instance=ExtResource("4_jqxng")]
-transform = Transform3D(2.45, 0, 0, 0, 2.45, 0, 0, 0, 2.45, 0.70040894, -0.46880817, 2.101181)
+transform = Transform3D(2.4498785, 0, -0.02441588, 0, 2.45, 0, 0.02441588, 0, 2.4498785, 0.70040894, -0.46880817, 2.101181)
 
 [node name="Interractable" parent="Objets" unique_id=1038079210 instance=ExtResource("2_gphh5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 1.1736013, -3)
@@ -187,43 +187,49 @@ mesh = SubResource("SphereMesh_gmgko")
 surface_material_override/0 = SubResource("StandardMaterial3D_l8jxy")
 
 [node name="maisontexture1" parent="Objets" unique_id=2056765095 instance=ExtResource("8_e0nlv")]
-transform = Transform3D(0.502787, 0, 1.3066007, 0, 1.4, 0, -1.3066007, 0, 0.502787, 37.720078, -1.5066012, -18.772167)
+transform = Transform3D(0.502787, 0, 1.3066007, 0, 1.4, 0, -1.3066007, 0, 0.502787, 35.951378, -1.5066012, -20.246092)
 
 [node name="maisontexture16" parent="Objets" unique_id=628891442 instance=ExtResource("8_e0nlv")]
-transform = Transform3D(-1.2020684, 0, 0.71765745, 0, 1.4000001, 0, -0.71765745, 0, -1.2020684, 42.349304, -1.5066012, -27.104794)
+transform = Transform3D(-1.331192, 0, 0.4335066, 0.01031921, 1.3996032, 0.03168775, -0.43338376, 0.033325657, -1.3308148, 39.89276, -1.5066012, -28.77524)
 
 [node name="maisontexture17" parent="Objets" unique_id=74730903 instance=ExtResource("8_e0nlv")]
-transform = Transform3D(-1.2020684, 0, 0.71765745, 0, 1.4000001, 0, -0.71765745, 0, -1.2020684, 46.44948, -1.5066012, -35.305157)
+transform = Transform3D(-1.3585914, 0, 0.33797923, 0, 1.4, 0, -0.33797923, 0, -1.3585914, 42.12599, -1.5066012, -38.646046)
+
+[node name="maisontexture24" parent="Objets" unique_id=526783394 instance=ExtResource("8_e0nlv")]
+transform = Transform3D(-0.48856482, 0.033296615, -1.3115624, 0.010319213, 1.3996035, 0.031687763, 1.3119445, 0.0013908821, -0.48867196, 85.93618, -1.5066012, -33.322845)
+
+[node name="maisontexture25" parent="Objets" unique_id=476206750 instance=ExtResource("8_e0nlv")]
+transform = Transform3D(-0.48112345, 0, -1.3147324, 0, 1.4000001, 0, 1.3147324, 0, -0.48112345, 77.60975, -1.5066012, -38.003006)
 
 [node name="maisontexture20" parent="Objets" unique_id=1334688122 instance=ExtResource("8_e0nlv")]
-transform = Transform3D(-0.5287281, 0, -1.2963204, 0, 1.4, 0, 1.2963204, 0, -0.5287281, 38.2491, -1.5066012, -54.483414)
+transform = Transform3D(-0.47151917, 0, -1.318207, 0, 1.3999999, 0, 1.318207, 0, -0.47151917, 37.757805, -1.5066012, -52.02688)
 
 [node name="maisontexture21" parent="Objets" unique_id=1163852493 instance=ExtResource("8_e0nlv")]
-transform = Transform3D(-0.24048397, 0, -1.379191, 0, 1.4, 0, 1.379191, 0, -0.24048397, 29.916489, -1.5066012, -56.599648)
+transform = Transform3D(-0.4316243, 0, -1.3318036, 0, 1.4, 0, 1.3318036, 0, -0.4316243, 28.523445, -1.5066012, -55.518772)
 
 [node name="maisontexture13" parent="Objets" unique_id=1606986401 instance=ExtResource("8_e0nlv")]
-transform = Transform3D(-0.52345216, 0, -1.29846, 0, 1.4, 0, 1.29846, 0, -0.52345216, 27.138954, -1.5066012, -0.12295723)
+transform = Transform3D(-0.52345216, 0, -1.29846, 0, 1.4, 0, 1.29846, 0, -0.52345216, 26.220558, -1.5066012, 3.5506043)
 
 [node name="maisontexture3" parent="Objets" unique_id=320989904 instance=ExtResource("8_e0nlv")]
 transform = Transform3D(0.502787, 0, 1.3066007, 0, 1.4, 0, -1.3066007, 0, 0.502787, 3.9765358, -1.5066012, -34.552612)
 
 [node name="maisontexture9" parent="Objets" unique_id=2086940036 instance=ExtResource("8_e0nlv")]
-transform = Transform3D(-1.399865, 0, 0.019449204, 0, 1.4000001, 0, -0.019449204, 0, -1.399865, 1.8851314, -1.5066012, -11.777849)
+transform = Transform3D(-1.3250175, 0, 0.45202768, 0, 1.4000002, 0, -0.45202768, 0, -1.3250175, 1.8851314, -1.5066012, -10.51506)
 
 [node name="maisontexture10" parent="Objets" unique_id=141744074 instance=ExtResource("8_e0nlv")]
-transform = Transform3D(1.3403533, 0, -0.40429363, 0, 1.4000002, 0, 0.40429363, 0, 1.3403533, -10.415421, -1.5066012, -5.1646557)
+transform = Transform3D(1.2932163, 0, -0.53627604, 0, 1.4000002, 0, 0.53627604, 0, 1.2932163, -10.415421, -1.5066012, -6.1978397)
 
 [node name="maisontexture11" parent="Objets" unique_id=1453756010 instance=ExtResource("8_e0nlv")]
-transform = Transform3D(1.3403533, 0, -0.40429363, 0, 1.4000002, 0, 0.40429363, 0, 1.3403533, -13.192955, -1.5066012, 3.0357056)
+transform = Transform3D(1.2863369, 0, -0.55257416, 0, 1.4000002, 0, 0.55257416, 0, 1.2863369, -14.340935, -1.5066012, 2.4617195)
 
 [node name="maisontexture6" parent="Objets" unique_id=1588934854 instance=ExtResource("8_e0nlv")]
 transform = Transform3D(1.3277851, 0, -0.44383258, 0, 1.4, 0, 0.44383258, 0, 1.3277851, 3.0731597, -1.5066012, -43.486332)
 
-[node name="maisontexture22" parent="Objets" unique_id=526783394 instance=ExtResource("8_e0nlv")]
+[node name="maisontexture22" parent="Objets" unique_id=1773854119 instance=ExtResource("8_e0nlv")]
 transform = Transform3D(1.3277851, 0, -0.44383258, 0, 1.4, 0, 0.44383258, 0, 1.3277851, 6.3170714, -1.5066012, -53.35321)
 
 [node name="maisontexture7" parent="Objets" unique_id=201669600 instance=ExtResource("8_e0nlv")]
-transform = Transform3D(-0.4576431, 0, -1.3230888, 0, 1.4, 0, 1.3230888, 0, -0.4576431, 21.119682, -1.5066012, -60.409744)
+transform = Transform3D(-0.4576431, 0, -1.3230888, 0, 1.4, 0, 1.3230888, 0, -0.4576431, 17.119682, -1.5066012, -59.409744)
 
 [node name="Interractable3" parent="Objets" unique_id=260801796 instance=ExtResource("2_gphh5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.9999995, 1.3362136, 0.896065)
@@ -259,31 +265,37 @@ mesh = SubResource("SphereMesh_gmgko")
 surface_material_override/0 = SubResource("StandardMaterial3D_l8jxy")
 
 [node name="maisontexture2" parent="Objets" unique_id=1251426052 instance=ExtResource("12_5f2gp")]
-transform = Transform3D(1.0669924, 0, -0.9063812, 0, 1.3999999, 0, 0.9063812, 0, 1.0669924, -8.324163, -1.5107809, -14.324546)
+transform = Transform3D(1.3021631, 0, -0.51417, 0, 1.3999999, 0, 0.51417, 0, 1.3021631, -6.6021786, -1.5107809, -14.209744)
 
 [node name="maisontexture4" parent="Objets" unique_id=466808298 instance=ExtResource("12_5f2gp")]
-transform = Transform3D(0.51755464, 0, 1.3008217, 0, 1.4, 0, -1.3008217, 0, 0.51755464, 26.454494, -1.5107809, -24.589504)
+transform = Transform3D(0.5129881, 2.1468176e-10, 1.3026294, -7.9014885e-11, 1.4, -1.9961223e-10, -1.3026294, -3.7569893e-13, 0.5129881, 27.73397, -1.5107809, -24.097395)
+
+[node name="maisontexture26" parent="Objets" unique_id=349189546 instance=ExtResource("12_5f2gp")]
+transform = Transform3D(0.5129881, 2.1468176e-10, 1.3026294, -7.9014885e-11, 1.4, -1.9961223e-10, -1.3026294, -3.7569893e-13, 0.5129881, 94.11147, -1.5107809, -30.032333)
+
+[node name="maisontexture23" parent="Objets" unique_id=1243665116 instance=ExtResource("12_5f2gp")]
+transform = Transform3D(0.51755464, 0, 1.3008217, 0, 1.4, 0, -1.3008217, 0, 0.51755464, 19.663425, -1.5107809, -27.738985)
 
 [node name="maisontexture18" parent="Objets" unique_id=1918348914 instance=ExtResource("12_5f2gp")]
-transform = Transform3D(-1.3882672, 0, 0.18087119, 0, 1.4000001, 0, -0.18087119, 0, -1.3882672, 49.35646, -1.5107809, -43.99461)
+transform = Transform3D(-1.3402826, 0, 0.4045276, 0, 1.4, 0, -0.4045276, 0, -1.3402826, 44.34513, -1.5107809, -47.532024)
 
 [node name="maisontexture19" parent="Objets" unique_id=1562413619 instance=ExtResource("12_5f2gp")]
-transform = Transform3D(-0.781938, 0, -1.161281, 0, 1.4000002, 0, 1.161281, 0, -0.781938, 46.446655, -1.5107809, -51.798187)
+transform = Transform3D(-0.4423027, 0, -1.3282955, 0, 1.4000001, 0, 1.3282955, 0, -0.4423027, 68.94851, -1.5107809, -41.087704)
 
 [node name="maisontexture12" parent="Objets" unique_id=729528372 instance=ExtResource("12_5f2gp")]
-transform = Transform3D(0.5946976, 0, -1.2674127, 0, 1.4, 0, 1.2674127, 0, 0.5946976, 18.009907, -1.5107809, -3.2573338)
+transform = Transform3D(-0.51146466, 0, -1.3032284, 0, 1.4, 0, 1.3032284, 0, -0.51146466, 17.780308, -1.5107809, -1.190958)
 
 [node name="maisontexture14" parent="Objets" unique_id=220874325 instance=ExtResource("12_5f2gp")]
-transform = Transform3D(-0.6573683, 0, -1.2360692, 0, 1.4, 0, 1.2360692, 0, -0.6573683, 36.65912, -1.5107809, 3.0913353)
+transform = Transform3D(-0.4936992, -4.5178686e-10, -1.3100615, -1.6149143e-10, 1.3999999, -4.2194467e-10, 1.3100615, 2.3229977e-12, -0.4936992, 35.28154, -1.5107809, 7.5684853)
 
 [node name="maisontexture15" parent="Objets" unique_id=150626914 instance=ExtResource("12_5f2gp")]
-transform = Transform3D(-0.364447, 0, -1.3517317, 0, 1.4, 0, 1.3517317, 0, -0.364447, 50.54682, -1.5107809, 8.64642)
+transform = Transform3D(-0.55185574, 0, -1.286645, 0, 1.3999999, 0, 1.286645, 0, -0.55185574, 44.232887, -1.5107809, 11.975582)
 
 [node name="maisontexture5" parent="Objets" unique_id=176974487 instance=ExtResource("12_5f2gp")]
-transform = Transform3D(0.4783232, 3.8557088e-10, 1.3157533, -1.3287556e-10, 1.3999999, -3.6195374e-10, -1.3157533, -1.2146382e-12, 0.4783232, 12.762539, -1.5107809, -30.74979)
+transform = Transform3D(0.4783232, 3.8557088e-10, 1.3157533, -1.3287556e-10, 1.3999999, -3.6195374e-10, -1.3157533, -1.2146382e-12, 0.4783232, 11.483059, -1.5107809, -30.946632)
 
 [node name="maisontexture8" parent="Objets" unique_id=624152388 instance=ExtResource("12_5f2gp")]
-transform = Transform3D(-0.5142156, 0, -1.3021452, 0, 1.3999999, 0, 1.3021452, 0, -0.5142156, 9.438549, -1.5107809, -64.031006)
+transform = Transform3D(-0.5142156, 0, -1.3021452, 0, 1.3999999, 0, 1.3021452, 0, -0.5142156, 9.242023, -1.5107809, -62.655346)
 
 [node name="Tower" parent="Objets" unique_id=472412556 instance=ExtResource("12_clt24")]
 transform = Transform3D(-0.99596, 0, 0.08979818, 0, 1, 0, -0.08979818, 0, -0.99596, 16.371477, 0, -21.969511)
