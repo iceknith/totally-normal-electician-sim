@@ -126,15 +126,21 @@ scale = Vector2(4, 4)
 texture = ExtResource("4_7t0ye")
 stretch_mode = 2
 
-[node name="MovingContainer" type="PanelContainer" parent="MarginContainer/GamesContainer" unique_id=746472576]
-clip_contents = true
+[node name="MovingContainer" type="Control" parent="MarginContainer/GamesContainer" unique_id=1030260395]
 custom_minimum_size = Vector2(450, 500)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 
 [node name="MovingSection" parent="MarginContainer/GamesContainer/MovingContainer" unique_id=5641690 instance=ExtResource("4_a2g5q")]
-layout_mode = 2
+texture_filter = 1
+layout_mode = 0
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_right = 450.0
+offset_bottom = 500.0
+scale = Vector2(4, 4)
 ring_radius = 100.0
 ring_speed = 20.0
 player_radius = 15.0

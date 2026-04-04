@@ -72,5 +72,5 @@ func _process(delta: float) -> void:
 
 func reset() -> void:
 	$BaseRect.position.y = 0
-	$BaseRect.texture = cube_can_be_touched_text
+	$BaseRect.texture = cube_base_text
 	current_cube_touched = false
