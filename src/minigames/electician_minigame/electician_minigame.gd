@@ -21,7 +21,7 @@ signal win
 
 @onready var stage:Stages = GlobalVars.electrician_minigame_current_stage
 @export var tutorialTexts:Dictionary[Stages, String] = {
-	Stages.TutorialWires : "Connectez les fils de la même couleur avec [clic gauche]\n-\nDéconnectez les fils avec [clic droit]",
+	Stages.TutorialWires : "Connectez les fils de la même couleur avec [clic gauche]\n-\nDéconnectez les fils avec [clic droit]\n-\nIl est possible de croiser les fils en diagonale",
 	Stages.TutorialMovingCircle : "Faites attention à ne pas déclencher un court circuit !\n-\nPour celà, restez dans le grand cercle en vous déplaçant avec vos contrôles de mouvement.",
 	Stages.TutorialTiming : "Attention à ne pas vous éléctriser !\n-\nPour celà, appuyez sur [Espace] lorsque le cube rouge devient rose."
 }

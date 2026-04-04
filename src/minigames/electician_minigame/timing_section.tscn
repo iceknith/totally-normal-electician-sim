@@ -1,12 +1,74 @@
 [gd_scene format=3 uid="uid://dxl4itljpgtn5"]
 
 [ext_resource type="Script" uid="uid://diwmooysjedux" path="res://src/minigames/electician_minigame/timing_section.gd" id="1_gb6ir"]
+[ext_resource type="Texture2D" uid="uid://cr4b6xgaxfsh3" path="res://assets/pixelart/tubeMinigameContainer.png" id="1_ydici"]
+[ext_resource type="Texture2D" uid="uid://cpv8s5ypdvlgf" path="res://assets/pixelart/baseBubble.png" id="2_es1jp"]
+[ext_resource type="Texture2D" uid="uid://c1wjhty5q3o2k" path="res://assets/pixelart/tubeMinigameContainerOutline.png" id="3_7ayf5"]
+[ext_resource type="Texture2D" uid="uid://r14dr1h4t38i" path="res://assets/pixelart/canBeTouchedBubble.png" id="4_f0nen"]
+[ext_resource type="Texture2D" uid="uid://wuu41gmymw5" path="res://assets/pixelart/validatedBubble.png" id="5_aske6"]
+[ext_resource type="Texture2D" uid="uid://dmtrnsw0yl4tm" path="res://assets/pixelart/failesBubble.png" id="6_djlht"]
 
-[node name="TimingSection" type="Control" unique_id=746000392]
-layout_mode = 3
+[node name="TimingSection" type="NinePatchRect" unique_id=399789398]
+clip_children = 2
+texture_filter = 1
+clip_contents = true
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -1136.0
+offset_bottom = -259.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_ydici")
+patch_margin_left = 10
+patch_margin_top = 6
+patch_margin_right = 3
+patch_margin_bottom = 8
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+script = ExtResource("1_gb6ir")
+cube_base_text = ExtResource("2_es1jp")
+cube_can_be_touched_text = ExtResource("4_f0nen")
+cube_sucess_text = ExtResource("5_aske6")
+cube_failed_text = ExtResource("6_djlht")
+
+[node name="MockUpRect" type="NinePatchRect" parent="." unique_id=169906242]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 7.0
+offset_right = 14.0
+offset_bottom = 27.0
+texture = ExtResource("2_es1jp")
+patch_margin_left = 4
+patch_margin_top = 8
+patch_margin_right = 5
+patch_margin_bottom = 3
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+
+[node name="BaseRect" type="NinePatchRect" parent="." unique_id=180514280]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 7.0
+offset_right = 14.0
+offset_bottom = 27.0
+texture = ExtResource("2_es1jp")
+patch_margin_left = 4
+patch_margin_top = 8
+patch_margin_right = 5
+patch_margin_bottom = 3
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+
+[node name="Outline" type="NinePatchRect" parent="." unique_id=1308235297]
+layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_gb6ir")
+texture = ExtResource("3_7ayf5")
+patch_margin_top = 6
+patch_margin_bottom = 8
+axis_stretch_vertical = 1
+metadata/_edit_lock_ = true

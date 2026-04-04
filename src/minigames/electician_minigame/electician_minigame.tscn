@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://uaxvi0lb0o2m" path="res://src/minigames/electician_minigame/electician_minigame.gd" id="1_5ci1u"]
 [ext_resource type="Texture2D" uid="uid://cmcjq2rksef24" path="res://assets/pixelart/backgroundwires.png" id="2_a2g5q"]
 [ext_resource type="PackedScene" uid="uid://dxl4itljpgtn5" path="res://src/minigames/electician_minigame/timing_section.tscn" id="3_nmo0h"]
+[ext_resource type="Texture2D" uid="uid://c0dvn55rjo3t3" path="res://assets/pixelart/bar.png" id="4_7t0ye"]
 [ext_resource type="PackedScene" uid="uid://dogrjgdvi4jl4" path="res://src/minigames/electician_minigame/moving_section.tscn" id="4_a2g5q"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_a2g5q"]
@@ -41,7 +42,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0, 0, 0, 1)
+color = Color(0.08235294, 0.08235294, 0.15294118, 1)
 
 [node name="MarginContainer" type="MarginContainer" parent="." unique_id=94672229]
 layout_mode = 1
@@ -100,22 +101,37 @@ offset_top = 13.0
 offset_right = 112.0
 offset_bottom = 112.0
 
-[node name="TimingContainer" type="PanelContainer" parent="MarginContainer/GamesContainer" unique_id=1620937927]
-clip_contents = true
-custom_minimum_size = Vector2(50, 500)
+[node name="TimingContainer" type="Control" parent="MarginContainer/GamesContainer" unique_id=246739791]
+texture_filter = 1
+custom_minimum_size = Vector2(60, 500)
 layout_mode = 2
 size_flags_horizontal = 4
+size_flags_vertical = 4
 
 [node name="TimingSection" parent="MarginContainer/GamesContainer/TimingContainer" unique_id=746000392 instance=ExtResource("3_nmo0h")]
-layout_mode = 2
+layout_mode = 1
+offset_right = -44.0
+offset_bottom = -375.0
+scale = Vector2(4, 4)
 cube_travel_duration = 7.5
 cube_duration = 1.5
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/GamesContainer/TimingContainer" unique_id=857863525]
+layout_mode = 0
+offset_left = -12.0
+offset_top = 230.0
+offset_right = 10.0
+offset_bottom = 240.0
+scale = Vector2(4, 4)
+texture = ExtResource("4_7t0ye")
+stretch_mode = 2
 
 [node name="MovingContainer" type="PanelContainer" parent="MarginContainer/GamesContainer" unique_id=746472576]
 clip_contents = true
 custom_minimum_size = Vector2(450, 500)
 layout_mode = 2
-size_flags_horizontal = 6
+size_flags_horizontal = 4
+size_flags_vertical = 4
 
 [node name="MovingSection" parent="MarginContainer/GamesContainer/MovingContainer" unique_id=5641690 instance=ExtResource("4_a2g5q")]
 layout_mode = 2
