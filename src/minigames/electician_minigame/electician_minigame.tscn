@@ -36,6 +36,7 @@ cables_required = 3
 metadata/_custom_type_script = "uid://dd5w2ptvu7pou"
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1525369528]
+z_index = -10
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -109,6 +110,7 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 
 [node name="TimingSection" parent="MarginContainer/GamesContainer/TimingContainer" unique_id=746000392 instance=ExtResource("3_nmo0h")]
+process_mode = 4
 layout_mode = 1
 offset_right = -44.0
 offset_bottom = -375.0
@@ -133,20 +135,19 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 
 [node name="MovingSection" parent="MarginContainer/GamesContainer/MovingContainer" unique_id=5641690 instance=ExtResource("4_a2g5q")]
-texture_filter = 1
+process_mode = 4
 layout_mode = 0
 anchors_preset = 0
 anchor_right = 0.0
 anchor_bottom = 0.0
-offset_right = 450.0
-offset_bottom = 500.0
-scale = Vector2(4, 4)
-ring_radius = 100.0
-ring_speed = 20.0
-player_radius = 15.0
+offset_right = 112.5
+offset_bottom = 125.0
+grow_horizontal = 1
+grow_vertical = 1
 player_acceleration = 50.0
 
 [node name="CableValidated" type="Label" parent="MarginContainer" unique_id=1553075054]
+z_index = 10
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0
@@ -154,6 +155,7 @@ text = "xx/xx"
 label_settings = SubResource("LabelSettings_a2g5q")
 
 [node name="Exit" type="Button" parent="MarginContainer" unique_id=1598856706]
+z_index = 10
 layout_mode = 2
 size_flags_horizontal = 8
 size_flags_vertical = 0
@@ -161,6 +163,7 @@ theme_override_font_sizes/font_size = 24
 text = " Exit "
 
 [node name="YayLabel" type="Label" parent="." unique_id=136798406]
+z_index = 10
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -181,6 +184,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="WinLabel" type="Label" parent="." unique_id=1628073265]
+z_index = 10
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -199,6 +203,7 @@ text = "You win !!!"
 label_settings = SubResource("LabelSettings_3uqwc")
 
 [node name="Loselabel" type="Label" parent="." unique_id=299981627]
+z_index = 10
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -239,6 +244,7 @@ theme_override_constants/margin_right = 10
 theme_override_constants/margin_bottom = 10
 
 [node name="InfoLabel" type="Label" parent="InfoContainer/MarginContainer" unique_id=1498374110]
+z_index = 10
 custom_minimum_size = Vector2(400, 0)
 layout_mode = 2
 text = "Connectez les fils de la même couleur avec [clic gauche]
