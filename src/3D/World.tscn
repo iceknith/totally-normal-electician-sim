@@ -14,6 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://cw2thk87em2wo" path="res://assets/blender/maisontexture2.blend" id="12_5f2gp"]
 [ext_resource type="PackedScene" uid="uid://cng5vwx5qm31h" path="res://src/3D/objects/tower.tscn" id="12_clt24"]
 [ext_resource type="Script" uid="uid://c4gbdbfsdgnw7" path="res://src/shaders/shader_applyer.gd" id="12_e0nlv"]
+[ext_resource type="Script" uid="uid://cu2x3my63v3kw" path="res://addons/scene_object_brush/Brush.gd" id="13_clt24"]
 [ext_resource type="PackedScene" uid="uid://c6lu1xsiprij5" path="res://src/minigames/competitive_rock_paper_scissors/Rock Paper scissors.tscn" id="14_ivwwh"]
 [ext_resource type="PackedScene" uid="uid://d2b7b6sp2kyp2" path="res://src/2D/phase_visual_novel/boulangerie.tscn" id="14_lpsds"]
 
@@ -190,7 +191,7 @@ surface_material_override/0 = SubResource("StandardMaterial3D_l8jxy")
 transform = Transform3D(0.502787, 0, 1.3066007, 0, 1.4, 0, -1.3066007, 0, 0.502787, 35.951378, -1.5066012, -20.246092)
 
 [node name="maisontexture16" parent="Objets" unique_id=628891442 instance=ExtResource("8_e0nlv")]
-transform = Transform3D(-1.331192, 0, 0.4335066, 0.01031921, 1.3996032, 0.03168775, -0.43338376, 0.033325657, -1.3308148, 39.89276, -1.5066012, -28.77524)
+transform = Transform3D(-1.3278857, 0, 0.44353145, 0, 1.4000002, 0, -0.44353142, 0, -1.3278859, 39.89276, -1.5066012, -28.77524)
 
 [node name="maisontexture17" parent="Objets" unique_id=74730903 instance=ExtResource("8_e0nlv")]
 transform = Transform3D(-1.3585914, 0, 0.33797923, 0, 1.4, 0, -0.33797923, 0, -1.3585914, 42.12599, -1.5066012, -38.646046)
@@ -311,6 +312,11 @@ transform = Transform3D(-0.40041304, 0, -0.91633475, 0, 1, 0, 0.91633475, 0, -0.
 
 [node name="Tower5" parent="Objets" unique_id=1555162735 instance=ExtResource("12_clt24")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -39.812695, 0, 16.428236)
+
+[node name="Brush" type="Node3D" parent="Objets" unique_id=1755576046]
+script = ExtResource("13_clt24")
+brushDensity = 1
+metadata/_custom_type_script = "uid://cu2x3my63v3kw"
 
 [node name="ShaderCanvasLayer" type="CanvasLayer" parent="." unique_id=1482458820]
 
