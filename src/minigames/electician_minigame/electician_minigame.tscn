@@ -5,23 +5,37 @@
 [ext_resource type="PackedScene" uid="uid://dxl4itljpgtn5" path="res://src/minigames/electician_minigame/timing_section.tscn" id="3_nmo0h"]
 [ext_resource type="Texture2D" uid="uid://c0dvn55rjo3t3" path="res://assets/pixelart/bar.png" id="4_7t0ye"]
 [ext_resource type="PackedScene" uid="uid://dogrjgdvi4jl4" path="res://src/minigames/electician_minigame/moving_section.tscn" id="4_a2g5q"]
+[ext_resource type="FontFile" uid="uid://dhoixqrkemx30" path="res://assets/gui/ithaca-font/Ithaca-LVB75.ttf" id="6_gf3wi"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_a2g5q"]
-font_size = 24
+font = ExtResource("6_gf3wi")
+font_size = 36
+outline_size = 6
+outline_color = Color(0, 0, 0, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_7t0ye"]
+font = ExtResource("6_gf3wi")
 font_size = 100
 font_color = Color(1, 0.69803923, 0, 1)
+outline_size = 10
+outline_color = Color(0, 0, 0, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_3uqwc"]
-font_size = 125
+font = ExtResource("6_gf3wi")
+font_size = 150
 font_color = Color(1, 1, 0, 1)
+outline_size = 10
+outline_color = Color(0, 0, 0, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_gf3wi"]
-font_size = 125
-font_color = Color(1, 0, 0, 0.78431374)
+font = ExtResource("6_gf3wi")
+font_size = 150
+font_color = Color(1, 0, 0, 1)
+outline_size = 10
+outline_color = Color(0, 0, 0, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_nmo0h"]
+font = ExtResource("6_gf3wi")
 font_size = 36
 
 [node name="ElecticianMinigame" type="Control" unique_id=1566750814]
@@ -36,6 +50,7 @@ cables_required = 3
 metadata/_custom_type_script = "uid://dd5w2ptvu7pou"
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1525369528]
+visible = false
 z_index = -10
 layout_mode = 1
 anchors_preset = 15
@@ -110,7 +125,6 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 
 [node name="TimingSection" parent="MarginContainer/GamesContainer/TimingContainer" unique_id=746000392 instance=ExtResource("3_nmo0h")]
-process_mode = 4
 layout_mode = 1
 offset_right = -44.0
 offset_bottom = -375.0
@@ -135,7 +149,6 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 
 [node name="MovingSection" parent="MarginContainer/GamesContainer/MovingContainer" unique_id=5641690 instance=ExtResource("4_a2g5q")]
-process_mode = 4
 layout_mode = 0
 anchors_preset = 0
 anchor_right = 0.0
@@ -153,13 +166,15 @@ size_flags_horizontal = 0
 size_flags_vertical = 0
 text = "xx/xx"
 label_settings = SubResource("LabelSettings_a2g5q")
+horizontal_alignment = 1
 
 [node name="Exit" type="Button" parent="MarginContainer" unique_id=1598856706]
 z_index = 10
 layout_mode = 2
 size_flags_horizontal = 8
 size_flags_vertical = 0
-theme_override_font_sizes/font_size = 24
+theme_override_fonts/font = ExtResource("6_gf3wi")
+theme_override_font_sizes/font_size = 36
 text = " Exit "
 
 [node name="YayLabel" type="Label" parent="." unique_id=136798406]
@@ -201,6 +216,8 @@ pivot_offset_ratio = Vector2(0.5, 0.5)
 size_flags_horizontal = 4
 text = "You win !!!"
 label_settings = SubResource("LabelSettings_3uqwc")
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Loselabel" type="Label" parent="." unique_id=299981627]
 z_index = 10
@@ -220,6 +237,8 @@ pivot_offset_ratio = Vector2(0.5, 0.5)
 size_flags_horizontal = 4
 text = "Try again !"
 label_settings = SubResource("LabelSettings_gf3wi")
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="InfoContainer" type="PanelContainer" parent="." unique_id=785610125]
 layout_mode = 1

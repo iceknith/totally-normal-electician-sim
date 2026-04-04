@@ -33,6 +33,7 @@ var cables_validated:int:
 		cable_validated_label.text = "%d/%d" % [cables_validated, cables_required]
 
 func _ready() -> void:
+	super()
 	cables_validated = 0
 	connect_signals()
 	win_label.scale = Vector2.ZERO
@@ -114,8 +115,8 @@ func reset_cable():
 
 func end_game():
 	if cable_section: cable_section.process_mode = Node.PROCESS_MODE_DISABLED
-	if moving_section: cable_section.process_mode = Node.PROCESS_MODE_DISABLED
-	if timing_section: cable_section.process_mode = Node.PROCESS_MODE_DISABLED
+	if moving_section: moving_section.process_mode = Node.PROCESS_MODE_DISABLED
+	if timing_section: timing_section.process_mode = Node.PROCESS_MODE_DISABLED
 	
 	var tween = create_tween()
 	tween.set_ease(Tween.EASE_IN_OUT).set_trans(Tween.TRANS_CIRC)

@@ -2,13 +2,14 @@
 
 [ext_resource type="Script" uid="uid://bf13x6omc7ij8" path="res://src/main.gd" id="1_gh0ne"]
 [ext_resource type="PackedScene" uid="uid://csincrgfh0ug4" path="res://src/3D/World.tscn" id="2_5q4o7"]
+[ext_resource type="PackedScene" uid="uid://gturm7g46hmh" path="res://src/ui/game_overlay.tscn" id="3_5q4o7"]
 
 [sub_resource type="Curve" id="Curve_gh0ne"]
-_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.7502959, 0.29907334), 0.88396657, 0.88396657, 0, 0, Vector2(1, 1), 2.47858, 0.0, 0, 0]
-point_count = 3
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.2532751, 0), 0.0, 0.0, 0, 0, Vector2(0.5, 0.005), 0.0, 0.0, 0, 0, Vector2(0.7838428, 0.19084913), 1.5256113, 1.5256113, 0, 0, Vector2(1, 1), 2.47858, 0.0, 0, 0]
+point_count = 5
 
 [sub_resource type="Curve" id="Curve_5q4o7"]
-_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.24206349, 0), 0.0, 0.0, 0, 0, Vector2(0.8016529, 0.18749994), 0.0, 0.0, 0, 0, Vector2(1, 1), 3.5207047, 0.0, 0, 0]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.24206349, 0), 0.0, 0.0, 0, 0, Vector2(0.79694325, 0.18013185), 0.889271, 0.889271, 0, 0, Vector2(1, 1), 3.5207047, 0.0, 0, 0]
 point_count = 4
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_gh0ne"]
@@ -28,7 +29,8 @@ mouse_jitter_noise = SubResource("FastNoiseLite_gh0ne")
 [node name="World" parent="." unique_id=600883011 instance=ExtResource("2_5q4o7")]
 
 [node name="HUD" type="CanvasLayer" parent="." unique_id=410458702]
-layer = 2
+
+[node name="GameOverlay" parent="HUD" unique_id=1667571156 instance=ExtResource("3_5q4o7")]
 
 [node name="Minigames" type="Control" parent="HUD" unique_id=1934620589]
 layout_mode = 3

@@ -140,7 +140,7 @@ func _process(delta: float) -> void:
 ### Mouse jitter ###
 
 func mouse_jitter_handler(delta:float) -> void:
-	if has_mouse_jitter:
+	if has_mouse_jitter && mouse_jitter_intensity_curve.sample(eow_meter) > 0:
 		mouse_noise_pos += delta * mouse_jitter_speed * mouse_jitter_speed_curve.sample(eow_meter)
 		var rand_dir:Vector2 = Vector2(
 			mouse_jitter_noise.get_noise_2d(mouse_noise_pos, 0),

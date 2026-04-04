@@ -33,6 +33,7 @@ player_acceleration = 10.0
 metadata/_edit_lock_ = true
 
 [node name="PinceLower" type="TextureRect" parent="Pince" unique_id=465409291]
+modulate = Color(1, 1, 1, 0.39215687)
 z_index = -1
 offset_left = -19.5
 offset_top = -24.099998
