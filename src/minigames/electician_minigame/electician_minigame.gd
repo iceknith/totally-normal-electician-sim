@@ -108,7 +108,7 @@ func on_minigame_failed():
 func reset_cable():
 	if cable_section: cable_section.queue_free()
 	cable_section = load("res://src/minigames/electician_minigame/cableSection.tscn").instantiate()
-	get_node("MarginContainer/GamesContainer/PanelContainer/MarginContainer").add_child(cable_section)
+	get_node("MarginContainer/GamesContainer/PanelContainer/SubViewportContainer/CableViewport/Container").add_child(cable_section)
 	cable_section.completed.connect(on_cable_validated)
 
 func end_game():

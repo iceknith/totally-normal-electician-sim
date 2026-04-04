@@ -31,13 +31,11 @@ var current_circle_pos:Vector2
 
 func _ready() -> void:
 	cell_size = size/grid_size
-	circle_size = min(cell_size.x, cell_size.y)
-	circle_size -= circle_size*min_border_perc
+	#circle_size = min(cell_size.x, cell_size.y)
+	#circle_size -= circle_size*min_border_perc
+	circle_size = 12 # Pixel perfect logic
 	border_size = cell_size - circle_size*Vector2.ONE
-	border_size += border_size/grid_size
-	
-	$Container.add_theme_constant_override("h_separation", border_size.x)
-	$Container.add_theme_constant_override("v_separation", border_size.y)
+	border_size += border_size/(grid_size-Vector2.ONE)
 	
 	# Create buttons
 	var image:TextureRect = TextureRect.new()
@@ -62,6 +60,10 @@ func _ready() -> void:
 		var new_cable = cable.duplicate()
 		new_cable.width = cable_width
 		new_cable.texture = cable_textures[c]
+		new_cable.joint_mode = Line2D.LINE_JOINT_ROUND
+		new_cable.begin_cap_mode = Line2D.LINE_CAP_ROUND
+		new_cable.end_cap_mode = Line2D.LINE_CAP_ROUND
+		new_cable.antialiased = true
 		new_cable.texture_mode = Line2D.LINE_TEXTURE_TILE
 		new_cable.texture_repeat = CanvasItem.TEXTURE_REPEAT_ENABLED
 		add_child(new_cable)
@@ -138,10 +140,12 @@ func remove_temp_marks():
 				set_circle_color(pos, -1)
 
 func _draw() -> void:
+	"
 	# Debugging stuff:
 	for x in grid_size.x:
 		for y in grid_size.y:
 			draw_circle(get_screen_pos_centered(Vector2(x,y)), circle_size/2, Color.WEB_GRAY)
+	"
 
 func _process(_delta: float) -> void:
 	if current_state == States.Idle:
@@ -152,14 +156,15 @@ func _process(_delta: float) -> void:
 func get_circle_pos(pos:Vector2)->Vector2:
 	pos.x = clamp(pos.x, 0, size.x)
 	pos.y = clamp(pos.y, 0, size.y)
-	var circle_pos = round((pos - cell_size/2)/cell_size)
-	if (circle_pos*cell_size + cell_size/4).distance_squared_to(pos) <= (circle_size/2)**2 && \
+	var applicable_cell_size:Vector2 = (border_size + circle_size*Vector2.ONE)
+	var circle_pos = round(pos/applicable_cell_size)
+	if (circle_pos*applicable_cell_size + circle_size*Vector2.ONE/2).distance_squared_to(pos) <= (circle_size/2)**2 && \
 		circle_pos.x < grid_size.x && circle_pos.y < grid_size.y:
 		return circle_pos
 	return -Vector2.ONE
 
 func get_screen_pos(circle_pos:Vector2)->Vector2:
-	return border_size * circle_pos
+	return (border_size + circle_size*Vector2.ONE) * circle_pos
 
 func get_screen_pos_centered(circle_pos:Vector2)->Vector2:
 	return get_screen_pos(circle_pos) + circle_size/2*Vector2.ONE
@@ -207,7 +212,7 @@ func cable_selected_handler():
 			current_cable.add_point(get_local_mouse_position())
 			current_circle_pos = circle_pos
 			
-			#images[circle_pos.x][circle_pos.y].texture = button_textures[current_color]
+			images[circle_pos.x][circle_pos.y].texture = button_textures[current_color]
 			set_circle_color(circle_pos, -2-current_color)
 		
 		elif circle_color == current_color && start_circle_pos != circle_pos:
@@ -237,7 +242,7 @@ func unvalidate_path(color_index:int):
 		var circle_color:int = get_circle_color(circle_pos)
 		if circle_color == -2-color_index:
 			set_circle_color(circle_pos, -1)
-			#images[circle_pos.x][circle_pos.y].texture = null
+			images[circle_pos.x][circle_pos.y].texture = null
 		elif circle_color == -2-color_count-color_index:
 			set_circle_color(circle_pos, color_index)
 	current_cable.clear_points()
