@@ -1,15 +1,72 @@
 [gd_scene format=3 uid="uid://dogrjgdvi4jl4"]
 
 [ext_resource type="Script" uid="uid://baguoa50vbb1k" path="res://src/minigames/electician_minigame/moving_section.gd" id="1_uiap2"]
+[ext_resource type="Texture2D" uid="uid://lq83ysv3v3ue" path="res://assets/pixelart/wrenchFINALEFINALE.png" id="2_idpff"]
+[ext_resource type="Texture2D" uid="uid://dijine1j62jtx" path="res://assets/pixelart/wrenchbakground.png" id="2_jbgpy"]
+[ext_resource type="Texture2D" uid="uid://dpagxl658s2jr" path="res://assets/pixelart/bolt.png" id="3_2mibk"]
 
-[sub_resource type="FastNoiseLite" id="FastNoiseLite_uiap2"]
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_jbgpy"]
+fractal_type = 0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_so6mj"]
+radius = 6.005206
 
 [node name="MovingSection" type="Control" unique_id=5641690]
+texture_filter = 1
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_right = -1052.0
+offset_bottom = -523.0
 grow_horizontal = 2
 grow_vertical = 2
+scale = Vector2(4, 4)
 script = ExtResource("1_uiap2")
-ring_direction_noise = SubResource("FastNoiseLite_uiap2")
+bolt_speed = 2.0
+bolt_acceleration = 1.0
+bolt_direction_noise = SubResource("FastNoiseLite_jbgpy")
+player_speed = 20.0
+player_acceleration = 10.0
+
+[node name="Pince" type="Area2D" parent="." unique_id=164255609]
+metadata/_edit_lock_ = true
+
+[node name="PinceLower" type="TextureRect" parent="Pince" unique_id=465409291]
+modulate = Color(1, 1, 1, 0.39215687)
+z_index = -1
+offset_left = -19.5
+offset_top = -24.099998
+offset_right = 155.5
+offset_bottom = 151.9
+texture = ExtResource("2_jbgpy")
+metadata/_edit_lock_ = true
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Pince" unique_id=1604279268]
+z_index = 86
+position = Vector2(-19.5, -24.099998)
+polygon = PackedVector2Array(12.5, 7.0999985, 26.25, 13.099998, 34.5, 16.349998, 36.5, 22.099998, 36.5, 24.849998, 30.5, 40.85, 19.5, 42.1, 0.5, 33.35, -5.75, 30.099998, 0.5, 17.099998, -7.5, 13.349998, -16.75, 32.6, 31.25, 53.1, 46.5, 10.849998, 1.25, -7.1500015, -7.5, 12.849998, 1, 16.099998, 6.25, 4.5999985)
+metadata/_edit_lock_ = true
+
+[node name="PinceUpper" type="TextureRect" parent="Pince" unique_id=386143214]
+z_index = 1
+offset_left = -19.5
+offset_top = -24.099998
+offset_right = 155.5
+offset_bottom = 151.9
+texture = ExtResource("2_idpff")
+stretch_mode = 2
+metadata/_edit_lock_ = true
+
+[node name="Bolt" type="Area2D" parent="." unique_id=779320951]
+position = Vector2(-9.5, -3.75)
+
+[node name="Sprite2D" type="Sprite2D" parent="Bolt" unique_id=149649056]
+texture = ExtResource("3_2mibk")
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bolt" unique_id=1155367991]
+shape = SubResource("CircleShape2D_so6mj")
+metadata/_edit_lock_ = true
+
+[connection signal="area_entered" from="Pince" to="." method="_on_pince_area_entered"]

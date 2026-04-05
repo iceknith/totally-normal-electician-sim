@@ -18,6 +18,7 @@ var eow_meter:float = 0:
 
 func _ready() -> void:
 	GlobalVars.tower_amount = count_towers(self)
+	print(GlobalVars.tower_amount)
 
 func update_eow():
 	$Sun.rotation_degrees.x = sunStartAngle * (1 - eow_meter) + sunEndAngle * eow_meter
@@ -32,6 +33,6 @@ func count_towers(node:Node) -> int:
 	if node:
 		for child in node.get_children():
 			if child as Tower: result += 1
-			else: count_towers(child)
+			else: result += count_towers(child)
 		
 	return result

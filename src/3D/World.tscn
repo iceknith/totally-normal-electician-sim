@@ -313,6 +313,24 @@ transform = Transform3D(-0.40041304, 0, -0.91633475, 0, 1, 0, 0.91633475, 0, -0.
 [node name="Tower5" parent="Objets" unique_id=1555162735 instance=ExtResource("12_clt24")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -39.812695, 0, 16.428236)
 
+[node name="Tower6" parent="Objets" unique_id=1220917605 instance=ExtResource("12_clt24")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.802067, 0, 48.05307)
+
+[node name="Tower7" parent="Objets" unique_id=395719431 instance=ExtResource("12_clt24")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -31.416729, 0, 80.0977)
+
+[node name="Tower8" parent="Objets" unique_id=1601223618 instance=ExtResource("12_clt24")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 45.495647, 0, 2.0430527)
+
+[node name="Tower9" parent="Objets" unique_id=1654724301 instance=ExtResource("12_clt24")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 101.65692, 0, -8.427695)
+
+[node name="Tower10" parent="Objets" unique_id=473473871 instance=ExtResource("12_clt24")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 66.24675, 0, -64.39859)
+
+[node name="Tower11" parent="Objets" unique_id=1555346870 instance=ExtResource("12_clt24")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -121.465164, 0, -5.952797)
+
 [node name="Brush" type="Node3D" parent="Objets" unique_id=1755576046]
 script = ExtResource("13_clt24")
 brushDensity = 1
