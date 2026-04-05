@@ -5,15 +5,22 @@
 [ext_resource type="Texture2D" uid="uid://ccubsulhsdhv4" path="res://assets/map.png" id="1_l8jxy"]
 [ext_resource type="PackedScene" uid="uid://i72vcloe75tq" path="res://src/3D/interactables/interractable.tscn" id="2_gphh5"]
 [ext_resource type="Script" uid="uid://guu6r2nuivha" path="res://src/3D/interactables/minigameLaunchInterractable.gd" id="3_kp6b0"]
-[ext_resource type="PackedScene" uid="uid://dtparhw6m7xuv" path="res://assets/blender/tour.blend" id="6_awi42"]
+[ext_resource type="PackedScene" uid="uid://c216ifvuuy6o7" path="res://assets/blender/map.blend" id="4_jqxng"]
 [ext_resource type="PackedScene" uid="uid://bgwp5tg6h76il" path="res://src/minigames/electician_minigame/electician_minigame.tscn" id="6_jqxng"]
-[ext_resource type="PackedScene" uid="uid://dnr2njhip2tbd" path="res://assets/blender/building3.blend" id="7_sm7yd"]
-[ext_resource type="PackedScene" uid="uid://djk16qy185471" path="res://assets/blender/building2.blend" id="8_00xeg"]
+[ext_resource type="PackedScene" uid="uid://72l0c20pg0ko" path="res://assets/blender/maisontexture1.blend" id="8_e0nlv"]
 [ext_resource type="Shader" uid="uid://d1mpjujlwkwhw" path="res://src/shaders/vhsTape.gdshader" id="10_23vqn"]
 [ext_resource type="Texture2D" uid="uid://pm28ohtf0hcf" path="res://assets/misc/screenshot_temp.png" id="10_jqxng"]
 [ext_resource type="Texture2D" uid="uid://85pcyxjjdgpl" path="res://assets/misc/ditherMatrix/arcade.png" id="11_ivkb3"]
+[ext_resource type="PackedScene" uid="uid://cw2thk87em2wo" path="res://assets/blender/maisontexture2.blend" id="12_5f2gp"]
+[ext_resource type="PackedScene" uid="uid://cng5vwx5qm31h" path="res://src/3D/objects/tower.tscn" id="12_clt24"]
 [ext_resource type="Script" uid="uid://c4gbdbfsdgnw7" path="res://src/shaders/shader_applyer.gd" id="12_e0nlv"]
+[ext_resource type="Script" uid="uid://cu2x3my63v3kw" path="res://addons/scene_object_brush/Brush.gd" id="13_clt24"]
 [ext_resource type="PackedScene" uid="uid://c6lu1xsiprij5" path="res://src/minigames/competitive_rock_paper_scissors/Rock Paper scissors.tscn" id="14_ivwwh"]
+[ext_resource type="PackedScene" uid="uid://d2b7b6sp2kyp2" path="res://src/2D/phase_visual_novel/boulangerie.tscn" id="14_lpsds"]
+
+[sub_resource type="Curve" id="Curve_w7gwu"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1, 1), 2.0254266, 0.0, 0, 0]
+point_count = 2
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_bntx6"]
 
@@ -24,19 +31,16 @@ albedo_texture = ExtResource("1_l8jxy")
 material = SubResource("StandardMaterial3D_awi42")
 size = Vector2(496, 350.8)
 
-[sub_resource type="SphereMesh" id="SphereMesh_gmgko"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_l8jxy"]
-albedo_color = Color(0.65882355, 0, 0.62352943, 1)
-
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_00xeg"]
+sky_top_color = Color(0.65125984, 0.10719591, 0.14904715, 1)
+sky_horizon_color = Color(0.037180744, 0.03726213, 0.21720988, 1)
 
-[sub_resource type="Sky" id="Sky_jqxng"]
+[sub_resource type="Sky" id="Sky_co47k"]
 sky_material = SubResource("ProceduralSkyMaterial_00xeg")
 
 [sub_resource type="Environment" id="Environment_00xeg"]
 background_mode = 2
-sky = SubResource("Sky_jqxng")
+sky = SubResource("Sky_co47k")
 ambient_light_source = 3
 reflected_light_source = 2
 fog_depth_curve = 6.4980483
@@ -45,6 +49,13 @@ fog_depth_curve = 6.4980483
 auto_exposure_scale = 0.3
 dof_blur_far_distance = 200.0
 
+[sub_resource type="SphereMesh" id="SphereMesh_gmgko"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_l8jxy"]
+albedo_color = Color(0.65882355, 0, 0.62352943, 1)
+
+[sub_resource type="PrismMesh" id="PrismMesh_lpsds"]
+
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_jqxng"]
 noise_type = 5
 frequency = 0.0023
@@ -52,7 +63,7 @@ fractal_type = 3
 fractal_octaves = 2
 fractal_ping_pong_strength = 100.0
 
-[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_jqxng"]
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_ivwwh"]
 noise = SubResource("FastNoiseLite_jqxng")
 seamless = true
 normalize = false
@@ -64,25 +75,25 @@ frequency = 0.016
 fractal_type = 0
 fractal_gain = 0.16
 
-[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_ivwwh"]
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_lpsds"]
 noise = SubResource("FastNoiseLite_ivwwh")
 seamless = true
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_co47k"]
 shader = ExtResource("10_23vqn")
-shader_parameter/desaturation = 2.0
-shader_parameter/contrast = 2.0
-shader_parameter/brightness = -0.2
-shader_parameter/redify = 0.1
-shader_parameter/posterizationLevelsOut = Vector3(1, 1, 1)
+shader_parameter/desaturation = 1.0
+shader_parameter/contrast = 0.9
+shader_parameter/brightness = 0.0
+shader_parameter/redify = 0.0
+shader_parameter/posterizationLevelsOut = Vector3(10, 10, 15)
 shader_parameter/ditherMatrixTexture = ExtResource("11_ivkb3")
-shader_parameter/ditherSize = 3
-shader_parameter/colorLevels = Vector3(1, 5, 5)
+shader_parameter/ditherSize = 2
+shader_parameter/colorLevels = Vector3(10, 20, 20)
 shader_parameter/ditherSpeed = Vector2(0, 0)
-shader_parameter/displacementNoise = SubResource("NoiseTexture2D_jqxng")
+shader_parameter/displacementNoise = SubResource("NoiseTexture2D_ivwwh")
 shader_parameter/displacementDirection = Vector2(0.03, 0.03)
-shader_parameter/displacementStrength = 0.005
-shader_parameter/noise = SubResource("NoiseTexture2D_ivwwh")
+shader_parameter/displacementStrength = 0.0
+shader_parameter/noise = SubResource("NoiseTexture2D_lpsds")
 shader_parameter/noiseDirection = Vector2(0, -0.03)
 shader_parameter/noiseStrength = 0.0
 
@@ -103,7 +114,7 @@ _data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.7656442, 0.4535902), 0.1159696
 point_count = 3
 
 [sub_resource type="Curve" id="Curve_clt24"]
-_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.7246964, 0), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.57918555, 0), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
 point_count = 3
 
 [sub_resource type="Curve" id="Curve_jqxng"]
@@ -116,39 +127,28 @@ point_count = 2
 
 [node name="World" type="Node3D" unique_id=600883011]
 script = ExtResource("1_co47k")
+skyTopStartColor = Color(0.050980393, 0.5882353, 1, 1)
+skyBotStartColor = Color(0.6666667, 0.9372549, 0.972549, 1)
+skyTopEndColor = Color(0.6509804, 0.105882354, 0.14901961, 1)
+skyBotEndColor = Color(0.03529412, 0.039215688, 0.21568628, 1)
+skyChangeCurve = SubResource("Curve_w7gwu")
 
 [node name="Floor" type="StaticBody3D" parent="." unique_id=1672439933]
+collision_layer = 0
+collision_mask = 0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Floor" unique_id=1176908187]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.63204, 0)
 shape = SubResource("WorldBoundaryShape3D_bntx6")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Floor" unique_id=755507307]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.6375427, 0)
+visible = false
+transparency = 0.45
 mesh = SubResource("PlaneMesh_kp6b0")
 
 [node name="Player" parent="." unique_id=192968154 instance=ExtResource("1_34ihj")]
-
-[node name="Interractable" parent="." unique_id=1038079210 instance=ExtResource("2_gphh5")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 1.1736013, -3)
-script = ExtResource("3_kp6b0")
-minigame = ExtResource("6_jqxng")
-interaction = 2
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Interractable" unique_id=569833485]
-transform = Transform3D(1, -1.4901161e-08, -1.4901161e-08, -1.4901161e-08, 1, -2.9802322e-08, -1.4901161e-08, 0, 1, 0, 1.1920929e-07, 2.3841858e-07)
-mesh = SubResource("SphereMesh_gmgko")
-surface_material_override/0 = SubResource("StandardMaterial3D_l8jxy")
-
-[node name="tour-col" parent="." unique_id=1680520742 instance=ExtResource("6_awi42")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.342966, 10.967402, 47.789536)
-
-[node name="tour-col2" parent="." unique_id=380495419 instance=ExtResource("6_awi42")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.904661, 10.639676, -21.708742)
-
-[node name="building3" parent="." unique_id=2022422390 instance=ExtResource("7_sm7yd")]
-transform = Transform3D(0.65227234, 0, 2.4134083, 0, 2.4999998, 0, -2.4134083, 0, 0.65227234, -8.9826565, 2.5526898, -15.576392)
-
-[node name="building2" parent="." unique_id=2050139080 instance=ExtResource("8_00xeg")]
-transform = Transform3D(1.0483925, 0, 2.2695532, 0, 2.5, 0, -2.2695532, 0, 1.0483925, -3.6280203, 2.4772282, -14.069152)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.07089543, 0)
 
 [node name="Sun" type="DirectionalLight3D" parent="." unique_id=164570066]
 transform = Transform3D(1, 0, 0, 0, 0.8660253, 0.49999997, 0, -0.49999997, 0.8660253, 0, 104.529724, 0)
@@ -160,6 +160,181 @@ shadow_blur = 3.021
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=167005089]
 environment = SubResource("Environment_00xeg")
 camera_attributes = SubResource("CameraAttributesPractical_co47k")
+
+[node name="Objets" type="Node3D" parent="." unique_id=609111776]
+
+[node name="map" parent="Objets" unique_id=1309253486 instance=ExtResource("4_jqxng")]
+transform = Transform3D(2.4498785, 0, -0.02441588, 0, 2.45, 0, 0.02441588, 0, 2.4498785, 0.70040894, -0.46880817, 2.101181)
+
+[node name="Interractable" parent="Objets" unique_id=1038079210 instance=ExtResource("2_gphh5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 1.1736013, -3)
+script = ExtResource("3_kp6b0")
+minigame = ExtResource("6_jqxng")
+connections = Dictionary[String, Callable]({})
+InteractionAnimation = 3
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Objets/Interractable" unique_id=569833485]
+transform = Transform3D(1, -1.4901161e-08, -1.4901161e-08, -1.4901161e-08, 1, -2.9802322e-08, -1.4901161e-08, 0, 1, 0, 1.1920929e-07, 2.3841858e-07)
+mesh = SubResource("SphereMesh_gmgko")
+surface_material_override/0 = SubResource("StandardMaterial3D_l8jxy")
+
+[node name="Interractable2" parent="Objets" unique_id=42821563 instance=ExtResource("2_gphh5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.9999995, 1.3362136, 0.896065)
+interaction = 1
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Objets/Interractable2" unique_id=2066216711]
+transform = Transform3D(1, -1.4901161e-08, -1.4901161e-08, -1.4901161e-08, 1, -2.9802322e-08, -1.4901161e-08, 0, 1, 0, 1.1920929e-07, 2.3841858e-07)
+mesh = SubResource("SphereMesh_gmgko")
+surface_material_override/0 = SubResource("StandardMaterial3D_l8jxy")
+
+[node name="maisontexture1" parent="Objets" unique_id=2056765095 instance=ExtResource("8_e0nlv")]
+transform = Transform3D(0.502787, 0, 1.3066007, 0, 1.4, 0, -1.3066007, 0, 0.502787, 35.951378, -1.5066012, -20.246092)
+
+[node name="maisontexture16" parent="Objets" unique_id=628891442 instance=ExtResource("8_e0nlv")]
+transform = Transform3D(-1.3278857, 0, 0.44353145, 0, 1.4000002, 0, -0.44353142, 0, -1.3278859, 39.89276, -1.5066012, -28.77524)
+
+[node name="maisontexture17" parent="Objets" unique_id=74730903 instance=ExtResource("8_e0nlv")]
+transform = Transform3D(-1.3585914, 0, 0.33797923, 0, 1.4, 0, -0.33797923, 0, -1.3585914, 42.12599, -1.5066012, -38.646046)
+
+[node name="maisontexture24" parent="Objets" unique_id=526783394 instance=ExtResource("8_e0nlv")]
+transform = Transform3D(-0.48856482, 0.033296615, -1.3115624, 0.010319213, 1.3996035, 0.031687763, 1.3119445, 0.0013908821, -0.48867196, 85.93618, -1.5066012, -33.322845)
+
+[node name="maisontexture25" parent="Objets" unique_id=476206750 instance=ExtResource("8_e0nlv")]
+transform = Transform3D(-0.48112345, 0, -1.3147324, 0, 1.4000001, 0, 1.3147324, 0, -0.48112345, 77.60975, -1.5066012, -38.003006)
+
+[node name="maisontexture20" parent="Objets" unique_id=1334688122 instance=ExtResource("8_e0nlv")]
+transform = Transform3D(-0.47151917, 0, -1.318207, 0, 1.3999999, 0, 1.318207, 0, -0.47151917, 37.757805, -1.5066012, -52.02688)
+
+[node name="maisontexture21" parent="Objets" unique_id=1163852493 instance=ExtResource("8_e0nlv")]
+transform = Transform3D(-0.4316243, 0, -1.3318036, 0, 1.4, 0, 1.3318036, 0, -0.4316243, 28.523445, -1.5066012, -55.518772)
+
+[node name="maisontexture13" parent="Objets" unique_id=1606986401 instance=ExtResource("8_e0nlv")]
+transform = Transform3D(-0.52345216, 0, -1.29846, 0, 1.4, 0, 1.29846, 0, -0.52345216, 26.220558, -1.5066012, 3.5506043)
+
+[node name="maisontexture3" parent="Objets" unique_id=320989904 instance=ExtResource("8_e0nlv")]
+transform = Transform3D(0.502787, 0, 1.3066007, 0, 1.4, 0, -1.3066007, 0, 0.502787, 3.9765358, -1.5066012, -34.552612)
+
+[node name="maisontexture9" parent="Objets" unique_id=2086940036 instance=ExtResource("8_e0nlv")]
+transform = Transform3D(-1.3250175, 0, 0.45202768, 0, 1.4000002, 0, -0.45202768, 0, -1.3250175, 1.8851314, -1.5066012, -10.51506)
+
+[node name="maisontexture10" parent="Objets" unique_id=141744074 instance=ExtResource("8_e0nlv")]
+transform = Transform3D(1.2932163, 0, -0.53627604, 0, 1.4000002, 0, 0.53627604, 0, 1.2932163, -10.415421, -1.5066012, -6.1978397)
+
+[node name="maisontexture11" parent="Objets" unique_id=1453756010 instance=ExtResource("8_e0nlv")]
+transform = Transform3D(1.2863369, 0, -0.55257416, 0, 1.4000002, 0, 0.55257416, 0, 1.2863369, -14.340935, -1.5066012, 2.4617195)
+
+[node name="maisontexture6" parent="Objets" unique_id=1588934854 instance=ExtResource("8_e0nlv")]
+transform = Transform3D(1.3277851, 0, -0.44383258, 0, 1.4, 0, 0.44383258, 0, 1.3277851, 3.0731597, -1.5066012, -43.486332)
+
+[node name="maisontexture22" parent="Objets" unique_id=1773854119 instance=ExtResource("8_e0nlv")]
+transform = Transform3D(1.3277851, 0, -0.44383258, 0, 1.4, 0, 0.44383258, 0, 1.3277851, 6.3170714, -1.5066012, -53.35321)
+
+[node name="maisontexture7" parent="Objets" unique_id=201669600 instance=ExtResource("8_e0nlv")]
+transform = Transform3D(-0.4576431, 0, -1.3230888, 0, 1.4, 0, 1.3230888, 0, -0.4576431, 17.119682, -1.5066012, -59.409744)
+
+[node name="Interractable3" parent="Objets" unique_id=260801796 instance=ExtResource("2_gphh5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.9999995, 1.3362136, 0.896065)
+interaction = 1
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Objets/Interractable3" unique_id=2098202578]
+transform = Transform3D(1, -1.4901161e-08, -1.4901161e-08, -1.4901161e-08, 1, -2.9802322e-08, -1.4901161e-08, 0, 1, 0, 1.1920929e-07, 2.3841858e-07)
+mesh = SubResource("SphereMesh_gmgko")
+surface_material_override/0 = SubResource("StandardMaterial3D_l8jxy")
+
+[node name="boulangerie" parent="Objets" unique_id=283819426 instance=ExtResource("2_gphh5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.0406445, 0.73993564, 3.2226076)
+script = ExtResource("3_kp6b0")
+minigame = ExtResource("14_lpsds")
+connections = Dictionary[String, Callable]({})
+interaction = 2
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Objets/boulangerie" unique_id=2001306079]
+transform = Transform3D(1, -1.4901161e-08, -1.4901161e-08, -1.4901161e-08, 1, -2.9802322e-08, -1.4901161e-08, 0, 1, 0, 1.1920929e-07, 2.3841858e-07)
+mesh = SubResource("PrismMesh_lpsds")
+surface_material_override/0 = SubResource("StandardMaterial3D_l8jxy")
+
+[node name="Interractable4" parent="Objets" unique_id=34859755 instance=ExtResource("2_gphh5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 1.4752015, 3.439649)
+script = ExtResource("3_kp6b0")
+minigame = ExtResource("14_ivwwh")
+connections = Dictionary[String, Callable]({})
+interaction = 2
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Objets/Interractable4" unique_id=394755936]
+transform = Transform3D(1, -1.4901161e-08, -1.4901161e-08, -1.4901161e-08, 1, -2.9802322e-08, -1.4901161e-08, 0, 1, 0, 1.1920929e-07, 2.3841858e-07)
+mesh = SubResource("SphereMesh_gmgko")
+surface_material_override/0 = SubResource("StandardMaterial3D_l8jxy")
+
+[node name="maisontexture2" parent="Objets" unique_id=1251426052 instance=ExtResource("12_5f2gp")]
+transform = Transform3D(1.3021631, 0, -0.51417, 0, 1.3999999, 0, 0.51417, 0, 1.3021631, -6.6021786, -1.5107809, -14.209744)
+
+[node name="maisontexture4" parent="Objets" unique_id=466808298 instance=ExtResource("12_5f2gp")]
+transform = Transform3D(0.5129881, 2.1468176e-10, 1.3026294, -7.9014885e-11, 1.4, -1.9961223e-10, -1.3026294, -3.7569893e-13, 0.5129881, 27.73397, -1.5107809, -24.097395)
+
+[node name="maisontexture26" parent="Objets" unique_id=349189546 instance=ExtResource("12_5f2gp")]
+transform = Transform3D(0.5129881, 2.1468176e-10, 1.3026294, -7.9014885e-11, 1.4, -1.9961223e-10, -1.3026294, -3.7569893e-13, 0.5129881, 94.11147, -1.5107809, -30.032333)
+
+[node name="maisontexture23" parent="Objets" unique_id=1243665116 instance=ExtResource("12_5f2gp")]
+transform = Transform3D(0.51755464, 0, 1.3008217, 0, 1.4, 0, -1.3008217, 0, 0.51755464, 19.663425, -1.5107809, -27.738985)
+
+[node name="maisontexture18" parent="Objets" unique_id=1918348914 instance=ExtResource("12_5f2gp")]
+transform = Transform3D(-1.3402826, 0, 0.4045276, 0, 1.4, 0, -0.4045276, 0, -1.3402826, 44.34513, -1.5107809, -47.532024)
+
+[node name="maisontexture19" parent="Objets" unique_id=1562413619 instance=ExtResource("12_5f2gp")]
+transform = Transform3D(-0.4423027, 0, -1.3282955, 0, 1.4000001, 0, 1.3282955, 0, -0.4423027, 68.94851, -1.5107809, -41.087704)
+
+[node name="maisontexture12" parent="Objets" unique_id=729528372 instance=ExtResource("12_5f2gp")]
+transform = Transform3D(-0.51146466, 0, -1.3032284, 0, 1.4, 0, 1.3032284, 0, -0.51146466, 17.780308, -1.5107809, -1.190958)
+
+[node name="maisontexture14" parent="Objets" unique_id=220874325 instance=ExtResource("12_5f2gp")]
+transform = Transform3D(-0.4936992, -4.5178686e-10, -1.3100615, -1.6149143e-10, 1.3999999, -4.2194467e-10, 1.3100615, 2.3229977e-12, -0.4936992, 35.28154, -1.5107809, 7.5684853)
+
+[node name="maisontexture15" parent="Objets" unique_id=150626914 instance=ExtResource("12_5f2gp")]
+transform = Transform3D(-0.55185574, 0, -1.286645, 0, 1.3999999, 0, 1.286645, 0, -0.55185574, 44.232887, -1.5107809, 11.975582)
+
+[node name="maisontexture5" parent="Objets" unique_id=176974487 instance=ExtResource("12_5f2gp")]
+transform = Transform3D(0.4783232, 3.8557088e-10, 1.3157533, -1.3287556e-10, 1.3999999, -3.6195374e-10, -1.3157533, -1.2146382e-12, 0.4783232, 11.483059, -1.5107809, -30.946632)
+
+[node name="maisontexture8" parent="Objets" unique_id=624152388 instance=ExtResource("12_5f2gp")]
+transform = Transform3D(-0.5142156, 0, -1.3021452, 0, 1.3999999, 0, 1.3021452, 0, -0.5142156, 9.242023, -1.5107809, -62.655346)
+
+[node name="Tower" parent="Objets" unique_id=472412556 instance=ExtResource("12_clt24")]
+transform = Transform3D(-0.99596, 0, 0.08979818, 0, 1, 0, -0.08979818, 0, -0.99596, 16.371477, 0, -21.969511)
+
+[node name="Tower2" parent="Objets" unique_id=980630696 instance=ExtResource("12_clt24")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.875387, 0, -24.794415)
+
+[node name="Tower3" parent="Objets" unique_id=1995813380 instance=ExtResource("12_clt24")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -75.490166, 0, -30.548845)
+
+[node name="Tower4" parent="Objets" unique_id=1750263578 instance=ExtResource("12_clt24")]
+transform = Transform3D(-0.40041304, 0, -0.91633475, 0, 1, 0, 0.91633475, 0, -0.40041304, 1.9937859, 0, -4.173807)
+
+[node name="Tower5" parent="Objets" unique_id=1555162735 instance=ExtResource("12_clt24")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -39.812695, 0, 16.428236)
+
+[node name="Tower6" parent="Objets" unique_id=1220917605 instance=ExtResource("12_clt24")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.802067, 0, 48.05307)
+
+[node name="Tower7" parent="Objets" unique_id=395719431 instance=ExtResource("12_clt24")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -31.416729, 0, 80.0977)
+
+[node name="Tower8" parent="Objets" unique_id=1601223618 instance=ExtResource("12_clt24")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 45.495647, 0, 2.0430527)
+
+[node name="Tower9" parent="Objets" unique_id=1654724301 instance=ExtResource("12_clt24")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 101.65692, 0, -8.427695)
+
+[node name="Tower10" parent="Objets" unique_id=473473871 instance=ExtResource("12_clt24")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 66.24675, 0, -64.39859)
+
+[node name="Tower11" parent="Objets" unique_id=1555346870 instance=ExtResource("12_clt24")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -121.465164, 0, -5.952797)
+
+[node name="Brush" type="Node3D" parent="Objets" unique_id=1755576046]
+script = ExtResource("13_clt24")
+brushDensity = 1
+metadata/_custom_type_script = "uid://cu2x3my63v3kw"
 
 [node name="ShaderCanvasLayer" type="CanvasLayer" parent="." unique_id=1482458820]
 
@@ -185,7 +360,7 @@ script = ExtResource("12_e0nlv")
 shader_properties = Dictionary[String, Array]({
 "brightness": [0.0, -0.1, SubResource("Curve_ivwwh")],
 "colorLevels": [Vector3(10, 20, 20), Vector3(1, 5, 5), SubResource("Curve_e0nlv")],
-"contrast": [0.9, 2.0, SubResource("Curve_e0nlv")],
+"contrast": [0.75, 2.0, SubResource("Curve_e0nlv")],
 "desaturation": [1.0, 2.0, SubResource("Curve_e0nlv")],
 "displacementStrength": [0.0, 0.005, SubResource("Curve_5f2gp")],
 "ditherSpeed": [Vector2(0, 0), Vector2(0, 3), SubResource("Curve_lpsds")],
@@ -194,23 +369,3 @@ shader_properties = Dictionary[String, Array]({
 "redify": [0.1, 0.5, SubResource("Curve_yhicf")]
 })
 metadata/_edit_use_anchors_ = true
-
-[node name="Interractable2" parent="." unique_id=42821563 instance=ExtResource("2_gphh5")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.9999995, 1.3362136, 0.896065)
-interaction = 1
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Interractable2" unique_id=2066216711]
-transform = Transform3D(1, -1.4901161e-08, -1.4901161e-08, -1.4901161e-08, 1, -2.9802322e-08, -1.4901161e-08, 0, 1, 0, 1.1920929e-07, 2.3841858e-07)
-mesh = SubResource("SphereMesh_gmgko")
-surface_material_override/0 = SubResource("StandardMaterial3D_l8jxy")
-
-[node name="Interractable3" parent="." unique_id=34859755 instance=ExtResource("2_gphh5")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 1.4752015, 3.439649)
-script = ExtResource("3_kp6b0")
-minigame = ExtResource("14_ivwwh")
-interaction = 2
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Interractable3" unique_id=394755936]
-transform = Transform3D(1, -1.4901161e-08, -1.4901161e-08, -1.4901161e-08, 1, -2.9802322e-08, -1.4901161e-08, 0, 1, 0, 1.1920929e-07, 2.3841858e-07)
-mesh = SubResource("SphereMesh_gmgko")
-surface_material_override/0 = SubResource("StandardMaterial3D_l8jxy")

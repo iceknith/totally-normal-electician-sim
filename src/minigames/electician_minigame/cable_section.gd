@@ -7,23 +7,22 @@ enum States {
 
 signal completed
 
-@export var colors:Array[Color] = [Color.LIGHT_CORAL, Color.LIGHT_BLUE, Color.LIGHT_GREEN]
-@export var unselected_color:Color = Color.DARK_GRAY
+@export var cable_textures:Array[Texture2D] = []
+@export var button_textures:Array[Texture2D] = []
+
 var cables:Array[Line2D]
 var images:Array[Array]
 var button_colors:Dictionary[Vector2,int]
 @export var grid_size:Vector2 = Vector2(4,4)
 @export var min_border_perc:float = 0.2
-@export var button_image:Texture2D
-@export var cable_image:Texture2D
 @export var cable_width:float = 5
 @export var max_path_length:float = 3
 var border_size:Vector2
 var cell_size:Vector2
 var circle_size:float
 
+@onready var color_count:int = min(cable_textures.size(), button_textures.size())
 var completed_count:int
-@onready var color_count = colors.size()
 
 var current_state:States = States.Idle
 var current_color:int
@@ -32,41 +31,50 @@ var current_circle_pos:Vector2
 
 func _ready() -> void:
 	cell_size = size/grid_size
-	circle_size = min(cell_size.x, cell_size.y)
-	circle_size -= circle_size*min_border_perc
+	#circle_size = min(cell_size.x, cell_size.y)
+	#circle_size -= circle_size*min_border_perc
+	circle_size = 12 # Pixel perfect logic
 	border_size = cell_size - circle_size*Vector2.ONE
+	border_size += border_size/(grid_size-Vector2.ONE)
 	
 	# Create buttons
 	var image:TextureRect = TextureRect.new()
-	image.texture = button_image
 	image.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
-	image.size = circle_size * Vector2.ONE
-	image.modulate = unselected_color
+	image.custom_minimum_size = circle_size * Vector2.ONE
+	image.texture = null
 	
 	for x in grid_size.x:
 		var line:Array[TextureRect] = []
 		images.append(line)
 		for y in grid_size.y:
 			var new_img = image.duplicate()
+			
 			new_img.position = get_screen_pos(Vector2(x,y))
 			add_child(new_img)
+			#$Container.add_child(new_img)
 			line.append(new_img)
 	
 	# Create cables
 	var cable:Line2D = Line2D.new()
-	for c in colors:
+	for c in color_count:
 		var new_cable = cable.duplicate()
-		new_cable.modulate = c
 		new_cable.width = cable_width
+		new_cable.texture = cable_textures[c]
+		new_cable.joint_mode = Line2D.LINE_JOINT_ROUND
+		new_cable.begin_cap_mode = Line2D.LINE_CAP_ROUND
+		new_cable.end_cap_mode = Line2D.LINE_CAP_ROUND
+		new_cable.antialiased = true
+		new_cable.texture_mode = Line2D.LINE_TEXTURE_TILE
+		new_cable.texture_repeat = CanvasItem.TEXTURE_REPEAT_ENABLED
 		add_child(new_cable)
 		cables.append(new_cable)
 	
 	init_color_buttons()
 
 func init_color_buttons():
-	for i in colors.size():
+	for i in color_count:
 		# First Image
-		var color = colors[i]
+		var texture = button_textures[i]
 		var start:Vector2 = get_random_available_circle()
 		if start == -Vector2.ONE: color_count -= 1; break
 		set_circle_color(start, i)
@@ -74,7 +82,7 @@ func init_color_buttons():
 		set_circle_color(end, i)
 		for pos in [start, end]:
 			var image:TextureRect = images[pos.x][pos.y]
-			image.modulate = color
+			image.texture = texture
 	remove_temp_marks()
 
 func get_random_available_circle() -> Vector2:
@@ -132,8 +140,8 @@ func remove_temp_marks():
 				set_circle_color(pos, -1)
 
 func _draw() -> void:
-	# Debugging stuff:
 	"
+	# Debugging stuff:
 	for x in grid_size.x:
 		for y in grid_size.y:
 			draw_circle(get_screen_pos_centered(Vector2(x,y)), circle_size/2, Color.WEB_GRAY)
@@ -146,15 +154,17 @@ func _process(_delta: float) -> void:
 		cable_selected_handler()
 
 func get_circle_pos(pos:Vector2)->Vector2:
-	pos = clamp(pos, Vector2.ZERO, size)
-	var circle_pos = round((pos - cell_size/2)/cell_size)
-	if (circle_pos*cell_size + cell_size/2).distance_squared_to(pos) <= (circle_size/2)**2 && \
+	pos.x = clamp(pos.x, 0, size.x)
+	pos.y = clamp(pos.y, 0, size.y)
+	var applicable_cell_size:Vector2 = (border_size + circle_size*Vector2.ONE)
+	var circle_pos = round(pos/applicable_cell_size)
+	if (circle_pos*applicable_cell_size + circle_size*Vector2.ONE/2).distance_squared_to(pos) <= (circle_size/2)**2 && \
 		circle_pos.x < grid_size.x && circle_pos.y < grid_size.y:
 		return circle_pos
 	return -Vector2.ONE
 
 func get_screen_pos(circle_pos:Vector2)->Vector2:
-	return cell_size * circle_pos + border_size/2
+	return (border_size + circle_size*Vector2.ONE) * circle_pos
 
 func get_screen_pos_centered(circle_pos:Vector2)->Vector2:
 	return get_screen_pos(circle_pos) + circle_size/2*Vector2.ONE
@@ -183,7 +193,7 @@ func idle_handler():
 		if circle_pos != -Vector2.ONE:
 			var circle_color = get_circle_color(circle_pos)
 			if circle_color < -1:
-				unvalidate_path((-circle_color-2)%colors.size())
+				unvalidate_path((-circle_color-2)%color_count)
 				completed_count -= 1
 
 func cable_selected_handler():
@@ -202,7 +212,7 @@ func cable_selected_handler():
 			current_cable.add_point(get_local_mouse_position())
 			current_circle_pos = circle_pos
 			
-			images[circle_pos.x][circle_pos.y].modulate = colors[current_color]
+			images[circle_pos.x][circle_pos.y].texture = button_textures[current_color]
 			set_circle_color(circle_pos, -2-current_color)
 		
 		elif circle_color == current_color && start_circle_pos != circle_pos:
@@ -219,7 +229,7 @@ func validate_path(color_index:int):
 	var line_length:int = current_cable.get_point_count()
 	for i in [0, line_length-1]:
 		var circle_pos:Vector2 = get_circle_pos(current_cable.get_point_position(i))
-		set_circle_color(circle_pos, -2-colors.size()-color_index)
+		set_circle_color(circle_pos, -2-color_count-color_index)
 	completed_count += 1
 	
 	if completed_count >= color_count:
@@ -232,7 +242,7 @@ func unvalidate_path(color_index:int):
 		var circle_color:int = get_circle_color(circle_pos)
 		if circle_color == -2-color_index:
 			set_circle_color(circle_pos, -1)
-			images[circle_pos.x][circle_pos.y].modulate = unselected_color
-		elif circle_color == -2-colors.size()-color_index:
+			images[circle_pos.x][circle_pos.y].texture = null
+		elif circle_color == -2-color_count-color_index:
 			set_circle_color(circle_pos, color_index)
 	current_cable.clear_points()

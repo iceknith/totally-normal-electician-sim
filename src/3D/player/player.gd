@@ -56,8 +56,7 @@ func in_interaction() -> bool:
 		MainCommunicator.GameState.MiniGame :
 			return true
 	return false
-			
-			
+	
 func manage_input(delta:float) -> void :
 		# Add the gravity.
 	if not is_on_floor():
@@ -93,11 +92,3 @@ func manage_input(delta:float) -> void :
 		velocity.z = move_toward(velocity.z, 0, SPEED)
 	
 	move_and_slide()
-	
-	
-	
-
-
-	
-
-	

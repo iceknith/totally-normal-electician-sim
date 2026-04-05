@@ -37,8 +37,11 @@ enum Interaction {
 var PlayerCamera:Camera3D
 
 var was_viewed:bool = false
-var is_viewed:bool = false
-
+var is_viewed:bool = false:
+	set(new_val):
+		viewed_handler(new_val)
+		is_viewed = new_val
+var is_viewed_false_timer:SceneTreeTimer
 
 var is_interacted_with:bool = false
 
@@ -50,20 +53,21 @@ func set_key_text() -> void:
 	pass
 
 func _process(delta: float) -> void:
-	# Hide text if no longer visible
-	if !is_viewed && was_viewed:
-		hide_text()
-	
 	# Listen for inputs if visible
-		
 	if is_viewed && Input.is_action_just_pressed(action):
 		function_on_interract.call()
 		full_interaction()
 		is_interacted_with = true
-	
-# Reset visibility
-	was_viewed = is_viewed
-	is_viewed = false
+
+func viewed_handler(new_val):
+	if new_val:
+		if is_viewed:
+			is_viewed_false_timer.time_left = 0.1
+		else:
+			show_text()
+			is_viewed_false_timer = get_tree().create_timer(0.1)
+			is_viewed_false_timer.timeout.connect(func(): is_viewed=false)
+			is_viewed_false_timer.timeout.connect(hide_text)
 
 func player_viewing() -> void:
 	is_viewed = true
