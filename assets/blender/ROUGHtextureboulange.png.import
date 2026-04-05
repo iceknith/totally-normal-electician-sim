@@ -2,12 +2,13 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cah1vgpvmqw6g"
+uid="uid://b52lcxkjyig5g"
 path.s3tc="res://.godot/imported/ROUGHtextureboulange.png-ab4ddaa436ed08017b128baff414ef11.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
+generator_parameters={}
 
 [deps]
 
