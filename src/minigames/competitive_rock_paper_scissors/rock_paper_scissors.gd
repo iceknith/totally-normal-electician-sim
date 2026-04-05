@@ -27,14 +27,15 @@ enum Result{
 @onready var rolling_sprite:Node = %RollSprite
 @onready var dice_table:Node = %TableDice
 
+@onready var hand:Node = %Hand
+
 @onready var hand_pile:Node =$HandPile
 @onready var draw_pile:Node = $DrawPile
+@onready var play_pile:Node = $PlayPile
 @onready var person_playing:Node = %PersonPlaying
 
-@onready var yay_label:Label = $YayLabel
-@onready var lose_label:Label = $Loselabel
-@onready var draw_label:Label = $DrawLabel
-@onready var win_label:Label = $EndGameLabel
+
+@onready var win_label:RichTextLabel = $EndGameLabel
 
 @export var rounds_number:int  = 3
 @export var points_to_win:int = 3
@@ -42,6 +43,9 @@ enum Result{
 
 
 @export var total_choice_number:int
+
+
+@export var card_scene = load("res://src/minigames/competitive_rock_paper_scissors/RPS_button.tscn")
 
 var choices:Array = []
 var opponents_points:int = 0
@@ -88,9 +92,6 @@ var current_total_choice_number = 0
 
 
 func _ready():
-	yay_label.scale = Vector2.ZERO
-	lose_label.scale = Vector2.ZERO
-	draw_label.scale = Vector2.ZERO
 	win_label.scale = Vector2.ZERO
 	setup_signals()
 	show_points()
@@ -104,20 +105,24 @@ func _process(delta):
 func setup_signals():
 	chooseOption.PlayerHasChosen.connect(update_player_choice)
 	rolling_sprite.rolling_finished.connect(show_winner)
+	hand.handAnimation.connect(show_winner)
 	
 	
 	
 func update_player_choice(choice):
-	
+	chooseOption.set_can_generate_card(false) 
 	has_player_chosen = true
 	player_choice = choice
 	if has_player_chosen and !is_rolling: 
 		is_rolling = true
 		opponent_choice = generate_opponent_choice()
+		print(opponent_choice)
 		update_choice_stock(player_choice)
 		last_player_choices.append(player_choice)
 		update_choice_stock(opponent_choice)
-		rolling_sprite.roll_sprites(opponent_choice)
+		
+		#ici faut faire draw l'opponent 
+		hand.draw_opponent_card(card_scene, opponent_choice)
 		clear()
 		
 	match player_choice : 
@@ -131,10 +136,11 @@ func update_player_choice(choice):
 			player1_choice_label.text = ""
 
 func update_current_total_choice_number():
-	current_total_choice_number = current_numbers[Choice.ROCK] + current_numbers[Choice.PAPER] + current_numbers[Choice.PAPER]
+	current_total_choice_number = current_numbers[Choice.ROCK] + current_numbers[Choice.SCISSORS] + current_numbers[Choice.PAPER]
 
 
 func show_winner():
+
 	current_round_number +=1
 	var winner = get_result(player_choice, opponent_choice)
 	update_current_total_choice_number()
@@ -147,8 +153,14 @@ func show_winner():
 			await player_loses()
 	if rounds_number == current_round_number : 
 		end_game()
+	elif player_points == points_to_win : 
+		player_won_game()
+	elif opponents_points == points_to_win : 
+		opponent_won_game()
 	elif current_total_choice_number < choice_per_round * 2 : 
-		await text_animation(win_label, "Reshuffling !!!").finished
+		await text_animation(win_label, \
+		 " [center] [wave amp = 512 freq = 24] [rainbow] Reshuffling !!!", \
+		2).finished
 		await generate_choices()
 		draw_cards()
 	else: 
@@ -177,18 +189,24 @@ func complete_reset():
 	
 	
 func draw():
-	await draw_animation().finished
+	await text_animation(win_label, \
+	"[center] Draw !" \
+	, 0.7, Color.YELLOW).finished
 	reset()
 	
 func player_wins():
-	await yay_animation().finished
+	await text_animation(win_label, \
+	"[center] Yaaaaay !" \
+	, 0.7, Color.GREEN).finished
 	player_points+=1
 	reset()
 	
 
 	
 func player_loses():
-	await lose_animation().finished
+	await text_animation(win_label,\
+	 "[center] Try again !" \
+	, 1, Color.RED).finished
 	opponents_points+=1
 	reset()
 	
@@ -242,29 +260,23 @@ func generate_opponent_choice():
 func update_choice_stock(choice):
 	current_numbers[choice] -= 1 
 
-func yay_animation():
-	var tween = create_tween()
-	tween.set_ease(Tween.EASE_IN_OUT).set_trans(Tween.TRANS_CIRC)
-	tween.tween_property(yay_label, "scale", Vector2.ONE, 0.2)
-	tween.tween_interval(0.3)
-	tween.tween_property(yay_label, "scale", Vector2.ZERO, 0.2)
-	return tween
-	
-func lose_animation():
-	var tween = create_tween()
-	tween.set_ease(Tween.EASE_IN_OUT).set_trans(Tween.TRANS_CIRC)
-	tween.tween_property(lose_label, "scale", Vector2.ONE, 0.3)
-	tween.tween_interval(0.3)
-	tween.tween_property(lose_label, "scale", Vector2.ZERO, 0.5)
-	return tween
 
-func text_animation(label:Label, text:String):
+	
+
+func text_animation(label: RichTextLabel, text: String, duration: float = 1, color:Color = Color.WHITE ):
 	label.text = text
-	var tween = create_tween()
+	label.modulate = color
+	var tween = create_tween() #tween d'animation du texte
 	tween.set_ease(Tween.EASE_IN_OUT).set_trans(Tween.TRANS_CIRC)
-	tween.tween_property(label, "scale", Vector2.ONE, 0.3)
-	tween.tween_interval(0.3)
-	tween.tween_property(label, "scale", Vector2.ZERO, 0.5)
+	
+	var appear_time = duration * 0.3
+	var hold_time = duration * 0.4
+	var disappear_time = duration * 0.3
+	
+	tween.tween_property(label, "scale", Vector2.ONE, appear_time)
+	tween.tween_interval(hold_time)
+	tween.tween_property(label, "scale", Vector2.ZERO, disappear_time)
+	
 	return tween
 	
 func end_game():
@@ -276,26 +288,20 @@ func end_game():
 	
 
 
+func player_won_game(): #condition à executer si le player gagne la partie
+	await text_animation(win_label, "You WON \n the GAME !!!!!", 1, Color.GREEN)
+	exit()
+	
+func opponent_won_game(): #condition à executer si l'opponent gagne la partie
+	await text_animation(win_label, "You WON \n the GAME !!!!!", 1, Color.RED)
+	exit()
+	
 func exit():
 	MainCommunicator.send_signal_to_main(MainCommunicator.SignalType.SHOW_GAME3D)
 	
-func draw_animation():
-	var tween = create_tween()
-	tween.set_ease(Tween.EASE_IN_OUT).set_trans(Tween.TRANS_CIRC)
-	tween.tween_property(draw_label, "scale", Vector2.ONE, 0.3)
-	tween.tween_interval(0.3)
-	tween.tween_property(draw_label, "scale", Vector2.ZERO, 0.5)
-	return tween
-
-
-func _on_roll_player_pressed():
-	dice_table.reset_and_roll()
-
-
-
 	
 	
-func setup_game():
+func setup_game(): #setup de la game
 	
 	generate_choices()
 	has_game_started = true
@@ -303,15 +309,28 @@ func setup_game():
 	show_number_of_each()
 
 
-func generate_choices(choice_number = total_choice_number): #génère les choix et les ajoute dans la liste
+func generate_choices(choice_number = total_choice_number): #genere les choix
 	current_numbers[Choice.ROCK] = 0
 	current_numbers[Choice.PAPER] = 0
 	current_numbers[Choice.SCISSORS] = 0
+	choices.clear()
 	clear()
-	for i in choice_number:
+	
+	var min_each = choice_number / 6#on génère au minimum un quart de chaque 
+	
+	for i in min_each:
+		choices.append(Choice.ROCK)
+		choices.append(Choice.PAPER)
+		choices.append(Choice.SCISSORS)
+		
+		current_numbers[Choice.ROCK] += 1
+		current_numbers[Choice.PAPER] += 1
+		current_numbers[Choice.SCISSORS] += 1
+	
+	while choices.size() < choice_number: #on complète
 		var rand_choice = randi_range(0, 2)
 		choices.append(rand_choice)
-		current_numbers[rand_choice] +=1
+		current_numbers[rand_choice] += 1
 
 
 func generate_shuffle_choice() -> Array: #regénère une liste à partir du nombre restant de choix de chacun
@@ -324,7 +343,7 @@ func generate_shuffle_choice() -> Array: #regénère une liste à partir du nomb
 	for i in range(current_numbers[Choice.PAPER]) :
 		new_choices.append(Choice.PAPER)
 	
-	# Ajouter les SCISSORS
+	# Ajouter etles SCISSORS
 	for i in range(current_numbers[Choice.SCISSORS]):
 		new_choices.append(Choice.SCISSORS)
 		
@@ -340,22 +359,23 @@ func show_number_of_each():
 
 func show_points():
 	$MarginContainer/VBoxContainer/HBoxContainer2/showPoints.text = \
-	"player points = " + str(player_points) + \
-	" opponent points = " + str(opponents_points)
-	
+	"player points = " + str(player_points) + " \\ " + str(points_to_win) + \
+	" opponent points = " + str(opponents_points) + " \\ " + str(points_to_win)
 
 func draw_cards():
 	if !has_player_drawn and has_game_started: 
 		player_choice = Choice.NOTHING
 		player_choices = choices.slice(0, choice_per_round) #on prend le nombre de carte dont on a besoin par round
 		opponent_choices = choices.slice(choice_per_round, choice_per_round*2)
-		chooseOption.roll_players(player_choices, hand_pile, draw_pile)
+		chooseOption.set_can_generate_card(true)
+		chooseOption.roll_players(player_choices, hand_pile, draw_pile, play_pile)
 		has_player_drawn = true	
 
 func won_game():
 	pass
 
 func _on_complete_reset_pressed():
+	chooseOption.set_can_generate_card(false) #eivter de regénerer des cartes 
 	complete_reset()
 	
 
@@ -367,4 +387,5 @@ func _on_setup_button_pressed():
 func clear(): 
 	for child in hand_pile.get_children():
 		child.free()
+		
 	

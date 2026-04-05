@@ -2,42 +2,30 @@
 
 [ext_resource type="Script" uid="uid://s1loum3lthpi" path="res://src/minigames/competitive_rock_paper_scissors/rock_paper_scissors.gd" id="1_25ab5"]
 [ext_resource type="PackedScene" uid="uid://dvg3cthpe104h" path="res://src/minigames/competitive_rock_paper_scissors/ChooseOption.tscn" id="1_q8qak"]
+[ext_resource type="PackedScene" uid="uid://boloxxts85tff" path="res://src/minigames/competitive_rock_paper_scissors/RPS_button.tscn" id="2_0lxge"]
 [ext_resource type="PackedScene" uid="uid://mecgfpfk6sbr" path="res://src/minigames/competitive_rock_paper_scissors/roll_sprite.tscn" id="2_ladea"]
+[ext_resource type="Texture2D" uid="uid://c5gyf7q6yvcp8" path="res://src/minigames/competitive_rock_paper_scissors/asset/2D/hand.png" id="5_uuwv0"]
 [ext_resource type="PackedScene" uid="uid://dt4mec201tdh3" path="res://src/minigames/competitive_rock_paper_scissors/personPlaying.tscn" id="5_xbnbg"]
-
-[sub_resource type="LabelSettings" id="LabelSettings_q8qak"]
-font_size = 100
-font_color = Color(1, 0.69803923, 0, 1)
-
-[sub_resource type="LabelSettings" id="LabelSettings_25ab5"]
-font_size = 125
-font_color = Color(1, 1, 0, 1)
-
-[sub_resource type="LabelSettings" id="LabelSettings_ladea"]
-font_size = 125
-font_color = Color(1, 0, 0, 0.78431374)
+[ext_resource type="Script" uid="uid://c0sp2ilspegwv" path="res://src/minigames/competitive_rock_paper_scissors/hand_pile.gd" id="5_ynqdh"]
+[ext_resource type="Script" uid="uid://rk23gesb0hg3" path="res://src/minigames/competitive_rock_paper_scissors/hand/hand.gd" id="7_ynqdh"]
+[ext_resource type="Texture2D" uid="uid://cye1bhonrbtg7" path="res://src/minigames/competitive_rock_paper_scissors/asset/2D/Scissors.png" id="8_0lxge"]
+[ext_resource type="Texture2D" uid="uid://1xxjx047eo4l" path="res://src/minigames/competitive_rock_paper_scissors/asset/2D/rock.png" id="9_24ib3"]
+[ext_resource type="Texture2D" uid="uid://dxx8mm38nnd8g" path="res://src/minigames/competitive_rock_paper_scissors/asset/2D/paper.png" id="10_c10fi"]
 
 [node name="Rock Paper Scissors" type="Control" unique_id=213604419]
 layout_mode = 3
-anchor_left = 0.1
-anchor_top = 0.1
-anchor_right = 0.9
-anchor_bottom = 0.9
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2
-script = ExtResource("1_25ab5")
-rounds_number = 10
-total_choice_number = 15
-
-[node name="ColorRect" type="ColorRect" parent="." unique_id=1159379857]
-layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.44313726, 0.2627451, 0.34901962, 1)
+mouse_filter = 2
+script = ExtResource("1_25ab5")
+rounds_number = 15
+points_to_win = 5
+total_choice_number = 15
+card_scene = ExtResource("2_0lxge")
+opponent = 1
 
 [node name="MarginContainer" type="MarginContainer" parent="." unique_id=2061799233]
 layout_mode = 1
@@ -131,6 +119,11 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 5.0
 
+[node name="HandPilePosition" type="Control" parent="MarginContainer/VBoxContainer/PanelContainer/VBoxContainer/MarginContainer/HBoxContainer/PanelContainer2" unique_id=971449515]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
 [node name="PanelContainer" type="PanelContainer" parent="MarginContainer/VBoxContainer/PanelContainer/VBoxContainer/MarginContainer/HBoxContainer" unique_id=1280155252]
 layout_mode = 2
 size_flags_horizontal = 3
@@ -138,79 +131,27 @@ size_flags_horizontal = 3
 [node name="ColorRect" type="ColorRect" parent="MarginContainer/VBoxContainer/PanelContainer/VBoxContainer/MarginContainer/HBoxContainer/PanelContainer" unique_id=1739205279]
 layout_mode = 2
 
-[node name="YayLabel" type="Label" parent="." unique_id=1321970621]
+[node name="EndGameLabel" type="RichTextLabel" parent="." unique_id=1725921560]
+z_index = 5
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -92.0
-offset_top = -68.5
-offset_right = 92.0
-offset_bottom = 68.5
+offset_left = -309.5
+offset_top = -85.5
+offset_right = 309.5
+offset_bottom = 85.5
 grow_horizontal = 2
 grow_vertical = 2
 pivot_offset_ratio = Vector2(0.5, 0.5)
 size_flags_horizontal = 4
-text = "YAY"
-label_settings = SubResource("LabelSettings_q8qak")
+theme_override_font_sizes/normal_font_size = 60
+bbcode_enabled = true
+text = "Try again !"
 horizontal_alignment = 1
 vertical_alignment = 1
-
-[node name="DrawLabel" type="Label" parent="." unique_id=1748929999]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -307.5
-offset_top = -85.5
-offset_right = 307.5
-offset_bottom = 85.5
-grow_horizontal = 2
-grow_vertical = 2
-pivot_offset_ratio = Vector2(0.5, 0.5)
-size_flags_horizontal = 4
-text = "It's a draw !!!"
-label_settings = SubResource("LabelSettings_25ab5")
-
-[node name="EndGameLabel" type="Label" parent="." unique_id=926335183]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -309.5
-offset_top = -85.5
-offset_right = 309.5
-offset_bottom = 85.5
-grow_horizontal = 2
-grow_vertical = 2
-pivot_offset_ratio = Vector2(0.5, 0.5)
-size_flags_horizontal = 4
-text = "Try again !"
-label_settings = SubResource("LabelSettings_ladea")
-
-[node name="Loselabel" type="Label" parent="." unique_id=162010417]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -309.5
-offset_top = -85.5
-offset_right = 309.5
-offset_bottom = 85.5
-grow_horizontal = 2
-grow_vertical = 2
-pivot_offset_ratio = Vector2(0.5, 0.5)
-size_flags_horizontal = 4
-text = "Try again !"
-label_settings = SubResource("LabelSettings_ladea")
 
 [node name="PersonPlaying" parent="." unique_id=1040108193 instance=ExtResource("5_xbnbg")]
 unique_name_in_owner = true
@@ -220,10 +161,35 @@ unique_name_in_owner = true
 shuffle_time = 0.2
 
 [node name="DrawPile" type="Node2D" parent="." unique_id=1491806840]
-position = Vector2(761.8, 374.2)
+position = Vector2(980, 487)
 
 [node name="HandPile" type="Node2D" parent="." unique_id=319843551]
-position = Vector2(386.8, 367.2)
+z_index = 2
+z_as_relative = false
+y_sort_enabled = true
+position = Vector2(483, 481)
+script = ExtResource("5_ynqdh")
+
+[node name="Hand" type="TextureRect" parent="." unique_id=1178589373]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 92.0
+offset_top = -365.0
+offset_right = 348.00012
+offset_bottom = -109.0
+rotation = -3.9269907
+pivot_offset_ratio = Vector2(1, 1)
+texture = ExtResource("5_uuwv0")
+script = ExtResource("7_ynqdh")
+scissors_tex = ExtResource("8_0lxge")
+rock_tex = ExtResource("9_24ib3")
+paper_tex = ExtResource("10_c10fi")
+
+[node name="HandTip" type="Node2D" parent="Hand" unique_id=563212455]
+position = Vector2(48.81791, 50.23203)
+
+[node name="PlayPile" type="Node2D" parent="." unique_id=1454429994]
+position = Vector2(800, 177)
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer2/CompleteReset" to="." method="_on_complete_reset_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer2/SetupButton" to="." method="_on_setup_button_pressed"]
