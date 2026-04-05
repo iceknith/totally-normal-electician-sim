@@ -2,9 +2,10 @@ class_name RPS extends Minigame
 
 enum personPlaying
 {
-	STANLEY, # stanley chooses at random
+	STANLY, # stanley chooses at random
 	WILLY, # willy choisit celui dont il y a le moins restants
-	BILLY # billy dans le premier round commence toujours par pierre < papier < ciseaux et après le premier round copie le 
+	BILLY, # billy dans le premier round commence toujours par pierre < papier < ciseaux et après le premier round copie le 
+	RAYLY
 }
 enum Choice 
 {
@@ -26,7 +27,6 @@ enum Result{
 @onready var player1_choice_label:Node =$MarginContainer/VBoxContainer/PanelContainer/VBoxContainer/PanelContainer/Choice
 @onready var rolling_sprite:Node = %RollSprite
 @onready var dice_table:Node = %TableDice
-
 @onready var hand:Node = %Hand
 
 @onready var hand_pile:Node =$HandPile
@@ -43,8 +43,6 @@ enum Result{
 
 
 @export var total_choice_number:int
-
-
 @export var card_scene = load("res://src/minigames/competitive_rock_paper_scissors/RPS_button.tscn")
 
 var choices:Array = []
@@ -53,7 +51,7 @@ var player_points:int = 0
 
 var current_round_number = 0
 
-@export var opponent:personPlaying = personPlaying.STANLEY
+@export var opponent:personPlaying = personPlaying.STANLY
 
 
 
@@ -224,7 +222,7 @@ func generate_opponent_choice():
 		return null
 	var opponent_choice:Choice
 	match opponent : 
-		personPlaying.STANLEY : 
+		personPlaying.STANLY : 
 			opponent_choice = opponent_choices[randi_range(0,choice_per_round -1)]
 		personPlaying.WILLY : #il choisit tjrs le moins 
 			var choices_number = [null, null, null]
@@ -254,6 +252,7 @@ func generate_opponent_choice():
 							break
 					if opponent_has_chosen == true : 
 						break
+
 	return opponent_choice
 	
 
