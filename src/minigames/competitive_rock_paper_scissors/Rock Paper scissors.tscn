@@ -3,10 +3,7 @@
 [ext_resource type="Script" uid="uid://s1loum3lthpi" path="res://src/minigames/competitive_rock_paper_scissors/rock_paper_scissors.gd" id="1_25ab5"]
 [ext_resource type="PackedScene" uid="uid://dvg3cthpe104h" path="res://src/minigames/competitive_rock_paper_scissors/ChooseOption.tscn" id="1_q8qak"]
 [ext_resource type="PackedScene" uid="uid://mecgfpfk6sbr" path="res://src/minigames/competitive_rock_paper_scissors/roll_sprite.tscn" id="2_ladea"]
-[ext_resource type="PackedScene" uid="uid://df1chr4x6st82" path="res://src/minigames/competitive_rock_paper_scissors/dice/table_dice.tscn" id="3_jdee5"]
 [ext_resource type="PackedScene" uid="uid://dt4mec201tdh3" path="res://src/minigames/competitive_rock_paper_scissors/personPlaying.tscn" id="5_xbnbg"]
-
-[sub_resource type="World3D" id="World3D_jdee5"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_q8qak"]
 font_size = 100
@@ -22,14 +19,16 @@ font_color = Color(1, 0, 0, 0.78431374)
 
 [node name="Rock Paper Scissors" type="Control" unique_id=213604419]
 layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
+anchor_left = 0.1
+anchor_top = 0.1
+anchor_right = 0.9
+anchor_bottom = 0.9
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 script = ExtResource("1_25ab5")
-choice_per_round = 2
-total_choice_number = 8
+rounds_number = 10
+total_choice_number = 15
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1159379857]
 layout_mode = 1
@@ -78,24 +77,6 @@ size_flags_vertical = 4
 [node name="Choice" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/PanelContainer2/VBoxContainer" unique_id=1025466605]
 layout_mode = 2
 
-[node name="SubViewportContainer" type="SubViewportContainer" parent="MarginContainer/VBoxContainer/HBoxContainer" unique_id=1217484621]
-visible = false
-layout_mode = 2
-size_flags_horizontal = 3
-stretch = true
-
-[node name="SubViewport" type="SubViewport" parent="MarginContainer/VBoxContainer/HBoxContainer/SubViewportContainer" unique_id=1192237637]
-own_world_3d = true
-world_3d = SubResource("World3D_jdee5")
-transparent_bg = true
-handle_input_locally = false
-size = Vector2i(2, 2)
-render_target_clear_mode = 1
-render_target_update_mode = 0
-
-[node name="TableDice" parent="MarginContainer/VBoxContainer/HBoxContainer/SubViewportContainer/SubViewport" unique_id=1789194565 instance=ExtResource("3_jdee5")]
-unique_name_in_owner = true
-
 [node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=359344537]
 layout_mode = 2
 size_flags_horizontal = 4
@@ -107,16 +88,7 @@ text = "Reset Game"
 
 [node name="SetupButton" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer2" unique_id=1691914951]
 layout_mode = 2
-text = "Setup"
-
-[node name="DrawButton" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer2" unique_id=1027649584]
-layout_mode = 2
-text = "Draw"
-
-[node name="ConfirmButton" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer2" unique_id=1455547009]
-layout_mode = 2
-size_flags_horizontal = 4
-text = "Confirm"
+text = "Start Game"
 
 [node name="Label" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer2" unique_id=1803766276]
 layout_mode = 2
@@ -125,11 +97,11 @@ layout_mode = 2
 layout_mode = 2
 
 [node name="PanelContainer" type="PanelContainer" parent="MarginContainer/VBoxContainer" unique_id=1759892786]
-custom_minimum_size = Vector2(0, 200)
 layout_mode = 2
-size_flags_vertical = 4
+size_flags_vertical = 6
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/PanelContainer" unique_id=415566979]
+custom_minimum_size = Vector2(0, 256)
 layout_mode = 2
 
 [node name="PanelContainer" type="PanelContainer" parent="MarginContainer/VBoxContainer/PanelContainer/VBoxContainer" unique_id=537758301]
@@ -154,27 +126,17 @@ theme_override_constants/margin_bottom = 20
 layout_mode = 2
 theme_override_constants/separation = 40
 
-[node name="PanelContainer" type="PanelContainer" parent="MarginContainer/VBoxContainer/PanelContainer/VBoxContainer/MarginContainer/HBoxContainer" unique_id=2076826787]
-layout_mode = 2
-size_flags_horizontal = 3
-
-[node name="RollPlayer" type="Button" parent="MarginContainer/VBoxContainer/PanelContainer/VBoxContainer/MarginContainer/HBoxContainer/PanelContainer" unique_id=550708645]
-custom_minimum_size = Vector2(50, 30)
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-text = "Roll"
-
 [node name="PanelContainer2" type="PanelContainer" parent="MarginContainer/VBoxContainer/PanelContainer/VBoxContainer/MarginContainer/HBoxContainer" unique_id=844248952]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 5.0
 
-[node name="ChooseOption" parent="MarginContainer/VBoxContainer/PanelContainer/VBoxContainer/MarginContainer/HBoxContainer/PanelContainer2" unique_id=594212264 instance=ExtResource("1_q8qak")]
-unique_name_in_owner = true
+[node name="PanelContainer" type="PanelContainer" parent="MarginContainer/VBoxContainer/PanelContainer/VBoxContainer/MarginContainer/HBoxContainer" unique_id=1280155252]
 layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
+size_flags_horizontal = 3
+
+[node name="ColorRect" type="ColorRect" parent="MarginContainer/VBoxContainer/PanelContainer/VBoxContainer/MarginContainer/HBoxContainer/PanelContainer" unique_id=1739205279]
+layout_mode = 2
 
 [node name="YayLabel" type="Label" parent="." unique_id=1321970621]
 layout_mode = 1
@@ -214,6 +176,24 @@ size_flags_horizontal = 4
 text = "It's a draw !!!"
 label_settings = SubResource("LabelSettings_25ab5")
 
+[node name="EndGameLabel" type="Label" parent="." unique_id=926335183]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -309.5
+offset_top = -85.5
+offset_right = 309.5
+offset_bottom = 85.5
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset_ratio = Vector2(0.5, 0.5)
+size_flags_horizontal = 4
+text = "Try again !"
+label_settings = SubResource("LabelSettings_ladea")
+
 [node name="Loselabel" type="Label" parent="." unique_id=162010417]
 layout_mode = 1
 anchors_preset = 8
@@ -232,16 +212,18 @@ size_flags_horizontal = 4
 text = "Try again !"
 label_settings = SubResource("LabelSettings_ladea")
 
-[node name="EndGameLabel" type="Label" parent="." unique_id=253952240]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 23.0
-
 [node name="PersonPlaying" parent="." unique_id=1040108193 instance=ExtResource("5_xbnbg")]
 unique_name_in_owner = true
 
+[node name="ChooseOption" parent="." unique_id=1325937609 instance=ExtResource("1_q8qak")]
+unique_name_in_owner = true
+shuffle_time = 0.2
+
+[node name="DrawPile" type="Node2D" parent="." unique_id=1491806840]
+position = Vector2(761.8, 374.2)
+
+[node name="HandPile" type="Node2D" parent="." unique_id=319843551]
+position = Vector2(386.8, 367.2)
+
 [connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer2/CompleteReset" to="." method="_on_complete_reset_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer2/SetupButton" to="." method="_on_setup_button_pressed"]
-[connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer2/DrawButton" to="." method="_on_draw_button_pressed"]
-[connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer2/ConfirmButton" to="." method="_on_confirm_button_pressed"]
-[connection signal="pressed" from="MarginContainer/VBoxContainer/PanelContainer/VBoxContainer/MarginContainer/HBoxContainer/PanelContainer/RollPlayer" to="." method="_on_roll_player_pressed"]
