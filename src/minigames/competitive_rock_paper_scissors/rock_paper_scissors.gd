@@ -22,9 +22,9 @@ enum Result{
 }
 
 
-
+@onready var balloon = load("res://src/Dialogue/DialogueBalloon/textBox.tscn")
 @onready var chooseOption:Node =%ChooseOption
-@onready var player1_choice_label:Node =$MarginContainer/VBoxContainer/PanelContainer/VBoxContainer/PanelContainer/Choice
+@onready var player1_choice_label:Node =%PlayerChoiceLabel
 @onready var rolling_sprite:Node = %RollSprite
 @onready var dice_table:Node = %TableDice
 @onready var hand:Node = %Hand
@@ -90,6 +90,7 @@ var current_total_choice_number = 0
 
 
 func _ready():
+	intro()
 	win_label.scale = Vector2.ZERO
 	setup_signals()
 	show_points()
@@ -197,6 +198,7 @@ func player_wins():
 	"[center] Yaaaaay !" \
 	, 0.7, Color.GREEN).finished
 	player_points+=1
+	dialogue_loses()
 	reset()
 	
 
@@ -206,8 +208,32 @@ func player_loses():
 	 "[center] Try again !" \
 	, 1, Color.RED).finished
 	opponents_points+=1
+	dialogue_wins()
 	reset()
 	
+func dialogue_loses():
+	match opponent : 
+		personPlaying.STANLY : 
+			pass
+		personPlaying.WILLY : #il choisit tjrs le moins 
+			pass
+		personPlaying.BILLY : 
+
+			var dialogue_resource = load("res://src/minigames/competitive_rock_paper_scissors/dialogue/Billy/BillyLoses.dialogue")
+			var instance = await DialogueManager.show_dialogue_balloon_scene(balloon, dialogue_resource)
+			add_child(instance)
+
+
+func dialogue_wins():
+	match opponent : 
+		personPlaying.STANLY : 
+			pass
+		personPlaying.WILLY : #il choisit tjrs le moins 
+			pass
+		personPlaying.BILLY : 
+			var dialogue_resource = load("res://src/minigames/competitive_rock_paper_scissors/dialogue/Billy/BillyWins.dialogue")
+			var instance = await DialogueManager.show_dialogue_balloon_scene(balloon, dialogue_resource)
+			add_child(instance)
 	
 func get_result(choice1:int, choice2:int) -> int:
 	if choice1 == choice2:
@@ -292,7 +318,7 @@ func player_won_game(): #condition à executer si le player gagne la partie
 	exit()
 	
 func opponent_won_game(): #condition à executer si l'opponent gagne la partie
-	await text_animation(win_label, "You WON \n the GAME !!!!!", 1, Color.RED)
+	await text_animation(win_label, "You LOST \n the GAME !!!!!", 1, Color.RED)
 	exit()
 	
 func exit():
@@ -351,13 +377,13 @@ func generate_shuffle_choice() -> Array: #regénère une liste à partir du nomb
 	return new_choices
 
 func show_number_of_each():
-	$MarginContainer/VBoxContainer/HBoxContainer2/Label.text = \
+	$MarginContainer/PanelContainer/VBoxContainer/HBoxContainer2/Label.text = \
 	"rocks = " + str(current_numbers[Choice.ROCK]) + \
 	" papers = " + str(current_numbers[Choice.PAPER]) + \
 	" scissors = " + str(current_numbers[Choice.SCISSORS])
 
 func show_points():
-	$MarginContainer/VBoxContainer/HBoxContainer2/showPoints.text = \
+	%showPoints.text = \
 	"player points = " + str(player_points) + " \\ " + str(points_to_win) + \
 	" opponent points = " + str(opponents_points) + " \\ " + str(points_to_win)
 
@@ -373,18 +399,51 @@ func draw_cards():
 func won_game():
 	pass
 
-func _on_complete_reset_pressed():
-	chooseOption.set_can_generate_card(false) #eivter de regénerer des cartes 
-	complete_reset()
-	
 
 func _on_setup_button_pressed():
-	if !has_game_started : 
-		setup_game()
-		draw_cards()
+	#if !has_game_started : 
+		#setup_game()
+		#draw_cards()
+	pass
 
 func clear(): 
 	for child in hand_pile.get_children():
 		child.free()
 		
 	
+
+
+func _on_exit_button_pressed():
+	exit()
+
+
+func intro():
+	match opponent : 
+		personPlaying.STANLY : 
+			pass
+		personPlaying.WILLY : #il choisit tjrs le moins 
+			pass
+		personPlaying.BILLY : 
+
+			var dialogue_resource = load("res://src/minigames/competitive_rock_paper_scissors/dialogue/Billy/Billy.dialogue")
+			var instance = await DialogueManager.show_dialogue_balloon_scene(balloon, dialogue_resource)
+			add_child(instance)
+			await instance.tree_exited
+			setup_game()
+			draw_cards()
+			
+
+func _on_button_pressed():
+	pass
+	
+
+	
+#func show_dialogue_balloon_scene(balloon_scene, resource: DialogueResource, title: String = "", extra_game_states: Array = []) -> Node:
+	#if balloon_scene is String:
+		#balloon_scene = load(balloon_scene)
+	#if balloon_scene is PackedScene:
+		#balloon_scene = balloon_scene.instantiate()
+#
+	#var balloon: Node = balloon_scene
+	#_start_balloon.call_deferred(balloon, resource, title, extra_game_states)
+	#return balloon

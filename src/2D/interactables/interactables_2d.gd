@@ -52,5 +52,4 @@ func check_action():
 func _on_input_event(viewport, event, shape_idx):
 	if event is InputEventMouseButton : 
 		if event.pressed and action_type == ActionType.Click : 
-			print("clique")
 			start_interaction()

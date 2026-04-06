@@ -7,7 +7,8 @@ var turnCamera:bool
 @export var default_fov:float = 75
 @export var look_sensitivity : float = 0.006
 
-@export var main:Node3D = null
+var in_a_cam_animation = false
+
 
 var rotation_y = 0
 var rotation_x = 0
@@ -23,32 +24,48 @@ func _process(delta):
 	if shaking : 
 		shake()
 	
-func turn_to_look_at(ToTurnTo : Vector3, turnTime: float = 1) -> void:
-
+func turn_to_look_at(ToTurnTo : Vector3, turnTime: float = 1) :
+	in_a_cam_animation = true
 	var target_transform = global_transform.looking_at(ToTurnTo) # Calcule la rotation que doit avoir la cam pour regarder un objet
 	var rotation_vector = target_transform.basis.get_euler() # La rotation final
 	var tween = create_tween()
 	tween.tween_property(self, "global_rotation",rotation_vector, turnTime).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT)
 	await tween.finished
+	in_a_cam_animation = false
+	return tween
 	
 	
 func zoom_in(zoom_in_time:float = 1, zoom_intensity:float = 1): 
+	in_a_cam_animation = true
 	var tween = create_tween()
 	tween.tween_property(self, "fov", default_fov - zoom_intensity, zoom_in_time).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT)
 	await tween.finished
+	in_a_cam_animation = false
+	
 
 		
 	
 func zoom_out(zoom_out_time = 2):
+	in_a_cam_animation = true
 	var tween = create_tween()
 	tween.tween_property(self, "fov", default_fov, zoom_out_time).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT)
+	
 	await tween.finished
+	in_a_cam_animation = false
+	return tween
+	
+	
 		
-func turn_then_zoom(ToTurnTo : Vector3, turnTime:float = 2, zoom_time:float = 1, zoom_intensity:float = 1) : 
+func turn_then_zoom(ToTurnTo : Vector3, turnTime:float = 2, zoom_time:float = 1, zoom_intensity:float = 1) :
+	in_a_cam_animation = true 
 	await turn_to_look_at(ToTurnTo, turnTime)
-	zoom_in(zoom_time, zoom_intensity)
+	await zoom_in(zoom_time, zoom_intensity)
+	
+	in_a_cam_animation = false
+	
 	
 func turn_while_zoom(ToTurnTo : Vector3, turnTime:float = 1, zoom_time:float = 1, zoom_intensity:float = 1) : 
+	in_a_cam_animation = true 
 	var target_transform = global_transform.looking_at(ToTurnTo, Vector3.UP)
 	var rotation_vector = target_transform.basis.get_euler()
 	
@@ -56,12 +73,15 @@ func turn_while_zoom(ToTurnTo : Vector3, turnTime:float = 1, zoom_time:float = 1
 	tween.set_parallel(true)
 	tween.tween_property(self, "global_rotation", rotation_vector, turnTime).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN_OUT)
 	tween.tween_property(self, "fov", fov - zoom_intensity, turnTime).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN_OUT)
-	
 	await tween.finished
+	in_a_cam_animation = false
+	return tween
 
 func start_shake(shaking_strength:float):
+	
 	shake_strength = shaking_strength
 	shaking = true
+
 	
 	
 func end_shake(shaking_fade:float):

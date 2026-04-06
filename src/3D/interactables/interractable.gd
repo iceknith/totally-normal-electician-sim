@@ -86,11 +86,16 @@ func get_player_camera(PlayerCam:Camera3D):
 func interaction_animation():
 	match InteractionAnimation : 
 		AnimationOnInteraction.TurnAndZoom: 
-			PlayerCamera.turn_then_zoom(camera_root.global_position, turn_time, zoom_time, zoom_intensity)
+			await PlayerCamera.turn_then_zoom(camera_root.global_position, turn_time, zoom_time, zoom_intensity)
 		AnimationOnInteraction.TurnWhileZoom : 
-			PlayerCamera.turn_while_zoom(camera_root.global_position, turn_time, zoom_time, zoom_intensity)
+			await PlayerCamera.turn_while_zoom(camera_root.global_position, turn_time, zoom_time, zoom_intensity)
 		AnimationOnInteraction.Turn : 
-			PlayerCamera.turn_to_look_at(camera_root.global_position, turn_time)
+			await PlayerCamera.turn_to_look_at(camera_root.global_position, turn_time)
+	
+	
+		
+		
+		
 
 func start_interaction():
 	

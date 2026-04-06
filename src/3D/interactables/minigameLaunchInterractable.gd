@@ -4,7 +4,9 @@ class_name MinigameLaunchInterractable extends Interractable
 @export var connections:Dictionary[String, Callable]
 
 func _ready() -> void:
-	function_on_interract = MainCommunicator.send_signal_to_main.bind(
-		MainCommunicator.SignalType.SHOW_MINIGAME, [minigame, connections]
-	)
+	function_on_interract =  func():
+		await interaction_animation()
+		MainCommunicator.send_signal_to_main(
+			MainCommunicator.SignalType.SHOW_MINIGAME, [minigame, connections]
+		)
 	super()
