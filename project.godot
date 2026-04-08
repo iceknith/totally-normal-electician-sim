@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 
 MainCommunicator="*uid://b0f1tnefpdrcm"
 DialogueManager="*uid://c3rodes2l3gxb"
+GlobalVars="*uid://cua36vgi8vykf"
 
 [dialogue_manager]
 
@@ -26,12 +27,12 @@ runtime/balloon_path="res://src/Dialogue/DialogueBalloon/balloon.tscn"
 
 [display]
 
-window/size/mode=2
+window/size/mode=1
 window/stretch/mode="canvas_items"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/dialogue_manager/plugin.cfg")
+enabled=PackedStringArray("res://addons/dialogue_manager/plugin.cfg", "res://addons/scene_object_brush/plugin.cfg")
 
 [importer_defaults]
 

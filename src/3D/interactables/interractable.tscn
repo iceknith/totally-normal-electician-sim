@@ -8,6 +8,9 @@ radius = 1.4280521
 [sub_resource type="ViewportTexture" id="ViewportTexture_ahwjy"]
 viewport_path = NodePath("SubViewport")
 
+[sub_resource type="LabelSettings" id="LabelSettings_ahwjy"]
+font_size = 70
+
 [node name="Interractable" type="Area3D" unique_id=1038079210 node_paths=PackedStringArray("camera_root")]
 collision_layer = 4
 collision_mask = 0
@@ -18,7 +21,7 @@ camera_root = NodePath("CameraRoot")
 shape = SubResource("SphereShape3D_u6as8")
 
 [node name="Sprite3D" type="Sprite3D" parent="." unique_id=1012737652]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.66694474, 0)
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, 0.66694474, 0)
 texture = SubResource("ViewportTexture_ahwjy")
 
 [node name="SubViewport" type="SubViewport" parent="." unique_id=1813980876]
@@ -42,15 +45,16 @@ size_flags_vertical = 4
 
 [node name="MarginContainer" type="MarginContainer" parent="SubViewport/PanelContainer" unique_id=1126513910]
 layout_mode = 2
-theme_override_constants/margin_left = 5
-theme_override_constants/margin_top = 5
-theme_override_constants/margin_right = 5
-theme_override_constants/margin_bottom = 5
+theme_override_constants/margin_left = 30
+theme_override_constants/margin_top = 30
+theme_override_constants/margin_right = 30
+theme_override_constants/margin_bottom = 30
 
 [node name="Label" type="Label" parent="SubViewport/PanelContainer/MarginContainer" unique_id=1437973236]
 layout_mode = 2
 size_flags_horizontal = 4
 text = "E"
+label_settings = SubResource("LabelSettings_ahwjy")
 horizontal_alignment = 1
 
 [node name="CameraRoot" type="Node3D" parent="." unique_id=1541093927]

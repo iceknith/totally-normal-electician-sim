@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://8aijhmqbdctq"]
+
+[ext_resource type="Texture2D" uid="uid://c5gyf7q6yvcp8" path="res://src/minigames/competitive_rock_paper_scissors/asset/2D/hand.png" id="1_8ue2c"]
+[ext_resource type="Script" uid="uid://rk23gesb0hg3" path="res://src/minigames/competitive_rock_paper_scissors/hand/hand.gd" id="2_r44j0"]
+
+[node name="Hand" type="Sprite2D" unique_id=445037622]
+texture = ExtResource("1_8ue2c")
+script = ExtResource("2_r44j0")
+
+[node name="handTip" type="Node2D" parent="." unique_id=1955765422]
+z_index = 1
+position = Vector2(172.52795, 75.664)

@@ -1,10 +1,10 @@
-extends Minigame
+class_name ElectricianMinigame extends Minigame
 
 enum Stages {
-	TutorialWires,
-	TutorialMovingCircle,
-	TutorialTiming,
-	FullGame
+	TutorialWires = 0,
+	TutorialMovingCircle = 1,
+	TutorialTiming = 2,
+	FullGame = 3
 }
 
 signal win
@@ -19,9 +19,9 @@ signal win
 @onready var info_label:Label = $InfoContainer/MarginContainer/InfoLabel
 @onready var info_container:Container = $InfoContainer
 
-@export var stage:Stages = Stages.TutorialWires
+@onready var stage:Stages = GlobalVars.electrician_minigame_current_stage
 @export var tutorialTexts:Dictionary[Stages, String] = {
-	Stages.TutorialWires : "Connectez les fils de la même couleur avec [clic gauche]\n-\nDéconnectez les fils avec [clic droit]",
+	Stages.TutorialWires : "Connectez les fils de la même couleur avec [clic gauche]\n-\nDéconnectez les fils avec [clic droit]\n-\nIl est possible de croiser les fils en diagonale",
 	Stages.TutorialMovingCircle : "Faites attention à ne pas déclencher un court circuit !\n-\nPour celà, restez dans le grand cercle en vous déplaçant avec vos contrôles de mouvement.",
 	Stages.TutorialTiming : "Attention à ne pas vous éléctriser !\n-\nPour celà, appuyez sur [Espace] lorsque le cube rouge devient rose."
 }
@@ -33,6 +33,7 @@ var cables_validated:int:
 		cable_validated_label.text = "%d/%d" % [cables_validated, cables_required]
 
 func _ready() -> void:
+	super()
 	cables_validated = 0
 	connect_signals()
 	win_label.scale = Vector2.ZERO
@@ -63,6 +64,7 @@ func init_stage() -> void:
 		Stages.TutorialMovingCircle:
 			$MarginContainer/GamesContainer/TimingContainer.queue_free()
 			for section in [cable_section, moving_section]:
+				print(section)
 				section.process_mode = Node.PROCESS_MODE_DISABLED
 				tween.tween_callback(func(): section.process_mode = Node.PROCESS_MODE_INHERIT)
 		Stages.TutorialTiming:
@@ -108,12 +110,13 @@ func on_minigame_failed():
 func reset_cable():
 	if cable_section: cable_section.queue_free()
 	cable_section = load("res://src/minigames/electician_minigame/cableSection.tscn").instantiate()
-	get_node("MarginContainer/GamesContainer/PanelContainer").add_child(cable_section)
+	get_node("MarginContainer/GamesContainer/PanelContainer/SubViewportContainer/CableViewport/Container").add_child(cable_section)
 	cable_section.completed.connect(on_cable_validated)
 
 func end_game():
-	for node:Control in [cable_section, moving_section, timing_section]:
-		if node: node.process_mode = Node.PROCESS_MODE_DISABLED
+	if cable_section: cable_section.process_mode = Node.PROCESS_MODE_DISABLED
+	if moving_section: moving_section.process_mode = Node.PROCESS_MODE_DISABLED
+	if timing_section: timing_section.process_mode = Node.PROCESS_MODE_DISABLED
 	
 	var tween = create_tween()
 	tween.set_ease(Tween.EASE_IN_OUT).set_trans(Tween.TRANS_CIRC)

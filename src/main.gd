@@ -43,7 +43,6 @@ func connect_signals():
 	MainCommunicator.signalMain.connect(receive_signal)
 
 func receive_signal(type, data):
-	print("received signal")
 	match type: #pour l'instant je vais pas toucher à ça parce que je veux pas tout casser
 		MainCommunicator.SignalType.SHOW_MINIGAME: show_minigame(data)
 		MainCommunicator.SignalType.SHOW_GAME3D: show_game3D()
@@ -68,7 +67,7 @@ func reset_state():
 	world3D.show()
 	world3D.process_mode = Node.PROCESS_MODE_INHERIT
 
-func show_minigame(minigameScene:PackedScene):
+func show_minigame(data:Array):
 	# Reset state to normalized state
 	reset_state()
 	
@@ -77,10 +76,16 @@ func show_minigame(minigameScene:PackedScene):
 	currentState = GameState.MiniGame
 	
 	# Show minigame
+	var minigameScene:PackedScene = data[0]
 	var minigame:Minigame = minigameScene.instantiate()
 	minigame.miniGameEnd.connect(show_game3D)
 	minigame_container.show()
 	minigame_container.add_child(minigame)
+	
+	# Add connections
+	var connections:Dictionary[String, Callable] = data[1]
+	for connection in connections.keys():
+		minigame.connect(connection, connections[connection])
 	
 	# Stop process from game
 	world3D.process_mode = Node.PROCESS_MODE_DISABLED
@@ -135,16 +140,16 @@ func _process(delta: float) -> void:
 ### Mouse jitter ###
 
 func mouse_jitter_handler(delta:float) -> void:
-	if has_mouse_jitter:
+	if has_mouse_jitter && mouse_jitter_intensity_curve.sample(eow_meter) > 0:
 		mouse_noise_pos += delta * mouse_jitter_speed * mouse_jitter_speed_curve.sample(eow_meter)
 		var rand_dir:Vector2 = Vector2(
 			mouse_jitter_noise.get_noise_2d(mouse_noise_pos, 0),
-			mouse_jitter_noise.get_noise_2d(mouse_noise_pos, 100),
+			mouse_jitter_noise.get_noise_2d(0, mouse_noise_pos),
 		)
 		var mouse_offset:Vector2 = mouse_jitter_intensity_curve.sample(eow_meter) * mouse_jitter_intensity * rand_dir * delta
 		var new_mouse_pos:Vector2 = get_viewport().get_mouse_position() + mouse_offset + unhandled_mouse_offset
 		unhandled_mouse_offset = new_mouse_pos - round(new_mouse_pos)
-		get_viewport().warp_mouse(new_mouse_pos)
+		get_viewport().warp_mouse(round(new_mouse_pos))
 		
 		if currentState == GameState.Game3D:
 			var jitter_input = InputEventMouseMotion.new()

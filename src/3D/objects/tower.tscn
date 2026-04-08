@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://cng5vwx5qm31h"]
 
+[ext_resource type="Script" uid="uid://ca5ejvmkspgkq" path="res://src/3D/objects/tower.gd" id="1_sqo52"]
 [ext_resource type="PackedScene" uid="uid://dtparhw6m7xuv" path="res://assets/blender/tour.blend" id="1_xfudo"]
 [ext_resource type="PackedScene" uid="uid://i72vcloe75tq" path="res://src/3D/interactables/interractable.tscn" id="2_stmy2"]
 [ext_resource type="Script" uid="uid://guu6r2nuivha" path="res://src/3D/interactables/minigameLaunchInterractable.gd" id="3_fgjub"]
@@ -17,24 +18,60 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [2.0]
+"values": [0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AlarmTop:light_energy")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("AlarmTop2:light_energy")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
 }
 
 [sub_resource type="Animation" id="Animation_sqo52"]
 resource_name = "alarm"
-length = 3.0
+length = 2.0
 loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/path = NodePath("AlarmBot:light_energy")
-tracks/0/interp = 2
+tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 1.5),
+"times": PackedFloat32Array(0, 1),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [0.0, 3.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AlarmTop:light_energy")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 15.0]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_2y3h0"]
@@ -44,25 +81,29 @@ _data = {
 }
 
 [node name="Tower" type="Node3D" unique_id=472412556]
+script = ExtResource("1_sqo52")
 
 [node name="tour" parent="." unique_id=500165753 instance=ExtResource("1_xfudo")]
 transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0, 4.3276844, -0.016131878)
 
 [node name="Interractable" parent="." unique_id=1038079210 instance=ExtResource("2_stmy2")]
-transform = Transform3D(-0.9373976, 0, 0.34826136, 0, 1, 0, -0.34826136, 0, -0.9373976, 0.16412556, 1.2051713, -0.3702901)
+transform = Transform3D(-0.9373976, 0, 0.34826136, 0, 1, 0, -0.34826136, 0, -0.9373976, 0.16412556, 1.2051713, -0.41626066)
 script = ExtResource("3_fgjub")
 minigame = ExtResource("4_fgjub")
+connections = Dictionary[String, Callable]({})
+InteractionAnimation = 3
+interaction = 2
 
 [node name="AlarmBot" type="OmniLight3D" parent="." unique_id=617167616]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.27965364, 1.5649719, -0.7064489)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3381364, 1.3172702, -0.81733996)
 light_color = Color(1, 0, 0, 1)
-light_energy = 2.0
+light_energy = 0.0
 omni_range = 1.0
 
 [node name="AlarmTop" type="OmniLight3D" parent="." unique_id=715515593]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.1135751, 17.083036, -0.0035144985)
 light_color = Color(1, 0, 0, 1)
-light_energy = 15.0
+light_energy = 0.0
 light_size = 1.0
 light_specular = 4.0
 light_bake_mode = 1
@@ -71,7 +112,7 @@ omni_range = 10.0
 [node name="AlarmTop2" type="OmniLight3D" parent="." unique_id=1832003170]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.1135751, 20.942616, -0.0035144985)
 light_color = Color(1, 0, 0, 1)
-light_energy = 15.0
+light_energy = 0.0
 light_size = 1.0
 light_specular = 4.0
 light_bake_mode = 1

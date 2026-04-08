@@ -1,0 +1,39 @@
+[gd_scene format=3 uid="uid://gturm7g46hmh"]
+
+[ext_resource type="FontFile" uid="uid://dhoixqrkemx30" path="res://assets/gui/ithaca-font/Ithaca-LVB75.ttf" id="1_3er18"]
+[ext_resource type="Script" uid="uid://mwray544rixo" path="res://src/ui/game_overlay.gd" id="1_nau3i"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_nau3i"]
+font = ExtResource("1_3er18")
+font_size = 30
+font_color = Color(1, 1, 1, 0.60784316)
+
+[node name="GameOverlay" type="Control" unique_id=1667571156]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_nau3i")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=633723262]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 15
+
+[node name="TowersCompleted" type="Label" parent="MarginContainer" unique_id=625796479]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+text = "0/100"
+label_settings = SubResource("LabelSettings_nau3i")
