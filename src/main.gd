@@ -123,11 +123,16 @@ func increment_eow_meter(node:Node):
 func update_game_state(state:MainCommunicator.GameState):
 	MainCommunicator.current_state = state
 
-func start_dialogue(dialogueFile:String):
+func start_dialogue(data:Array):
+	var dialogueFile:String = data[0]
+	var title:String = data[1]
+	var extra_game_states:Array = data[2]
 	MainCommunicator.signalMain.emit(
 	MainCommunicator.SignalType.CHANGE_GAMESTATE,\
 	MainCommunicator.GameState.Dialogue)
-	DialogueManager.show_example_dialogue_balloon(load(dialogueFile))
+	DialogueManager.show_dialogue_balloon(
+		load(dialogueFile), title, extra_game_states
+		)
 
 func end_of_world():
 	get_tree().quit()

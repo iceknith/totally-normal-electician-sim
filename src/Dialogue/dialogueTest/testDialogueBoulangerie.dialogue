@@ -1,0 +1,39 @@
+~ start
+Boulanger: Heyyyy, comment va-tu ?
+- Ça va, et toi ?
+	Boulanger: Ça va, ça va
+	Boulanger: Au fait, pour l'anniversaire de ton petit frère
+	J'ai préparé un gâteau pour lui, tu le veux ?
+	if GlobalVars.money >= 10:
+		- Oui, bien sûr !
+			Boulanger: Yippeee, super !
+			Boulanger: Je te l'emballe
+			$> title = "content"
+			$> close_up_animation = "content"
+			$> GlobalVars.money -= 10
+			- oui
+				Boulanger: :3 => END
+			- OUI !!!
+				Boulanger: ^^ => END
+		- Non, ça ira
+			Boulanger: Ah... C'est pas grave... Peut être une prochaine fois...
+			Boulanger: Je reste ici au cas où tu change d'avis
+	else:
+		$> title = "triste"
+		$> close_up_animation = "triste"
+		Boulanger: Ah... Je vois que tu a déjà acheté un gâteau à la superette.
+		Boulanger: Je pensais qu'on avait quelque chose de spécial entre nous.
+		Boulanger: J'ai dû me tromper. => triste
+- Je suis désolé, mais on va tous mourrir
+	$> close_up_animation = "triste"
+	Boulanger: Comment ça ?
+	You: ... => triste
+=> END
+
+~ triste
+Boulanger: Hors de ma vue !
+=> END
+
+~ content
+Boulanger: Que je suis heureux !
+=> END
