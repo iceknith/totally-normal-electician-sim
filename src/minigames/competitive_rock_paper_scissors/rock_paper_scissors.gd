@@ -90,6 +90,7 @@ var current_total_choice_number = 0
 
 
 func _ready():
+	super()
 	win_label.scale = Vector2.ZERO
 	setup_signals()
 	show_points()

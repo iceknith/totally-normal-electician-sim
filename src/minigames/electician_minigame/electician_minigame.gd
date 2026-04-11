@@ -126,4 +126,4 @@ func end_game():
 	tween.tween_callback(exit)
 
 func exit():
-	MainCommunicator.send_signal_to_main(MainCommunicator.SignalType.SHOW_GAME3D)
+	MainCommunicator.send_signal_to_main(MainCommunicator.SignalType.REMOVE_MINIGAME)

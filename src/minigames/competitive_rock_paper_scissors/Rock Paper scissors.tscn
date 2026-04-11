@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://mecgfpfk6sbr" path="res://src/minigames/competitive_rock_paper_scissors/roll_sprite.tscn" id="2_ladea"]
 [ext_resource type="Texture2D" uid="uid://c5gyf7q6yvcp8" path="res://src/minigames/competitive_rock_paper_scissors/asset/2D/hand.png" id="5_uuwv0"]
 [ext_resource type="PackedScene" uid="uid://dt4mec201tdh3" path="res://src/minigames/competitive_rock_paper_scissors/personPlaying.tscn" id="5_xbnbg"]
-[ext_resource type="Script" uid="uid://c0sp2ilspegwv" path="res://src/minigames/competitive_rock_paper_scissors/hand_pile.gd" id="5_ynqdh"]
+[ext_resource type="Script" path="res://src/minigames/competitive_rock_paper_scissors/hand_pile.gd" id="5_ynqdh"]
 [ext_resource type="Script" uid="uid://rk23gesb0hg3" path="res://src/minigames/competitive_rock_paper_scissors/hand/hand.gd" id="7_ynqdh"]
 [ext_resource type="Texture2D" uid="uid://cye1bhonrbtg7" path="res://src/minigames/competitive_rock_paper_scissors/asset/2D/Scissors.png" id="8_0lxge"]
 [ext_resource type="Texture2D" uid="uid://1xxjx047eo4l" path="res://src/minigames/competitive_rock_paper_scissors/asset/2D/rock.png" id="9_24ib3"]
@@ -25,7 +25,6 @@ rounds_number = 15
 points_to_win = 5
 total_choice_number = 15
 card_scene = ExtResource("2_0lxge")
-opponent = 1
 
 [node name="MarginContainer" type="MarginContainer" parent="." unique_id=2061799233]
 layout_mode = 1

@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://cnnuxnjiw3ait"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_ahwjy"]
+font_size = 30
+
+[node name="InteractableText" type="PanelContainer" unique_id=936344028]
+offset_left = -18.0
+offset_top = -31.0
+offset_right = 19.0
+offset_bottom = 31.0
+size_flags_horizontal = 0
+size_flags_vertical = 4
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=406221037]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+metadata/_edit_lock_ = true
+
+[node name="Label" type="Label" parent="MarginContainer" unique_id=1119443501]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "E"
+label_settings = SubResource("LabelSettings_ahwjy")
+horizontal_alignment = 1
