@@ -29,6 +29,7 @@ var unhandled_mouse_offset:Vector2
 
 @onready var world3D:Node3D = $World
 @onready var minigame_container:Control = $HUD/Minigames
+var minigames:Array[Minigame]
 
 var currentState:GameState = GameState.Game3D
 
@@ -44,18 +45,19 @@ func connect_signals():
 
 func receive_signal(type, data):
 	match type: #pour l'instant je vais pas toucher à ça parce que je veux pas tout casser
-		MainCommunicator.SignalType.SHOW_MINIGAME: show_minigame(data)
+		MainCommunicator.SignalType.ADD_MINIGAME: add_minigame(data)
+		MainCommunicator.SignalType.REMOVE_MINIGAME: remove_minigame()
 		MainCommunicator.SignalType.SHOW_GAME3D: show_game3D()
 		MainCommunicator.SignalType.START_DIALOGUE : start_dialogue(data)
 		MainCommunicator.SignalType.CHANGE_GAMESTATE : update_game_state(data)
-	
 
 func reset_state():
 	# Reset minigames
 	minigame_container.hide()
 	if currentState == GameState.MiniGame:
-		for child in minigame_container.get_children():
+		for child in minigames:
 			child.queue_free()
+		minigames.clear()
 	
 	# TODO, implémenter les resets de menus & dialogues
 	
@@ -67,6 +69,41 @@ func reset_state():
 	world3D.show()
 	world3D.process_mode = Node.PROCESS_MODE_INHERIT
 
+func create_minigame(data):
+	# Show minigame
+	var minigameScene:PackedScene = data[0]
+	var minigame:Minigame = minigameScene.instantiate()
+	minigames.append(minigame)
+	minigame.miniGameEnd.connect(show_game3D)
+	minigame_container.show()
+	minigame_container.add_child(minigame)
+	
+	# Add connections
+	var connections:Dictionary = data[1]
+	for connection in connections.keys():
+		minigame.connect(connection, connections[connection])
+
+func add_minigame(data:Array):
+	if currentState == GameState.Game3D:
+		show_minigame(data)
+	else:
+		# Disable last minigame's Process
+		minigames[-1].process_mode = Node.PROCESS_MODE_DISABLED
+		
+		# Add new minigame
+		create_minigame(data)
+
+func remove_minigame():
+	if minigames.size() <= 1:
+		show_game3D()
+	else:
+		# Remove last minigame
+		minigames[-1].queue_free()
+		minigames.pop_back()
+		
+		# Enable last minigame's Process
+		minigames[-1].process_mode = Node.PROCESS_MODE_INHERIT
+
 func show_minigame(data:Array):
 	# Reset state to normalized state
 	reset_state()
@@ -75,17 +112,7 @@ func show_minigame(data:Array):
 	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 	currentState = GameState.MiniGame
 	
-	# Show minigame
-	var minigameScene:PackedScene = data[0]
-	var minigame:Minigame = minigameScene.instantiate()
-	minigame.miniGameEnd.connect(show_game3D)
-	minigame_container.show()
-	minigame_container.add_child(minigame)
-	
-	# Add connections
-	var connections:Dictionary[String, Callable] = data[1]
-	for connection in connections.keys():
-		minigame.connect(connection, connections[connection])
+	create_minigame(data)
 	
 	# Stop process from game
 	world3D.process_mode = Node.PROCESS_MODE_DISABLED

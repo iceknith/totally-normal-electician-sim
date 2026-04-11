@@ -4,9 +4,11 @@
 [ext_resource type="Script" uid="uid://csdcy81d7nmhj" path="res://src/2D/phase_visual_novel/visual_novel.gd" id="1_yjnoc"]
 [ext_resource type="Script" uid="uid://i1towdpqubly" path="res://src/2D/interactables/interactables_2d_dialogue.gd" id="3_u7l6m"]
 [ext_resource type="Texture2D" uid="uid://cra208jmgv7f8" path="res://icon.svg" id="4_u7l6m"]
+[ext_resource type="PackedScene" uid="uid://cnnuxnjiw3ait" path="res://src/2D/interactables/interactableText.tscn" id="5_035p5"]
 [ext_resource type="Texture2D" uid="uid://dxx8mm38nnd8g" path="res://src/minigames/competitive_rock_paper_scissors/asset/2D/paper.png" id="5_jatnb"]
 [ext_resource type="Texture2D" uid="uid://cye1bhonrbtg7" path="res://src/minigames/competitive_rock_paper_scissors/asset/2D/Scissors.png" id="6_035p5"]
 [ext_resource type="Texture2D" uid="uid://1xxjx047eo4l" path="res://src/minigames/competitive_rock_paper_scissors/asset/2D/rock.png" id="7_mrb55"]
+[ext_resource type="Texture2D" uid="uid://lq83ysv3v3ue" path="res://assets/pixelart/wrenchFINALEFINALE.png" id="8_mrb55"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_u7l6m"]
 animations = [{
@@ -24,6 +26,14 @@ animations = [{
 }],
 "loop": true,
 "name": &"normal",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_mrb55")
+}],
+"loop": true,
+"name": &"screw",
 "speed": 5.0
 }, {
 "frames": [{
@@ -56,11 +66,12 @@ mouse_filter = 2
 texture = ExtResource("1_wnlb3")
 expand_mode = 1
 
-[node name="Interactable2DDialogue" type="Area2D" parent="." unique_id=1779342648 node_paths=PackedStringArray("close_up")]
+[node name="Interactable2DDialogue" type="Area2D" parent="." unique_id=1779342648 node_paths=PackedStringArray("close_up", "interractable_dialogue")]
 script = ExtResource("3_u7l6m")
 dialogue = "uid://dlmfljqnq7ru"
 close_up = NodePath("../AnimatedSprite2D")
-close_up_animation = "normal"
+close_up_start_animation = "normal"
+interractable_dialogue = NodePath("InteractableText")
 metadata/_custom_type_script = "uid://i1towdpqubly"
 
 [node name="Sprite2D" type="Sprite2D" parent="Interactable2DDialogue" unique_id=220578743]
@@ -72,6 +83,12 @@ texture = ExtResource("4_u7l6m")
 position = Vector2(304.4, 230.4)
 scale = Vector2(1, 1.703125)
 polygon = PackedVector2Array(59.1, -64, -59, -64, -63.8, -59, -64, 61, -60.3, 64, 59.6, 64, 63.9, 59, 64, -61.1)
+
+[node name="InteractableText" parent="Interactable2DDialogue" unique_id=936344028 instance=ExtResource("5_035p5")]
+offset_left = 282.0
+offset_top = 85.0
+offset_right = 319.0
+offset_bottom = 147.0
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1478044044]
 position = Vector2(617.99994, 291)

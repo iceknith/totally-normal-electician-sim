@@ -5,6 +5,6 @@ class_name MinigameLaunchInterractable extends Interractable
 
 func _ready() -> void:
 	function_on_interract = MainCommunicator.send_signal_to_main.bind(
-		MainCommunicator.SignalType.SHOW_MINIGAME, [minigame, connections]
+		MainCommunicator.SignalType.ADD_MINIGAME, [minigame, connections]
 	)
 	super()

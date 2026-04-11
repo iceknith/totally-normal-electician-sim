@@ -169,6 +169,7 @@ label_settings = SubResource("LabelSettings_a2g5q")
 horizontal_alignment = 1
 
 [node name="Exit" type="Button" parent="MarginContainer" unique_id=1598856706]
+visible = false
 z_index = 10
 layout_mode = 2
 size_flags_horizontal = 8

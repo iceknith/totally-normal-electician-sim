@@ -78,8 +78,7 @@ func show_text():
 
 func hide_text():
 	text_sprite.hide()
-	
-	
+
 func get_player_camera(PlayerCam:Camera3D):
 	PlayerCamera = PlayerCam
 	
@@ -93,17 +92,10 @@ func interaction_animation():
 			PlayerCamera.turn_to_look_at(camera_root.global_position, turn_time)
 
 func start_interaction():
-	
 	match interaction : 
 		Interaction.Dialogue : 
 			MainCommunicator.send_signal_to_main(MainCommunicator.SignalType.START_DIALOGUE, dialogue)
-			
+
 func full_interaction():
-	
 	await interaction_animation()
 	start_interaction()
-
-			
-		
-	
-	

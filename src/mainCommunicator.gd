@@ -4,7 +4,8 @@ extends Node
 #je pose ça là en attendant pour pas toucher le main et vu que c'est en autoload c'est plus simple
 enum SignalType {
 	CHANGE_GAMESTATE,
-	SHOW_MINIGAME,
+	ADD_MINIGAME,
+	REMOVE_MINIGAME,
 	SHOW_GAME3D,
 	START_DIALOGUE,
 	IN_INTERACTION, 
