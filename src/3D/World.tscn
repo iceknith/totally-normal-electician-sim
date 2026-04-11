@@ -32,8 +32,9 @@ material = SubResource("StandardMaterial3D_awi42")
 size = Vector2(496, 350.8)
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_00xeg"]
-sky_top_color = Color(0.65125984, 0.10719591, 0.14904715, 1)
-sky_horizon_color = Color(0.037180744, 0.03726213, 0.21720988, 1)
+sky_top_color = Color(0.050980393, 0.5882353, 1, 1)
+sky_horizon_color = Color(0.8216582, 0.9236592, 0.9858908, 1)
+sky_cover_modulate = Color(0.6666667, 0.9372549, 0.972549, 1)
 
 [sub_resource type="Sky" id="Sky_co47k"]
 sky_material = SubResource("ProceduralSkyMaterial_00xeg")
@@ -151,7 +152,7 @@ mesh = SubResource("PlaneMesh_kp6b0")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.07089543, 0)
 
 [node name="Sun" type="DirectionalLight3D" parent="." unique_id=164570066]
-transform = Transform3D(1, 0, 0, 0, 0.8660253, 0.49999997, 0, -0.49999997, 0.8660253, 0, 104.529724, 0)
+transform = Transform3D(1, 0, 0, 0, -0.8181497, 0.5750051, 0, -0.5750051, -0.8181497, 0, 104.529724, 0)
 light_color = Color(0.9628863, 0.84937793, 0.6261448, 1)
 light_energy = 1.5
 shadow_enabled = true
@@ -304,6 +305,18 @@ transform = Transform3D(-0.99596, 0, 0.08979818, 0, 1, 0, -0.08979818, 0, -0.995
 [node name="Tower2" parent="Objets" unique_id=980630696 instance=ExtResource("12_clt24")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.875387, 0, -24.794415)
 
+[node name="Tower12" parent="Objets" unique_id=2114227492 instance=ExtResource("12_clt24")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 76.64323, 0, -122.98099)
+
+[node name="Tower13" parent="Objets" unique_id=294670440 instance=ExtResource("12_clt24")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 112.71177, 0, 84.07913)
+
+[node name="Tower14" parent="Objets" unique_id=1467404966 instance=ExtResource("12_clt24")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 62.616615, 0, 122.819405)
+
+[node name="Tower15" parent="Objets" unique_id=562859087 instance=ExtResource("12_clt24")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 130.4121, 0, -44.498512)
+
 [node name="Tower3" parent="Objets" unique_id=1995813380 instance=ExtResource("12_clt24")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -75.490166, 0, -30.548845)
 
@@ -311,13 +324,13 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -75.490166, 0, -30.548845)
 transform = Transform3D(-0.40041304, 0, -0.91633475, 0, 1, 0, 0.91633475, 0, -0.40041304, 1.9937859, 0, -4.173807)
 
 [node name="Tower5" parent="Objets" unique_id=1555162735 instance=ExtResource("12_clt24")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -39.812695, 0, 16.428236)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -41.48254, 0, 14.424425)
 
 [node name="Tower6" parent="Objets" unique_id=1220917605 instance=ExtResource("12_clt24")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.802067, 0, 48.05307)
 
 [node name="Tower7" parent="Objets" unique_id=395719431 instance=ExtResource("12_clt24")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -31.416729, 0, 80.0977)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28.744991, 0, 72.416435)
 
 [node name="Tower8" parent="Objets" unique_id=1601223618 instance=ExtResource("12_clt24")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 45.495647, 0, 2.0430527)
