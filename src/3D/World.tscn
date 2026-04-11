@@ -6,7 +6,6 @@
 [ext_resource type="PackedScene" uid="uid://i72vcloe75tq" path="res://src/3D/interactables/interractable.tscn" id="2_gphh5"]
 [ext_resource type="Script" uid="uid://guu6r2nuivha" path="res://src/3D/interactables/minigameLaunchInterractable.gd" id="3_kp6b0"]
 [ext_resource type="PackedScene" uid="uid://c216ifvuuy6o7" path="res://assets/blender/map.blend" id="4_jqxng"]
-[ext_resource type="PackedScene" uid="uid://bgwp5tg6h76il" path="res://src/minigames/electician_minigame/electician_minigame.tscn" id="6_jqxng"]
 [ext_resource type="PackedScene" uid="uid://72l0c20pg0ko" path="res://assets/blender/maisontexture1.blend" id="8_e0nlv"]
 [ext_resource type="Shader" uid="uid://d1mpjujlwkwhw" path="res://src/shaders/vhsTape.gdshader" id="10_23vqn"]
 [ext_resource type="Texture2D" uid="uid://pm28ohtf0hcf" path="res://assets/misc/screenshot_temp.png" id="10_jqxng"]
@@ -298,32 +297,13 @@ metadata/_custom_type_script = "uid://cu2x3my63v3kw"
 
 [node name="Interactables" type="Node3D" parent="." unique_id=250600695]
 
-[node name="Interractable" parent="Interactables" unique_id=1038079210 instance=ExtResource("2_gphh5")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 1.1736013, -3)
-script = ExtResource("3_kp6b0")
-minigame = ExtResource("6_jqxng")
-connections = Dictionary[String, Callable]({})
-InteractionAnimation = 3
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Interactables/Interractable" unique_id=1041287939]
-transform = Transform3D(1, -1.4901161e-08, -1.4901161e-08, -1.4901161e-08, 1, -2.9802322e-08, -1.4901161e-08, 0, 1, 0, 1.1920929e-07, 2.3841858e-07)
-mesh = SubResource("SphereMesh_gmgko")
-surface_material_override/0 = SubResource("StandardMaterial3D_l8jxy")
-
 [node name="Interractable2" parent="Interactables" unique_id=2024350914 instance=ExtResource("2_gphh5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.9999995, 1.3362136, 0.896065)
+InteractionAnimation = 1
 interaction = 1
+dialogue = "uid://bjx3nwf8qdnjy"
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Interactables/Interractable2" unique_id=70861647]
-transform = Transform3D(1, -1.4901161e-08, -1.4901161e-08, -1.4901161e-08, 1, -2.9802322e-08, -1.4901161e-08, 0, 1, 0, 1.1920929e-07, 2.3841858e-07)
-mesh = SubResource("SphereMesh_gmgko")
-surface_material_override/0 = SubResource("StandardMaterial3D_l8jxy")
-
-[node name="Interractable3" parent="Interactables" unique_id=1698104398 instance=ExtResource("2_gphh5")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.9999995, 1.3362136, 0.896065)
-interaction = 1
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Interactables/Interractable3" unique_id=1173953132]
 transform = Transform3D(1, -1.4901161e-08, -1.4901161e-08, -1.4901161e-08, 1, -2.9802322e-08, -1.4901161e-08, 0, 1, 0, 1.1920929e-07, 2.3841858e-07)
 mesh = SubResource("SphereMesh_gmgko")
 surface_material_override/0 = SubResource("StandardMaterial3D_l8jxy")

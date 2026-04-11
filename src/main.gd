@@ -1,12 +1,4 @@
-extends Node3D
-
-enum GameState {
-	StartMenu,
-	Game3D,
-	Dialogue,
-	MiniGame,
-	EndMenu,
-}
+class_name Main extends Node3D
 
 signal eow_meter_changed(new_eow_var:float)
 
@@ -31,7 +23,15 @@ var unhandled_mouse_offset:Vector2
 @onready var minigame_container:Control = $HUD/Minigames
 var minigames:Array[Minigame]
 
-var currentState:GameState = GameState.Game3D
+@onready var currentNode:Node = world3D
+var currentState:MainCommunicator.GameState = MainCommunicator.GameState.Game3D:
+	set(newVal): 
+		currentState = newVal; 
+		MainCommunicator.current_state = newVal
+var is_in_dialogue:bool = false:
+	set(newVal): 
+		is_in_dialogue = newVal
+		MainCommunicator.is_in_dialogue = newVal
 
 ### Init ###
 
@@ -42,6 +42,7 @@ func _ready() -> void:
 
 func connect_signals():
 	MainCommunicator.signalMain.connect(receive_signal)
+	DialogueManager.dialogue_ended.connect(end_dialogue)
 
 func receive_signal(type, data):
 	match type: #pour l'instant je vais pas toucher à ça parce que je veux pas tout casser
@@ -53,17 +54,18 @@ func receive_signal(type, data):
 
 func reset_state():
 	# Reset minigames
-	minigame_container.hide()
-	if currentState == GameState.MiniGame:
+	#minigame_container.hide()
+	if currentState == MainCommunicator.GameState.MiniGame:
 		for child in minigames:
-			child.queue_free()
+			child.remove()
 		minigames.clear()
 	
-	# TODO, implémenter les resets de menus & dialogues
+	# TODO, implémenter les resets de menus
 	
 	# Reset state
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
-	currentState = GameState.Game3D
+	currentState = MainCommunicator.GameState.Game3D
+	currentNode = world3D
 	
 	# Show & process world3D
 	world3D.show()
@@ -84,7 +86,7 @@ func create_minigame(data):
 		minigame.connect(connection, connections[connection])
 
 func add_minigame(data:Array):
-	if currentState == GameState.Game3D:
+	if currentState == MainCommunicator.GameState.Game3D:
 		show_minigame(data)
 	else:
 		# Disable last minigame's Process
@@ -98,7 +100,7 @@ func remove_minigame():
 		show_game3D()
 	else:
 		# Remove last minigame
-		minigames[-1].queue_free()
+		minigames[-1].remove()
 		minigames.pop_back()
 		
 		# Enable last minigame's Process
@@ -110,7 +112,8 @@ func show_minigame(data:Array):
 	
 	# Change GameState
 	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
-	currentState = GameState.MiniGame
+	currentState = MainCommunicator.GameState.MiniGame
+	currentNode = minigame_container
 	
 	create_minigame(data)
 	
@@ -119,6 +122,28 @@ func show_minigame(data:Array):
 
 func show_game3D():
 	reset_state()
+
+func update_game_state(state:MainCommunicator.GameState):
+	MainCommunicator.current_state = state
+
+func start_dialogue(data:Array):
+	# Change mode
+	is_in_dialogue = true
+	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+	
+	# Launch Dialogue
+	var dialogueFile:String = data[0]
+	var title:String = data[1]
+	var extra_game_states:Array = data[2]
+	DialogueManager.show_dialogue_balloon(
+		load(dialogueFile), title, extra_game_states
+		)
+
+func end_dialogue(_dialogue_data):
+	is_in_dialogue = false
+	if currentState == MainCommunicator.GameState.Game3D:
+		Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+		MainCommunicator.signalCamera.emit("reset", [])
 
 ### EOW Handlers ###
 
@@ -147,20 +172,6 @@ func connect_eow_update_timer(node:Node, timer_timeout:Signal):
 func increment_eow_meter(node:Node):
 	node.eow_meter += eow_delta
 
-func update_game_state(state:MainCommunicator.GameState):
-	MainCommunicator.current_state = state
-
-func start_dialogue(data:Array):
-	var dialogueFile:String = data[0]
-	var title:String = data[1]
-	var extra_game_states:Array = data[2]
-	MainCommunicator.signalMain.emit(
-	MainCommunicator.SignalType.CHANGE_GAMESTATE,\
-	MainCommunicator.GameState.Dialogue)
-	DialogueManager.show_dialogue_balloon(
-		load(dialogueFile), title, extra_game_states
-		)
-
 func end_of_world():
 	get_tree().quit()
 
@@ -183,7 +194,7 @@ func mouse_jitter_handler(delta:float) -> void:
 		unhandled_mouse_offset = new_mouse_pos - round(new_mouse_pos)
 		get_viewport().warp_mouse(round(new_mouse_pos))
 		
-		if currentState == GameState.Game3D:
+		if currentState == MainCommunicator.GameState.Game3D:
 			var jitter_input = InputEventMouseMotion.new()
 			jitter_input.relative = mouse_offset * camera_jitter_amount
 			Input.parse_input_event(jitter_input)

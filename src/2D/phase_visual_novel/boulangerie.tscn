@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://d2b7b6sp2kyp2"]
 
+[ext_resource type="Script" uid="uid://dd5w2ptvu7pou" path="res://src/minigames/minigame.gd" id="1_mrb55"]
 [ext_resource type="Texture2D" uid="uid://cxe54b1hwc0uy" path="res://assets/backgrounds/boulangerie_temporaire.jpg" id="1_wnlb3"]
-[ext_resource type="Script" uid="uid://csdcy81d7nmhj" path="res://src/2D/phase_visual_novel/visual_novel.gd" id="1_yjnoc"]
 [ext_resource type="Script" uid="uid://i1towdpqubly" path="res://src/2D/interactables/interactables_2d_dialogue.gd" id="3_u7l6m"]
 [ext_resource type="Texture2D" uid="uid://cra208jmgv7f8" path="res://icon.svg" id="4_u7l6m"]
 [ext_resource type="PackedScene" uid="uid://cnnuxnjiw3ait" path="res://src/2D/interactables/interactableText.tscn" id="5_035p5"]
@@ -53,7 +53,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
-script = ExtResource("1_yjnoc")
+script = ExtResource("1_mrb55")
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=1225841445]
 layout_mode = 1

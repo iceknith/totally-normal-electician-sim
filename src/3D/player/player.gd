@@ -21,10 +21,15 @@ func _ready() -> void:
 	# plus tard on voudra avoir des moments ou on libère le curseur pour pouvoir acceder à l'ui au lieu qu'il serve à tourner la drirection dans laquelle on regarde.
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 
-			
 func _unhandled_input(event: InputEvent) -> void:
 	if Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
-		if event is InputEventMouseMotion and !in_interaction():
+		if event is InputEventMouseMotion && !in_interaction():
+			# Si l'input ne match pas avec la vélocité rentré on ne le process pas
+			# Sinon, ça fait des flicker bizzare quand on sort des dialogues
+			if abs(event.relative.x) >= abs(event.velocity.x) &&\
+				abs(event.relative.y) >= abs(event.velocity.y): 
+					return
+			
 			rotation_y -= event.relative.x * look_sensitivity # tourne le perso sur l'axe droite/gauche
 			rotation_x -= event.relative.y * look_sensitivity 	# tourne la caméra de haut en bas
 			
@@ -47,15 +52,10 @@ func interactable_vision_handler(delta) -> void:
 	var collider:Area3D = $head/Camera3D/InteractableVision.get_collider()
 	if collider && (collider as Interractable):
 		collider.player_viewing()
-		collider.get_player_camera(%Camera3D)
 		
 func in_interaction() -> bool: 
-	match MainCommunicator.current_state : 
-		MainCommunicator.GameState.Dialogue : 
-			return true 
-		MainCommunicator.GameState.MiniGame :
-			return true
-	return false
+	return MainCommunicator.is_in_dialogue ||\
+		 MainCommunicator.current_state != MainCommunicator.GameState.Game3D
 
 func manage_input(delta:float) -> void :
 		# Add the gravity.

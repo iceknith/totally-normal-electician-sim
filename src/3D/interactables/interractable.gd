@@ -1,6 +1,6 @@
 class_name Interractable extends Area3D
 
-@export var function_on_interract:Callable = func(): print("hey")
+@export var function_on_interract:Callable = func(): pass
 @export var action:String = "interract"
 
 
@@ -25,16 +25,12 @@ enum Interaction {
 @export var zoom_time:float = 0.5
 @export var zoom_intensity:float = 10
 
-
-@export var dialogue:String = "res://src/Dialogue/dialogueTest/testDialogue.dialogue"
+@export_file("*.dialogue", ) var dialogue:String
+@export var title:String = "start"
 #Interaction Dialogue Parameters
-
 
 @onready var text_sprite:Sprite3D = $Sprite3D
 @onready var text_label:Label = $SubViewport/PanelContainer/MarginContainer/Label
-
-
-var PlayerCamera:Camera3D
 
 var was_viewed:bool = false
 var is_viewed:bool = false:
@@ -79,23 +75,22 @@ func show_text():
 func hide_text():
 	text_sprite.hide()
 
-func get_player_camera(PlayerCam:Camera3D):
-	PlayerCamera = PlayerCam
-	
 func interaction_animation():
 	match InteractionAnimation : 
 		AnimationOnInteraction.TurnAndZoom: 
-			PlayerCamera.turn_then_zoom(camera_root.global_position, turn_time, zoom_time, zoom_intensity)
+			MainCommunicator.signalCamera.emit("turn_then_zoom", [camera_root.global_position, turn_time, zoom_time, zoom_intensity])
 		AnimationOnInteraction.TurnWhileZoom : 
-			PlayerCamera.turn_while_zoom(camera_root.global_position, turn_time, zoom_time, zoom_intensity)
+			MainCommunicator.signalCamera.emit("turn_then_zoom", [camera_root.global_position, turn_time, zoom_time, zoom_intensity])
 		AnimationOnInteraction.Turn : 
-			PlayerCamera.turn_to_look_at(camera_root.global_position, turn_time)
+			MainCommunicator.signalCamera.emit("turn_to_look_at", [camera_root.global_position, turn_time])
 
 func start_interaction():
 	match interaction : 
 		Interaction.Dialogue : 
-			MainCommunicator.send_signal_to_main(MainCommunicator.SignalType.START_DIALOGUE, dialogue)
+			MainCommunicator.send_signal_to_main(
+				MainCommunicator.SignalType.START_DIALOGUE, [dialogue, title, [self]]
+				)
 
 func full_interaction():
-	await interaction_animation()
+	interaction_animation()
 	start_interaction()
