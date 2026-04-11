@@ -43,7 +43,7 @@ func connect_signals():
 	MainCommunicator.signalMain.connect(receive_signal)
 
 func receive_signal(type, data):
-	match type: #pour l'instant je vais pas toucher à ça parce que je veux pas tout casser
+	match type: 
 		MainCommunicator.SignalType.SHOW_MINIGAME: show_minigame(data)
 		MainCommunicator.SignalType.SHOW_GAME3D: show_game3D()
 		MainCommunicator.SignalType.START_DIALOGUE : start_dialogue(data)

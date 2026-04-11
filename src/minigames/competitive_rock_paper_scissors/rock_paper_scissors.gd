@@ -218,7 +218,6 @@ func dialogue_loses():
 		personPlaying.WILLY : #il choisit tjrs le moins 
 			pass
 		personPlaying.BILLY : 
-
 			var dialogue_resource = load("res://src/minigames/competitive_rock_paper_scissors/dialogue/Billy/BillyLoses.dialogue")
 			var instance = await DialogueManager.show_dialogue_balloon_scene(balloon, dialogue_resource)
 			add_child(instance)
@@ -278,7 +277,6 @@ func generate_opponent_choice():
 							break
 					if opponent_has_chosen == true : 
 						break
-
 	return opponent_choice
 	
 
@@ -432,18 +430,3 @@ func intro():
 			setup_game()
 			draw_cards()
 			
-
-func _on_button_pressed():
-	pass
-	
-
-	
-#func show_dialogue_balloon_scene(balloon_scene, resource: DialogueResource, title: String = "", extra_game_states: Array = []) -> Node:
-	#if balloon_scene is String:
-		#balloon_scene = load(balloon_scene)
-	#if balloon_scene is PackedScene:
-		#balloon_scene = balloon_scene.instantiate()
-#
-	#var balloon: Node = balloon_scene
-	#_start_balloon.call_deferred(balloon, resource, title, extra_game_states)
-	#return balloon

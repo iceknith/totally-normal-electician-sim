@@ -1,7 +1,7 @@
 extends Node
 
 
-var electrician_minigame_current_stage:ElectricianMinigame.Stages = ElectricianMinigame.Stages.TutorialWires
+var electrician_minigame_current_stage:ElectricianMinigame.Stages = ElectricianMinigame.Stages.FullGame
 signal tower_completed_value_change
 var tower_completed:int = 0:
 	set(new_val):

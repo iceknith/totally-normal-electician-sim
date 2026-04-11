@@ -22,7 +22,7 @@ uniform sampler2D displacementNoise : filter_nearest, repeat_enable;
 uniform vec2 displacementDirection = vec2(1,1);
 uniform float displacementStrength = 0.1;
 group_uniforms noise;
-uniform sampler2D noise : filter_nearest, repeat_enable;
+	uniform sampler2D noise : filter_nearest, repeat_enable;
 uniform vec2 noiseDirection = vec2(1,1);
 uniform float noiseStrength = 0.1;
 

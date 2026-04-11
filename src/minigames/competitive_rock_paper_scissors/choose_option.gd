@@ -58,7 +58,7 @@ func roll_players(choices, handPile, drawPile, playPile):
 		
 		instance.set_choice(i)
 		handPile.add_child(instance)
-
+		instance.play_flip_animation()
 		
 		match i : 
 			RPS.Choice.ROCK : 
@@ -69,6 +69,7 @@ func roll_players(choices, handPile, drawPile, playPile):
 				instance.set_texture(scissors_tex)
 		#var min_size = instance.get_combined_minimum_size()
 		var btn = instance.get_node("TextureButton")
+	
 		manage_rotation(choices, instance, j)
 		j +=1
 		btn.pressed.connect(update_player_choice.bind(i, self))
@@ -84,8 +85,7 @@ func roll_players(choices, handPile, drawPile, playPile):
 
 		
 
-		
-
+	
 
 func manage_rotation(choices, instance, card_nb):
 	var nb_of_cards = len(choices)

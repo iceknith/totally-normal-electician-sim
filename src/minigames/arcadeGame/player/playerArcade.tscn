@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://do420mt8i6pdf"]
+
+[ext_resource type="Script" uid="uid://iqj5i2a575ju" path="res://src/minigames/arcadeGame/player/player_arcade.gd" id="1_2i5is"]
+[ext_resource type="Texture2D" uid="uid://cra208jmgv7f8" path="res://icon.svg" id="2_sf0et"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_37huc"]
+size = Vector2(120, 114)
+
+[node name="PlayerArcade" type="CharacterBody2D" unique_id=2122613389]
+script = ExtResource("1_2i5is")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2126972431]
+texture = ExtResource("2_sf0et")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=261281344]
+position = Vector2(0, 1)
+shape = SubResource("RectangleShape2D_37huc")
+
+[node name="sendBack" type="Area2D" parent="." unique_id=911234329]
