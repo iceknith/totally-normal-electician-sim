@@ -90,7 +90,7 @@ var current_total_choice_number = 0
 
 
 func _ready():
-	intro()
+	super()
 	win_label.scale = Vector2.ZERO
 	setup_signals()
 	show_points()
@@ -115,7 +115,7 @@ func update_player_choice(choice):
 	if has_player_chosen and !is_rolling: 
 		is_rolling = true
 		opponent_choice = generate_opponent_choice()
-		print(opponent_choice)
+
 		update_choice_stock(player_choice)
 		last_player_choices.append(player_choice)
 		update_choice_stock(opponent_choice)

@@ -1,40 +1,38 @@
 class_name Interractable extends Area3D
 
-@export var function_on_interract:Callable = func(): print("hey")
 @export var action:String = "interract"
 
-
 enum AnimationOnInteraction {
+	Nothing,
 	TurnAndZoom,
 	Turn,
 	TurnWhileZoom,
-	Nothing
 }
 
 enum Interaction {
 	Nothing,
 	Dialogue,
-	Minigame
+	Minigame,
 }
-@export var InteractionAnimation :AnimationOnInteraction
-@export var interaction : Interaction
+@export var interaction:Interaction = Interaction.Nothing
 
-#Camera Interaction Parameters
+@export var InteractionAnimation:AnimationOnInteraction = AnimationOnInteraction.Nothing
+@export_group("Animation")
 @export var camera_root:Node3D # the point the camera will turn to
 @export var turn_time:float = 0.5
 @export var zoom_time:float = 0.5
 @export var zoom_intensity:float = 10
 
+@export_group("Dialogue")
+@export_file("*.dialogue", ) var dialogue:String
+@export var title:String = "start"
 
-@export var dialogue:String = "res://src/Dialogue/dialogueTest/testDialogue.dialogue"
-#Interaction Dialogue Parameters
-
+@export_group("Minigame")
+@export var minigame:PackedScene
+@export var connections:Dictionary[String, Callable]
 
 @onready var text_sprite:Sprite3D = $Sprite3D
 @onready var text_label:Label = $SubViewport/PanelContainer/MarginContainer/Label
-
-
-var PlayerCamera:Camera3D
 
 var was_viewed:bool = false
 var is_viewed:bool = false:
@@ -55,7 +53,6 @@ func set_key_text() -> void:
 func _process(delta: float) -> void:
 	# Listen for inputs if visible
 	if is_viewed && Input.is_action_just_pressed(action):
-		function_on_interract.call()
 		full_interaction()
 		is_interacted_with = true
 
@@ -78,37 +75,27 @@ func show_text():
 
 func hide_text():
 	text_sprite.hide()
-	
-	
-func get_player_camera(PlayerCam:Camera3D):
-	PlayerCamera = PlayerCam
-	
+
 func interaction_animation():
 	match InteractionAnimation : 
 		AnimationOnInteraction.TurnAndZoom: 
-			await PlayerCamera.turn_then_zoom(camera_root.global_position, turn_time, zoom_time, zoom_intensity)
+			MainCommunicator.signalCamera.emit("turn_then_zoom", [camera_root.global_position, turn_time, zoom_time, zoom_intensity])
 		AnimationOnInteraction.TurnWhileZoom : 
-			await PlayerCamera.turn_while_zoom(camera_root.global_position, turn_time, zoom_time, zoom_intensity)
+			MainCommunicator.signalCamera.emit("turn_then_zoom", [camera_root.global_position, turn_time, zoom_time, zoom_intensity])
 		AnimationOnInteraction.Turn : 
-			await PlayerCamera.turn_to_look_at(camera_root.global_position, turn_time)
-	
-	
-		
-		
-		
+			MainCommunicator.signalCamera.emit("turn_to_look_at", [camera_root.global_position, turn_time])
 
 func start_interaction():
-	
 	match interaction : 
 		Interaction.Dialogue : 
-			MainCommunicator.send_signal_to_main(MainCommunicator.SignalType.START_DIALOGUE, dialogue)
-			
-func full_interaction():
-	
-	await interaction_animation()
-	start_interaction()
+			MainCommunicator.send_signal_to_main(
+				MainCommunicator.SignalType.START_DIALOGUE, [dialogue, title, [self]]
+				)
+		Interaction.Minigame:
+			MainCommunicator.send_signal_to_main(
+				MainCommunicator.SignalType.ADD_MINIGAME, [minigame, connections]
+			)
 
-			
-		
-	
-	
+func full_interaction():
+	interaction_animation()
+	start_interaction()

@@ -1,8 +1,13 @@
 [gd_scene format=3 uid="uid://bhqwyhmgp4t82"]
 
+[ext_resource type="Script" uid="uid://dd5w2ptvu7pou" path="res://src/minigames/minigame.gd" id="1_sb0yd"]
 [ext_resource type="Shader" uid="uid://ctbl58rioj50b" path="res://src/2D/levels/Arcade/shaders/distorsion.gdshader" id="2_fxxif"]
+[ext_resource type="PackedScene" uid="uid://7ykeb0dnh705" path="res://src/2D/player/player2D.tscn" id="2_o5jlv"]
 [ext_resource type="Texture2D" uid="uid://bjb6qkb8ayhnl" path="res://src/2D/levels/Arcade/assets/fond.png" id="2_pdjh2"]
 [ext_resource type="Texture2D" uid="uid://j5t8bh7tv72m" path="res://src/2D/levels/Arcade/shaders/circles.png" id="3_fxxif"]
+[ext_resource type="Script" uid="uid://dbf5k8vvysldd" path="res://src/2D/interactables/interactables_2d_minigame.gd" id="6_4vtsk"]
+[ext_resource type="PackedScene" uid="uid://cnnuxnjiw3ait" path="res://src/2D/interactables/interactableText.tscn" id="6_sb0yd"]
+[ext_resource type="PackedScene" uid="uid://djias0ir5lwjr" path="res://src/minigames/test_minigame.tscn" id="7_4vtsk"]
 
 [sub_resource type="Gradient" id="Gradient_fxxif"]
 offsets = PackedFloat32Array(0.016990291, 1)
@@ -27,13 +32,18 @@ shader_parameter/enable_palette_cycling = true
 shader_parameter/palette = SubResource("GradientTexture2D_o5jlv")
 shader_parameter/palette_speed = 0.1
 
-[node name="Arcade" type="Control" unique_id=1808141388]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4vtsk"]
+size = Vector2(112.5, 198)
+
+[node name="Arcade" type="Control" unique_id=1662000706]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_sb0yd")
+metadata/_custom_type_script = "uid://dd5w2ptvu7pou"
 
 [node name="bg" type="TextureRect" parent="." unique_id=351131469]
 z_index = -1
@@ -44,6 +54,9 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("2_pdjh2")
+
+[node name="Player2d" parent="." unique_id=86314008 instance=ExtResource("2_o5jlv")]
+position = Vector2(168, 325)
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=88397276]
 texture_repeat = 2
@@ -56,3 +69,20 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("3_fxxif")
 expand_mode = 3
+
+[node name="Interactable2DMinigame" type="Area2D" parent="." unique_id=631324671 node_paths=PackedStringArray("interractable_dialogue")]
+script = ExtResource("6_4vtsk")
+minigame = ExtResource("7_4vtsk")
+action_type = 1
+interractable_dialogue = NodePath("InteractableText")
+metadata/_custom_type_script = "uid://dbf5k8vvysldd"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactable2DMinigame" unique_id=2005501467]
+position = Vector2(468.75, 156)
+shape = SubResource("RectangleShape2D_4vtsk")
+
+[node name="InteractableText" parent="Interactable2DMinigame" unique_id=936344028 instance=ExtResource("6_sb0yd")]
+offset_left = 450.0
+offset_top = 92.0
+offset_right = 487.0
+offset_bottom = 154.0
