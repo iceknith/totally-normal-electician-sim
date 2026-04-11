@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://b1x0kk15ui8fh"
-path="res://.godot/imported/guy.blend-4102ddaf8742ec1b9c4ee66750f93adc.scn"
+uid="uid://bxd7l2fjgm1hi"
+path="res://.godot/imported/superette.blend-d6cef4bcaa0ac05f7bc17a484822857c.scn"
 
 [deps]
 
-source_file="res://assets/blender/guy.blend"
-dest_files=["res://.godot/imported/guy.blend-4102ddaf8742ec1b9c4ee66750f93adc.scn"]
+source_file="res://assets/blender/superette.blend"
+dest_files=["res://.godot/imported/superette.blend-d6cef4bcaa0ac05f7bc17a484822857c.scn"]
 
 [params]
 
@@ -33,7 +33,7 @@ animation/fps=30
 animation/trimming=false
 animation/remove_immutable_tracks=true
 animation/import_rest_as_RESET=false
-import_script/path=""
+import_script/path="uid://boqq63mymoi05"
 materials/extract=0
 materials/extract_format=0
 materials/extract_path=""

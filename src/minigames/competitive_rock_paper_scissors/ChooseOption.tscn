@@ -5,15 +5,16 @@
 [ext_resource type="Texture2D" uid="uid://1xxjx047eo4l" path="res://src/minigames/competitive_rock_paper_scissors/asset/2D/rock.png" id="3_lxmxy"]
 [ext_resource type="Texture2D" uid="uid://dxx8mm38nnd8g" path="res://src/minigames/competitive_rock_paper_scissors/asset/2D/paper.png" id="4_dvt5s"]
 
-[node name="ChooseOption" type="HBoxContainer" unique_id=288890785]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+[sub_resource type="Curve" id="Curve_xjf3u"]
+_limits = [-1.0, 1.0, 0.0, 1.0]
+_data = [Vector2(0, -1), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[node name="ChooseOption" type="Node2D" unique_id=58809813]
 script = ExtResource("1_eiil3")
 scissors_tex = ExtResource("2_xjf3u")
 rock_tex = ExtResource("3_lxmxy")
 paper_tex = ExtResource("4_dvt5s")
-separation = 50.0
+offset = 100.0
 number_of_buttons = 3
+curve = SubResource("Curve_xjf3u")

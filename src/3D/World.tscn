@@ -32,8 +32,9 @@ material = SubResource("StandardMaterial3D_awi42")
 size = Vector2(496, 350.8)
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_00xeg"]
-sky_top_color = Color(0.65125984, 0.10719591, 0.14904715, 1)
-sky_horizon_color = Color(0.037180744, 0.03726213, 0.21720988, 1)
+sky_top_color = Color(0.050980393, 0.5882353, 1, 1)
+sky_horizon_color = Color(0.8216582, 0.9236592, 0.9858908, 1)
+sky_cover_modulate = Color(0.6666667, 0.9372549, 0.972549, 1)
 
 [sub_resource type="Sky" id="Sky_co47k"]
 sky_material = SubResource("ProceduralSkyMaterial_00xeg")
@@ -151,7 +152,7 @@ mesh = SubResource("PlaneMesh_kp6b0")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.07089543, 0)
 
 [node name="Sun" type="DirectionalLight3D" parent="." unique_id=164570066]
-transform = Transform3D(1, 0, 0, 0, 0.8660253, 0.49999997, 0, -0.49999997, 0.8660253, 0, 104.529724, 0)
+transform = Transform3D(1, 0, 0, 0, -0.8181497, 0.5750051, 0, -0.5750051, -0.8181497, 0, 104.529724, 0)
 light_color = Color(0.9628863, 0.84937793, 0.6261448, 1)
 light_energy = 1.5
 shadow_enabled = true
