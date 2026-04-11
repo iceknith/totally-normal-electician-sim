@@ -1,33 +1,35 @@
 class_name Interractable extends Area3D
 
-@export var function_on_interract:Callable = func(): pass
 @export var action:String = "interract"
 
-
 enum AnimationOnInteraction {
+	Nothing,
 	TurnAndZoom,
 	Turn,
 	TurnWhileZoom,
-	Nothing
 }
 
 enum Interaction {
 	Nothing,
 	Dialogue,
-	Minigame
+	Minigame,
 }
-@export var InteractionAnimation :AnimationOnInteraction
-@export var interaction : Interaction
+@export var interaction:Interaction = Interaction.Nothing
 
-#Camera Interaction Parameters
+@export var InteractionAnimation:AnimationOnInteraction = AnimationOnInteraction.Nothing
+@export_group("Animation")
 @export var camera_root:Node3D # the point the camera will turn to
 @export var turn_time:float = 0.5
 @export var zoom_time:float = 0.5
 @export var zoom_intensity:float = 10
 
+@export_group("Dialogue")
 @export_file("*.dialogue", ) var dialogue:String
 @export var title:String = "start"
-#Interaction Dialogue Parameters
+
+@export_group("Minigame")
+@export var minigame:PackedScene
+@export var connections:Dictionary[String, Callable]
 
 @onready var text_sprite:Sprite3D = $Sprite3D
 @onready var text_label:Label = $SubViewport/PanelContainer/MarginContainer/Label
@@ -51,7 +53,6 @@ func set_key_text() -> void:
 func _process(delta: float) -> void:
 	# Listen for inputs if visible
 	if is_viewed && Input.is_action_just_pressed(action):
-		function_on_interract.call()
 		full_interaction()
 		is_interacted_with = true
 
@@ -90,6 +91,10 @@ func start_interaction():
 			MainCommunicator.send_signal_to_main(
 				MainCommunicator.SignalType.START_DIALOGUE, [dialogue, title, [self]]
 				)
+		Interaction.Minigame:
+			MainCommunicator.send_signal_to_main(
+				MainCommunicator.SignalType.ADD_MINIGAME, [minigame, connections]
+			)
 
 func full_interaction():
 	interaction_animation()

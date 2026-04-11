@@ -81,9 +81,3 @@ func shake_for(shake_strength, shake_duration):
 	shaking = true
 	await get_tree().create_timer(shake_duration).timeout
 	shaking = false
-
-func lock_camera(): 
-	MainCommunicator.lock_camera = true # On lock la caméra
-
-func unlock_camera():
-	MainCommunicator.lock_camera = false #On unlock la caméra

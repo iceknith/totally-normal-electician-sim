@@ -26,4 +26,3 @@ signal signalCamera(callable:String, arguments)
 
 func send_signal_to_main(type, content=null):
 	signalMain.emit(type, content)
-	

@@ -4,7 +4,6 @@
 [ext_resource type="Script" uid="uid://dp5rxhie836us" path="res://src/3D/world.gd" id="1_co47k"]
 [ext_resource type="Texture2D" uid="uid://ccubsulhsdhv4" path="res://assets/map.png" id="1_l8jxy"]
 [ext_resource type="PackedScene" uid="uid://i72vcloe75tq" path="res://src/3D/interactables/interractable.tscn" id="2_gphh5"]
-[ext_resource type="Script" uid="uid://guu6r2nuivha" path="res://src/3D/interactables/minigameLaunchInterractable.gd" id="3_kp6b0"]
 [ext_resource type="PackedScene" uid="uid://c216ifvuuy6o7" path="res://assets/blender/map.blend" id="4_jqxng"]
 [ext_resource type="PackedScene" uid="uid://72l0c20pg0ko" path="res://assets/blender/maisontexture1.blend" id="8_e0nlv"]
 [ext_resource type="Shader" uid="uid://d1mpjujlwkwhw" path="res://src/shaders/vhsTape.gdshader" id="10_23vqn"]
@@ -54,6 +53,9 @@ dof_blur_far_distance = 200.0
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_l8jxy"]
 albedo_color = Color(0.65882355, 0, 0.62352943, 1)
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_ivwwh"]
+radius = 0.72587484
 
 [sub_resource type="PrismMesh" id="PrismMesh_lpsds"]
 
@@ -299,8 +301,8 @@ metadata/_custom_type_script = "uid://cu2x3my63v3kw"
 
 [node name="Interractable2" parent="Interactables" unique_id=2024350914 instance=ExtResource("2_gphh5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.9999995, 1.3362136, 0.896065)
-InteractionAnimation = 1
 interaction = 1
+InteractionAnimation = 1
 dialogue = "uid://bjx3nwf8qdnjy"
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Interactables/Interractable2" unique_id=70861647]
@@ -308,44 +310,48 @@ transform = Transform3D(1, -1.4901161e-08, -1.4901161e-08, -1.4901161e-08, 1, -2
 mesh = SubResource("SphereMesh_gmgko")
 surface_material_override/0 = SubResource("StandardMaterial3D_l8jxy")
 
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Interactables/Interractable2" unique_id=92960897]
+shape = SubResource("SphereShape3D_ivwwh")
+
 [node name="Interractable4" parent="Interactables" unique_id=1400202346 instance=ExtResource("2_gphh5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 1.4752015, 3.439649)
-script = ExtResource("3_kp6b0")
-minigame = ExtResource("14_ivwwh")
-connections = Dictionary[String, Callable]({})
-InteractionAnimation = 3
 interaction = 2
+InteractionAnimation = 3
+minigame = ExtResource("14_ivwwh")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Interactables/Interractable4" unique_id=798589873]
 transform = Transform3D(1, -1.4901161e-08, -1.4901161e-08, -1.4901161e-08, 1, -2.9802322e-08, -1.4901161e-08, 0, 1, 0, 1.1920929e-07, 2.3841858e-07)
 mesh = SubResource("SphereMesh_gmgko")
 surface_material_override/0 = SubResource("StandardMaterial3D_l8jxy")
 
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Interactables/Interractable4" unique_id=1230039973]
+shape = SubResource("SphereShape3D_ivwwh")
+
 [node name="boulangerie" parent="Interactables" unique_id=428194441 instance=ExtResource("2_gphh5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.0406445, 0.73993564, 3.2226076)
-script = ExtResource("3_kp6b0")
-minigame = ExtResource("14_lpsds")
-connections = Dictionary[String, Callable]({})
-InteractionAnimation = 3
 interaction = 2
+minigame = ExtResource("14_lpsds")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Interactables/boulangerie" unique_id=382759474]
 transform = Transform3D(1, -1.4901161e-08, -1.4901161e-08, -1.4901161e-08, 1, -2.9802322e-08, -1.4901161e-08, 0, 1, 0, 1.1920929e-07, 2.3841858e-07)
 mesh = SubResource("PrismMesh_lpsds")
 surface_material_override/0 = SubResource("StandardMaterial3D_l8jxy")
 
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Interactables/boulangerie" unique_id=1710995515]
+shape = SubResource("SphereShape3D_ivwwh")
+
 [node name="arcade" parent="Interactables" unique_id=555511237 instance=ExtResource("2_gphh5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.1140776, 0.73993564, 3.2226076)
-script = ExtResource("3_kp6b0")
-minigame = ExtResource("14_yhicf")
-connections = Dictionary[String, Callable]({})
-InteractionAnimation = 3
 interaction = 2
+minigame = ExtResource("14_yhicf")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Interactables/arcade" unique_id=24126742]
 transform = Transform3D(1, -1.4901161e-08, -1.4901161e-08, -1.4901161e-08, 1, -2.9802322e-08, -1.4901161e-08, 0, 1, 0, 1.1920929e-07, 2.3841858e-07)
 mesh = SubResource("PrismMesh_lpsds")
 surface_material_override/0 = SubResource("StandardMaterial3D_l8jxy")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Interactables/arcade" unique_id=1961930336]
+shape = SubResource("SphereShape3D_ivwwh")
 
 [node name="ShaderCanvasLayer" type="CanvasLayer" parent="." unique_id=1482458820]
 
