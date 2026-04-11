@@ -91,7 +91,6 @@ transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0, 4.3276844, -0.016131
 [node name="Interractable" parent="." unique_id=1038079210 instance=ExtResource("2_stmy2")]
 transform = Transform3D(-0.9373976, 0, 0.34826136, 0, 1, 0, -0.34826136, 0, -0.9373976, 0.16412556, 1.0637094, -0.41626066)
 interaction = 2
-InteractionAnimation = 3
 minigame = ExtResource("4_fgjub")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Interractable" unique_id=1520121141]
