@@ -24,7 +24,6 @@ func _process(delta):
 		shake()
 	
 func turn_to_look_at(ToTurnTo : Vector3, turnTime: float = 1) -> void:
-
 	var target_transform = global_transform.looking_at(ToTurnTo) # Calcule la rotation que doit avoir la cam pour regarder un objet
 	var rotation_vector = target_transform.basis.get_euler() # La rotation final
 	var tween = create_tween()
