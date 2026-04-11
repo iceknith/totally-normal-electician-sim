@@ -2,9 +2,15 @@
 
 [ext_resource type="Script" uid="uid://cb5wmmttsibce" path="res://src/Dialogue/DialogueBalloon/balloon.gd" id="1_30sxu"]
 [ext_resource type="PackedScene" uid="uid://ckvgyvclnwggo" path="res://addons/dialogue_manager/dialogue_label.tscn" id="2_3nk5w"]
+<<<<<<< Updated upstream
 [ext_resource type="Texture2D" uid="uid://birs4fn4vod0" path="res://src/Dialogue/bubble/dialogeBubble.png" id="2_551r0"]
 [ext_resource type="Script" uid="uid://bb52rsfwhkxbn" path="res://addons/dialogue_manager/dialogue_responses_menu.gd" id="3_551r0"]
 [ext_resource type="AudioStream" uid="uid://bm1e4xlpgjw4p" path="res://src/minigames/competitive_rock_paper_scissors/dialogue/Billy/sound/billy_voice.wav" id="5_551r0"]
+=======
+[ext_resource type="Texture2D" path="res://src/Dialogue/bubble/dialogeBubble.png" id="2_551r0"]
+[ext_resource type="Script" uid="uid://bb52rsfwhkxbn" path="res://addons/dialogue_manager/dialogue_responses_menu.gd" id="3_551r0"]
+[ext_resource type="AudioStream" path="res://src/minigames/competitive_rock_paper_scissors/dialogue/Billy/sound/billy_voice.wav" id="5_551r0"]
+>>>>>>> Stashed changes
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_spyqn"]
 bg_color = Color(0, 0, 0, 1)

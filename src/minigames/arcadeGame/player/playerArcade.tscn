@@ -1,6 +1,12 @@
+<<<<<<< Updated upstream
 [gd_scene format=3 uid="uid://do420mt8i6pdf"]
 
 [ext_resource type="Script" uid="uid://iqj5i2a575ju" path="res://src/minigames/arcadeGame/player/player_arcade.gd" id="1_2i5is"]
+=======
+[gd_scene format=3 uid="uid://bsff1rurvnnt"]
+
+[ext_resource type="Script" path="res://src/minigames/arcadeGame/player/player_arcade.gd" id="1_2i5is"]
+>>>>>>> Stashed changes
 [ext_resource type="Texture2D" uid="uid://cra208jmgv7f8" path="res://icon.svg" id="2_sf0et"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_37huc"]
