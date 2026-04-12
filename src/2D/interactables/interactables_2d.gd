@@ -34,8 +34,8 @@ func _ready() -> void:
 			input_event.connect(_on_input_event)
 		ActionType.ActionPress:
 			interractable_label.text = "E"
-			body_entered.connect(show_interactable_text)
-			body_exited.connect(hide_interactable_text)
+			body_entered.connect(_on_body_entered)
+			body_exited.connect(_on_body_exited)
 	interractable_dialogue.hide()
 
 func find_label(node:Node) -> Label:
@@ -56,11 +56,19 @@ func _process(_delta: float) -> void:
 	 	is_currently_interractable && Input.is_action_just_pressed(action):
 		start_interaction()
 
-func show_interactable_text(_arg=null):
+func _on_body_entered(body:Node2D):
+	if body as Player2D:
+		show_interactable_text()
+
+func _on_body_exited(body:Node2D):
+	if body as Player2D:
+		hide_interactable_text()
+
+func show_interactable_text():
 	is_currently_interractable = true
 	interractable_dialogue.show()
 
-func hide_interactable_text(_arg=null):
+func hide_interactable_text():
 	is_currently_interractable = false
 	interractable_dialogue.hide()
 

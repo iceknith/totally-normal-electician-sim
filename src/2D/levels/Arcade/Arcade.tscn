@@ -9,6 +9,9 @@
 [ext_resource type="PackedScene" uid="uid://cnnuxnjiw3ait" path="res://src/2D/interactables/interactableText.tscn" id="6_sb0yd"]
 [ext_resource type="PackedScene" uid="uid://djias0ir5lwjr" path="res://src/minigames/test_minigame.tscn" id="7_4vtsk"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4vtsk"]
+size = Vector2(112.5, 198)
+
 [sub_resource type="Gradient" id="Gradient_fxxif"]
 offsets = PackedFloat32Array(0.016990291, 1)
 colors = PackedColorArray(1, 0.19607843, 0.22352941, 1, 1, 0.19607843, 0.73333335, 1)
@@ -31,9 +34,6 @@ shader_parameter/scrolling_speed = 0.08
 shader_parameter/enable_palette_cycling = true
 shader_parameter/palette = SubResource("GradientTexture2D_o5jlv")
 shader_parameter/palette_speed = 0.1
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_4vtsk"]
-size = Vector2(112.5, 198)
 
 [node name="Arcade" type="Control" unique_id=1662000706]
 layout_mode = 3
@@ -58,18 +58,6 @@ texture = ExtResource("2_pdjh2")
 [node name="Player2d" parent="." unique_id=86314008 instance=ExtResource("2_o5jlv")]
 position = Vector2(168, 325)
 
-[node name="TextureRect" type="TextureRect" parent="." unique_id=88397276]
-texture_repeat = 2
-material = SubResource("ShaderMaterial_o5jlv")
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("3_fxxif")
-expand_mode = 3
-
 [node name="Interactable2DMinigame" type="Area2D" parent="." unique_id=631324671 node_paths=PackedStringArray("interractable_dialogue")]
 script = ExtResource("6_4vtsk")
 minigame = ExtResource("7_4vtsk")
@@ -86,3 +74,15 @@ offset_left = 450.0
 offset_top = 92.0
 offset_right = 487.0
 offset_bottom = 154.0
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=88397276]
+texture_repeat = 2
+material = SubResource("ShaderMaterial_o5jlv")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_fxxif")
+expand_mode = 3

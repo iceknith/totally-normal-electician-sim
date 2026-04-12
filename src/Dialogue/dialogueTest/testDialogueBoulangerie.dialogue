@@ -1,6 +1,6 @@
 ~ start
 Boulanger: Heyyyy, comment va-tu ?
-- Ça va, et toi ?
+- Ça va, et toi ? 
 	Boulanger: Ça va, ça va
 	Boulanger: Au fait, pour l'anniversaire de ton petit frère. J'ai préparé un gâteau pour lui, tu le veux ?
 	if GlobalVars.money >= 10:
