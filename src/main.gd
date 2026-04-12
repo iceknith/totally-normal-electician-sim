@@ -39,6 +39,9 @@ func _ready() -> void:
 	connect_signals()
 	reset_state()
 	create_eow_timers()
+	
+	# Debug
+	DebugMenu.style = DebugMenu.Style.VISIBLE_DETAILED
 
 func connect_signals():
 	MainCommunicator.signalMain.connect(receive_signal)

@@ -54,7 +54,6 @@ shadow_mesh = SubResource("ArrayMesh_7bh1v")
 
 [node name="Player" type="CharacterBody3D" unique_id=192968154]
 collision_layer = 2
-floor_max_angle = 1.5707964
 script = ExtResource("1_f043j")
 walk_jitter_strength = 3.0
 walk_jitter_speed = 10.0
@@ -94,3 +93,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 visible = false
 cast_shadow = 0
 mesh = SubResource("CapsuleMesh_f043j")
+
+[node name="RayCast3D" type="RayCast3D" parent="." unique_id=1704994351]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.475, 0)
+target_position = Vector3(0, 0, -1)

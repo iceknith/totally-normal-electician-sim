@@ -20,6 +20,7 @@ config/icon="res://icon.svg"
 MainCommunicator="*uid://b0f1tnefpdrcm"
 DialogueManager="*uid://c3rodes2l3gxb"
 GlobalVars="*uid://cua36vgi8vykf"
+DebugMenu="*uid://cggqb75a8w8r"
 
 [dialogue_manager]
 
@@ -32,7 +33,7 @@ window/stretch/mode="canvas_items"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/dialogue_manager/plugin.cfg", "res://addons/scene_object_brush/plugin.cfg")
+enabled=PackedStringArray("res://addons/debug_menu/plugin.cfg", "res://addons/dialogue_manager/plugin.cfg", "res://addons/scene_object_brush/plugin.cfg")
 
 [importer_defaults]
 
