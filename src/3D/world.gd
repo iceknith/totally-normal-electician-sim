@@ -42,8 +42,10 @@ func count_towers(node:Node) -> int:
 
 func _on_body_leave_world_box_big(body:Node3D):
 	# Get nearest point
+	var initPos:Vector3 = body.global_position
+	initPos[body.global_position.abs().max_axis_index()] = 0
 	var query:PhysicsRayQueryParameters3D = PhysicsRayQueryParameters3D.create(
-		Vector3.ZERO, body.global_position, 0b10000000, []
+		initPos, body.global_position, 0b10000000, []
 	)
 	query.collide_with_areas = true
 	query.collide_with_bodies = false

@@ -5,9 +5,8 @@
 [ext_resource type="Texture2D" uid="uid://ccubsulhsdhv4" path="res://assets/map.png" id="1_l8jxy"]
 [ext_resource type="PackedScene" uid="uid://i72vcloe75tq" path="res://src/3D/interactables/interractable.tscn" id="2_gphh5"]
 [ext_resource type="PackedScene" uid="uid://c216ifvuuy6o7" path="res://assets/blender/map.blend" id="4_jqxng"]
+[ext_resource type="PackedScene" uid="uid://e1vxvelxsft8" path="res://src/3D/objects/forest.tscn" id="8_clt24"]
 [ext_resource type="PackedScene" uid="uid://72l0c20pg0ko" path="res://assets/blender/maisontexture1.blend" id="8_e0nlv"]
-[ext_resource type="PackedScene" uid="uid://dm1123r4as7r5" path="res://assets/blender/foresttree.blend" id="9_w7gwu"]
-[ext_resource type="PackedScene" uid="uid://b3nng2yxnwllt" path="res://assets/blender/foresttree2.blend" id="10_0aosg"]
 [ext_resource type="Shader" uid="uid://d1mpjujlwkwhw" path="res://src/shaders/vhsTape.gdshader" id="10_23vqn"]
 [ext_resource type="Texture2D" uid="uid://pm28ohtf0hcf" path="res://assets/misc/screenshot_temp.png" id="10_jqxng"]
 [ext_resource type="PackedScene" uid="uid://dng84lpcerldh" path="res://assets/blender/boulangerie.blend" id="11_5f2gp"]
@@ -15,7 +14,6 @@
 [ext_resource type="PackedScene" uid="uid://cw2thk87em2wo" path="res://assets/blender/maisontexture2.blend" id="12_5f2gp"]
 [ext_resource type="PackedScene" uid="uid://cng5vwx5qm31h" path="res://src/3D/objects/tower.tscn" id="12_clt24"]
 [ext_resource type="Script" uid="uid://c4gbdbfsdgnw7" path="res://src/shaders/shader_applyer.gd" id="12_e0nlv"]
-[ext_resource type="Script" uid="uid://cu2x3my63v3kw" path="res://addons/scene_object_brush/Brush.gd" id="13_clt24"]
 [ext_resource type="PackedScene" uid="uid://c6lu1xsiprij5" path="res://src/minigames/competitive_rock_paper_scissors/Rock Paper scissors.tscn" id="14_ivwwh"]
 [ext_resource type="PackedScene" uid="uid://d2b7b6sp2kyp2" path="res://src/2D/phase_visual_novel/boulangerie.tscn" id="14_lpsds"]
 [ext_resource type="PackedScene" uid="uid://bhqwyhmgp4t82" path="res://src/2D/levels/Arcade/Arcade.tscn" id="14_yhicf"]
@@ -24,12 +22,10 @@
 _data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1, 1), 2.0254266, 0.0, 0, 0]
 point_count = 2
 
-[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_bntx6"]
-
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_awi42"]
 albedo_texture = ExtResource("1_l8jxy")
 
-[sub_resource type="PlaneMesh" id="PlaneMesh_kp6b0"]
+[sub_resource type="PlaneMesh" id="PlaneMesh_clt24"]
 material = SubResource("StandardMaterial3D_awi42")
 size = Vector2(496, 350.8)
 
@@ -134,9 +130,6 @@ point_count = 3
 _data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1, 1), 2.1689944, 0.0, 0, 0]
 point_count = 2
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_yhicf"]
-size = Vector3(400, 50, 400)
-
 [sub_resource type="BoxShape3D" id="BoxShape3D_ro6to"]
 size = Vector3(400, 50, 1)
 
@@ -144,7 +137,7 @@ size = Vector3(400, 50, 1)
 size = Vector3(1, 50, 400)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_w7gwu"]
-size = Vector3(500, 50, 500)
+size = Vector3(507.2356, 50, 483.65918)
 
 [node name="World" type="Node3D" unique_id=600883011]
 script = ExtResource("1_co47k")
@@ -154,25 +147,14 @@ skyTopEndColor = Color(0.6509804, 0.105882354, 0.14901961, 1)
 skyBotEndColor = Color(0.03529412, 0.039215688, 0.21568628, 1)
 skyChangeCurve = SubResource("Curve_w7gwu")
 
-[node name="Floor" type="StaticBody3D" parent="." unique_id=1672439933]
-transform = Transform3D(0.94551855, 0, 0.32556817, 0, 1, 0, -0.32556817, 0, 0.94551855, 0, 0, 0)
-visible = false
-collision_layer = 0
-collision_mask = 0
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Floor" unique_id=1176908187]
-shape = SubResource("WorldBoundaryShape3D_bntx6")
-disabled = true
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Floor" unique_id=755507307]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.6375427, 0)
+[node name="Layout" type="MeshInstance3D" parent="." unique_id=41461789]
+transform = Transform3D(0.94632256, 0, 0.32322383, 0, 1, 0, -0.32322383, 0, 0.94632256, 0, 2.6375427, 0)
 visible = false
 transparency = 0.45
-mesh = SubResource("PlaneMesh_kp6b0")
+mesh = SubResource("PlaneMesh_clt24")
 
 [node name="Player" parent="." unique_id=192968154 instance=ExtResource("1_34ihj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.07089543, 0)
-visible = false
 
 [node name="Sun" type="DirectionalLight3D" parent="." unique_id=164570066]
 transform = Transform3D(1, 0, 0, 0, -0.8181497, 0.5750051, 0, -0.5750051, -0.8181497, 0, 104.529724, 0)
@@ -186,10 +168,10 @@ environment = SubResource("Environment_00xeg")
 camera_attributes = SubResource("CameraAttributesPractical_co47k")
 
 [node name="map" parent="." unique_id=1431746800 instance=ExtResource("4_jqxng")]
-transform = Transform3D(2.4498785, 0, -0.02441588, 0, 2.45, 0, 0.02441588, 0, 2.4498785, 0.70040894, -0.46880817, 2.101181)
+transform = Transform3D(2.4500003, 0, 0, 0, 2.45, 0, 0, 0, 2.4500003, 0, -0.469, 0)
 
 [node name="Objets" type="Node3D" parent="." unique_id=609111776]
-transform = Transform3D(0.94551855, 0, 0.32556817, 0, 1, 0, -0.32556817, 0, 0.94551855, 0, 0, 0)
+transform = Transform3D(0.94551855, 0, 0.32556817, 0, 1, 0, -0.32556817, 0, 0.94551855, -1.5152206, 0, -2.6516492)
 
 [node name="maisontexture1" parent="Objets" unique_id=2056765095 instance=ExtResource("8_e0nlv")]
 transform = Transform3D(0.502787, 0, 1.3066007, 0, 1.4, 0, -1.3066007, 0, 0.502787, 35.951378, -1.5066012, -20.246092)
@@ -315,18 +297,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 66.24675, 0, -64.39859)
 [node name="Tower11" parent="Objets" unique_id=1555346870 instance=ExtResource("12_clt24")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -121.465164, 0, -5.952797)
 
-[node name="Forêt" type="Node3D" parent="Objets" unique_id=450994787]
-transform = Transform3D(0.94551855, 0, -0.32556817, 0, 1, 0, 0.32556817, 0, 0.94551855, 0, 0, 0)
-script = ExtResource("13_clt24")
-brushSize = 10.0
-paintableObjects = Array[PackedScene]([ExtResource("9_w7gwu"), ExtResource("10_0aosg")])
-minSize = 0.4
-maxSize = 0.6
-useSurfaceNormal = false
-metadata/_custom_type_script = "uid://cu2x3my63v3kw"
+[node name="Forest" parent="Objets" unique_id=825276826 instance=ExtResource("8_clt24")]
+transform = Transform3D(0.9455185, 0, -0.32556814, 0, 1, 0, 0.32556814, 0, 0.9455185, -0.13061678, 0, 0.89910936)
+metadata/_edit_lock_ = true
 
 [node name="Interactables" type="Node3D" parent="." unique_id=250600695]
-transform = Transform3D(0.94551855, 0, 0.32556817, 0, 1, 0, -0.32556817, 0, 0.94551855, 0, 0, 0)
+transform = Transform3D(0.94551855, 0, 0.32556817, 0, 1, 0, -0.32556817, 0, 0.94551855, -3.4092636, 0, -2.7779198)
 
 [node name="Interractable2" parent="Interactables" unique_id=2024350914 instance=ExtResource("2_gphh5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.9999995, 1.3362136, 0.896065)
@@ -419,11 +395,6 @@ metadata/_edit_use_anchors_ = true
 collision_layer = 128
 collision_mask = 0
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="worldBoxSmall" unique_id=506527326]
-shape = SubResource("BoxShape3D_yhicf")
-disabled = true
-debug_color = Color(0.22830474, 1, 0, 1)
-
 [node name="CollisionShape3D4" type="CollisionShape3D" parent="worldBoxSmall" unique_id=716571642]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 200)
 shape = SubResource("BoxShape3D_ro6to")
@@ -435,7 +406,7 @@ shape = SubResource("BoxShape3D_ro6to")
 debug_color = Color(0.22830474, 1, 0, 1)
 
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="worldBoxSmall" unique_id=201946739]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 200, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 215, 0, 0)
 shape = SubResource("BoxShape3D_0aosg")
 debug_color = Color(0.22830474, 1, 0, 1)
 
@@ -449,5 +420,6 @@ collision_layer = 0
 collision_mask = 2
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="worldBoxBig" unique_id=888052413]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.598755, 0, -8.17041)
 shape = SubResource("BoxShape3D_w7gwu")
 debug_color = Color(1, 0.105669856, 0, 1)

@@ -127,7 +127,8 @@ func erase():
 		var dist: float = mouseHitPoint.distance_to(child.position)
 		
 		if(dist < brush.brushSize):
-			child.queue_free()
+			if brush.name in child.name:
+				child.queue_free()
 	
 func draw():
 #	print("draw")
@@ -161,7 +162,7 @@ func spawnObject(pos: Vector3):
 		obj.owner = get_tree().get_edited_scene_root()
 		obj.position = finalPos
 
-		obj.global_transform.basis = align_up(obj.global_transform.basis, rotatedNormal)
+		#obj.global_transform.basis = align_up(obj.global_transform.basis, rotatedNormal)
 		
 		obj.scale = Vector3.ONE * brush.getRandomSize()
 		obj.name = brush.name + "_" + getUnixTimestamp()
