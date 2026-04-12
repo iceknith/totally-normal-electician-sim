@@ -1,7 +1,8 @@
 class_name Player extends CharacterBody3D
 
-const SPEED = 25#7.0
+const SPEED = 7.5
 const JUMP_VELOCITY = 4.5
+const MAX_STEP_UP = 0.5
 
 @export var look_sensitivity : float = 0.006
 var rotation_y = 0
@@ -91,4 +92,79 @@ func manage_input(delta:float) -> void :
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		velocity.z = move_toward(velocity.z, 0, SPEED)
 	
+	step_up_handler(delta)
+	
 	move_and_slide()
+
+func step_up_handler(delta):
+	if velocity.x <= 0.01 && velocity.z <= 0.01:
+		return
+	
+	var wish_dir:Vector3 = velocity * delta
+	
+	# 0. Initialize testing variables
+	var body_test_params = PhysicsTestMotionParameters3D.new()
+	var body_test_result = PhysicsTestMotionResult3D.new()
+
+	var test_transform = global_transform				## Storing current global_transform for testing
+	body_test_params.from = self.global_transform		## Self as origin point
+	body_test_params.motion = wish_dir					## Go forward by current distance
+
+	# Pre-check: Are we colliding?
+	if !PhysicsServer3D.body_test_motion(self.get_rid(), body_test_params, body_test_result):
+		## If we don't collide, return
+		return
+
+	# 1. Move test_transform to collision location
+	var remainder = body_test_result.get_remainder()							## Get remainder from collision
+	test_transform = test_transform.translated(body_test_result.get_travel())	## Move test_transform by distance traveled before collision
+
+	# 2. Move test_transform up to ceiling (if any)
+	var step_up = MAX_STEP_UP * up_direction
+	body_test_params.from = test_transform
+	body_test_params.motion = step_up
+	PhysicsServer3D.body_test_motion(self.get_rid(), body_test_params, body_test_result)
+	test_transform = test_transform.translated(body_test_result.get_travel())
+
+	# 3. Move test_transform forward by remaining distance
+	body_test_params.from = test_transform
+	body_test_params.motion = remainder
+	PhysicsServer3D.body_test_motion(self.get_rid(), body_test_params, body_test_result)
+	test_transform = test_transform.translated(body_test_result.get_travel())
+
+	# 3.5 Project remaining along wall normal (if any)
+	## So you can walk into wall and up a step
+	if body_test_result.get_collision_count() != 0:
+		remainder = body_test_result.get_remainder().length()
+
+		### Uh, there may be a better way to calculate this in Godot.
+		var wall_normal = body_test_result.get_collision_normal()
+		var dot_div_mag = wish_dir.dot(wall_normal) / (wall_normal * wall_normal).length()
+		var projected_vector = (wish_dir - dot_div_mag * wall_normal).normalized()
+
+		body_test_params.from = test_transform
+		body_test_params.motion = remainder * projected_vector
+		PhysicsServer3D.body_test_motion(self.get_rid(), body_test_params, body_test_result)
+		test_transform = test_transform.translated(body_test_result.get_travel())
+	
+	# 4. Move test_transform down onto step
+	body_test_params.from = test_transform
+	body_test_params.motion = MAX_STEP_UP * -up_direction
+
+	# Return if no collision
+	if !PhysicsServer3D.body_test_motion(self.get_rid(), body_test_params, body_test_result):
+		return
+
+	test_transform = test_transform.translated(body_test_result.get_travel())
+
+	# 5. Check floor normal for un-walkable slope
+	# We don't apply this one because it isn't relevant, and bugs out for slower movements
+	#var surface_normal = body_test_result.get_collision_normal()
+	#if (snappedf(surface_normal.angle_to(up_direction), 0.001) > floor_max_angle):
+	#	return
+
+	# 6. Move player up
+	var global_pos = global_position
+	velocity.y = 0
+	global_pos.y = test_transform.origin.y
+	global_position = global_pos
