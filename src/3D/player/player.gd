@@ -1,6 +1,6 @@
 class_name Player extends CharacterBody3D
 
-const SPEED = 5.0
+const SPEED = 100 #5.0
 const JUMP_VELOCITY = 4.5
 
 @export var look_sensitivity : float = 0.006

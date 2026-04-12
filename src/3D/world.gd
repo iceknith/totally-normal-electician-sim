@@ -15,10 +15,13 @@ var eow_meter:float = 0:
 @export var skyChangeCurve:Curve
 
 @onready var skyMaterial:ProceduralSkyMaterial = $WorldEnvironment.environment.sky.sky_material
+@onready var worldBoxSmall:Area3D = $worldBoxSmall
+@onready var worldBoxBig:Area3D = $worldBoxBig
+
 
 func _ready() -> void:
 	GlobalVars.tower_amount = count_towers(self)
-	print(GlobalVars.tower_amount)
+	worldBoxBig.body_exited.connect(_on_body_leave_world_box_big)
 
 func update_eow():
 	$Sun.rotation_degrees.x = sunStartAngle * (1 - eow_meter) + sunEndAngle * eow_meter
@@ -36,3 +39,20 @@ func count_towers(node:Node) -> int:
 			else: result += count_towers(child)
 		
 	return result
+
+func _on_body_leave_world_box_big(body:Node3D):
+	# Get nearest point
+	var query:PhysicsRayQueryParameters3D = PhysicsRayQueryParameters3D.create(
+		Vector3.ZERO, body.global_position, 0b10000000, []
+	)
+	query.collide_with_areas = true
+	query.collide_with_bodies = false
+	query.hit_back_faces = true
+	#query.hit_from_inside = true
+	
+	var collision = get_world_3d().direct_space_state.intersect_ray(query)
+	
+	if collision:
+		body.global_position = collision.position
+	else: printerr("Object out of world bounds error: No small box found")
+	

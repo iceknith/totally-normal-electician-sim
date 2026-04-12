@@ -6,6 +6,8 @@
 [ext_resource type="PackedScene" uid="uid://i72vcloe75tq" path="res://src/3D/interactables/interractable.tscn" id="2_gphh5"]
 [ext_resource type="PackedScene" uid="uid://c216ifvuuy6o7" path="res://assets/blender/map.blend" id="4_jqxng"]
 [ext_resource type="PackedScene" uid="uid://72l0c20pg0ko" path="res://assets/blender/maisontexture1.blend" id="8_e0nlv"]
+[ext_resource type="PackedScene" uid="uid://dm1123r4as7r5" path="res://assets/blender/foresttree.blend" id="9_w7gwu"]
+[ext_resource type="PackedScene" uid="uid://b3nng2yxnwllt" path="res://assets/blender/foresttree2.blend" id="10_0aosg"]
 [ext_resource type="Shader" uid="uid://d1mpjujlwkwhw" path="res://src/shaders/vhsTape.gdshader" id="10_23vqn"]
 [ext_resource type="Texture2D" uid="uid://pm28ohtf0hcf" path="res://assets/misc/screenshot_temp.png" id="10_jqxng"]
 [ext_resource type="PackedScene" uid="uid://dng84lpcerldh" path="res://assets/blender/boulangerie.blend" id="11_5f2gp"]
@@ -132,6 +134,18 @@ point_count = 3
 _data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1, 1), 2.1689944, 0.0, 0, 0]
 point_count = 2
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_yhicf"]
+size = Vector3(400, 50, 400)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ro6to"]
+size = Vector3(400, 50, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_0aosg"]
+size = Vector3(1, 50, 400)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_w7gwu"]
+size = Vector3(500, 50, 500)
+
 [node name="World" type="Node3D" unique_id=600883011]
 script = ExtResource("1_co47k")
 skyTopStartColor = Color(0.050980393, 0.5882353, 1, 1)
@@ -141,12 +155,14 @@ skyBotEndColor = Color(0.03529412, 0.039215688, 0.21568628, 1)
 skyChangeCurve = SubResource("Curve_w7gwu")
 
 [node name="Floor" type="StaticBody3D" parent="." unique_id=1672439933]
+transform = Transform3D(0.94551855, 0, 0.32556817, 0, 1, 0, -0.32556817, 0, 0.94551855, 0, 0, 0)
+visible = false
 collision_layer = 0
 collision_mask = 0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Floor" unique_id=1176908187]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.63204, 0)
 shape = SubResource("WorldBoundaryShape3D_bntx6")
+disabled = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Floor" unique_id=755507307]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.6375427, 0)
@@ -156,6 +172,7 @@ mesh = SubResource("PlaneMesh_kp6b0")
 
 [node name="Player" parent="." unique_id=192968154 instance=ExtResource("1_34ihj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.07089543, 0)
+visible = false
 
 [node name="Sun" type="DirectionalLight3D" parent="." unique_id=164570066]
 transform = Transform3D(1, 0, 0, 0, -0.8181497, 0.5750051, 0, -0.5750051, -0.8181497, 0, 104.529724, 0)
@@ -168,10 +185,11 @@ shadow_blur = 3.021
 environment = SubResource("Environment_00xeg")
 camera_attributes = SubResource("CameraAttributesPractical_co47k")
 
-[node name="Objets" type="Node3D" parent="." unique_id=609111776]
-
-[node name="map" parent="Objets" unique_id=1309253486 instance=ExtResource("4_jqxng")]
+[node name="map" parent="." unique_id=1431746800 instance=ExtResource("4_jqxng")]
 transform = Transform3D(2.4498785, 0, -0.02441588, 0, 2.45, 0, 0.02441588, 0, 2.4498785, 0.70040894, -0.46880817, 2.101181)
+
+[node name="Objets" type="Node3D" parent="." unique_id=609111776]
+transform = Transform3D(0.94551855, 0, 0.32556817, 0, 1, 0, -0.32556817, 0, 0.94551855, 0, 0, 0)
 
 [node name="maisontexture1" parent="Objets" unique_id=2056765095 instance=ExtResource("8_e0nlv")]
 transform = Transform3D(0.502787, 0, 1.3066007, 0, 1.4, 0, -1.3066007, 0, 0.502787, 35.951378, -1.5066012, -20.246092)
@@ -297,12 +315,18 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 66.24675, 0, -64.39859)
 [node name="Tower11" parent="Objets" unique_id=1555346870 instance=ExtResource("12_clt24")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -121.465164, 0, -5.952797)
 
-[node name="Brush" type="Node3D" parent="Objets" unique_id=1755576046]
+[node name="Forêt" type="Node3D" parent="Objets" unique_id=450994787]
+transform = Transform3D(0.94551855, 0, -0.32556817, 0, 1, 0, 0.32556817, 0, 0.94551855, 0, 0, 0)
 script = ExtResource("13_clt24")
-brushDensity = 1
+brushSize = 10.0
+paintableObjects = Array[PackedScene]([ExtResource("9_w7gwu"), ExtResource("10_0aosg")])
+minSize = 0.4
+maxSize = 0.6
+useSurfaceNormal = false
 metadata/_custom_type_script = "uid://cu2x3my63v3kw"
 
 [node name="Interactables" type="Node3D" parent="." unique_id=250600695]
+transform = Transform3D(0.94551855, 0, 0.32556817, 0, 1, 0, -0.32556817, 0, 0.94551855, 0, 0, 0)
 
 [node name="Interractable2" parent="Interactables" unique_id=2024350914 instance=ExtResource("2_gphh5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.9999995, 1.3362136, 0.896065)
@@ -390,3 +414,40 @@ shader_properties = Dictionary[String, Array]({
 "redify": [0.1, 0.5, SubResource("Curve_yhicf")]
 })
 metadata/_edit_use_anchors_ = true
+
+[node name="worldBoxSmall" type="Area3D" parent="." unique_id=353224866]
+collision_layer = 128
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="worldBoxSmall" unique_id=506527326]
+shape = SubResource("BoxShape3D_yhicf")
+disabled = true
+debug_color = Color(0.22830474, 1, 0, 1)
+
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="worldBoxSmall" unique_id=716571642]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 200)
+shape = SubResource("BoxShape3D_ro6to")
+debug_color = Color(0.22830474, 1, 0, 1)
+
+[node name="CollisionShape3D5" type="CollisionShape3D" parent="worldBoxSmall" unique_id=806642173]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -200)
+shape = SubResource("BoxShape3D_ro6to")
+debug_color = Color(0.22830474, 1, 0, 1)
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="worldBoxSmall" unique_id=201946739]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 200, 0, 0)
+shape = SubResource("BoxShape3D_0aosg")
+debug_color = Color(0.22830474, 1, 0, 1)
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="worldBoxSmall" unique_id=1009559552]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -200, 0, 0)
+shape = SubResource("BoxShape3D_0aosg")
+debug_color = Color(0.22830474, 1, 0, 1)
+
+[node name="worldBoxBig" type="Area3D" parent="." unique_id=198522152]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="worldBoxBig" unique_id=888052413]
+shape = SubResource("BoxShape3D_w7gwu")
+debug_color = Color(1, 0.105669856, 0, 1)
