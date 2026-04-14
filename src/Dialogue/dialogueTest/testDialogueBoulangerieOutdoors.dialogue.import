@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://bpyeqoxau635"
+path="res://.godot/imported/testDialogueBoulangerieOutdoors.dialogue-c6e32bf18642e7484d29e701f41d6a7c.tres"
+
+[deps]
+
+source_file="res://src/Dialogue/dialogueTest/testDialogueBoulangerieOutdoors.dialogue"
+dest_files=["res://.godot/imported/testDialogueBoulangerieOutdoors.dialogue-c6e32bf18642e7484d29e701f41d6a7c.tres"]
+
+[params]
+
+defaults=true

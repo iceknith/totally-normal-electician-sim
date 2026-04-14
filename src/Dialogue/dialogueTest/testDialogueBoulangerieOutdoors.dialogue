@@ -6,7 +6,7 @@ Boulanger: Heyyyy, comment va-tu ?
 	if GlobalVars.money >= 10:
 		- Oui, bien sûr !
 			$> title = "content"
-			$> close_up_start_animation = "content"
+			$> animated_sprite_start_animation = "content"
 			Boulanger: Yippeee, super !
 			Boulanger: Je te l'emballe
 			$> GlobalVars.money -= 10
@@ -19,16 +19,16 @@ Boulanger: Heyyyy, comment va-tu ?
 			Boulanger: Je reste ici au cas où tu change d'avis
 	else:
 		$> title = "triste"
-		$> close_up_start_animation = "triste"
+		$> animated_sprite_start_animation = "triste"
 		Boulanger: Ah... Je vois que tu a déjà acheté un gâteau à la superette.
 		Boulanger: Je pensais qu'on avait quelque chose de spécial entre nous.
 		Boulanger: J'ai dû me tromper. => triste
 - Je suis désolé, mais on va tous mourrir
-	$> close_up_start_animation = "triste"
+	$> animated_sprite_start_animation = "triste"
 	Boulanger: Comment ça ?
 	You: ... => triste
 - SCREW
-	$> close_up.play("screw")
+	$> animated_sprite.play("screw")
 	Boulanger: SCREW 
 - Lance moi un petit jeu
 	Boulanger: Ok :3

@@ -23,6 +23,10 @@ var unhandled_mouse_offset:Vector2
 @onready var minigame_container:Control = $HUD/Minigames
 var minigames:Array[Minigame]
 
+var timer_eow
+var timer_eow_update
+var timer_eow_connection_map:Dictionary[Node,Callable]
+
 @onready var currentNode:Node = world3D
 var currentState:MainCommunicator.GameState = MainCommunicator.GameState.Game3D:
 	set(newVal): 
@@ -41,7 +45,7 @@ func _ready() -> void:
 	create_eow_timers()
 	
 	# Debug
-	#wDebugMenu.style = DebugMenu.Style.VISIBLE_DETAILED
+	#DebugMenu.style = DebugMenu.Style.VISIBLE_DETAILED
 
 func connect_signals():
 	MainCommunicator.signalMain.connect(receive_signal)
@@ -60,6 +64,7 @@ func reset_state():
 	#minigame_container.hide()
 	if currentState == MainCommunicator.GameState.MiniGame:
 		for child in minigames:
+			disconnect_eow_update_timer(child, timer_eow_update.timeout)
 			child.remove()
 		minigames.clear()
 	
@@ -78,6 +83,7 @@ func create_minigame(data):
 	# Show minigame
 	var minigameScene:PackedScene = data[0]
 	var minigame:Minigame = minigameScene.instantiate()
+	connect_eow_update_timer(minigame, timer_eow_update.timeout)
 	minigames.append(minigame)
 	minigame.miniGameEnd.connect(show_game3D)
 	minigame_container.show()
@@ -103,6 +109,7 @@ func remove_minigame():
 		show_game3D()
 	else:
 		# Remove last minigame
+		disconnect_eow_update_timer(minigames[-1], timer_eow_update.timeout)
 		minigames[-1].remove()
 		minigames.pop_back()
 		
@@ -135,11 +142,11 @@ func start_dialogue(data:Array):
 	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 	
 	# Launch Dialogue
-	var dialogueFile:String = data[0]
+	var dialogueFile:DialogueResource = data[0]
 	var title:String = data[1]
 	var extra_game_states:Array = data[2]
 	DialogueManager.show_dialogue_balloon(
-		load(dialogueFile), title, extra_game_states
+		dialogueFile, title, extra_game_states
 		)
 
 func end_dialogue(_dialogue_data):
@@ -151,8 +158,8 @@ func end_dialogue(_dialogue_data):
 ### EOW Handlers ###
 
 func create_eow_timers():
-	var timer_eow = Timer.new()
-	var timer_eow_update = Timer.new()
+	timer_eow = Timer.new()
+	timer_eow_update = Timer.new()
 	
 	timer_eow.timeout.connect(end_of_world)
 	timer_eow.one_shot = true
@@ -160,6 +167,7 @@ func create_eow_timers():
 	timer_eow.start(end_of_world_max_time_mins * 60)
 	
 	connect_eow_update_timer(self, timer_eow_update.timeout)
+	connect_eow_update_timer(GlobalVars, timer_eow_update.timeout)
 	add_child(timer_eow_update)
 	timer_eow_update.start(end_of_world_change_interval_s)
 
@@ -167,10 +175,21 @@ func connect_eow_update_timer(node:Node, timer_timeout:Signal):
 	if not node: return
 	
 	if node.get("eow_meter") != null:
-		timer_timeout.connect(func(): node.eow_meter += eow_delta)
+		timer_eow_connection_map[node] = func(): node.eow_meter += eow_delta
+		timer_timeout.connect(timer_eow_connection_map[node])
 	
 	for child in node.get_children():
 		connect_eow_update_timer(child, timer_timeout)
+
+func disconnect_eow_update_timer(node:Node, timer_timeout:Signal):
+	if not node: return
+	
+	if timer_eow_connection_map.get(node):
+		timer_timeout.disconnect(timer_eow_connection_map[node])
+		timer_eow_connection_map.erase(node)
+	
+	for child in node.get_children():
+		disconnect_eow_update_timer(child, timer_timeout)
 
 func increment_eow_meter(node:Node):
 	node.eow_meter += eow_delta

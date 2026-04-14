@@ -1,4 +1,4 @@
-class_name Interactable2DDialogue extends Interactable2D
+class_name Interactable3DDialogue extends Interactable3D
 
 @export var unique_name:String
 @export var dialogue:DialogueResource
@@ -7,17 +7,17 @@ class_name Interactable2DDialogue extends Interactable2D
 		GlobalVars.dialogue_starts.set(unique_name, new_val)
 	get():
 		return GlobalVars.dialogue_starts.get(unique_name, title)
-@export var close_up:AnimatedSprite2D
-@export var close_up_start_animation:String:
+@export var animated_sprite:AnimatedSprite3D
+@export var animated_sprite_start_animation:String:
 	set(new_val):
 		GlobalVars.dialogue_start_anim.set(unique_name, new_val)
-		if close_up: close_up.play(new_val)
+		if animated_sprite: animated_sprite.play(new_val)
 	get:
 		return GlobalVars.dialogue_start_anim.get(unique_name)
 
 func _ready() -> void:
 	super()
-	close_up.hide()
+	animated_sprite.play(animated_sprite_start_animation)
 
 func start_interaction():
 	var current_title = GlobalVars.get_current_title(title, dialogue)
@@ -26,13 +26,4 @@ func start_interaction():
 		MainCommunicator.SignalType.START_DIALOGUE, 
 		[dialogue, current_title, [self]] 
 	) # On lance le dialogue avec les options de dialogues associées
-	hide()
-	close_up.show()
-	close_up.play(close_up_start_animation)
-	DialogueManager.dialogue_ended.connect(end_interaction)
-
-func end_interaction(_ressource):
-	show()
-	close_up.hide()
-	close_up.stop()
-	DialogueManager.dialogue_ended.disconnect(end_interaction)
+	animated_sprite.play(animated_sprite_start_animation)

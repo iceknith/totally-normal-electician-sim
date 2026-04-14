@@ -56,5 +56,5 @@ func _on_body_leave_world_box_big(body:Node3D):
 	
 	if collision:
 		body.global_position = collision.position
-	else: printerr("Object out of world bounds error: No small box found")
+	#else: printerr("Object out of world bounds error: No small box found")
 	

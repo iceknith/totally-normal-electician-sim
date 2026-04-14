@@ -18,6 +18,8 @@ var eow_meter:float = 0
 @export var walk_jitter_curve:Curve
 var walk_jitter_noise_pos:float
 
+@onready var initRotation:Vector3 = rotation
+
 func _ready() -> void:
 	# plus tard on voudra avoir des moments ou on libère le curseur pour pouvoir acceder à l'ui au lieu qu'il serve à tourner la drirection dans laquelle on regarde.
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
@@ -37,8 +39,8 @@ func _unhandled_input(event: InputEvent) -> void:
 			# contraint la rotation de la caméra pour éviter que le joueur puisse se tordre le cou
 			rotation_x = clamp(rotation_x, deg_to_rad(-90), deg_to_rad(90))
 			
-			rotation.y = rotation_y
-			%Camera3D.rotation.x = rotation_x
+			rotation.y = rotation_y + initRotation.y
+			%Camera3D.rotation.x = rotation_x + initRotation.x
 
 func _physics_process(delta: float) -> void:
 	#Handles movement
@@ -51,7 +53,7 @@ func interactable_vision_handler(delta) -> void:
 	# Handle the interactable vision
 	# Notifies an interactable object that it is being looked at
 	var collider:Area3D = $head/Camera3D/InteractableVision.get_collider()
-	if collider && (collider as Interractable):
+	if collider && (collider as Interactable3D):
 		collider.player_viewing()
 		
 func in_interaction() -> bool: 
