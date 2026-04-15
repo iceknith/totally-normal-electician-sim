@@ -424,8 +424,12 @@ func intro():
 			start_game()
 		personPlaying.BILLY : 
 
-			start_game()
+			var dialogue_resource = load("res://src/minigames/competitive_rock_paper_scissors/dialogue/Billy/Billy.dialogue")
+			var instance = await DialogueManager.show_dialogue_balloon_scene(balloon, dialogue_resource)
+			add_child(instance)
+			await instance.tree_exited
 			
+	start_game()
 			
 func start_game(): 
 	setup_game()
