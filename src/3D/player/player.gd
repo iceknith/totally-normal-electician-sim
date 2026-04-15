@@ -10,6 +10,10 @@ var rotation_x = 0
 
 var lock_camera:bool
 var eow_meter:float = 0
+@export_group("References")
+@onready var cam:Camera3D = %Camera3D
+
+
 
 @export_group("Walk Jitter")
 @export var walk_jitter_strength:float = 0.5
@@ -74,7 +78,7 @@ func manage_input(delta:float) -> void :
 	var input_dir := Input.get_vector("left", "right", "up", "down")
 	var direction := (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
 	
-	if direction: 
+	if direction  and !cam.in_a_cam_animation and !in_interaction(): 
 		# Add the random offset
 		var walk_jitter_wet:float = walk_jitter_curve.sample(eow_meter)
 		walk_jitter_noise_pos += delta * walk_jitter_speed * walk_jitter_wet

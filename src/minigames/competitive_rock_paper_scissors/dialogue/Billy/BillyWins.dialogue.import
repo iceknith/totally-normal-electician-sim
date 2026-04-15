@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://bxaig23cr1fl6"
+path="res://.godot/imported/BillyWins.dialogue-37e39c1b454fddd05671fbbd07262cdc.tres"
+
+[deps]
+
+source_file="res://src/minigames/competitive_rock_paper_scissors/dialogue/Billy/BillyWins.dialogue"
+dest_files=["res://.godot/imported/BillyWins.dialogue-37e39c1b454fddd05671fbbd07262cdc.tres"]
+
+[params]
+
+defaults=true
