@@ -58,7 +58,7 @@ func roll_players(choices, handPile, drawPile, playPile):
 		
 		instance.set_choice(i)
 		handPile.add_child(instance)
-		instance.play_flip_animation()
+
 		
 		match i : 
 			RPS.Choice.ROCK : 
