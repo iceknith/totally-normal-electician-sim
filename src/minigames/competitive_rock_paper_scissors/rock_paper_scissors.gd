@@ -95,6 +95,7 @@ func _ready():
 	setup_signals()
 	show_points()
 	show_number_of_each()
+	intro()
 	
 func _process(delta):
 	show_points()
@@ -418,15 +419,14 @@ func _on_exit_button_pressed():
 func intro():
 	match opponent : 
 		personPlaying.STANLY : 
-			pass
+			start_game()
 		personPlaying.WILLY : #il choisit tjrs le moins 
-			pass
+			start_game()
 		personPlaying.BILLY : 
 
-			var dialogue_resource = load("res://src/minigames/competitive_rock_paper_scissors/dialogue/Billy/Billy.dialogue")
-			var instance = await DialogueManager.show_dialogue_balloon_scene(balloon, dialogue_resource)
-			add_child(instance)
-			await instance.tree_exited
-			setup_game()
-			draw_cards()
+			start_game()
 			
+			
+func start_game(): 
+	setup_game()
+	draw_cards()
