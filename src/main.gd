@@ -41,7 +41,7 @@ func _ready() -> void:
 	create_eow_timers()
 	
 	# Debug
-	DebugMenu.style = DebugMenu.Style.VISIBLE_DETAILED
+	#DebugMenu.style = DebugMenu.Style.VISIBLE_DETAILED
 
 func connect_signals():
 	MainCommunicator.signalMain.connect(receive_signal)
