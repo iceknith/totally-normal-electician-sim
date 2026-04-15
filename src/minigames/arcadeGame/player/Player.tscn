@@ -1,0 +1,42 @@
+[gd_scene format=3 uid="uid://bd8yarh0gi5kf"]
+
+[ext_resource type="Script" uid="uid://n0tb5uwsj52w" path="res://src/minigames/arcadeGame/player/player.gd" id="1_lyefd"]
+[ext_resource type="Texture2D" uid="uid://cra208jmgv7f8" path="res://icon.svg" id="2_i3pg2"]
+[ext_resource type="Script" uid="uid://dsyqlvumfnnju" path="res://src/minigames/arcadeGame/Component/movement.gd" id="2_rsw1t"]
+[ext_resource type="Script" uid="uid://btmot50uf8ym1" path="res://src/minigames/arcadeGame/Component/hit_ball.gd" id="4_8q2ol"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8q2ol"]
+atlas = ExtResource("2_i3pg2")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_rsw1t"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8q2ol")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_i3pg2"]
+size = Vector2(124, 127)
+
+[node name="Player" type="CharacterBody2D" unique_id=1190158832]
+script = ExtResource("1_lyefd")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1718839029]
+sprite_frames = SubResource("SpriteFrames_rsw1t")
+
+[node name="Movement" type="Node2D" parent="." unique_id=441420]
+script = ExtResource("2_rsw1t")
+speed = 200
+acceleration = 100
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1657388655]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_i3pg2")
+
+[node name="HitBall" type="Node2D" parent="." unique_id=1071657921]
+script = ExtResource("4_8q2ol")

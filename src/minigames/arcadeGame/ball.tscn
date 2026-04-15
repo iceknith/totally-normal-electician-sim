@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://bon1qfi1qah3p"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_f82fo"]
+
+[node name="Ball" type="CharacterBody2D" unique_id=1559941264]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=586756020]
+texture = SubResource("CanvasTexture_f82fo")
