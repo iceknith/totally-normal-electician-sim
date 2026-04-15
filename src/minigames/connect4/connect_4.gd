@@ -49,7 +49,7 @@ var cell_size:Vector2
 func _ready() -> void:
 	super()
 	
-	columns_container.add_theme_constant_override("separation", int(margin.y))
+	columns_container.add_theme_constant_override("separation", int(margin.x))
 	for x in int(board_size.x):
 		var texture_rect:TextureRect = create_empty_texture_rect(x)
 		columns.append(texture_rect)
@@ -87,6 +87,7 @@ func create_empty_player_piece(player:int, posX:int) -> TextureRect:
 	texture_rect.position.y -= cell_size.y
 	texture_rect.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	texture_rect.texture = player_textures[player]
+	texture_rect.texture_filter = CanvasItem.TEXTURE_FILTER_NEAREST
 	
 	return texture_rect
 
@@ -143,7 +144,7 @@ func place_animation(x:int,y:int) -> void:
 	
 	var tween:Tween = create_tween()
 	tween.set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_BOUNCE)
-	tween.tween_property(piece, "position:y", final_y, fall_max_duration/(y+1))
+	tween.tween_property(piece, "position:y", final_y, fall_max_duration)
 	
 	await tween.finished
 
@@ -201,7 +202,7 @@ func computer_play():
 		(Playstyles.RANDOM):
 			computer_random_play()
 		(Playstyles.NORMAL):
-			computer_best_move(2)
+			computer_best_move(3)
 		(Playstyles.HARD):
 			computer_best_move(6)
 

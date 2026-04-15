@@ -1,10 +1,10 @@
 [gd_scene format=3 uid="uid://ds07bje6gv5nd"]
 
 [ext_resource type="Script" uid="uid://b25jvds1ioj3e" path="res://src/minigames/connect4/connect_4.gd" id="1_ao3pm"]
-[ext_resource type="Texture2D" uid="uid://r14dr1h4t38i" path="res://assets/pixelart/canBeTouchedBubble.png" id="2_xsdc2"]
-[ext_resource type="Texture2D" uid="uid://wuu41gmymw5" path="res://assets/pixelart/validatedBubble.png" id="3_5q8y2"]
-[ext_resource type="Texture2D" uid="uid://1xxjx047eo4l" path="res://src/minigames/competitive_rock_paper_scissors/asset/2D/rock.png" id="3_6boak"]
-[ext_resource type="Texture2D" uid="uid://cye1bhonrbtg7" path="res://src/minigames/competitive_rock_paper_scissors/asset/2D/Scissors.png" id="5_iw7ui"]
+[ext_resource type="Texture2D" uid="uid://d2ly6kk6r3ukc" path="res://assets/pixelart/connect4/hovered.png" id="2_xsdc2"]
+[ext_resource type="Texture2D" uid="uid://c4tfkocgry7vo" path="res://assets/pixelart/connect4/circleBlue.png" id="3_xsdc2"]
+[ext_resource type="Texture2D" uid="uid://c4my0im0dog44" path="res://assets/pixelart/connect4/circleOrange.png" id="4_5q8y2"]
+[ext_resource type="Texture2D" uid="uid://iiechi4nfo3n" path="res://assets/pixelart/connect4/bg.png" id="6_5q8y2"]
 [ext_resource type="FontFile" uid="uid://dhoixqrkemx30" path="res://assets/gui/ithaca-font/Ithaca-LVB75.ttf" id="6_q8o05"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_id0t8"]
@@ -36,23 +36,40 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_ao3pm")
-columns_texture = ExtResource("2_xsdc2")
-columns_hovered_texture = ExtResource("3_5q8y2")
-player_textures = Array[Texture2D]([ExtResource("5_iw7ui"), ExtResource("3_6boak")])
-computer_playstyle = 2
+columns_hovered_texture = ExtResource("2_xsdc2")
+player_textures = Array[Texture2D]([ExtResource("3_xsdc2"), ExtResource("4_5q8y2")])
+margin = Vector2(12, 10)
+computer_playstyle = 1
 metadata/_custom_type_script = "uid://dd5w2ptvu7pou"
 
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1109826292]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -313.5
+offset_top = -264.5
+offset_right = 313.5
+offset_bottom = 264.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("6_5q8y2")
+
 [node name="GameContainer" type="MarginContainer" parent="." unique_id=1415566458]
+texture_filter = 1
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/margin_left = 250
-theme_override_constants/margin_top = 40
-theme_override_constants/margin_right = 250
-theme_override_constants/margin_bottom = 40
+theme_override_constants/margin_left = 274
+theme_override_constants/margin_top = 61
+theme_override_constants/margin_right = 273
+theme_override_constants/margin_bottom = 70
 
 [node name="ColumnContainer" type="HBoxContainer" parent="GameContainer" unique_id=891042706]
 layout_mode = 2
