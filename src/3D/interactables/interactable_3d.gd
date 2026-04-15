@@ -1,4 +1,4 @@
-class_name Interractable extends Area3D
+@abstract class_name Interactable3D extends Area3D
 
 @export var action:String = "interract"
 
@@ -9,13 +9,8 @@ enum AnimationOnInteraction {
 	TurnWhileZoom,
 }
 
-enum Interaction {
-	Nothing,
-	Dialogue,
-	Minigame,
-}
-@export var interaction:Interaction = Interaction.Nothing
-
+@export var text_sprite:Sprite3D
+var text_label:Label
 @export var InteractionAnimation:AnimationOnInteraction = AnimationOnInteraction.Nothing
 @export_group("Animation")
 @export var camera_root:Node3D # the point the camera will turn to
@@ -23,16 +18,6 @@ enum Interaction {
 @export var zoom_time:float = 0.5
 @export var zoom_intensity:float = 10
 
-@export_group("Dialogue")
-@export_file("*.dialogue", ) var dialogue:String
-@export var title:String = "start"
-
-@export_group("Minigame")
-@export var minigame:PackedScene
-@export var connections:Dictionary[String, Callable]
-
-@onready var text_sprite:Sprite3D = $Sprite3D
-@onready var text_label:Label = $SubViewport/PanelContainer/MarginContainer/Label
 
 var was_viewed:bool = false
 var is_viewed:bool = false:
@@ -44,13 +29,25 @@ var is_viewed_false_timer:SceneTreeTimer
 var is_interacted_with:bool = false
 
 func _ready() -> void:
-	set_key_text()
+	collision_layer = 0b100
+	collision_mask = 0b0
+	text_label = find_label(text_sprite)
 	text_sprite.hide()
 
-func set_key_text() -> void:
-	pass
+func find_label(node:Node) -> Label:
+	"""
+	Explore recursivly node to find label
+	"""
+	if node != null:
+		for child in node.get_children():
+			if child as Label: return child
+			else: 
+				var label = find_label(child)
+				if label:
+					return label
+	return null
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	# Listen for inputs if visible
 	if is_viewed && Input.is_action_just_pressed(action):
 		full_interaction()
@@ -85,16 +82,7 @@ func interaction_animation():
 		AnimationOnInteraction.Turn : 
 			MainCommunicator.signalCamera.emit("turn_to_look_at", [camera_root.global_position, turn_time])
 
-func start_interaction():
-	match interaction : 
-		Interaction.Dialogue : 
-			MainCommunicator.send_signal_to_main(
-				MainCommunicator.SignalType.START_DIALOGUE, [dialogue, title, [self]]
-				)
-		Interaction.Minigame:
-			MainCommunicator.send_signal_to_main(
-				MainCommunicator.SignalType.ADD_MINIGAME, [minigame, connections]
-			)
+@abstract func start_interaction()
 
 func full_interaction():
 	interaction_animation()
