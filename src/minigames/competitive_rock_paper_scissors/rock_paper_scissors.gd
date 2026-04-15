@@ -95,7 +95,8 @@ func _ready():
 	setup_signals()
 	show_points()
 	show_number_of_each()
-	
+	intro()
+
 func _process(delta):
 	show_points()
 	show_number_of_each()
