@@ -70,14 +70,6 @@ layout_mode = 2
 size_flags_horizontal = 4
 theme_override_constants/separation = 50
 
-[node name="ExitButton" type="Button" parent="MarginContainer/PanelContainer/VBoxContainer/HBoxContainer2" unique_id=556335160]
-layout_mode = 2
-text = "Exit !"
-
-[node name="SetupButton" type="Button" parent="MarginContainer/PanelContainer/VBoxContainer/HBoxContainer2" unique_id=1691914951]
-layout_mode = 2
-text = "Start Game"
-
 [node name="Label" type="Label" parent="MarginContainer/PanelContainer/VBoxContainer/HBoxContainer2" unique_id=1803766276]
 layout_mode = 2
 
@@ -169,7 +161,7 @@ position = Vector2(980, 487)
 z_index = 2
 z_as_relative = false
 y_sort_enabled = true
-position = Vector2(483, 481)
+position = Vector2(482, 490)
 script = ExtResource("5_ynqdh")
 
 [node name="Hand" type="TextureRect" parent="." unique_id=1178589373]
@@ -192,7 +184,3 @@ position = Vector2(48.81791, 50.23203)
 
 [node name="PlayPile" type="Node2D" parent="." unique_id=1454429994]
 position = Vector2(800, 177)
-
-[connection signal="pressed" from="MarginContainer/PanelContainer/VBoxContainer/HBoxContainer2/ExitButton" to="." method="_on_complete_reset_pressed"]
-[connection signal="pressed" from="MarginContainer/PanelContainer/VBoxContainer/HBoxContainer2/ExitButton" to="." method="_on_exit_button_pressed"]
-[connection signal="pressed" from="MarginContainer/PanelContainer/VBoxContainer/HBoxContainer2/SetupButton" to="." method="_on_setup_button_pressed"]

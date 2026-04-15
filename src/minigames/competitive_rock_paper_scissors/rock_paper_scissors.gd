@@ -427,6 +427,9 @@ func intro():
 			var instance = await DialogueManager.show_dialogue_balloon_scene(balloon, dialogue_resource)
 			add_child(instance)
 			await instance.tree_exited
-			setup_game()
-			draw_cards()
 			
+	start_game()
+			
+func start_game(): 
+	setup_game()
+	draw_cards()
