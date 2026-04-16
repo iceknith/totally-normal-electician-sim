@@ -1,8 +1,80 @@
 [gd_scene format=3 uid="uid://bon1qfi1qah3p"]
 
-[sub_resource type="CanvasTexture" id="CanvasTexture_f82fo"]
+[ext_resource type="Script" uid="uid://dtstgrtrpukrs" path="res://src/minigames/arcadeGame/ball.gd" id="1_odev1"]
+[ext_resource type="Texture2D" uid="uid://b57l4i7v8o4a2" path="res://src/minigames/arcadeGame/ball/ball.png" id="1_qfcuv"]
+[ext_resource type="Script" uid="uid://dsyqlvumfnnju" path="res://src/minigames/arcadeGame/Component/movement.gd" id="2_m2r3x"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_qfcuv"]
+radius = 37.054016
+
+[sub_resource type="Shader" id="Shader_qfcuv"]
+code = "	shader_type canvas_item;
+
+	uniform int pixel_to_check = 10;
+	uniform int center_distance_cap =3;
+
+
+
+
+
+	bool has_neighbor(vec2 uv, vec2 texture_pixel_size, sampler2D sprite_texture)
+	{
+		for (int x = -pixel_to_check; x <= pixel_to_check; x++)
+		{
+			for (int y = -pixel_to_check; y <= pixel_to_check; y++)
+			{
+				if (x == 0 && y == 0) {
+					continue;
+				}
+
+				if ((abs(x) + abs(y)) > center_distance_cap) {
+					continue;
+				}
+
+				vec2 xy = vec2(float(x), float(y));
+				vec2 sprite_coordinates = uv + xy * texture_pixel_size;
+
+				if (texture(sprite_texture, sprite_coordinates).a > 0.0) {
+					return true;
+				}
+			}
+		}
+		return false;
+	}
+
+	void fragment() {
+
+
+		vec4 color = vec4(2.0, 0.1, 0.2, 1.0);
+		if (COLOR.a < 0.01 && has_neighbor(UV, TEXTURE_PIXEL_SIZE, TEXTURE)) {
+			COLOR = color*0.5;
+			COLOR.a = 1.0;
+		}
+
+	}"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_m2r3x"]
+shader = SubResource("Shader_qfcuv")
+shader_parameter/pixel_to_check = 10
+shader_parameter/center_distance_cap = 1
 
 [node name="Ball" type="CharacterBody2D" unique_id=1559941264]
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("1_odev1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=507020820]
+shape = SubResource("CircleShape2D_qfcuv")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=586756020]
-texture = SubResource("CanvasTexture_f82fo")
+texture_filter = 1
+material = SubResource("ShaderMaterial_m2r3x")
+texture = ExtResource("1_qfcuv")
+
+[node name="MovementComponent" type="Node2D" parent="." unique_id=1541402551]
+script = ExtResource("2_m2r3x")
+speed = 200
+acceleration = 100
+metadata/_custom_type_script = "uid://dsyqlvumfnnju"
+
+[node name="Node2D" type="Node2D" parent="." unique_id=958289530]

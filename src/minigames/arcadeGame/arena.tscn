@@ -1,5 +1,20 @@
 [gd_scene format=3 uid="uid://btbgohl78gc04"]
 
+[ext_resource type="PackedScene" uid="uid://bd8yarh0gi5kf" path="res://src/minigames/arcadeGame/player/Player.tscn" id="1_0ljn8"]
+[ext_resource type="PackedScene" uid="uid://bon1qfi1qah3p" path="res://src/minigames/arcadeGame/ball.tscn" id="2_gja22"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_50w5d"]
+size = Vector2(39.5, 711.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gja22"]
+size = Vector2(1188, 23)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lh3vw"]
+size = Vector2(39.5, 711.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_41tw2"]
+size = Vector2(1188, 23)
+
 [node name="Arena" type="Control" unique_id=2119784583]
 layout_mode = 3
 anchors_preset = 15
@@ -16,3 +31,46 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.21960784, 0.18039216, 0.21176471, 1)
+
+[node name="Player" parent="." unique_id=1190158832 instance=ExtResource("1_0ljn8")]
+collision_mask = 0
+
+[node name="Ball" parent="." unique_id=1559941264 instance=ExtResource("2_gja22")]
+position = Vector2(492, 434)
+
+[node name="Walls" type="Node2D" parent="." unique_id=2133769842]
+
+[node name="Right" type="StaticBody2D" parent="Walls" unique_id=2032400161]
+position = Vector2(1149, 357)
+collision_layer = 3
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Right" unique_id=2051602316]
+position = Vector2(1, -7)
+shape = SubResource("RectangleShape2D_50w5d")
+
+[node name="Up" type="StaticBody2D" parent="Walls" unique_id=38000795]
+collision_layer = 3
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Up" unique_id=228074278]
+position = Vector2(569, -4)
+shape = SubResource("RectangleShape2D_gja22")
+
+[node name="Left" type="StaticBody2D" parent="Walls" unique_id=754183200]
+position = Vector2(-16, 360)
+collision_layer = 3
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Left" unique_id=1601021392]
+position = Vector2(1, -7)
+shape = SubResource("RectangleShape2D_lh3vw")
+
+[node name="Down" type="StaticBody2D" parent="Walls" unique_id=2119867449]
+position = Vector2(-2, 654)
+collision_layer = 3
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Down" unique_id=1017536816]
+position = Vector2(569, -4)
+shape = SubResource("RectangleShape2D_41tw2")

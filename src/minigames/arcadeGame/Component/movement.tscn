@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://dew10erbv0qyh"]
+
+[ext_resource type="Script" uid="uid://dsyqlvumfnnju" path="res://src/minigames/arcadeGame/Component/movement.gd" id="1_ifa43"]
+
+[node name="Movement" type="Node2D" unique_id=321546894]
+script = ExtResource("1_ifa43")
+speed = 200
+acceleration = 100
