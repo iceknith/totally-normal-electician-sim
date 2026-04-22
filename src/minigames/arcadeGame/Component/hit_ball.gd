@@ -6,23 +6,32 @@ class_name Hitball extends Area2D
 var launching_ball:bool
 var launching_ball_direction:Vector2
 var direction:Vector2
+var ball:arcade_ball
+
+signal caught_ball(entity)
+signal released_ball(entity)
+
+
 
 @onready var animation_player:AnimationPlayer = $AnimationPlayer
-
 @export var base_time_before_launch:float
 
+var attacking:bool
 
 func hit_ball():
-	manage_rotation()
-	animation_player.play("Hit")
-	for body in get_overlapping_bodies() :
-		if body is arcade_ball : 
-			manage_ball(body)
+	if !attacking : 
+		manage_rotation()
+		attacking = true
+		animation_player.play("Hit")
+		await animation_player.animation_finished
+		attacking = false
+	
+	
+
 			
-func manage_ball(ball:arcade_ball)->void:
+func manage_ball()->void:
 	ball.stop()
-	ball.update_direction(launching_ball_direction)
-	ball.set_moving(true)
+
 
 func update_launching_ball_direction(dir:Vector2)-> void:
 	launching_ball_direction = dir
@@ -38,8 +47,24 @@ func set_direction(dir):
 	direction = dir
 
 func _physics_process(delta):
-	pass
+	check_release_ball()
+	manage_rotation()
 	
 func launch():
 	pass
 			
+func check_release_ball():
+	if Input.is_action_just_released("interract") and launching_ball : 
+		released_ball.emit(get_parent().global_position)
+		ball.update_direction(launching_ball_direction)
+		launching_ball = false
+		ball.set_moving(true)
+		ball = null
+	
+func _on_body_entered(body):
+	if attacking and body is arcade_ball: 
+		caught_ball.emit(get_parent().global_position)
+		launching_ball = true
+		ball = body
+		attacking = false
+		manage_ball()

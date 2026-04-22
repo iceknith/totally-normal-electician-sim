@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://j5t8bh7tv72m" path="res://src/2D/levels/Arcade/shaders/circles.png" id="3_fxxif"]
 [ext_resource type="Script" uid="uid://dbf5k8vvysldd" path="res://src/2D/interactables/interactables_2d_minigame.gd" id="6_4vtsk"]
 [ext_resource type="PackedScene" uid="uid://cnnuxnjiw3ait" path="res://src/2D/interactables/interactableText.tscn" id="6_sb0yd"]
-[ext_resource type="PackedScene" uid="uid://djias0ir5lwjr" path="res://src/minigames/test_minigame.tscn" id="7_4vtsk"]
+[ext_resource type="PackedScene" path="res://src/minigames/test_minigame.tscn" id="7_4vtsk"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4vtsk"]
 size = Vector2(112.5, 198)
@@ -16,7 +16,7 @@ size = Vector2(112.5, 198)
 offsets = PackedFloat32Array(0.016990291, 1)
 colors = PackedColorArray(1, 0.19607843, 0.22352941, 1, 1, 0.19607843, 0.73333335, 1)
 
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_o5jlv"]
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_4vtsk"]
 gradient = SubResource("Gradient_fxxif")
 repeat = 1
 
@@ -32,7 +32,7 @@ shader_parameter/speed_vertical = 2.0
 shader_parameter/scroll_direction = Vector2(0, 1)
 shader_parameter/scrolling_speed = 0.08
 shader_parameter/enable_palette_cycling = true
-shader_parameter/palette = SubResource("GradientTexture2D_o5jlv")
+shader_parameter/palette = SubResource("GradientTexture2D_4vtsk")
 shader_parameter/palette_speed = 0.1
 
 [node name="Arcade" type="Control" unique_id=1662000706]

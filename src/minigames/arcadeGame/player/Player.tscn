@@ -30,6 +30,7 @@ script = ExtResource("1_lyefd")
 sprite_frames = SubResource("SpriteFrames_rsw1t")
 
 [node name="Movement" parent="." unique_id=321546894 instance=ExtResource("3_8q2ol")]
+speed = 300
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1657388655]
 position = Vector2(0, 0.5)

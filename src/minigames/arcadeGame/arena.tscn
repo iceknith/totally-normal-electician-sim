@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://btbgohl78gc04"]
 
 [ext_resource type="PackedScene" uid="uid://bd8yarh0gi5kf" path="res://src/minigames/arcadeGame/player/Player.tscn" id="1_0ljn8"]
+[ext_resource type="Script" uid="uid://bmhhgdsuq00v7" path="res://src/minigames/arcadeGame/camera_2d.gd" id="2_50w5d"]
 [ext_resource type="PackedScene" uid="uid://bon1qfi1qah3p" path="res://src/minigames/arcadeGame/ball.tscn" id="2_gja22"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_50w5d"]
@@ -23,17 +24,14 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="ColorRect" type="ColorRect" parent="." unique_id=1801667818]
+[node name="Bg" type="ColorRect" parent="." unique_id=1614996404]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.21960784, 0.18039216, 0.21176471, 1)
-
-[node name="Player" parent="." unique_id=1190158832 instance=ExtResource("1_0ljn8")]
-collision_mask = 0
+color = Color(0, 0, 0, 1)
 
 [node name="Ball" parent="." unique_id=1559941264 instance=ExtResource("2_gja22")]
 position = Vector2(492, 434)
@@ -74,3 +72,24 @@ collision_mask = 3
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Down" unique_id=1017536816]
 position = Vector2(569, -4)
 shape = SubResource("RectangleShape2D_41tw2")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=2079456781]
+position = Vector2(581, 346)
+limit_left = 0
+limit_top = 0
+limit_right = 1152
+limit_bottom = 648
+script = ExtResource("2_50w5d")
+launch_zoom = Vector2(1.2, 1.2)
+
+[node name="Left" type="Marker2D" parent="Camera2D" unique_id=133654339]
+
+[node name="Right" type="Marker2D" parent="Camera2D" unique_id=1903919753]
+
+[node name="Up" type="Marker2D" parent="Camera2D" unique_id=1511471920]
+
+[node name="Bottom" type="Marker2D" parent="Camera2D" unique_id=921343982]
+
+[node name="Entities" type="Node2D" parent="." unique_id=226423549]
+
+[node name="Player" parent="Entities" unique_id=1190158832 instance=ExtResource("1_0ljn8")]

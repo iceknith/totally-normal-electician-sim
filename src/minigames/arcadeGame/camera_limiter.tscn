@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://bo2g47cfxervj"]
+
+[ext_resource type="Script" uid="uid://dt18ie6psdhal" path="res://src/minigames/arcadeGame/camera_limiter.gd" id="1_bqjjb"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kdgfv"]
+size = Vector2(1145, 650)
+
+[node name="CameraLimiter" type="Area2D" unique_id=799256775]
+script = ExtResource("1_bqjjb")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=22058196]
+position = Vector2(574.5, 327)
+shape = SubResource("RectangleShape2D_kdgfv")
+
+[node name="LimitPosition" type="Marker2D" parent="." unique_id=1255513367]
