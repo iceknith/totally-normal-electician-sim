@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://mecgfpfk6sbr" path="res://src/minigames/competitive_rock_paper_scissors/roll_sprite.tscn" id="2_ladea"]
 [ext_resource type="Texture2D" uid="uid://c5gyf7q6yvcp8" path="res://src/minigames/competitive_rock_paper_scissors/asset/2D/hand.png" id="5_uuwv0"]
 [ext_resource type="PackedScene" uid="uid://dt4mec201tdh3" path="res://src/minigames/competitive_rock_paper_scissors/personPlaying.tscn" id="5_xbnbg"]
-[ext_resource type="Script" path="res://src/minigames/competitive_rock_paper_scissors/hand_pile.gd" id="5_ynqdh"]
+[ext_resource type="Script" uid="uid://c0sp2ilspegwv" path="res://src/minigames/competitive_rock_paper_scissors/hand_pile.gd" id="5_ynqdh"]
 [ext_resource type="Script" uid="uid://rk23gesb0hg3" path="res://src/minigames/competitive_rock_paper_scissors/hand/hand.gd" id="7_ynqdh"]
 [ext_resource type="Texture2D" uid="uid://cye1bhonrbtg7" path="res://src/minigames/competitive_rock_paper_scissors/asset/2D/Scissors.png" id="8_0lxge"]
 [ext_resource type="Texture2D" uid="uid://1xxjx047eo4l" path="res://src/minigames/competitive_rock_paper_scissors/asset/2D/rock.png" id="9_24ib3"]
@@ -21,10 +21,11 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 script = ExtResource("1_25ab5")
-rounds_number = 15
+rounds_number = 20
 points_to_win = 5
 total_choice_number = 15
 card_scene = ExtResource("2_0lxge")
+opponent = 2
 
 [node name="MarginContainer" type="MarginContainer" parent="." unique_id=2061799233]
 layout_mode = 1
@@ -38,70 +39,64 @@ theme_override_constants/margin_top = 50
 theme_override_constants/margin_right = 50
 theme_override_constants/margin_bottom = 50
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=1218745472]
+[node name="PanelContainer" type="PanelContainer" parent="MarginContainer" unique_id=41155471]
 layout_mode = 2
 
-[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=944726451]
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/PanelContainer" unique_id=1218745472]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/PanelContainer/VBoxContainer" unique_id=944726451]
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="PanelContainer2" type="PanelContainer" parent="MarginContainer/VBoxContainer/HBoxContainer" unique_id=1771331851]
+[node name="PanelContainer2" type="PanelContainer" parent="MarginContainer/PanelContainer/VBoxContainer/HBoxContainer" unique_id=1771331851]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer/PanelContainer2" unique_id=1510990740]
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/PanelContainer/VBoxContainer/HBoxContainer/PanelContainer2" unique_id=1510990740]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 
-[node name="RollSprite" parent="MarginContainer/VBoxContainer/HBoxContainer/PanelContainer2/VBoxContainer" unique_id=1840759605 instance=ExtResource("2_ladea")]
+[node name="RollSprite" parent="MarginContainer/PanelContainer/VBoxContainer/HBoxContainer/PanelContainer2/VBoxContainer" unique_id=1840759605 instance=ExtResource("2_ladea")]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 
-[node name="Choice" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/PanelContainer2/VBoxContainer" unique_id=1025466605]
-layout_mode = 2
-
-[node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=359344537]
+[node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/PanelContainer/VBoxContainer" unique_id=359344537]
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_constants/separation = 50
 
-[node name="CompleteReset" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer2" unique_id=556335160]
-layout_mode = 2
-text = "Reset Game"
-
-[node name="SetupButton" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer2" unique_id=1691914951]
-layout_mode = 2
-text = "Start Game"
-
-[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer2" unique_id=1803766276]
+[node name="Label" type="Label" parent="MarginContainer/PanelContainer/VBoxContainer/HBoxContainer2" unique_id=1803766276]
 layout_mode = 2
 
-[node name="showPoints" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer2" unique_id=1091885699]
+[node name="showPoints" type="Label" parent="MarginContainer/PanelContainer/VBoxContainer/HBoxContainer2" unique_id=1091885699]
+unique_name_in_owner = true
 layout_mode = 2
 
-[node name="PanelContainer" type="PanelContainer" parent="MarginContainer/VBoxContainer" unique_id=1759892786]
+[node name="PanelContainer" type="PanelContainer" parent="MarginContainer/PanelContainer/VBoxContainer" unique_id=1759892786]
 layout_mode = 2
 size_flags_vertical = 6
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/PanelContainer" unique_id=415566979]
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/PanelContainer/VBoxContainer/PanelContainer" unique_id=415566979]
 custom_minimum_size = Vector2(0, 256)
 layout_mode = 2
 
-[node name="PanelContainer" type="PanelContainer" parent="MarginContainer/VBoxContainer/PanelContainer/VBoxContainer" unique_id=537758301]
+[node name="PanelContainer" type="PanelContainer" parent="MarginContainer/PanelContainer/VBoxContainer/PanelContainer/VBoxContainer" unique_id=537758301]
 layout_mode = 2
 size_flags_vertical = 0
 
-[node name="Choice" type="Label" parent="MarginContainer/VBoxContainer/PanelContainer/VBoxContainer/PanelContainer" unique_id=692810221]
+[node name="PlayerChoiceLabel" type="Label" parent="MarginContainer/PanelContainer/VBoxContainer/PanelContainer/VBoxContainer/PanelContainer" unique_id=692810221]
+unique_name_in_owner = true
 custom_minimum_size = Vector2(50, 10)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 0
 
-[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/PanelContainer/VBoxContainer" unique_id=403219549]
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/PanelContainer/VBoxContainer/PanelContainer/VBoxContainer" unique_id=403219549]
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_constants/margin_left = 50
@@ -109,25 +104,25 @@ theme_override_constants/margin_top = 20
 theme_override_constants/margin_right = 50
 theme_override_constants/margin_bottom = 20
 
-[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer/PanelContainer/VBoxContainer/MarginContainer" unique_id=1192512717]
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/PanelContainer/VBoxContainer/PanelContainer/VBoxContainer/MarginContainer" unique_id=1192512717]
 layout_mode = 2
 theme_override_constants/separation = 40
 
-[node name="PanelContainer2" type="PanelContainer" parent="MarginContainer/VBoxContainer/PanelContainer/VBoxContainer/MarginContainer/HBoxContainer" unique_id=844248952]
+[node name="PanelContainer2" type="PanelContainer" parent="MarginContainer/PanelContainer/VBoxContainer/PanelContainer/VBoxContainer/MarginContainer/HBoxContainer" unique_id=844248952]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 5.0
 
-[node name="HandPilePosition" type="Control" parent="MarginContainer/VBoxContainer/PanelContainer/VBoxContainer/MarginContainer/HBoxContainer/PanelContainer2" unique_id=971449515]
+[node name="HandPilePosition" type="Control" parent="MarginContainer/PanelContainer/VBoxContainer/PanelContainer/VBoxContainer/MarginContainer/HBoxContainer/PanelContainer2" unique_id=971449515]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 
-[node name="PanelContainer" type="PanelContainer" parent="MarginContainer/VBoxContainer/PanelContainer/VBoxContainer/MarginContainer/HBoxContainer" unique_id=1280155252]
+[node name="PanelContainer" type="PanelContainer" parent="MarginContainer/PanelContainer/VBoxContainer/PanelContainer/VBoxContainer/MarginContainer/HBoxContainer" unique_id=1280155252]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="ColorRect" type="ColorRect" parent="MarginContainer/VBoxContainer/PanelContainer/VBoxContainer/MarginContainer/HBoxContainer/PanelContainer" unique_id=1739205279]
+[node name="ColorRect" type="ColorRect" parent="MarginContainer/PanelContainer/VBoxContainer/PanelContainer/VBoxContainer/MarginContainer/HBoxContainer/PanelContainer" unique_id=1739205279]
 layout_mode = 2
 
 [node name="EndGameLabel" type="RichTextLabel" parent="." unique_id=1725921560]
@@ -166,7 +161,7 @@ position = Vector2(980, 487)
 z_index = 2
 z_as_relative = false
 y_sort_enabled = true
-position = Vector2(483, 481)
+position = Vector2(482, 490)
 script = ExtResource("5_ynqdh")
 
 [node name="Hand" type="TextureRect" parent="." unique_id=1178589373]
@@ -189,6 +184,3 @@ position = Vector2(48.81791, 50.23203)
 
 [node name="PlayPile" type="Node2D" parent="." unique_id=1454429994]
 position = Vector2(800, 177)
-
-[connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer2/CompleteReset" to="." method="_on_complete_reset_pressed"]
-[connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer2/SetupButton" to="." method="_on_setup_button_pressed"]

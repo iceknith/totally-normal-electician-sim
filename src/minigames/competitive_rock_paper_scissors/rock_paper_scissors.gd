@@ -22,9 +22,9 @@ enum Result{
 }
 
 
-
+@onready var balloon = load("res://src/Dialogue/DialogueBalloon/textBox.tscn")
 @onready var chooseOption:Node =%ChooseOption
-@onready var player1_choice_label:Node =$MarginContainer/VBoxContainer/PanelContainer/VBoxContainer/PanelContainer/Choice
+@onready var player1_choice_label:Node =%PlayerChoiceLabel
 @onready var rolling_sprite:Node = %RollSprite
 @onready var dice_table:Node = %TableDice
 @onready var hand:Node = %Hand
@@ -95,6 +95,7 @@ func _ready():
 	setup_signals()
 	show_points()
 	show_number_of_each()
+	intro()
 	
 func _process(delta):
 	show_points()
@@ -115,7 +116,7 @@ func update_player_choice(choice):
 	if has_player_chosen and !is_rolling: 
 		is_rolling = true
 		opponent_choice = generate_opponent_choice()
-		print(opponent_choice)
+
 		update_choice_stock(player_choice)
 		last_player_choices.append(player_choice)
 		update_choice_stock(opponent_choice)
@@ -198,6 +199,7 @@ func player_wins():
 	"[center] Yaaaaay !" \
 	, 0.7, Color.GREEN).finished
 	player_points+=1
+	dialogue_loses()
 	reset()
 	
 
@@ -207,8 +209,31 @@ func player_loses():
 	 "[center] Try again !" \
 	, 1, Color.RED).finished
 	opponents_points+=1
+	dialogue_wins()
 	reset()
 	
+func dialogue_loses():
+	match opponent : 
+		personPlaying.STANLY : 
+			pass
+		personPlaying.WILLY : #il choisit tjrs le moins 
+			pass
+		personPlaying.BILLY : 
+			var dialogue_resource = load("res://src/minigames/competitive_rock_paper_scissors/dialogue/Billy/BillyLoses.dialogue")
+			var instance = await DialogueManager.show_dialogue_balloon_scene(balloon, dialogue_resource)
+			add_child(instance)
+
+
+func dialogue_wins():
+	match opponent : 
+		personPlaying.STANLY : 
+			pass
+		personPlaying.WILLY : #il choisit tjrs le moins 
+			pass
+		personPlaying.BILLY : 
+			var dialogue_resource = load("res://src/minigames/competitive_rock_paper_scissors/dialogue/Billy/BillyWins.dialogue")
+			var instance = await DialogueManager.show_dialogue_balloon_scene(balloon, dialogue_resource)
+			add_child(instance)
 	
 func get_result(choice1:int, choice2:int) -> int:
 	if choice1 == choice2:
@@ -253,7 +278,6 @@ func generate_opponent_choice():
 							break
 					if opponent_has_chosen == true : 
 						break
-
 	return opponent_choice
 	
 
@@ -293,7 +317,7 @@ func player_won_game(): #condition à executer si le player gagne la partie
 	exit()
 	
 func opponent_won_game(): #condition à executer si l'opponent gagne la partie
-	await text_animation(win_label, "You WON \n the GAME !!!!!", 1, Color.RED)
+	await text_animation(win_label, "You LOST \n the GAME !!!!!", 1, Color.RED)
 	exit()
 	
 func exit():
@@ -352,13 +376,13 @@ func generate_shuffle_choice() -> Array: #regénère une liste à partir du nomb
 	return new_choices
 
 func show_number_of_each():
-	$MarginContainer/VBoxContainer/HBoxContainer2/Label.text = \
+	$MarginContainer/PanelContainer/VBoxContainer/HBoxContainer2/Label.text = \
 	"rocks = " + str(current_numbers[Choice.ROCK]) + \
 	" papers = " + str(current_numbers[Choice.PAPER]) + \
 	" scissors = " + str(current_numbers[Choice.SCISSORS])
 
 func show_points():
-	$MarginContainer/VBoxContainer/HBoxContainer2/showPoints.text = \
+	%showPoints.text = \
 	"player points = " + str(player_points) + " \\ " + str(points_to_win) + \
 	" opponent points = " + str(opponents_points) + " \\ " + str(points_to_win)
 
@@ -374,18 +398,39 @@ func draw_cards():
 func won_game():
 	pass
 
-func _on_complete_reset_pressed():
-	chooseOption.set_can_generate_card(false) #eivter de regénerer des cartes 
-	complete_reset()
-	
 
 func _on_setup_button_pressed():
-	if !has_game_started : 
-		setup_game()
-		draw_cards()
+	#if !has_game_started : 
+		#setup_game()
+		#draw_cards()
+	pass
 
 func clear(): 
 	for child in hand_pile.get_children():
 		child.free()
 		
 	
+
+
+func _on_exit_button_pressed():
+	exit()
+
+
+func intro():
+	match opponent : 
+		personPlaying.STANLY : 
+			start_game()
+		personPlaying.WILLY : #il choisit tjrs le moins 
+			start_game()
+		personPlaying.BILLY : 
+
+			var dialogue_resource = load("res://src/minigames/competitive_rock_paper_scissors/dialogue/Billy/Billy.dialogue")
+			var instance = await DialogueManager.show_dialogue_balloon_scene(balloon, dialogue_resource)
+			add_child(instance)
+			await instance.tree_exited
+			
+	start_game()
+			
+func start_game(): 
+	setup_game()
+	draw_cards()

@@ -20,7 +20,6 @@ config/icon="res://icon.svg"
 MainCommunicator="*uid://b0f1tnefpdrcm"
 DialogueManager="*uid://c3rodes2l3gxb"
 GlobalVars="*uid://cua36vgi8vykf"
-DebugMenu="*uid://cggqb75a8w8r"
 
 [dialogue_manager]
 
@@ -28,11 +27,12 @@ runtime/balloon_path="res://src/Dialogue/DialogueBalloon/balloon.tscn"
 
 [display]
 
+window/size/mode=3
 window/stretch/mode="canvas_items"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/debug_menu/plugin.cfg", "res://addons/dialogue_manager/plugin.cfg", "res://addons/scene_object_brush/plugin.cfg")
+enabled=PackedStringArray("res://addons/dialogue_manager/plugin.cfg", "res://addons/scene_object_brush/plugin.cfg")
 
 [importer_defaults]
 
@@ -140,7 +140,6 @@ locale/translations_pot_files=PackedStringArray("res://src/Dialogue/dialogueTest
 3d_physics/layer_1="MainWorld"
 3d_physics/layer_2="Entities"
 3d_physics/layer_3="Interractables"
-3d_physics/layer_8="worldBoxSmall"
 
 [physics]
 

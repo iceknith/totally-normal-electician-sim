@@ -12,10 +12,6 @@ func set_texture(texture:Texture):
 	$TextureButton.texture_normal = texture
 	
 	
-func play_flip_animation():
-	$AnimationPlayer.play("flip")
-	return $AnimationPlayer.animation_finished
-	
 
 func setup_signals():
 	pass

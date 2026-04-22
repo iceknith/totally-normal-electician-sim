@@ -1,17 +1,20 @@
 [gd_scene format=3 uid="uid://boloxxts85tff"]
 
 [ext_resource type="Script" uid="uid://dlkwf2mcbiags" path="res://src/minigames/competitive_rock_paper_scissors/button_rps.gd" id="1_ai1ol"]
-[ext_resource type="Texture2D" uid="uid://cra208jmgv7f8" path="res://icon.svg" id="2_d5ryg"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_ai1ol"]
 
 [node name="ButtonRps" type="Node2D" unique_id=1080382382]
 script = ExtResource("1_ai1ol")
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=196855036]
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1894378236]
 modulate = Color(0.8440192, 3.85046e-06, 4.813075e-07, 1)
 self_modulate = Color(1, 0, 0, 1)
 z_index = 1
 z_as_relative = false
-texture = ExtResource("2_d5ryg")
+position = Vector2(-1.9073486e-06, 1.5999966)
+scale = Vector2(126, 131.2)
+texture = SubResource("PlaceholderTexture2D_ai1ol")
 
 [node name="TextureButton" type="TextureButton" parent="." unique_id=99015314]
 z_index = 1
