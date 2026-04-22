@@ -951,7 +951,7 @@ dialogue = ExtResource("12_1r3ik")
 animated_sprite = NodePath("AnimatedSprite3D")
 animated_sprite_start_animation = "normal"
 text_sprite = NodePath("InteractacleText3D")
-InteractionAnimation = 1
+interactionAnimation = 1
 camera_root = NodePath(".")
 metadata/_custom_type_script = "uid://sd0g0r1lwus3"
 

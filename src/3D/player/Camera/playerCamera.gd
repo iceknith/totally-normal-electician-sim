@@ -4,7 +4,7 @@ var turnCamera:bool
 
 @export var look_sensitivity : float = 0.006
 @onready var default_fov:float = fov
-@onready var default_rotation:Vector3
+@onready var default_rotation:Vector3 = global_rotation
 
 var rotation_y = 0
 var rotation_x = 0
@@ -65,7 +65,6 @@ func reset(time:float = 0.3):
 	tween.parallel().tween_property(self, "fov", default_fov, time)
 
 func start_shake(shaking_strength:float):
-	
 	shake_strength = shaking_strength
 	shaking = true
 

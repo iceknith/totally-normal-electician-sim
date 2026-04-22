@@ -142,18 +142,18 @@ func start_dialogue(data:Array):
 	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 	
 	# Launch Dialogue
-	var dialogueFile:DialogueResource = data[0]
+	var dialogue:DialogueResource = data[0]
 	var title:String = data[1]
+	title = GlobalVars.get_current_title(title, dialogue)
 	var extra_game_states:Array = data[2]
 	DialogueManager.show_dialogue_balloon(
-		dialogueFile, title, extra_game_states
+		dialogue, title, extra_game_states
 		)
 
 func end_dialogue(_dialogue_data):
 	is_in_dialogue = false
 	if currentState == MainCommunicator.GameState.Game3D:
 		Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
-		MainCommunicator.signalCamera.emit("reset", [])
 
 ### EOW Handlers ###
 

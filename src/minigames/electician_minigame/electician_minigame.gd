@@ -64,7 +64,6 @@ func init_stage() -> void:
 		Stages.TutorialMovingCircle:
 			$MarginContainer/GamesContainer/TimingContainer.queue_free()
 			for section in [cable_section, moving_section]:
-				print(section)
 				section.process_mode = Node.PROCESS_MODE_DISABLED
 				tween.tween_callback(func(): section.process_mode = Node.PROCESS_MODE_INHERIT)
 		Stages.TutorialTiming:
