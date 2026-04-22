@@ -78,7 +78,7 @@ func manage_input(delta:float) -> void :
 	var input_dir := Input.get_vector("left", "right", "up", "down")
 	var direction := (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
 	
-	if direction  and !cam.in_a_cam_animation and !in_interaction(): 
+	if direction and !in_interaction():
 		# Add the random offset
 		var walk_jitter_wet:float = walk_jitter_curve.sample(eow_meter)
 		walk_jitter_noise_pos += delta * walk_jitter_speed * walk_jitter_wet
