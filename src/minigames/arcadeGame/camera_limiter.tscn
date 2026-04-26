@@ -1,6 +1,12 @@
+<<<<<<< Updated upstream
 [gd_scene format=3 uid="uid://bo2g47cfxervj"]
 
 [ext_resource type="Script" uid="uid://dt18ie6psdhal" path="res://src/minigames/arcadeGame/camera_limiter.gd" id="1_bqjjb"]
+=======
+[gd_scene format=3 uid="uid://pvxnfvk14toc"]
+
+[ext_resource type="Script" path="res://src/minigames/arcadeGame/camera_limiter.gd" id="1_bqjjb"]
+>>>>>>> Stashed changes
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kdgfv"]
 size = Vector2(1145, 650)

@@ -132,7 +132,11 @@ jump={
 
 [internationalization]
 
+<<<<<<< Updated upstream
 locale/translations_pot_files=PackedStringArray("res://src/Dialogue/dialogueTest/testDialogue.dialogue", "res://src/Dialogue/dialogueTest/testDialogueBoulangerie.dialogue", "res://src/Dialogue/dialogueTest/testDialogueBoulangerieOutdoors.dialogue")
+=======
+locale/translations_pot_files=PackedStringArray("res://src/Dialogue/dialogueTest/testDialogue.dialogue", "res://src/Dialogue/dialogueTest/testDialogueBoulangerie.dialogue", "res://src/Dialogue/dialogueTest/testDialogueBoulangerieOutdoors.dialogue", "res://src/minigames/competitive_rock_paper_scissors/dialogue/Billy/Billy.dialogue", "res://src/minigames/competitive_rock_paper_scissors/dialogue/Billy/BillyLoses.dialogue", "res://src/minigames/competitive_rock_paper_scissors/dialogue/rpc_dialogues.dialogue", "res://src/minigames/competitive_rock_paper_scissors/dialogue/Billy/BillyWins.dialogue")
+>>>>>>> Stashed changes
 
 [layer_names]
 
