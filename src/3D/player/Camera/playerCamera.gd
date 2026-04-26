@@ -4,7 +4,7 @@ var turnCamera:bool
 
 @export var look_sensitivity : float = 0.006
 @onready var default_fov:float = fov
-@onready var default_rotation:Vector3
+@onready var default_rotation:Vector3 = global_rotation
 
 var rotation_y = 0
 var rotation_x = 0
@@ -55,8 +55,8 @@ func turn_while_zoom(ToTurnTo : Vector3, turnTime:float = 1, zoom_time:float = 1
 	tween.set_parallel(true)
 	tween.tween_property(self, "global_rotation", rotation_vector, turnTime).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN_OUT)
 	tween.tween_property(self, "fov", fov - zoom_intensity, turnTime).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN_OUT)
-	
 	await tween.finished
+	return tween
 
 func reset(time:float = 0.3):
 	var tween = create_tween()

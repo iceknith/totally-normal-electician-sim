@@ -52,7 +52,7 @@ func roll_players(choices, handPile, drawPile, playPile):
 		var tween = create_tween()
 		var start_pos = drawPile.global_position 
 		var final_pos = handPile.global_position 
-		print(final_pos)
+		#print(final_pos)
 		final_pos.x -= floor(n/2 - j)*offset
 		var instance = ButtonScene.instantiate()
 		
@@ -69,12 +69,12 @@ func roll_players(choices, handPile, drawPile, playPile):
 				instance.set_texture(scissors_tex)
 		#var min_size = instance.get_combined_minimum_size()
 		var btn = instance.get_node("TextureButton")
+	
 		manage_rotation(choices, instance, j)
 		j +=1
 		btn.pressed.connect(update_player_choice.bind(i, self))
 
 		instance.global_position = start_pos #la position est askip recalculé en utilisant add_child
-		
 		
 		tween.set_ease(Tween.EASE_IN_OUT).set_trans(Tween.TRANS_CIRC)
 		tween.tween_property(instance, "global_position", final_pos, shuffle_time)
@@ -82,18 +82,11 @@ func roll_players(choices, handPile, drawPile, playPile):
 		await get_tree().create_timer(0.5).timeout
 		instances.append(instance)
 
-		
-
-		
-
-
 func manage_rotation(choices, instance, card_nb):
 	var nb_of_cards = len(choices)
  
 	var t = card_nb / float(nb_of_cards - 1) if nb_of_cards > 1 else 0.5
 	instance.rotation_degrees = curve.sample(t) * max_rotation
-
-	
 
 func get_hand_tip() : 
 	return $handTip

@@ -20,6 +20,7 @@ config/icon="res://icon.svg"
 MainCommunicator="*uid://b0f1tnefpdrcm"
 DialogueManager="*uid://c3rodes2l3gxb"
 GlobalVars="*uid://cua36vgi8vykf"
+DebugMenu="*uid://cggqb75a8w8r"
 
 [dialogue_manager]
 
@@ -132,17 +133,14 @@ jump={
 
 [internationalization]
 
-<<<<<<< Updated upstream
-locale/translations_pot_files=PackedStringArray("res://src/Dialogue/dialogueTest/testDialogue.dialogue", "res://src/Dialogue/dialogueTest/testDialogueBoulangerie.dialogue", "res://src/Dialogue/dialogueTest/testDialogueBoulangerieOutdoors.dialogue")
-=======
-locale/translations_pot_files=PackedStringArray("res://src/Dialogue/dialogueTest/testDialogue.dialogue", "res://src/Dialogue/dialogueTest/testDialogueBoulangerie.dialogue", "res://src/Dialogue/dialogueTest/testDialogueBoulangerieOutdoors.dialogue", "res://src/minigames/competitive_rock_paper_scissors/dialogue/Billy/Billy.dialogue", "res://src/minigames/competitive_rock_paper_scissors/dialogue/Billy/BillyLoses.dialogue", "res://src/minigames/competitive_rock_paper_scissors/dialogue/rpc_dialogues.dialogue", "res://src/minigames/competitive_rock_paper_scissors/dialogue/Billy/BillyWins.dialogue")
->>>>>>> Stashed changes
+locale/translations_pot_files=PackedStringArray("res://src/Dialogue/dialogueTest/testDialogue.dialogue", "res://src/Dialogue/dialogueTest/testDialogueBoulangerie.dialogue", "res://src/Dialogue/dialogueTest/testDialogueBoulangerieOutdoors.dialogue", "res://src/minigames/competitive_rock_paper_scissors/dialogue/Billy/Billy.dialogue", "res://src/minigames/competitive_rock_paper_scissors/dialogue/Billy/BillyLoses.dialogue", "res://src/minigames/competitive_rock_paper_scissors/dialogue/Billy/BillyWins.dialogue", "res://src/minigames/competitive_rock_paper_scissors/dialogue/rpc_dialogues.dialogue")
 
 [layer_names]
 
 3d_physics/layer_1="MainWorld"
 3d_physics/layer_2="Entities"
 3d_physics/layer_3="Interractables"
+3d_physics/layer_8="worldBoxSmall"
 
 [physics]
 

@@ -1,0 +1,140 @@
+[gd_scene format=3 uid="uid://dr0ecrypne3qn"]
+
+[ext_resource type="Script" uid="uid://cjcb4csh763a1" path="res://src/minigames/tic_tac_toe/tic_tac_toe.gd" id="1_5s16v"]
+[ext_resource type="Texture2D" uid="uid://bndu330phrfut" path="res://assets/pixelart/tictactoe/outline.png" id="2_p80xj"]
+[ext_resource type="Texture2D" uid="uid://bcu8m8efnxa2l" path="res://assets/pixelart/tictactoe/cross.png" id="3_id0t8"]
+[ext_resource type="Texture2D" uid="uid://dejlkko35u7rl" path="res://assets/pixelart/tictactoe/circle.png" id="4_nv2wk"]
+[ext_resource type="Texture2D" uid="uid://cjsghwo4q4rg7" path="res://assets/pixelart/tictactoe/bg.png" id="6_id0t8"]
+[ext_resource type="FontFile" uid="uid://dhoixqrkemx30" path="res://assets/gui/ithaca-font/Ithaca-LVB75.ttf" id="6_p80xj"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_id0t8"]
+font = ExtResource("6_p80xj")
+font_size = 100
+font_color = Color(1, 0.69803923, 0, 1)
+outline_size = 10
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_nv2wk"]
+font = ExtResource("6_p80xj")
+font_size = 150
+font_color = Color(1, 1, 0, 1)
+outline_size = 10
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_2csai"]
+font = ExtResource("6_p80xj")
+font_size = 150
+font_color = Color(1, 0, 0, 1)
+outline_size = 10
+outline_color = Color(0, 0, 0, 1)
+
+[node name="TicTacToe" type="Control" unique_id=958990338]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_5s16v")
+empty_hovered_texture = ExtResource("2_p80xj")
+player_textures = Array[Texture2D]([ExtResource("3_id0t8"), ExtResource("4_nv2wk")])
+margin = Vector2(15, 15)
+computer_playstyle = 3
+metadata/_custom_type_script = "uid://dd5w2ptvu7pou"
+
+[node name="bg" type="TextureRect" parent="." unique_id=1562605027]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -232.5
+offset_top = -232.5
+offset_right = 232.5
+offset_bottom = 232.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("6_id0t8")
+stretch_mode = 4
+
+[node name="TextureMarginContainer" type="MarginContainer" parent="." unique_id=1415566458]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 359
+theme_override_constants/margin_top = 107
+theme_override_constants/margin_right = 359
+theme_override_constants/margin_bottom = 107
+
+[node name="TextureContainer" type="VBoxContainer" parent="TextureMarginContainer" unique_id=64102579]
+layout_mode = 2
+alignment = 1
+
+[node name="TieLabel" type="Label" parent="." unique_id=159414149]
+z_index = 10
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -92.0
+offset_top = -68.5
+offset_right = 92.0
+offset_bottom = 68.5
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset_ratio = Vector2(0.5, 0.5)
+size_flags_horizontal = 4
+text = "It's a Tie !"
+label_settings = SubResource("LabelSettings_id0t8")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="WinLabel" type="Label" parent="." unique_id=1915618565]
+z_index = 10
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -307.5
+offset_top = -85.5
+offset_right = 307.5
+offset_bottom = 85.5
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset_ratio = Vector2(0.5, 0.5)
+size_flags_horizontal = 4
+text = "You win !!!"
+label_settings = SubResource("LabelSettings_nv2wk")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="LoseLabel" type="Label" parent="." unique_id=1377635044]
+z_index = 10
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -309.5
+offset_top = -85.5
+offset_right = 309.5
+offset_bottom = 85.5
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset_ratio = Vector2(0.5, 0.5)
+size_flags_horizontal = 4
+text = "You Lose !!!"
+label_settings = SubResource("LabelSettings_2csai")
+horizontal_alignment = 1
+vertical_alignment = 1

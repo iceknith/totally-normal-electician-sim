@@ -11,7 +11,7 @@ enum AnimationOnInteraction {
 
 @export var text_sprite:Sprite3D
 var text_label:Label
-@export var InteractionAnimation:AnimationOnInteraction = AnimationOnInteraction.Nothing
+@export var interactionAnimation:AnimationOnInteraction = AnimationOnInteraction.Nothing
 @export_group("Animation")
 @export var camera_root:Node3D # the point the camera will turn to
 @export var turn_time:float = 0.5
@@ -74,7 +74,7 @@ func hide_text():
 	text_sprite.hide()
 
 func interaction_animation():
-	match InteractionAnimation : 
+	match interactionAnimation : 
 		AnimationOnInteraction.TurnAndZoom: 
 			MainCommunicator.signalCamera.emit("turn_then_zoom", [camera_root.global_position, turn_time, zoom_time, zoom_intensity])
 		AnimationOnInteraction.TurnWhileZoom : 
@@ -82,8 +82,15 @@ func interaction_animation():
 		AnimationOnInteraction.Turn : 
 			MainCommunicator.signalCamera.emit("turn_to_look_at", [camera_root.global_position, turn_time])
 
+func end_interaction_animation(_ressource):
+	MainCommunicator.signalCamera.emit("reset", [])
+	DialogueManager.dialogue_ended.disconnect(end_interaction_animation)
+
 @abstract func start_interaction()
 
 func full_interaction():
 	interaction_animation()
 	start_interaction()
+	# Connect interaction end animation if needed
+	if interactionAnimation != AnimationOnInteraction.Nothing:
+		DialogueManager.dialogue_ended.connect(end_interaction_animation)

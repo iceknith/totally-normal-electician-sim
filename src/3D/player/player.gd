@@ -10,6 +10,10 @@ var rotation_x = 0
 
 var lock_camera:bool
 var eow_meter:float = 0
+@export_group("References")
+@onready var cam:Camera3D = %Camera3D
+
+
 
 @export_group("Walk Jitter")
 @export var walk_jitter_strength:float = 0.5
@@ -29,9 +33,9 @@ func _unhandled_input(event: InputEvent) -> void:
 		if event is InputEventMouseMotion && !in_interaction():
 			# Si l'input ne match pas avec la vélocité rentré on ne le process pas
 			# Sinon, ça fait des flicker bizzare quand on sort des dialogues
-			if abs(event.relative.x) >= abs(event.velocity.x) &&\
-				abs(event.relative.y) >= abs(event.velocity.y): 
-					return
+			#if abs(event.relative.x) >= abs(event.velocity.x) &&\
+			#	abs(event.relative.y) >= abs(event.velocity.y): 
+			#		return
 			
 			rotation_y -= event.relative.x * look_sensitivity # tourne le perso sur l'axe droite/gauche
 			rotation_x -= event.relative.y * look_sensitivity 	# tourne la caméra de haut en bas
@@ -74,7 +78,7 @@ func manage_input(delta:float) -> void :
 	var input_dir := Input.get_vector("left", "right", "up", "down")
 	var direction := (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
 	
-	if direction: 
+	if direction and !in_interaction():
 		# Add the random offset
 		var walk_jitter_wet:float = walk_jitter_curve.sample(eow_meter)
 		walk_jitter_noise_pos += delta * walk_jitter_speed * walk_jitter_wet

@@ -20,11 +20,9 @@ func _ready() -> void:
 	close_up.hide()
 
 func start_interaction():
-	var current_title = GlobalVars.get_current_title(title, dialogue)
-	
 	MainCommunicator.send_signal_to_main(
 		MainCommunicator.SignalType.START_DIALOGUE, 
-		[dialogue, current_title, [self]] 
+		[dialogue, title, [self]] 
 	) # On lance le dialogue avec les options de dialogues associées
 	hide()
 	close_up.show()
