@@ -47,19 +47,17 @@ func set_direction(dir):
 	direction = dir
 
 func _physics_process(delta):
-	check_release_ball()
 	manage_rotation()
 	
 func launch():
 	pass
 			
-func check_release_ball():
-	if Input.is_action_just_released("interract") and launching_ball : 
-		released_ball.emit(get_parent().global_position)
-		ball.update_direction(launching_ball_direction)
-		launching_ball = false
-		ball.set_moving(true)
-		ball = null
+func release_ball():
+	released_ball.emit(get_parent().global_position)
+	ball.update_direction(launching_ball_direction)
+	launching_ball = false
+	ball.set_moving(true)
+	ball = null
 	
 func _on_body_entered(body):
 	if attacking and body is arcade_ball: 

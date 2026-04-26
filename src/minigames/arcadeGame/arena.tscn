@@ -1,8 +1,8 @@
-[gd_scene format=3 uid="uid://btbgohl78gc04"]
+[gd_scene format=3 uid="uid://81drtmexlash"]
 
-[ext_resource type="PackedScene" uid="uid://bd8yarh0gi5kf" path="res://src/minigames/arcadeGame/player/Player.tscn" id="1_0ljn8"]
-[ext_resource type="Script" uid="uid://bmhhgdsuq00v7" path="res://src/minigames/arcadeGame/camera_2d.gd" id="2_50w5d"]
-[ext_resource type="PackedScene" uid="uid://bon1qfi1qah3p" path="res://src/minigames/arcadeGame/ball.tscn" id="2_gja22"]
+[ext_resource type="PackedScene" uid="uid://cpc5mi3gyvm7y" path="res://src/minigames/arcadeGame/player/Player.tscn" id="1_0ljn8"]
+[ext_resource type="Script" path="res://src/minigames/arcadeGame/camera_2d.gd" id="2_50w5d"]
+[ext_resource type="PackedScene" path="res://src/minigames/arcadeGame/ball.tscn" id="2_gja22"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_50w5d"]
 size = Vector2(39.5, 711.5)

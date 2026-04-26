@@ -1,9 +1,10 @@
-[gd_scene format=3 uid="uid://bd8yarh0gi5kf"]
+[gd_scene format=3 uid="uid://cpc5mi3gyvm7y"]
 
 [ext_resource type="Script" uid="uid://n0tb5uwsj52w" path="res://src/minigames/arcadeGame/player/player.gd" id="1_lyefd"]
 [ext_resource type="Texture2D" uid="uid://cra208jmgv7f8" path="res://icon.svg" id="2_i3pg2"]
-[ext_resource type="PackedScene" uid="uid://dew10erbv0qyh" path="res://src/minigames/arcadeGame/Component/movement.tscn" id="3_8q2ol"]
-[ext_resource type="PackedScene" uid="uid://br7tpqum768g0" path="res://src/minigames/arcadeGame/Component/hit_ball.tscn" id="4_crhmk"]
+[ext_resource type="PackedScene" path="res://src/minigames/arcadeGame/Component/movement.tscn" id="3_8q2ol"]
+[ext_resource type="PackedScene" path="res://src/minigames/arcadeGame/Component/hit_ball.tscn" id="4_crhmk"]
+[ext_resource type="Script" uid="uid://baal6pmkdwand" path="res://src/minigames/arcadeGame/player/aim.gd" id="5_crhmk"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_8q2ol"]
 atlas = ExtResource("2_i3pg2")
@@ -45,3 +46,13 @@ polygon = PackedVector2Array(24, -148, 70, -108, 91, -53, 94, 43, 57, 134, -44, 
 
 [node name="back" type="CollisionPolygon2D" parent="HitBall" unique_id=1369905580]
 polygon = PackedVector2Array(-71, -71, -95, -90, -95, 76, -76, 59)
+
+[node name="Aim" type="Node2D" parent="." unique_id=934682787]
+script = ExtResource("5_crhmk")
+
+[node name="ProgressBar" type="ProgressBar" parent="Aim" unique_id=1220216765]
+offset_left = 79.0
+offset_top = -14.0
+offset_right = 251.0
+offset_bottom = 13.0
+pivot_offset_ratio = Vector2(0, 0.5)

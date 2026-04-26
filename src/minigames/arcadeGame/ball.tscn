@@ -1,8 +1,8 @@
-[gd_scene format=3 uid="uid://bon1qfi1qah3p"]
+[gd_scene format=3 uid="uid://dwe78ck5jnrsy"]
 
-[ext_resource type="Script" uid="uid://dtstgrtrpukrs" path="res://src/minigames/arcadeGame/ball.gd" id="1_odev1"]
+[ext_resource type="Script" path="res://src/minigames/arcadeGame/ball.gd" id="1_odev1"]
 [ext_resource type="Texture2D" uid="uid://b57l4i7v8o4a2" path="res://src/minigames/arcadeGame/ball/ball.png" id="1_qfcuv"]
-[ext_resource type="Script" uid="uid://dsyqlvumfnnju" path="res://src/minigames/arcadeGame/Component/movement.gd" id="2_m2r3x"]
+[ext_resource type="Script" path="res://src/minigames/arcadeGame/Component/movement.gd" id="2_m2r3x"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_qfcuv"]
 radius = 37.054016
@@ -75,6 +75,15 @@ texture = ExtResource("1_qfcuv")
 script = ExtResource("2_m2r3x")
 speed = 200
 acceleration = 100
-metadata/_custom_type_script = "uid://dsyqlvumfnnju"
 
 [node name="Node2D" type="Node2D" parent="." unique_id=958289530]
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="." unique_id=1589428680]
+local_coords = true
+emission_shape = 1
+emission_sphere_radius = 30.0
+gravity = Vector2(0, 0)
+orbit_velocity_max = 2.0
+scale_amount_min = 3.0
+scale_amount_max = 5.0
+color = Color(1, 0.07450981, 0.10980392, 1)
