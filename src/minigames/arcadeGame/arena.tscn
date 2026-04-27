@@ -1,8 +1,23 @@
 [gd_scene format=3 uid="uid://81drtmexlash"]
 
 [ext_resource type="PackedScene" uid="uid://cpc5mi3gyvm7y" path="res://src/minigames/arcadeGame/player/Player.tscn" id="1_0ljn8"]
+[ext_resource type="Script" uid="uid://c5jn2tuvjyi1c" path="res://src/minigames/arcadeGame/arena.gd" id="1_skady"]
 [ext_resource type="Script" path="res://src/minigames/arcadeGame/camera_2d.gd" id="2_50w5d"]
-[ext_resource type="PackedScene" path="res://src/minigames/arcadeGame/ball.tscn" id="2_gja22"]
+[ext_resource type="PackedScene" uid="uid://dwe78ck5jnrsy" path="res://src/minigames/arcadeGame/ball.tscn" id="2_gja22"]
+[ext_resource type="Shader" uid="uid://cj1psxu38uyei" path="res://src/minigames/arcadeGame/shockwave.gdshader" id="4_lh3vw"]
+[ext_resource type="Texture2D" uid="uid://rhy47auhb2o4" path="res://src/minigames/arcadeGame/assets/particles/star particle.png" id="5_41tw2"]
+[ext_resource type="PackedScene" uid="uid://rb0qk6nk0ixq" path="res://src/minigames/arcadeGame/enemy/Little'Joe.tscn" id="5_sf31h"]
+[ext_resource type="PackedScene" uid="uid://cy2mv0kqxvsu3" path="res://src/minigames/arcadeGame/jo_manager.tscn" id="6_sf31h"]
+[ext_resource type="PackedScene" uid="uid://dbmva1nkvkoj8" path="res://src/minigames/arcadeGame/countdown_label.tscn" id="9_aqv87"]
+
+[sub_resource type="Gradient" id="Gradient_41tw2"]
+offsets = PackedFloat32Array(0.38957056, 1)
+colors = PackedColorArray(0.09019608, 0.09019608, 0.14901961, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_skady"]
+gradient = SubResource("Gradient_41tw2")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_50w5d"]
 size = Vector2(39.5, 711.5)
@@ -16,6 +31,124 @@ size = Vector2(39.5, 711.5)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_41tw2"]
 size = Vector2(1188, 23)
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_lh3vw"]
+shader = ExtResource("4_lh3vw")
+shader_parameter/center = Vector2(0.5, 0.5)
+shader_parameter/force = 0.1
+shader_parameter/size = 0.1
+shader_parameter/thickness = 0.01
+shader_parameter/offset = 0.0
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_41tw2"]
+
+[sub_resource type="Curve" id="Curve_41tw2"]
+_data = [Vector2(0, 0.07829988), 0.0, 0.0, 0, 0, Vector2(0.4188482, 0.9105146), 0.0, 0.0, 0, 0, Vector2(0.6701571, 0.84787476), 0.0, 0.0, 0, 0, Vector2(1, 0), -1.0079733, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="Gradient" id="Gradient_skady"]
+colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 1)
+
+[sub_resource type="Curve" id="Curve_06ix6"]
+_limits = [-1.0, 1.0, 0.0, 1.0]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.99999, 1), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="Animation" id="Animation_06ix6"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ShockWave:material:shader_parameter/size")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.1]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ShockWave:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("ScoreLabel:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_aqv87"]
+resource_name = "ShowScore"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ScoreLabel:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.65, 1.87),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [true, true, false]
+}
+
+[sub_resource type="Animation" id="Animation_sf31h"]
+resource_name = "shockwave"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ShockWave:material:shader_parameter/size")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.9),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.1, 1.5]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ShockWave:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_aqv87"]
+_data = {
+&"RESET": SubResource("Animation_06ix6"),
+&"ShowScore": SubResource("Animation_aqv87"),
+&"shockwave": SubResource("Animation_sf31h")
+}
+
+[sub_resource type="LabelSettings" id="LabelSettings_lqgcn"]
+font_size = 150
+
+[sub_resource type="LabelSettings" id="LabelSettings_aqv87"]
+font_size = 256
+font_color = Color(1, 0.039215688, 0.47843137, 1)
+
 [node name="Arena" type="Control" unique_id=2119784583]
 layout_mode = 3
 anchors_preset = 15
@@ -23,15 +156,16 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_skady")
 
-[node name="Bg" type="ColorRect" parent="." unique_id=1614996404]
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1350887286]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0, 0, 0, 1)
+texture = SubResource("GradientTexture2D_skady")
 
 [node name="Ball" parent="." unique_id=1559941264 instance=ExtResource("2_gja22")]
 position = Vector2(492, 434)
@@ -80,7 +214,7 @@ limit_top = 0
 limit_right = 1152
 limit_bottom = 648
 script = ExtResource("2_50w5d")
-launch_zoom = Vector2(1.2, 1.2)
+launch_zoom = Vector2(1.05, 1.05)
 
 [node name="Left" type="Marker2D" parent="Camera2D" unique_id=133654339]
 
@@ -91,5 +225,94 @@ launch_zoom = Vector2(1.2, 1.2)
 [node name="Bottom" type="Marker2D" parent="Camera2D" unique_id=921343982]
 
 [node name="Entities" type="Node2D" parent="." unique_id=226423549]
+z_index = 1
 
 [node name="Player" parent="Entities" unique_id=1190158832 instance=ExtResource("1_0ljn8")]
+position = Vector2(173, 199)
+collision_layer = 8
+
+[node name="LittleJo" parent="Entities" unique_id=947143515 instance=ExtResource("5_sf31h")]
+position = Vector2(917, 225)
+collision_layer = 4
+
+[node name="JoManager" parent="Entities" unique_id=639065793 node_paths=PackedStringArray("enemy") instance=ExtResource("6_sf31h")]
+enemy = NodePath("../LittleJo")
+
+[node name="ShockWave" type="TextureRect" parent="." unique_id=304962227]
+z_index = 3
+material = SubResource("ShaderMaterial_lh3vw")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("CanvasTexture_41tw2")
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="." unique_id=343874610]
+texture_filter = 1
+position = Vector2(561, 329)
+amount = 15
+texture = ExtResource("5_41tw2")
+lifetime = 5.0
+emission_shape = 3
+emission_rect_extents = Vector2(576, 324)
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 10.0
+initial_velocity_max = 10.0
+scale_amount_min = 2.0
+scale_amount_max = 4.0
+scale_amount_curve = SubResource("Curve_41tw2")
+color_ramp = SubResource("Gradient_skady")
+hue_variation_max = 1.0
+hue_variation_curve = SubResource("Curve_06ix6")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=598278505]
+libraries/ = SubResource("AnimationLibrary_aqv87")
+
+[node name="ScoreLabel" type="Label" parent="." unique_id=1968904478]
+custom_minimum_size = Vector2(512, 256)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -269.0
+offset_top = -346.0
+offset_right = 243.0
+offset_bottom = -90.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "0 - 0"
+label_settings = SubResource("LabelSettings_lqgcn")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CountdownLabel" parent="." unique_id=26275427 instance=ExtResource("9_aqv87")]
+z_index = 2
+custom_minimum_size = Vector2(256, 256)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+label_settings = SubResource("LabelSettings_aqv87")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="StartingPositions" type="Node2D" parent="." unique_id=1628103752]
+
+[node name="PlayerStartingPosition" type="Node2D" parent="StartingPositions" unique_id=446153484]
+position = Vector2(262, 223)
+
+[node name="EnemyStartingPosition" type="Node2D" parent="StartingPositions" unique_id=658900195]
+position = Vector2(893, 530)

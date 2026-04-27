@@ -2,14 +2,22 @@ class_name arcade_ball extends CharacterBody2D
 
 
 @onready var mouvement_component:MovementComponent = $MovementComponent
+@onready var ball_sprite = $ballSprite
+@onready var ball_particles = $BallInside
+
+@export var base_color:Color
 
 var current_direction:Vector2
 var moving:bool
 var old_velocity:Vector2 = Vector2.ZERO
-
 var current_shot:int = 0
+var ball_state:ArcadeGame.BALLSTATE
+var being_launched:bool
 
 
+func _ready():
+	update_ball_color(base_color)
+	
 func stop():
 	moving = false
 	mouvement_component.increase_move_speed(40)
@@ -21,8 +29,6 @@ func update_velocity():
 	
 func _physics_process(delta):
 	manage_speed()
-
-	
 	manage_scale()
 	store_velocity()
 	if moving : 
@@ -31,7 +37,7 @@ func _physics_process(delta):
 		store_velocity()
 
 
-	
+
 	
 func manage_speed():
 	velocity = mouvement_component.calculate_velocity(velocity, current_direction)
@@ -57,8 +63,8 @@ func manage_scale():
 	var base_scale = lerp(1.0, 1.6, speed_ratio)
 
 
-	var max_stretch = lerp(0.1, 0.6, speed_ratio) * 0
-	var stretch = speed_ratio * max_stretch * 0
+	var max_stretch = lerp(0.1, 0.6, speed_ratio) 
+	var stretch = speed_ratio * max_stretch *0.2
 
 	scale.x = base_scale * (1.0 + stretch)
 	scale.y = max(base_scale * (1.0 - stretch * 0.5), base_scale)
@@ -74,6 +80,35 @@ func manage_rotation():
 func set_moving(v:bool):
 	moving = v
 	
+func increase_trail():
+	$ballSprite/Trail.increase_max_points(1)
+	
+	
 func store_velocity():
 	if velocity != Vector2.ZERO and velocity > old_velocity: 
 		old_velocity = velocity
+		
+func update_ball_color(color):
+	var mat = ball_sprite.material as ShaderMaterial
+	mat.set_shader_parameter("color", color)
+	ball_particles.color = color
+	
+func update_ball_state(state:ArcadeGame.BALLSTATE):
+	ball_state = state
+
+
+func get_ball_state():
+	return ball_state
+	
+func reset():
+	scale = Vector2(1, 1)
+	velocity = Vector2.ZERO
+	old_velocity = Vector2.ZERO
+	mouvement_component.set_speed(200)
+	current_direction = Vector2.ZERO
+	update_ball_state(ArcadeGame.BALLSTATE.None)
+	update_ball_color(base_color)
+
+func set_being_launched(v:bool):
+	being_launched = v
+	

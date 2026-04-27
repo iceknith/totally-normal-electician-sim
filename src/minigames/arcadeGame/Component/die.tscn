@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://cklna2vuo4rwf"]
+
+[ext_resource type="Script" uid="uid://cyv6otrefw8dt" path="res://src/minigames/arcadeGame/player/die.gd" id="1_1gfhl"]
+
+[node name="Die" type="Area2D" unique_id=469673073]
+collision_layer = 16
+collision_mask = 16
+script = ExtResource("1_1gfhl")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

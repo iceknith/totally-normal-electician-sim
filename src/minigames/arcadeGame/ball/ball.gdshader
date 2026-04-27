@@ -34,7 +34,6 @@
 
 	void fragment() {
 
-
 		vec4 color = vec4(2.0, 0.1, 0.2, 1.0);
 		if (COLOR.a < 0.01 && has_neighbor(UV, TEXTURE_PIXEL_SIZE, TEXTURE)) {
 			COLOR = color*0.5;

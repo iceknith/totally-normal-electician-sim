@@ -1,4 +1,4 @@
-extends Node2D
+class_name Aim extends Node2D
 
 
 @export var aim_acceleration:int = 5
@@ -10,3 +10,9 @@ func manage_aim(input_direction:Vector2, delta:float):
 	
 func set_visibility(v:bool):
 	$ProgressBar.visible = v
+
+func set_progress_bar_position(p:Vector2):
+	$ProgressBar.global_position = p + Vector2(0, 0)  #centers the progress bar
+	
+func set_progress_bar_value(v:float):
+	$ProgressBar.value = v

@@ -1,52 +1,40 @@
-class_name arcadePlayer extends CharacterBody2D
+class_name ArcadeEnemy extends CharacterBody2D
+
 
 @onready var movementComponent = $Movement
 @onready var HitBallComponent = $HitBall
 @onready var AimComponent = $Aim
 @onready var DieComponent = $Die
 
-var input_direction:Vector2
 var facing_direction:Vector2
 var aiming_direction:Vector2
+var input_direction:Vector2
+var launch_speed = 200
+var launch_counter = 0
 
-
-@export var launch_counter:int = 0
-@export var launch_speed:int = 200
-
-var dead:bool = false
-var paused:bool = false
+var dead:bool
 
 func _ready():
 	reset()
-	setup_signals()
-
+	
+	
 func _physics_process(delta):
-
-	if !dead and !paused : 
+	if !dead : 
 		manage_input(delta)
 		move_and_slide()
 		set_facing_direction()
-	manage_variables()
-		
+		manage_variables()
+	else : 
+		velocity = Vector2.ZERO
+	
 func manage_input(delta):
-	input_direction = Vector2(Input.get_axis("ui_left", "ui_right"), Input.get_axis("ui_up", "ui_down"))
 	if HitBallComponent.launching_ball :
 		manage_launching_ball(delta)
 	else :
 		aiming_direction = facing_direction
 		velocity = movementComponent.calculate_velocity(velocity, input_direction)
 		AimComponent.set_visibility(false)
-	if Input.is_action_just_pressed("interract"):
-		HitBallComponent.hit_ball()
-
-func manage_variables():
-	HitBallComponent.update_launching_ball_direction(aiming_direction)
-	HitBallComponent.set_direction(facing_direction)
-	
-func set_facing_direction():
-	if input_direction != Vector2.ZERO : 
-		facing_direction = input_direction
-	
+		
 func manage_launching_ball(delta):
 	velocity = Vector2.ZERO
 	aiming_direction = Vector2.from_angle(AimComponent.manage_aim(input_direction, delta))
@@ -54,23 +42,36 @@ func manage_launching_ball(delta):
 	AimComponent.set_progress_bar_position(HitBallComponent.get_ball().global_position) #set the 
 	launch_counter += delta*launch_speed
 	AimComponent.set_progress_bar_value(launch_counter)
-	if Input.is_action_just_released("interract") or launch_counter >= 99.9 : 
+	if launch_counter >= 99.9 : 
 		HitBallComponent.release_ball()
 		launch_counter = 0
+		
+func set_facing_direction():
+	if input_direction != Vector2.ZERO : 
+		facing_direction = input_direction
+		
+func manage_variables():
+	HitBallComponent.update_launching_ball_direction(aiming_direction)
+	HitBallComponent.set_direction(facing_direction)
+	
+func set_input_direction(inp_dir:Vector2): #setter for input direction
+	input_direction = inp_dir
+	
+func set_aiming_direction(aim_dir):
+	aiming_direction = aim_dir
+	
+func get_sprite_size():
+	var size = $Sprite2D.texture.get_size() * $Sprite2D.scale
+	return size
+
+func reset():
+	$Sprite2D.visible = true
+	dead = false
+	$DeathParticle.visible = false
 
 func setup_signals():
 	DieComponent.die.connect(death)
 	
-func death(entity):
+func death():
 	dead = true
 	
-func reset():
-	$Sprite2D.visible = true
-	$DeathParticle.visible = false
-	dead = false
-
-func set_pause(v:bool):
-	paused = v 
-	
-func disableDieComponent():
-	DieComponent.can_die = false

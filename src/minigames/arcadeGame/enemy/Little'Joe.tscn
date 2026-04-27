@@ -1,0 +1,164 @@
+[gd_scene format=3 uid="uid://rb0qk6nk0ixq"]
+
+[ext_resource type="Script" uid="uid://dnik6ol025g3b" path="res://src/minigames/arcadeGame/enemy/enemyAI.gd" id="1_dp52m"]
+[ext_resource type="Texture2D" uid="uid://cra208jmgv7f8" path="res://icon.svg" id="1_ikfqc"]
+[ext_resource type="PackedScene" uid="uid://dew10erbv0qyh" path="res://src/minigames/arcadeGame/Component/movement.tscn" id="2_p7eme"]
+[ext_resource type="PackedScene" uid="uid://cbgt2i48kg0xj" path="res://src/minigames/arcadeGame/Component/hit_ball.tscn" id="3_m0eqn"]
+[ext_resource type="PackedScene" uid="uid://bff8owxdvdk7x" path="res://src/minigames/arcadeGame/player/aim.tscn" id="5_4pmwp"]
+[ext_resource type="PackedScene" uid="uid://cklna2vuo4rwf" path="res://src/minigames/arcadeGame/Component/die.tscn" id="7_e8caa"]
+[ext_resource type="Texture2D" uid="uid://rhy47auhb2o4" path="res://src/minigames/arcadeGame/assets/particles/star particle.png" id="7_xmtyd"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_p7eme"]
+size = Vector2(129, 129)
+
+[sub_resource type="Curve" id="Curve_e8caa"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.09245932), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Animation" id="Animation_xmtyd"]
+resource_name = "Deatj"
+length = 1.6
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("DeathParticle:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.54),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("DeathParticle:emitting")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_e8caa"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("DeathParticle:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("DeathParticle:emitting")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_e8caa"]
+_data = {
+&"Death": SubResource("Animation_xmtyd"),
+&"RESET": SubResource("Animation_e8caa")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vlxni"]
+size = Vector2(129, 129)
+
+[node name="Little\'joe" type="CharacterBody2D" unique_id=947143515]
+script = ExtResource("1_dp52m")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=784192347]
+visible = false
+modulate = Color(1, 0, 1, 1)
+texture = ExtResource("1_ikfqc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=214211675]
+position = Vector2(0.5, 0.5)
+shape = SubResource("RectangleShape2D_p7eme")
+
+[node name="Movement" parent="." unique_id=321546894 instance=ExtResource("2_p7eme")]
+speed = 300
+
+[node name="HitBall" parent="." unique_id=1738906224 instance=ExtResource("3_m0eqn")]
+collision_layer = 2
+collision_mask = 2
+hit_cooldown = 1.5
+ball_color = Color(0, 0.827451, 0.1882353, 1)
+ball_state_to_give = 1
+
+[node name="Front" type="CollisionPolygon2D" parent="HitBall" unique_id=1677149977]
+polygon = PackedVector2Array(24, -148, 70, -108, 91, -53, 94, 43, 57, 134, -44, 158, 39, 161, 114, 121, 161, 36, 158, -46, 112, -124, 44, -154, -44, -155)
+
+[node name="back" type="CollisionPolygon2D" parent="HitBall" unique_id=2107384237]
+polygon = PackedVector2Array(-71, -71, -95, -90, -95, 76, -76, 59)
+
+[node name="Aim" parent="." unique_id=1422028878 instance=ExtResource("5_4pmwp")]
+
+[node name="DeathParticle" type="CPUParticles2D" parent="." unique_id=794522916]
+texture_filter = 1
+amount = 60
+texture = ExtResource("7_xmtyd")
+lifetime = 1.5
+one_shot = true
+local_coords = true
+emission_shape = 1
+emission_sphere_radius = 50.0
+direction = Vector2(0, 0)
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 50.0
+initial_velocity_max = 50.0
+scale_amount_min = 10.0
+scale_amount_max = 10.0
+scale_amount_curve = SubResource("Curve_e8caa")
+color = Color(0.6766873, 0.5269215, 0.968007, 1)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1055695461]
+libraries/ = SubResource("AnimationLibrary_e8caa")
+
+[node name="Die" parent="." unique_id=469673073 node_paths=PackedStringArray("animationPlayer") instance=ExtResource("7_e8caa")]
+animationPlayer = NodePath("../AnimationPlayer")
+death_animation_name = "Death"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Die" unique_id=485325261]
+position = Vector2(0.5, 0.5)
+shape = SubResource("RectangleShape2D_vlxni")

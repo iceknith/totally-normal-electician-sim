@@ -90,6 +90,7 @@ _data = {
 
 [node name="HitBall" type="Area2D" unique_id=1738906224]
 script = ExtResource("1_11fcc")
+ball_color = Color(1, 0.18251953, 0.13418654, 1)
 
 [node name="SlashEffect" type="Sprite2D" parent="." unique_id=1098814843]
 visible = false
@@ -105,4 +106,7 @@ libraries/ = SubResource("AnimationLibrary_l5u7a")
 offset_right = 40.0
 offset_bottom = 40.0
 
+[node name="Timer" type="Timer" parent="." unique_id=90530629]
+
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

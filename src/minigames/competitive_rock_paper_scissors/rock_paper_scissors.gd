@@ -40,19 +40,10 @@ enum Result{
 @onready var play_pile:Node = $PlayPile
 @onready var person_playing:Node = %PersonPlaying
 
-<<<<<<< HEAD
-<<<<<<< Updated upstream
-=======
-var dialogue:DialogueResource = load("res://src/minigames/competitive_rock_paper_scissors/dialogue/rpc_dialogues.dialogue")
->>>>>>> Stashed changes
-=======
-var dialogue:DialogueResource = preload("res://src/minigames/competitive_rock_paper_scissors/dialogue/rpc_dialogues.dialogue")
 
 var dialogue:DialogueResource = preload("res://src/minigames/competitive_rock_paper_scissors/dialogue/rpc_dialogues.dialogue")
-<<<<<<< Updated upstream
-=======
-var dialogue:DialogueResource = load("res://src/minigames/competitive_rock_paper_scissors/dialogue/rpc_dialogues.dialogue")
->>>>>>> Stashed changes
+
+
 
 @onready var win_label:RichTextLabel = $EndGameLabel
 
