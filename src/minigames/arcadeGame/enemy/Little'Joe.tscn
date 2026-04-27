@@ -121,7 +121,6 @@ speed = 300
 [node name="HitBall" parent="." unique_id=1738906224 instance=ExtResource("3_m0eqn")]
 collision_layer = 2
 collision_mask = 2
-hit_cooldown = 1.5
 ball_color = Color(0, 0.827451, 0.1882353, 1)
 ball_state_to_give = 1
 
@@ -139,18 +138,18 @@ amount = 60
 texture = ExtResource("7_xmtyd")
 lifetime = 1.5
 one_shot = true
+explosiveness = 1.0
 local_coords = true
 emission_shape = 1
 emission_sphere_radius = 50.0
 direction = Vector2(0, 0)
 spread = 180.0
 gravity = Vector2(0, 0)
-initial_velocity_min = 50.0
-initial_velocity_max = 50.0
-scale_amount_min = 10.0
+initial_velocity_min = 200.0
+initial_velocity_max = 200.0
+scale_amount_min = 3.0
 scale_amount_max = 10.0
 scale_amount_curve = SubResource("Curve_e8caa")
-color = Color(0.6766873, 0.5269215, 0.968007, 1)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1055695461]
 libraries/ = SubResource("AnimationLibrary_e8caa")

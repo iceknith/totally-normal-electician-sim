@@ -25,6 +25,7 @@ enum BALLSTATE
 
 var PlayerScore:int
 var EnemyScore:int
+@export var ScoreToWin:int = 3
 
 
 func _ready() -> void:
@@ -65,7 +66,9 @@ func update_winner(dead_one):
 	await show_score()
 	await get_tree().create_timer(2.0).timeout
 	reset()
+	check_if_end_game()
 	start_round()
+	
 	
 	
 func show_score():
@@ -127,3 +130,12 @@ func start_round():
 	await CountdownLabel.start_countdown(3, 3)
 	JoManagerComponent.set_pause_movement(false)
 	player.set_pause(false)
+	
+func check_if_end_game():
+	if PlayerScore == ScoreToWin : 
+		exit()
+	if EnemyScore == ScoreToWin : 
+		exit()
+	
+func exit():
+	MainCommunicator.send_signal_to_main(MainCommunicator.SignalType.REMOVE_MINIGAME)

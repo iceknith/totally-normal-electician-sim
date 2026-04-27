@@ -175,8 +175,7 @@ scale_amount_curve = SubResource("Curve_odev1")
 color = Color(1, 0.07450981, 0.10980392, 1)
 
 [node name="PointLight2D" type="PointLight2D" parent="." unique_id=1988255031]
-color = Color(0.7529412, 0, 0.08627451, 1)
-energy = 2.0
+energy = 10.0
 texture = SubResource("GradientTexture2D_tbrcx")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1044015272]

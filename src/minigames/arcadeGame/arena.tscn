@@ -9,10 +9,11 @@
 [ext_resource type="PackedScene" uid="uid://rb0qk6nk0ixq" path="res://src/minigames/arcadeGame/enemy/Little'Joe.tscn" id="5_sf31h"]
 [ext_resource type="PackedScene" uid="uid://cy2mv0kqxvsu3" path="res://src/minigames/arcadeGame/jo_manager.tscn" id="6_sf31h"]
 [ext_resource type="PackedScene" uid="uid://dbmva1nkvkoj8" path="res://src/minigames/arcadeGame/countdown_label.tscn" id="9_aqv87"]
+[ext_resource type="FontFile" uid="uid://dhoixqrkemx30" path="res://assets/gui/ithaca-font/Ithaca-LVB75.ttf" id="9_lqgcn"]
 
 [sub_resource type="Gradient" id="Gradient_41tw2"]
 offsets = PackedFloat32Array(0.38957056, 1)
-colors = PackedColorArray(0.09019608, 0.09019608, 0.14901961, 1, 0, 0, 0, 1)
+colors = PackedColorArray(0.12941177, 0.03529412, 0.047058824, 1, 0, 0, 0, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_skady"]
 gradient = SubResource("Gradient_41tw2")
@@ -143,11 +144,23 @@ _data = {
 }
 
 [sub_resource type="LabelSettings" id="LabelSettings_lqgcn"]
+font = ExtResource("9_lqgcn")
 font_size = 150
+font_color = Color(1.569, 1.569, 1.569, 1)
+shadow_color = Color(0, 0, 0, 1)
+shadow_offset = Vector2(5, 10)
+
+[sub_resource type="Gradient" id="Gradient_bm13r"]
+offsets = PackedFloat32Array(0.16539924, 0.5684411)
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_k58j4"]
+gradient = SubResource("Gradient_bm13r")
+fill = 1
+fill_from = Vector2(0.50085473, 0.48376068)
 
 [sub_resource type="LabelSettings" id="LabelSettings_aqv87"]
 font_size = 256
-font_color = Color(1, 0.039215688, 0.47843137, 1)
 
 [node name="Arena" type="Control" unique_id=2119784583]
 layout_mode = 3
@@ -289,6 +302,11 @@ text = "0 - 0"
 label_settings = SubResource("LabelSettings_lqgcn")
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="PointLight2D" type="PointLight2D" parent="ScoreLabel" unique_id=926587025]
+position = Vector2(248, 131)
+scale = Vector2(6.236457, 6.236457)
+texture = SubResource("GradientTexture2D_k58j4")
 
 [node name="CountdownLabel" parent="." unique_id=26275427 instance=ExtResource("9_aqv87")]
 z_index = 2

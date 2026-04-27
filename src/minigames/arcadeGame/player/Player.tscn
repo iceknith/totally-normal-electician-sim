@@ -156,7 +156,6 @@ initial_velocity_max = 50.0
 scale_amount_min = 10.0
 scale_amount_max = 10.0
 scale_amount_curve = SubResource("Curve_t6jqt")
-color = Color(0.6766873, 0.5269215, 0.968007, 1)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=2031884167]
 libraries/ = SubResource("AnimationLibrary_msv11")
