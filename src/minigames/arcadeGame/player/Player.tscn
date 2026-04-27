@@ -110,7 +110,7 @@ script = ExtResource("1_lyefd")
 texture = ExtResource("2_i3pg2")
 
 [node name="Movement" parent="." unique_id=321546894 instance=ExtResource("3_8q2ol")]
-speed = 300
+speed = 350
 
 [node name="HitBall" parent="." unique_id=1738906224 instance=ExtResource("4_crhmk")]
 collision_layer = 2

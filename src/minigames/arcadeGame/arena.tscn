@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://cpc5mi3gyvm7y" path="res://src/minigames/arcadeGame/player/Player.tscn" id="1_0ljn8"]
 [ext_resource type="Script" uid="uid://c5jn2tuvjyi1c" path="res://src/minigames/arcadeGame/arena.gd" id="1_skady"]
-[ext_resource type="Script" path="res://src/minigames/arcadeGame/camera_2d.gd" id="2_50w5d"]
+[ext_resource type="Script" uid="uid://bmhhgdsuq00v7" path="res://src/minigames/arcadeGame/camera_2d.gd" id="2_50w5d"]
 [ext_resource type="PackedScene" uid="uid://dwe78ck5jnrsy" path="res://src/minigames/arcadeGame/ball.tscn" id="2_gja22"]
 [ext_resource type="Shader" uid="uid://cj1psxu38uyei" path="res://src/minigames/arcadeGame/shockwave.gdshader" id="4_lh3vw"]
 [ext_resource type="Texture2D" uid="uid://rhy47auhb2o4" path="res://src/minigames/arcadeGame/assets/particles/star particle.png" id="5_41tw2"]
@@ -31,6 +31,10 @@ size = Vector2(39.5, 711.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_41tw2"]
 size = Vector2(1188, 23)
+
+[sub_resource type="Curve" id="Curve_lqgcn"]
+_data = [Vector2(1e-05, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_lh3vw"]
 shader = ExtResource("4_lh3vw")
@@ -242,14 +246,17 @@ z_index = 1
 
 [node name="Player" parent="Entities" unique_id=1190158832 instance=ExtResource("1_0ljn8")]
 position = Vector2(173, 199)
+scale = Vector2(0.5, 0.5)
 collision_layer = 8
 
 [node name="LittleJo" parent="Entities" unique_id=947143515 instance=ExtResource("5_sf31h")]
 position = Vector2(917, 225)
+scale = Vector2(0.5, 0.5)
 collision_layer = 4
 
 [node name="JoManager" parent="Entities" unique_id=639065793 node_paths=PackedStringArray("enemy") instance=ExtResource("6_sf31h")]
 enemy = NodePath("../LittleJo")
+JoCatchRate = SubResource("Curve_lqgcn")
 
 [node name="ShockWave" type="TextureRect" parent="." unique_id=304962227]
 z_index = 3
