@@ -172,6 +172,7 @@ scale_amount_curve = SubResource("Curve_t6jqt")
 libraries/ = SubResource("AnimationLibrary_msv11")
 
 [node name="PointLight2D" type="PointLight2D" parent="." unique_id=465335938]
+visible = false
 energy = 0.5
 texture = SubResource("GradientTexture2D_t6jqt")
 
