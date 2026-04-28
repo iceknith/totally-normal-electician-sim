@@ -131,6 +131,7 @@ collision_mask = 18
 script = ExtResource("1_odev1")
 
 [node name="ballSprite" type="Sprite2D" parent="." unique_id=586756020]
+modulate = Color(1.5720325, 1.5720325, 1.5720325, 1)
 z_index = 1
 texture_filter = 1
 material = SubResource("ShaderMaterial_m2r3x")
@@ -175,7 +176,6 @@ scale_amount_curve = SubResource("Curve_odev1")
 color = Color(1, 0.07450981, 0.10980392, 1)
 
 [node name="PointLight2D" type="PointLight2D" parent="." unique_id=1988255031]
-energy = 10.0
 texture = SubResource("GradientTexture2D_tbrcx")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1044015272]

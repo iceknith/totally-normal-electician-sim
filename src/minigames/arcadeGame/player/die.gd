@@ -13,7 +13,11 @@ func _ready():
 
 
 
-
+func turn_off():
+	monitoring = false
+	
+func turn_on() : 
+	monitoring = true
 func _on_body_entered(body):
 	if body is arcade_ball : 
 		if body.get_ball_state() == losing_ball_state and can_die:

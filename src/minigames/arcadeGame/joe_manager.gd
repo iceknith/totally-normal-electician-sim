@@ -32,17 +32,17 @@ func _process(delta):
 func manage_jo_input(delta):
 	dir_to_ball = ball.global_position - enemy.global_position
 	
-	if !player.HitBallComponent.launching_ball:
-		movement_when_player_not_launching()
-	else:
+	if player.HitBallComponent.launching_ball:
 		movement_when_player_launching()
-	
+	else:
+		movement_when_player_not_launching()
+
 	if dir_to_ball.length() < distance_to_hit:
-		var launch_probability =0.0
+		var launch_probability = 0.0
 		
 		if !rolled_probabilities:
 			launch_probability = clamp(
-				JoCatchRate.sample(enemy.movementComponent.get_speed() / max_manageable_speed),
+				JoCatchRate.sample(ball.mouvement_component.get_speed() / max_manageable_speed),
 				0.0, 1.0
 			)
 			rolled_probabilities = true
@@ -52,6 +52,7 @@ func manage_jo_input(delta):
 		
 		if succes_probability <= launch_probability:
 			set_launch_direction()
+			print("sp : ", succes_probability, "lp : ", launch_probability )
 			enemy.HitBallComponent.hit_ball()
 	
 
@@ -88,5 +89,5 @@ func set_launch_direction():
 		enemy.set_aiming_direction(launchDirection)
 
 func reset_roll():
-	await get_tree().create_timer(0.1).timeout
+	await get_tree().create_timer(0.2).timeout
 	rolled_probabilities = false

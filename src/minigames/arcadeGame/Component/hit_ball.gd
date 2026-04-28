@@ -74,6 +74,15 @@ func release_ball():
 	ball.set_being_launched(false)
 	ball = null
 	
+func release_ball_on_death(): 
+	if ball !=null : 
+		ball.update_direction(Vector2.ZERO)
+		launching_ball = false
+		ball.set_moving(false)
+		ball.set_being_launched(false)
+		ball = null
+	
+	
 func _on_body_entered(body):
 	if attacking and body is arcade_ball: 
 		if body.being_launched == false : 

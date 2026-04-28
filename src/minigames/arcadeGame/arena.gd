@@ -14,7 +14,7 @@ class_name ArcadeGame extends Minigame
 @onready var EnemyStartingPosition = $StartingPositions/EnemyStartingPosition
 
 var last_loser:Node
-
+var in_reset_animation:bool
 
 enum BALLSTATE
 {
@@ -57,17 +57,20 @@ func get_die(node: Node):
 	return null
 
 func update_winner(dead_one):
-	last_loser = dead_one
-	JoManagerComponent.set_pause_movement(true)
-	if dead_one is arcadePlayer : 
-		EnemyScore += 1
-	else : 
-		PlayerScore +=1
-	await show_score()
-	await get_tree().create_timer(2.0).timeout
-	reset()
-	check_if_end_game()
-	start_round()
+	if !in_reset_animation :
+		in_reset_animation = true
+		last_loser = dead_one
+		JoManagerComponent.set_pause_movement(true)
+		if dead_one is arcadePlayer : 
+			EnemyScore += 1
+		else : 
+			PlayerScore +=1
+		await show_score()
+		await get_tree().create_timer(2.0).timeout
+		reset()
+		check_if_end_game()
+		start_round()
+		in_reset_animation = false
 	
 	
 	

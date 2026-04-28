@@ -103,6 +103,17 @@ _data = {
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vlxni"]
 size = Vector2(129, 129)
 
+[sub_resource type="Gradient" id="Gradient_sjmj3"]
+offsets = PackedFloat32Array(0, 0.57224333)
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_xmtyd"]
+gradient = SubResource("Gradient_sjmj3")
+width = 256
+height = 256
+fill = 1
+fill_from = Vector2(0.47008547, 0.52820516)
+
 [node name="Little\'joe" type="CharacterBody2D" unique_id=947143515]
 script = ExtResource("1_dp52m")
 
@@ -161,3 +172,7 @@ death_animation_name = "Death"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Die" unique_id=485325261]
 position = Vector2(0.5, 0.5)
 shape = SubResource("RectangleShape2D_vlxni")
+
+[node name="PointLight2D" type="PointLight2D" parent="." unique_id=293437323]
+energy = 0.5
+texture = SubResource("GradientTexture2D_xmtyd")

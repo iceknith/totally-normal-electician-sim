@@ -31,13 +31,12 @@ func manage_input(delta):
 	if HitBallComponent.launching_ball :
 		manage_launching_ball(delta)
 	else :
-		aiming_direction = facing_direction
 		velocity = movementComponent.calculate_velocity(velocity, input_direction)
 		AimComponent.set_visibility(false)
 		
 func manage_launching_ball(delta):
 	velocity = Vector2.ZERO
-	aiming_direction = Vector2.from_angle(AimComponent.manage_aim(input_direction, delta))
+	AimComponent.manage_aim(aiming_direction, delta)
 	AimComponent.set_visibility(true)
 	AimComponent.set_progress_bar_position(HitBallComponent.get_ball().global_position) #set the 
 	launch_counter += delta*launch_speed
@@ -64,14 +63,19 @@ func get_sprite_size():
 	var size = $Sprite2D.texture.get_size() * $Sprite2D.scale
 	return size
 
+func death(entity):
+	HitBallComponent.release_ball_on_death()
+	DieComponent.turn_off()
+	dead = true
+	
 func reset():
+	DieComponent.turn_on()
 	$Sprite2D.visible = true
-	dead = false
 	$DeathParticle.visible = false
+	dead = false
+	
 
 func setup_signals():
 	DieComponent.die.connect(death)
-	
-func death():
-	dead = true
+
 	

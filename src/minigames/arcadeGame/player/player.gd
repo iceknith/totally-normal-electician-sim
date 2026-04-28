@@ -21,7 +21,6 @@ func _ready():
 	setup_signals()
 
 func _physics_process(delta):
-
 	if !dead and !paused : 
 		manage_input(delta)
 		move_and_slide()
@@ -62,9 +61,12 @@ func setup_signals():
 	DieComponent.die.connect(death)
 	
 func death(entity):
+	HitBallComponent.release_ball_on_death()
+	DieComponent.turn_off()
 	dead = true
 	
 func reset():
+	DieComponent.turn_on()
 	$Sprite2D.visible = true
 	$DeathParticle.visible = false
 	dead = false

@@ -16,7 +16,9 @@ var being_launched:bool
 
 
 func _ready():
+	$AnimationPlayer.play("pulsation")
 	update_ball_color(base_color)
+	update_ball_state(ArcadeGame.BALLSTATE.None)
 	
 func stop():
 	moving = false
