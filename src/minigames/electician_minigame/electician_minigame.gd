@@ -19,7 +19,7 @@ signal win
 @onready var info_label:Label = $InfoContainer/MarginContainer/InfoLabel
 @onready var info_container:Container = $InfoContainer
 
-@onready var stage:Stages = GlobalVars.electrician_minigame_current_stage
+@onready var stage:Stages = Stages.FullGame
 @export var tutorialTexts:Dictionary[Stages, String] = {
 	Stages.TutorialWires : "Connectez les fils de la même couleur avec [clic gauche]\n-\nDéconnectez les fils avec [clic droit]\n-\nIl est possible de croiser les fils en diagonale",
 	Stages.TutorialMovingCircle : "Faites attention à ne pas déclencher un court circuit !\n-\nPour celà, restez dans le grand cercle en vous déplaçant avec vos contrôles de mouvement.",
@@ -64,7 +64,6 @@ func init_stage() -> void:
 		Stages.TutorialMovingCircle:
 			$MarginContainer/GamesContainer/TimingContainer.queue_free()
 			for section in [cable_section, moving_section]:
-				print(section)
 				section.process_mode = Node.PROCESS_MODE_DISABLED
 				tween.tween_callback(func(): section.process_mode = Node.PROCESS_MODE_INHERIT)
 		Stages.TutorialTiming:

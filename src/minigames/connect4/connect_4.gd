@@ -127,6 +127,7 @@ func get_unoccupied_line(x:int, board:Array[Array]=values_matrix) -> int:
 
 func play(x:int):
 	if !is_valid(x) || values_matrix[x][-1] != -1: return
+	is_in_animation = true
 	
 	var y:int = get_unoccupied_line(x)
 	values_matrix[x][y] = current_player
@@ -136,6 +137,8 @@ func play(x:int):
 	
 	end_check(Vector2(x,y), current_player)
 	current_player = (current_player + 1)%PLAYER_COUNT
+	
+	is_in_animation = false
 
 func place_animation(x:int,y:int) -> void:
 	var piece:TextureRect = create_empty_player_piece(current_player, x)

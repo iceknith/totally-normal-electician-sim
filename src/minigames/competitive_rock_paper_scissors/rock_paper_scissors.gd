@@ -7,6 +7,12 @@ enum personPlaying
 	BILLY, # billy dans le premier round commence toujours par pierre < papier < ciseaux et après le premier round copie le 
 	RAYLY
 }
+const personName:Dictionary[personPlaying, String] = {
+	personPlaying.STANLY : 'stanly',
+	personPlaying.WILLY : 'willy',
+	personPlaying.BILLY : 'billy',
+	personPlaying.RAYLY : 'rayly',
+}
 enum Choice 
 {
 	ROCK,
@@ -22,17 +28,21 @@ enum Result{
 }
 
 
-@onready var balloon = load("res://src/Dialogue/DialogueBalloon/textBox.tscn")
+#@onready var balloon = load("res://src/Dialogue/DialogueBalloon/textBox.tscn")
 @onready var chooseOption:Node =%ChooseOption
 @onready var player1_choice_label:Node =%PlayerChoiceLabel
 @onready var rolling_sprite:Node = %RollSprite
-@onready var dice_table:Node = %TableDice
+
 @onready var hand:Node = %Hand
 
 @onready var hand_pile:Node =$HandPile
 @onready var draw_pile:Node = $DrawPile
 @onready var play_pile:Node = $PlayPile
 @onready var person_playing:Node = %PersonPlaying
+
+
+var dialogue:DialogueResource = preload("res://src/minigames/competitive_rock_paper_scissors/dialogue/rpc_dialogues.dialogue")
+
 
 
 @onready var win_label:RichTextLabel = $EndGameLabel
@@ -52,9 +62,6 @@ var player_points:int = 0
 var current_round_number = 0
 
 @export var opponent:personPlaying = personPlaying.STANLY
-
-
-
 
 #player and opponent choice
 var has_player_chosen:bool
@@ -88,7 +95,6 @@ var current_numbers = {
 var current_total_choice_number = 0
 
 
-
 func _ready():
 	super()
 	win_label.scale = Vector2.ZERO
@@ -100,15 +106,12 @@ func _ready():
 func _process(delta):
 	show_points()
 	show_number_of_each()
-	
-	
+
 func setup_signals():
 	chooseOption.PlayerHasChosen.connect(update_player_choice)
 	rolling_sprite.rolling_finished.connect(show_winner)
 	hand.handAnimation.connect(show_winner)
-	
-	
-	
+
 func update_player_choice(choice):
 	chooseOption.set_can_generate_card(false) 
 	has_player_chosen = true
@@ -138,9 +141,7 @@ func update_player_choice(choice):
 func update_current_total_choice_number():
 	current_total_choice_number = current_numbers[Choice.ROCK] + current_numbers[Choice.SCISSORS] + current_numbers[Choice.PAPER]
 
-
 func show_winner():
-
 	current_round_number +=1
 	var winner = get_result(player_choice, opponent_choice)
 	update_current_total_choice_number()
@@ -159,8 +160,8 @@ func show_winner():
 		opponent_won_game()
 	elif current_total_choice_number < choice_per_round * 2 : 
 		await text_animation(win_label, \
-		 " [center] [wave amp = 512 freq = 24] [rainbow] Reshuffling !!!", \
-		2).finished
+			 " [center] [wave amp = 512 freq = 24] [rainbow] Reshuffling !!!", \
+			2).finished
 		await generate_choices()
 		draw_cards()
 	else: 
@@ -173,7 +174,7 @@ func reset():
 	has_player_drawn = false
 	has_player_chosen = false
 	is_rolling = false
-	
+
 func complete_reset():
 	clear()
 	has_player_drawn = false
@@ -186,63 +187,49 @@ func complete_reset():
 	opponents_points = 0
 	player_points = 0
 
-	
-	
 func draw():
 	await text_animation(win_label, \
-	"[center] Draw !" \
-	, 0.7, Color.YELLOW).finished
+		"[center] Draw !" \
+		, 0.7, Color.YELLOW).finished
 	reset()
-	
+
 func player_wins():
 	await text_animation(win_label, \
-	"[center] Yaaaaay !" \
-	, 0.7, Color.GREEN).finished
+		"[center] Yaaaaay !" \
+		, 0.7, Color.GREEN).finished
 	player_points+=1
-	dialogue_loses()
+	await dialogue_loses()
 	reset()
-	
 
-	
 func player_loses():
 	await text_animation(win_label,\
-	 "[center] Try again !" \
-	, 1, Color.RED).finished
+		 "[center] Try again !" \
+		, 1, Color.RED).finished
 	opponents_points+=1
-	dialogue_wins()
+	await dialogue_wins()
 	reset()
-	
-func dialogue_loses():
-	match opponent : 
-		personPlaying.STANLY : 
-			pass
-		personPlaying.WILLY : #il choisit tjrs le moins 
-			pass
-		personPlaying.BILLY : 
-			var dialogue_resource = load("res://src/minigames/competitive_rock_paper_scissors/dialogue/Billy/BillyLoses.dialogue")
-			var instance = await DialogueManager.show_dialogue_balloon_scene(balloon, dialogue_resource)
-			add_child(instance)
 
+func dialogue_loses():
+	MainCommunicator.send_signal_to_main(
+		MainCommunicator.SignalType.START_DIALOGUE, 
+		[dialogue, personName[opponent] + "_lose", [self]] 
+	)
+	await DialogueManager.dialogue_ended
 
 func dialogue_wins():
-	match opponent : 
-		personPlaying.STANLY : 
-			pass
-		personPlaying.WILLY : #il choisit tjrs le moins 
-			pass
-		personPlaying.BILLY : 
-			var dialogue_resource = load("res://src/minigames/competitive_rock_paper_scissors/dialogue/Billy/BillyWins.dialogue")
-			var instance = await DialogueManager.show_dialogue_balloon_scene(balloon, dialogue_resource)
-			add_child(instance)
-	
+	MainCommunicator.send_signal_to_main(
+		MainCommunicator.SignalType.START_DIALOGUE, 
+		[dialogue, personName[opponent] + "_win", [self]] 
+	)
+	await DialogueManager.dialogue_ended
+
 func get_result(choice1:int, choice2:int) -> int:
 	if choice1 == choice2:
 		return Result.DRAW
 	if beats[choice1] == choice2:
 		return Result.PLAYER_WIN
 	return Result.OPPONENT_WIN
-	
-	
+
 func generate_opponent_choice():
 	if opponent_choices.is_empty():
 		return null
@@ -279,13 +266,9 @@ func generate_opponent_choice():
 					if opponent_has_chosen == true : 
 						break
 	return opponent_choice
-	
 
 func update_choice_stock(choice):
 	current_numbers[choice] -= 1 
-
-
-	
 
 func text_animation(label: RichTextLabel, text: String, duration: float = 1, color:Color = Color.WHITE ):
 	label.text = text
@@ -302,36 +285,31 @@ func text_animation(label: RichTextLabel, text: String, duration: float = 1, col
 	tween.tween_property(label, "scale", Vector2.ZERO, disappear_time)
 	
 	return tween
-	
+
 func end_game():
 	var tween = create_tween()
 	tween.set_ease(Tween.EASE_IN_OUT).set_trans(Tween.TRANS_CIRC)
 	tween.tween_property(win_label, "scale", Vector2.ONE, 0.5)
 	tween.tween_interval(2)
 	exit()
-	
-
 
 func player_won_game(): #condition à executer si le player gagne la partie
-	await text_animation(win_label, "You WON \n the GAME !!!!!", 1, Color.GREEN)
+	await text_animation(win_label, "You WON \n the GAME !!!!!", 1, Color.GREEN).finished
 	exit()
-	
+
 func opponent_won_game(): #condition à executer si l'opponent gagne la partie
-	await text_animation(win_label, "You LOST \n the GAME !!!!!", 1, Color.RED)
+	await text_animation(win_label, "You LOST \n the GAME !!!!!", 1, Color.RED).finished
 	exit()
-	
+
 func exit():
-	MainCommunicator.send_signal_to_main(MainCommunicator.SignalType.SHOW_GAME3D)
-	
-	
-	
+	MainCommunicator.send_signal_to_main(MainCommunicator.SignalType.REMOVE_MINIGAME)
+
 func setup_game(): #setup de la game
 	
 	generate_choices()
 	has_game_started = true
 	show_points()
 	show_number_of_each()
-
 
 func generate_choices(choice_number = total_choice_number): #genere les choix
 	current_numbers[Choice.ROCK] = 0
@@ -355,7 +333,6 @@ func generate_choices(choice_number = total_choice_number): #genere les choix
 		var rand_choice = randi_range(0, 2)
 		choices.append(rand_choice)
 		current_numbers[rand_choice] += 1
-
 
 func generate_shuffle_choice() -> Array: #regénère une liste à partir du nombre restant de choix de chacun
 	var new_choices:Array = []
@@ -398,7 +375,6 @@ func draw_cards():
 func won_game():
 	pass
 
-
 func _on_setup_button_pressed():
 	#if !has_game_started : 
 		#setup_game()
@@ -407,30 +383,19 @@ func _on_setup_button_pressed():
 
 func clear(): 
 	for child in hand_pile.get_children():
-		child.free()
-		
-	
-
+		child.queue_free()
 
 func _on_exit_button_pressed():
 	exit()
 
-
 func intro():
-	match opponent : 
-		personPlaying.STANLY : 
-			start_game()
-		personPlaying.WILLY : #il choisit tjrs le moins 
-			start_game()
-		personPlaying.BILLY : 
-
-			var dialogue_resource = load("res://src/minigames/competitive_rock_paper_scissors/dialogue/Billy/Billy.dialogue")
-			var instance = await DialogueManager.show_dialogue_balloon_scene(balloon, dialogue_resource)
-			add_child(instance)
-			await instance.tree_exited
-			
+	MainCommunicator.send_signal_to_main(
+		MainCommunicator.SignalType.START_DIALOGUE, 
+		[dialogue, personName[opponent] + "_intro", [self]] 
+	) # On lance le dialogue d'intro du personnage
+	await DialogueManager.dialogue_ended
 	start_game()
-			
+
 func start_game(): 
 	setup_game()
 	draw_cards()

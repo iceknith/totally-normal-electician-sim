@@ -54,6 +54,7 @@ background_mode = 2
 sky = SubResource("Sky_co47k")
 ambient_light_source = 3
 reflected_light_source = 2
+glow_hdr_threshold = 1.5
 fog_depth_curve = 6.4980483
 
 [sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_co47k"]
@@ -951,7 +952,7 @@ dialogue = ExtResource("12_1r3ik")
 animated_sprite = NodePath("AnimatedSprite3D")
 animated_sprite_start_animation = "normal"
 text_sprite = NodePath("InteractacleText3D")
-InteractionAnimation = 1
+interactionAnimation = 1
 camera_root = NodePath(".")
 metadata/_custom_type_script = "uid://sd0g0r1lwus3"
 

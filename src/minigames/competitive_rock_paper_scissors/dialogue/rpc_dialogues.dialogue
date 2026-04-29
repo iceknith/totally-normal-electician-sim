@@ -1,0 +1,46 @@
+~ billy_intro
+Billy: [wave amp=40 freq=5]Hi ! My name is Billy ![/wave] [#voice_sound=uid://bm1e4xlpgjw4p]
+Billy : [wave amp=40 freq=5]Everybody loves good ol'  Billy ![/wave][#voice_sound=uid://bm1e4xlpgjw4p]
+Billy : [wave amp=25 freq=5]I've been playing this game for a while you know ![/wave] [#voice_sound=uid://bm1e4xlpgjw4p]
+Billy : [wave amp=25 freq=5]So ! [wait=0.5] I'm pretty [speed=0.2][font_size=40][rainbow] [wait=0.5] [wave amp=60 freq=5]STRONG.[/wave][/rainbow][/font_size] [#voice_sound=uid://bm1e4xlpgjw4p]
+Billy : [wave amp=40 freq=5]I hope we both have a lot of fun ![/wave] [#voice_sound=uid://bm1e4xlpgjw4p]
+=> END
+
+~ billy_lose
+%
+	Billy : [shake rate=20 level=10]You're making me[wait=0.5] SAD !!![/shake]
+%
+	[font_size=40][shake rate=20 level=10] (,,>﹏<,,)[/shake] 
+=> END
+
+~ billy_win
+%
+	Billy : I'm winning !!![next=auto]
+	Billy: [shake rate=20 level=10]Not that I'm not used to it ![/shake][next=auto]
+%
+	Billy: [wave amp=25 freq=5]HJJAEJAEJKHAKJEHZKJ ! I'm winning ! HAOOHEAJHEA[/wave]
+=> END
+
+~ stanly_intro
+Stanly: Hey, I'm Stanly
+=> END
+
+~ stanly_lose
+Stanly: Oh no :C I've lost
+=> END
+
+~ stanly_win
+Stanly: YESS, I've won !
+=> END
+
+~ willy_intro
+Willy: Hey, I'm Willy
+=> END
+
+~ willy_lose
+Willy: Oh no :C I've lost
+=> END
+
+~ willy_win
+Willy: YESS, I've won !
+=> END

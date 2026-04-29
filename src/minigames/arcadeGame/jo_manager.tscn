@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://cy2mv0kqxvsu3"]
+
+[ext_resource type="Script" uid="uid://dedrs7fhgwmda" path="res://src/minigames/arcadeGame/joe_manager.gd" id="1_q15w4"]
+
+[node name="JoManager" type="Node2D" unique_id=639065793]
+script = ExtResource("1_q15w4")
