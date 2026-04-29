@@ -31,11 +31,12 @@ func _ready() -> void:
 func _unhandled_input(event: InputEvent) -> void:
 	if Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
 		if event is InputEventMouseMotion && !in_interaction():
+			print("caméra bougée")
 			# Si l'input ne match pas avec la vélocité rentré on ne le process pas
 			# Sinon, ça fait des flicker bizzare quand on sort des dialogues
-			if abs(event.relative.x) >= abs(event.velocity.x) &&\
-				abs(event.relative.y) >= abs(event.velocity.y): 
-					return
+			#if abs(event.relative.x) >= abs(event.velocity.x) &&\
+			#	abs(event.relative.y) >= abs(event.velocity.y): 
+			#		return
 			
 			rotation_y -= event.relative.x * look_sensitivity # tourne le perso sur l'axe droite/gauche
 			rotation_x -= event.relative.y * look_sensitivity 	# tourne la caméra de haut en bas
