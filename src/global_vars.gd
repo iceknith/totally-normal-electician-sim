@@ -47,4 +47,4 @@ func get_current_title(title:String, dialogue:DialogueResource) -> String:
 ### Money ###
 #############
 
-var money:int = 0
+var money:int = 20

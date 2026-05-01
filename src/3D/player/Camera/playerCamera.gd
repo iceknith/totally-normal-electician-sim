@@ -4,10 +4,8 @@ var turnCamera:bool
 
 @export var look_sensitivity : float = 0.006
 @onready var default_fov:float = fov
-@onready var default_rotation:Vector3 = global_rotation
 
-var rotation_y = 0
-var rotation_x = 0
+var applied_rotation:Vector3 = Vector3.ZERO
 
 var shaking:bool
 var shake_strength:float = 0.05
@@ -24,9 +22,9 @@ func _process(delta):
 		shake()
 
 func turn_to_look_at(ToTurnTo : Vector3, turnTime: float = 1) -> void:
-	default_rotation = global_rotation
 	var target_transform = global_transform.looking_at(ToTurnTo) # Calcule la rotation que doit avoir la cam pour regarder un objet
 	var rotation_vector = target_transform.basis.get_euler() # La rotation final
+	applied_rotation += rotation_vector - global_rotation
 	var tween = create_tween()
 	tween.tween_property(self, "global_rotation",rotation_vector, turnTime).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT)
 	await tween.finished
@@ -46,10 +44,9 @@ func turn_then_zoom(ToTurnTo : Vector3, turnTime:float = 2, zoom_time:float = 1,
 	zoom_in(zoom_time, zoom_intensity)
 
 func turn_while_zoom(ToTurnTo : Vector3, turnTime:float = 1, zoom_time:float = 1, zoom_intensity:float = 1) : 
-	default_rotation = global_rotation
-	
 	var target_transform = global_transform.looking_at(ToTurnTo, Vector3.UP)
 	var rotation_vector = target_transform.basis.get_euler()
+	applied_rotation += rotation_vector - global_rotation
 	
 	var tween = create_tween()
 	tween.set_parallel(true)
@@ -61,8 +58,10 @@ func turn_while_zoom(ToTurnTo : Vector3, turnTime:float = 1, zoom_time:float = 1
 func reset(time:float = 0.3):
 	var tween = create_tween()
 	tween.set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT)
-	tween.tween_property(self, "global_rotation",default_rotation, time)
+	tween.tween_property(self, "global_rotation",global_rotation - applied_rotation, time)
 	tween.parallel().tween_property(self, "fov", default_fov, time)
+	
+	applied_rotation = Vector3.ZERO
 
 func start_shake(shaking_strength:float):
 	shake_strength = shaking_strength

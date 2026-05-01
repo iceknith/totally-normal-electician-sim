@@ -5,6 +5,9 @@ var eow_meter:float = 0:
 		eow_meter = new_val
 		update_eow()
 
+@export var phone_call_start_time:float = 2
+var phone_call:DialogueResource = preload("res://src/Dialogue/phone_call.dialogue")
+
 @export var sunStartAngle:float = -10
 @export var sunEndAngle:float = -170
 
@@ -22,6 +25,17 @@ var eow_meter:float = 0:
 func _ready() -> void:
 	GlobalVars.tower_amount = count_towers(self)
 	worldBoxBig.body_exited.connect(_on_body_leave_world_box_big)
+	
+	get_tree().create_timer(phone_call_start_time).timeout.connect(start_phone_call)
+
+func start_phone_call():
+	MainCommunicator.send_signal_to_main(
+		MainCommunicator.SignalType.START_DIALOGUE, 
+		[phone_call, "start", [self]]
+	)
+
+func phone_call_animation():
+	MainCommunicator.signalCamera.emit("turn_then_zoom", [%TutorialPivot.global_position, 0.5, 1, 50])
 
 func update_eow():
 	$Sun.rotation_degrees.x = sunStartAngle * (1 - eow_meter) + sunEndAngle * eow_meter
@@ -29,7 +43,6 @@ func update_eow():
 	var skyChangeProgress:float = skyChangeCurve.sample(eow_meter)
 	skyMaterial.sky_top_color = skyTopStartColor * (1 - skyChangeProgress) + skyTopEndColor * skyChangeProgress
 	skyMaterial.sky_horizon_color = skyBotStartColor * (1 - skyChangeProgress) + skyBotEndColor * skyChangeProgress
-
 
 func count_towers(node:Node) -> int:
 	var result = 0
