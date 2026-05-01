@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://doot560ix5x3h"
+path="res://.godot/imported/Random15 (1).wav-db1e423be4cad8cb9895af36cabbdcd2.sample"
+
+[deps]
+
+source_file="res://src/minigames/arcadeGame/soundEffects/Random15 (1).wav"
+dest_files=["res://.godot/imported/Random15 (1).wav-db1e423be4cad8cb9895af36cabbdcd2.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

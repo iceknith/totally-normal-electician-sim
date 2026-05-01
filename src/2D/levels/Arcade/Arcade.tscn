@@ -5,9 +5,9 @@
 [ext_resource type="PackedScene" uid="uid://7ykeb0dnh705" path="res://src/2D/player/player2D.tscn" id="2_o5jlv"]
 [ext_resource type="Texture2D" uid="uid://bjb6qkb8ayhnl" path="res://src/2D/levels/Arcade/assets/fond.png" id="2_pdjh2"]
 [ext_resource type="Texture2D" uid="uid://j5t8bh7tv72m" path="res://src/2D/levels/Arcade/shaders/circles.png" id="3_fxxif"]
+[ext_resource type="PackedScene" uid="uid://dd18qarb568py" path="res://src/minigames/arcadeGame/level/fullGame.tscn" id="5_4vtsk"]
 [ext_resource type="Script" uid="uid://dbf5k8vvysldd" path="res://src/2D/interactables/interactables_2d_minigame.gd" id="6_4vtsk"]
 [ext_resource type="PackedScene" uid="uid://cnnuxnjiw3ait" path="res://src/2D/interactables/interactableText.tscn" id="6_sb0yd"]
-[ext_resource type="PackedScene" uid="uid://djias0ir5lwjr" path="res://src/minigames/test_minigame.tscn" id="7_4vtsk"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4vtsk"]
 size = Vector2(112.5, 198)
@@ -16,7 +16,7 @@ size = Vector2(112.5, 198)
 offsets = PackedFloat32Array(0.016990291, 1)
 colors = PackedColorArray(1, 0.19607843, 0.22352941, 1, 1, 0.19607843, 0.73333335, 1)
 
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_o5jlv"]
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_4vtsk"]
 gradient = SubResource("Gradient_fxxif")
 repeat = 1
 
@@ -32,7 +32,7 @@ shader_parameter/speed_vertical = 2.0
 shader_parameter/scroll_direction = Vector2(0, 1)
 shader_parameter/scrolling_speed = 0.08
 shader_parameter/enable_palette_cycling = true
-shader_parameter/palette = SubResource("GradientTexture2D_o5jlv")
+shader_parameter/palette = SubResource("GradientTexture2D_4vtsk")
 shader_parameter/palette_speed = 0.1
 
 [node name="Arcade" type="Control" unique_id=1662000706]
@@ -60,7 +60,7 @@ position = Vector2(168, 325)
 
 [node name="Interactable2DMinigame" type="Area2D" parent="." unique_id=631324671 node_paths=PackedStringArray("interractable_dialogue")]
 script = ExtResource("6_4vtsk")
-minigame = ExtResource("7_4vtsk")
+minigame = ExtResource("5_4vtsk")
 action_type = 1
 interractable_dialogue = NodePath("InteractableText")
 metadata/_custom_type_script = "uid://dbf5k8vvysldd"

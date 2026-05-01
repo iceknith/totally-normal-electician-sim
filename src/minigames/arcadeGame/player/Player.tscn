@@ -1,0 +1,179 @@
+[gd_scene format=3 uid="uid://cpc5mi3gyvm7y"]
+
+[ext_resource type="Script" uid="uid://n0tb5uwsj52w" path="res://src/minigames/arcadeGame/player/player.gd" id="1_lyefd"]
+[ext_resource type="Texture2D" uid="uid://cra208jmgv7f8" path="res://icon.svg" id="2_i3pg2"]
+[ext_resource type="PackedScene" uid="uid://dew10erbv0qyh" path="res://src/minigames/arcadeGame/Component/movement.tscn" id="3_8q2ol"]
+[ext_resource type="PackedScene" uid="uid://cbgt2i48kg0xj" path="res://src/minigames/arcadeGame/Component/hit_ball.tscn" id="4_crhmk"]
+[ext_resource type="PackedScene" uid="uid://bff8owxdvdk7x" path="res://src/minigames/arcadeGame/player/aim.tscn" id="5_crhmk"]
+[ext_resource type="PackedScene" uid="uid://cklna2vuo4rwf" path="res://src/minigames/arcadeGame/Component/die.tscn" id="6_thjgy"]
+[ext_resource type="Texture2D" uid="uid://rhy47auhb2o4" path="res://src/minigames/arcadeGame/assets/particles/star particle.png" id="7_sjmj3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_i3pg2"]
+size = Vector2(116, 120)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_thjgy"]
+size = Vector2(124, 127)
+
+[sub_resource type="Curve" id="Curve_t6jqt"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.09245932), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Animation" id="Animation_sjmj3"]
+resource_name = "Death"
+length = 1.6
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("DeathParticle:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("DeathParticle:emitting")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_t6jqt"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("DeathParticle:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("DeathParticle:emitting")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_msv11"]
+_data = {
+&"Death": SubResource("Animation_sjmj3"),
+&"RESET": SubResource("Animation_t6jqt")
+}
+
+[sub_resource type="Gradient" id="Gradient_sjmj3"]
+offsets = PackedFloat32Array(0, 0.57224333)
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_t6jqt"]
+gradient = SubResource("Gradient_sjmj3")
+width = 256
+height = 256
+fill = 1
+fill_from = Vector2(0.47008547, 0.52820516)
+
+[node name="Player" type="CharacterBody2D" unique_id=1190158832]
+script = ExtResource("1_lyefd")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=322397758]
+texture = ExtResource("2_i3pg2")
+
+[node name="Movement" parent="." unique_id=321546894 instance=ExtResource("3_8q2ol")]
+speed = 350
+
+[node name="HitBall" parent="." unique_id=1738906224 instance=ExtResource("4_crhmk")]
+collision_layer = 2
+collision_mask = 2
+hit_cooldown = 0.7
+ball_color = Color(0.42352942, 0.18431373, 0.73333335, 1)
+
+[node name="Front" type="CollisionPolygon2D" parent="HitBall" unique_id=2146298035]
+polygon = PackedVector2Array(24, -148, 70, -108, 91, -53, 94, 43, 57, 134, -44, 158, 39, 161, 114, 121, 161, 36, 158, -46, 112, -124, 44, -154, -44, -155)
+
+[node name="back" type="CollisionPolygon2D" parent="HitBall" unique_id=1369905580]
+polygon = PackedVector2Array(-71, -71, -95, -90, -95, 76, -76, 59)
+
+[node name="Aim" parent="." unique_id=1422028878 instance=ExtResource("5_crhmk")]
+
+[node name="Die" parent="." unique_id=469673073 node_paths=PackedStringArray("animationPlayer") instance=ExtResource("6_thjgy")]
+losing_ball_state = 1
+animationPlayer = NodePath("../AnimationPlayer")
+death_animation_name = "Death"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Die" unique_id=1657388655]
+position = Vector2(1, 0)
+shape = SubResource("RectangleShape2D_i3pg2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=745741321]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_thjgy")
+
+[node name="DeathParticle" type="CPUParticles2D" parent="." unique_id=1622595560]
+texture_filter = 1
+amount = 60
+texture = ExtResource("7_sjmj3")
+lifetime = 1.5
+one_shot = true
+local_coords = true
+emission_shape = 1
+emission_sphere_radius = 50.0
+direction = Vector2(0, 0)
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 50.0
+initial_velocity_max = 50.0
+scale_amount_min = 10.0
+scale_amount_max = 10.0
+scale_amount_curve = SubResource("Curve_t6jqt")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=2031884167]
+libraries/ = SubResource("AnimationLibrary_msv11")
+
+[node name="PointLight2D" type="PointLight2D" parent="." unique_id=465335938]
+visible = false
+energy = 0.5
+texture = SubResource("GradientTexture2D_t6jqt")
+
+[connection signal="area_entered" from="Die" to="Die" method="_on_area_entered"]

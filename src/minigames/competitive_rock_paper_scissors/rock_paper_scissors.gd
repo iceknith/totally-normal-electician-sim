@@ -32,7 +32,7 @@ enum Result{
 @onready var chooseOption:Node =%ChooseOption
 @onready var player1_choice_label:Node =%PlayerChoiceLabel
 @onready var rolling_sprite:Node = %RollSprite
-#@onready var dice_table:Node = %TableDice
+
 @onready var hand:Node = %Hand
 
 @onready var hand_pile:Node =$HandPile
@@ -40,7 +40,10 @@ enum Result{
 @onready var play_pile:Node = $PlayPile
 @onready var person_playing:Node = %PersonPlaying
 
+
 var dialogue:DialogueResource = preload("res://src/minigames/competitive_rock_paper_scissors/dialogue/rpc_dialogues.dialogue")
+
+
 
 @onready var win_label:RichTextLabel = $EndGameLabel
 
