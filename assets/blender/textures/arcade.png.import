@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cjjg44jjuvmbl"
-path.s3tc="res://.godot/imported/bancR.png-f8e523b4a756c7d1e7657d36a4f565b4.s3tc.ctex"
+uid="uid://keiio5ruifx5"
+path.s3tc="res://.godot/imported/arcade.png-af2095756cc2e52f64a9d39ef759d941.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://assets/blender/bancR.png"
-dest_files=["res://.godot/imported/bancR.png-f8e523b4a756c7d1e7657d36a4f565b4.s3tc.ctex"]
+source_file="res://assets/blender/textures/arcade.png"
+dest_files=["res://.godot/imported/arcade.png-af2095756cc2e52f64a9d39ef759d941.s3tc.ctex"]
 
 [params]
 
