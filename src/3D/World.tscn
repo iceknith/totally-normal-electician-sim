@@ -914,6 +914,10 @@ transform = Transform3D(-0.9718789, 0, -0.23548126, 0, 1, 0, 0.23548126, 0, -0.9
 [node name="Tower8" parent="Objets/Towers" unique_id=1601223618 instance=ExtResource("12_clt24")]
 transform = Transform3D(0.99933356, 0, 0.036504164, 0, 1, 0, -0.036504164, 0, 0.99933356, 51.754242, 0, 8.731465)
 
+[node name="TutorialPivot" type="Node3D" parent="Objets/Towers/Tower8" unique_id=1430817311]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, -2.9802322e-08, 0, 1, 0, 2.9802322e-08, 0, 1, 0, 1, 0)
+
 [node name="Tower9" parent="Objets/Towers" unique_id=1654724301 instance=ExtResource("12_clt24")]
 transform = Transform3D(0.76718754, 0, 0.6414229, 0, 1, 0, -0.6414229, 0, 0.76718754, 101.55297, 0, -8.918226)
 
@@ -932,7 +936,7 @@ transform = Transform3D(-0.5200055, 0, -1.2998441, 0, 1.4, 0, 1.2998441, 0, -0.5
 [node name="boulangerie" type="Area3D" parent="Objets/Interactables/boulangerie2" unique_id=1185456266 node_paths=PackedStringArray("text_sprite")]
 transform = Transform3D(0.028877407, 0, 0.7137017, 0, 0.71428573, 0, -0.7137017, 0, 0.028877407, 2.823923, 1.0146847, -1.1281819)
 script = ExtResource("9_ttchh")
-minigame = ExtResource("11_5f2gp")
+minigame = ExtResource("14_lpsds")
 text_sprite = NodePath("InteractacleText3D")
 metadata/_custom_type_script = "uid://b3imm353l7y6u"
 
@@ -945,7 +949,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0729332, 0.11338568, 0.069
 shape = SubResource("BoxShape3D_clt24")
 
 [node name="InterractableDialogue" type="Area3D" parent="Objets/Interactables" unique_id=827773963 node_paths=PackedStringArray("animated_sprite", "text_sprite", "camera_root")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 57.310936, 1.3362136, 2.1895983)
+transform = Transform3D(-0.8454946, 0, 0.5339834, 0, 1, 0, -0.5339834, 0, -0.8454946, 55.49503, 1.3362136, 0.7503469)
 script = ExtResource("11_nho6y")
 unique_name = "BoulangerieOutdoors"
 dialogue = ExtResource("12_1r3ik")
@@ -970,7 +974,7 @@ billboard = 2
 texture = SubResource("ViewportTexture_8pvm1")
 
 [node name="InterractableRPC" type="Area3D" parent="Objets/Interactables" unique_id=2100176355 node_paths=PackedStringArray("text_sprite")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 57.310936, 1.4752015, 4.7331824)
+transform = Transform3D(-0.40314606, 0, -0.91513556, 0, 1, 0, 0.91513556, 0, -0.40314606, 64.50607, 1.475202, 2.7131975)
 script = ExtResource("9_ttchh")
 minigame = ExtResource("14_ivwwh")
 text_sprite = NodePath("InteractacleText3D")
@@ -980,17 +984,20 @@ metadata/_custom_type_script = "uid://b3imm353l7y6u"
 transform = Transform3D(1, -1.4901161e-08, -1.4901161e-08, -1.4901161e-08, 1, -2.9802322e-08, -1.4901161e-08, 0, 1, 1.9269632, 1.1920929e-07, -0.5853129)
 mesh = SubResource("SphereMesh_gmgko")
 surface_material_override/0 = SubResource("StandardMaterial3D_yfp7s")
+metadata/_edit_lock_ = true
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Objets/Interactables/InterractableRPC" unique_id=1230039973]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.9163593, 0, -0.5885087)
 shape = SubResource("SphereShape3D_ivwwh")
+metadata/_edit_lock_ = true
 
 [node name="InteractacleText3D" parent="Objets/Interactables/InterractableRPC" unique_id=1932431219 instance=ExtResource("10_e8reo")]
 transform = Transform3D(-0.29661912, 0, 0.044912353, 0, 0.3, 0, -0.044912353, 0, -0.29661912, 2.0036647, 0.7986984, -0.655995)
 texture = SubResource("ViewportTexture_gisxt")
+metadata/_edit_lock_ = true
 
 [node name="arcade" type="Area3D" parent="Objets/Interactables" unique_id=1975199288 node_paths=PackedStringArray("text_sprite")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 62.66894, 0.73993564, 3.8578248)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 52.573326, 0.73993564, -2.4017107)
 script = ExtResource("9_ttchh")
 minigame = ExtResource("14_yhicf")
 text_sprite = NodePath("InteractacleText3D")
@@ -1009,7 +1016,7 @@ transform = Transform3D(0.30000004, 0, 0, 0, 0.3, 0, 0, 0, 0.30000004, 0, 0.8773
 texture = SubResource("ViewportTexture_wnywt")
 
 [node name="boulangerieDebug" type="Area3D" parent="Objets/Interactables" unique_id=341763301 node_paths=PackedStringArray("text_sprite")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 55.425014, 0.73993564, -0.48385906)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 54.481976, 0.73993564, 0.25229335)
 script = ExtResource("9_ttchh")
 minigame = ExtResource("14_lpsds")
 text_sprite = NodePath("InteractacleText3D")

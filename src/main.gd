@@ -73,6 +73,7 @@ func reset_state():
 	# Reset state
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	currentState = MainCommunicator.GameState.Game3D
+	MainCommunicator.signalCamera.emit("reset", [])
 	currentNode = world3D
 	
 	# Show & process world3D
@@ -154,6 +155,7 @@ func end_dialogue(_dialogue_data):
 	is_in_dialogue = false
 	if currentState == MainCommunicator.GameState.Game3D:
 		Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+		MainCommunicator.signalCamera.emit("reset", [])
 
 ### EOW Handlers ###
 
