@@ -13,7 +13,7 @@
 
 [sub_resource type="Gradient" id="Gradient_41tw2"]
 offsets = PackedFloat32Array(0.38957056, 1)
-colors = PackedColorArray(0.5647059, 0.3019608, 0.46666667, 1, 0, 0, 0, 1)
+colors = PackedColorArray(0.2784314, 0.05882353, 0.15686275, 1, 0, 0, 0, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_skady"]
 gradient = SubResource("Gradient_41tw2")
@@ -41,6 +41,7 @@ shader = ExtResource("4_lh3vw")
 shader_parameter/center = Vector2(0.5, 0.5)
 shader_parameter/force = 0.1
 shader_parameter/size = 0.1
+shader_parameter/ca_strength = 0.3
 shader_parameter/thickness = 0.01
 shader_parameter/offset = 0.0
 
@@ -248,16 +249,19 @@ z_index = 1
 position = Vector2(173, 199)
 scale = Vector2(0.5, 0.5)
 collision_layer = 8
+losing_ball_state = 1
 
 [node name="LittleJo" parent="Entities" unique_id=947143515 instance=ExtResource("5_sf31h")]
 position = Vector2(917, 225)
 scale = Vector2(0.5, 0.5)
 collision_layer = 4
+ball_state_to_give = 1
+ball_color = Color(1, 0.07450981, 0.14509805, 1)
 
 [node name="JoManager" parent="Entities" unique_id=639065793 node_paths=PackedStringArray("enemy") instance=ExtResource("6_sf31h")]
 enemy = NodePath("../LittleJo")
 JoCatchRate = SubResource("Curve_lqgcn")
-max_manageable_speed = 900
+max_manageable_speed = 1100
 
 [node name="ShockWave" type="TextureRect" parent="." unique_id=304962227]
 z_index = 3
@@ -319,7 +323,7 @@ energy = 0.2
 texture = SubResource("GradientTexture2D_k58j4")
 
 [node name="CountdownLabel" parent="." unique_id=26275427 instance=ExtResource("9_aqv87")]
-z_index = 2
+z_index = 3
 custom_minimum_size = Vector2(256, 256)
 layout_mode = 1
 anchors_preset = 8
@@ -333,6 +337,7 @@ offset_right = 20.0
 offset_bottom = 11.5
 grow_horizontal = 2
 grow_vertical = 2
+pivot_offset_ratio = Vector2(0.5, 0.5)
 label_settings = SubResource("LabelSettings_aqv87")
 horizontal_alignment = 1
 vertical_alignment = 1

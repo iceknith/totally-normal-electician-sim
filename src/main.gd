@@ -30,7 +30,7 @@ var timer_eow_connection_map:Dictionary[Node,Callable]
 @onready var currentNode:Node = world3D
 var currentState:MainCommunicator.GameState = MainCommunicator.GameState.Game3D:
 	set(newVal): 
-		currentState = newVal; 
+		MainCommunicator.ChangeGameState.emit(newVal)
 		MainCommunicator.current_state = newVal
 var is_in_dialogue:bool = false:
 	set(newVal): 
@@ -57,7 +57,6 @@ func receive_signal(type, data):
 		MainCommunicator.SignalType.REMOVE_MINIGAME: remove_minigame()
 		MainCommunicator.SignalType.SHOW_GAME3D: show_game3D()
 		MainCommunicator.SignalType.START_DIALOGUE : start_dialogue(data)
-		MainCommunicator.SignalType.CHANGE_GAMESTATE : update_game_state(data)
 
 func reset_state():
 	# Reset minigames
@@ -71,8 +70,8 @@ func reset_state():
 	# TODO, implémenter les resets de menus
 	
 	# Reset state
-	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	currentState = MainCommunicator.GameState.Game3D
+	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	currentNode = world3D
 	
 	# Show & process world3D
@@ -105,8 +104,11 @@ func add_minigame(data:Array):
 		create_minigame(data)
 
 func remove_minigame():
+	print(minigames.size())
 	if minigames.size() <= 1:
+		minigames.pop_back()
 		show_game3D()
+		
 	else:
 		# Remove last minigame
 		disconnect_eow_update_timer(minigames[-1], timer_eow_update.timeout)
@@ -121,20 +123,19 @@ func show_minigame(data:Array):
 	reset_state()
 	
 	# Change GameState
-	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 	currentState = MainCommunicator.GameState.MiniGame
 	currentNode = minigame_container
 	
 	create_minigame(data)
+	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 	
 	# Stop process from game
 	world3D.process_mode = Node.PROCESS_MODE_DISABLED
 
 func show_game3D():
+	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	reset_state()
 
-func update_game_state(state:MainCommunicator.GameState):
-	MainCommunicator.current_state = state
 
 func start_dialogue(data:Array):
 	# Change mode

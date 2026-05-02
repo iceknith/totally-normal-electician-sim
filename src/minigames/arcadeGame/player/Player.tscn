@@ -116,6 +116,7 @@ fill_from = Vector2(0.47008547, 0.52820516)
 
 [node name="Player" type="CharacterBody2D" unique_id=1190158832]
 script = ExtResource("1_lyefd")
+ball_color = Color(0.35686275, 0.105882354, 0.3764706, 1)
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=322397758]
 texture = ExtResource("2_i3pg2")
@@ -127,7 +128,7 @@ speed = 350
 collision_layer = 2
 collision_mask = 2
 hit_cooldown = 0.7
-ball_color = Color(0.42352942, 0.18431373, 0.73333335, 1)
+ball_color = Color(0.39607844, 0.10980392, 0.5294118, 1)
 
 [node name="Front" type="CollisionPolygon2D" parent="HitBall" unique_id=2146298035]
 polygon = PackedVector2Array(24, -148, 70, -108, 91, -53, 94, 43, 57, 134, -44, 158, 39, 161, 114, 121, 161, 36, 158, -46, 112, -124, 44, -154, -44, -155)

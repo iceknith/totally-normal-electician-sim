@@ -11,10 +11,18 @@ var aiming_direction:Vector2
 var input_direction:Vector2
 var launch_speed = 200
 var launch_counter = 0
-
 var dead:bool
 
+
+@export var ball_state_to_give:ArcadeGame.BALLSTATE
+@export var losing_ball_state:ArcadeGame.BALLSTATE
+@export var ball_color:Color
+
+
 func _ready():
+	HitBallComponent.ball_color = ball_color
+	HitBallComponent.ball_state_to_give = ball_state_to_give
+	DieComponent.losing_ball_state = losing_ball_state
 	reset()
 	
 	

@@ -95,14 +95,15 @@ func play_death_shockwave(entity):
 	var mat = $ShockWave.material as ShaderMaterial
 	var center = entity.position / size
 	mat.set_shader_parameter("center",center)
+	
 	$AnimationPlayer.play("shockwave")
-	await $AnimationPlayer.animation_finished 
-	$ShockWave.visible = false
+
 	
 func play_shockwave(entity):
 	var mat = $ShockWave.material as ShaderMaterial
 	var center = ball.position / size
 	mat.set_shader_parameter("center",center)
+	$AnimationPlayer.stop()
 	$AnimationPlayer.play("shockwave")
 	
 

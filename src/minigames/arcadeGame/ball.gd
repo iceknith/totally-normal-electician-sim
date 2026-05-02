@@ -60,13 +60,13 @@ func manage_scale():
 
 	rotation = velocity.angle()
 
-	var speed_ratio = clamp(speed / 800.0, 0.0, 8)
+	var speed_ratio = clamp(speed / 400.0, 0.0, 8)
 
 	var base_scale = lerp(1.0, 1.6, speed_ratio)
 
 
 	var max_stretch = lerp(0.1, 0.6, speed_ratio) 
-	var stretch = speed_ratio * max_stretch *0.2
+	var stretch = speed_ratio * max_stretch *0.05
 
 	scale.x = base_scale * (1.0 + stretch)
 	scale.y = max(base_scale * (1.0 - stretch * 0.5), base_scale)
