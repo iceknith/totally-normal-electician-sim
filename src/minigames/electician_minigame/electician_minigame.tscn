@@ -240,29 +240,33 @@ label_settings = SubResource("LabelSettings_gf3wi")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="InfoContainer" type="PanelContainer" parent="." unique_id=785610125]
+[node name="InfoVboxContainer" type="VBoxContainer" parent="." unique_id=1025125168]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -210.0
-offset_top = -167.5
-offset_right = 210.0
-offset_bottom = 167.5
+offset_left = -250.0
+offset_top = -200.0
+offset_right = 250.0
+offset_bottom = 200.0
 grow_horizontal = 2
 grow_vertical = 2
 pivot_offset_ratio = Vector2(0.5, 0.5)
 
-[node name="MarginContainer" type="MarginContainer" parent="InfoContainer" unique_id=417354383]
+[node name="InfoContainer" type="PanelContainer" parent="InfoVboxContainer" unique_id=785610125]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="InfoVboxContainer/InfoContainer" unique_id=417354383]
 layout_mode = 2
 theme_override_constants/margin_left = 10
 theme_override_constants/margin_top = 10
 theme_override_constants/margin_right = 10
 theme_override_constants/margin_bottom = 10
 
-[node name="InfoLabel" type="Label" parent="InfoContainer/MarginContainer" unique_id=1498374110]
+[node name="InfoLabel" type="Label" parent="InfoVboxContainer/InfoContainer/MarginContainer" unique_id=1498374110]
 z_index = 10
 custom_minimum_size = Vector2(400, 0)
 layout_mode = 2
@@ -273,6 +277,13 @@ label_settings = SubResource("LabelSettings_nmo0h")
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
+
+[node name="Button" type="Button" parent="InfoVboxContainer" unique_id=1263216879]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("6_gf3wi")
+theme_override_font_sizes/font_size = 40
+text = " Okay "
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=893568058]
 layout_mode = 0

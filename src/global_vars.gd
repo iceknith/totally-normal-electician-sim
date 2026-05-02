@@ -44,7 +44,18 @@ func get_current_title(title:String, dialogue:DialogueResource) -> String:
 	return current_title
 
 #############
-### Money ###
+### World ###
 #############
 
-var money:int = 20
+var has_cake:bool = false
+var has_decorations:bool = false
+
+################
+### Controls ###
+################
+
+func get_event_controls(event:String) -> String:
+	return "[E]"
+
+func get_movement_controls() -> String:
+	return "[z q s d]"

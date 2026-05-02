@@ -210,6 +210,7 @@ size = Vector3(507.2356, 50, 483.65918)
 
 [node name="World" type="Node3D" unique_id=600883011]
 script = ExtResource("1_co47k")
+phone_call_start_time = 1.5
 skyTopStartColor = Color(0.050980393, 0.5882353, 1, 1)
 skyBotStartColor = Color(0.6666667, 0.9372549, 0.972549, 1)
 skyTopEndColor = Color(0.6509804, 0.105882354, 0.14901961, 1)
@@ -969,7 +970,7 @@ animation = &"screw"
 shape = SubResource("SphereShape3D_ivwwh")
 
 [node name="InteractacleText3D" parent="Objets/Interactables/InterractableDialogue" unique_id=1261401867 instance=ExtResource("10_e8reo")]
-transform = Transform3D(0.30000004, 0, 0, 0, 0.3, 0, 0, 0, 0.30000004, 0, 0.8627713, 0)
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0.8627713, 0)
 billboard = 2
 texture = SubResource("ViewportTexture_8pvm1")
 
@@ -992,7 +993,7 @@ shape = SubResource("SphereShape3D_ivwwh")
 metadata/_edit_lock_ = true
 
 [node name="InteractacleText3D" parent="Objets/Interactables/InterractableRPC" unique_id=1932431219 instance=ExtResource("10_e8reo")]
-transform = Transform3D(-0.29661912, 0, 0.044912353, 0, 0.3, 0, -0.044912353, 0, -0.29661912, 2.0036647, 0.7986984, -0.655995)
+transform = Transform3D(-0.19774605, 0, 0.029941564, 0, 0.2, 0, -0.029941564, 0, -0.19774605, 2.0036647, 0.7986984, -0.655995)
 texture = SubResource("ViewportTexture_gisxt")
 metadata/_edit_lock_ = true
 
@@ -1012,7 +1013,7 @@ surface_material_override/0 = SubResource("StandardMaterial3D_8pvm1")
 shape = SubResource("SphereShape3D_ivwwh")
 
 [node name="InteractacleText3D" parent="Objets/Interactables/arcade" unique_id=467142444 instance=ExtResource("10_e8reo")]
-transform = Transform3D(0.30000004, 0, 0, 0, 0.3, 0, 0, 0, 0.30000004, 0, 0.8773431, 0)
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0.8773431, 0)
 texture = SubResource("ViewportTexture_wnywt")
 
 [node name="boulangerieDebug" type="Area3D" parent="Objets/Interactables" unique_id=341763301 node_paths=PackedStringArray("text_sprite")]
@@ -1031,7 +1032,7 @@ surface_material_override/0 = SubResource("StandardMaterial3D_gisxt")
 shape = SubResource("SphereShape3D_ivwwh")
 
 [node name="InteractacleText3D" parent="Objets/Interactables/boulangerieDebug" unique_id=1253022848 instance=ExtResource("10_e8reo")]
-transform = Transform3D(0.30000004, 0, 0, 0, 0.3, 0, 0, 0, 0.30000004, 0, 0.86451787, 0)
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0.86451787, 0)
 texture = SubResource("ViewportTexture_xud6r")
 
 [node name="superette" parent="Objets/Interactables" unique_id=185217472 instance=ExtResource("14_w7gwu")]

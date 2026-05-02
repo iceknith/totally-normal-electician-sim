@@ -9,7 +9,7 @@
 [sub_resource type="BoxShape3D" id="BoxShape3D_fgjub"]
 size = Vector3(0.7093904, 0.6569786, 0.3464985)
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_2y3h0"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_sqo52"]
 viewport_path = NodePath("SubViewport")
 
 [sub_resource type="Animation" id="Animation_fgjub"]
@@ -106,8 +106,8 @@ transform = Transform3D(0.99931514, 0, -0.0369927, 0, 1, 0, 0.0369927, 0, 0.9993
 shape = SubResource("BoxShape3D_fgjub")
 
 [node name="InteractacleText3D" parent="Interractable" unique_id=1576660793 instance=ExtResource("5_sqo52")]
-transform = Transform3D(0.24989246, 0, -0.007329352, 0, 0.25, 0, 0.007329352, 0, 0.24989246, -0.005797118, 0.12886083, 0.267196)
-texture = SubResource("ViewportTexture_2y3h0")
+transform = Transform3D(0.16992693, 0, -0.004983961, 0, 0.17, 0, 0.004983961, 0, 0.16992693, -0.005797118, 0.12886083, 0.267196)
+texture = SubResource("ViewportTexture_sqo52")
 
 [node name="AlarmBot" type="OmniLight3D" parent="." unique_id=617167616]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3381364, 1.3172702, -0.81733996)
