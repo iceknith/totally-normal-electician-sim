@@ -2,6 +2,8 @@ class_name Main extends Node3D
 
 signal eow_meter_changed(new_eow_var:float)
 
+@export var settings_scene:PackedScene = preload("res://src/ui/menues/settings_menu.tscn")
+
 @export_group("end of world meter (eow_meter)")
 @export var end_of_world_max_time_mins:float = 20
 @export var end_of_world_change_interval_s:float = 0.1
@@ -41,11 +43,24 @@ var is_in_dialogue:bool = false:
 
 func _ready() -> void:
 	connect_signals()
-	reset_state()
-	create_eow_timers()
+	init_state()
 	
 	# Debug
+	# launch_game()
 	#DebugMenu.style = DebugMenu.Style.VISIBLE_DETAILED
+
+func init_state() -> void:
+	# If we start with minigames
+	if minigame_container.get_child_count() > 0: 
+		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+		world3D.process_mode = Node.PROCESS_MODE_DISABLED
+		currentState = MainCommunicator.GameState.MiniGame
+		currentNode = minigame_container
+		for minigame in minigame_container.get_children():
+			minigames.append(minigame)
+	# Else, we launch the game
+	else:
+		launch_game()
 
 func connect_signals():
 	MainCommunicator.signalMain.connect(receive_signal)
@@ -53,22 +68,24 @@ func connect_signals():
 
 func receive_signal(type, data):
 	match type: #pour l'instant je vais pas toucher à ça parce que je veux pas tout casser
+		MainCommunicator.SignalType.LAUNCH_GAME: launch_game()
 		MainCommunicator.SignalType.ADD_MINIGAME: add_minigame(data)
 		MainCommunicator.SignalType.REMOVE_MINIGAME: remove_minigame()
 		MainCommunicator.SignalType.SHOW_GAME3D: show_game3D()
 		MainCommunicator.SignalType.START_DIALOGUE : start_dialogue(data)
-		MainCommunicator.SignalType.CHANGE_GAMESTATE : update_game_state(data)
+
+func launch_game() -> void:
+	world3D.start_game()
+	create_eow_timers()
+	reset_state()
 
 func reset_state():
 	# Reset minigames
-	#minigame_container.hide()
 	if currentState == MainCommunicator.GameState.MiniGame:
 		for child in minigames:
 			disconnect_eow_update_timer(child, timer_eow_update.timeout)
 			child.remove()
 		minigames.clear()
-	
-	# TODO, implémenter les resets de menus
 	
 	# Reset state
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
@@ -84,10 +101,9 @@ func create_minigame(data):
 	# Show minigame
 	var minigameScene:PackedScene = data[0]
 	var minigame:Minigame = minigameScene.instantiate()
-	connect_eow_update_timer(minigame, timer_eow_update.timeout)
+	if timer_eow_update: connect_eow_update_timer(minigame, timer_eow_update.timeout)
 	minigames.append(minigame)
-	minigame.miniGameEnd.connect(show_game3D)
-	minigame_container.show()
+	minigame.miniGameEnd.connect(remove_minigame)
 	minigame_container.add_child(minigame)
 	
 	# Add connections
@@ -110,7 +126,7 @@ func remove_minigame():
 		show_game3D()
 	else:
 		# Remove last minigame
-		disconnect_eow_update_timer(minigames[-1], timer_eow_update.timeout)
+		if timer_eow_update: disconnect_eow_update_timer(minigames[-1], timer_eow_update.timeout)
 		minigames[-1].remove()
 		minigames.pop_back()
 		
@@ -133,9 +149,6 @@ func show_minigame(data:Array):
 
 func show_game3D():
 	reset_state()
-
-func update_game_state(state:MainCommunicator.GameState):
-	MainCommunicator.current_state = state
 
 func start_dialogue(data:Array):
 	# Change mode
@@ -203,6 +216,26 @@ func end_of_world():
 
 func _process(delta: float) -> void:
 	mouse_jitter_handler(delta)
+	
+	settings_launch_handler()
+
+func settings_launch_handler():
+	if Input.is_action_just_pressed("settings"):
+		# If is in dialogue, don't even bother
+		if is_in_dialogue: return
+		
+		# If settigns are already launched
+		var has_settings_in_minigames:bool = false
+		for minigame in minigames:
+			if minigame as SettingsMenu:
+				has_settings_in_minigames = true
+				break
+		if  currentState == MainCommunicator.GameState.MiniGame && has_settings_in_minigames:
+			remove_minigame()
+		
+		# Else
+		else:
+			add_minigame([settings_scene, {} as Dictionary[String, Callable]])
 
 ### Mouse jitter ###
 

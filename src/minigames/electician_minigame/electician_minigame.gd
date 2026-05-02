@@ -23,8 +23,8 @@ signal win
 @onready var stage:Stages = GlobalVars.electrician_minigame_current_stage
 @onready var tutorialTexts:Dictionary[Stages, String] = {
 	Stages.TutorialWires : "Connect same color wires with [Left Click].\nDisconnect with [Right Click].\n-\nWires can cross in diagonal.",
-	Stages.TutorialMovingCircle : "Be careful to not create a short circuit, by letting the screw and the wrench touch.\n-\nTo prevent that, move the Wrench with %s" % [GlobalVars.get_movement_controls()],
-	Stages.TutorialTiming : "Be careful not to electrify yourself, by letting the fuse touch the ground !\n-\nTo prevent that, press %s when the fuse crosses the central line." % [GlobalVars.get_event_controls("action2")]
+	Stages.TutorialMovingCircle : "Be careful to not create a short circuit, by letting the screw and the wrench touch.\n-\nTo prevent that, move the Wrench with [$up$ $left$ $down$ $right$]",
+	Stages.TutorialTiming : "Be careful not to electrify yourself, by letting the fuse touch the ground !\n-\nTo prevent that, press [$interact2$] when the fuse crosses the central line."
 }
 
 @export var cables_required:int = 100

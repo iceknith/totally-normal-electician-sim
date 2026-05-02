@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://bf13x6omc7ij8" path="res://src/main.gd" id="1_gh0ne"]
 [ext_resource type="PackedScene" uid="uid://csincrgfh0ug4" path="res://src/3D/World.tscn" id="2_5q4o7"]
 [ext_resource type="PackedScene" uid="uid://gturm7g46hmh" path="res://src/ui/game_overlay.tscn" id="3_5q4o7"]
+[ext_resource type="PackedScene" uid="uid://dkun2575mcbdk" path="res://src/ui/menues/title_menu.tscn" id="4_3cfgd"]
 
 [sub_resource type="Curve" id="Curve_gh0ne"]
 _data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.2532751, 0), 0.0, 0.0, 0, 0, Vector2(0.5, 0.005), 0.0, 0.0, 0, 0, Vector2(0.7838428, 0.19084913), 1.5256113, 1.5256113, 0, 0, Vector2(1, 1), 2.47858, 0.0, 0, 0]
@@ -40,3 +41,6 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
+
+[node name="TitleMenu" parent="HUD/Minigames" unique_id=913064038 instance=ExtResource("4_3cfgd")]
+layout_mode = 1

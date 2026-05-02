@@ -1,6 +1,6 @@
 @abstract class_name Interactable3D extends Area3D
 
-@export var action:String = "interract"
+@export var action:String = "interact1"
 
 enum AnimationOnInteraction {
 	Nothing,
@@ -32,6 +32,7 @@ func _ready() -> void:
 	collision_layer = 0b100
 	collision_mask = 0b0
 	text_label = find_label(text_sprite)
+	text_label.text = "$%s$" % action
 	text_sprite.hide()
 
 func find_label(node:Node) -> Label:

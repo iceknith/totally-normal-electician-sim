@@ -54,8 +54,12 @@ var has_decorations:bool = false
 ### Controls ###
 ################
 
-func get_event_controls(event:String) -> String:
-	return "[E]"
-
-func get_movement_controls() -> String:
-	return "[z q s d]"
+signal action_changed(action_name:String)
+func get_action_controls(action_name:String) -> String:
+	var key_text = "-"
+	if InputMap.has_action(action_name):
+		for action in InputMap.action_get_events(action_name):
+			if action as InputEventKey:
+				var label = DisplayServer.keyboard_get_label_from_physical(action.physical_keycode)
+				key_text = OS.get_keycode_string(label)
+	return key_text

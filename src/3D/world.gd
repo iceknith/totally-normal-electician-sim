@@ -25,8 +25,13 @@ var phone_call:DialogueResource = preload("res://src/Dialogue/phone_call.dialogu
 func _ready() -> void:
 	GlobalVars.tower_amount = count_towers(self)
 	worldBoxBig.body_exited.connect(_on_body_leave_world_box_big)
-	
-	get_tree().create_timer(phone_call_start_time).timeout.connect(start_phone_call)
+
+func start_game() -> void:
+	var timer:Timer = Timer.new()
+	timer.one_shot = true
+	add_child(timer)
+	timer.timeout.connect(start_phone_call)
+	timer.start(phone_call_start_time)
 
 func start_phone_call():
 	MainCommunicator.send_signal_to_main(
