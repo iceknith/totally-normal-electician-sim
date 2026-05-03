@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://b32ei6ddyi8kc" path="res://src/3D/player/player.gd" id="1_f043j"]
 [ext_resource type="Script" uid="uid://csqj305by4a8c" path="res://src/3D/player/Camera/playerCamera.gd" id="2_ihd86"]
 [ext_resource type="PackedScene" uid="uid://cb5jqhnceqws" path="res://assets/blender/handforEOW.blend" id="3_41h8g"]
-[ext_resource type="AudioStream" uid="uid://rk63nxhqexgp" path="res://src/Sound/sfx/footseps2.wav" id="4_bxhrw"]
+[ext_resource type="AudioStream" uid="uid://7max2pwoi5xb" path="res://src/Sound/sfx/footstep.wav" id="4_bxhrw"]
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_41h8g"]
 

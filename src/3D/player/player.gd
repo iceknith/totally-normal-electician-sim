@@ -1,6 +1,6 @@
 class_name Player extends CharacterBody3D
 
-const SPEED = 5
+const SPEED = 4
 const JUMP_VELOCITY = 4.5
 const MAX_STEP_UP = 0.5
 
