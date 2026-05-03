@@ -21,15 +21,24 @@ var unhandled_mouse_offset:Vector2
 
 @onready var world3D:Node3D = $World
 @onready var minigame_container:Control = $HUD/Minigames
+@onready var world_audio_manager:WorldAudioManager = $WorldAudioManager
+
 var minigames:Array[Minigame]
 
 var timer_eow
 var timer_eow_update
 var timer_eow_connection_map:Dictionary[Node,Callable]
 
+
+@export_group("Music Manager")
+
+@export var pitch_curve:Curve
+@export var tempo_curve:Curve
+
 @onready var currentNode:Node = world3D
 var currentState:MainCommunicator.GameState = MainCommunicator.GameState.Game3D:
 	set(newVal): 
+		currentState = newVal
 		MainCommunicator.ChangeGameState.emit(newVal)
 		MainCommunicator.current_state = newVal
 var is_in_dialogue:bool = false:
@@ -40,6 +49,7 @@ var is_in_dialogue:bool = false:
 ### Init ###
 
 func _ready() -> void:
+	
 	connect_signals()
 	reset_state()
 	create_eow_timers()
@@ -106,7 +116,6 @@ func add_minigame(data:Array):
 func remove_minigame():
 	print(minigames.size())
 	if minigames.size() <= 1:
-		minigames.pop_back()
 		show_game3D()
 		
 	else:
@@ -197,11 +206,13 @@ func increment_eow_meter(node:Node):
 
 func end_of_world():
 	get_tree().quit()
+	pass
 
 ### Runtime functions ###
 
 func _process(delta: float) -> void:
 	mouse_jitter_handler(delta)
+	creepy_music_handler()
 
 ### Mouse jitter ###
 
@@ -221,3 +232,7 @@ func mouse_jitter_handler(delta:float) -> void:
 			var jitter_input = InputEventMouseMotion.new()
 			jitter_input.relative = mouse_offset * camera_jitter_amount
 			Input.parse_input_event(jitter_input)
+			
+func creepy_music_handler():
+	world_audio_manager.modify_music_pitch(pitch_curve.sample(eow_meter))
+	world_audio_manager.modify_music_tempo(tempo_curve.sample(eow_meter))

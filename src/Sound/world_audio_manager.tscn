@@ -1,45 +1,15 @@
 [gd_scene format=3 uid="uid://boc5lvj7gp288"]
 
 [ext_resource type="Script" uid="uid://cjnfoepovyhi0" path="res://src/Sound/world_audio_manager.gd" id="1_msy5a"]
-[ext_resource type="AudioStream" uid="uid://du8w2dc70d4d0" path="res://src/Sound/Musics/Fin_du_monde_ambiance_chill.wav" id="2_vbgwq"]
-[ext_resource type="AudioStream" uid="uid://cfhas2a7k2llx" path="res://src/Sound/Musics/Arcade/Arcade_Theme.wav" id="3_4vjlr"]
-[ext_resource type="AudioStream" uid="uid://cpq6vpfx5tv3l" path="res://src/Sound/Musics/Arcade/Joe_Main_Theme.wav" id="4_vbgwq"]
 
-[sub_resource type="AudioStreamPlaylist" id="AudioStreamPlaylist_kf8lf"]
-stream_count = 1
-stream_0 = ExtResource("2_vbgwq")
-
-[sub_resource type="AudioStreamInteractive" id="AudioStreamInteractive_mgm53"]
-clip_count = 3
-clip_0/name = &"MainWorld"
-clip_0/stream = SubResource("AudioStreamPlaylist_kf8lf")
-clip_0/auto_advance = 0
-clip_1/name = &"Arcade"
-clip_1/stream = ExtResource("3_4vjlr")
-clip_1/auto_advance = 0
-clip_2/name = &"JoMainTheme"
-clip_2/stream = ExtResource("4_vbgwq")
-clip_2/auto_advance = 0
-_transitions = {
-Vector2i(-1, -1): {
-"fade_beats": 1.0,
-"fade_mode": 3,
-"from_time": 0,
-"to_time": 0
-},
-Vector2i(0, -1): {
-"fade_beats": 1.0,
-"fade_mode": 3,
-"from_time": 0,
-"to_time": 0
-}
-}
+[sub_resource type="AudioStreamOggVorbis" id="AudioStreamOggVorbis_5bqhe"]
+loop = true
 
 [node name="WorldAudioManager" type="Node" unique_id=1781513062]
 script = ExtResource("1_msy5a")
 
 [node name="BackgroundMusicPlayer" type="AudioStreamPlayer" parent="." unique_id=2057556167]
-stream = SubResource("AudioStreamInteractive_mgm53")
-volume_db = -10.0
+stream = SubResource("AudioStreamOggVorbis_5bqhe")
+volume_db = -0.421
 autoplay = true
-bus = &"Music"
+bus = &"music"
