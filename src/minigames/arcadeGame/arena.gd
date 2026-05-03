@@ -57,6 +57,10 @@ func get_die(node: Node):
 	return null
 
 func update_winner(dead_one):
+	for ent in entities.get_children() : 
+		var hitball:Hitball = get_hitballs(ent)
+		if hitball !=null :
+			hitball.release_ball()
 	if !in_reset_animation :
 		in_reset_animation = true
 		last_loser = dead_one
@@ -71,6 +75,7 @@ func update_winner(dead_one):
 		check_if_end_game()
 		start_round()
 		in_reset_animation = false
+
 	
 	
 	

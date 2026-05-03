@@ -13,18 +13,19 @@ _data = {
 &"shockwave": SubResource("Animation_l1j2u")
 }
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_0stui"]
-viewport_path = NodePath("SubViewportContainer/SubViewport")
-
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_l1j2u"]
 resource_local_to_scene = true
 shader = ExtResource("3_d1jky")
-shader_parameter/tex = SubResource("ViewportTexture_0stui")
-shader_parameter/mask_type = 1
-shader_parameter/curve = 0.0
-shader_parameter/color_offset = -0.1309999824725
-shader_parameter/mask_brightness = 1.0
-shader_parameter/aspect = 0.75
+shader_parameter/smearing = 0.0
+shader_parameter/color_offset = 1.6299399954733396e-09
+shader_parameter/sharpening = 0.4
+shader_parameter/static_noise = 0.08
+shader_parameter/crack_center = Vector2(0, 0)
+shader_parameter/crack_intensity = 0.0
+shader_parameter/crack_size = 0.0
+shader_parameter/vertical_jitter = 0.0010000000475
+shader_parameter/scanline_opacity = 0.1
+shader_parameter/vignette_intensity = 0.3
 
 [node name="FullGame" type="Control" unique_id=288012244]
 layout_mode = 3
@@ -45,13 +46,19 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 120.0
+offset_top = 71.0
+offset_right = 120.0
+offset_bottom = 71.0
 grow_horizontal = 2
 grow_vertical = 2
+scale = Vector2(0.8, 0.8)
 stretch = true
 
 [node name="SubViewport" type="SubViewport" parent="SubViewportContainer" unique_id=1767261174]
 handle_input_locally = false
 size = Vector2i(1152, 648)
+size_2d_override_stretch = true
 render_target_update_mode = 4
 
 [node name="Arena" parent="SubViewportContainer/SubViewport" unique_id=2119784583 instance=ExtResource("1_soqpu")]
@@ -64,5 +71,10 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 115.00001
+offset_top = 50.00001
+offset_right = 115.0
+offset_bottom = 50.0
 grow_horizontal = 2
 grow_vertical = 2
+scale = Vector2(0.8, 0.8)

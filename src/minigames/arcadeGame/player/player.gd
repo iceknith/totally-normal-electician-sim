@@ -46,11 +46,11 @@ func _physics_process(delta):
 func manage_input(delta):
 	match inputSet :
 		InputSet.Player1 : 
-			input_direction = Vector2(Input.get_axis("left2", "right2"), Input.get_axis("up2", "down2"))
-			interactAction = "interract"
+			input_direction = Vector2(Input.get_axis("left", "right"), Input.get_axis("up", "down"))
+			interactAction = "interact1"
 		InputSet.Player2 : 
 			input_direction = Vector2(Input.get_axis("ui_left", "ui_right"), Input.get_axis("ui_up", "ui_down"))
-			interactAction = "interractP2"
+			interactAction = "interact2"
 		
 	if HitBallComponent.launching_ball :
 		manage_launching_ball(delta)

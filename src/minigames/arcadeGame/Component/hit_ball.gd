@@ -68,12 +68,14 @@ func launch():
 	pass
 			
 func release_ball():
-	released_ball.emit(get_parent())
-	ball.update_direction(launching_ball_direction)
+	
 	launching_ball = false
-	ball.set_moving(true)
-	ball.set_being_launched(false)
-	ball = null
+	if ball != null : 
+		ball.update_direction(launching_ball_direction)
+		released_ball.emit(get_parent())
+		ball.set_moving(true)
+		ball.set_being_launched(false)
+		ball = null
 	
 func release_ball_on_death(): 
 	if ball !=null : 
