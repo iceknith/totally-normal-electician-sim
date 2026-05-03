@@ -1,6 +1,6 @@
 class_name Player extends CharacterBody3D
 
-const SPEED = 7.5
+const SPEED = 5
 const JUMP_VELOCITY = 4.5
 const MAX_STEP_UP = 0.5
 
@@ -12,6 +12,7 @@ var lock_camera:bool
 var eow_meter:float = 0
 @export_group("References")
 @onready var cam:Camera3D = %Camera3D
+@onready var sound_effect_manager = $PlayerSoundEffects
 
 
 
@@ -24,9 +25,17 @@ var walk_jitter_noise_pos:float
 
 @onready var initRotation:Vector3 = rotation
 
+
+@export_group("Sound Effects")
+
+@export var footstep_interval:float
+@export var footstep_timer:Timer
+var can_play_footstep:bool
+
 func _ready() -> void:
 	# plus tard on voudra avoir des moments ou on libère le curseur pour pouvoir acceder à l'ui au lieu qu'il serve à tourner la drirection dans laquelle on regarde.
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+	manage_sounds()
 
 func _unhandled_input(event: InputEvent) -> void:
 	if Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
@@ -94,6 +103,9 @@ func manage_input(delta:float) -> void :
 		# Move the player
 		velocity.x = direction.x * SPEED
 		velocity.z = direction.z * SPEED
+		
+		#play footsteps sounds
+		footsteps_sounds()
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		velocity.z = move_toward(velocity.z, 0, SPEED)
@@ -174,3 +186,22 @@ func step_up_handler(delta):
 	velocity.y = 0
 	global_pos.y = test_transform.origin.y
 	global_position = global_pos
+	
+func footsteps_sounds():
+	if can_play_footstep : 
+		$PlayerSoundEffects.pitch_scale = randf_range(0.4, 1.5)
+		$PlayerSoundEffects.play()
+		footstep_timer.start()
+		can_play_footstep = false
+		
+	
+	
+	
+
+func manage_sounds():
+	can_play_footstep = true
+	footstep_timer.wait_time = footstep_interval
+
+
+func _on_footsteps_timer_timeout():
+	can_play_footstep = true

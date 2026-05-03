@@ -15,12 +15,17 @@ run/main_scene="uid://dlcqpoyia3va4"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 
+[audio]
+
+buses/default_bus_layout="uid://8fwxv21jm4al"
+
 [autoload]
 
 MainCommunicator="*uid://b0f1tnefpdrcm"
 DialogueManager="*uid://c3rodes2l3gxb"
 GlobalVars="*uid://cua36vgi8vykf"
 DebugMenu="*uid://cggqb75a8w8r"
+SoundManager="*uid://cq4cmo87sthit"
 
 [dialogue_manager]
 
@@ -30,6 +35,7 @@ runtime/balloon_path="res://src/Dialogue/DialogueBalloon/balloon.tscn"
 
 window/size/mode=2
 window/stretch/mode="canvas_items"
+window/stretch/aspect="expand"
 
 [editor_plugins]
 

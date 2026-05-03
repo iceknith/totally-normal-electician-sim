@@ -1,4 +1,4 @@
-class_name arcade_ball extends CharacterBody2D
+class_name Jo_ball extends CharacterBody2D
 
 
 @onready var mouvement_component:MovementComponent = $MovementComponent

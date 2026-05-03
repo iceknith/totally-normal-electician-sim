@@ -1,15 +1,13 @@
-[gd_scene format=3 uid="uid://81drtmexlash"]
+[gd_scene format=3 uid="uid://sr7abxf406od"]
 
-[ext_resource type="PackedScene" uid="uid://cpc5mi3gyvm7y" path="res://src/minigames/arcadeGame/player/Player.tscn" id="1_0ljn8"]
-[ext_resource type="Script" uid="uid://c5jn2tuvjyi1c" path="res://src/minigames/arcadeGame/arena.gd" id="1_skady"]
-[ext_resource type="Script" uid="uid://bmhhgdsuq00v7" path="res://src/minigames/arcadeGame/camera_2d.gd" id="2_50w5d"]
-[ext_resource type="PackedScene" uid="uid://dwe78ck5jnrsy" path="res://src/minigames/arcadeGame/ball.tscn" id="2_gja22"]
-[ext_resource type="Shader" uid="uid://cj1psxu38uyei" path="res://src/minigames/arcadeGame/shockwave.gdshader" id="4_lh3vw"]
-[ext_resource type="Texture2D" uid="uid://rhy47auhb2o4" path="res://src/minigames/arcadeGame/assets/particles/star particle.png" id="5_41tw2"]
-[ext_resource type="PackedScene" uid="uid://rb0qk6nk0ixq" path="res://src/minigames/arcadeGame/enemy/Little'Joe.tscn" id="5_sf31h"]
-[ext_resource type="PackedScene" uid="uid://cy2mv0kqxvsu3" path="res://src/minigames/arcadeGame/jo_manager.tscn" id="6_sf31h"]
-[ext_resource type="PackedScene" uid="uid://dbmva1nkvkoj8" path="res://src/minigames/arcadeGame/countdown_label.tscn" id="9_aqv87"]
-[ext_resource type="FontFile" uid="uid://dhoixqrkemx30" path="res://assets/gui/ithaca-font/Ithaca-LVB75.ttf" id="9_lqgcn"]
+[ext_resource type="Script" uid="uid://cd0p7r0jd46p5" path="res://src/minigames/arcadeGame/Arena2Player/arena_2_player.gd" id="1_8yade"]
+[ext_resource type="PackedScene" uid="uid://dwe78ck5jnrsy" path="res://src/minigames/arcadeGame/ball.tscn" id="2_lsaro"]
+[ext_resource type="Script" uid="uid://bmhhgdsuq00v7" path="res://src/minigames/arcadeGame/camera_2d.gd" id="3_0i34y"]
+[ext_resource type="PackedScene" uid="uid://cpc5mi3gyvm7y" path="res://src/minigames/arcadeGame/player/Player.tscn" id="4_uvj1y"]
+[ext_resource type="Shader" uid="uid://cj1psxu38uyei" path="res://src/minigames/arcadeGame/shockwave.gdshader" id="7_50hr3"]
+[ext_resource type="Texture2D" uid="uid://rhy47auhb2o4" path="res://src/minigames/arcadeGame/assets/particles/star particle.png" id="8_g8eaq"]
+[ext_resource type="FontFile" uid="uid://dhoixqrkemx30" path="res://assets/gui/ithaca-font/Ithaca-LVB75.ttf" id="9_bft0j"]
+[ext_resource type="PackedScene" uid="uid://dbmva1nkvkoj8" path="res://src/minigames/arcadeGame/countdown_label.tscn" id="10_40og6"]
 
 [sub_resource type="Gradient" id="Gradient_41tw2"]
 offsets = PackedFloat32Array(0.38957056, 1)
@@ -32,12 +30,8 @@ size = Vector2(39.5, 711.5)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_41tw2"]
 size = Vector2(1188, 23)
 
-[sub_resource type="Curve" id="Curve_lqgcn"]
-_data = [Vector2(1e-05, 1), 0.0, 0.0, 0, 0, Vector2(0.5816994, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.3242494), 0.0, 0.0, 0, 0]
-point_count = 3
-
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_lh3vw"]
-shader = ExtResource("4_lh3vw")
+shader = ExtResource("7_50hr3")
 shader_parameter/center = Vector2(0.5, 0.5)
 shader_parameter/force = 0.1
 shader_parameter/size = 0.1
@@ -149,7 +143,7 @@ _data = {
 }
 
 [sub_resource type="LabelSettings" id="LabelSettings_lqgcn"]
-font = ExtResource("9_lqgcn")
+font = ExtResource("9_bft0j")
 font_size = 150
 font_color = Color(1.569, 1.569, 1.569, 1)
 shadow_color = Color(0, 0, 0, 1)
@@ -174,7 +168,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_skady")
+script = ExtResource("1_8yade")
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=1350887286]
 layout_mode = 1
@@ -185,7 +179,7 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = SubResource("GradientTexture2D_skady")
 
-[node name="Ball" parent="." unique_id=1559941264 instance=ExtResource("2_gja22")]
+[node name="Ball" parent="." unique_id=1559941264 instance=ExtResource("2_lsaro")]
 position = Vector2(492, 434)
 
 [node name="Walls" type="Node2D" parent="." unique_id=2133769842]
@@ -231,7 +225,7 @@ limit_left = 0
 limit_top = 0
 limit_right = 1152
 limit_bottom = 648
-script = ExtResource("2_50w5d")
+script = ExtResource("3_0i34y")
 launch_zoom = Vector2(1.05, 1.05)
 
 [node name="Left" type="Marker2D" parent="Camera2D" unique_id=133654339]
@@ -245,23 +239,18 @@ launch_zoom = Vector2(1.05, 1.05)
 [node name="Entities" type="Node2D" parent="." unique_id=226423549]
 z_index = 1
 
-[node name="Player" parent="Entities" unique_id=1190158832 instance=ExtResource("1_0ljn8")]
+[node name="Player" parent="Entities" unique_id=1190158832 instance=ExtResource("4_uvj1y")]
 position = Vector2(173, 199)
 scale = Vector2(0.5, 0.5)
 collision_layer = 8
-losing_ball_state = 1
-
-[node name="LittleJo" parent="Entities" unique_id=947143515 instance=ExtResource("5_sf31h")]
-position = Vector2(917, 225)
-scale = Vector2(0.5, 0.5)
-collision_layer = 4
 ball_state_to_give = 1
-ball_color = Color(1, 0.07450981, 0.14509805, 1)
 
-[node name="JoManager" parent="Entities" unique_id=639065793 node_paths=PackedStringArray("enemy") instance=ExtResource("6_sf31h")]
-enemy = NodePath("../LittleJo")
-JoCatchRate = SubResource("Curve_lqgcn")
-max_manageable_speed = 1100
+[node name="Player2" parent="Entities" unique_id=190676234 instance=ExtResource("4_uvj1y")]
+position = Vector2(804, 478)
+scale = Vector2(0.5, 0.5)
+inputSet = 1
+losing_ball_state = 1
+ball_color = Color(0.27450135, 0.5721516, 0.28977373, 1)
 
 [node name="ShockWave" type="TextureRect" parent="." unique_id=304962227]
 z_index = 3
@@ -278,7 +267,7 @@ texture = SubResource("CanvasTexture_41tw2")
 texture_filter = 1
 position = Vector2(561, 329)
 amount = 50
-texture = ExtResource("5_41tw2")
+texture = ExtResource("8_g8eaq")
 lifetime = 5.0
 emission_shape = 3
 emission_rect_extents = Vector2(576, 324)
@@ -322,7 +311,7 @@ scale = Vector2(6.236457, 6.236457)
 energy = 0.2
 texture = SubResource("GradientTexture2D_k58j4")
 
-[node name="CountdownLabel" parent="." unique_id=26275427 instance=ExtResource("9_aqv87")]
+[node name="CountdownLabel" parent="." unique_id=26275427 instance=ExtResource("10_40og6")]
 z_index = 3
 custom_minimum_size = Vector2(256, 256)
 layout_mode = 1

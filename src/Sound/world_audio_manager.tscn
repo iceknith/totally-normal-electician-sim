@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://boc5lvj7gp288"]
+
+[ext_resource type="Script" uid="uid://cjnfoepovyhi0" path="res://src/Sound/world_audio_manager.gd" id="1_msy5a"]
+
+[sub_resource type="AudioStreamOggVorbis" id="AudioStreamOggVorbis_5bqhe"]
+loop = true
+
+[node name="WorldAudioManager" type="Node" unique_id=1781513062]
+script = ExtResource("1_msy5a")
+
+[node name="BackgroundMusicPlayer" type="AudioStreamPlayer" parent="." unique_id=2057556167]
+stream = SubResource("AudioStreamOggVorbis_5bqhe")
+volume_db = -0.421
+autoplay = true
+bus = &"music"

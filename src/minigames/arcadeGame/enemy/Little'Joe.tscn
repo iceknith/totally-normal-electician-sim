@@ -127,12 +127,12 @@ position = Vector2(0.5, 0.5)
 shape = SubResource("RectangleShape2D_p7eme")
 
 [node name="Movement" parent="." unique_id=321546894 instance=ExtResource("2_p7eme")]
-speed = 350
+speed = 300
 
 [node name="HitBall" parent="." unique_id=1738906224 instance=ExtResource("3_m0eqn")]
 collision_layer = 2
 collision_mask = 2
-ball_color = Color(0, 0.827451, 0.1882353, 1)
+ball_color = Color(0, 0, 0, 1)
 ball_state_to_give = 1
 
 [node name="Front" type="CollisionPolygon2D" parent="HitBall" unique_id=1677149977]

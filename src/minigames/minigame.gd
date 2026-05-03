@@ -1,7 +1,9 @@
 class_name Minigame extends Control
 
+
 signal miniGameEnd
 
+@export var music_when_entering:String = "Arcade"
 @export var animationDuration:float = 0.4
 @export var baseMinigameLayoutActive:bool = true
 var base_minigame_layout = preload("res://src/minigames/base_minigame_layout.tscn")

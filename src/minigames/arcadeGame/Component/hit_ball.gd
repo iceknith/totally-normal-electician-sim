@@ -12,6 +12,7 @@ var direction:Vector2
 var ball:arcade_ball
 
 @export var ball_color:Color
+@export var ball_state_to_give:ArcadeGame.BALLSTATE
 
 signal caught_ball(entity)
 signal released_ball(entity)
@@ -23,7 +24,7 @@ signal released_ball(entity)
 @export var base_time_before_launch:float
 
 var attacking:bool
-@export var ball_state_to_give:ArcadeGame.BALLSTATE
+
 
 func _ready():
 	can_hit = true

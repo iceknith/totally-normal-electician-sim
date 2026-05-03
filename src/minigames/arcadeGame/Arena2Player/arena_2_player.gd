@@ -1,11 +1,11 @@
-class_name ArcadeGame extends Minigame
+class_name Arena2_player extends Minigame
+
 
 @onready var entities = $Entities
 @onready var ball = $Ball
 
-@onready var player = $Entities/Player
-@onready var opponent = $Entities/LittleJo
-@onready var JoManagerComponent = $Entities/JoManager
+@onready var player1 = $Entities/Player
+@onready var player2 = $Entities/Player2
 
 @onready var ScoreLabel = $ScoreLabel
 @onready var CountdownLabel = $CountdownLabel
@@ -60,8 +60,7 @@ func update_winner(dead_one):
 	if !in_reset_animation :
 		in_reset_animation = true
 		last_loser = dead_one
-		JoManagerComponent.set_pause_movement(true)
-		if dead_one is arcadePlayer : 
+		if dead_one == player1  : 
 			EnemyScore += 1
 		else : 
 			PlayerScore +=1
@@ -81,11 +80,11 @@ func show_score():
 		
 func reset():
 	$ShockWave.visible = false
-	player.global_position = Vector2(randi_range(200, 952), randf_range(100, 548))
-	opponent.global_position = Vector2(randi_range(200, 952), randf_range(100, 548))
+	player1.global_position = Vector2(randi_range(200, 952), randf_range(100, 548))
+	player2.global_position = Vector2(randi_range(200, 952), randf_range(100, 548))
 	ball.global_position = Vector2(1152/2, 648/2)
-	player.reset()
-	opponent.reset()
+	player1.reset()
+	player2.reset()
 	ball.reset()
 
 	
@@ -110,30 +109,30 @@ func play_shockwave(entity):
 func start_game():
 	var offset = Vector2(0, 100)
 	ball.global_position = Vector2(1152/2, 648/2) + offset
-	JoManagerComponent.set_pause_movement(true)
-	player.set_pause(true)
-	player.global_position = PlayerStartingPosition.global_position
-	opponent.global_position = EnemyStartingPosition.global_position
+	player1.set_pause(true)
+	player2.set_pause(true)
+	player1.global_position = PlayerStartingPosition.global_position
+	player2.global_position = EnemyStartingPosition.global_position
 	await CountdownLabel.start_countdown(3, 5)
-	JoManagerComponent.set_pause_movement(false)
-	player.set_pause(false)
+	player1.set_pause(false)
+	player2.set_pause(false)
 	
 	
 func start_round():
 	ball.global_position = Vector2(1152/2, 648/2)
-	JoManagerComponent.set_pause_movement(true)
-	player.set_pause(true)
+	player1.set_pause(true)
+	player2.set_pause(true)
 	CountdownLabel.visible = true
-	player.global_position = PlayerStartingPosition.global_position
-	opponent.global_position = EnemyStartingPosition.global_position
+	player1.global_position = PlayerStartingPosition.global_position
+	player2.global_position = EnemyStartingPosition.global_position
 	var spawn_offset = Vector2(200, 0)
 	if last_loser is arcadePlayer : 
 		ball.global_position = PlayerStartingPosition.global_position + spawn_offset
 	else : 
 		ball.global_position = EnemyStartingPosition.global_position - spawn_offset
 	await CountdownLabel.start_countdown(3, 3)
-	JoManagerComponent.set_pause_movement(false)
-	player.set_pause(false)
+	player1.set_pause(false)
+	player2.set_pause(false)
 	
 func check_if_end_game():
 	if PlayerScore == ScoreToWin : 

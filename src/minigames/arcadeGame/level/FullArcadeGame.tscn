@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://bw0msljeqaesi"]
+[gd_scene format=3 uid="uid://dd18qarb568py"]
 
 [ext_resource type="Script" uid="uid://f34xub6p1wx1" path="res://src/minigames/arcadeGame/level/shockwave.gd" id="1_d1jky"]
 [ext_resource type="Script" uid="uid://cq31u4d5aah6n" path="res://src/minigames/arcadeGame/level/full_game.gd" id="1_l1j2u"]
@@ -13,13 +13,13 @@ _data = {
 &"shockwave": SubResource("Animation_l1j2u")
 }
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_d1jky"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_0stui"]
 viewport_path = NodePath("SubViewportContainer/SubViewport")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_l1j2u"]
 resource_local_to_scene = true
 shader = ExtResource("3_d1jky")
-shader_parameter/tex = SubResource("ViewportTexture_d1jky")
+shader_parameter/tex = SubResource("ViewportTexture_0stui")
 shader_parameter/mask_type = 1
 shader_parameter/curve = 0.0
 shader_parameter/color_offset = -0.1309999824725

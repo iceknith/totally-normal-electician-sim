@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://b32ei6ddyi8kc" path="res://src/3D/player/player.gd" id="1_f043j"]
 [ext_resource type="Script" uid="uid://csqj305by4a8c" path="res://src/3D/player/Camera/playerCamera.gd" id="2_ihd86"]
 [ext_resource type="PackedScene" uid="uid://cb5jqhnceqws" path="res://assets/blender/handforEOW.blend" id="3_41h8g"]
+[ext_resource type="AudioStream" uid="uid://rk63nxhqexgp" path="res://src/Sound/sfx/footseps2.wav" id="4_bxhrw"]
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_41h8g"]
 
@@ -52,13 +53,15 @@ shadow_mesh = SubResource("ArrayMesh_7bh1v")
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_f043j"]
 
-[node name="Player" type="CharacterBody3D" unique_id=192968154]
+[node name="Player" type="CharacterBody3D" unique_id=192968154 node_paths=PackedStringArray("footstep_timer")]
 collision_layer = 2
 script = ExtResource("1_f043j")
 walk_jitter_strength = 3.0
 walk_jitter_speed = 10.0
 walk_jitter_noise = SubResource("FastNoiseLite_41h8g")
 walk_jitter_curve = SubResource("Curve_bxhrw")
+footstep_interval = 0.45
+footstep_timer = NodePath("PlayerSoundEffects/footstepsTimer")
 
 [node name="GuyTexture" type="MeshInstance3D" parent="." unique_id=1372495662]
 transform = Transform3D(0.5, 0, 0, 0, 0.25, 0, 0, 0, 0.5, 0, 0, 0)
@@ -98,3 +101,11 @@ mesh = SubResource("CapsuleMesh_f043j")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.475, 0)
 target_position = Vector3(0, 0, -0.5)
 hit_from_inside = true
+
+[node name="PlayerSoundEffects" type="AudioStreamPlayer3D" parent="." unique_id=942735582]
+stream = ExtResource("4_bxhrw")
+volume_db = -25.0
+
+[node name="footstepsTimer" type="Timer" parent="PlayerSoundEffects" unique_id=1461522989]
+
+[connection signal="timeout" from="PlayerSoundEffects/footstepsTimer" to="." method="_on_footsteps_timer_timeout"]
