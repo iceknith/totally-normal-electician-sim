@@ -1,6 +1,16 @@
 class_name WorldAudioManager extends Node
 @onready var bg_music_player:AudioStreamPlayer = $BackgroundMusicPlayer
 @export var default_music:String = "MainTheme"
+
+@export_group("EOW Distortion")
+@export var pitch_curve:Curve
+@export var tempo_curve:Curve
+var eow_meter:float = 0:
+	set(new_val):
+		eow_meter = new_val
+		modify_music_pitch(pitch_curve.sample(eow_meter))
+		modify_music_tempo(tempo_curve.sample(eow_meter))
+
 var music_pitch:float = 1
 var music_tempo:float = 1
 var music_folder:String = "res://src/Sound/Musics/"

@@ -15,10 +15,6 @@ run/main_scene="uid://dlcqpoyia3va4"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 
-[audio]
-
-buses/default_bus_layout="uid://8fwxv21jm4al"
-
 [autoload]
 
 MainCommunicator="*uid://b0f1tnefpdrcm"
