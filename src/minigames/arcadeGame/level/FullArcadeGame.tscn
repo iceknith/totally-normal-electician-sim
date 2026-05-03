@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://dd18qarb568py"]
+[gd_scene format=3 uid="uid://cm7dhny7qqs7p"]
 
 [ext_resource type="Script" uid="uid://f34xub6p1wx1" path="res://src/minigames/arcadeGame/level/shockwave.gd" id="1_d1jky"]
 [ext_resource type="Script" uid="uid://cq31u4d5aah6n" path="res://src/minigames/arcadeGame/level/full_game.gd" id="1_l1j2u"]

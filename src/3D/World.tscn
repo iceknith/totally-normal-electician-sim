@@ -27,6 +27,7 @@
 [ext_resource type="Texture2D" uid="uid://1xxjx047eo4l" path="res://src/minigames/competitive_rock_paper_scissors/asset/2D/rock.png" id="15_gisxt"]
 [ext_resource type="PackedScene" uid="uid://b3nng2yxnwllt" path="res://assets/blender/foresttree2.blend" id="17_ro6to"]
 [ext_resource type="PackedScene" uid="uid://dgtuon8krwmkg" path="res://src/3D/objects/forest_New.tscn" id="17_ttchh"]
+[ext_resource type="Script" uid="uid://gp32lnioffiv" path="res://addons/scene_object_brush/clean_up_height.gd" id="21_8pvm1"]
 
 [sub_resource type="Curve" id="Curve_w7gwu"]
 _data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1, 1), 2.0254266, 0.0, 0, 0]
@@ -61,7 +62,7 @@ fog_depth_curve = 6.4980483
 auto_exposure_scale = 0.3
 dof_blur_far_distance = 200.0
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_1r3ik"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_gisxt"]
 viewport_path = NodePath("SubViewport")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_clt24"]
@@ -105,7 +106,7 @@ animations = [{
 [sub_resource type="SphereShape3D" id="SphereShape3D_ivwwh"]
 radius = 0.72587484
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_8pvm1"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_wnywt"]
 viewport_path = NodePath("SubViewport")
 
 [sub_resource type="SphereMesh" id="SphereMesh_gmgko"]
@@ -113,7 +114,7 @@ viewport_path = NodePath("SubViewport")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yfp7s"]
 albedo_color = Color(0.65882355, 0, 0, 1)
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_gisxt"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_xud6r"]
 viewport_path = NodePath("SubViewport")
 
 [sub_resource type="PrismMesh" id="PrismMesh_lpsds"]
@@ -121,13 +122,13 @@ viewport_path = NodePath("SubViewport")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8pvm1"]
 albedo_color = Color(0.07700009, 0, 0.66, 1)
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_wnywt"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_impf6"]
 viewport_path = NodePath("SubViewport")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gisxt"]
 albedo_color = Color(0.09315889, 0.65882355, 0, 1)
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_xud6r"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_x4jwh"]
 viewport_path = NodePath("SubViewport")
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_jqxng"]
@@ -943,7 +944,7 @@ metadata/_custom_type_script = "uid://b3imm353l7y6u"
 
 [node name="InteractacleText3D" parent="Objets/Interactables/boulangerie2/boulangerie" unique_id=1576660793 instance=ExtResource("10_e8reo")]
 transform = Transform3D(0.30000004, 0, 0, 0, 0.3, 0, 0, 0, 0.30000004, 0, 0.4931178, 0)
-texture = SubResource("ViewportTexture_1r3ik")
+texture = SubResource("ViewportTexture_gisxt")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Objets/Interactables/boulangerie2/boulangerie" unique_id=1710995515]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0729332, 0.11338568, 0.06949043)
@@ -972,7 +973,7 @@ shape = SubResource("SphereShape3D_ivwwh")
 [node name="InteractacleText3D" parent="Objets/Interactables/InterractableDialogue" unique_id=1261401867 instance=ExtResource("10_e8reo")]
 transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0.8627713, 0)
 billboard = 2
-texture = SubResource("ViewportTexture_8pvm1")
+texture = SubResource("ViewportTexture_wnywt")
 
 [node name="InterractableRPC" type="Area3D" parent="Objets/Interactables" unique_id=2100176355 node_paths=PackedStringArray("text_sprite")]
 transform = Transform3D(-0.40314606, 0, -0.91513556, 0, 1, 0, 0.91513556, 0, -0.40314606, 64.50607, 1.475202, 2.7131975)
@@ -994,7 +995,7 @@ metadata/_edit_lock_ = true
 
 [node name="InteractacleText3D" parent="Objets/Interactables/InterractableRPC" unique_id=1932431219 instance=ExtResource("10_e8reo")]
 transform = Transform3D(-0.19774605, 0, 0.029941564, 0, 0.2, 0, -0.029941564, 0, -0.19774605, 2.0036647, 0.7986984, -0.655995)
-texture = SubResource("ViewportTexture_gisxt")
+texture = SubResource("ViewportTexture_xud6r")
 metadata/_edit_lock_ = true
 
 [node name="arcade" type="Area3D" parent="Objets/Interactables" unique_id=1975199288 node_paths=PackedStringArray("text_sprite")]
@@ -1014,7 +1015,7 @@ shape = SubResource("SphereShape3D_ivwwh")
 
 [node name="InteractacleText3D" parent="Objets/Interactables/arcade" unique_id=467142444 instance=ExtResource("10_e8reo")]
 transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0.8773431, 0)
-texture = SubResource("ViewportTexture_wnywt")
+texture = SubResource("ViewportTexture_impf6")
 
 [node name="boulangerieDebug" type="Area3D" parent="Objets/Interactables" unique_id=341763301 node_paths=PackedStringArray("text_sprite")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 54.481976, 0.73993564, 0.25229335)
@@ -1033,13 +1034,15 @@ shape = SubResource("SphereShape3D_ivwwh")
 
 [node name="InteractacleText3D" parent="Objets/Interactables/boulangerieDebug" unique_id=1253022848 instance=ExtResource("10_e8reo")]
 transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0.86451787, 0)
-texture = SubResource("ViewportTexture_xud6r")
+texture = SubResource("ViewportTexture_x4jwh")
 
 [node name="superette" parent="Objets/Interactables" unique_id=185217472 instance=ExtResource("14_w7gwu")]
 transform = Transform3D(1.2724622, 0, -0.58381486, 0, 1.4, 0, 0.58381486, 0, 1.2724622, -37.65221, 0, 8.07334)
 
 [node name="Tree" type="Node3D" parent="Objets" unique_id=1912448925]
 transform = Transform3D(0.9510564, 0, -0.309017, 0, 1, 0, 0.309017, 0, 0.9510564, 0.5693767, 0, 3.0004911)
+script = ExtResource("21_8pvm1")
+maxHeight = 0.4
 
 [node name="Tree_1776012281_98623" parent="Objets/Tree" unique_id=929499189 instance=ExtResource("9_yhicf")]
 transform = Transform3D(0.45612076, 0, 0, 0, 0.45612076, 0, 0, 0, 0.45612076, 11.736578, 0.0023796558, -5.1912403)
@@ -1178,9 +1181,6 @@ transform = Transform3D(0.44239706, 0, 0, 0, 0.44239706, 0, 0, 0, 0.44239706, 12
 
 [node name="Tree_1776012471_38615" parent="Objets/Tree" unique_id=1304034534 instance=ExtResource("17_ro6to")]
 transform = Transform3D(0.43214524, 0, 0, 0, 0.43214524, 0, 0, 0, 0.43214524, 101.901794, 0.0023801327, -34.689045)
-
-[node name="Tree_1776012471_56022" parent="Objets/Tree" unique_id=2075875282 instance=ExtResource("17_ro6to")]
-transform = Transform3D(0.44842508, 0, 0, 0, 0.44842508, 0, 0, 0, 0.44842508, 100.26066, 0.0023801327, -41.278374)
 
 [node name="Tree_1776012471_83925" parent="Objets/Tree" unique_id=1640749408 instance=ExtResource("9_yhicf")]
 transform = Transform3D(0.51818407, 0, 0, 0, 0.51818407, 0, 0, 0, 0.51818407, 119.46528, 0.002380371, -35.230362)
@@ -1578,29 +1578,17 @@ transform = Transform3D(0.46346366, 0, 0, 0, 0.46346366, 0, 0, 0, 0.46346366, -1
 [node name="Tree_1776012828_6816" parent="Objets/Tree" unique_id=311963922 instance=ExtResource("9_yhicf")]
 transform = Transform3D(0.4403062, 0, 0, 0, 0.4403062, 0, 0, 0, 0.4403062, -119.62822, 0.0023796558, -56.054317)
 
-[node name="Tree_1776012829_45542" parent="Objets/Tree" unique_id=885825204 instance=ExtResource("9_yhicf")]
-transform = Transform3D(0.49382702, 0, 0, 0, 0.49382702, 0, 0, 0, 0.49382702, -130.08842, 4.4302597, -54.77044)
-
 [node name="Tree_1776012829_54351" parent="Objets/Tree" unique_id=1617442842 instance=ExtResource("9_yhicf")]
-transform = Transform3D(0.41493136, 0, 0, 0, 0.41493136, 0, 0, 0, 0.41493136, -125.53963, 3.4495723, -64.43595)
+transform = Transform3D(0.4149314, 0, 4.656613e-10, 0, 0.41493136, 0, -4.656613e-10, 0, 0.4149314, -125.53963, -0.5504277, -64.43595)
 
 [node name="Tree_1776012830_04127" parent="Objets/Tree" unique_id=1444035414 instance=ExtResource("9_yhicf")]
-transform = Transform3D(0.53267336, 0, 0, 0, 0.53267336, 0, 0, 0, 0.53267336, -124.16692, 5.7153597, -63.687057)
+transform = Transform3D(0.53267336, 0, 0, 0, 0.53267336, 0, 0, 0, 0.53267336, -124.16693, -0.2846403, -63.68706)
 
 [node name="Tree_1776012831_07904" parent="Objets/Tree" unique_id=788745390 instance=ExtResource("17_ro6to")]
 transform = Transform3D(0.45999613, 0, 0, 0, 0.45999613, 0, 0, 0, 0.45999613, -122.07516, 0.0023794174, -53.389614)
 
-[node name="Tree_1776012832_25006" parent="Objets/Tree" unique_id=684312188 instance=ExtResource("17_ro6to")]
-transform = Transform3D(0.4175052, 0, 0, 0, 0.4175052, 0, 0, 0, 0.4175052, -124.908195, 2.7617142, -62.194473)
-
-[node name="Tree_1776012833_4006" parent="Objets/Tree" unique_id=867050783 instance=ExtResource("9_yhicf")]
-transform = Transform3D(0.40044716, 0, 0, 0, 0.40044716, 0, 0, 0, 0.40044716, -132.52188, 1.7100942, -49.72874)
-
 [node name="Tree_1776012834_1556" parent="Objets/Tree" unique_id=1376429424 instance=ExtResource("9_yhicf")]
-transform = Transform3D(0.5337704, 0, 0, 0, 0.5337704, 0, 0, 0, 0.5337704, -145.59232, 3.3822782, -33.093258)
-
-[node name="Tree_1776012834_66879" parent="Objets/Tree" unique_id=154128208 instance=ExtResource("9_yhicf")]
-transform = Transform3D(0.45838055, 0, 0, 0, 0.45838055, 0, 0, 0, 0.45838055, -139.6796, 2.1247725, -41.927574)
+transform = Transform3D(0.5337704, 0, 0, 0, 0.5337704, 0, 0, 0, 0.5337704, -145.59233, -0.6177218, -33.09326)
 
 [node name="Tree_1776012838_77718" parent="Objets/Tree" unique_id=1474404166 instance=ExtResource("9_yhicf")]
 transform = Transform3D(0.50615245, 0, 0, 0, 0.50615245, 0, 0, 0, 0.50615245, -109.521255, 0.0023796558, -6.663447)
@@ -1636,7 +1624,7 @@ transform = Transform3D(0.4572202, 0, 0, 0, 0.4572202, 0, 0, 0, 0.4572202, -97.8
 transform = Transform3D(0.49787855, 0, 0, 0, 0.49787855, 0, 0, 0, 0.49787855, -26.298857, 0.0023794174, -144.75764)
 
 [node name="Tree_1776012847_42125" parent="Objets/Tree" unique_id=79088869 instance=ExtResource("17_ro6to")]
-transform = Transform3D(0.44349056, 0, 0, 0, 0.44349056, 0, 0, 0, 0.44349056, -32.49501, 2.5418472, -156.92107)
+transform = Transform3D(0.4434906, 0, 4.656613e-10, 0, 0.44349056, 0, -4.656613e-10, 0, 0.4434906, -32.495014, -0.09375715, -156.92108)
 
 [node name="Tree_1776012847_79412" parent="Objets/Tree" unique_id=1731979219 instance=ExtResource("9_yhicf")]
 transform = Transform3D(0.47730386, 0, 0, 0, 0.47730386, 0, 0, 0, 0.47730386, -89.363686, 0.0023798943, -100.740944)
@@ -1648,10 +1636,10 @@ transform = Transform3D(0.47490004, 0, 0, 0, 0.47490004, 0, 0, 0, 0.47490004, -6
 transform = Transform3D(0.4206108, 0, 0, 0, 0.4206108, 0, 0, 0, 0.4206108, -100.44687, 0.0023796558, -82.90849)
 
 [node name="Tree_1776012848_94804" parent="Objets/Tree" unique_id=1871823884 instance=ExtResource("17_ro6to")]
-transform = Transform3D(0.43143907, 0, 0, 0, 0.43143907, 0, 0, 0, 0.43143907, -128.30214, 4.537697, -63.517735)
+transform = Transform3D(0.43143907, 0, -4.656613e-10, 0, 0.43143907, 0, 4.656613e-10, 0, 0.43143907, -128.30214, -0.46230316, -63.51774)
 
 [node name="Tree_1776012849_24474" parent="Objets/Tree" unique_id=1134437573 instance=ExtResource("17_ro6to")]
-transform = Transform3D(0.47702342, 0, 0, 0, 0.47702342, 0, 0, 0, 0.47702342, -113.220436, 1.5401621, -75.38617)
+transform = Transform3D(0.47702345, 0, 9.313226e-10, 0, 0.47702342, 0, -9.313226e-10, 0, 0.47702345, -113.220436, -0.4598379, -75.38617)
 
 [node name="Tree_1776012849_54122" parent="Objets/Tree" unique_id=2051374699 instance=ExtResource("17_ro6to")]
 transform = Transform3D(0.41747123, 0, 0, 0, 0.41747123, 0, 0, 0, 0.41747123, -81.82133, 0.0023796558, -94.5738)
@@ -1673,9 +1661,6 @@ transform = Transform3D(0.50145495, 0, 0, 0, 0.50145495, 0, 0, 0, 0.50145495, -2
 
 [node name="Tree_1776012854_93726" parent="Objets/Tree" unique_id=1410637485 instance=ExtResource("9_yhicf")]
 transform = Transform3D(0.50145495, 0, 0, 0, 0.50145495, 0, 0, 0, 0.50145495, -15.379901, 0.0023798943, -87.76784)
-
-[node name="Tree_1776012854_93727" parent="Objets/Tree" unique_id=1526962554 instance=ExtResource("9_yhicf")]
-transform = Transform3D(0.50145495, 0, 0, 0, 0.45908964, 0.20172697, 0, -0.20172697, 0.45908964, -5.6658945, -3.8136606, -96.452385)
 
 [node name="Tree_1776012854_93724" parent="Objets/Tree" unique_id=188896704 instance=ExtResource("9_yhicf")]
 transform = Transform3D(0.31232738, 0, -0.39231193, 0, 0.50145495, 0, 0.39231193, 0, 0.31232738, -58.63656, 0.0023798943, -84.98124)
@@ -1730,9 +1715,6 @@ transform = Transform3D(0.46630305, 0, 0, 0, 0.46630305, 0, 0, 0, 0.46630305, 75
 
 [node name="Tree_1776012904_48125" parent="Objets/Tree" unique_id=1051446203 instance=ExtResource("9_yhicf")]
 transform = Transform3D(0.48424673, 0, 0, 0, 0.48424673, 0, 0, 0, 0.48424673, 112.46231, 0.0023798943, -88.28887)
-
-[node name="Tree_1776012905_23855" parent="Objets/Tree" unique_id=1981754450 instance=ExtResource("17_ro6to")]
-transform = Transform3D(0.5465322, 0, 0, 0, 0.5465322, 0, 0, 0, 0.5465322, 99.211044, 0.0023798943, -96.17752)
 
 [node name="Tree_1776012905_45924" parent="Objets/Tree" unique_id=1308754735 instance=ExtResource("17_ro6to")]
 transform = Transform3D(0.50368, 0, 0, 0, 0.50368, 0, 0, 0, 0.50368, 100.99288, 0.0023798943, -95.46097)
@@ -1813,13 +1795,7 @@ transform = Transform3D(0.42355514, 0, 0, 0, 0.42355514, 0, 0, 0, 0.42355514, -1
 transform = Transform3D(0.5151733, 0, 0, 0, 0.5151733, 0, 0, 0, 0.5151733, -14.953479, 0.0023798943, -158.82327)
 
 [node name="Tree_1776012928_1494" parent="Objets/Tree" unique_id=1070333687 instance=ExtResource("9_yhicf")]
-transform = Transform3D(0.42668712, 0, 0, 0, 0.42668712, 0, 0, 0, 0.42668712, -29.314236, 2.4358408, -166.32869)
-
-[node name="Tree_1776012928_65816" parent="Objets/Tree" unique_id=2053463876 instance=ExtResource("9_yhicf")]
-transform = Transform3D(0.41258356, 0, 0, 0, 0.41258356, 0, 0, 0, 0.41258356, -32.896446, 1.6176082, -154.71512)
-
-[node name="Tree_1776012928_80053" parent="Objets/Tree" unique_id=1937995645 instance=ExtResource("17_ro6to")]
-transform = Transform3D(0.4721334, 0, 0, 0, 0.4721334, 0, 0, 0, 0.4721334, -46.201828, 1.6527374, -148.54575)
+transform = Transform3D(0.42668715, 0, 4.656613e-10, 0, 0.42668712, 0, -4.656613e-10, 0, 0.42668715, -29.314236, -0.00084900856, -166.3287)
 
 [node name="Tree_1776012929_91606" parent="Objets/Tree" unique_id=1033195920 instance=ExtResource("9_yhicf")]
 transform = Transform3D(0.5075791, 0, 0, 0, 0.5075791, 0, 0, 0, 0.5075791, -47.409016, 0.0023801327, -114.040276)
