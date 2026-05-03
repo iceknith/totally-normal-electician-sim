@@ -4,7 +4,7 @@ var is_interacted_with:bool = true
 var is_currently_interractable:bool = false
 
 @export var action_type:ActionType
-@export var action:String = "interract"
+@export var action:String = "interact1"
 @export var interractable_dialogue:Node
 var interractable_label:Label
 
@@ -25,6 +25,7 @@ func _ready() -> void:
 	if interractable_dialogue == null: push_error("Interractable dialogue should be set !")
 	interractable_label = find_label(interractable_dialogue)
 	if interractable_label == null: push_error("Interractable dialogue should have a label !")
+	interractable_label.text = "$%s$" % action
 	
 	match action_type:
 		ActionType.Click:

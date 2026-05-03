@@ -11,8 +11,7 @@ var base_minigame_layout = preload("res://src/minigames/base_minigame_layout.tsc
 var hasStarted:bool = false
 
 func _ready() -> void:
-	SoundManager.change_music.emit(music_when_entering)
-	add_child(base_minigame_layout.instantiate())
+	if baseMinigameLayoutActive: add_child(base_minigame_layout.instantiate())
 	show_animation()
 
 func show_animation() -> void:

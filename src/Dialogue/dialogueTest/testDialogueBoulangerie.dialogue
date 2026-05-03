@@ -3,7 +3,7 @@ Boulanger: Heyyyy, comment va-tu ?
 - Ça va, et toi ? 
 	Boulanger: Ça va, ça va
 	Boulanger: Au fait, pour l'anniversaire de ton petit frère. J'ai préparé un gâteau pour lui, tu le veux ?
-	if GlobalVars.money >= 10:
+	if !GlobalVars.has_cake:
 		- Oui, bien sûr !
 			$> title = "content"
 			$> close_up_start_animation = "content"

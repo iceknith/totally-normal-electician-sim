@@ -2,6 +2,7 @@ extends Node
 
 
 enum SignalType {
+	LAUNCH_GAME,
 	ADD_MINIGAME,
 	REMOVE_MINIGAME,
 	SHOW_GAME3D,
@@ -10,10 +11,8 @@ enum SignalType {
 }
 
 enum GameState {
-	StartMenu,
 	Game3D,
 	MiniGame,
-	EndMenu,
 }
 
 var current_state:GameState = GameState.Game3D

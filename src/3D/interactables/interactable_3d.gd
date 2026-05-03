@@ -1,6 +1,6 @@
 @abstract class_name Interactable3D extends Area3D
 
-@export var action:String = "interract"
+@export var action:String = "interact1"
 
 enum AnimationOnInteraction {
 	Nothing,
@@ -32,6 +32,7 @@ func _ready() -> void:
 	collision_layer = 0b100
 	collision_mask = 0b0
 	text_label = find_label(text_sprite)
+	text_label.text = "$%s$" % action
 	text_sprite.hide()
 
 func find_label(node:Node) -> Label:
@@ -82,9 +83,9 @@ func interaction_animation():
 		AnimationOnInteraction.Turn : 
 			MainCommunicator.signalCamera.emit("turn_to_look_at", [camera_root.global_position, turn_time])
 
-func end_interaction_animation(_ressource):
-	MainCommunicator.signalCamera.emit("reset", [])
-	DialogueManager.dialogue_ended.disconnect(end_interaction_animation)
+#func end_interaction_animation(_ressource):
+#	MainCommunicator.signalCamera.emit("reset", [])
+#	DialogueManager.dialogue_ended.disconnect(end_interaction_animation)
 
 @abstract func start_interaction()
 
@@ -92,5 +93,5 @@ func full_interaction():
 	interaction_animation()
 	start_interaction()
 	# Connect interaction end animation if needed
-	if interactionAnimation != AnimationOnInteraction.Nothing:
-		DialogueManager.dialogue_ended.connect(end_interaction_animation)
+	#if interactionAnimation != AnimationOnInteraction.Nothing:
+	#	DialogueManager.dialogue_ended.connect(end_interaction_animation)

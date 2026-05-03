@@ -16,14 +16,15 @@ signal win
 @onready var win_label:Label = $WinLabel
 @onready var yay_label:Label = $YayLabel
 @onready var lose_label:Label = $Loselabel
-@onready var info_label:Label = $InfoContainer/MarginContainer/InfoLabel
-@onready var info_container:Container = $InfoContainer
+@onready var info_container:VBoxContainer = $InfoVboxContainer
+@onready var info_label:Label = $InfoVboxContainer/InfoContainer/MarginContainer/InfoLabel
+@onready var info_exit_button:Button = $InfoVboxContainer/Button
 
-@onready var stage:Stages = Stages.FullGame
-@export var tutorialTexts:Dictionary[Stages, String] = {
-	Stages.TutorialWires : "Connectez les fils de la même couleur avec [clic gauche]\n-\nDéconnectez les fils avec [clic droit]\n-\nIl est possible de croiser les fils en diagonale",
-	Stages.TutorialMovingCircle : "Faites attention à ne pas déclencher un court circuit !\n-\nPour celà, restez dans le grand cercle en vous déplaçant avec vos contrôles de mouvement.",
-	Stages.TutorialTiming : "Attention à ne pas vous éléctriser !\n-\nPour celà, appuyez sur [Espace] lorsque le cube rouge devient rose."
+@onready var stage:Stages = GlobalVars.electrician_minigame_current_stage
+@onready var tutorialTexts:Dictionary[Stages, String] = {
+	Stages.TutorialWires : "Connect same color wires with [Left Click].\nDisconnect with [Right Click].\n-\nWires can cross in diagonal.",
+	Stages.TutorialMovingCircle : "Be careful to not create a short circuit, by letting the screw and the wrench touch.\n-\nTo prevent that, move the Wrench with [$up$ $left$ $down$ $right$]",
+	Stages.TutorialTiming : "Be careful not to electrify yourself, by letting the fuse touch the ground !\n-\nTo prevent that, press [$interact2$] when the fuse crosses the central line."
 }
 
 @export var cables_required:int = 100
@@ -49,30 +50,33 @@ func init_stage() -> void:
 	if stage == Stages.FullGame: return
 	
 	info_label.text = tutorialTexts[stage]
+	info_exit_button.disabled = true
+	info_exit_button.pressed.connect(hide_tutorial)
 	
 	var tween:Tween = create_tween()
 	tween.set_ease(Tween.EASE_IN_OUT).set_trans(Tween.TRANS_CIRC)
 	tween.tween_property(info_container, "scale", Vector2.ONE, 0.5)
-	tween.tween_interval(3)
+	tween.tween_property(info_exit_button, "disabled", false, 0.01)
 	
 	match stage:
 		Stages.TutorialWires:
 			$MarginContainer/GamesContainer/TimingContainer.queue_free()
 			$MarginContainer/GamesContainer/MovingContainer.queue_free()
 			cable_section.process_mode = Node.PROCESS_MODE_DISABLED
-			tween.tween_callback(func(): cable_section.process_mode = Node.PROCESS_MODE_INHERIT)
 		Stages.TutorialMovingCircle:
 			$MarginContainer/GamesContainer/TimingContainer.queue_free()
 			for section in [cable_section, moving_section]:
 				section.process_mode = Node.PROCESS_MODE_DISABLED
-				tween.tween_callback(func(): section.process_mode = Node.PROCESS_MODE_INHERIT)
 		Stages.TutorialTiming:
 			for section in [cable_section, moving_section, timing_section]:
 				section.process_mode = Node.PROCESS_MODE_DISABLED
-				tween.tween_callback(func(): section.process_mode = Node.PROCESS_MODE_INHERIT)
 	
+func hide_tutorial():
+	var tween:Tween = create_tween()
 	tween.tween_property(info_container, "scale", Vector2.ZERO, 0.2)
 	
+	for section in [cable_section, moving_section, timing_section]:
+		if section: section.process_mode = Node.PROCESS_MODE_INHERIT
 
 func connect_signals() -> void:
 	#cable_section.completed.connect(on_cable_validated)
