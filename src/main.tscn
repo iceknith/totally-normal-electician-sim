@@ -19,9 +19,21 @@ frequency = 0.0695
 fractal_type = 0
 fractal_ping_pong_strength = 3.0
 
+[sub_resource type="Curve" id="Curve_fyndt"]
+_limits = [0.0, 5.0, 0.0, 1.0]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.5, 0.975), 0.0, 0.0, 0, 0, Vector2(0.95, 0.4), 0.0, 0.0, 0, 0, Vector2(1, 0.4), 0.0, 0.0, 0, 0]
+point_count = 4
+metadata/_snap_enabled = true
+
+[sub_resource type="Curve" id="Curve_kmhfv"]
+_limits = [0.0, 5.0, 0.0, 1.0]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.602, 0.975), 0.0, 0.0, 0, 0, Vector2(0.90000004, 0.6), 0.0, 0.0, 0, 0, Vector2(0.95, 0.6), 0.0, 0.0, 0, 0]
+point_count = 4
+metadata/_snap_enabled = true
+
 [node name="Main" type="Node3D" unique_id=1571594318]
 script = ExtResource("1_gh0ne")
-end_of_world_max_time_mins = 5.0
+end_of_world_max_time_mins = 2.0
 mouse_jitter_speed = 150.0
 mouse_jitter_intensity = Vector2(500, 500)
 camera_jitter_amount = 1.0
@@ -32,6 +44,8 @@ mouse_jitter_noise = SubResource("FastNoiseLite_gh0ne")
 [node name="World" parent="." unique_id=600883011 instance=ExtResource("2_5q4o7")]
 
 [node name="WorldAudioManager" parent="." unique_id=1781513062 instance=ExtResource("3_fyndt")]
+pitch_curve = SubResource("Curve_fyndt")
+tempo_curve = SubResource("Curve_kmhfv")
 
 [node name="HUD" type="CanvasLayer" parent="." unique_id=410458702]
 

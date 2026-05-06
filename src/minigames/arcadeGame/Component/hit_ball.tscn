@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://btmot50uf8ym1" path="res://src/minigames/arcadeGame/Component/hit_ball.gd" id="1_11fcc"]
 [ext_resource type="Texture2D" uid="uid://iukegknyxdao" path="res://src/minigames/arcadeGame/player/slash/slash-Sheet.png" id="2_3f5u3"]
+[ext_resource type="Script" uid="uid://c87jsjrggenav" path="res://src/minigames/arcadeGame/Component/hit_component_sfx.gd" id="5_xw2qr"]
 
 [sub_resource type="Animation" id="Animation_3f5u3"]
 resource_name = "Hit"
@@ -88,7 +89,10 @@ _data = {
 &"RESET": SubResource("Animation_fqbih")
 }
 
+[sub_resource type="AudioStreamWAV" id="AudioStreamWAV_fqbih"]
+
 [node name="HitBall" type="Area2D" unique_id=1738906224]
+collision_mask = 65
 script = ExtResource("1_11fcc")
 ball_color = Color(1, 0.18251953, 0.13418654, 1)
 
@@ -107,6 +111,11 @@ offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="Timer" type="Timer" parent="." unique_id=90530629]
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=178064766]
+stream = SubResource("AudioStreamWAV_fqbih")
+max_polyphony = 4
+script = ExtResource("5_xw2qr")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

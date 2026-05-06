@@ -13,12 +13,15 @@ var old_velocity:Vector2 = Vector2.ZERO
 var current_shot:int = 0
 var ball_state:ArcadeGame.BALLSTATE
 var being_launched:bool
+var disable_scale_management:bool = false
 
+
+signal just_realeased(ball:arcade_ball)
 
 func _ready():
 	$AnimationPlayer.play("pulsation")
 	update_ball_color(base_color)
-	update_ball_state(ArcadeGame.BALLSTATE.None)
+
 	
 func stop():
 	moving = false
@@ -31,7 +34,8 @@ func update_velocity():
 	
 func _physics_process(delta):
 	manage_speed()
-	manage_scale()
+	if !disable_scale_management : 
+		manage_scale()
 	store_velocity()
 	if moving : 
 		move_and_slide()
@@ -47,6 +51,7 @@ func manage_speed():
 func update_direction(d:Vector2):
 	current_direction = d
 
+#vu que les murs de l'arènes sont plats je me suis pas fait chier
 func manage_direction():
 	if is_on_wall() : 
 		current_direction.x = - current_direction.x
@@ -54,25 +59,21 @@ func manage_direction():
 		current_direction.y = - current_direction.y
 	if is_on_floor() : 
 		current_direction.y = - current_direction.y
-		
+
 func manage_scale():
-	var speed = old_velocity.length()
-
+	var speed = mouvement_component.get_speed()
 	rotation = velocity.angle()
-
 	var speed_ratio = clamp(speed / 400.0, 0.0, 8)
-
 	var base_scale = lerp(1.0, 1.6, speed_ratio)
-
-
 	var max_stretch = lerp(0.1, 0.6, speed_ratio) 
-	var stretch = speed_ratio * max_stretch *0.05
-
+	var stretch = speed_ratio * max_stretch * 0.05
 	scale.x = base_scale * (1.0 + stretch)
 	scale.y = max(base_scale * (1.0 - stretch * 0.5), base_scale)
+	
+	return Vector2(scale.x, scale.y)
 
 		
-	#to do, établir des min_scales pour que la balle se déforme correctement, aussi mettre des tween et rajouter des particules
+
 		
 		
 func manage_rotation():
@@ -91,7 +92,8 @@ func store_velocity():
 		old_velocity = velocity
 		
 func update_ball_color(color):
-	var mat = ball_sprite.material as ShaderMaterial
+	var mat = ball_sprite.material.duplicate() as ShaderMaterial
+	ball_sprite.material = mat
 	mat.set_shader_parameter("color", color)
 	ball_particles.color = color
 	
@@ -113,4 +115,3 @@ func reset():
 
 func set_being_launched(v:bool):
 	being_launched = v
-	

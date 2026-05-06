@@ -24,13 +24,24 @@ func _process(delta):
 	if shaking : 
 		shake()
 
-func turn_to_look_at(ToTurnTo : Vector3, turnTime: float = 1) -> void:
-	var target_transform = global_transform.looking_at(ToTurnTo) # Calcule la rotation que doit avoir la cam pour regarder un objet
-	var rotation_vector = target_transform.basis.get_euler() # La rotation final
-	
-	if tween: tween.kill()
+func turn_to_look_at(ToTurnTo: Vector3, turnTime: float = 1.0) -> void:
+	var start_basis = global_transform.basis
+	var target_transform = global_transform.looking_at(ToTurnTo, Vector3.UP)
+	var target_basis = target_transform.basis
+
+	if tween:
+		tween.kill()
+
 	tween = create_tween()
-	tween.tween_property(self, "global_rotation",rotation_vector, turnTime).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT)
+
+	tween.tween_method(
+		func(value):
+			global_transform.basis = start_basis.slerp(target_basis, value).orthonormalized(),
+		0.0,
+		1.0,
+		turnTime
+	).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT)
+
 	await tween.finished
 
 func zoom_in(zoom_in_time:float = 1, zoom_intensity:float = 1): 
@@ -48,19 +59,35 @@ func zoom_out(zoom_out_time = 2):
 func turn_then_zoom(ToTurnTo : Vector3, turnTime:float = 2, zoom_time:float = 1, zoom_intensity:float = 1) : 
 	await turn_to_look_at(ToTurnTo, turnTime)
 	zoom_in(zoom_time, zoom_intensity)
-
-func turn_while_zoom(ToTurnTo : Vector3, turnTime:float = 1, zoom_time:float = 1, zoom_intensity:float = 1) : 
-	var target_transform = global_transform.looking_at(ToTurnTo, Vector3.UP)
-	var rotation_vector = target_transform.basis.get_euler()
 	
-	if tween: tween.kill()
+
+func turn_while_zoom(ToTurnTo: Vector3, turnTime: float = 1.0, zoom_time: float = 1.0, zoom_intensity: float = 1.0):
+	var start_basis = global_transform.basis
+	var target_transform = global_transform.looking_at(ToTurnTo, Vector3.UP)
+	var target_basis = target_transform.basis
+
+	if tween:
+		tween.kill()
+
 	tween = create_tween()
 	tween.set_parallel(true)
-	tween.tween_property(self, "global_rotation", rotation_vector, turnTime).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN_OUT)
-	tween.tween_property(self, "fov", fov - zoom_intensity, turnTime).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN_OUT)
+
+	tween.tween_method(
+		func(value):
+			global_transform.basis = start_basis.slerp(target_basis, value).orthonormalized(),
+		0.0,
+		1.0,
+		turnTime
+	).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN_OUT)
+
+	tween.tween_property(self, "fov", fov - zoom_intensity, zoom_time)\
+		.set_trans(Tween.TRANS_SINE)\
+		.set_ease(Tween.EASE_IN_OUT)
+
 	await tween.finished
 	return tween
-
+	
+	
 func reset(time:float = 0.3):
 	if tween: tween.kill()
 	tween = create_tween()

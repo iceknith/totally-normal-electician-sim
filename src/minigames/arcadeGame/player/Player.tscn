@@ -127,7 +127,6 @@ speed = 350
 [node name="HitBall" parent="." unique_id=1738906224 instance=ExtResource("4_crhmk")]
 collision_layer = 2
 collision_mask = 2
-hit_cooldown = 0.7
 ball_color = Color(0.39607844, 0.10980392, 0.5294118, 1)
 
 [node name="Front" type="CollisionPolygon2D" parent="HitBall" unique_id=2146298035]
@@ -139,6 +138,7 @@ polygon = PackedVector2Array(-71, -71, -95, -90, -95, 76, -76, 59)
 [node name="Aim" parent="." unique_id=1422028878 instance=ExtResource("5_crhmk")]
 
 [node name="Die" parent="." unique_id=469673073 node_paths=PackedStringArray("animationPlayer") instance=ExtResource("6_thjgy")]
+collision_mask = 18
 losing_ball_state = 1
 animationPlayer = NodePath("../AnimationPlayer")
 death_animation_name = "Death"

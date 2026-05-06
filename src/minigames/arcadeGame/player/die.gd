@@ -18,11 +18,15 @@ func turn_off():
 	
 func turn_on() : 
 	monitoring = true
+	
 func _on_body_entered(body):
 	if body is arcade_ball : 
 		if body.get_ball_state() == losing_ball_state and can_die:
-			die.emit(get_parent())
-			death_animation()
+			death()
+
+func death():
+	die.emit(get_parent())
+	death_animation()
 
 func death_animation():
 	animationPlayer.play(death_animation_name)

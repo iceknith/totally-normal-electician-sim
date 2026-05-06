@@ -1,31 +1,24 @@
 [gd_scene format=3 uid="uid://cm7dhny7qqs7p"]
 
-[ext_resource type="Script" uid="uid://f34xub6p1wx1" path="res://src/minigames/arcadeGame/level/shockwave.gd" id="1_d1jky"]
 [ext_resource type="Script" uid="uid://cq31u4d5aah6n" path="res://src/minigames/arcadeGame/level/full_game.gd" id="1_l1j2u"]
 [ext_resource type="PackedScene" uid="uid://81drtmexlash" path="res://src/minigames/arcadeGame/arena.tscn" id="1_soqpu"]
+[ext_resource type="PackedScene" uid="uid://c1326xcwc7x4b" path="res://src/minigames/arcadeGame/level/borne3d.tscn" id="2_vvjij"]
 [ext_resource type="Shader" uid="uid://clv81aafjwt8i" path="res://src/minigames/arcadeGame/crt.gdshader" id="3_d1jky"]
 
-[sub_resource type="Animation" id="Animation_l1j2u"]
-resource_name = "shockwave"
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_jgjd2"]
-_data = {
-&"shockwave": SubResource("Animation_l1j2u")
-}
+[sub_resource type="ViewportTexture" id="ViewportTexture_hss7a"]
+viewport_path = NodePath("Jeu/RenduJeu")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_l1j2u"]
 resource_local_to_scene = true
 shader = ExtResource("3_d1jky")
-shader_parameter/smearing = 0.0
-shader_parameter/color_offset = 1.6299399954733396e-09
-shader_parameter/sharpening = 0.4
-shader_parameter/static_noise = 0.08
-shader_parameter/crack_center = Vector2(0, 0)
-shader_parameter/crack_intensity = 0.0
-shader_parameter/crack_size = 0.0
-shader_parameter/vertical_jitter = 0.0010000000475
-shader_parameter/scanline_opacity = 0.1
-shader_parameter/vignette_intensity = 0.3
+shader_parameter/input_texture = SubResource("ViewportTexture_hss7a")
+shader_parameter/shake = 0.0
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_vvjij"]
+viewport_path = NodePath("Jeu/RenduJeu")
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_0stui"]
+viewport_path = NodePath("../../../RenduJeuCRT/SubViewport")
 
 [node name="FullGame" type="Control" unique_id=288012244]
 layout_mode = 3
@@ -36,45 +29,71 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_l1j2u")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1634236520]
-root_node = NodePath("../TextureRect")
-libraries/ = SubResource("AnimationLibrary_jgjd2")
-script = ExtResource("1_d1jky")
-
-[node name="SubViewportContainer" type="SubViewportContainer" parent="." unique_id=584671865]
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1289738848]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 120.0
-offset_top = 71.0
-offset_right = 120.0
-offset_bottom = 71.0
 grow_horizontal = 2
 grow_vertical = 2
-scale = Vector2(0.8, 0.8)
+color = Color(0, 0, 0, 1)
+
+[node name="RenduJeuCRT" type="SubViewportContainer" parent="." unique_id=2030838468]
+z_index = -5
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="SubViewport" type="SubViewport" parent="RenduJeuCRT" unique_id=2058927030]
+handle_input_locally = false
+size = Vector2i(1152, 648)
+render_target_update_mode = 4
+
+[node name="TextureRect" type="TextureRect" parent="RenduJeuCRT/SubViewport" unique_id=557147957]
+modulate = Color(3.194369, 3.194369, 3.194369, 1)
+z_index = -10
+material = SubResource("ShaderMaterial_l1j2u")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("ViewportTexture_vvjij")
+
+[node name="Borne" type="SubViewportContainer" parent="." unique_id=543476878]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 stretch = true
 
-[node name="SubViewport" type="SubViewport" parent="SubViewportContainer" unique_id=1767261174]
+[node name="RenduBorne" type="SubViewport" parent="Borne" unique_id=902030094]
+handle_input_locally = false
+size = Vector2i(1152, 648)
+render_target_update_mode = 4
+
+[node name="Borne3d" parent="Borne/RenduBorne" unique_id=347642000 instance=ExtResource("2_vvjij")]
+texture = SubResource("ViewportTexture_0stui")
+
+[node name="Jeu" type="SubViewportContainer" parent="." unique_id=584671865]
+z_index = -1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+stretch = true
+
+[node name="RenduJeu" type="SubViewport" parent="Jeu" unique_id=1767261174]
 handle_input_locally = false
 size = Vector2i(1152, 648)
 size_2d_override_stretch = true
 render_target_update_mode = 4
 
-[node name="Arena" parent="SubViewportContainer/SubViewport" unique_id=2119784583 instance=ExtResource("1_soqpu")]
-
-[node name="TextureRect" type="ColorRect" parent="." unique_id=426133620]
-modulate = Color(3.194369, 3.194369, 3.194369, 1)
-z_index = 3
-material = SubResource("ShaderMaterial_l1j2u")
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 115.00001
-offset_top = 50.00001
-offset_right = 115.0
-offset_bottom = 50.0
-grow_horizontal = 2
-grow_vertical = 2
-scale = Vector2(0.8, 0.8)
+[node name="Arena" parent="Jeu/RenduJeu" unique_id=2119784583 instance=ExtResource("1_soqpu")]

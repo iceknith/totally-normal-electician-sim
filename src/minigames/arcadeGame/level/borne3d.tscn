@@ -1,0 +1,98 @@
+[gd_scene format=3 uid="uid://c1326xcwc7x4b"]
+
+[ext_resource type="Script" uid="uid://ctep050avadr7" path="res://src/minigames/arcadeGame/level/borne_3d.gd" id="1_3rdeo"]
+[ext_resource type="PackedScene" uid="uid://da7obfj8vgaql" path="res://src/minigames/arcadeGame/assets/3dModel_Borne/borne.blend" id="1_ftxd4"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_ftxd4"]
+size = Vector2(1.9, 1.1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ftxd4"]
+shading_mode = 0
+disable_ambient_light = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vrbwj"]
+albedo_color = Color(0, 0, 0, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_vrbwj"]
+material = SubResource("StandardMaterial3D_vrbwj")
+size = Vector3(8.32, 2.12, 3.985)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_3rdeo"]
+size = Vector2(10, 10)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3rdeo"]
+albedo_color = Color(0, 0, 0, 1)
+
+[node name="Borne3d" type="Node3D" unique_id=347642000]
+script = ExtResource("1_3rdeo")
+
+[node name="borne" parent="." unique_id=736604112 instance=ExtResource("1_ftxd4")]
+transform = Transform3D(1.16, 0, 0, 0, 1.065, 0, 0, 0, 0.385, 0, -0.02, 0.075)
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=120209450]
+transform = Transform3D(1, 0, 0, 0, 0.9895258, 0.14435619, 0, -0.14435619, 0.9895258, 0, 1.05, 0.965)
+current = true
+
+[node name="Ecran" type="MeshInstance3D" parent="." unique_id=1443915153]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 1, 0.057)
+layers = 524288
+mesh = SubResource("PlaneMesh_ftxd4")
+surface_material_override/0 = SubResource("StandardMaterial3D_ftxd4")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="." unique_id=263001967]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0727458, -1.9168698, -0.007010758)
+mesh = SubResource("BoxMesh_vrbwj")
+
+[node name="Fond" type="MeshInstance3D" parent="." unique_id=1076408823]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0.02)
+mesh = SubResource("PlaneMesh_3rdeo")
+surface_material_override/0 = SubResource("StandardMaterial3D_3rdeo")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="." unique_id=1875588340]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.073, 3.918, -0.007)
+mesh = SubResource("BoxMesh_vrbwj")
+
+[node name="Fond2" type="MeshInstance3D" parent="." unique_id=1127186193]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 2)
+mesh = SubResource("PlaneMesh_3rdeo")
+surface_material_override/0 = SubResource("StandardMaterial3D_3rdeo")
+
+[node name="Node3D" type="Node3D" parent="." unique_id=1270300198]
+
+[node name="blueLight" type="DirectionalLight3D" parent="Node3D" unique_id=340408494]
+transform = Transform3D(1, 0, 0, 0, 0.67687595, -0.7360971, 0, 0.7360971, 0.67687595, -0.41, 0, 1.409)
+visible = false
+light_color = Color(0, 0.36078432, 0.81960785, 1)
+light_energy = 0.751
+
+[node name="ScreenLight" type="DirectionalLight3D" parent="Node3D" unique_id=238919772]
+visible = false
+light_energy = 0.5
+light_cull_mask = 4294443008
+
+[node name="FlickeringLight" type="SpotLight3D" parent="Node3D" unique_id=781332830]
+transform = Transform3D(1, 0, 0, 0, 0.9978015, -0.066273905, 0, 0.066273905, 0.9978015, 0, 0.915, 1.778)
+light_color = Color(0.23137255, 0.3764706, 1, 1)
+light_energy = 5.861
+
+[node name="DirectionalLight3D4" type="DirectionalLight3D" parent="Node3D" unique_id=1333032087]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.495, 0.965, 1.231)
+light_color = Color(1, 0, 0, 1)
+light_energy = 2.5
+
+[node name="RedLight" type="DirectionalLight3D" parent="Node3D" unique_id=1337414989]
+transform = Transform3D(1, 0, 0, 0, 0.7535634, -0.6573753, 0, 0.6573753, 0.7535634, 0, -0.29351807, 1.855629)
+light_color = Color(1, 0.047058824, 0.21176471, 1)
+light_energy = 5.77
+light_negative = true
+light_cull_mask = 4294443007
+
+[node name="Light" type="DirectionalLight3D" parent="Node3D" unique_id=4663260]
+visible = false
+
+[node name="WhiteLight" type="DirectionalLight3D" parent="Node3D" unique_id=1628067845]
+transform = Transform3D(0.03, 0, 0, 0, 0.022606902, -0.019721258, 0, 0.019721258, 0.022606902, 0, -0.29351807, 1.855629)
+visible = false
+light_energy = 4.809
+light_cull_mask = 4294443007
+sky_mode = 1

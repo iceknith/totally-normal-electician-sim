@@ -13,7 +13,7 @@
 
 [sub_resource type="Gradient" id="Gradient_41tw2"]
 offsets = PackedFloat32Array(0.38957056, 1)
-colors = PackedColorArray(0.2784314, 0.05882353, 0.15686275, 1, 0, 0, 0, 1)
+colors = PackedColorArray(0.24182856, 0, 0.0068073366, 1, 0, 0, 0, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_skady"]
 gradient = SubResource("Gradient_41tw2")
@@ -41,7 +41,7 @@ shader = ExtResource("4_lh3vw")
 shader_parameter/center = Vector2(0.5, 0.5)
 shader_parameter/force = 0.1
 shader_parameter/size = 0.1
-shader_parameter/ca_strength = 0.3
+shader_parameter/ca_strength = 0.6
 shader_parameter/thickness = 0.01
 shader_parameter/offset = 0.0
 
@@ -165,6 +165,7 @@ fill = 1
 fill_from = Vector2(0.50085473, 0.48376068)
 
 [sub_resource type="LabelSettings" id="LabelSettings_aqv87"]
+font = ExtResource("9_lqgcn")
 font_size = 256
 
 [node name="Arena" type="Control" unique_id=2119784583]
@@ -250,13 +251,14 @@ position = Vector2(173, 199)
 scale = Vector2(0.5, 0.5)
 collision_layer = 8
 losing_ball_state = 1
+ball_color = Color(0.6431373, 0.1764706, 0.9137255, 1)
 
 [node name="LittleJo" parent="Entities" unique_id=947143515 instance=ExtResource("5_sf31h")]
 position = Vector2(917, 225)
 scale = Vector2(0.5, 0.5)
 collision_layer = 4
 ball_state_to_give = 1
-ball_color = Color(1, 0.07450981, 0.14509805, 1)
+ball_color = Color(0, 0.9254902, 0.047058824, 1)
 
 [node name="JoManager" parent="Entities" unique_id=639065793 node_paths=PackedStringArray("enemy") instance=ExtResource("6_sf31h")]
 enemy = NodePath("../LittleJo")
@@ -349,3 +351,13 @@ position = Vector2(262, 223)
 
 [node name="EnemyStartingPosition" type="Node2D" parent="StartingPositions" unique_id=658900195]
 position = Vector2(893, 530)
+
+[node name="FiltreBleu" type="ColorRect" parent="." unique_id=1966092931]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.44705883, 0.24313726, 1, 0.17254902)

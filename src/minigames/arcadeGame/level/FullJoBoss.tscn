@@ -1,0 +1,100 @@
+[gd_scene format=3 uid="uid://cppr3lfytuf4v"]
+
+[ext_resource type="Script" uid="uid://cq31u4d5aah6n" path="res://src/minigames/arcadeGame/level/full_game.gd" id="1_nmw0c"]
+[ext_resource type="Shader" uid="uid://clv81aafjwt8i" path="res://src/minigames/arcadeGame/crt.gdshader" id="2_l72mc"]
+[ext_resource type="PackedScene" uid="uid://c1326xcwc7x4b" path="res://src/minigames/arcadeGame/level/borne3d.tscn" id="3_a0e7l"]
+[ext_resource type="PackedScene" uid="uid://cclm786uyuncm" path="res://src/minigames/arcadeGame/JoArena/JoArena.tscn" id="4_nmw0c"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_hss7a"]
+viewport_path = NodePath("Jeu/RenduJeu")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_l1j2u"]
+resource_local_to_scene = true
+shader = ExtResource("2_l72mc")
+shader_parameter/input_texture = SubResource("ViewportTexture_hss7a")
+shader_parameter/shake = 0.0
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_vvjij"]
+viewport_path = NodePath("Jeu/RenduJeu")
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_nmw0c"]
+viewport_path = NodePath("../../../RenduJeuCRT/SubViewport")
+
+[node name="FullGame" type="Control" unique_id=288012244]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_nmw0c")
+music_when_entering = "Jo"
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1289738848]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="RenduJeuCRT" type="SubViewportContainer" parent="." unique_id=2030838468]
+z_index = -5
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="SubViewport" type="SubViewport" parent="RenduJeuCRT" unique_id=2058927030]
+handle_input_locally = false
+size = Vector2i(1152, 648)
+render_target_update_mode = 4
+
+[node name="TextureRect" type="TextureRect" parent="RenduJeuCRT/SubViewport" unique_id=557147957]
+modulate = Color(3.194369, 3.194369, 3.194369, 1)
+z_index = -10
+material = SubResource("ShaderMaterial_l1j2u")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("ViewportTexture_vvjij")
+
+[node name="Borne" type="SubViewportContainer" parent="." unique_id=543476878]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+stretch = true
+
+[node name="RenduBorne" type="SubViewport" parent="Borne" unique_id=902030094]
+handle_input_locally = false
+size = Vector2i(1152, 648)
+render_target_update_mode = 4
+
+[node name="Borne3d" parent="Borne/RenduBorne" unique_id=347642000 instance=ExtResource("3_a0e7l")]
+texture = SubResource("ViewportTexture_nmw0c")
+
+[node name="Jeu" type="SubViewportContainer" parent="." unique_id=584671865]
+z_index = -1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+stretch = true
+
+[node name="RenduJeu" type="SubViewport" parent="Jeu" unique_id=1767261174]
+handle_input_locally = false
+size = Vector2i(1152, 648)
+size_2d_override_stretch = true
+render_target_update_mode = 4
+
+[node name="Arena" parent="Jeu/RenduJeu" unique_id=2119784583 instance=ExtResource("4_nmw0c")]

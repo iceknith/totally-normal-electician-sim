@@ -21,15 +21,21 @@ var aiming_direction:Vector2
 
 @export var launch_counter:int = 0
 @export var launch_speed:int = 200
+@export var hit_cooldown = 0.7
 
 var dead:bool = false
 var paused:bool = false
+var was_holding: bool = false
+
+signal inform_death(entity)
 @export var ball_state_to_give:ArcadeGame.BALLSTATE
 @export var losing_ball_state:ArcadeGame.BALLSTATE
 @export var ball_color:Color
 
 
 func _ready():
+	HitBallComponent.hit_cooldown = hit_cooldown
+	HitBallComponent.cooldown_timer.wait_time = hit_cooldown
 	HitBallComponent.ball_color = ball_color
 	HitBallComponent.ball_state_to_give = ball_state_to_give
 	DieComponent.losing_ball_state = losing_ball_state
@@ -43,7 +49,10 @@ func _physics_process(delta):
 		set_facing_direction()
 	manage_variables()
 		
+		
+#manage movement and attack
 func manage_input(delta):
+	#this part was just for fun to be able to test multiplayer
 	match inputSet :
 		InputSet.Player1 : 
 			input_direction = Vector2(Input.get_axis("left", "right"), Input.get_axis("up", "down"))
@@ -70,13 +79,16 @@ func set_facing_direction():
 		facing_direction = input_direction
 	
 func manage_launching_ball(delta):
+	if Input.is_action_pressed(interactAction):
+		was_holding = true
+		
 	velocity = Vector2.ZERO
 	aiming_direction = Vector2.from_angle(AimComponent.manage_aim(input_direction, delta))
 	AimComponent.set_visibility(true)
 	AimComponent.set_progress_bar_position(HitBallComponent.get_ball().global_position) #set the 
 	launch_counter += delta*launch_speed
 	AimComponent.set_progress_bar_value(launch_counter)
-	if Input.is_action_just_released(interactAction) or launch_counter >= 99.9 : 
+	if was_holding and (!Input.is_action_pressed(interactAction) or launch_counter >= 99.9) : 
 		HitBallComponent.release_ball()
 		launch_counter = 0
 
@@ -84,9 +96,11 @@ func setup_signals():
 	DieComponent.die.connect(death)
 	
 func death(entity):
-	HitBallComponent.release_ball_on_death()
-	DieComponent.turn_off()
-	dead = true
+	if !dead : 
+		HitBallComponent.release_ball_on_death()
+		DieComponent.turn_off()
+		inform_death.emit(self)
+		dead = true
 	
 func reset():
 	HitBallComponent.release_ball_on_death()

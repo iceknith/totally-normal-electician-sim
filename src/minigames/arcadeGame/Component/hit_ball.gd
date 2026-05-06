@@ -6,7 +6,7 @@ var launching_ball:bool
 var launching_ball_direction:Vector2
 
 var can_hit:bool
-@export var hit_cooldown:float = 1
+@export var hit_cooldown:float = 0.7
 
 var direction:Vector2
 var ball:arcade_ball
@@ -21,14 +21,16 @@ signal released_ball(entity)
 
 @onready var animation_player:AnimationPlayer = $AnimationPlayer
 @onready var cooldown_timer:Timer = $Timer
+@onready var sfx_stream = $AudioStreamPlayer2D
 @export var base_time_before_launch:float
 
 var attacking:bool
 
 
 func _ready():
+	caught_ball.connect(sfx_stream.play_clip.bind("caught"))
+	released_ball.connect(sfx_stream.play_clip.bind("launched"))
 	can_hit = true
-	cooldown_timer.wait_time = hit_cooldown
 
 func hit_ball():
 	if !attacking and can_hit: 
@@ -43,7 +45,6 @@ func hit_ball():
 func manage_ball()->void:
 	ball.stop()
 	ball.update_ball_color(ball_color)
-	
 	ball.update_ball_state(ball_state_to_give)
 	ball.set_being_launched(true)
 
@@ -73,6 +74,7 @@ func release_ball():
 	if ball != null : 
 		ball.update_direction(launching_ball_direction)
 		released_ball.emit(get_parent())
+		ball.just_realeased.emit()
 		ball.set_moving(true)
 		ball.set_being_launched(false)
 		ball = null

@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://exju2v76fwj4"]
+
+[ext_resource type="Script" uid="uid://l8o5iep36k85" path="res://src/minigames/arcadeGame/JoArena/JoAttacks/trail_attack.gd" id="1_larxb"]
+
+[sub_resource type="Gradient" id="Gradient_larxb"]
+offsets = PackedFloat32Array(0, 0.19648562, 0.51277953, 0.83226836, 1)
+colors = PackedColorArray(1, 1, 1, 0.64705884, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0.30980393)
+
+[node name="TrailAttack" type="Line2D" unique_id=1783808618 node_paths=PackedStringArray("hitbox", "collision_shape")]
+width = 5.0
+gradient = SubResource("Gradient_larxb")
+script = ExtResource("1_larxb")
+hitbox_width = 20
+hitbox = NodePath("HitBox")
+collision_shape = NodePath("HitBox/CollisionPolygon2D")
+
+[node name="HitBox" type="Area2D" parent="." unique_id=211029726]
+collision_layer = 15
+collision_mask = 15
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="HitBox" unique_id=1180522086]
+
+[connection signal="body_entered" from="HitBox" to="." method="_on_hit_box_body_entered"]

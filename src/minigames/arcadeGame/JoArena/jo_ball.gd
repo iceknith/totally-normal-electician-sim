@@ -1,116 +1,57 @@
-class_name Jo_ball extends CharacterBody2D
+class_name Jo_ball extends arcade_ball
 
+@export var turn_back_time: float
+@export var turn_back_speed: float
+@export var player:arcadePlayer
+@export var life_time = 10
+@export var speed_cap = 400
+@export var speed_increase_rate = 40
 
-@onready var mouvement_component:MovementComponent = $MovementComponent
-@onready var ball_sprite = $ballSprite
-@onready var ball_particles = $BallInside
-
-@export var base_color:Color
-
-var current_direction:Vector2
-var moving:bool
-var old_velocity:Vector2 = Vector2.ZERO
-var current_shot:int = 0
-var ball_state:ArcadeGame.BALLSTATE
-var being_launched:bool
-
+var starting_animation_finished = false
+var turn_back_timer: float = 0.0
+var can_turn_back: bool = true
 
 func _ready():
-	$AnimationPlayer.play("pulsation")
+	scale = Vector2(0.01, 0.01)
+	appear_animation()
+	moving = true
+	update_ball_state(ArcadeGame.BALLSTATE.EnemyControl)
+	just_realeased.connect(reset_timer)
+
+
+func _process(delta):
+	if !being_launched and mouvement_component.get_speed() < speed_cap and starting_animation_finished : 
+		mouvement_component.increase_move_speed(delta*speed_increase_rate)
+	
+	if being_launched : 
+		turn_back_timer = 0
+	else : 
+		turn_back_timer += delta
+
+		if turn_back_timer > turn_back_time:
+			turn_back()
+
+func reset_timer():
+	turn_back_timer = 0.0
+	can_turn_back = true
+
+func turn_back():
+	can_turn_back = false
+	ball_state = ArcadeGame.BALLSTATE.EnemyControl
 	update_ball_color(base_color)
-	update_ball_state(ArcadeGame.BALLSTATE.None)
+	if player != null : 
+		update_direction(player.global_position -global_position)
 	
-func stop():
-	moving = false
-	mouvement_component.increase_move_speed(40)
-	
+func set_timer(t):
+	turn_back_time = t
 
-	
-func update_velocity():
-	pass
-	
-func _physics_process(delta):
-	manage_speed()
-	manage_scale()
-	store_velocity()
-	if moving : 
-		move_and_slide()
-		manage_direction()
-		store_velocity()
+func set_player(p):
+	player = p
 
-
-
-	
-func manage_speed():
-	velocity = mouvement_component.calculate_velocity(velocity, current_direction)
-	
-func update_direction(d:Vector2):
-	current_direction = d
-
-func manage_direction():
-	if is_on_wall() : 
-		current_direction.x = - current_direction.x
-	if is_on_ceiling() : 
-		current_direction.y = - current_direction.y
-	if is_on_floor() : 
-		current_direction.y = - current_direction.y
-		
-func manage_scale():
-	var speed = old_velocity.length()
-
-	rotation = velocity.angle()
-
-	var speed_ratio = clamp(speed / 400.0, 0.0, 8)
-
-	var base_scale = lerp(1.0, 1.6, speed_ratio)
-
-
-	var max_stretch = lerp(0.1, 0.6, speed_ratio) 
-	var stretch = speed_ratio * max_stretch *0.05
-
-	scale.x = base_scale * (1.0 + stretch)
-	scale.y = max(base_scale * (1.0 - stretch * 0.5), base_scale)
-
-		
-	#to do, établir des min_scales pour que la balle se déforme correctement, aussi mettre des tween et rajouter des particules
-		
-		
-func manage_rotation():
-	if velocity != Vector2.ZERO:
-		rotation = velocity.angle()
-
-func set_moving(v:bool):
-	moving = v
-	
-func increase_trail():
-	$ballSprite/Trail.increase_max_points(1)
-	
-	
-func store_velocity():
-	if velocity != Vector2.ZERO and velocity > old_velocity: 
-		old_velocity = velocity
-		
-func update_ball_color(color):
-	var mat = ball_sprite.material as ShaderMaterial
-	mat.set_shader_parameter("color", color)
-	ball_particles.color = color
-	
-func update_ball_state(state:ArcadeGame.BALLSTATE):
-	ball_state = state
-
-
-func get_ball_state():
-	return ball_state
-	
-func reset():
-	scale = Vector2(1, 1)
-	velocity = Vector2.ZERO
-	old_velocity = Vector2.ZERO
-	mouvement_component.set_speed(200)
-	current_direction = Vector2.ZERO
-	update_ball_state(ArcadeGame.BALLSTATE.None)
-	update_ball_color(base_color)
-
-func set_being_launched(v:bool):
-	being_launched = v
-	
+func appear_animation():
+	var tween = create_tween()
+	disable_scale_management = true
+	tween.tween_property(self, "scale", Vector2.ONE*1.5, 0.5)
+	await tween.finished
+	starting_animation_finished = true
+	disable_scale_management = false
