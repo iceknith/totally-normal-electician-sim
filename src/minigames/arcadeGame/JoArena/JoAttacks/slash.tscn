@@ -255,7 +255,7 @@ radius = 14.008925
 
 [node name="Slash" type="Node2D" unique_id=830529901]
 z_index = 3
-scale = Vector2(2.5, 2.5)
+scale = Vector2(2, 2)
 script = ExtResource("1_4ijlk")
 fire_life_time = 20.0
 tracking_time = 1.5
