@@ -9,7 +9,9 @@ class_name Jo_ball extends arcade_ball
 
 var starting_animation_finished = false
 var turn_back_timer: float = 0.0
+var life_timer:float = 0.0
 var can_turn_back: bool = true
+var played_disappear_animation:bool = false
 
 func _ready():
 	scale = Vector2(0.01, 0.01)
@@ -30,6 +32,10 @@ func _process(delta):
 
 		if turn_back_timer > turn_back_time:
 			turn_back()
+	if !played_disappear_animation and !being_launched and life_timer > life_time : 
+		disappear_animation()
+		played_disappear_animation = true
+	life_timer +=delta #track life time
 
 func reset_timer():
 	turn_back_timer = 0.0
@@ -48,10 +54,22 @@ func set_timer(t):
 func set_player(p):
 	player = p
 
-func appear_animation():
+func appear_animation(): #set up the appearing animation
 	var tween = create_tween()
 	disable_scale_management = true
-	tween.tween_property(self, "scale", Vector2.ONE*1.5, 0.5)
+	tween.tween_property(self, "scale", Vector2.ONE*1.5, 0.8)
 	await tween.finished
 	starting_animation_finished = true
 	disable_scale_management = false
+	
+func disappear_animation():
+	var tween = create_tween()
+	disable_scale_management = true
+	tween.tween_property(self, "scale", Vector2.ZERO, 3)
+	tween.parallel().tween_property(get_trail(), "width", 0, 3)
+	await tween.finished
+	queue_free()
+	
+	
+func set_life_time(lt:float): #sets the lifetime of balls
+	life_time = lt

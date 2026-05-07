@@ -1,4 +1,4 @@
-extends AudioStreamPlayer2D
+extends AudioStreamPlayer
 
 
 @onready var caught_sfx = load("res://src/minigames/arcadeGame/soundEffects/Caught.wav")

@@ -97,4 +97,4 @@ size = Vector2i(1152, 648)
 size_2d_override_stretch = true
 render_target_update_mode = 4
 
-[node name="Arena" parent="Jeu/RenduJeu" unique_id=2119784583 instance=ExtResource("4_nmw0c")]
+[node name="JoArena" parent="Jeu/RenduJeu" unique_id=2119784583 instance=ExtResource("4_nmw0c")]

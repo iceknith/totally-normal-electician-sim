@@ -112,9 +112,10 @@ offset_bottom = 40.0
 
 [node name="Timer" type="Timer" parent="." unique_id=90530629]
 
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=178064766]
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1462001881]
 stream = SubResource("AudioStreamWAV_fqbih")
 max_polyphony = 4
+bus = &"sfx"
 script = ExtResource("5_xw2qr")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

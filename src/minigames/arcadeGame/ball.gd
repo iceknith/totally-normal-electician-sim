@@ -115,3 +115,7 @@ func reset():
 
 func set_being_launched(v:bool):
 	being_launched = v
+
+
+func get_trail():
+	return $ballSprite/Trail

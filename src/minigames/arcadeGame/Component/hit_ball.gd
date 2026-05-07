@@ -21,7 +21,7 @@ signal released_ball(entity)
 
 @onready var animation_player:AnimationPlayer = $AnimationPlayer
 @onready var cooldown_timer:Timer = $Timer
-@onready var sfx_stream = $AudioStreamPlayer2D
+@onready var sfx_stream = $AudioStreamPlayer
 @export var base_time_before_launch:float
 
 var attacking:bool

@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://tgdtj8y5iunk"
+path="res://.godot/imported/warn slash.wav-4290ab0f780255a29d05f5bbb4568927.sample"
+
+[deps]
+
+source_file="res://src/minigames/arcadeGame/JoArena/sfx/warn slash.wav"
+dest_files=["res://.godot/imported/warn slash.wav-4290ab0f780255a29d05f5bbb4568927.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

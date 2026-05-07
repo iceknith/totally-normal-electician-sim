@@ -13,6 +13,9 @@ var shock_wave_scene:PackedScene = load("res://src/minigames/arcadeGame/effects/
 var last_loser:Node
 var in_reset_animation:bool
 
+
+var fight_progress = 0.0
+
 enum BALLSTATE
 {
 	PlayerControl,
@@ -51,7 +54,7 @@ func start_game():
 		var hitball:Hitball = get_hitballs(ent)
 		if hitball !=null : 
 			hitball.released_ball.connect(play_shockwave)
-	jo_attacks.start_fight()
+	jo_attacks.start_fight(jo_attacks.fight_id)
 	
 	
 	
@@ -60,7 +63,7 @@ func reset(p:arcadePlayer):
 	await get_tree().create_timer(1.0).timeout
 	player.global_position =  starting_position.global_position
 	player.reset()
-	jo_attacks.start_fight()
+	jo_attacks.start_fight(jo_attacks.fight_id)
 
 func play_shockwave(entity):
 	var shockwave:ShockWave = shock_wave_scene.instantiate()

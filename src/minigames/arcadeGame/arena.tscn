@@ -233,7 +233,7 @@ limit_top = 0
 limit_right = 1152
 limit_bottom = 648
 script = ExtResource("2_50w5d")
-launch_zoom = Vector2(1.05, 1.05)
+launch_zoom = Vector2(1.03, 1.03)
 
 [node name="Left" type="Marker2D" parent="Camera2D" unique_id=133654339]
 

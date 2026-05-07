@@ -64,13 +64,17 @@ _data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.99999, 1), 0.0, 0.0, 0, 0, Vec
 point_count = 3
 metadata/_snap_enabled = true
 
+[sub_resource type="Curve" id="Curve_5ppmw"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.24566473, 1), 0.0, 0.0, 0, 0, Vector2(0.51445085, 0.7777778), 0.0, 0.0, 0, 0, Vector2(0.8236994, 0.5783476), 0.0, 0.0, 0, 0, Vector2(1, 0.19658124), 0.0, 0.0, 0, 0]
+point_count = 5
+
 [sub_resource type="Curve2D" id="Curve2D_5ppmw"]
 _data = {
 "points": PackedVector2Array(0, 0, 0, 0, 23.11602, 621.1546, 0, 0, 0, 0, 1105, 611, 0, 0, 0, 0, 1114, 23, 0, 0, 0, 0, 14, 20, 0, 0, 0, 0, 21.090237, 619.12366)
 }
 point_count = 5
 
-[node name="Arena" type="Control" unique_id=2119784583]
+[node name="JoArena" type="Control" unique_id=2119784583]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -133,7 +137,7 @@ limit_top = 0
 limit_right = 1152
 limit_bottom = 648
 script = ExtResource("3_dagtu")
-launch_zoom = Vector2(1.05, 1.05)
+launch_zoom = Vector2(1.02, 1.02)
 
 [node name="Left" type="Marker2D" parent="Camera2D" unique_id=133654339]
 
@@ -150,7 +154,7 @@ z_index = 1
 position = Vector2(558, 378)
 scale = Vector2(0.5, 0.5)
 collision_layer = 8
-hit_cooldown = 0.1
+hit_cooldown = 0.5
 losing_ball_state = 1
 
 [node name="CPUParticles2D" type="CPUParticles2D" parent="." unique_id=343874610]
@@ -234,6 +238,10 @@ tempo_curve = SubResource("Curve_y7rmr")
 
 [node name="JoeAttacks" type="Node2D" parent="." unique_id=1774538303]
 script = ExtResource("8_eqm75")
+balls_life_time = 13
+slash_number = 30
+slash_interval = 1.0
+slash_interval_curve = SubResource("Curve_5ppmw")
 
 [node name="Path2D" type="Path2D" parent="JoeAttacks" unique_id=374954259]
 position = Vector2(14.178182, 9.304567)
