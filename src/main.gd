@@ -78,7 +78,8 @@ func receive_signal(type, data):
 		MainCommunicator.SignalType.START_DIALOGUE : start_dialogue(data)
 
 func launch_game() -> void:
-	world3D.start_game()
+	#world3D.start_game()
+	
 	create_eow_timers()
 	reset_state()
 

@@ -9,7 +9,6 @@ class_name Arena2_player extends Minigame
 
 @onready var ScoreLabel = $ScoreLabel
 @onready var CountdownLabel = $CountdownLabel
-
 @onready var PlayerStartingPosition = $StartingPositions/PlayerStartingPosition
 @onready var EnemyStartingPosition = $StartingPositions/EnemyStartingPosition
 

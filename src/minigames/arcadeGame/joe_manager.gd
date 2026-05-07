@@ -52,7 +52,6 @@ func manage_jo_input(delta):
 		
 		if succes_probability <= launch_probability:
 			set_launch_direction()
-			print("sp : ", succes_probability, "lp : ", launch_probability )
 			enemy.HitBallComponent.hit_ball()
 	
 

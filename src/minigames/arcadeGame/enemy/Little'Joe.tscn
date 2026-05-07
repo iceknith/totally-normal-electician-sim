@@ -132,6 +132,7 @@ speed = 300
 [node name="HitBall" parent="." unique_id=1738906224 instance=ExtResource("3_m0eqn")]
 collision_layer = 2
 collision_mask = 2
+hit_cooldown = 0.7
 ball_color = Color(0, 0, 0, 1)
 ball_state_to_give = 1
 
