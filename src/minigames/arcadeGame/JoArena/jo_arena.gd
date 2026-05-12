@@ -29,6 +29,7 @@ var EnemyScore:int
 
 
 func _ready() -> void:
+	SoundManager.change_music.emit("Joe")
 	PlayerScore = 0
 	EnemyScore = 0
 	start_game()

@@ -13,9 +13,11 @@ var old_velocity:Vector2 = Vector2.ZERO
 var current_shot:int = 0
 var ball_state:ArcadeGame.BALLSTATE
 var being_launched:bool
+var launchable:bool
 var disable_scale_management:bool = false
 
 
+signal force_release
 signal just_realeased(ball:arcade_ball)
 
 func _ready():
@@ -53,12 +55,11 @@ func update_direction(d:Vector2):
 
 #vu que les murs de l'arènes sont plats je me suis pas fait chier
 func manage_direction():
-	if is_on_wall() : 
-		current_direction.x = - current_direction.x
-	if is_on_ceiling() : 
-		current_direction.y = - current_direction.y
-	if is_on_floor() : 
-		current_direction.y = - current_direction.y
+	if get_slide_collision_count() == 0:
+		return
+	var collision = get_slide_collision(0)
+	var normal = collision.get_normal()
+	current_direction = current_direction.bounce(normal).normalized()
 
 func manage_scale():
 	var speed = mouvement_component.get_speed()
@@ -116,6 +117,8 @@ func reset():
 func set_being_launched(v:bool):
 	being_launched = v
 
+func set_launchable(v:bool):
+	launchable = v
 
 func get_trail():
 	return $ballSprite/Trail

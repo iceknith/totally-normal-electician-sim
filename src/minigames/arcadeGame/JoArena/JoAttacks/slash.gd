@@ -10,7 +10,7 @@ class_name slash_attack extends Node2D
 
 @export var fire_life_time: float = 15
 @export var tracking_time: float = 2
-@export var tracking_speed: float = 250
+@export var tracking_speed: float = 290
 @export var wait_before_slash:float = 0.25
 @export var blink_time: float = 0.15
 
@@ -20,9 +20,11 @@ var tracking: bool = false
 var removing_fire = false
 
 func _ready():
-	global_position = player.global_position
+	if player != null : 
+		global_position = player.global_position
 	warning.modulate = Color.BLACK
 	fire.visible = false
+	fire.scale = Vector2.ZERO
 	slash.visible = false
 
 	warning.visible = true
@@ -36,6 +38,13 @@ func _process(delta):
 	if tracking and player != null:
 		var direction = global_position.direction_to(player.global_position)
 		global_position += direction * tracking_speed * delta
+		
+		
+	if fire.scale.x > 0.5 and  fire.scale.y > 0.5 : 
+		fire_hitbox.monitoring = true
+	else : 
+		fire_hitbox.monitoring = false
+		
 
 
 func start_tracking_warning():
@@ -58,17 +67,18 @@ func start_tracking_warning():
 
 	tracking = false
 	
-	warning.visible = false
+
 	$PreventSound.play()
 	await get_tree().create_timer(wait_before_slash).timeout
 	slash_attack_animation()
+	warning.visible = false
 
 
 func slash_attack_animation():
-	slash_hitbox.monitoring = true
-	$SlashSoundEffect.pitch_scale = randf_range(0.6, 2)
-	animation_player.play("slash")
-	await animation_player.animation_finished
+	##slash_hitbox.monitoring = true
+	##$SlashSoundEffect.pitch_scale = randf_range(0.6, 2)
+	##animation_player.play("slash")
+	#await animation_player.animation_finished
 
 	fire.visible = true
 	fire.play("default")

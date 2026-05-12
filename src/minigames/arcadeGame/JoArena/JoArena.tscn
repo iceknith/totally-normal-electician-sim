@@ -52,18 +52,6 @@ fill_from = Vector2(0.50085473, 0.48376068)
 [sub_resource type="LabelSettings" id="LabelSettings_aqv87"]
 font_size = 256
 
-[sub_resource type="Curve" id="Curve_eqm75"]
-_limits = [0.0, 2.0, 0.0, 1.0]
-_data = [Vector2(0, 1), 0.0, 0.0, 0, 0]
-point_count = 1
-metadata/_snap_enabled = true
-
-[sub_resource type="Curve" id="Curve_y7rmr"]
-_limits = [0.0, 2.0, 0.0, 1.0]
-_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.99999, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.2), 0.0, 0.0, 0, 0]
-point_count = 3
-metadata/_snap_enabled = true
-
 [sub_resource type="Curve" id="Curve_5ppmw"]
 _data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.24566473, 1), 0.0, 0.0, 0, 0, Vector2(0.51445085, 0.7777778), 0.0, 0.0, 0, 0, Vector2(0.8236994, 0.5783476), 0.0, 0.0, 0, 0, Vector2(1, 0.19658124), 0.0, 0.0, 0, 0]
 point_count = 5
@@ -82,6 +70,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_utyyb")
+music_when_entering = "Joe"
 
 [node name="TextureRect" type="ColorRect" parent="." unique_id=482453930]
 layout_mode = 1
@@ -231,17 +220,14 @@ position = Vector2(893, 530)
 
 [node name="JoBossFight" type="AnimationPlayer" parent="." unique_id=1082099075]
 
-[node name="WorldAudioManager" parent="." unique_id=1781513062 instance=ExtResource("8_5ppmw")]
-default_music = "Joe"
-pitch_curve = SubResource("Curve_eqm75")
-tempo_curve = SubResource("Curve_y7rmr")
-
 [node name="JoeAttacks" type="Node2D" parent="." unique_id=1774538303]
 script = ExtResource("8_eqm75")
 balls_life_time = 13
+time_between_ball_spawn = 5
 slash_number = 30
 slash_interval = 1.0
 slash_interval_curve = SubResource("Curve_5ppmw")
+ball_color = Color(0.8117647, 0.043137256, 0, 1)
 
 [node name="Path2D" type="Path2D" parent="JoeAttacks" unique_id=374954259]
 position = Vector2(14.178182, 9.304567)
@@ -255,3 +241,6 @@ rotation = -0.00938576
 [node name="Attacks" type="Node2D" parent="JoeAttacks" unique_id=274684466]
 
 [node name="ShockWaveContainer" type="Node2D" parent="." unique_id=1401343588]
+
+[node name="WorldAudioManager" parent="." unique_id=1781513062 instance=ExtResource("8_5ppmw")]
+default_music = "Joe"

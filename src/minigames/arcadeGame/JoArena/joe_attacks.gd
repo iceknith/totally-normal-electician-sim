@@ -3,10 +3,14 @@ extends Node2D
 
 @onready var JoBall:PackedScene = load("res://src/minigames/arcadeGame/JoArena/JoBalls.tscn")
 @onready var SlashAttack:PackedScene = load("res://src/minigames/arcadeGame/JoArena/JoAttacks/slash.tscn")
+@onready var GemAttack:PackedScene = load("res://src/minigames/arcadeGame/JoArena/JoAttacks/gemAttack.tscn")
+@onready var ball:PackedScene = load("res://src/minigames/arcadeGame/ball.tscn")
+
 
 @onready var ball_spawn_path = $Path2D/BallSpawnPosition
 @onready var player:arcadePlayer = $"../Entities/Player"
 @onready var attacks = $Attacks
+
 
 @onready var particles = $"../CPUParticles2D"
 @onready var fond = $"../TextureRect"
@@ -16,6 +20,7 @@ extends Node2D
 @export var turn_back_timer:float = 2.5
 @export var balls_life_time = 10
 @export var nb_ball:int = 3
+@export var time_between_ball_spawn:int = 3
 var ball_pool: Array[Jo_ball] = [] #sinon ça lag
 
 var slash_pool:Array[slash_attack]
@@ -24,6 +29,12 @@ var slash_pool:Array[slash_attack]
 @export var slash_number:int = 10
 @export var slash_interval:float = 0.5
 @export var slash_interval_curve:Curve
+
+@export_group("Gem Attack")
+@export var gem_attack_duration:int = 10
+@export var ball_color:Color
+@export var ball_base_speed:int = 400
+
 
 
 var slash_time = 0#to know how much a slash last
@@ -36,6 +47,7 @@ func _ready():
 	fight_id = 0
 
 func ball_attack():
+	var balls = []
 	for i in range(nb_ball):
 		var ball: Jo_ball = JoBall.instantiate()
 		ball.set_player(player)
@@ -44,14 +56,9 @@ func ball_attack():
 		ball.visible = true
 		attacks.add_child(ball)
 		ball_pool.append(ball)
-	
-
 		ball_spawn_path.progress_ratio = float(i) / float(nb_ball)
 		ball.global_position = ball_spawn_path.global_position
-
-		
 		ball.process_mode = Node.PROCESS_MODE_INHERIT
-
 		var direction:Vector2 = player.global_position - ball.global_position
 		ball.update_direction(direction.normalized())
 
@@ -60,30 +67,31 @@ func ball_attack():
 
 
 func start_fight(id):
+	reset_place()
 	if fight_id != id :
 		return
 	ball_attack()
 	if fight_id != id :
 		return
-		
 	await get_tree().create_timer(balls_life_time + 1).timeout
-	
 	if fight_id != id :
 		return
 	place_transition()
 	await get_tree().create_timer(1).timeout
-	
 	if fight_id != id :
 		return
 	await start_slash_attack(id)
-	await get_tree().create_timer(slash_time).timeout
+	await get_tree().create_timer(3.0).timeout
 	if fight_id != id :
 		return
-		
-	remove_fire()
+	await remove_fire()
+	await get_tree().create_timer(3.0).timeout
+	await reset_place()
+	create_gem_attack()
 	
 	
 func reset():
+	reset_place()
 	fight_id +=1
 	for ent in attacks.get_children() : 
 		ent.queue_free()
@@ -110,7 +118,42 @@ func start_slash_attack(id = fight_id):
 		
 		slash_pool.append(slash)
 	
+#remove the fire at the end of attacks
 func remove_fire():
 	for s in slash_pool : 
 		if is_instance_valid(s): #heck if they didnt already queue free 
 			s.removing_fire_early()
+
+func create_gem_attack(id = fight_id):
+	var gem_attack = GemAttack.instantiate()
+	attacks.add_child(gem_attack) 
+	gem_attack.global_position = Vector2(1152/2, 648/2)
+	await get_tree().create_timer(4).timeout
+	var ent:arcade_ball = ball.instantiate()
+
+	
+	if fight_id != id : 
+			return
+	var dir = (player.global_position - gem_attack.global_position).normalized()
+	var pos =  Vector2(1152/2, 648/2) + dir * 120
+	attacks.add_child(ent)
+	ent.mouvement_component.set_speed(ball_base_speed)
+	ent.update_ball_state(gem_attack.ball_state_to_give)
+	ent.update_ball_color(gem_attack.ball_color)
+	ent.update_direction(dir)
+	ent.set_moving(true)
+	ent.global_position = pos
+
+
+		
+func reset_place():
+	var tween = create_tween()
+	tween.set_trans(Tween.TRANS_ELASTIC)
+	tween.set_ease(Tween.EASE_IN_OUT)
+	tween.tween_property(particles, "modulate", Color.WHITE, 1)
+	tween.parallel().tween_property(fond, "color", Color.BLACK,1)
+	
+
+	
+	
+	

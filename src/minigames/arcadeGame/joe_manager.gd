@@ -1,7 +1,7 @@
 class_name JoManager
 extends Node2D
 
-@export var attack_cooldown: float = 3
+@export var attack_cooldown: float = 0.7
 @export var enemy: ArcadeEnemy
 @onready var player: arcadePlayer = $"../Player"
 @onready var ball: arcade_ball = $"../../Ball"

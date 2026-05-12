@@ -23,6 +23,7 @@ func _ready():
 	update_music(default_music)
 	SoundManager.change_music.connect(update_music)
 	MainCommunicator.ChangeGameState.connect(back_to_main_theme)
+	SoundManager.reset_music.connect(reset_music)
 
 func _process(delta):
 	pass
@@ -61,3 +62,9 @@ func modify_music_pitch(new_pitch:float):
 
 func modify_music_tempo(new_tempo:float):
 	bg_music_player.pitch_scale = new_tempo
+
+func reset_music(music:String):
+	if music_positions.has(music):
+		music_positions[music] = 0
+		
+	

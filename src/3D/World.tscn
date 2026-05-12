@@ -28,6 +28,7 @@
 [ext_resource type="PackedScene" uid="uid://b3nng2yxnwllt" path="res://assets/blender/foresttree2.blend" id="17_ro6to"]
 [ext_resource type="PackedScene" uid="uid://dgtuon8krwmkg" path="res://src/3D/objects/forest_New.tscn" id="17_ttchh"]
 [ext_resource type="Script" uid="uid://gp32lnioffiv" path="res://addons/scene_object_brush/clean_up_height.gd" id="21_8pvm1"]
+[ext_resource type="PackedScene" uid="uid://cppr3lfytuf4v" path="res://src/minigames/arcadeGame/level/FullJoBoss.tscn" id="21_gisxt"]
 
 [sub_resource type="Curve" id="Curve_w7gwu"]
 _data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1, 1), 2.0254266, 0.0, 0, 0]
@@ -62,7 +63,7 @@ fog_depth_curve = 6.4980483
 auto_exposure_scale = 0.3
 dof_blur_far_distance = 200.0
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_8pvm1"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_wnywt"]
 viewport_path = NodePath("SubViewport")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_clt24"]
@@ -106,7 +107,7 @@ animations = [{
 [sub_resource type="SphereShape3D" id="SphereShape3D_ivwwh"]
 radius = 0.72587484
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_gisxt"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_xud6r"]
 viewport_path = NodePath("SubViewport")
 
 [sub_resource type="SphereMesh" id="SphereMesh_gmgko"]
@@ -114,7 +115,7 @@ viewport_path = NodePath("SubViewport")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yfp7s"]
 albedo_color = Color(0.65882355, 0, 0, 1)
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_wnywt"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_impf6"]
 viewport_path = NodePath("SubViewport")
 
 [sub_resource type="PrismMesh" id="PrismMesh_lpsds"]
@@ -122,13 +123,21 @@ viewport_path = NodePath("SubViewport")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8pvm1"]
 albedo_color = Color(0.07700009, 0, 0.66, 1)
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_xud6r"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_x4jwh"]
 viewport_path = NodePath("SubViewport")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gisxt"]
 albedo_color = Color(0.09315889, 0.65882355, 0, 1)
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_impf6"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_imnrk"]
+viewport_path = NodePath("SubViewport")
+
+[sub_resource type="PrismMesh" id="PrismMesh_l2on1"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_lwi55"]
+radius = 0.72587484
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_tqnhu"]
 viewport_path = NodePath("SubViewport")
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_jqxng"]
@@ -945,7 +954,7 @@ metadata/_custom_type_script = "uid://b3imm353l7y6u"
 
 [node name="InteractacleText3D" parent="Objets/Interactables/boulangerie2/boulangerie" unique_id=1576660793 instance=ExtResource("10_e8reo")]
 transform = Transform3D(0.30000004, 0, 0, 0, 0.3, 0, 0, 0, 0.30000004, 0, 0.4931178, 0)
-texture = SubResource("ViewportTexture_8pvm1")
+texture = SubResource("ViewportTexture_wnywt")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Objets/Interactables/boulangerie2/boulangerie" unique_id=1710995515]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0729332, 0.11338568, 0.06949043)
@@ -974,7 +983,7 @@ shape = SubResource("SphereShape3D_ivwwh")
 [node name="InteractacleText3D" parent="Objets/Interactables/InterractableDialogue" unique_id=1261401867 instance=ExtResource("10_e8reo")]
 transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0.8627713, 0)
 billboard = 2
-texture = SubResource("ViewportTexture_gisxt")
+texture = SubResource("ViewportTexture_xud6r")
 
 [node name="InterractableRPC" type="Area3D" parent="Objets/Interactables" unique_id=2100176355 node_paths=PackedStringArray("text_sprite")]
 transform = Transform3D(-0.40314606, 0, -0.91513556, 0, 1, 0, 0.91513556, 0, -0.40314606, 64.50607, 1.475202, 2.7131975)
@@ -996,7 +1005,7 @@ metadata/_edit_lock_ = true
 
 [node name="InteractacleText3D" parent="Objets/Interactables/InterractableRPC" unique_id=1932431219 instance=ExtResource("10_e8reo")]
 transform = Transform3D(-0.19774605, 0, 0.029941564, 0, 0.2, 0, -0.029941564, 0, -0.19774605, 2.0036647, 0.7986984, -0.655995)
-texture = SubResource("ViewportTexture_wnywt")
+texture = SubResource("ViewportTexture_impf6")
 metadata/_edit_lock_ = true
 
 [node name="arcade" type="Area3D" parent="Objets/Interactables" unique_id=1975199288 node_paths=PackedStringArray("text_sprite")]
@@ -1016,7 +1025,7 @@ shape = SubResource("SphereShape3D_ivwwh")
 
 [node name="InteractacleText3D" parent="Objets/Interactables/arcade" unique_id=467142444 instance=ExtResource("10_e8reo")]
 transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0.8773431, 0)
-texture = SubResource("ViewportTexture_xud6r")
+texture = SubResource("ViewportTexture_x4jwh")
 
 [node name="boulangerieDebug" type="Area3D" parent="Objets/Interactables" unique_id=341763301 node_paths=PackedStringArray("text_sprite")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 54.481976, 0.73993564, 0.25229335)
@@ -1035,10 +1044,29 @@ shape = SubResource("SphereShape3D_ivwwh")
 
 [node name="InteractacleText3D" parent="Objets/Interactables/boulangerieDebug" unique_id=1253022848 instance=ExtResource("10_e8reo")]
 transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0.86451787, 0)
-texture = SubResource("ViewportTexture_impf6")
+texture = SubResource("ViewportTexture_imnrk")
 
 [node name="superette" parent="Objets/Interactables" unique_id=185217472 instance=ExtResource("14_w7gwu")]
 transform = Transform3D(1.2724622, 0, -0.58381486, 0, 1.4, 0, 0.58381486, 0, 1.2724622, -37.65221, 0, 8.07334)
+
+[node name="JoBoss" type="Area3D" parent="Objets/Interactables" unique_id=872440754 node_paths=PackedStringArray("text_sprite")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 46.925915, 0.37960505, -1.1396573)
+script = ExtResource("9_ttchh")
+minigame = ExtResource("21_gisxt")
+text_sprite = NodePath("InteractacleText3D")
+metadata/_custom_type_script = "uid://b3imm353l7y6u"
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Objets/Interactables/JoBoss" unique_id=1815564471]
+transform = Transform3D(1, -1.4901161e-08, -1.4901161e-08, -1.4901161e-08, 1, -2.9802322e-08, -1.4901161e-08, 0, 1, 0, 1.1920929e-07, 2.3841858e-07)
+mesh = SubResource("PrismMesh_l2on1")
+surface_material_override/0 = SubResource("StandardMaterial3D_8pvm1")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Objets/Interactables/JoBoss" unique_id=1484427522]
+shape = SubResource("SphereShape3D_lwi55")
+
+[node name="InteractacleText3D" parent="Objets/Interactables/JoBoss" unique_id=2001127438 instance=ExtResource("10_e8reo")]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0.8773431, 0)
+texture = SubResource("ViewportTexture_tqnhu")
 
 [node name="Tree" type="Node3D" parent="Objets" unique_id=1912448925]
 transform = Transform3D(0.9510564, 0, -0.309017, 0, 1, 0, 0.309017, 0, 0.9510564, 0.5693767, 0, 3.0004911)
