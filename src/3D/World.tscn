@@ -47,6 +47,8 @@ size = Vector2(496, 350.8)
 sky_top_color = Color(0.050980393, 0.5882353, 1, 1)
 sky_horizon_color = Color(0.8216582, 0.9236592, 0.9858908, 1)
 sky_cover_modulate = Color(0.6666667, 0.9372549, 0.972549, 1)
+ground_bottom_color = Color(0.8235294, 0.9254902, 0.9843137, 1)
+ground_horizon_color = Color(0.8235294, 0.9254902, 0.9843137, 1)
 
 [sub_resource type="Sky" id="Sky_co47k"]
 sky_material = SubResource("ProceduralSkyMaterial_00xeg")
@@ -57,7 +59,15 @@ sky = SubResource("Sky_co47k")
 ambient_light_source = 3
 reflected_light_source = 2
 glow_hdr_threshold = 1.5
+fog_enabled = true
+fog_mode = 1
+fog_light_color = Color(0.8235294, 0.9254902, 0.9843137, 1)
+fog_density = 1.0
+fog_sky_affect = 0.0
+fog_height = 50.0
 fog_depth_curve = 6.4980483
+fog_depth_begin = 150.0
+fog_depth_end = 200.0
 
 [sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_co47k"]
 auto_exposure_scale = 0.3
@@ -241,7 +251,7 @@ transparency = 0.45
 mesh = SubResource("PlaneMesh_clt24")
 
 [node name="Player" parent="." unique_id=192968154 instance=ExtResource("1_34ihj")]
-transform = Transform3D(-0.9886858, 0, 0.1500013, 0, 1, 0, -0.1500013, 0, -0.9886858, 51.705986, 0.07089543, -23.751694)
+transform = Transform3D(-0.9886858, 0, 0.1500013, 0, 1, 0, -0.1500013, 0, -0.9886858, 51.705986, 0.31401062, -23.751694)
 
 [node name="Sun" type="DirectionalLight3D" parent="." unique_id=164570066]
 transform = Transform3D(1, 0, 0, 0, -0.8181497, 0.5750051, 0, -0.5750051, -0.8181497, 0, 104.529724, 0)
@@ -786,7 +796,7 @@ transform = Transform3D(-0.50816464, 2.1468172e-10, -1.3045186, 7.8272513e-11, 1
 transform = Transform3D(0.50426906, 2.1468173e-10, 1.3060292, -7.7678766e-11, 1.4, -2.001359e-10, -1.3060292, -3.7569888e-13, 0.50426906, 142.22495, -1.5107809, -37.66715)
 
 [node name="maisontexture48" parent="Objets/Houses" unique_id=1648552370 instance=ExtResource("12_5f2gp")]
-transform = Transform3D(-0.60020024, 2.1468173e-10, -1.2648162, 9.2374976e-11, 1.4, 1.9379168e-10, 1.2648162, -3.7569465e-13, -0.60020024, 67.91758, -1.5107809, -2.8173072)
+transform = Transform3D(0.5408547, -2.1443294e-10, 1.291308, 9.2375003e-11, 1.4000001, 1.9379168e-10, -1.291308, 1.0338473e-11, 0.5408547, 67.91757, -1.5107809, -2.8173056)
 
 [node name="maisontexture23" parent="Objets/Houses" unique_id=1243665116 instance=ExtResource("12_5f2gp")]
 transform = Transform3D(0.5604214, 0, 1.282937, 0, 1.4, 0, -1.282937, 0, 0.5604214, 17.887424, -1.5107809, -24.886538)
