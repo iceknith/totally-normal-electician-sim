@@ -32,7 +32,6 @@ func update_music(music:String):
 	if not ResourceLoader.exists(path):
 		push_error("Music file not found: " + path)
 		return
-	
 	# sauvegarde la position de la musique actuelle
 	if current_music != "":
 		music_positions[current_music] = bg_music_player.get_playback_position()

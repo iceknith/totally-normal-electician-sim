@@ -17,6 +17,7 @@ var phone_call:DialogueResource = preload("res://src/Dialogue/phone_call.dialogu
 @export var skyBotEndColor:Color
 @export var skyChangeCurve:Curve
 
+@onready var environment:Environment = $WorldEnvironment.environment
 @onready var skyMaterial:ProceduralSkyMaterial = $WorldEnvironment.environment.sky.sky_material
 @onready var worldBoxSmall:Area3D = $worldBoxSmall
 @onready var worldBoxBig:Area3D = $worldBoxBig
@@ -48,6 +49,9 @@ func update_eow():
 	var skyChangeProgress:float = skyChangeCurve.sample(eow_meter)
 	skyMaterial.sky_top_color = skyTopStartColor * (1 - skyChangeProgress) + skyTopEndColor * skyChangeProgress
 	skyMaterial.sky_horizon_color = skyBotStartColor * (1 - skyChangeProgress) + skyBotEndColor * skyChangeProgress
+	skyMaterial.ground_bottom_color = skyMaterial.sky_horizon_color
+	skyMaterial.ground_horizon_color = skyMaterial.sky_horizon_color
+	environment.fog_light_color = skyMaterial.sky_horizon_color
 
 func count_towers(node:Node) -> int:
 	var result = 0
