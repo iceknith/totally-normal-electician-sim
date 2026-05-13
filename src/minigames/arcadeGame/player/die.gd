@@ -14,7 +14,7 @@ func _ready():
 
 
 func turn_off():
-	monitoring = false
+	set_deferred("monitoring", false)
 	
 func turn_on() : 
 	monitoring = true
@@ -30,4 +30,11 @@ func death():
 
 func death_animation():
 	animationPlayer.play(death_animation_name)
+	
+func play_death_sound(pitch_modifier = 1):
+	$AudioStreamPlayer.pitch_scale = pitch_modifier
+	$AudioStreamPlayer.play()
+	await $AudioStreamPlayer.finished
+	$AudioStreamPlayer.pitch_scale = 1
+	
 	

@@ -58,7 +58,7 @@ func manage_input(delta):
 	match inputSet :
 		InputSet.Player1 : 
 			input_direction = Vector2(Input.get_axis("left", "right"), Input.get_axis("up", "down"))
-			interactAction = "interact1"
+			interactAction = "interact2"
 		InputSet.Player2 : 
 			input_direction = Vector2(Input.get_axis("ui_left", "ui_right"), Input.get_axis("ui_up", "ui_down"))
 			interactAction = "interact2"
@@ -101,7 +101,7 @@ func manage_launching_ball(delta):
 			first_holding = true
 			launch_counter = 0
 	else :
-		HitBallComponent.released_ball()
+		HitBallComponent.release_ball()
 		launch_counter = 0
 
 func setup_signals():
@@ -111,6 +111,7 @@ func death(entity):
 	if !dead : 
 		HitBallComponent.release_ball_on_death()
 		DieComponent.turn_off()
+		DieComponent.play_death_sound()
 		inform_death.emit(self)
 		dead = true
 	

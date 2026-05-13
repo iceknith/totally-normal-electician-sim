@@ -9,11 +9,12 @@ var shock_wave_scene:PackedScene = load("res://src/minigames/arcadeGame/effects/
 
 @onready var shock_wave_container = $ShockWaveContainer
 @onready var jo_attacks = $JoeAttacks
+@onready var dialogue = load("res://src/minigames/arcadeGame/JoArena/JoDialogue/JoDialogue.dialogue")
+
+@onready var animation_player = $JoBossFight
 
 var last_loser:Node
 var in_reset_animation:bool
-
-
 var fight_progress = 0.0
 
 enum BALLSTATE
@@ -29,11 +30,11 @@ var EnemyScore:int
 
 
 func _ready() -> void:
-	SoundManager.change_music.emit("Joe")
 	PlayerScore = 0
 	EnemyScore = 0
-	start_game()
 	player.inform_death.connect(reset)
+	await intro()
+	start_game()
 		
 func get_hitballs(node: Node):
 	for child in node.get_children():
@@ -79,3 +80,20 @@ func check_if_end_game():
 	
 func exit():
 	MainCommunicator.send_signal_to_main(MainCommunicator.SignalType.REMOVE_MINIGAME)
+	
+func intro():
+	SoundManager.change_music.emit("JoeIntro")
+	
+	MainCommunicator.send_signal_to_main(
+	MainCommunicator.SignalType.START_DIALOGUE, 
+	[dialogue, "_intro", [self]] 
+	)
+	await DialogueManager.dialogue_ended
+	animation_player.play("teleport")
+	await animation_player.animation_finished
+	SoundManager.change_music.emit("Joe")
+	await get_tree().create_timer(3).timeout
+	
+func end_fight():
+	pass
+	

@@ -108,3 +108,6 @@ func get_ball():
 
 func _on_timer_timeout():
 	can_hit = true
+	
+func set_cooldown(v):
+	hit_cooldown = v

@@ -25,7 +25,7 @@ func _ready():
 
 func _process(delta):
 	
-	if scale.x < 0.3 and scale.y < 0.3 and life_timer > life_time : 
+	if scale.x < 0.5 and scale.y < 0.5 and life_timer > life_time : 
 		$CollisionShape2D.set_deferred("disabled", true)
 	if !being_launched and mouvement_component.get_speed() < speed_cap and starting_animation_finished : 
 		mouvement_component.increase_move_speed(delta*speed_increase_rate)

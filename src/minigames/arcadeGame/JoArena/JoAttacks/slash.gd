@@ -58,7 +58,7 @@ func start_tracking_warning():
 		if is_red:
 			warning.modulate = Color.RED
 		else:
-			warning.modulate = Color.BLACK
+			warning.modulate = Color.WHITE
 
 		is_red = !is_red
 

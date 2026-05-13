@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://bxwqpnflatx42"
+path="res://.godot/imported/JoDialogue.dialogue-3614b4fd7c0425a221428ccbfe65218c.tres"
+
+[deps]
+
+source_file="res://src/minigames/arcadeGame/JoArena/JoDialogue/JoDialogue.dialogue"
+dest_files=["res://.godot/imported/JoDialogue.dialogue-3614b4fd7c0425a221428ccbfe65218c.tres"]
+
+[params]
+
+defaults=true

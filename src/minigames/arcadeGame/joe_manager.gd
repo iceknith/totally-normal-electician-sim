@@ -3,24 +3,40 @@ extends Node2D
 
 @export var attack_cooldown: float = 0.7
 @export var enemy: ArcadeEnemy
-@onready var player: arcadePlayer = $"../Player"
-@onready var ball: arcade_ball = $"../../Ball"
-@export var distance_to_hit = 100
+@export var player: arcadePlayer
+@export var ball: arcade_ball 
+@export var distance_to_hit = 75
 @export var distance_max_to_ball = 75
+@export var opponent_move_speed = 250
 var pause_movement: bool
 var dir_to_ball: Vector2
 @export var JoCatchRate: Curve
 @export var max_manageable_speed: int = 500
+
+
+@export var jo_preset: opponent = opponent.LittleJo
+
+
 signal has_rolled_probabilities
 var rolled_probabilities: bool = false
 
+
 enum opponent {
 	LittleJo,
-	BigJo
+	Jolister,
+	BigJo,
+	Jo
 }
+
+
 
 func _ready():
 	has_rolled_probabilities.connect(reset_roll)
+	apply_jo_preset()
+	if enemy != null : 
+		enemy.HitBallComponent.set_cooldown(attack_cooldown)
+		enemy.movementComponent.set_speed(opponent_move_speed)
+		
 
 func _process(delta):
 	if !pause_movement:
@@ -90,3 +106,31 @@ func set_launch_direction():
 func reset_roll():
 	await get_tree().create_timer(0.2).timeout
 	rolled_probabilities = false
+	
+func set_enemy(e):
+	enemy = e
+	
+func apply_jo_preset():
+	match jo_preset:
+		opponent.LittleJo:
+			attack_cooldown = 1.0
+			opponent_move_speed = 250
+			max_manageable_speed = 600
+		
+		opponent.Jolister:
+			attack_cooldown = 0.8
+			opponent_move_speed = 300
+			max_manageable_speed = 900
+		
+		opponent.BigJo:
+			attack_cooldown = 0.7
+			opponent_move_speed = 325
+			max_manageable_speed = 1100
+		
+		opponent.Jo:
+			attack_cooldown = 0.4
+			opponent_move_speed = 350
+			max_manageable_speed = 1400
+			
+func set_preset(preset:JoManager.opponent):
+	jo_preset = preset

@@ -65,7 +65,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qrs7g"]
-size = Vector2(11.313705, 12.0213375)
+size = Vector2(10.252783, 9.899492)
 
 [sub_resource type="Curve" id="Curve_texba"]
 _data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.09245932), 0.0, 0.0, 0, 0]
@@ -169,7 +169,7 @@ sprite_frames = SubResource("SpriteFrames_ed77f")
 frame_progress = 0.640374
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=797838726]
-position = Vector2(-0.24999972, -0.2503718)
+position = Vector2(0.12499975, -0.12481413)
 rotation = -0.7846542
 shape = SubResource("RectangleShape2D_qrs7g")
 

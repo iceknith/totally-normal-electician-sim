@@ -13,12 +13,12 @@
 [ext_resource type="PackedScene" uid="uid://dng84lpcerldh" path="res://assets/blender/boulangerie.blend" id="11_5f2gp"]
 [ext_resource type="Texture2D" uid="uid://85pcyxjjdgpl" path="res://assets/misc/ditherMatrix/arcade.png" id="11_ivkb3"]
 [ext_resource type="Script" uid="uid://sd0g0r1lwus3" path="res://src/3D/interactables/interactable_3d_dialogue.gd" id="11_nho6y"]
-[ext_resource type="Resource" uid="uid://bpyeqoxau635" path="res://src/Dialogue/dialogueTest/testDialogueBoulangerieOutdoors.dialogue" id="12_1r3ik"]
 [ext_resource type="PackedScene" uid="uid://cw2thk87em2wo" path="res://assets/blender/maisontexture2.blend" id="12_5f2gp"]
 [ext_resource type="PackedScene" uid="uid://cng5vwx5qm31h" path="res://src/3D/objects/tower.tscn" id="12_clt24"]
 [ext_resource type="Script" uid="uid://c4gbdbfsdgnw7" path="res://src/shaders/shader_applyer.gd" id="12_e0nlv"]
 [ext_resource type="Texture2D" uid="uid://dxx8mm38nnd8g" path="res://src/minigames/competitive_rock_paper_scissors/asset/2D/paper.png" id="12_xw8hx"]
 [ext_resource type="Texture2D" uid="uid://cye1bhonrbtg7" path="res://src/minigames/competitive_rock_paper_scissors/asset/2D/Scissors.png" id="13_1r3ik"]
+[ext_resource type="Resource" uid="uid://bjx3nwf8qdnjy" path="res://src/Dialogue/dialogueTest/testDialogue.dialogue" id="13_gisxt"]
 [ext_resource type="Texture2D" uid="uid://lq83ysv3v3ue" path="res://assets/pixelart/wrenchFINALEFINALE.png" id="14_8pvm1"]
 [ext_resource type="PackedScene" uid="uid://c6lu1xsiprij5" path="res://src/minigames/competitive_rock_paper_scissors/Rock Paper scissors.tscn" id="14_ivwwh"]
 [ext_resource type="PackedScene" uid="uid://d2b7b6sp2kyp2" path="res://src/2D/phase_visual_novel/boulangerie.tscn" id="14_lpsds"]
@@ -73,7 +73,7 @@ fog_depth_end = 200.0
 auto_exposure_scale = 0.3
 dof_blur_far_distance = 200.0
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_wnywt"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_gisxt"]
 viewport_path = NodePath("SubViewport")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_clt24"]
@@ -117,7 +117,7 @@ animations = [{
 [sub_resource type="SphereShape3D" id="SphereShape3D_ivwwh"]
 radius = 0.72587484
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_xud6r"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_wnywt"]
 viewport_path = NodePath("SubViewport")
 
 [sub_resource type="SphereMesh" id="SphereMesh_gmgko"]
@@ -125,7 +125,7 @@ viewport_path = NodePath("SubViewport")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yfp7s"]
 albedo_color = Color(0.65882355, 0, 0, 1)
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_impf6"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_xud6r"]
 viewport_path = NodePath("SubViewport")
 
 [sub_resource type="PrismMesh" id="PrismMesh_lpsds"]
@@ -133,13 +133,13 @@ viewport_path = NodePath("SubViewport")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8pvm1"]
 albedo_color = Color(0.07700009, 0, 0.66, 1)
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_x4jwh"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_impf6"]
 viewport_path = NodePath("SubViewport")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gisxt"]
 albedo_color = Color(0.09315889, 0.65882355, 0, 1)
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_imnrk"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_x4jwh"]
 viewport_path = NodePath("SubViewport")
 
 [sub_resource type="PrismMesh" id="PrismMesh_l2on1"]
@@ -147,7 +147,7 @@ viewport_path = NodePath("SubViewport")
 [sub_resource type="SphereShape3D" id="SphereShape3D_lwi55"]
 radius = 0.72587484
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_tqnhu"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_imnrk"]
 viewport_path = NodePath("SubViewport")
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_jqxng"]
@@ -964,7 +964,7 @@ metadata/_custom_type_script = "uid://b3imm353l7y6u"
 
 [node name="InteractacleText3D" parent="Objets/Interactables/boulangerie2/boulangerie" unique_id=1576660793 instance=ExtResource("10_e8reo")]
 transform = Transform3D(0.30000004, 0, 0, 0, 0.3, 0, 0, 0, 0.30000004, 0, 0.4931178, 0)
-texture = SubResource("ViewportTexture_wnywt")
+texture = SubResource("ViewportTexture_gisxt")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Objets/Interactables/boulangerie2/boulangerie" unique_id=1710995515]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0729332, 0.11338568, 0.06949043)
@@ -974,7 +974,7 @@ shape = SubResource("BoxShape3D_clt24")
 transform = Transform3D(-0.8454946, 0, 0.5339834, 0, 1, 0, -0.5339834, 0, -0.8454946, 55.49503, 1.3362136, 0.7503469)
 script = ExtResource("11_nho6y")
 unique_name = "BoulangerieOutdoors"
-dialogue = ExtResource("12_1r3ik")
+dialogue = ExtResource("13_gisxt")
 animated_sprite = NodePath("AnimatedSprite3D")
 animated_sprite_start_animation = "normal"
 text_sprite = NodePath("InteractacleText3D")
@@ -993,7 +993,7 @@ shape = SubResource("SphereShape3D_ivwwh")
 [node name="InteractacleText3D" parent="Objets/Interactables/InterractableDialogue" unique_id=1261401867 instance=ExtResource("10_e8reo")]
 transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0.8627713, 0)
 billboard = 2
-texture = SubResource("ViewportTexture_xud6r")
+texture = SubResource("ViewportTexture_wnywt")
 
 [node name="InterractableRPC" type="Area3D" parent="Objets/Interactables" unique_id=2100176355 node_paths=PackedStringArray("text_sprite")]
 transform = Transform3D(-0.40314606, 0, -0.91513556, 0, 1, 0, 0.91513556, 0, -0.40314606, 64.50607, 1.475202, 2.7131975)
@@ -1015,7 +1015,7 @@ metadata/_edit_lock_ = true
 
 [node name="InteractacleText3D" parent="Objets/Interactables/InterractableRPC" unique_id=1932431219 instance=ExtResource("10_e8reo")]
 transform = Transform3D(-0.19774605, 0, 0.029941564, 0, 0.2, 0, -0.029941564, 0, -0.19774605, 2.0036647, 0.7986984, -0.655995)
-texture = SubResource("ViewportTexture_impf6")
+texture = SubResource("ViewportTexture_xud6r")
 metadata/_edit_lock_ = true
 
 [node name="arcade" type="Area3D" parent="Objets/Interactables" unique_id=1975199288 node_paths=PackedStringArray("text_sprite")]
@@ -1035,7 +1035,7 @@ shape = SubResource("SphereShape3D_ivwwh")
 
 [node name="InteractacleText3D" parent="Objets/Interactables/arcade" unique_id=467142444 instance=ExtResource("10_e8reo")]
 transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0.8773431, 0)
-texture = SubResource("ViewportTexture_x4jwh")
+texture = SubResource("ViewportTexture_impf6")
 
 [node name="boulangerieDebug" type="Area3D" parent="Objets/Interactables" unique_id=341763301 node_paths=PackedStringArray("text_sprite")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 54.481976, 0.73993564, 0.25229335)
@@ -1054,7 +1054,7 @@ shape = SubResource("SphereShape3D_ivwwh")
 
 [node name="InteractacleText3D" parent="Objets/Interactables/boulangerieDebug" unique_id=1253022848 instance=ExtResource("10_e8reo")]
 transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0.86451787, 0)
-texture = SubResource("ViewportTexture_imnrk")
+texture = SubResource("ViewportTexture_x4jwh")
 
 [node name="superette" parent="Objets/Interactables" unique_id=185217472 instance=ExtResource("14_w7gwu")]
 transform = Transform3D(1.2724622, 0, -0.58381486, 0, 1.4, 0, 0.58381486, 0, 1.2724622, -37.65221, 0, 8.07334)
@@ -1076,7 +1076,7 @@ shape = SubResource("SphereShape3D_lwi55")
 
 [node name="InteractacleText3D" parent="Objets/Interactables/JoBoss" unique_id=2001127438 instance=ExtResource("10_e8reo")]
 transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0.8773431, 0)
-texture = SubResource("ViewportTexture_tqnhu")
+texture = SubResource("ViewportTexture_imnrk")
 
 [node name="Tree" type="Node3D" parent="Objets" unique_id=1912448925]
 transform = Transform3D(0.9510564, 0, -0.309017, 0, 1, 0, 0.309017, 0, 0.9510564, 0.5693767, 0, 3.0004911)

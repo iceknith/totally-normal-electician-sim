@@ -1,10 +1,10 @@
 class_name ArcadeEnemy extends CharacterBody2D
 
 
-@onready var movementComponent = $Movement
-@onready var HitBallComponent = $HitBall
-@onready var AimComponent = $Aim
-@onready var DieComponent = $Die
+@onready var movementComponent:MovementComponent = $Movement
+@onready var HitBallComponent:Hitball = $HitBall
+@onready var AimComponent:Aim = $Aim
+@onready var DieComponent:Die = $Die
 
 var facing_direction:Vector2
 var aiming_direction:Vector2
@@ -23,9 +23,10 @@ func _ready():
 	HitBallComponent.ball_color = ball_color
 	HitBallComponent.ball_state_to_give = ball_state_to_give
 	DieComponent.losing_ball_state = losing_ball_state
+	setup_signals()
 	reset()
 	
-	
+
 func _physics_process(delta):
 	if !dead : 
 		manage_input(delta)
@@ -72,9 +73,11 @@ func get_sprite_size():
 	return size
 
 func death(entity):
-	HitBallComponent.release_ball_on_death()
-	DieComponent.turn_off()
-	dead = true
+	if !dead : 
+		HitBallComponent.release_ball_on_death()
+		DieComponent.turn_off()
+		DieComponent.play_death_sound()
+		dead = true
 	
 func reset():
 	DieComponent.turn_on()
@@ -86,4 +89,6 @@ func reset():
 func setup_signals():
 	DieComponent.die.connect(death)
 
-	
+
+func get_sprite():
+	return $Sprite2D	

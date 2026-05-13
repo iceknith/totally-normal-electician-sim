@@ -6,7 +6,7 @@ class_name gemAttack extends Node2D
 
 
 @export_group("Attack Parameters : ")
-@export var max_life_points = 5
+@export var max_life_points = 3
 @export var rotation_speed = 0.1
 @export var rotate_left:bool
 @export var ball_color:Color
@@ -68,6 +68,8 @@ enum FormState {
 
 var current_form: FormState = FormState.SPIRAL
 var is_switching_form: bool = false
+
+signal attack_ended
 
 
 func _ready():
@@ -224,7 +226,9 @@ func disappear_gem():
 		i +=1
 		
 func end_attack():
+	
 	await disappear_gem()
 	await get_tree().create_timer(0.25).timeout
+	attack_ended.emit()
 	queue_free()
 	
