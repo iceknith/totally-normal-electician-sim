@@ -1,0 +1,63 @@
+~ charles_start
+Charles: Tic Tac Toe is my favorite game.
+- Oh, my god, me too !
+	=> charles_launch_game
+- Ok
+	Charles: Do you want to play a game with me ?
+	- Why not ?
+		=> charles_launch_game
+	- No
+		Charles: Oh... That's okay... Maybe another time...
+=> END
+
+~ charles_launch_game
+Charles: Yippee, good luck to you !
+$> MainCommunicator.send_signal_to_main(MainCommunicator.SignalType.ADD_MINIGAME, [load("res://src/minigames/tic_tac_toe/tic_tac_toe.tscn"), {"computer_playstyle":0}])
+=> END
+
+~ bob_start
+Bob: I wanna become as strong as my big sibling Jeffrey.
+- What ?
+	Bob: Nobody has ever beaten Jeffrey at tic tac toe.
+- Why ?
+	Bob: Because they're the best tic tac toe player around !
+- You're already pretty strong !
+	Bob: You really think that ?
+Bob: Will you help me train ?
+- Yes
+	Bob: Yay
+	=> bob_launch_game
+- Sorry, but I'm busy
+	Bob: That's okay, maybe another time
+=> END
+
+~ bob_launch_game
+Bob: Good luck to you !
+$> MainCommunicator.send_signal_to_main(MainCommunicator.SignalType.ADD_MINIGAME, [load("res://src/minigames/tic_tac_toe/tic_tac_toe.tscn"), {"computer_playstyle":2}])
+=> END
+
+~ jeffrey_start
+Jeffrey: Hey
+- Good morning
+- Good afternoon
+- Hey
+Jeffrey: Do you like tictactoe ?
+- Yesss
+	Jeffrey: Do you think you can beat me ?
+	- Certain
+		Jeffrey: A ballzy statement, I like it !
+		=> jeffrey_launch_game
+	- Pretty sure
+		Jeffrey: Let's see what'cha got !
+		=> jeffrey_launch_game
+	- No
+		Jeffrey: That's a shame...
+- Not that much
+	Jeffrey: sigh...
+	Jeffrey: So uncultured...
+=> END
+
+~ jeffrey_launch_game
+Jeffrey: But, I'll warn you, I'm not like Charles nor Bob ! I play for real !
+$> MainCommunicator.send_signal_to_main(MainCommunicator.SignalType.ADD_MINIGAME, [load("res://src/minigames/tic_tac_toe/tic_tac_toe.tscn"), {"computer_playstyle":3}])
+=> END

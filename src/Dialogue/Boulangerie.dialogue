@@ -1,0 +1,101 @@
+~ start
+$> GlobalVars.visited_bakery = true
+Patrick: Heyy, how's it going ?
+- Good and you ?
+Patrick: It's going fine.
+Patrick: Oh ! By the way, I prepared a cake for your little sibling's birthday
+if GlobalVars.bought_cake_superette:
+	=> supermarket_cake
+else:
+	=> no_cake
+=> END
+
+~ no_cake
+- You're an angel, Patrick !
+Patrick: You're the one who's a blessing.
+Patrick: So, should I wrap the cake ?
+- Not yet.
+	Patrick: Oh ? Really ? Well... that's okay... Maybe another time then.
+	Patrick: I'll stay there in case you decide to take me- [shake rate=20 level=10] I mean my cake [/shake] with you.
+	- I'll see. See you around Patrick.
+	Patrick: Farewel...
+	$> title = "waiting"
+	=> END
+- Yes please !
+	=> buy_cake
+=> END
+
+~ buy_cake
+$> close_up_start_animation = "content"
+$> GlobalVars.bought_cake_bakery = true
+Patrick: Wonderful ! I knew you'd loke it
+(As Patrick hands you the cake, his hands brushes against yours)
+- Thank you Patrick !
+- I'll think of you when I eat it !
+Patrick: See you later cinnamon roll
+$> title = "good_ending"
+=> END
+
+~ supermarket_cake
+$> close_up_start_animation = "triste"
+- Thanks, but I already bought one at the convenience store
+Patrick: Ah ?
+Patrick: So I baked this delicious cake specially for you, and you don't want any of it ?
+Patrick: I really thought you were a faithful client...
+- I'm sorry Patrick
+- I swear it's not what it looks like !
+- ...
+Patrick: I thought there was something special between us.
+Patrick: A trusting relationship between a baker and his favorite customer.
+Patrick: But not only were you unfaithfull to me ! You did it with my wife !
+Patrick: When you know [shake rate=40 level=20] perfectly well [/shake] that her buisness is bleeding the bakery dry...
+Patrick: I can't believe you'd do buisness with this market snake !
+- It's just that the convienience store is closer !
+- This has nothing to do with us, I just wanted to buy a cake !
+- ...
+Patrick: I get it, you know...
+Patrick: To you, this was nothing more than a financial exchange. In your eyes, I am nothing more but a comodity.
+Patrick: To you, I nothing but a baker !
+Patrick: Well, to me, you are nothing but a stranger.
+- I'm begging you Patrick, one more chance ! I'll be faithfull this time !
+- I wanted to eat someone else's cake just to remind myself of how superior yours are !
+- ...
+Patrick: Leave. I want nothing to do with cheaters
+$> title = "bad_ending"
+=> bad_ending
+
+~ waiting
+Patrick: ... Did you change your ming
+if GlobalVars.bought_cake_superette:
+	=> supermarket_cake
+else:
+	- No, just looking around.
+		Patrick: Fine, it's not like I care wheter you buy the cake I made especially for you...
+	- Yes, please, wrap the cake
+		=> buy_cake
+=> END
+
+~ bad_ending
+Patrick: Go back to Yvonne's arms if you love her industrial cake so much.
+=> END
+
+~ good_ending
+Patrick: [wave amp=10 freq=3] Welcome back strawberry pie~.
+=> END
+
+~ bad_ending60
+Patrick: Go die in Yvonne's arms if you love her industrial cake so much.
+=> END
+
+~ good_ending60
+Patrick: [wave amp=10 freq=3] Welcome back strawberry pie~.
+Patrick: [wave amp=30 freq=1] I ate too much yesterday, I'm feeling sick.
+=> END
+
+~ global80
+Patrick: [wave amp=30 freq=1] Why is everything wierd ?
+=> END
+
+~ global90
+Patrick: [shake rate=40 level=20] AAAAAAAAH, WE'RE GONNA DIE !!!
+=> END

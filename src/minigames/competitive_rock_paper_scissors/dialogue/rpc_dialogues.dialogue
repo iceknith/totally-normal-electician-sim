@@ -44,3 +44,15 @@ Willy: Oh no :C I've lost
 ~ willy_win
 Willy: YESS, I've won !
 => END
+
+~ rayly_intro
+Rayly: Hey, I'm Willy
+=> END
+
+~ rayly_lose
+Rayly: Oh no :C I've lost
+=> END
+
+~ rayly_win
+Rayly: YESS, I've won !
+=> END

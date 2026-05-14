@@ -78,7 +78,7 @@ func receive_signal(type, data):
 		MainCommunicator.SignalType.START_DIALOGUE : start_dialogue(data)
 
 func launch_game() -> void:
-	#world3D.start_game()
+	world3D.start_game()
 	create_eow_timers()
 	reset_state()
 
@@ -110,9 +110,14 @@ func create_minigame(data):
 	minigame_container.add_child(minigame)
 	
 	# Add connections
-	var connections:Dictionary = data[1]
-	for connection in connections.keys():
-		minigame.connect(connection, connections[connection])
+	if data.size() >= 2:
+		var variables:Dictionary = data[1]
+		for vars in variables.keys():
+			minigame.set(vars, variables[vars])
+	if data.size() >= 3:
+		var connections:Dictionary = data[2]
+		for connection in connections.keys():
+			minigame.connect(connection, connections[connection])
 
 func add_minigame(data:Array):
 	if currentState == MainCommunicator.GameState.Game3D:

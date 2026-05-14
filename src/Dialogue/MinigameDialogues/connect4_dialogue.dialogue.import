@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://b8mcrhwaogcdw"
+path="res://.godot/imported/connect4_dialogue.dialogue-05454b2fc3bd534290355c9d9450d469.tres"
+
+[deps]
+
+source_file="res://src/Dialogue/MinigameDialogues/connect4_dialogue.dialogue"
+dest_files=["res://.godot/imported/connect4_dialogue.dialogue-05454b2fc3bd534290355c9d9450d469.tres"]
+
+[params]
+
+defaults=true

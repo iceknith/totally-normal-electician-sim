@@ -47,6 +47,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_sb0yd")
+change_music = true
 metadata/_custom_type_script = "uid://dd5w2ptvu7pou"
 
 [node name="bg" type="TextureRect" parent="." unique_id=351131469]
@@ -74,10 +75,10 @@ position = Vector2(468.75, 156)
 shape = SubResource("RectangleShape2D_4vtsk")
 
 [node name="InteractableText" parent="Interactable2DMinigame" unique_id=936344028 instance=ExtResource("6_sb0yd")]
-offset_left = 450.0
-offset_top = 92.0
-offset_right = 487.0
-offset_bottom = 154.0
+offset_left = 447.0
+offset_top = 74.0
+offset_right = 484.0
+offset_bottom = 136.0
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=88397276]
 visible = false
@@ -104,8 +105,7 @@ position = Vector2(594, 151)
 shape = SubResource("RectangleShape2D_xsrp0")
 
 [node name="InteractableText" parent="Interactable2DMinigame2" unique_id=4744531 instance=ExtResource("6_sb0yd")]
-visible = false
-offset_left = 450.0
-offset_top = 92.0
-offset_right = 487.0
-offset_bottom = 154.0
+offset_left = 571.0
+offset_top = 73.0
+offset_right = 608.0
+offset_bottom = 135.0

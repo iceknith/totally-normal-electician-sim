@@ -4,6 +4,8 @@ class_name Minigame extends Control
 signal miniGameEnd
 
 @export var music_when_entering:String = ""
+@export var change_music:bool = false
+
 @export var animationDuration:float = 0.4
 @export var baseMinigameLayoutActive:bool = true
 var base_minigame_layout = preload("res://src/minigames/base_minigame_layout.tscn")
@@ -11,7 +13,7 @@ var base_minigame_layout = preload("res://src/minigames/base_minigame_layout.tsc
 var hasStarted:bool = false
 
 func _ready() -> void:
-	if music_when_entering != "" :
+	if change_music: 
 		SoundManager.change_music.emit(music_when_entering)
 	if baseMinigameLayoutActive: add_child(base_minigame_layout.instantiate())
 	show_animation()
