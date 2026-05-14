@@ -116,13 +116,13 @@ viewport_path = NodePath("SubViewport")
 [sub_resource type="ViewportTexture" id="ViewportTexture_6v73m"]
 viewport_path = NodePath("SubViewport")
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_5uot1"]
-viewport_path = NodePath("SubViewport")
-
 [sub_resource type="ViewportTexture" id="ViewportTexture_yc2gj"]
 viewport_path = NodePath("SubViewport")
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_pd13m"]
+viewport_path = NodePath("SubViewport")
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_5uot1"]
 viewport_path = NodePath("SubViewport")
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_dl85h"]
@@ -148,6 +148,13 @@ viewport_path = NodePath("SubViewport")
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_e1shr"]
 viewport_path = NodePath("SubViewport")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_impf6"]
+albedo_color = Color(0.43, 0.43, 0.43, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_x4jwh"]
+material = SubResource("StandardMaterial3D_impf6")
+size = Vector3(1.615, 3.43, 0.055)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_64pfx"]
 size = Vector3(0.80126953, 2.3551025, 2.69487)
@@ -1008,7 +1015,7 @@ billboard = 2
 texture = SubResource("ViewportTexture_impf6")
 
 [node name="TicTacToeCharles" type="Area3D" parent="Objets/Interactables" unique_id=1096544833 node_paths=PackedStringArray("animated_sprite", "text_sprite", "camera_root")]
-transform = Transform3D(-0.8454946, 0, 0.5339834, 0, 1, 0, -0.5339834, 0, -0.8454946, 111.9543, 1.1798247, 50.318657)
+transform = Transform3D(-0.8454946, 0, 0.5339834, 0, 1, 0, -0.5339834, 0, -0.8454946, 101.19901, -37.742287, 46.615314)
 script = ExtResource("11_nho6y")
 unique_name = "tictactoe_charles"
 dialogue = ExtResource("18_imnrk")
@@ -1036,7 +1043,7 @@ billboard = 2
 texture = SubResource("ViewportTexture_x4jwh")
 
 [node name="TicTacToeBob" type="Area3D" parent="Objets/Interactables" unique_id=1093194011 node_paths=PackedStringArray("animated_sprite", "text_sprite", "camera_root")]
-transform = Transform3D(-0.8454946, 0, 0.5339834, 0, 1, 0, -0.5339834, 0, -0.8454946, 8.434815, 1.1798209, 8.505059)
+transform = Transform3D(-0.8454946, 0, 0.5339834, 0, 1, 0, -0.5339834, 0, -0.8454946, 62.91656, 1.1798171, -98.42564)
 script = ExtResource("11_nho6y")
 unique_name = "tictactoe_bob"
 dialogue = ExtResource("18_imnrk")
@@ -1090,7 +1097,7 @@ billboard = 2
 texture = SubResource("ViewportTexture_tqnhu")
 
 [node name="Connect4Ada" type="Area3D" parent="Objets/Interactables" unique_id=230899438 node_paths=PackedStringArray("animated_sprite", "text_sprite", "camera_root")]
-transform = Transform3D(-0.8454946, 0, 0.5339834, 0, 1, 0, -0.5339834, 0, -0.8454946, 97.53615, 1.1798209, -18.247574)
+transform = Transform3D(-0.8454946, 0, 0.5339834, 0, 1, 0, -0.5339834, 0, -0.8454946, 7.985673, 1.1798056, 11.015011)
 script = ExtResource("11_nho6y")
 unique_name = "connect4_ada"
 dialogue = ExtResource("16_impf6")
@@ -1170,36 +1177,12 @@ transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0.8627713, 0)
 billboard = 2
 texture = SubResource("ViewportTexture_6v73m")
 
-[node name="RPCBilly" type="Area3D" parent="Objets/Interactables" unique_id=2100176355 node_paths=PackedStringArray("text_sprite")]
-transform = Transform3D(-0.40314606, 0, -0.91513556, 0, 1, 0, 0.91513556, 0, -0.40314606, 84.458984, 1.475202, -13.276169)
-script = ExtResource("9_ttchh")
-minigame = ExtResource("14_ivwwh")
-variables = Dictionary[String, Variant]({
-"personPlaying": 2
-})
-text_sprite = NodePath("InteractacleText3D")
-metadata/_custom_type_script = "uid://b3imm353l7y6u"
-
-[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="Objets/Interactables/RPCBilly" unique_id=53850588]
-transform = Transform3D(0.21, 0, -7.823109e-09, 0, 0.21, 0, 7.823109e-09, 0, 0.21, 0, -0.42, 0)
-billboard = 2
-sprite_frames = SubResource("SpriteFrames_e8reo")
-animation = &"normal"
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Objets/Interactables/RPCBilly" unique_id=880043268]
-shape = SubResource("SphereShape3D_ivwwh")
-
-[node name="InteractacleText3D" parent="Objets/Interactables/RPCBilly" unique_id=1595881025 instance=ExtResource("10_e8reo")]
-transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0.8627713, 0)
-billboard = 2
-texture = SubResource("ViewportTexture_5uot1")
-
 [node name="RPCStanley" type="Area3D" parent="Objets/Interactables" unique_id=58193940 node_paths=PackedStringArray("text_sprite")]
 transform = Transform3D(-0.40314606, 0, -0.91513556, 0, 1, 0, 0.91513556, 0, -0.40314606, -37.125057, 1.475202, 38.408195)
 script = ExtResource("9_ttchh")
 minigame = ExtResource("14_ivwwh")
 variables = Dictionary[String, Variant]({
-"personPlaying": 2
+"opponent": 0
 })
 text_sprite = NodePath("InteractacleText3D")
 metadata/_custom_type_script = "uid://b3imm353l7y6u"
@@ -1219,11 +1202,11 @@ billboard = 2
 texture = SubResource("ViewportTexture_yc2gj")
 
 [node name="RPCWilly" type="Area3D" parent="Objets/Interactables" unique_id=1278131754 node_paths=PackedStringArray("text_sprite")]
-transform = Transform3D(-0.40314606, 0, -0.91513556, 0, 1, 0, 0.91513556, 0, -0.40314606, -105.7592, 1.475202, 30.433151)
+transform = Transform3D(-0.40314606, 0, -0.91513556, 0, 1, 0, 0.91513556, 0, -0.40314606, -128.14491, 1.475202, 27.691944)
 script = ExtResource("9_ttchh")
 minigame = ExtResource("14_ivwwh")
 variables = Dictionary[String, Variant]({
-"personPlaying": 2
+"opponent": 1
 })
 text_sprite = NodePath("InteractacleText3D")
 metadata/_custom_type_script = "uid://b3imm353l7y6u"
@@ -1242,12 +1225,36 @@ transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0.8627713, 0)
 billboard = 2
 texture = SubResource("ViewportTexture_pd13m")
 
+[node name="RPCBilly" type="Area3D" parent="Objets/Interactables" unique_id=2100176355 node_paths=PackedStringArray("text_sprite")]
+transform = Transform3D(-0.40314606, 0, -0.91513556, 0, 1, 0, 0.91513556, 0, -0.40314606, 84.458984, 1.475202, -13.276165)
+script = ExtResource("9_ttchh")
+minigame = ExtResource("14_ivwwh")
+variables = Dictionary[String, Variant]({
+"opponent": 2
+})
+text_sprite = NodePath("InteractacleText3D")
+metadata/_custom_type_script = "uid://b3imm353l7y6u"
+
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="Objets/Interactables/RPCBilly" unique_id=53850588]
+transform = Transform3D(0.21, 0, -7.823109e-09, 0, 0.21, 0, 7.823109e-09, 0, 0.21, 0, -0.42, 0)
+billboard = 2
+sprite_frames = SubResource("SpriteFrames_e8reo")
+animation = &"normal"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Objets/Interactables/RPCBilly" unique_id=880043268]
+shape = SubResource("SphereShape3D_ivwwh")
+
+[node name="InteractacleText3D" parent="Objets/Interactables/RPCBilly" unique_id=1595881025 instance=ExtResource("10_e8reo")]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0.8627713, 0)
+billboard = 2
+texture = SubResource("ViewportTexture_5uot1")
+
 [node name="RPCRayly" type="Area3D" parent="Objets/Interactables" unique_id=1978183643 node_paths=PackedStringArray("text_sprite")]
 transform = Transform3D(-0.40314606, 0, -0.91513556, 0, 1, 0, 0.91513556, 0, -0.40314606, -2.3926802, 1.475202, -76.505)
 script = ExtResource("9_ttchh")
 minigame = ExtResource("14_ivwwh")
 variables = Dictionary[String, Variant]({
-"personPlaying": 2
+"opponent": 3
 })
 text_sprite = NodePath("InteractacleText3D")
 metadata/_custom_type_script = "uid://b3imm353l7y6u"
@@ -1317,12 +1324,16 @@ text_sprite = NodePath("InteractacleText3D")
 metadata/_custom_type_script = "uid://b3imm353l7y6u"
 
 [node name="InteractacleText3D" parent="Objets/Interactables/superette/superette" unique_id=1215462892 instance=ExtResource("10_e8reo")]
-transform = Transform3D(0.30000004, 0, 0, 0, 0.3, 0, 0, 0, 0.30000004, 0, 0.4931178, 0)
+transform = Transform3D(0.30000004, 0, 3.7252903e-09, 0, 0.3, 0, -3.7252903e-09, 0, 0.30000004, -0.0068626404, 0.4931178, -0.07106018)
 texture = SubResource("ViewportTexture_e1shr")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Objets/Interactables/superette/superette" unique_id=71863611]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0729332, 0.11338568, 0.06949043)
+transform = Transform3D(1, 0, 2.2351742e-08, 0, 1, 0, -2.2351742e-08, 0, 1, -0.11082077, 0.11338532, -0.32279968)
 shape = SubResource("BoxShape3D_clt24")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Objets/Interactables/superette/superette" unique_id=766225852]
+transform = Transform3D(1, 0, 2.2351742e-08, 0, 1, 0, -2.2351742e-08, 0, 1, -0.035146713, 0, -0.36397552)
+mesh = SubResource("BoxMesh_x4jwh")
 
 [node name="arcade_building" parent="Objets/Interactables" unique_id=1676123660 instance=ExtResource("21_wnywt")]
 transform = Transform3D(0.44619775, 0, 0.89493436, 0, 1, 0, -0.89493436, 0, 0.44619775, -9.9099, -0.032199144, 69.73908)
