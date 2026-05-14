@@ -47,6 +47,11 @@ func get_current_title(title:String, dialogue:DialogueResource) -> String:
 ### World ###
 #############
 
+var bought_cake_superette:bool = false
+var visited_superette:bool = false
+var bought_cake_bakery:bool = false
+var visited_bakery:bool = false
+
 var has_cake:bool = false
 var has_decorations:bool = false
 
