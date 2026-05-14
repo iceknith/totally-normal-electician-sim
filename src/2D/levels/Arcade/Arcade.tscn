@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://cm7dhny7qqs7p" path="res://src/minigames/arcadeGame/level/FullArcadeGame.tscn" id="5_4vtsk"]
 [ext_resource type="Script" uid="uid://dbf5k8vvysldd" path="res://src/2D/interactables/interactables_2d_minigame.gd" id="6_4vtsk"]
 [ext_resource type="PackedScene" uid="uid://cnnuxnjiw3ait" path="res://src/2D/interactables/interactableText.tscn" id="6_sb0yd"]
+[ext_resource type="PackedScene" uid="uid://cppr3lfytuf4v" path="res://src/minigames/arcadeGame/level/FullJoBoss.tscn" id="9_xsrp0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4vtsk"]
 size = Vector2(112.5, 198)
@@ -34,6 +35,9 @@ shader_parameter/scrolling_speed = 0.08
 shader_parameter/enable_palette_cycling = true
 shader_parameter/palette = SubResource("GradientTexture2D_4vtsk")
 shader_parameter/palette_speed = 0.1
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xsrp0"]
+size = Vector2(112.5, 198)
 
 [node name="Arcade" type="Control" unique_id=1662000706]
 layout_mode = 3
@@ -87,3 +91,21 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("3_fxxif")
 expand_mode = 3
+
+[node name="Interactable2DMinigame2" type="Area2D" parent="." unique_id=653010850 node_paths=PackedStringArray("interractable_dialogue")]
+script = ExtResource("6_4vtsk")
+minigame = ExtResource("9_xsrp0")
+action_type = 1
+interractable_dialogue = NodePath("InteractableText")
+metadata/_custom_type_script = "uid://dbf5k8vvysldd"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactable2DMinigame2" unique_id=2142267921]
+position = Vector2(594, 151)
+shape = SubResource("RectangleShape2D_xsrp0")
+
+[node name="InteractableText" parent="Interactable2DMinigame2" unique_id=4744531 instance=ExtResource("6_sb0yd")]
+visible = false
+offset_left = 450.0
+offset_top = 92.0
+offset_right = 487.0
+offset_bottom = 154.0

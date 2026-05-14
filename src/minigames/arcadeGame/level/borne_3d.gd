@@ -10,7 +10,6 @@ func _ready():
 
 func start_flicker():
 	var tween = create_tween().set_loops()
-
 	tween.tween_callback(_randomize_energy)
 	tween.tween_property(light, "light_energy", light.light_energy, 0.8)
 	tween.tween_interval(0.5)

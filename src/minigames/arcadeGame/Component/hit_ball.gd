@@ -77,6 +77,9 @@ func release_ball():
 		ball.just_realeased.emit()
 		ball.set_moving(true)
 		ball.set_being_launched(false)
+		
+		if ball.force_release.is_connected(release_ball):
+			ball.force_release.disconnect(release_ball)
 		ball = null
 	
 func release_ball_on_death(): 
@@ -94,12 +97,17 @@ func _on_body_entered(body):
 			caught_ball.emit(get_parent())
 			launching_ball = true
 			ball = body
+			ball.force_release.connect(release_ball)
 			attacking = false
 			manage_ball()
 
 func get_ball():
-	return ball
+	if ball != null : 
+		return ball
 
 
 func _on_timer_timeout():
 	can_hit = true
+	
+func set_cooldown(v):
+	hit_cooldown = v

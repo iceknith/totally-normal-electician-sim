@@ -13,12 +13,12 @@
 [ext_resource type="PackedScene" uid="uid://dng84lpcerldh" path="res://assets/blender/boulangerie.blend" id="11_5f2gp"]
 [ext_resource type="Texture2D" uid="uid://85pcyxjjdgpl" path="res://assets/misc/ditherMatrix/arcade.png" id="11_ivkb3"]
 [ext_resource type="Script" uid="uid://sd0g0r1lwus3" path="res://src/3D/interactables/interactable_3d_dialogue.gd" id="11_nho6y"]
-[ext_resource type="Resource" uid="uid://bpyeqoxau635" path="res://src/Dialogue/dialogueTest/testDialogueBoulangerieOutdoors.dialogue" id="12_1r3ik"]
 [ext_resource type="PackedScene" uid="uid://cw2thk87em2wo" path="res://assets/blender/maisontexture2.blend" id="12_5f2gp"]
 [ext_resource type="PackedScene" uid="uid://cng5vwx5qm31h" path="res://src/3D/objects/tower.tscn" id="12_clt24"]
 [ext_resource type="Script" uid="uid://c4gbdbfsdgnw7" path="res://src/shaders/shader_applyer.gd" id="12_e0nlv"]
 [ext_resource type="Texture2D" uid="uid://dxx8mm38nnd8g" path="res://src/minigames/competitive_rock_paper_scissors/asset/2D/paper.png" id="12_xw8hx"]
 [ext_resource type="Texture2D" uid="uid://cye1bhonrbtg7" path="res://src/minigames/competitive_rock_paper_scissors/asset/2D/Scissors.png" id="13_1r3ik"]
+[ext_resource type="Resource" uid="uid://bjx3nwf8qdnjy" path="res://src/Dialogue/dialogueTest/testDialogue.dialogue" id="13_gisxt"]
 [ext_resource type="Texture2D" uid="uid://lq83ysv3v3ue" path="res://assets/pixelart/wrenchFINALEFINALE.png" id="14_8pvm1"]
 [ext_resource type="PackedScene" uid="uid://c6lu1xsiprij5" path="res://src/minigames/competitive_rock_paper_scissors/Rock Paper scissors.tscn" id="14_ivwwh"]
 [ext_resource type="PackedScene" uid="uid://d2b7b6sp2kyp2" path="res://src/2D/phase_visual_novel/boulangerie.tscn" id="14_lpsds"]
@@ -32,6 +32,7 @@
 [ext_resource type="PackedScene" uid="uid://cpm4sncsn8qu2" path="res://assets/blender/arcade.blend" id="21_wnywt"]
 [ext_resource type="PackedScene" uid="uid://bthe0lnwfgtu4" path="res://assets/blender/garre.blend" id="22_xud6r"]
 [ext_resource type="PackedScene" uid="uid://bjgnetr0axl38" path="res://assets/blender/poste.blend" id="27_xud6r"]
+[ext_resource type="PackedScene" uid="uid://cppr3lfytuf4v" path="res://src/minigames/arcadeGame/level/FullJoBoss.tscn" id="21_gisxt"]
 
 [sub_resource type="Curve" id="Curve_w7gwu"]
 _data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1, 1), 2.0254266, 0.0, 0, 0]
@@ -977,7 +978,7 @@ shape = SubResource("BoxShape3D_clt24")
 transform = Transform3D(-0.8454946, 0, 0.5339834, 0, 1, 0, -0.5339834, 0, -0.8454946, 55.49503, 1.3362136, 0.7503469)
 script = ExtResource("11_nho6y")
 unique_name = "BoulangerieOutdoors"
-dialogue = ExtResource("12_1r3ik")
+dialogue = ExtResource("13_gisxt")
 animated_sprite = NodePath("AnimatedSprite3D")
 animated_sprite_start_animation = "normal"
 text_sprite = NodePath("InteractacleText3D")
@@ -1096,6 +1097,25 @@ texture = SubResource("ViewportTexture_dygmt")
 
 [node name="garre" parent="Objets/Interactables" unique_id=1564049498 instance=ExtResource("22_xud6r")]
 transform = Transform3D(0.92746484, 0, -0.3739107, 0, 1, 0, 0.3739107, 0, 0.92746484, 41.50532, 0, -98.79685)
+
+[node name="JoBoss" type="Area3D" parent="Objets/Interactables" unique_id=872440754 node_paths=PackedStringArray("text_sprite")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 46.925915, 0.37960505, -1.1396573)
+script = ExtResource("9_ttchh")
+minigame = ExtResource("21_gisxt")
+text_sprite = NodePath("InteractacleText3D")
+metadata/_custom_type_script = "uid://b3imm353l7y6u"
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Objets/Interactables/JoBoss" unique_id=1815564471]
+transform = Transform3D(1, -1.4901161e-08, -1.4901161e-08, -1.4901161e-08, 1, -2.9802322e-08, -1.4901161e-08, 0, 1, 0, 1.1920929e-07, 2.3841858e-07)
+mesh = SubResource("PrismMesh_l2on1")
+surface_material_override/0 = SubResource("StandardMaterial3D_8pvm1")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Objets/Interactables/JoBoss" unique_id=1484427522]
+shape = SubResource("SphereShape3D_lwi55")
+
+[node name="InteractacleText3D" parent="Objets/Interactables/JoBoss" unique_id=2001127438 instance=ExtResource("10_e8reo")]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0.8773431, 0)
+texture = SubResource("ViewportTexture_imnrk")
 
 [node name="Tree" type="Node3D" parent="Objets" unique_id=1912448925]
 transform = Transform3D(0.9510564, 0, -0.309017, 0, 1, 0, 0.309017, 0, 0.9510564, 0.5693767, 0, 3.0004911)

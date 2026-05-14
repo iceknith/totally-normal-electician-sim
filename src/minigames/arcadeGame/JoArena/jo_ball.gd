@@ -13,6 +13,8 @@ var life_timer:float = 0.0
 var can_turn_back: bool = true
 var played_disappear_animation:bool = false
 
+
+
 func _ready():
 	scale = Vector2(0.01, 0.01)
 	appear_animation()
@@ -22,6 +24,9 @@ func _ready():
 
 
 func _process(delta):
+	
+	if scale.x < 0.5 and scale.y < 0.5 and life_timer > life_time : 
+		$CollisionShape2D.set_deferred("disabled", true)
 	if !being_launched and mouvement_component.get_speed() < speed_cap and starting_animation_finished : 
 		mouvement_component.increase_move_speed(delta*speed_increase_rate)
 	
@@ -47,6 +52,7 @@ func turn_back():
 	update_ball_color(base_color)
 	if player != null : 
 		update_direction(player.global_position -global_position)
+		
 	
 func set_timer(t):
 	turn_back_time = t
@@ -68,8 +74,10 @@ func disappear_animation():
 	tween.tween_property(self, "scale", Vector2.ZERO, 3)
 	tween.parallel().tween_property(get_trail(), "width", 0, 3)
 	await tween.finished
+	force_release.emit()
 	queue_free()
 	
 	
 func set_life_time(lt:float): #sets the lifetime of balls
 	life_time = lt
+	

@@ -1,0 +1,28 @@
+~ _intro
+
+Jo : [speed = 1] Hey... [next=auto]
+Jo : I'm Jo. [next=auto]
+Jo : What's your name ? 
+
+- Steve
+- Stephane
+- Lily
+- My name is also Jo.
+-  Antonio de Padua María Severino López de Santa Anna y Pérez de Lebrón
+- Who are you again ?
+
+Jo : Well your name doesn't really matter at the end of the day. [next=auto]
+
+Jo : If you're here, that means you're looking for a challenge... [next=auto]
+Jo : Let's try giving you one. [next=auto]
+
+Jo : Oh and one more thing before we start...  [next = auto]
+Jo : I don't play by the rules. [next=auto]
+=> END
+
+
+
+~ _wonFight
+
+
+=> END

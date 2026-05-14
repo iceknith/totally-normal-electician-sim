@@ -318,7 +318,7 @@ func generate_choices(choice_number = total_choice_number): #genere les choix
 	choices.clear()
 	clear()
 	
-	var min_each = choice_number / 6#on génère au minimum un quart de chaque 
+	var min_each = choice_number / 6 #on génère au minimum de chaque truc
 	
 	for i in min_each:
 		choices.append(Choice.ROCK)

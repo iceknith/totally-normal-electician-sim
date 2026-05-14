@@ -79,7 +79,6 @@ func receive_signal(type, data):
 
 func launch_game() -> void:
 	#world3D.start_game()
-	
 	create_eow_timers()
 	reset_state()
 

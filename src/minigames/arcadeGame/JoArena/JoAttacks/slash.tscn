@@ -259,6 +259,7 @@ scale = Vector2(2, 2)
 script = ExtResource("1_4ijlk")
 fire_life_time = 20.0
 tracking_time = 1.5
+wait_before_slash = 0.5
 
 [node name="warning" type="Sprite2D" parent="." unique_id=1993405809]
 texture_filter = 1
@@ -267,7 +268,7 @@ texture = ExtResource("2_mpart")
 [node name="Fire" type="AnimatedSprite2D" parent="." unique_id=876508926]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_7xt7b")
-frame_progress = 0.18169995
+frame_progress = 0.9357837
 
 [node name="Slash" type="Sprite2D" parent="." unique_id=1105733187]
 texture_filter = 1
@@ -278,6 +279,7 @@ hframes = 6
 libraries/ = SubResource("AnimationLibrary_58t4e")
 
 [node name="SlashHitbox" type="Area2D" parent="." unique_id=2087272327]
+visible = false
 collision_mask = 8
 
 [node name="Slash1" type="CollisionPolygon2D" parent="SlashHitbox" unique_id=2094231951]
@@ -305,6 +307,7 @@ bus = &"sfx"
 
 [node name="PreventSound" type="AudioStreamPlayer" parent="." unique_id=1172106682]
 stream = ExtResource("6_cjw3w")
+volume_db = 6.0
 
 [connection signal="body_entered" from="SlashHitbox" to="." method="_on_slash_hitbox_body_entered"]
 [connection signal="body_entered" from="FireHitbox" to="." method="_on_fire_hitbox_body_entered"]

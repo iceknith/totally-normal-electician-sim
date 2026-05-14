@@ -115,7 +115,10 @@ fill = 1
 fill_from = Vector2(0.47008547, 0.52820516)
 
 [node name="Little\'joe" type="CharacterBody2D" unique_id=947143515]
+collision_mask = 4
 script = ExtResource("1_dp52m")
+ball_state_to_give = 1
+ball_color = Color(0.89411765, 0, 0, 1)
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=784192347]
 visible = false
@@ -132,8 +135,8 @@ speed = 300
 [node name="HitBall" parent="." unique_id=1738906224 instance=ExtResource("3_m0eqn")]
 collision_layer = 2
 collision_mask = 2
-hit_cooldown = 0.7
-ball_color = Color(0, 0, 0, 1)
+hit_cooldown = 1.0
+ball_color = Color(0.7882353, 0, 0, 1)
 ball_state_to_give = 1
 
 [node name="Front" type="CollisionPolygon2D" parent="HitBall" unique_id=1677149977]

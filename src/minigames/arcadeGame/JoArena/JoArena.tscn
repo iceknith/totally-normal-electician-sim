@@ -3,9 +3,9 @@
 [ext_resource type="Script" uid="uid://cf351f6tudq82" path="res://src/minigames/arcadeGame/JoArena/jo_arena.gd" id="1_utyyb"]
 [ext_resource type="Script" uid="uid://bmhhgdsuq00v7" path="res://src/minigames/arcadeGame/camera_2d.gd" id="3_dagtu"]
 [ext_resource type="PackedScene" uid="uid://cpc5mi3gyvm7y" path="res://src/minigames/arcadeGame/player/Player.tscn" id="4_fvot8"]
-[ext_resource type="PackedScene" uid="uid://boc5lvj7gp288" path="res://src/Sound/world_audio_manager.tscn" id="8_5ppmw"]
 [ext_resource type="Script" uid="uid://bknhk8ood0d0l" path="res://src/minigames/arcadeGame/JoArena/joe_attacks.gd" id="8_eqm75"]
 [ext_resource type="Texture2D" uid="uid://rhy47auhb2o4" path="res://src/minigames/arcadeGame/assets/particles/star particle.png" id="8_jw1ux"]
+[ext_resource type="Texture2D" uid="uid://cra208jmgv7f8" path="res://icon.svg" id="9_eqm75"]
 [ext_resource type="FontFile" uid="uid://dhoixqrkemx30" path="res://assets/gui/ithaca-font/Ithaca-LVB75.ttf" id="9_o85oi"]
 [ext_resource type="PackedScene" uid="uid://dbmva1nkvkoj8" path="res://src/minigames/arcadeGame/countdown_label.tscn" id="10_4a1xh"]
 
@@ -52,17 +52,41 @@ fill_from = Vector2(0.50085473, 0.48376068)
 [sub_resource type="LabelSettings" id="LabelSettings_aqv87"]
 font_size = 256
 
-[sub_resource type="Curve" id="Curve_eqm75"]
-_limits = [0.0, 2.0, 0.0, 1.0]
-_data = [Vector2(0, 1), 0.0, 0.0, 0, 0]
-point_count = 1
-metadata/_snap_enabled = true
+[sub_resource type="Animation" id="Animation_y7rmr"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Cinematics/Intro/Sprite2D:material:shader_parameter/progress")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
 
-[sub_resource type="Curve" id="Curve_y7rmr"]
-_limits = [0.0, 2.0, 0.0, 1.0]
-_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.99999, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.2), 0.0, 0.0, 0, 0]
-point_count = 3
-metadata/_snap_enabled = true
+[sub_resource type="Animation" id="Animation_t4f2b"]
+resource_name = "teleport"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Cinematics/Intro/Sprite2D:material:shader_parameter/progress")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_dagtu"]
+_data = {
+&"RESET": SubResource("Animation_y7rmr"),
+&"teleport": SubResource("Animation_t4f2b")
+}
 
 [sub_resource type="Curve" id="Curve_5ppmw"]
 _data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.24566473, 1), 0.0, 0.0, 0, 0, Vector2(0.51445085, 0.7777778), 0.0, 0.0, 0, 0, Vector2(0.8236994, 0.5783476), 0.0, 0.0, 0, 0, Vector2(1, 0.19658124), 0.0, 0.0, 0, 0]
@@ -74,6 +98,67 @@ _data = {
 }
 point_count = 5
 
+[sub_resource type="Shader" id="Shader_eqm75"]
+code = "/*
+Shader from Godot Shaders - the free shader library.
+godotshaders.com/shader/teleport-effect
+
+This shader is under CC0 license. Feel free to use, improve and 
+change this shader according to your needs and consider sharing 
+the modified result on godotshaders.com.
+*/
+
+shader_type canvas_item;
+
+uniform float progress : hint_range(0.0, 1.0);
+uniform float noise_desnity = 60;
+uniform float beam_size : hint_range(0.01, 0.15);
+uniform vec4 color = vec4(0.0, 1.0, 1, 1.0);
+
+// We are generating our own noise here. You could experiment with the 
+// built in SimplexNoise or your own noise texture for other effects.
+vec2 random(vec2 uv){
+    uv = vec2( dot(uv, vec2(127.1,311.7) ),
+               dot(uv, vec2(269.5,183.3) ) );
+    return -1.0 + 2.0 * fract(sin(uv) * 43758.5453123);
+}
+
+float noise(vec2 uv) {
+    vec2 uv_index = floor(uv);
+    vec2 uv_fract = fract(uv);
+
+    vec2 blur = smoothstep(0.0, 1.0, uv_fract);
+
+    return mix( mix( dot( random(uv_index + vec2(0.0,0.0) ), uv_fract - vec2(0.0,0.0) ),
+                     dot( random(uv_index + vec2(1.0,0.0) ), uv_fract - vec2(1.0,0.0) ), blur.x),
+                mix( dot( random(uv_index + vec2(0.0,1.0) ), uv_fract - vec2(0.0,1.0) ),
+                     dot( random(uv_index + vec2(1.0,1.0) ), uv_fract - vec2(1.0,1.0) ), blur.x), blur.y) * 0.5 + 0.5;
+}
+
+void fragment()
+{
+	vec4 tex = texture(TEXTURE, UV);
+	
+	float noise = noise(UV * noise_desnity) * UV.y;
+	
+	float d1 = step(progress, noise);
+	float d2 = step(progress - beam_size, noise);
+	
+	vec3 beam = vec3(d2 - d1) * color.rgb;
+	
+	tex.rgb += beam;
+	tex.a *= d2;
+	
+	COLOR = tex;
+}"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_fvot8"]
+shader = SubResource("Shader_eqm75")
+shader_parameter/progress = 0.0
+shader_parameter/noise_desnity = 50.0
+shader_parameter/beam_size = 0.15000000596046
+shader_parameter/color = Vector4(0, 1, 1, 1)
+
 [node name="JoArena" type="Control" unique_id=2119784583]
 layout_mode = 3
 anchors_preset = 15
@@ -82,6 +167,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_utyyb")
+music_when_entering = ""
 
 [node name="TextureRect" type="ColorRect" parent="." unique_id=482453930]
 layout_mode = 1
@@ -97,7 +183,7 @@ visible = false
 
 [node name="Right" type="StaticBody2D" parent="Walls" unique_id=2032400161]
 position = Vector2(1149, 357)
-collision_layer = 19
+collision_layer = 23
 collision_mask = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Right" unique_id=2051602316]
@@ -105,7 +191,7 @@ position = Vector2(1, -7)
 shape = SubResource("RectangleShape2D_50w5d")
 
 [node name="Up" type="StaticBody2D" parent="Walls" unique_id=38000795]
-collision_layer = 19
+collision_layer = 23
 collision_mask = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Up" unique_id=228074278]
@@ -114,7 +200,7 @@ shape = SubResource("RectangleShape2D_gja22")
 
 [node name="Left" type="StaticBody2D" parent="Walls" unique_id=754183200]
 position = Vector2(-16, 360)
-collision_layer = 19
+collision_layer = 23
 collision_mask = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Left" unique_id=1601021392]
@@ -123,7 +209,7 @@ shape = SubResource("RectangleShape2D_lh3vw")
 
 [node name="Down" type="StaticBody2D" parent="Walls" unique_id=2119867449]
 position = Vector2(-2, 654)
-collision_layer = 19
+collision_layer = 23
 collision_mask = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Down" unique_id=1017536816]
@@ -230,18 +316,16 @@ position = Vector2(568, 551)
 position = Vector2(893, 530)
 
 [node name="JoBossFight" type="AnimationPlayer" parent="." unique_id=1082099075]
-
-[node name="WorldAudioManager" parent="." unique_id=1781513062 instance=ExtResource("8_5ppmw")]
-default_music = "Joe"
-pitch_curve = SubResource("Curve_eqm75")
-tempo_curve = SubResource("Curve_y7rmr")
+libraries/ = SubResource("AnimationLibrary_dagtu")
 
 [node name="JoeAttacks" type="Node2D" parent="." unique_id=1774538303]
 script = ExtResource("8_eqm75")
 balls_life_time = 13
+time_between_ball_spawn = 5
 slash_number = 30
 slash_interval = 1.0
 slash_interval_curve = SubResource("Curve_5ppmw")
+ball_color = Color(0.8117647, 0.043137256, 0, 1)
 
 [node name="Path2D" type="Path2D" parent="JoeAttacks" unique_id=374954259]
 position = Vector2(14.178182, 9.304567)
@@ -253,5 +337,17 @@ position = Vector2(23.11602, 621.1546)
 rotation = -0.00938576
 
 [node name="Attacks" type="Node2D" parent="JoeAttacks" unique_id=274684466]
+z_index = 1
 
 [node name="ShockWaveContainer" type="Node2D" parent="." unique_id=1401343588]
+
+[node name="Cinematics" type="Node2D" parent="." unique_id=454037664]
+
+[node name="Intro" type="Node2D" parent="Cinematics" unique_id=1526313556]
+
+[node name="Sprite2D" type="Sprite2D" parent="Cinematics/Intro" unique_id=498046939]
+modulate = Color(1, 1, 0, 1)
+material = SubResource("ShaderMaterial_fvot8")
+position = Vector2(554, 209)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("9_eqm75")

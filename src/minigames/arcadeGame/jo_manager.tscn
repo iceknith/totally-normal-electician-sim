@@ -2,5 +2,10 @@
 
 [ext_resource type="Script" uid="uid://dedrs7fhgwmda" path="res://src/minigames/arcadeGame/joe_manager.gd" id="1_q15w4"]
 
+[sub_resource type="Curve" id="Curve_q15w4"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.7285319, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.5167085), 0.0, 0.0, 0, 0]
+point_count = 3
+
 [node name="JoManager" type="Node2D" unique_id=639065793]
 script = ExtResource("1_q15w4")
+JoCatchRate = SubResource("Curve_q15w4")

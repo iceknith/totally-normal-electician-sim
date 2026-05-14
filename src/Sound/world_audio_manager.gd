@@ -5,6 +5,17 @@ class_name WorldAudioManager extends Node
 @export_group("EOW Distortion")
 @export var pitch_curve:Curve
 @export var tempo_curve:Curve
+
+
+@export_group("Music Transition")
+@export var music_fade_out_duration: float = 0.4
+@export var music_fade_in_duration: float = 0.6
+@export var music_silence_volume_db: float = -80.0
+
+var music_base_volume_db: float = 0.0
+var music_transition_tween: Tween
+var music_transition_id: int = 0
+
 var eow_meter:float = 0:
 	set(new_val):
 		eow_meter = new_val
@@ -20,9 +31,12 @@ var music_positions:Dictionary = {}
 var current_music:String = ""
 
 func _ready():
+	music_base_volume_db = bg_music_player.volume_db
 	update_music(default_music)
 	SoundManager.change_music.connect(update_music)
+	SoundManager.stop_music.connect(stop_music)
 	MainCommunicator.ChangeGameState.connect(back_to_main_theme)
+	SoundManager.reset_music.connect(reset_music)
 
 func _process(delta):
 	pass
@@ -32,6 +46,30 @@ func update_music(music:String):
 	if not ResourceLoader.exists(path):
 		push_error("Music file not found: " + path)
 		return
+	
+	if music == current_music: #pour éviter d'avoir plusieurs music transition en même temps
+		return
+	
+	music_transition_id += 1
+	var transition_id = music_transition_id
+	
+	if music_transition_tween != null:
+		music_transition_tween.kill()
+	
+	# fade out seulement si une musique est déjà en train de jouer
+	if bg_music_player.playing:
+		music_transition_tween = create_tween()
+		music_transition_tween.tween_property(
+			bg_music_player,
+			"volume_db",
+			music_silence_volume_db,
+			music_fade_out_duration
+		)
+		await music_transition_tween.finished
+		
+		if transition_id != music_transition_id:
+			return
+	
 	# sauvegarde la position de la musique actuelle
 	if current_music != "":
 		music_positions[current_music] = bg_music_player.get_playback_position()
@@ -39,6 +77,7 @@ func update_music(music:String):
 	bg_music_player.stop()
 	bg_music_player.stream = load(path) as AudioStreamOggVorbis
 	bg_music_player.stream.loop = true
+	bg_music_player.volume_db = music_silence_volume_db
 	bg_music_player.play()
 	
 	# reprend à l'emplacement de la musique si on l'a déjà save
@@ -46,6 +85,15 @@ func update_music(music:String):
 		bg_music_player.seek(music_positions[music])
 	
 	current_music = music
+	
+	# fade in de la nouvelle musique
+	music_transition_tween = create_tween()
+	music_transition_tween.tween_property(
+		bg_music_player,
+		"volume_db",
+		music_base_volume_db,
+		music_fade_in_duration
+	)
 
 func back_to_main_theme(state):
 	if state == MainCommunicator.GameState.Game3D:
@@ -60,3 +108,37 @@ func modify_music_pitch(new_pitch:float):
 
 func modify_music_tempo(new_tempo:float):
 	bg_music_player.pitch_scale = new_tempo
+
+func reset_music(music:String):
+	if music_positions.has(music):
+		music_positions[music] = 0
+		
+func stop_music(fade_duration: float = 0.6):
+	music_transition_id += 1
+	var transition_id = music_transition_id
+	
+	if music_transition_tween != null:
+		music_transition_tween.kill()
+	
+	if !bg_music_player.playing:
+		return
+	
+	if current_music != "":
+		music_positions[current_music] = bg_music_player.get_playback_position()
+	
+	music_transition_tween = create_tween()
+	music_transition_tween.tween_property(
+		bg_music_player,
+		"volume_db",
+		music_silence_volume_db,
+		fade_duration
+	)
+	
+	await music_transition_tween.finished
+	
+	if transition_id != music_transition_id:
+		return
+	
+	bg_music_player.stop()
+	bg_music_player.volume_db = music_base_volume_db
+	current_music = ""

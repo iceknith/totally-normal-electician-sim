@@ -23,6 +23,9 @@ extends CanvasLayer
 ## A sound player for voice lines (if they exist).
 @onready var audio_stream_player: AudioStreamPlayer = %AudioStreamPlayer
 
+## A sound player for voice lines sound effects 
+@onready var voice_stream_player:AudioStreamPlayer = $VoiceStreamPlayer
+
 ## Temporary game states
 var temporary_game_states: Array = []
 
@@ -81,6 +84,10 @@ func _ready() -> void:
 
 	mutation_cooldown.timeout.connect(_on_mutation_cooldown_timeout)
 	add_child(mutation_cooldown)
+	
+	#signal to play a sound when a letter is displayed
+	dialogue_label.spoke.connect(play_speak_sound)
+	
 
 	if auto_start:
 		if not is_instance_valid(dialogue_resource):
@@ -213,5 +220,21 @@ func _on_balloon_gui_input(event: InputEvent) -> void:
 func _on_responses_menu_response_selected(response: DialogueResponse) -> void:
 	next(response.next_id)
 
+func play_speak_sound(letter:String, letter_index: int, speed: float):
+	match letter:
+		".", ",", "?", "!":
+			pass
+		" ":
+			pass
+		_:
+			var new_audio_player = voice_stream_player.duplicate()
+			new_audio_player.pitch_scale += randf_range(-0.1, 0.1)
+			if letter in ["a", "e", "o", "u", "i"] : 
+				new_audio_player.pitch_scale +=0.2
+			get_tree().root.add_child(new_audio_player)
+			new_audio_player.play()
+			await new_audio_player.finished
+			new_audio_player.queue_free()
+	pass
 
 #endregion

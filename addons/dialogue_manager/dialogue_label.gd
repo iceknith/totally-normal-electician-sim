@@ -44,7 +44,6 @@ signal paused_typing(duration: float)
 
 var _already_mutated_indices: PackedInt32Array = []
 
-
 ## The current line of dialogue.
 var dialogue_line:
 	set(value):
