@@ -620,7 +620,6 @@ func show_error_for_missing_state_value(message: String, will_show: bool = true)
 		# message down in the debugger will give you some more information.
 		assert(false, message)
 
-
 # Translate a string
 func translate(data: Dictionary) -> String:
 	if TranslationServer.get_loaded_locales().size() == 0 or translation_source == DMConstants.TranslationSource.None:

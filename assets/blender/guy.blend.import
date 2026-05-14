@@ -3,7 +3,7 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://b1x0kk15ui8fh"
+uid="uid://dokor2d5dm5sx"
 path="res://.godot/imported/guy.blend-4102ddaf8742ec1b9c4ee66750f93adc.scn"
 
 [deps]
@@ -33,7 +33,7 @@ animation/fps=30
 animation/trimming=false
 animation/remove_immutable_tracks=true
 animation/import_rest_as_RESET=false
-import_script/path=""
+import_script/path="uid://boqq63mymoi05"
 materials/extract=0
 materials/extract_format=0
 materials/extract_path=""

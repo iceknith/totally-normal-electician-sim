@@ -2,7 +2,33 @@
 
 [ext_resource type="Script" uid="uid://bf13x6omc7ij8" path="res://src/main.gd" id="1_gh0ne"]
 [ext_resource type="PackedScene" uid="uid://csincrgfh0ug4" path="res://src/3D/World.tscn" id="2_5q4o7"]
+[ext_resource type="Script" uid="uid://bdnx07d05e07x" path="res://src/ui/menues/settings_menu.gd" id="2_rlaii"]
+[ext_resource type="FontFile" uid="uid://dhoixqrkemx30" path="res://assets/gui/ithaca-font/Ithaca-LVB75.ttf" id="3_5mrjc"]
 [ext_resource type="PackedScene" uid="uid://gturm7g46hmh" path="res://src/ui/game_overlay.tscn" id="3_5q4o7"]
+[ext_resource type="PackedScene" uid="uid://boc5lvj7gp288" path="res://src/Sound/world_audio_manager.tscn" id="3_fyndt"]
+[ext_resource type="PackedScene" uid="uid://dkun2575mcbdk" path="res://src/ui/menues/title_menu.tscn" id="4_3cfgd"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ixk0t"]
+bg_color = Color(0.15, 0.15, 0.15, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_xy610"]
+font = ExtResource("3_5mrjc")
+font_size = 40
+
+[sub_resource type="PackedScene" id="PackedScene_kf8lf"]
+_bundled = {
+"conn_count": 0,
+"conns": PackedInt32Array(),
+"editable_instances": [],
+"id_paths": [PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array()],
+"names": PackedStringArray("SettingsMenu", "Control", "layout_mode", "anchors_preset", "anchor_right", "anchor_bottom", "grow_horizontal", "grow_vertical", "script", "baseMinigameLayoutActive", "metadata/_custom_type_script", "ColorRect", "ColorRect", "layout_mode", "anchors_preset", "anchor_right", "anchor_bottom", "grow_horizontal", "grow_vertical", "color", "PanelContainer", "PanelContainer", "custom_minimum_size", "layout_mode", "anchors_preset", "anchor_left", "anchor_top", "anchor_right", "anchor_bottom", "offset_left", "offset_top", "offset_right", "offset_bottom", "grow_horizontal", "grow_vertical", "theme_override_styles/panel", "MarginContainer", "MarginContainer", "layout_mode", "theme_override_constants/margin_left", "theme_override_constants/margin_top", "theme_override_constants/margin_right", "theme_override_constants/margin_bottom", "VBoxContainer", "VBoxContainer", "layout_mode", "theme_override_constants/separation", "Label", "Label", "layout_mode", "size_flags_horizontal", "text", "label_settings", "EmptySpace", "Control", "custom_minimum_size", "layout_mode", "ButtonKeys", "Button", "unique_name_in_owner", "custom_minimum_size", "layout_mode", "size_flags_horizontal", "theme_override_fonts/font", "theme_override_font_sizes/font_size", "text", "ButtonSound", "Button", "unique_name_in_owner", "custom_minimum_size", "layout_mode", "size_flags_horizontal", "theme_override_fonts/font", "theme_override_font_sizes/font_size", "text", "EmptySpace2", "Control", "custom_minimum_size", "layout_mode", "ButtonExit", "Button", "unique_name_in_owner", "custom_minimum_size", "layout_mode", "size_flags_horizontal", "theme_override_fonts/font", "theme_override_font_sizes/font_size", "text"),
+"node_count": 11,
+"node_ids": PackedInt32Array(69117915, 51887224, 1072085457, 2018218630, 1247810165, 1485208585, 911892567, 1781576353, 1430462465, 1223391942, 1533842190),
+"node_paths": [NodePath("."), NodePath("."), NodePath("./PanelContainer"), NodePath("./PanelContainer/MarginContainer"), NodePath("./PanelContainer/MarginContainer/VBoxContainer"), NodePath("./PanelContainer/MarginContainer/VBoxContainer"), NodePath("./PanelContainer/MarginContainer/VBoxContainer"), NodePath("./PanelContainer/MarginContainer/VBoxContainer"), NodePath("./PanelContainer/MarginContainer/VBoxContainer"), NodePath("./PanelContainer/MarginContainer/VBoxContainer")],
+"nodes": PackedInt32Array(-1, -1, 1, 0, -1, 9, 2, 0, 3, 1, 4, 2, 5, 3, 6, 4, 7, 5, 8, 6, 9, 7, 10, 8, 0, 1073741824, 0, 12, 11, -1, 7, 13, 9, 14, 10, 15, 11, 16, 12, 17, 13, 18, 14, 19, 15, 0, 1073741825, 0, 21, 20, -1, 14, 22, 16, 23, 17, 24, 18, 25, 19, 26, 20, 27, 21, 28, 22, 29, 23, 30, 24, 31, 25, 32, 26, 33, 27, 34, 28, 35, 29, 0, 1073741826, 0, 37, 36, -1, 5, 38, 30, 39, 31, 40, 32, 41, 33, 42, 34, 0, 1073741827, 0, 44, 43, -1, 2, 45, 35, 46, 36, 0, 1073741828, 0, 48, 47, -1, 4, 49, 37, 50, 38, 51, 39, 52, 40, 0, 1073741829, 0, 54, 53, -1, 2, 55, 41, 56, 42, 0, 1073741830, 0, 58, 57, -1, 7, 59, 43, 60, 44, 61, 45, 62, 46, 63, 47, 64, 48, 65, 49, 0, 1073741831, 0, 67, 66, -1, 7, 68, 50, 69, 51, 70, 52, 71, 53, 72, 54, 73, 55, 74, 56, 0, 1073741832, 0, 76, 75, -1, 2, 77, 57, 78, 58, 0, 1073741833, 0, 80, 79, -1, 7, 81, 59, 82, 60, 83, 61, 84, 62, 85, 63, 86, 64, 87, 65, 0),
+"variants": [3, 15, 1.0, 1.0, 2, 2, ExtResource("2_rlaii"), false, "uid://dd5w2ptvu7pou", 1, 15, 1.0, 1.0, 2, 2, Color(0, 0, 0, 0.19607843), Vector2(500, 600), 1, 8, 0.5, 0.5, 0.5, 0.5, -95.0, -192.5, 95.0, 192.5, 2, 2, SubResource("StyleBoxFlat_ixk0t"), 2, 20, 20, 20, 20, 2, 10, 2, 4, "Settings", SubResource("LabelSettings_xy610"), Vector2(0, 200), 2, true, Vector2(150, 0), 2, 4, ExtResource("3_5mrjc"), 36, "Keys", true, Vector2(150, 0), 2, 4, ExtResource("3_5mrjc"), 36, "Sound", Vector2(0, 100), 2, true, Vector2(150, 0), 2, 4, ExtResource("3_5mrjc"), 36, "Exit"],
+"version": 3
+}
 
 [sub_resource type="Curve" id="Curve_gh0ne"]
 _data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.2532751, 0), 0.0, 0.0, 0, 0, Vector2(0.5, 0.005), 0.0, 0.0, 0, 0, Vector2(0.7838428, 0.19084913), 1.5256113, 1.5256113, 0, 0, Vector2(1, 1), 2.47858, 0.0, 0, 0]
@@ -17,8 +43,22 @@ frequency = 0.0695
 fractal_type = 0
 fractal_ping_pong_strength = 3.0
 
+[sub_resource type="Curve" id="Curve_fyndt"]
+_limits = [0.0, 5.0, 0.0, 1.0]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.5, 0.975), 0.0, 0.0, 0, 0, Vector2(0.95, 0.4), 0.0, 0.0, 0, 0, Vector2(1, 0.4), 0.0, 0.0, 0, 0]
+point_count = 4
+metadata/_snap_enabled = true
+
+[sub_resource type="Curve" id="Curve_kmhfv"]
+_limits = [0.0, 5.0, 0.0, 1.0]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.602, 0.975), 0.0, 0.0, 0, 0, Vector2(0.90000004, 0.6), 0.0, 0.0, 0, 0, Vector2(0.95, 0.6), 0.0, 0.0, 0, 0]
+point_count = 4
+metadata/_snap_enabled = true
+
 [node name="Main" type="Node3D" unique_id=1571594318]
 script = ExtResource("1_gh0ne")
+settings_scene = SubResource("PackedScene_kf8lf")
+end_of_world_max_time_mins = 30.0
 mouse_jitter_speed = 150.0
 mouse_jitter_intensity = Vector2(500, 500)
 camera_jitter_amount = 1.0
@@ -27,6 +67,10 @@ mouse_jitter_speed_curve = SubResource("Curve_5q4o7")
 mouse_jitter_noise = SubResource("FastNoiseLite_gh0ne")
 
 [node name="World" parent="." unique_id=600883011 instance=ExtResource("2_5q4o7")]
+
+[node name="WorldAudioManager" parent="." unique_id=1781513062 instance=ExtResource("3_fyndt")]
+pitch_curve = SubResource("Curve_fyndt")
+tempo_curve = SubResource("Curve_kmhfv")
 
 [node name="HUD" type="CanvasLayer" parent="." unique_id=410458702]
 
@@ -40,3 +84,6 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
+
+[node name="TitleMenu" parent="HUD/Minigames" unique_id=913064038 instance=ExtResource("4_3cfgd")]
+layout_mode = 1

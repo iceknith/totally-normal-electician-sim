@@ -1,0 +1,80 @@
+[gd_scene format=3 uid="uid://bbq15i7mvddty"]
+
+[ext_resource type="Script" uid="uid://dd5w2ptvu7pou" path="res://src/minigames/minigame.gd" id="1_63axh"]
+[ext_resource type="FontFile" uid="uid://dhoixqrkemx30" path="res://assets/gui/ithaca-font/Ithaca-LVB75.ttf" id="2_nubjj"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ixk0t"]
+bg_color = Color(0.15, 0.15, 0.15, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_xy610"]
+font = ExtResource("2_nubjj")
+font_size = 40
+
+[node name="SoundSettingsMenu" type="Control" unique_id=69117915]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_63axh")
+metadata/_custom_type_script = "uid://dd5w2ptvu7pou"
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=51887224]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.19607843)
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=1072085457]
+custom_minimum_size = Vector2(500, 600)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -95.0
+offset_top = -192.5
+offset_right = 95.0
+offset_bottom = 192.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_ixk0t")
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer" unique_id=2018218630]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer" unique_id=1247810165]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=1485208585]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Sound Settings"
+label_settings = SubResource("LabelSettings_xy610")
+
+[node name="EmptySpace" type="Control" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=911892567]
+custom_minimum_size = Vector2(0, 200)
+layout_mode = 2
+
+[node name="EmptySpace2" type="Control" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=1223391942]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+
+[node name="ButtonExit" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=1533842190]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("2_nubjj")
+theme_override_font_sizes/font_size = 36
+text = "Exit"

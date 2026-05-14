@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://bah3g2x2rouh0"
+path="res://.godot/imported/rpc_dialogues.dialogue-5aa61d82509684709ab2dfd34a607737.tres"
+
+[deps]
+
+source_file="res://src/minigames/competitive_rock_paper_scissors/dialogue/rpc_dialogues.dialogue"
+dest_files=["res://.godot/imported/rpc_dialogues.dialogue-5aa61d82509684709ab2dfd34a607737.tres"]
+
+[params]
+
+defaults=true

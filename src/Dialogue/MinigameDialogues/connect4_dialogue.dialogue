@@ -1,0 +1,63 @@
+~ ada_start
+Ada: Connect 4 is my favorite game.
+- Oh, my god, me too !
+	=> ada_launch_game
+- Ok
+	Ada: Do you want to play a game with me ?
+	- Why not ?
+		=> ada_launch_game
+	- No
+		Ada: Oh... That's okay... Maybe another time...
+=> END
+
+~ ada_launch_game
+Ada: Yippee, good luck to you !
+$> MainCommunicator.send_signal_to_main(MainCommunicator.SignalType.ADD_MINIGAME, [load("res://src/minigames/connect4/connect_4.tscn"), {"computer_playstyle":0}])
+=> END
+
+~ noah_start
+Noah: I wanna become as strong as my big sibling Hannah.
+- What ?
+	Noah: Nobody has ever beaten Hannah at connect 4.
+- Why ?
+	Noah: Because their's the best connect 4 player around !
+- You're already pretty strong !
+	Noah: You really think that ?
+Noah: Will you help me train ?
+- Yes
+	Noah: Yay
+	=> noah_launch_game
+- Sorry, but I'm busy
+	Noah: That's okay, maybe another time
+=> END
+
+~ noah_launch_game
+Noah: Good luck to you !
+$> MainCommunicator.send_signal_to_main(MainCommunicator.SignalType.ADD_MINIGAME, [load("res://src/minigames/connect4/connect_4.tscn"), {"computer_playstyle":1}])
+=> END
+
+~ hannah_start
+Hannah: Hey
+- Good morning
+- Good afternoon
+- Hey
+Hannah: Do you like connect 4 ?
+- Yesss
+	Hannah: Do you think you can beat me ?
+	- Certain
+		Hannah: A ballzy statement, I like it !
+		=> hannah_launch_game
+	- Pretty sure
+		Hannah: Let's see what'cha got !
+		=> hannah_launch_game
+	- No
+		Hannah: That's a shame...
+- Not that much
+	Hannah: sigh...
+	Hannah: So uncultured...
+=> END
+
+~ hannah_launch_game
+Hannah: But, I'll warn you, I'm not like Ada nor Noah, I play for real !
+$> MainCommunicator.send_signal_to_main(MainCommunicator.SignalType.ADD_MINIGAME, [load("res://src/minigames/connect4/connect_4.tscn"), {"computer_playstyle":2}])
+=> END

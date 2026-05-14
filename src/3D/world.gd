@@ -5,6 +5,9 @@ var eow_meter:float = 0:
 		eow_meter = new_val
 		update_eow()
 
+@export var phone_call_start_time:float = 2
+var phone_call:DialogueResource = preload("res://src/Dialogue/phone_call.dialogue")
+
 @export var sunStartAngle:float = -10
 @export var sunEndAngle:float = -170
 
@@ -14,11 +17,31 @@ var eow_meter:float = 0:
 @export var skyBotEndColor:Color
 @export var skyChangeCurve:Curve
 
+@onready var environment:Environment = $WorldEnvironment.environment
 @onready var skyMaterial:ProceduralSkyMaterial = $WorldEnvironment.environment.sky.sky_material
+@onready var worldBoxSmall:Area3D = $worldBoxSmall
+@onready var worldBoxBig:Area3D = $worldBoxBig
+
 
 func _ready() -> void:
 	GlobalVars.tower_amount = count_towers(self)
-	print(GlobalVars.tower_amount)
+	worldBoxBig.body_exited.connect(_on_body_leave_world_box_big)
+
+func start_game() -> void:
+	var timer:Timer = Timer.new()
+	timer.one_shot = true
+	add_child(timer)
+	timer.timeout.connect(start_phone_call)
+	timer.start(phone_call_start_time)
+
+func start_phone_call():
+	MainCommunicator.send_signal_to_main(
+		MainCommunicator.SignalType.START_DIALOGUE, 
+		[phone_call, "start", [self]]
+	)
+
+func phone_call_animation():
+	MainCommunicator.signalCamera.emit("turn_then_zoom", [%TutorialPivot.global_position, 0.5, 1, 50])
 
 func update_eow():
 	$Sun.rotation_degrees.x = sunStartAngle * (1 - eow_meter) + sunEndAngle * eow_meter
@@ -26,7 +49,9 @@ func update_eow():
 	var skyChangeProgress:float = skyChangeCurve.sample(eow_meter)
 	skyMaterial.sky_top_color = skyTopStartColor * (1 - skyChangeProgress) + skyTopEndColor * skyChangeProgress
 	skyMaterial.sky_horizon_color = skyBotStartColor * (1 - skyChangeProgress) + skyBotEndColor * skyChangeProgress
-
+	skyMaterial.ground_bottom_color = skyMaterial.sky_horizon_color
+	skyMaterial.ground_horizon_color = skyMaterial.sky_horizon_color
+	environment.fog_light_color = skyMaterial.sky_horizon_color
 
 func count_towers(node:Node) -> int:
 	var result = 0
@@ -36,3 +61,22 @@ func count_towers(node:Node) -> int:
 			else: result += count_towers(child)
 		
 	return result
+
+func _on_body_leave_world_box_big(body:Node3D):
+	# Get nearest point
+	var initPos:Vector3 = body.global_position
+	initPos[body.global_position.abs().max_axis_index()] = 0
+	var query:PhysicsRayQueryParameters3D = PhysicsRayQueryParameters3D.create(
+		initPos, body.global_position, 0b10000000, []
+	)
+	query.collide_with_areas = true
+	query.collide_with_bodies = false
+	query.hit_back_faces = true
+	#query.hit_from_inside = true
+	
+	var collision = get_world_3d().direct_space_state.intersect_ray(query)
+	
+	if collision:
+		body.global_position = collision.position
+	#else: printerr("Object out of world bounds error: No small box found")
+	

@@ -1,0 +1,44 @@
+[remap]
+
+importer="texture"
+type="CompressedTexture2D"
+uid="uid://bjkck6dcy7t5j"
+path.s3tc="res://.godot/imported/borne2_Arcadia_Tex_Spec.png-dbc58dfb2e25c0b99829f1fc611023d2.s3tc.ctex"
+metadata={
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
+}
+generator_parameters={
+"md5": "caa4a320576999f54a2d5889f29add6e"
+}
+
+[deps]
+
+source_file="res://src/minigames/arcadeGame/assets/3dModel_Borne/borne2_Arcadia_Tex_Spec.png"
+dest_files=["res://.godot/imported/borne2_Arcadia_Tex_Spec.png-dbc58dfb2e25c0b99829f1fc611023d2.s3tc.ctex"]
+
+[params]
+
+compress/mode=2
+compress/high_quality=false
+compress/lossy_quality=0.7
+compress/uastc_level=0
+compress/rdo_quality_loss=0.0
+compress/hdr_compression=1
+compress/normal_map=0
+compress/channel_pack=0
+mipmaps/generate=true
+mipmaps/limit=-1
+roughness/mode=0
+roughness/src_normal=""
+process/channel_remap/red=0
+process/channel_remap/green=1
+process/channel_remap/blue=2
+process/channel_remap/alpha=3
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/normal_map_invert_y=false
+process/hdr_as_srgb=false
+process/hdr_clamp_exposure=false
+process/size_limit=0
+detect_3d/compress_to=0

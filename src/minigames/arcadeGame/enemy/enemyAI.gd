@@ -1,0 +1,94 @@
+class_name ArcadeEnemy extends CharacterBody2D
+
+
+@onready var movementComponent:MovementComponent = $Movement
+@onready var HitBallComponent:Hitball = $HitBall
+@onready var AimComponent:Aim = $Aim
+@onready var DieComponent:Die = $Die
+
+var facing_direction:Vector2
+var aiming_direction:Vector2
+var input_direction:Vector2
+var launch_speed = 200
+var launch_counter = 0
+var dead:bool
+
+
+@export var ball_state_to_give:ArcadeGame.BALLSTATE
+@export var losing_ball_state:ArcadeGame.BALLSTATE
+@export var ball_color:Color
+
+
+func _ready():
+	HitBallComponent.ball_color = ball_color
+	HitBallComponent.ball_state_to_give = ball_state_to_give
+	DieComponent.losing_ball_state = losing_ball_state
+	setup_signals()
+	reset()
+	
+
+func _physics_process(delta):
+	if !dead : 
+		manage_input(delta)
+		move_and_slide()
+		set_facing_direction()
+		manage_variables()
+	else : 
+		velocity = Vector2.ZERO
+	
+func manage_input(delta):
+	if HitBallComponent.launching_ball :
+		manage_launching_ball(delta)
+	else :
+		velocity = movementComponent.calculate_velocity(velocity, input_direction)
+		AimComponent.set_visibility(false)
+		
+func manage_launching_ball(delta):
+	velocity = Vector2.ZERO
+	AimComponent.manage_aim(aiming_direction, delta)
+	AimComponent.set_visibility(true)
+	AimComponent.set_progress_bar_position(HitBallComponent.get_ball().global_position) #set the 
+	launch_counter += delta*launch_speed
+	AimComponent.set_progress_bar_value(launch_counter)
+	if launch_counter >= 99.9 : 
+		HitBallComponent.release_ball()
+		launch_counter = 0
+		
+func set_facing_direction():
+	if input_direction != Vector2.ZERO : 
+		facing_direction = input_direction
+		
+func manage_variables():
+	HitBallComponent.update_launching_ball_direction(aiming_direction)
+	HitBallComponent.set_direction(facing_direction)
+	
+func set_input_direction(inp_dir:Vector2): #setter for input direction
+	input_direction = inp_dir
+	
+func set_aiming_direction(aim_dir):
+	aiming_direction = aim_dir
+	
+func get_sprite_size():
+	var size = $Sprite2D.texture.get_size() * $Sprite2D.scale
+	return size
+
+func death(entity):
+	if !dead : 
+		HitBallComponent.release_ball_on_death()
+		DieComponent.turn_off()
+		DieComponent.play_death_sound()
+		dead = true
+	
+func reset():
+	DieComponent.turn_on()
+	$Sprite2D.visible = true
+	$DeathParticle.visible = false
+	dead = false
+	
+
+func setup_signals():
+	DieComponent.die.connect(death)
+
+
+func get_sprite():
+	return $Sprite2D	

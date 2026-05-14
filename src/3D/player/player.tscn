@@ -1,7 +1,6 @@
 [gd_scene format=4 uid="uid://m1vlj0bw46qk"]
 
 [ext_resource type="Script" uid="uid://b32ei6ddyi8kc" path="res://src/3D/player/player.gd" id="1_f043j"]
-[ext_resource type="PackedScene" uid="uid://b1x0kk15ui8fh" path="res://assets/blender/guy.blend" id="2_bxhrw"]
 [ext_resource type="Script" uid="uid://csqj305by4a8c" path="res://src/3D/player/Camera/playerCamera.gd" id="2_ihd86"]
 [ext_resource type="PackedScene" uid="uid://cb5jqhnceqws" path="res://assets/blender/handforEOW.blend" id="3_41h8g"]
 
@@ -53,18 +52,15 @@ shadow_mesh = SubResource("ArrayMesh_7bh1v")
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_f043j"]
 
-[node name="Player" type="CharacterBody3D" unique_id=192968154]
+[node name="Player" type="CharacterBody3D" unique_id=192968154 node_paths=PackedStringArray("footstep_timer")]
 collision_layer = 2
-floor_max_angle = 1.5707964
 script = ExtResource("1_f043j")
 walk_jitter_strength = 3.0
 walk_jitter_speed = 10.0
 walk_jitter_noise = SubResource("FastNoiseLite_41h8g")
 walk_jitter_curve = SubResource("Curve_bxhrw")
-
-[node name="guy" parent="." unique_id=101062574 instance=ExtResource("2_bxhrw")]
-transform = Transform3D(0.5, 0, 0, 0, 0.25, 0, 0, 0, 0.5, 0, 0.0040878057, 0.43859345)
-visible = false
+footstep_interval = 0.5
+footstep_timer = NodePath("PlayerSoundEffects/footstepsTimer")
 
 [node name="GuyTexture" type="MeshInstance3D" parent="." unique_id=1372495662]
 transform = Transform3D(0.5, 0, 0, 0, 0.25, 0, 0, 0, 0.5, 0, 0, 0)
@@ -73,21 +69,23 @@ mesh = SubResource("ArrayMesh_bxhrw")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1591355017]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+visible = false
 shape = SubResource("CapsuleShape3D_imvo1")
 
 [node name="head" type="Node3D" parent="." unique_id=1652027225]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5205812, 0)
 
-[node name="handforEOW" parent="head" unique_id=2056753208 instance=ExtResource("3_41h8g")]
-transform = Transform3D(-0.013734085, 0, -0.0990524, 0, 0.1, 0, 0.0990524, 0, -0.013734085, 0.6477792, -0.30266118, -0.5381017)
-
 [node name="Camera3D" type="Camera3D" parent="head" unique_id=913838045]
 unique_name_in_owner = true
+process_mode = 3
 script = ExtResource("2_ihd86")
+
+[node name="handforEOW" parent="head/Camera3D" unique_id=2056753208 instance=ExtResource("3_41h8g")]
+transform = Transform3D(-0.013734085, 0, -0.0990524, 0, 0.1, 0, 0.0990524, 0, -0.013734085, 0.6477792, -0.30266118, -0.5381017)
 
 [node name="InteractableVision" type="RayCast3D" parent="head/Camera3D" unique_id=771690805]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.5188713)
-target_position = Vector3(0, 0, -2)
+target_position = Vector3(0, 0, -2.5)
 collision_mask = 4
 collide_with_areas = true
 collide_with_bodies = false
@@ -97,3 +95,16 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 visible = false
 cast_shadow = 0
 mesh = SubResource("CapsuleMesh_f043j")
+
+[node name="StairUpRay" type="RayCast3D" parent="." unique_id=1704994351]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.475, 0)
+target_position = Vector3(0, 0, -0.5)
+hit_from_inside = true
+
+[node name="PlayerSoundEffects" type="AudioStreamPlayer3D" parent="." unique_id=942735582]
+volume_db = -28.0
+bus = &"sfx"
+
+[node name="footstepsTimer" type="Timer" parent="PlayerSoundEffects" unique_id=1461522989]
+
+[connection signal="timeout" from="PlayerSoundEffects/footstepsTimer" to="." method="_on_footsteps_timer_timeout"]

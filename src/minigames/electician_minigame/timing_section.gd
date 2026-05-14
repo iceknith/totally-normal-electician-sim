@@ -57,7 +57,7 @@ func _process(delta: float) -> void:
 		$BaseRect.texture = cube_can_be_touched_text
 	
 	# Input
-	if Input.is_action_just_pressed("jump") || Input.is_action_just_pressed("interract"):
+	if Input.is_action_just_pressed("interact2"):
 		if $BaseRect.get_rect().has_point(size/2):
 			$BaseRect.texture = cube_sucess_text
 			current_cube_touched = true

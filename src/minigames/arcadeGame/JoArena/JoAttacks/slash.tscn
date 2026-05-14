@@ -1,0 +1,313 @@
+[gd_scene format=3 uid="uid://cno4drt8fbas"]
+
+[ext_resource type="Script" uid="uid://doi0yll836j6f" path="res://src/minigames/arcadeGame/JoArena/JoAttacks/slash.gd" id="1_4ijlk"]
+[ext_resource type="Texture2D" uid="uid://6tsfcknrmx4m" path="res://src/minigames/arcadeGame/JoArena/JoAttacks/blackSlash-Sheet.png" id="2_0jfyc"]
+[ext_resource type="Texture2D" uid="uid://cvl4y662ru6ar" path="res://src/minigames/arcadeGame/JoArena/JoAttacks/asset/fire-Sheet.png" id="2_2sv72"]
+[ext_resource type="Texture2D" uid="uid://b3atb688bghdb" path="res://src/minigames/arcadeGame/JoArena/JoAttacks/asset/warning.png" id="2_mpart"]
+[ext_resource type="AudioStream" uid="uid://ddx4npmtwpib0" path="res://src/minigames/arcadeGame/JoArena/sfx/Slash_Sound_Effect.wav" id="5_58t4e"]
+[ext_resource type="AudioStream" uid="uid://tgdtj8y5iunk" path="res://src/minigames/arcadeGame/JoArena/sfx/warn slash.wav" id="6_cjw3w"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mpart"]
+atlas = ExtResource("2_2sv72")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_58t4e"]
+atlas = ExtResource("2_2sv72")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cjw3w"]
+atlas = ExtResource("2_2sv72")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gig36"]
+atlas = ExtResource("2_2sv72")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_equv5"]
+atlas = ExtResource("2_2sv72")
+region = Rect2(256, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8nk6o"]
+atlas = ExtResource("2_2sv72")
+region = Rect2(384, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7xt7b"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mpart")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_58t4e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cjw3w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gig36")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_equv5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8nk6o")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_0jfyc"]
+radius = 5.0
+height = 12.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_2sv72"]
+radius = 4.0
+height = 10.0
+
+[sub_resource type="Animation" id="Animation_2sv72"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Slash:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Slash:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("SlashHitbox/Slash1:polygon")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [PackedVector2Array(-1.5, -30, 0.5, -30, 2.5, -5, 16.5, -5, 16.5, -2, 1.5, -2, 1.5, 13, -0.5, 10, -1.5, -2, -24.5, -2, -25.5, -5, -2.5, -5)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("SlashHitbox/littleSlash1:shape")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [SubResource("CapsuleShape2D_0jfyc")]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("SlashHitbox/littleSlash2:shape")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [SubResource("CapsuleShape2D_2sv72")]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("SlashHitbox/littleSlash2:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(2, 20)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("SlashSoundEffect:playing")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_58t4e"]
+resource_name = "fire"
+
+[sub_resource type="Animation" id="Animation_mpart"]
+resource_name = "slash"
+length = 0.8
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Slash:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.6333333, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [true, true, false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Slash:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.13333334, 0.26666668, 0.4, 0.5, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [0, 1, 2, 3, 4, 5]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("SlashHitbox/Slash1:polygon")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.1255867, 0.16666667, 0.2, 0.33333334, 0.3334),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [PackedVector2Array(-1.5, -30, 0.5, -30, 2.5, -5, 16.5, -5, 16.5, -2, 1.5, -2, 1.5, 13, -0.5, 10, -1.5, -2, -24.5, -2, -25.5, -5, -2.5, -5), PackedVector2Array(-1.5, -30, 0.5, -30, 2.5, -5, 16.5, -5, 16.5, -2, 1.5, -2, 1.5, 13, -0.5, 10, -1.5, -2, -24.5, -2, -25.5, -5, -2.5, -5), PackedVector2Array(-1.5, -21, 0.5, -22, 2.5, -5, 28.5, -6, 26.5, -3, 2.5, 0, 3.5, 25, 0.5, 24, -4.5, 0, -14.5, -1, -18.5, -5, -2.5, -5), PackedVector2Array(-1.5, -21, 0.5, -22, 2.5, -5, 28.5, -6, 26.5, -3, 2.5, 0, 3.5, 25, 0.5, 24, -4.5, 0, -14.5, -1, -18.5, -5, -2.5, -5), PackedVector2Array()]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("SlashHitbox/littleSlash1:shape")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.339392, 0.53333336),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [null, SubResource("CapsuleShape2D_0jfyc"), null]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("SlashHitbox/littleSlash2:shape")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.339392, 0.5318183, 0.53333336),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [null, SubResource("CapsuleShape2D_2sv72"), SubResource("CapsuleShape2D_2sv72"), null]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("SlashHitbox/littleSlash2:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0.3778709, 0.46666667, 0.5318183),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(2, 20), Vector2(2, 20), Vector2(3, 23)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("SlashSoundEffect:playing")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_58t4e"]
+_data = {
+&"RESET": SubResource("Animation_2sv72"),
+&"fire": SubResource("Animation_58t4e"),
+&"slash": SubResource("Animation_mpart")
+}
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_cjw3w"]
+radius = 14.008925
+
+[node name="Slash" type="Node2D" unique_id=830529901]
+z_index = 3
+scale = Vector2(2, 2)
+script = ExtResource("1_4ijlk")
+fire_life_time = 20.0
+tracking_time = 1.5
+wait_before_slash = 0.5
+
+[node name="warning" type="Sprite2D" parent="." unique_id=1993405809]
+texture_filter = 1
+texture = ExtResource("2_mpart")
+
+[node name="Fire" type="AnimatedSprite2D" parent="." unique_id=876508926]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_7xt7b")
+frame_progress = 0.9357837
+
+[node name="Slash" type="Sprite2D" parent="." unique_id=1105733187]
+texture_filter = 1
+texture = ExtResource("2_0jfyc")
+hframes = 6
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=2033374255]
+libraries/ = SubResource("AnimationLibrary_58t4e")
+
+[node name="SlashHitbox" type="Area2D" parent="." unique_id=2087272327]
+visible = false
+collision_mask = 8
+
+[node name="Slash1" type="CollisionPolygon2D" parent="SlashHitbox" unique_id=2094231951]
+position = Vector2(-0.5, 4)
+polygon = PackedVector2Array(-1.5, -30, 0.5, -30, 2.5, -5, 16.5, -5, 16.5, -2, 1.5, -2, 1.5, 13, -0.5, 10, -1.5, -2, -24.5, -2, -25.5, -5, -2.5, -5)
+
+[node name="littleSlash1" type="CollisionShape2D" parent="SlashHitbox" unique_id=1569637690]
+position = Vector2(21, -2)
+shape = SubResource("CapsuleShape2D_0jfyc")
+
+[node name="littleSlash2" type="CollisionShape2D" parent="SlashHitbox" unique_id=598020825]
+position = Vector2(2, 20)
+shape = SubResource("CapsuleShape2D_2sv72")
+
+[node name="FireHitbox" type="Area2D" parent="." unique_id=1357013528]
+collision_mask = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FireHitbox" unique_id=2079084643]
+position = Vector2(0, 7)
+shape = SubResource("CircleShape2D_cjw3w")
+
+[node name="SlashSoundEffect" type="AudioStreamPlayer" parent="." unique_id=323989059]
+stream = ExtResource("5_58t4e")
+bus = &"sfx"
+
+[node name="PreventSound" type="AudioStreamPlayer" parent="." unique_id=1172106682]
+stream = ExtResource("6_cjw3w")
+volume_db = 6.0
+
+[connection signal="body_entered" from="SlashHitbox" to="." method="_on_slash_hitbox_body_entered"]
+[connection signal="body_entered" from="FireHitbox" to="." method="_on_fire_hitbox_body_entered"]

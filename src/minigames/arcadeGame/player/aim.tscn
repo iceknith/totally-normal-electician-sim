@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://bff8owxdvdk7x"]
+
+[ext_resource type="Script" uid="uid://baal6pmkdwand" path="res://src/minigames/arcadeGame/player/aim.gd" id="1_pf1dk"]
+
+[node name="Aim" type="Node2D" unique_id=1422028878]
+script = ExtResource("1_pf1dk")
+aim_acceleration = 10
+
+[node name="ProgressBar" type="ProgressBar" parent="." unique_id=1301443341]
+offset_right = 172.0
+offset_bottom = 27.0
+pivot_offset_ratio = Vector2(0, 0.5)

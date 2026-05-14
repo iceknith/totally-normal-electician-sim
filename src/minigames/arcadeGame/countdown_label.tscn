@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://dbmva1nkvkoj8"]
+
+[ext_resource type="Script" uid="uid://cmv2dxce1sb87" path="res://src/minigames/arcadeGame/countdown_label.gd" id="1_8gh6w"]
+
+[node name="CountdownLabel" type="Label" unique_id=26275427]
+offset_right = 40.0
+offset_bottom = 23.0
+script = ExtResource("1_8gh6w")

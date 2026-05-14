@@ -1,6 +1,6 @@
 ~ start
 Dimitri: [[Hi|Hello|Howdy]], this is some dialogue.
-Nathan: Here are some choices.
+Nathan: Here are some choices. {{GlobalVars.get_action_controls("interact1")}}
 - First one
 	Nathan: You picked the first one.
 - Second one

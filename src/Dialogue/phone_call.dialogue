@@ -1,0 +1,28 @@
+~ start
+Téléphone: [shake rate=10 level=5] Driiing, Driiiing
+- Pick Up
+	=> phone
+- Don't Pick Up
+	Téléphone: [shake rate=20 level=10] DRIIIING, DRIIING
+	- Pick Up
+		=> phone
+	- Don't Pick Up
+		Téléphone: [shake rate=40 level=20] DRIIIIIIIIING, DRIIIIIIIIING
+		- Uh... fine, Pick Up
+			=> phone
+=> END
+
+~ phone
+Manager: Hi, how are you doing ?
+- Fine
+- Fine before you called me
+- Uh...
+Manager: Nice to hear it !
+Manager: During the night, a lot of telecom towers broke.
+Manager: As per your contract, you need to fix them !
+- Fine
+- Uh...
+$> phone_call_animation()
+Manager: You see that tower there ?
+Manager: Go and fix it !
+=> END

@@ -1,0 +1,8 @@
+~ start
+%
+	Billy : I'm winning !!![next=auto]
+	Billy: [shake rate=20 level=10]Not that I'm not used to it ![/shake][next=auto]
+%
+	Billy: [wave amp=25 freq=5]HJJAEJAEJKHAKJEHZKJ ! I'm winning ! HAOOHEAJHEA[/wave]
+
+=> END

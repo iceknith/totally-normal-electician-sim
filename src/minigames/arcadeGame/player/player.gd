@@ -1,0 +1,129 @@
+class_name arcadePlayer extends CharacterBody2D
+
+
+enum InputSet
+{
+	Player1,
+	Player2
+}
+
+@export var inputSet:InputSet
+var interactAction:String
+
+@onready var movementComponent = $Movement
+@onready var HitBallComponent = $HitBall
+@onready var AimComponent = $Aim
+@onready var DieComponent = $Die
+
+var input_direction:Vector2
+var facing_direction:Vector2
+var aiming_direction:Vector2
+
+@export var launch_counter:int = 0
+@export var launch_speed:int = 200
+@export var hit_cooldown = 0.7
+
+var dead:bool = false
+var paused:bool = false
+var was_holding: bool = false
+var first_holding:bool = true
+
+signal inform_death(entity)
+@export var ball_state_to_give:ArcadeGame.BALLSTATE
+@export var losing_ball_state:ArcadeGame.BALLSTATE
+@export var ball_color:Color
+
+
+func _ready():
+	
+	HitBallComponent.hit_cooldown = hit_cooldown
+	HitBallComponent.cooldown_timer.wait_time = hit_cooldown
+	HitBallComponent.ball_color = ball_color
+	HitBallComponent.ball_state_to_give = ball_state_to_give
+	DieComponent.losing_ball_state = losing_ball_state
+	reset()
+	setup_signals()
+
+func _physics_process(delta):
+	if !dead and !paused : 
+		manage_input(delta)
+		move_and_slide()
+		set_facing_direction()
+	manage_variables()
+		
+		
+#manage movement and attack
+func manage_input(delta):
+	#this part was just for fun to be able to test multiplayer
+	match inputSet :
+		InputSet.Player1 : 
+			input_direction = Vector2(Input.get_axis("left", "right"), Input.get_axis("up", "down"))
+			interactAction = "interact2"
+		InputSet.Player2 : 
+			input_direction = Vector2(Input.get_axis("ui_left", "ui_right"), Input.get_axis("ui_up", "ui_down"))
+			interactAction = "interact2"
+		
+	if HitBallComponent.launching_ball :
+		manage_launching_ball(delta)
+	else :
+		aiming_direction = facing_direction
+		velocity = movementComponent.calculate_velocity(velocity, input_direction)
+		AimComponent.set_visibility(false)
+	if Input.is_action_just_pressed(interactAction):
+		HitBallComponent.hit_ball()
+
+func manage_variables():
+	HitBallComponent.update_launching_ball_direction(aiming_direction)
+	HitBallComponent.set_direction(facing_direction)
+	
+func set_facing_direction():
+	if input_direction != Vector2.ZERO : 
+		facing_direction = input_direction
+	
+func manage_launching_ball(delta):
+	if Input.is_action_pressed(interactAction):
+		was_holding = true
+		
+	if first_holding : 
+		first_holding = false
+		AimComponent.set_aim(facing_direction)
+		
+		
+	velocity = Vector2.ZERO
+	aiming_direction = Vector2.from_angle(AimComponent.manage_aim(input_direction, delta))
+	AimComponent.set_visibility(true)
+	if (HitBallComponent.get_ball() != null) :
+		AimComponent.set_progress_bar_position(HitBallComponent.get_ball().global_position) #set the 
+		launch_counter += delta*launch_speed
+		AimComponent.set_progress_bar_value(launch_counter)
+		if was_holding and (!Input.is_action_pressed(interactAction) or launch_counter >= 99.9) : 
+			HitBallComponent.release_ball()
+			first_holding = true
+			launch_counter = 0
+	else :
+		HitBallComponent.release_ball()
+		launch_counter = 0
+
+func setup_signals():
+	DieComponent.die.connect(death)
+	
+func death(entity):
+	if !dead : 
+		HitBallComponent.release_ball_on_death()
+		DieComponent.turn_off()
+		DieComponent.play_death_sound()
+		inform_death.emit(self)
+		dead = true
+	
+func reset():
+	HitBallComponent.release_ball_on_death()
+	DieComponent.turn_on()
+	$Sprite2D.visible = true
+	$DeathParticle.visible = false
+	dead = false
+
+func set_pause(v:bool):
+	paused = v 
+	
+func disableDieComponent():
+	DieComponent.can_die = false
