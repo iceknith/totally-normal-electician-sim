@@ -5,7 +5,7 @@ extends Node2D
 @export var enemy: ArcadeEnemy
 @export var player: arcadePlayer
 @export var ball: arcade_ball 
-@export var distance_to_hit = 75
+@export var distance_to_hit = 100
 @export var distance_max_to_ball = 75
 @export var opponent_move_speed = 250
 var pause_movement: bool
