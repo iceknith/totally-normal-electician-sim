@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://by4dsg3f57xf6"
+path="res://.godot/imported/Superette.dialogue-259f090cb93332c4943392ad22651770.tres"
+
+[deps]
+
+source_file="res://src/Dialogue/Superette.dialogue"
+dest_files=["res://.godot/imported/Superette.dialogue-259f090cb93332c4943392ad22651770.tres"]
+
+[params]
+
+defaults=true

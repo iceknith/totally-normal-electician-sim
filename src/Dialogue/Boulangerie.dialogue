@@ -16,7 +16,7 @@ Patrick: You're the one who's a blessing.
 Patrick: So, should I wrap the cake ?
 - Not yet.
 	Patrick: Oh ? Really ? Well... that's okay... Maybe another time then.
-	Patrick: I'll stay there in case you decide to take me- [shake rate=10 level=5] I mean my cake [/shake] with you.
+	Patrick: I'll stay there in case you decide to take me- [shake rate=20 level=10] I mean my cake [/shake] with you.
 	- I'll see. See you around Patrick.
 	Patrick: Farewel...
 	$> title = "waiting"
@@ -47,7 +47,7 @@ Patrick: I really thought you were a faithful client...
 - ...
 Patrick: I thought there was something special between us.
 Patrick: A trusting relationship between a baker and his favorite customer.
-Patrick: But not only were you unfaithfull to me ! You did it with my wift !
+Patrick: But not only were you unfaithfull to me ! You did it with my wife !
 Patrick: When you know [shake rate=40 level=20] perfectly well [/shake] that her buisness is bleeding the bakery dry...
 Patrick: I can't believe you'd do buisness with this market snake !
 - It's just that the convienience store is closer !
@@ -81,4 +81,21 @@ Patrick: Go back to Yvonne's arms if you love her industrial cake so much.
 
 ~ good_ending
 Patrick: [wave amp=10 freq=3] Welcome back strawberry pie~.
+=> END
+
+~ bad_ending60
+Patrick: Go die in Yvonne's arms if you love her industrial cake so much.
+=> END
+
+~ good_ending60
+Patrick: [wave amp=10 freq=3] Welcome back strawberry pie~.
+Patrick: [wave amp=30 freq=1] I ate too much yesterday, I'm feeling sick.
+=> END
+
+~ global80
+Patrick: [wave amp=30 freq=1] Why is everything wierd ?
+=> END
+
+~ global90
+Patrick: [shake rate=40 level=20] AAAAAAAAH, WE'RE GONNA DIE !!!
 => END

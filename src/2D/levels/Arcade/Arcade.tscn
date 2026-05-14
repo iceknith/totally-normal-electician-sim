@@ -47,6 +47,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_sb0yd")
+change_music = true
 metadata/_custom_type_script = "uid://dd5w2ptvu7pou"
 
 [node name="bg" type="TextureRect" parent="." unique_id=351131469]

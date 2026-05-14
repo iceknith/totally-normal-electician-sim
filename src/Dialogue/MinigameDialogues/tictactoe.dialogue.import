@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://b3kxo7cvgi3tj"
+path="res://.godot/imported/tictactoe.dialogue-a9e99d481051ba508f8eac98183733ee.tres"
+
+[deps]
+
+source_file="res://src/Dialogue/MinigameDialogues/tictactoe.dialogue"
+dest_files=["res://.godot/imported/tictactoe.dialogue-a9e99d481051ba508f8eac98183733ee.tres"]
+
+[params]
+
+defaults=true
