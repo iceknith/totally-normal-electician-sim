@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://dc8sbca7307di"
+path="res://.godot/imported/Boulangerie.dialogue-65d10dc9c8f2751d33c1a94feffae9f9.tres"
+
+[deps]
+
+source_file="res://src/Dialogue/Boulangerie.dialogue"
+dest_files=["res://.godot/imported/Boulangerie.dialogue-65d10dc9c8f2751d33c1a94feffae9f9.tres"]
+
+[params]
+
+defaults=true

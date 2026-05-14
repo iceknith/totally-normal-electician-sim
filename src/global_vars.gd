@@ -52,7 +52,6 @@ var visited_superette:bool = false
 var bought_cake_bakery:bool = false
 var visited_bakery:bool = false
 
-var has_cake:bool = false
 var has_decorations:bool = false
 
 ################
