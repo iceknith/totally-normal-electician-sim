@@ -196,16 +196,16 @@ position = Vector2(492, 434)
 
 [node name="Right" type="StaticBody2D" parent="Walls" unique_id=2032400161]
 position = Vector2(1149, 357)
-collision_layer = 3
-collision_mask = 3
+collision_layer = 15
+collision_mask = 15
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Right" unique_id=2051602316]
 position = Vector2(1, -7)
 shape = SubResource("RectangleShape2D_50w5d")
 
 [node name="Up" type="StaticBody2D" parent="Walls" unique_id=38000795]
-collision_layer = 3
-collision_mask = 3
+collision_layer = 15
+collision_mask = 15
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Up" unique_id=228074278]
 position = Vector2(569, -4)
@@ -213,8 +213,8 @@ shape = SubResource("RectangleShape2D_gja22")
 
 [node name="Left" type="StaticBody2D" parent="Walls" unique_id=754183200]
 position = Vector2(-16, 360)
-collision_layer = 3
-collision_mask = 3
+collision_layer = 15
+collision_mask = 15
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Left" unique_id=1601021392]
 position = Vector2(1, -7)
@@ -222,8 +222,8 @@ shape = SubResource("RectangleShape2D_lh3vw")
 
 [node name="Down" type="StaticBody2D" parent="Walls" unique_id=2119867449]
 position = Vector2(-2, 654)
-collision_layer = 3
-collision_mask = 3
+collision_layer = 15
+collision_mask = 15
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Down" unique_id=1017536816]
 position = Vector2(569, -4)

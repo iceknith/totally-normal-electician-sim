@@ -25,7 +25,9 @@ var eow_meter:float = 0:
 var music_pitch:float = 1
 var music_tempo:float = 1
 var music_folder:String = "res://src/Sound/Musics/"
-var bus_idx = AudioServer.get_bus_index("music")
+var bus_idx = AudioServer.get_bus_index("sfx")
+
+var sfx_bus_idx = AudioServer.get_bus_index("music")
 
 var music_positions:Dictionary = {}
 var current_music:String = ""

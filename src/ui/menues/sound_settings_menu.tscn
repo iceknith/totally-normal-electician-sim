@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bbq15i7mvddty"]
 
-[ext_resource type="Script" uid="uid://dd5w2ptvu7pou" path="res://src/minigames/minigame.gd" id="1_63axh"]
+[ext_resource type="Script" uid="uid://cgyvdrykqnehb" path="res://src/ui/menues/sound_settings_menu.gd" id="1_63axh"]
 [ext_resource type="FontFile" uid="uid://dhoixqrkemx30" path="res://assets/gui/ithaca-font/Ithaca-LVB75.ttf" id="2_nubjj"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ixk0t"]
@@ -66,6 +66,25 @@ label_settings = SubResource("LabelSettings_xy610")
 custom_minimum_size = Vector2(0, 200)
 layout_mode = 2
 
+[node name="SoundVolumeLabel" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=753185505]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Music Volume"
+label_settings = SubResource("LabelSettings_xy610")
+
+[node name="SoundVolume" type="HSlider" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=1307263611]
+layout_mode = 2
+
+[node name="SFXVolumeLabel" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=569742915]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "SFX Volume "
+label_settings = SubResource("LabelSettings_xy610")
+
+[node name="SFXVolume" type="HSlider" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=569847724]
+layout_mode = 2
+size_flags_vertical = 1
+
 [node name="EmptySpace2" type="Control" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=1223391942]
 custom_minimum_size = Vector2(0, 100)
 layout_mode = 2
@@ -78,3 +97,5 @@ size_flags_horizontal = 4
 theme_override_fonts/font = ExtResource("2_nubjj")
 theme_override_font_sizes/font_size = 36
 text = "Exit"
+
+[connection signal="value_changed" from="PanelContainer/MarginContainer/VBoxContainer/SFXVolume" to="." method="_on_sfx_volume_value_changed"]
