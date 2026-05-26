@@ -5,6 +5,8 @@ extends Control
 
 func _ready() -> void:
 	var tween = create_tween()
+	tween.tween_interval(wait_time)
+	tween.tween_callback($Title.hide)
 	tween.set_trans(Tween.TRANS_BOUNCE).set_ease(Tween.EASE_OUT)
 	for child:Control in $Control.get_children():
 		child.modulate = Color(1,1,1,0)

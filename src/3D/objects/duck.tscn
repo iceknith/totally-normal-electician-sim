@@ -91,11 +91,12 @@ animations = [{
 [sub_resource type="SphereShape3D" id="SphereShape3D_4s2vi"]
 radius = 1.4246595
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_r6ip0"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_hbaoy"]
 viewport_path = NodePath("SubViewport")
 
 [node name="Duck" type="Area3D" unique_id=940145597 node_paths=PackedStringArray("animated_sprite", "text_sprite")]
 script = ExtResource("1_bc4v7")
+eow_meter_threshold = 0.7
 unique_name = "duck"
 dialogue = ExtResource("2_4s2vi")
 animated_sprite = NodePath("AnimatedSprite3D")
@@ -117,4 +118,4 @@ shape = SubResource("SphereShape3D_4s2vi")
 [node name="InteractacleText3D" parent="." unique_id=1576660793 instance=ExtResource("2_5blhu")]
 transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0.8627713, 0)
 billboard = 2
-texture = SubResource("ViewportTexture_r6ip0")
+texture = SubResource("ViewportTexture_hbaoy")

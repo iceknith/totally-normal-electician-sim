@@ -5,7 +5,7 @@
 
 [sub_resource type="LabelSettings" id="LabelSettings_oo4xn"]
 font = ExtResource("2_73yjm")
-font_size = 70
+font_size = 190
 
 [sub_resource type="LabelSettings" id="LabelSettings_73yjm"]
 font = ExtResource("2_73yjm")
@@ -24,7 +24,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_2y887")
 
-[node name="ColorRect3" type="ColorRect" parent="." unique_id=1386227056]
+[node name="ColorRect2" type="ColorRect" parent="." unique_id=707112631]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -32,6 +32,23 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 1)
+
+[node name="Title" type="Label" parent="." unique_id=870865604]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -28.5
+offset_bottom = 28.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Totally Normal Electrician 
+ Simulator"
+label_settings = SubResource("LabelSettings_oo4xn")
+horizontal_alignment = 1
+autowrap_mode = 1
+autowrap_trim_flags = 0
+justification_flags = 0
 
 [node name="Control" type="Control" parent="." unique_id=102228529]
 layout_mode = 1
@@ -40,31 +57,6 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-
-[node name="ColorRect" type="ColorRect" parent="Control" unique_id=56716511]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0, 0, 0, 1)
-
-[node name="Title" type="Label" parent="Control/ColorRect" unique_id=870865604]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -457.5
-offset_top = -34.5
-offset_right = 457.5
-offset_bottom = 34.5
-grow_horizontal = 2
-grow_vertical = 2
-text = "A Totally Normal Electrician Simulator"
-label_settings = SubResource("LabelSettings_oo4xn")
 
 [node name="ColorRect2" type="ColorRect" parent="Control" unique_id=292636190]
 visible = false
