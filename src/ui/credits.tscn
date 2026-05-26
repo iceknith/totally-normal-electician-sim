@@ -1,0 +1,128 @@
+[gd_scene format=3 uid="uid://mk0g714pb512"]
+
+[ext_resource type="Script" uid="uid://eisnt6fxfnp6" path="res://src/ui/credits.gd" id="1_2y887"]
+[ext_resource type="FontFile" uid="uid://beucp7h0famth" path="res://assets/impact.ttf" id="2_73yjm"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_oo4xn"]
+font = ExtResource("2_73yjm")
+font_size = 70
+
+[sub_resource type="LabelSettings" id="LabelSettings_73yjm"]
+font = ExtResource("2_73yjm")
+font_size = 70
+
+[sub_resource type="LabelSettings" id="LabelSettings_gferm"]
+font = ExtResource("2_73yjm")
+font_size = 50
+
+[node name="Credits" type="Control" unique_id=1317297176]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_2y887")
+
+[node name="ColorRect3" type="ColorRect" parent="." unique_id=1386227056]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Control" type="Control" parent="." unique_id=102228529]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="Control" unique_id=56716511]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Title" type="Label" parent="Control/ColorRect" unique_id=870865604]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -457.5
+offset_top = -34.5
+offset_right = 457.5
+offset_bottom = 34.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "A Totally Normal Electrician Simulator"
+label_settings = SubResource("LabelSettings_oo4xn")
+
+[node name="ColorRect2" type="ColorRect" parent="Control" unique_id=292636190]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="A Game By" type="Label" parent="Control/ColorRect2" unique_id=2071632038]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -159.0
+offset_top = -275.0
+offset_right = 162.0
+offset_bottom = -189.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "A Game By :"
+label_settings = SubResource("LabelSettings_73yjm")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/ColorRect2" unique_id=2081138450]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -501.0
+offset_top = -126.0
+offset_right = 516.0
+offset_bottom = 212.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 30
+
+[node name="Dimi" type="Label" parent="Control/ColorRect2/VBoxContainer" unique_id=1684862760]
+layout_mode = 2
+text = "Dimitri Maréchal"
+label_settings = SubResource("LabelSettings_gferm")
+
+[node name="Djo" type="Label" parent="Control/ColorRect2/VBoxContainer" unique_id=1777183807]
+layout_mode = 2
+text = "Djo Couzy"
+label_settings = SubResource("LabelSettings_gferm")
+
+[node name="Nines" type="Label" parent="Control/ColorRect2/VBoxContainer" unique_id=3230720]
+layout_mode = 2
+text = "Nines Diamant-Berger"
+label_settings = SubResource("LabelSettings_gferm")
+
+[node name="Ib" type="Label" parent="Control/ColorRect2/VBoxContainer" unique_id=1008777333]
+layout_mode = 2
+text = "Don Moulay Monsieur Ibrahim El Ouazzani Messire"
+label_settings = SubResource("LabelSettings_gferm")

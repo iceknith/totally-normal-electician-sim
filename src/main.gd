@@ -3,6 +3,7 @@ class_name Main extends Node3D
 signal eow_meter_changed(new_eow_var:float)
 
 @export var settings_scene:PackedScene = preload("res://src/ui/menues/settings_menu.tscn")
+@export var credits_scene:PackedScene = preload("res://src/ui/credits.tscn")
 
 @export_group("end of world meter (eow_meter)")
 @export var end_of_world_max_time_mins:float = 20
@@ -222,8 +223,8 @@ func increment_eow_meter(node:Node):
 	node.eow_meter += eow_delta
 
 func end_of_world():
-	get_tree().quit()
-	pass
+	get_parent().add_child(credits_scene.instantiate())
+	queue_free()
 
 ### Runtime functions ###
 

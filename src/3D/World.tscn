@@ -34,8 +34,8 @@
 [ext_resource type="PackedScene" uid="uid://bjgnetr0axl38" path="res://assets/blender/poste.blend" id="27_xud6r"]
 
 [sub_resource type="Curve" id="Curve_w7gwu"]
-_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1, 1), 2.0254266, 0.0, 0, 0]
-point_count = 2
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.8090909, 0.56875753), 1.2034676, 1.2034676, 0, 0, Vector2(1, 1), 2.0254266, 0.0, 0, 0]
+point_count = 3
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_ro6to"]
 
