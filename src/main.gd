@@ -77,9 +77,10 @@ func receive_signal(type, data):
 		MainCommunicator.SignalType.REMOVE_MINIGAME: remove_minigame()
 		MainCommunicator.SignalType.SHOW_GAME3D: show_game3D()
 		MainCommunicator.SignalType.START_DIALOGUE : start_dialogue(data)
+		MainCommunicator.SignalType.ELEM_DELETED : disconnect_eow_update_timer(data, timer_eow_update.timeout)
 
 func launch_game() -> void:
-	world3D.start_game()
+	#world3D.start_game()
 	create_eow_timers()
 	reset_state()
 

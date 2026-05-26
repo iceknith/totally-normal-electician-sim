@@ -1,0 +1,120 @@
+[gd_scene format=3 uid="uid://dt38c56j3vaad"]
+
+[ext_resource type="Script" uid="uid://dukku6nnm23co" path="res://src/3D/objects/duck.gd" id="1_bc4v7"]
+[ext_resource type="Resource" uid="uid://cge71f7mtry5v" path="res://src/Dialogue/ducks.dialogue" id="2_4s2vi"]
+[ext_resource type="PackedScene" uid="uid://ddq2i6ppa2upf" path="res://src/3D/interactables/interactacle_text_3d.tscn" id="2_5blhu"]
+[ext_resource type="Texture2D" uid="uid://bsyh707gyfdf1" path="res://assets/characters/duck sprites/duck_angry.png" id="3_hbaoy"]
+[ext_resource type="Texture2D" uid="uid://ds5odrj3kxi3r" path="res://assets/characters/duck sprites/duck_dead.png" id="4_tud8q"]
+[ext_resource type="Texture2D" uid="uid://cyqfq6k1tnyff" path="res://assets/characters/duck sprites/duck_happy.png" id="5_tnelc"]
+[ext_resource type="Texture2D" uid="uid://c7v6fkj2d30fi" path="res://assets/characters/duck sprites/duck_neutral.png" id="6_4wwi4"]
+[ext_resource type="Texture2D" uid="uid://cj447gibh2j2l" path="res://assets/characters/duck sprites/duck_shy.png" id="7_3ifqk"]
+[ext_resource type="Texture2D" uid="uid://53cf8o31jwij" path="res://assets/characters/duck sprites/duck_star.png" id="8_vky2q"]
+[ext_resource type="Texture2D" uid="uid://dq5qwr6pxhiwj" path="res://assets/characters/duck sprites/duck_wink.png" id="9_o1uc7"]
+[ext_resource type="Texture2D" uid="uid://dkcafuk4gejhh" path="res://assets/characters/duck sprites/duck_sad.png" id="10_033ca"]
+[ext_resource type="Texture2D" uid="uid://cjlnbpuw6ms0i" path="res://assets/characters/duck sprites/duck_WE_ARE_ALL_GOING_TO_DIE.png" id="11_y0cjl"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_r6ip0"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_hbaoy")
+}],
+"loop": true,
+"name": &"idle1",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_tud8q")
+}],
+"loop": true,
+"name": &"idle2",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_tnelc")
+}],
+"loop": true,
+"name": &"idle3",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_4wwi4")
+}],
+"loop": true,
+"name": &"idle4",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_3ifqk")
+}],
+"loop": true,
+"name": &"idle5",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_vky2q")
+}],
+"loop": true,
+"name": &"idle6",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_o1uc7")
+}],
+"loop": true,
+"name": &"idle7",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("10_033ca")
+}],
+"loop": true,
+"name": &"idle8",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("11_y0cjl")
+}],
+"loop": true,
+"name": &"scared",
+"speed": 5.0
+}]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_4s2vi"]
+radius = 1.4246595
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_r6ip0"]
+viewport_path = NodePath("SubViewport")
+
+[node name="Duck" type="Area3D" unique_id=940145597 node_paths=PackedStringArray("animated_sprite", "text_sprite")]
+script = ExtResource("1_bc4v7")
+unique_name = "duck"
+dialogue = ExtResource("2_4s2vi")
+animated_sprite = NodePath("AnimatedSprite3D")
+animated_sprite_start_animation = "dead"
+text_sprite = NodePath("InteractacleText3D")
+metadata/_custom_type_script = "uid://sd0g0r1lwus3"
+
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="." unique_id=804994720]
+transform = Transform3D(0.1, 0, -3.7252903e-09, 0, 0.1, 0, 3.7252903e-09, 0, 0.1, 0, 0.23442382, 0)
+billboard = 2
+alpha_cut = 1
+sprite_frames = SubResource("SpriteFrames_r6ip0")
+animation = &"idle3"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1236729596]
+transform = Transform3D(1.0000001, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 0, 0, 0)
+shape = SubResource("SphereShape3D_4s2vi")
+
+[node name="InteractacleText3D" parent="." unique_id=1576660793 instance=ExtResource("2_5blhu")]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0.8627713, 0)
+billboard = 2
+texture = SubResource("ViewportTexture_r6ip0")
