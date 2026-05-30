@@ -52,6 +52,13 @@ var visited_superette:bool = false
 var bought_cake_bakery:bool = false
 var visited_bakery:bool = false
 
+var mathew_algebra_has_failed:bool = false
+var mathew_algebra_visited:bool = false
+var mathew_algebra_finished:bool = false
+
+var vera_visited:bool = false
+var vera_told_secrets:bool = false
+
 var ducks:int = 0
 var max_ducks:int = 0
 

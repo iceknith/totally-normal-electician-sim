@@ -17,7 +17,6 @@ func start_interaction():
 	GlobalVars.ducks += 1
 	if GlobalVars.ducks >= GlobalVars.max_ducks:
 		title = "quest_end"
-	print(title)
 	super()
 	MainCommunicator.send_signal_to_main(MainCommunicator.SignalType.ELEM_DELETED, self)
 	queue_free.call_deferred()
