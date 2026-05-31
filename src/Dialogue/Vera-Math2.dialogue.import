@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://dwr51uf31poch"
+path="res://.godot/imported/Vera-Math2.dialogue-5228b82520f614c28b6b7faf692de24b.tres"
+
+[deps]
+
+source_file="res://src/Dialogue/Vera-Math2.dialogue"
+dest_files=["res://.godot/imported/Vera-Math2.dialogue-5228b82520f614c28b6b7faf692de24b.tres"]
+
+[params]
+
+defaults=true
