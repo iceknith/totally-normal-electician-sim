@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://deugj5ejd11md"
+path="res://.godot/imported/Cloven-Sandwiches.dialogue-ceed7111a24273e26613c2b85e572aa6.tres"
+
+[deps]
+
+source_file="res://src/Dialogue/Cloven-Sandwiches.dialogue"
+dest_files=["res://.godot/imported/Cloven-Sandwiches.dialogue-ceed7111a24273e26613c2b85e572aa6.tres"]
+
+[params]
+
+defaults=true

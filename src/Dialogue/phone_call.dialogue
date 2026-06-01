@@ -1,13 +1,13 @@
 ~ start
-Téléphone: [shake rate=10 level=5] Driiing, Driiiing
+Phone: [shake rate=10 level=5] Driiing, Driiiing
 - Pick Up
 	=> phone
 - Don't Pick Up
-	Téléphone: [shake rate=20 level=10] DRIIIING, DRIIING
+	Phone: [shake rate=20 level=10] DRIIIING, DRIIING
 	- Pick Up
 		=> phone
 	- Don't Pick Up
-		Téléphone: [shake rate=40 level=20] DRIIIIIIIIING, DRIIIIIIIIING
+		Phone: [shake rate=40 level=20] DRIIIIIIIIING, DRIIIIIIIIING
 		- Uh... fine, Pick Up
 			=> phone
 => END

@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://dhpfsyl8hvq2p"
+path="res://.godot/imported/Mathew-Math.dialogue-a1bedab8aa6f4ca5cebeaa3f55c6d211.tres"
+
+[deps]
+
+source_file="res://src/Dialogue/Mathew-Math.dialogue"
+dest_files=["res://.godot/imported/Mathew-Math.dialogue-a1bedab8aa6f4ca5cebeaa3f55c6d211.tres"]
+
+[params]
+
+defaults=true

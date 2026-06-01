@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://c4n74pg37hdmd"
+path="res://.godot/imported/Cathline-Cats.dialogue-115b3ddc2126c1432b57dc865c52f106.tres"
+
+[deps]
+
+source_file="res://src/Dialogue/Cathline-Cats.dialogue"
+dest_files=["res://.godot/imported/Cathline-Cats.dialogue-115b3ddc2126c1432b57dc865c52f106.tres"]
+
+[params]
+
+defaults=true

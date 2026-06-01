@@ -1,0 +1,239 @@
+~ start
+Cathline: Good morning
+- Good morning
+- Hi
+- Haiii
+Cathline: Isn't this day just wonderful ?
+- Yeah
+- The sun be shining
+- No clouds on the horizon
+Cathline: Whenever the sky is beautiful like that, it reminds me of my little kitty cats
+=> cats_discourse
+
+~ start50
+Cathline: Good afternoon
+- Good afternoon
+- Hi
+- Haiii
+Cathline: Isn't this day a bit hot ?
+- Yeah
+- The sun be shining
+- No clouds on the horizon
+Cathline: Whenever the day is hot like that, it reminds me of my little kitty cats !
+=> cats_discourse
+
+~ start70
+Cathline: G...Good afternoon
+- Good afternoon
+- Hi
+Cathline: Aren't you hungry ?
+- Yeah
+- No ?
+Cathline: Whenever I'm hungry like that, it reminds me of my little kitty cats !
+=> cats_discourse
+
+~ global80
+Cathline: I am [shake rate=20 level=20] SO HUNGRY
+Cathline: LETS talk about cats !
+=> cats_discourse
+
+~ global90
+Cathline: [shake rate=20 level=40] DO YOU HAVE A CAT ?
+- Yes
+	Cathline: [shake rate=20 level=40] CAN YOU BRING ME THE CAT ?
+- No
+	Cathline: [shake rate=20 level=40] CAN YOU FIND ME A CAT ?
+- You're freaking me out !
+Cathline: [shake rate=20 level=40] I AM SOOO HUNGRY
+Cathline: [shake rate=20 level=40] GOD I DON'T WANT TO DIE HUNGRY
+Cathline: [shake rate=20 level=40] PLEASE GIVE ME A CAT !
+=> END
+
+~ cats_discourse
+Cathline: Do you have cats ?
+- Yes, and I love them deerly 
+	Cathline: Awww, is that so ?
+	=> cats_main
+- No, I prefer dogs
+	Cathline: Ewww, dogs !
+	Cathline: I really despise them, what have they that cats don't ?
+	- It's a matter of preferences
+		Cathline: That I can understand ! [speed=1.5][font_size=10] For me you'll always be a freak tho !
+	- Dogs are loyal
+		Cathline: Cats are way more loyal. They just don't give their loyalty blindly !
+	- Dogs don't hate you
+		Cathline: Cats don't either ! You must just be a [shake rate=20 level=10] terrible person !
+	- Dogs go out wandering with you
+		Cathline: Cats also do that if you [shake rate=20 level=10] MAKE THEM WANNA GO WITH YOU. [/shake] 
+		Cathline: No wonder they don't want to go out wandering with you if that's the kind of mentality you have !
+	- I like dogs 
+		Cathline: [shake rate=20 level=20] WELL YOU SHOULDN'T !
+	Cathline: But... You know what !
+	Cathline: I can understand [speed=1.5][font_size=10] (to some remote extent)
+	Cathline: You can always return to the path of sanity by adopting a cat !
+- No, I prefer being alone
+	Cathline: Why so ?
+	Cathline: Did your parents hit you when young ? Or do you just like to be sad and depressed ?
+	Cathline: I get why people wouldn't want to go to the therapist (I really do) but to go so far as not owning a cat !
+	Cathline: Wow, your childhood must've been REALLY sad !
+	Cathline: My advice: adopt a cat !
+=> END
+
+~ cats_main
+Cathline: What are their name ?
+- Toast
+	Cathline: Awww, how sweet !
+	Cathline: Could you bring them with you next time ?
+	$> title = "cat_bring_ending"
+- Purrington
+	Cathline: Owwwwwww they seem like such the cute little angel. 
+	Cathline: They have a name so cute I could eat them.
+	- Yeah
+	- What ?
+		Cathline: [wave amp=20 freq=5] Erm.. It's... just a.. french saying.
+		Cathline: [wave amp=20 freq=5] Nothing to do with eating cats for real
+		Cathline: I love them soo much, I would never do something like that !
+	- ...
+	Cathline: Why don't you bring this cutie patootie with you next time ?
+	$> title = "cat_bring_ending"
+- Asteroïd annihilator
+	Cathline: That's... a bit violent, isn't it ?
+	- Yeah !
+		Cathline: And doesn't it negatively affects your cat.
+		Cathline: Poor honey must hear nothing but violent words all the time.
+		- Yeah, they're pretty ruthless
+			Cathline: Yeah, that's what I thought !
+			Cathline: People like you should be more careful with their babies ! They need love, not violence !
+			=> bad_ending
+		- No, actually, they're chill
+			Cathline: Ah, I'm reassured, you must be a good owner !
+	- It's a reference to a movie
+		Cathline: Have they even watched the movie
+		- You're kidding me, of course !
+		- They're a cat, they don't care
+		- They stopped watching as soon as they saw a mice
+			Cathline: Ah, cats, always chasing after mices...
+			Cathline: Your little one seems so sweat, why don't you bring them next time ?
+			$> title = "cat_bring_ending"
+- The ugly one
+	Cathline: [shake rate=10 level=10]  OH !
+	Cathline: [shake rate=10 level=10]  THE DISGRACE !
+	Cathline: [shake rate=10 level=10]  DON'T YOU LOVE YOUR CAT ?!
+	- Of course I do
+		Cathline: Then why give them this horrible name ?!?
+		- It's really funny
+			Cathline: [shake rate=20 level=20] You are despicable !
+			Cathline: [shake rate=20 level=20] I will be forced to report you to PETA !
+			=> bad_ending
+		- They like it
+			Cathline: Ooo-kay ?
+			Cathline: They... seem like the interesting little fella
+			Cathline: Could you bring them with you next time ?
+			$> title = "cat_bring_ending"
+		- They are really ugly
+			Cathline: [shake rate=10 level=10] OUCH, TO SAY THAT OF YOUR OWN CAT ?!?
+			- I love them despite their uglines
+			Cathline: Oh !
+			Cathline: Oh...
+			Cathline: Sorry... I... missjudged you
+			Cathline: Could you do me honor of introducing me to your little angel next time ?
+			$> title = "cat_bring_ending"
+	- Nope
+		Cathline: You shouldn't even have the [shake rate=20 level=20] right [/shake] to be blessed by the existence of this lovely furball in your life !
+		Cathline: [shake rate=20 level=20] I will be forced to report you to PETA !
+		=> bad_ending
+	- ...
+		Cathline: You shouldn't even have the [shake rate=20 level=20] right [/shake] to be blessed by the existence of this lovely furball in your life !
+		Cathline: [shake rate=20 level=20] I will be forced to report you to PETA !
+		=> bad_ending
+- Patrick
+	Cathline: Patrick ?
+	Cathline: Isn't that a human name ?
+	- That's the point
+		Cathline: I... Don't really get it ?
+		Cathline: Do they even like that name ?
+		- Yeah
+			Cathline: Okay... As long as their happy...
+		- I don't know, they can't talk
+			Cathline: Nt !!! [shake rate=10 level=10] A good cat owner can talk with their cat !
+			Cathline: [shake rate=10 level=10] If you continue like that, I will be forced to report you to PETA !
+			=> bad_ending
+		- Nope
+			Cathline: [shake rate=20 level=20] And you still force this name onto them ?!?
+			Cathline: [shake rate=20 level=20] I will be forced to report you to PETA !
+			=> bad_ending
+	- No, no, that's definitly a cat's name !
+		Cathline: So my sibling has a cat name ?
+		Cathline: How outrageous !
+		=> brother_bad_ending
+=> END
+
+~ cat_adopted
+Cathline: So did you finally adopt a cat ?
+- Yes !
+	=> cats_main
+- No
+=> END
+
+~ cat_adopted60
+Cathline: Oh, I am sooo hungry !
+Cathline: And you, did you finally adopt a cat ?
+- Yes !
+	=> cats_main
+- No
+=> END
+
+~ cat_adopted70
+Cathline: Oh, I am sooo hungry !
+Cathline: Speaking of hungry, did you finally adopt a cat ?
+- Yes !
+	=> cats_main
+- No
+=> END
+
+~ cat_bring_ending
+$> title = "cat_bring_ending"
+Cathline: Do you have your little angel with you ?
+- I left them in the pool
+- I left them in the house
+- I lost track of them
+Cathline: Oh... ok... what a shame
+=> END
+
+~ cat_bring_ending70
+$> title = "cat_bring_ending"
+Cathline: Oh, I am sooo hungry !
+Cathline: Speaking of, do you have your little angel with you ?
+- I left them in the pool
+- I left them in the house
+- I lost track of them
+Cathline: Oh... ok... what a shame
+=> END
+
+~ bad_ending
+$> title = "bad_ending"
+Cathline: [shake rate=10 level=10] I'm watching you !!!
+=> END
+
+~ bad_ending60
+$> title = "bad_ending"
+Cathline: [shake rate=10 level=10] I'm watching you !!! So that you don't steal any more kitty cats from me !
+=> END
+
+~ bad_ending70
+$> title = "bad_ending"
+Cathline: [shake rate=10 level=10] I'm watching you !!! So that you don't steal any more kitty cats from me !
+Cathline: [speed=1.5][font_size=10] Where are my cats ?! I am so so so hungry !!!
+=> END
+
+~ brother_bad_ending
+$> title = "brother_bad_ending"
+Cathline: I always knew there was something up with my sibling ! I'll talk some sense into them next time I see him !
+=> END
+
+~ brother_bad_ending70
+$> title = "brother_bad_ending"
+Cathline: I always knew there was something up with my sibling ! I'll talk some sense into them next time I see him !
+Cathline: [speed=1.5][font_size=10] Where are my cats ?! 
+Cathline: [speed=1.5][font_size=10] I am so so so hungry !!!
+=> END

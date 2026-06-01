@@ -3,6 +3,7 @@ class_name Main extends Node3D
 signal eow_meter_changed(new_eow_var:float)
 
 @export var settings_scene:PackedScene = preload("res://src/ui/menues/settings_menu.tscn")
+@export var credits_scene:PackedScene = preload("res://src/ui/credits.tscn")
 
 @export_group("end of world meter (eow_meter)")
 @export var end_of_world_max_time_mins:float = 20
@@ -76,9 +77,10 @@ func receive_signal(type, data):
 		MainCommunicator.SignalType.REMOVE_MINIGAME: remove_minigame()
 		MainCommunicator.SignalType.SHOW_GAME3D: show_game3D()
 		MainCommunicator.SignalType.START_DIALOGUE : start_dialogue(data)
+		MainCommunicator.SignalType.ELEM_DELETED : disconnect_eow_update_timer(data, timer_eow_update.timeout)
 
 func launch_game() -> void:
-	world3D.start_game()
+	#world3D.start_game()
 	create_eow_timers()
 	reset_state()
 
@@ -222,8 +224,8 @@ func increment_eow_meter(node:Node):
 	node.eow_meter += eow_delta
 
 func end_of_world():
-	get_tree().quit()
-	pass
+	get_parent().add_child(credits_scene.instantiate())
+	queue_free()
 
 ### Runtime functions ###
 

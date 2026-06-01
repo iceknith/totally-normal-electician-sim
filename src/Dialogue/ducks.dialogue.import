@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://cge71f7mtry5v"
+path="res://.godot/imported/ducks.dialogue-17ed97aea749682c24943a4c02ed9c6f.tres"
+
+[deps]
+
+source_file="res://src/Dialogue/ducks.dialogue"
+dest_files=["res://.godot/imported/ducks.dialogue-17ed97aea749682c24943a4c02ed9c6f.tres"]
+
+[params]
+
+defaults=true
