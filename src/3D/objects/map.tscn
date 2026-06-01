@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://cgxd45lteivhd"]
+
+[ext_resource type="PackedScene" uid="uid://c216ifvuuy6o7" path="res://assets/blender/map.blend" id="1_kyk2q"]
+
+[node name="map" unique_id=1431746800 instance=ExtResource("1_kyk2q")]
+
+[node name="Plane_col" parent="Plane" parent_id_path=PackedInt32Array(208257636) index="0" unique_id=1679117050]
+collision_layer = 9
+collision_mask = 0

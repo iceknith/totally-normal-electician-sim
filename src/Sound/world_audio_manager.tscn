@@ -22,3 +22,4 @@ tempo_curve = SubResource("Curve_g86xl")
 [node name="BackgroundMusicPlayer" type="AudioStreamPlayer" parent="." unique_id=2057556167]
 volume_db = -0.421
 autoplay = true
+bus = &"music"

@@ -25,9 +25,11 @@ var eow_meter:float = 0:
 var music_pitch:float = 1
 var music_tempo:float = 1
 var music_folder:String = "res://src/Sound/Musics/"
-var bus_idx = AudioServer.get_bus_index("sfx")
 
-var sfx_bus_idx = AudioServer.get_bus_index("music")
+
+var music_bus_idx = AudioServer.get_bus_index("music")
+var sfx_bus_idx = AudioServer.get_bus_index("sfx")
+var master_bus_idx = AudioServer.get_bus_index("Master")
 
 var music_positions:Dictionary = {}
 var current_music:String = ""
@@ -39,6 +41,8 @@ func _ready():
 	SoundManager.stop_music.connect(stop_music)
 	MainCommunicator.ChangeGameState.connect(back_to_main_theme)
 	SoundManager.reset_music.connect(reset_music)
+	SoundManager.change_sfx_volume.connect(update_sfx_volume)
+	SoundManager.change_music_volume.connect(update_music_volume)
 
 func _process(delta):
 	pass
@@ -105,7 +109,7 @@ func get_music_stream():
 	return bg_music_player
 
 func modify_music_pitch(new_pitch:float):
-	var pitch_effect: AudioEffectPitchShift = AudioServer.get_bus_effect(bus_idx, 0)
+	var pitch_effect: AudioEffectPitchShift = AudioServer.get_bus_effect(music_bus_idx, 0)
 	pitch_effect.pitch_scale = new_pitch / bg_music_player.pitch_scale
 
 func modify_music_tempo(new_tempo:float):
@@ -144,3 +148,14 @@ func stop_music(fade_duration: float = 0.6):
 	bg_music_player.stop()
 	bg_music_player.volume_db = music_base_volume_db
 	current_music = ""
+	
+	
+func update_music_volume(value_in_db):
+	print("jzejaheazklkj")
+	AudioServer.set_bus_volume_db(music_bus_idx, value_in_db)
+	
+func update_sfx_volume(value_in_db):
+	AudioServer.set_bus_volume_db(sfx_bus_idx, value_in_db)
+	
+func update_master_volume(value_in_db):
+	AudioServer.set_bus_volume_db(master_bus_idx, value_in_db)

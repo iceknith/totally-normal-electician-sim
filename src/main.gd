@@ -107,9 +107,8 @@ func create_minigame(data):
 	if timer_eow_update: connect_eow_update_timer(minigame, timer_eow_update.timeout)
 	minigames.append(minigame)
 	minigame.miniGameEnd.connect(remove_minigame)
-	minigame_container.add_child(minigame)
 	
-	# Add connections
+	# Add variables and connections
 	if data.size() >= 2:
 		var variables:Dictionary = data[1]
 		for vars in variables.keys():
@@ -118,6 +117,8 @@ func create_minigame(data):
 		var connections:Dictionary = data[2]
 		for connection in connections.keys():
 			minigame.connect(connection, connections[connection])
+	
+	minigame_container.add_child(minigame)
 
 func add_minigame(data:Array):
 	if currentState == MainCommunicator.GameState.Game3D:

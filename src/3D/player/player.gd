@@ -1,6 +1,6 @@
 class_name Player extends CharacterBody3D
 
-const SPEED = 5
+const SPEED = 4
 const JUMP_VELOCITY = 4.5
 const MAX_STEP_UP = 0.5
 
@@ -111,10 +111,25 @@ func manage_input(delta:float) -> void :
 		velocity.z = move_toward(velocity.z, 0, SPEED)
 	
 	step_up_handler(delta)
-	
 	move_and_slide()
 
-func step_up_handler(delta):
+func step_up_handler(_delta):
+	
+	if is_on_wall():
+		$StairUpRay.rotation = -rotation
+		$StairUpRayUnder.rotation = -rotation
+		
+		$StairUpRay.target_position = -get_wall_normal()
+		$StairUpRay.target_position.y = 0
+		$StairUpRay.target_position = $StairUpRay.target_position * 0.7
+		$StairUpRayUnder.target_position = $StairUpRay.target_position
+		
+		
+		
+		if $StairUpRayUnder.get_collider() != null && $StairUpRay.get_collider() == null:
+			position.y += $StairUpRay.position.y
+
+func step_up_handler_old(delta):
 	if velocity.x <= 0.01 && velocity.z <= 0.01:
 		return
 	
@@ -177,9 +192,9 @@ func step_up_handler(delta):
 
 	# 5. Check floor normal for un-walkable slope
 	# We don't apply this one because it isn't relevant, and bugs out for slower movements
-	#var surface_normal = body_test_result.get_collision_normal()
-	#if (snappedf(surface_normal.angle_to(up_direction), 0.001) > floor_max_angle):
-	#	return
+	var surface_normal = body_test_result.get_collision_normal()
+	if (snappedf(surface_normal.angle_to(up_direction), 0.001) > floor_max_angle):
+		return
 
 	# 6. Move player up
 	var global_pos = global_position

@@ -2,10 +2,10 @@ class_name RPS extends Minigame
 
 enum personPlaying
 {
-	STANLY, # stanley chooses at random
-	WILLY, # willy choisit celui dont il y a le moins restants
-	BILLY, # billy dans le premier round commence toujours par pierre < papier < ciseaux et après le premier round copie le 
-	RAYLY
+	STANLY = 0, # stanley chooses at random
+	WILLY = 1, # willy choisit celui dont il y a le moins restants
+	BILLY = 2, # billy dans le premier round commence toujours par pierre < papier < ciseaux et après le premier round copie le 
+	RAYLY = 3
 }
 const personName:Dictionary[personPlaying, String] = {
 	personPlaying.STANLY : 'stanly',

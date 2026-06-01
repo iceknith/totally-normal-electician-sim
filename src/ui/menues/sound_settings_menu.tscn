@@ -63,8 +63,22 @@ text = "Sound Settings"
 label_settings = SubResource("LabelSettings_xy610")
 
 [node name="EmptySpace" type="Control" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=911892567]
-custom_minimum_size = Vector2(0, 200)
+custom_minimum_size = Vector2(0, 100)
 layout_mode = 2
+
+[node name="SoundVolumeLabel2" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=1304472340]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Master Volume"
+label_settings = SubResource("LabelSettings_xy610")
+
+[node name="MasterVolume" type="HSlider" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=1251469739]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 1
+min_value = -40.0
+max_value = 6.0
 
 [node name="SoundVolumeLabel" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=753185505]
 layout_mode = 2
@@ -72,8 +86,12 @@ size_flags_horizontal = 4
 text = "Music Volume"
 label_settings = SubResource("LabelSettings_xy610")
 
-[node name="SoundVolume" type="HSlider" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=1307263611]
+[node name="MusicVolume" type="HSlider" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=1307263611]
+custom_minimum_size = Vector2(300, 0)
 layout_mode = 2
+size_flags_horizontal = 4
+min_value = -35.0
+max_value = 6.0
 
 [node name="SFXVolumeLabel" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=569742915]
 layout_mode = 2
@@ -82,8 +100,12 @@ text = "SFX Volume "
 label_settings = SubResource("LabelSettings_xy610")
 
 [node name="SFXVolume" type="HSlider" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=569847724]
+custom_minimum_size = Vector2(300, 0)
 layout_mode = 2
+size_flags_horizontal = 4
 size_flags_vertical = 1
+min_value = -40.0
+max_value = 6.0
 
 [node name="EmptySpace2" type="Control" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=1223391942]
 custom_minimum_size = Vector2(0, 100)
@@ -98,4 +120,7 @@ theme_override_fonts/font = ExtResource("2_nubjj")
 theme_override_font_sizes/font_size = 36
 text = "Exit"
 
+[connection signal="value_changed" from="PanelContainer/MarginContainer/VBoxContainer/MasterVolume" to="." method="_on_master_volume_value_changed"]
+[connection signal="value_changed" from="PanelContainer/MarginContainer/VBoxContainer/MusicVolume" to="." method="_on_sound_volume_value_changed"]
 [connection signal="value_changed" from="PanelContainer/MarginContainer/VBoxContainer/SFXVolume" to="." method="_on_sfx_volume_value_changed"]
+[connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/ButtonExit" to="." method="_on_button_exit_pressed"]
