@@ -75,6 +75,7 @@ tempo_curve = SubResource("Curve_kmhfv")
 [node name="HUD" type="CanvasLayer" parent="." unique_id=410458702]
 
 [node name="GameOverlay" parent="HUD" unique_id=1667571156 instance=ExtResource("3_5q4o7")]
+visible = false
 
 [node name="Minigames" type="Control" parent="HUD" unique_id=1934620589]
 layout_mode = 3

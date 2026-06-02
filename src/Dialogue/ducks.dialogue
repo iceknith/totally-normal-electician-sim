@@ -1,0 +1,26 @@
+~ start
+Phone: [shake rate=10 level=5] Driiing, Driiiing
+- Pick Up
+%10 Anonymous: [shake rate=10 level=5] Coin Coin
+%7 Anonymous: [shake rate=10 level=5] Coin Coin Coin
+%3 Anonymous: [shake rate=20 level=10] COIN COIN
+%3 Anonymous: [shake rate=30 level=5] C..n .o..
+%1 Anonymous: [shake rate=20 level=10] Hawk Hawk
+=> END
+
+~ quest_end
+Phone: [shake rate=10 level=5] Driiing, Driiiing
+- Pick Up
+Anonymous: [shake rate=10 level=5] Coin Coin
+- Who are you
+Anonymous: We are the all seeing and all knowing ducks.
+The all seeing and all knowing Ducks: By collecting our {{GlobalVars.max_ducks}} lost children, you have become our god.
+The all seeing and all knowing Ducks: From now on, all ducks will be your friends, and aid you (to their best ability) in your everyday life.
+- Can you help me with the towers
+	The all seeing and all knowing Ducks: No can do, sorry.
+- Okay
+- Understood, I will bring you dried bread
+	The all seeing and all knowing Ducks: You know the way to our heart <3
+- Huh ?
+Phone: Hangs up
+=> END

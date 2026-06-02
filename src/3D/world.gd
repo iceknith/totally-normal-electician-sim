@@ -25,6 +25,7 @@ var phone_call:DialogueResource = preload("res://src/Dialogue/phone_call.dialogu
 
 func _ready() -> void:
 	GlobalVars.tower_amount = count_towers(self)
+	GlobalVars.max_ducks = count_ducks(self)
 	worldBoxBig.body_exited.connect(_on_body_leave_world_box_big)
 
 func start_game() -> void:
@@ -59,6 +60,15 @@ func count_towers(node:Node) -> int:
 		for child in node.get_children():
 			if child as Tower: result += 1
 			else: result += count_towers(child)
+		
+	return result
+
+func count_ducks(node:Node) -> int:
+	var result = 0
+	if node:
+		for child in node.get_children():
+			if child as Duck: result += 1
+			else: result += count_ducks(child)
 		
 	return result
 
