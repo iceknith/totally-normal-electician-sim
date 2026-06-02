@@ -58,6 +58,13 @@ var BigJoBeaten:bool = false
 var JoBeaten:bool = false
 
 
+##############
+### RPS ###
+##############
+
+var tutorial_done:bool = false 
+
+
 var has_cake:bool = false
 var bought_cake_superette:bool = false
 var visited_superette:bool = false

@@ -1,16 +1,80 @@
+
+
+
 ~ billy_intro
 Billy: [wave amp=40 freq=5]Hi ! My name is Billy ![/wave] [#voice_sound=uid://bm1e4xlpgjw4p]
 Billy : [wave amp=40 freq=5]Everybody loves good ol'  Billy ![/wave][#voice_sound=uid://bm1e4xlpgjw4p]
-Billy : [wave amp=25 freq=5]I've been playing this game for a while you know ![/wave] [#voice_sound=uid://bm1e4xlpgjw4p]
+Billy : [wave amp=25 freq=5]I've been playing competitive rock papers for a while ! ![/wave] [#voice_sound=uid://bm1e4xlpgjw4p]
 Billy : [wave amp=25 freq=5]So ! [wait=0.5] I'm pretty [speed=0.2][font_size=40][rainbow] [wait=0.5] [wave amp=60 freq=5]STRONG.[/wave][/rainbow][/font_size] [#voice_sound=uid://bm1e4xlpgjw4p]
 Billy : [wave amp=40 freq=5]I hope we both have a lot of fun ![/wave] [#voice_sound=uid://bm1e4xlpgjw4p]
 => END
+
+
+~ BillyTutorial
+Billy:  [wave amp=40 freq=5] WHAT ????? YOU'VE NEVER PLAYED COMPETITIVE ROCK PAPER SCISSORS BEFORE !!!!![/wave]
+Billy: [wave amp=40 freq=5] I'll teach you !!![/wave]
+Billy: [wave amp=40 freq=5] The rules are super simple !! [/wave]
+Billy: [wave amp=40 freq=5] It's like rock paper scissors except you can only choose one of the option of the cards you'll be given. [/wave]
+Billy: [wave amp=40 freq=5] You're given 3 cards per round and you can always see on the left how many cards of each there are left in the deck ! [/wave]
+Billy : [wave amp=25 freq=5]The game may seem simple but it's all about [wait=0.5] THE [speed=0.2][font_size=40][rainbow] [wait=0.5] [wave amp=60 freq=5]PHSYCHOLOGY[/wave][/rainbow][/font_size]
+Billy : [wave amp=25 freq=5]Let's play !!! [/wave]
+=> END
+
+
+
+~ StanleyIntro 
+Stanley : Me stanley.
+Stanley: Me like play games.
+Stanley: You, me, play, now.
+Stanley: You play ?
+~ AskPlayerStanley 
+- No.
+	=> END
+- Yes 
+	Let's play.
+	$> MainCommunicator.send_signal_to_main(MainCommunicator.SignalType.ADD_MINIGAME, [load("res://src/minigames/competitive_rock_paper_scissors/Rock Paper scissors.tscn"), {"opponent":0}])
+- Who are you again ? 
+	Stanley: ME STANLEY !!!!!!
+	Stanley: ME PLAY !!!
+	Stanley: YOU PLAY ??? => AskPlayerStanley
+=> END
+
+
+~ StanleyTutorial
+Stanley: ...
+Stanley: You stupid.
+Stanley: You no played before.
+Stanley: Rules easy.
+Stanley: Rock, Papers, Scissors. 
+Stanley: You get 3 options. You chose. I also 3 options.
+Stanley: Left, numbers of each in deck.
+Stanley: You, me, play, now.
+
+
+~ WillyTutorial
+Willy: Hello.
+Willy: ...
+Willy: Wanna play a game ? 
+- No.
+	Willy: You're a bloody coward aren't you ? 
+Willy: 
+- Yes
+	Willy: That's the spirit ?
+Willy: It's like rock, paper, scissors, except you can only pick one of the options from the cards you're given. Fancy that, eh?
+Willy: You get 3 cards each round and on the left you can always see how many of each card are still left in the deck. Use your eyes, yeah?
+Willy: Now, the game may look simple, but don't be fooled, you cheeky little muppet... you gotta think mate.
+Willy: Right then, enough faffing about. Let's bloody play!!!
+$> MainCommunicator.send_signal_to_main(MainCommunicator.SignalType.ADD_MINIGAME, [load("res://src/minigames/competitive_rock_paper_scissors/Rock Paper scissors.tscn"), {"opponent":2}])
+=> END
+
+
+
 
 ~ billy_lose
 %
 	Billy : [shake rate=20 level=10]You're making me[wait=0.5] SAD !!![/shake]
 %
-	[font_size=40][shake rate=20 level=10] (,,>﹏<,,)[/shake] 
+	Billy : [font_size=40][shake rate=20 level=10] (,,>﹏<,,)[/shake] 
 => END
 
 ~ billy_win
