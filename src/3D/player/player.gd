@@ -115,7 +115,7 @@ func manage_input(delta:float) -> void :
 
 func step_up_handler(_delta):
 	
-	if is_on_wall():
+	if is_on_wall() && abs(velocity.x) + abs(velocity.z) >= 0.01:
 		$StairUpRay.rotation = -rotation
 		$StairUpRayUnder.rotation = -rotation
 		

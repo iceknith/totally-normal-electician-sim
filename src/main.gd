@@ -44,9 +44,18 @@ var is_in_dialogue:bool = false:
 
 ### Init ###
 
+func _init() -> void:
+	# Mets une seed par défaut dès que le jeu se lance, histoire
+	# que la génération de la map soit déterministe (les textures des canards & journaux).
+	seed(0)
+
 func _ready() -> void:
 	connect_signals()
 	init_state()
+	
+	# Mets une seed pseudo aléatoire une fois que le jeu a été généré.
+	# Garantit que le reste du jeu est pseudo aléatoire
+	seed(Time.get_datetime_string_from_system().hash())
 	
 	# Debug - Launch imediatly game
 	#launch_game()

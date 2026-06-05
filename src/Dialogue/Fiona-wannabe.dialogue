@@ -1,0 +1,41 @@
+~ start
+Fiona: Good morning, sir !
+- Good morning
+- Hey
+=> fiona_main
+
+~ fiona_main
+Fiona: I'm sorry I can't help you with all these towers.
+- It's okay, you'll get your licence later...
+	Fiona: Yeah... Maybe... It's the second time I failed the exam tho !
+	- You'll make it, I have faith in you !
+	- Everyone fails their first couple of tries !
+	Fiona: Is that true ?
+	Fiona: You don't know how much this means to me !
+	Fiona: Oh, sorry ! You have a lot of work to do !
+- Yeah...
+	Fiona: ...
+	Fiona: Oh, sorry... You have a lot of work to do !
+- You can watch if you want
+	Fiona: I can ?
+	- Of course
+	Fiona: Yeaaah !
+	Fiona: But my mom said I shouldn't go too far, I'll watch you from a distance.
+Fiona: I don't want to be a burden
+if GlobalVars.tower_amount == GlobalVars.tower_completed:
+	- Yeah, I should get back to work !
+		Fiona: You're right ! See you around !
+	- I finished it
+		Fiona: You did ? Really ? Wow, you're so cool !
+		Fiona: I can't wait to be like you someday !
+		$> title = "fiona wait"
+		=> fiona_wait
+else:
+	- Yeah, I should hurry back to work !
+	Fiona: See you later !
+=> END
+
+~ fiona_wait
+Fiona: ... So... What do you want to do now ?
+Fiona: 
+=> END
