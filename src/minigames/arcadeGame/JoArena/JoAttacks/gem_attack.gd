@@ -226,7 +226,6 @@ func disappear_gem():
 		i +=1
 		
 func end_attack():
-	
 	await disappear_gem()
 	await get_tree().create_timer(0.25).timeout
 	attack_ended.emit()

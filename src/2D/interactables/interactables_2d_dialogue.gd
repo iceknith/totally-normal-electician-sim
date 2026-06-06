@@ -7,6 +7,7 @@ class_name Interactable2DDialogue extends Interactable2D
 		GlobalVars.dialogue_starts.set(unique_name, new_val)
 	get():
 		return GlobalVars.dialogue_starts.get(unique_name, title)
+@export var has_close_up:bool = true
 @export var close_up:AnimatedSprite2D
 @export var close_up_start_animation:String:
 	set(new_val):
@@ -17,20 +18,23 @@ class_name Interactable2DDialogue extends Interactable2D
 
 func _ready() -> void:
 	super()
-	close_up.hide()
+	if has_close_up:
+		close_up.hide()
 
 func start_interaction():
 	MainCommunicator.send_signal_to_main(
 		MainCommunicator.SignalType.START_DIALOGUE, 
 		[dialogue, title, [self]] 
 	) # On lance le dialogue avec les options de dialogues associées
-	hide()
-	close_up.show()
-	close_up.play(close_up_start_animation)
+	if has_close_up:
+		hide()
+		close_up.show()
+		close_up.play(close_up_start_animation)
 	DialogueManager.dialogue_ended.connect(end_interaction)
 
 func end_interaction(_ressource):
 	show()
-	close_up.hide()
-	close_up.stop()
+	if has_close_up:
+		close_up.hide()
+		close_up.stop()
 	DialogueManager.dialogue_ended.disconnect(end_interaction)

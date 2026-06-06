@@ -36,7 +36,7 @@ func _ready() -> void:
 	else : 
 		jo_attacks.fight_over.connect(end_fight)
 		player.inform_death.connect(reset)
-		await intro()
+
 		start_game()
 
 

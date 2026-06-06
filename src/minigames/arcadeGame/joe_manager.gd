@@ -15,6 +15,7 @@ var dir_to_ball: Vector2
 
 
 @export var jo_preset: opponent = opponent.LittleJo
+var jo_sprite_color: Color = Color.GREEN
 
 
 signal has_rolled_probabilities
@@ -116,21 +117,30 @@ func apply_jo_preset():
 			attack_cooldown = 1.0
 			opponent_move_speed = 250
 			max_manageable_speed = 600
-		
+			jo_sprite_color = Color.GREEN
+
+	
 		opponent.Jolister:
 			attack_cooldown = 0.8
 			opponent_move_speed = 300
 			max_manageable_speed = 900
+			jo_sprite_color = Color.PINK
 		
 		opponent.BigJo:
 			attack_cooldown = 0.7
 			opponent_move_speed = 325
 			max_manageable_speed = 1100
-		
+			jo_sprite_color = Color.BLUE
+			
 		opponent.Jo:
 			attack_cooldown = 0.4
 			opponent_move_speed = 350
 			max_manageable_speed = 1400
+			jo_sprite_color = Color.RED
 			
+	enemy.set_sprite_color(jo_sprite_color)
+	enemy.HitBallComponent.ball_color = jo_sprite_color
+	
+	
 func set_preset(preset:JoManager.opponent):
 	jo_preset = preset

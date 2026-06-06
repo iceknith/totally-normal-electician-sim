@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://bau4icmy6o8ha"
+path="res://.godot/imported/DialogueArcade.dialogue-8d1ec6e5086aad5ff39da746371cbc60.tres"
+
+[deps]
+
+source_file="res://src/Dialogue/Arcade/DialogueArcade.dialogue"
+dest_files=["res://.godot/imported/DialogueArcade.dialogue-8d1ec6e5086aad5ff39da746371cbc60.tres"]
+
+[params]
+
+defaults=true

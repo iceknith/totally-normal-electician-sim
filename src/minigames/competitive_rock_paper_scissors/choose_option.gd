@@ -58,7 +58,7 @@ func roll_players(choices, handPile, drawPile, playPile):
 		
 		instance.set_choice(i)
 		handPile.add_child(instance)
-
+		
 		
 		match i : 
 			RPS.Choice.ROCK : 
@@ -71,7 +71,9 @@ func roll_players(choices, handPile, drawPile, playPile):
 		var btn = instance.get_node("TextureButton")
 	
 		manage_rotation(choices, instance, j)
+		instance.set_ordering(j)
 		j +=1
+		
 		btn.pressed.connect(update_player_choice.bind(i, self))
 
 		instance.global_position = start_pos #la position est askip recalculé en utilisant add_child

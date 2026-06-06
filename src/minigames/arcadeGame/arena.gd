@@ -15,6 +15,12 @@ class_name ArcadeGame extends Minigame
 
 var last_loser:Node
 var in_reset_animation:bool
+var in_tutorial:bool = false
+var play_tutorial:bool = true
+
+
+@onready var dialogue:DialogueResource = preload("res://src/Dialogue/Arcade/DialogueArcade.dialogue")
+@onready var tutorialTarget = load("res://src/minigames/arcadeGame/tutorialArena/target.tscn")
 
 enum BALLSTATE
 {
@@ -22,7 +28,7 @@ enum BALLSTATE
 	EnemyControl,
 	None
 }
-
+var opponent_preset:JoManager.opponent = JoManager.opponent.LittleJo
 var PlayerScore:int
 var EnemyScore:int
 @export var ScoreToWin:int = 3
@@ -32,7 +38,11 @@ func _ready() -> void:
 	$ShockWave.visible = false
 	PlayerScore = 0
 	EnemyScore = 0
-	start_game()
+	JoManagerComponent.jo_preset = opponent_preset
+	if play_tutorial : 
+		start_tutorial()
+	else : 
+		start_game()
 	setup_signals()
 	
 func setup_signals(): 
@@ -148,3 +158,85 @@ func check_if_end_game():
 	
 func exit():
 	MainCommunicator.send_signal_to_main(MainCommunicator.SignalType.REMOVE_MINIGAME)
+
+
+func reset_game():
+	PlayerScore = 0
+	EnemyScore = 0
+	reset()
+	
+
+func start_tutorial():
+	in_tutorial = true
+	opponent.visible = false
+	opponent.process_mode = Node.PROCESS_MODE_DISABLED
+	MainCommunicator.send_signal_to_main(
+			MainCommunicator.SignalType.START_DIALOGUE, 
+			[dialogue, "Tutorial1", [self]] 
+			)
+			
+	await DialogueManager.dialogue_ended
+	await get_tree().create_timer(5).timeout
+	
+	MainCommunicator.send_signal_to_main(
+		MainCommunicator.SignalType.START_DIALOGUE, 
+		[dialogue, "Tutorial2", [self]] 
+		)
+	
+	await DialogueManager.dialogue_ended
+	
+	while (ball.mouvement_component.get_speed() < 300) : 
+		continue
+	
+	player.global_position = Vector2(randi_range(200, 952), randf_range(100, 548))
+	ball.reset()
+	ball.global_position = Vector2(1152/2, 648/2)
+	
+	MainCommunicator.send_signal_to_main(
+	MainCommunicator.SignalType.START_DIALOGUE, 
+	[dialogue, "Tutorial3", [self]] 
+	)
+
+	
+	await spawn_and_wait_tutorial_targets()
+	await DialogueManager.dialogue_ended
+	
+		
+	MainCommunicator.send_signal_to_main(
+	MainCommunicator.SignalType.START_DIALOGUE, 
+	[dialogue, "Tutorial4", [self]] 
+	)
+	
+	opponent.visible = true
+	opponent.process_mode = Node.PROCESS_MODE_INHERIT
+	reset_game()
+	start_game()
+	
+	
+	
+	
+	
+func spawn_and_wait_tutorial_targets():
+	var target_positions = [
+		Vector2(400, 250),
+		Vector2(750, 250)
+	]
+	
+	var destroyed_targets:= 0
+	var total_targets = target_positions.size()
+	
+	for pos in target_positions:
+		var target_instance = tutorialTarget.instantiate()
+		entities.add_child(target_instance)
+		target_instance.global_position = pos
+		
+		target_instance.target_destroyed.connect(func():
+			destroyed_targets += 1
+		)
+	
+	while destroyed_targets < total_targets:
+		await get_tree().process_frame
+	
+	
+	
+	

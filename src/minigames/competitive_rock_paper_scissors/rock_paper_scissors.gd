@@ -8,10 +8,9 @@ enum personPlaying
 	RAYLY = 3
 }
 const personName:Dictionary[personPlaying, String] = {
-	personPlaying.STANLY : 'stanly',
-	personPlaying.WILLY : 'willy',
-	personPlaying.BILLY : 'billy',
-	personPlaying.RAYLY : 'rayly',
+	personPlaying.STANLY : 'Stanly',
+	personPlaying.WILLY : 'Willy',
+	personPlaying.BILLY : 'Billy',
 }
 enum Choice 
 {
@@ -109,7 +108,6 @@ func _ready():
 	show_points()
 	show_number_of_each()
 	await get_tree().create_timer(1).timeout
-	start_game()
 	intro()
 
 	
@@ -119,7 +117,6 @@ func _process(delta):
 
 func setup_signals():
 	chooseOption.PlayerHasChosen.connect(update_player_choice)
-	rolling_sprite.rolling_finished.connect(show_winner)
 	hand.handAnimation.connect(show_winner)
 
 func update_player_choice(choice):
@@ -157,8 +154,10 @@ func show_winner():
 	if rounds_number == current_round_number : 
 		end_game()
 	elif player_points == points_to_win : 
+	
 		player_won_game()
 	elif opponents_points == points_to_win : 
+		
 		opponent_won_game()
 	elif current_total_choice_number < choice_per_round * 2 : 
 		await text_animation(win_label, \
@@ -214,14 +213,14 @@ func player_loses():
 func dialogue_loses():
 	MainCommunicator.send_signal_to_main(
 		MainCommunicator.SignalType.START_DIALOGUE, 
-		[dialogue, personName[opponent] + "_lose", [self]] 
+		[dialogue, personName[opponent] + "Lose", [self]] 
 	)
 	await DialogueManager.dialogue_ended
 
 func dialogue_wins():
 	MainCommunicator.send_signal_to_main(
 		MainCommunicator.SignalType.START_DIALOGUE, 
-		[dialogue, personName[opponent] + "_win", [self]] 
+		[dialogue, personName[opponent] + "Win", [self]] 
 	)
 	await DialogueManager.dialogue_ended
 
@@ -296,11 +295,22 @@ func end_game():
 	exit()
 
 func player_won_game(): #condition à executer si le player gagne la partie
+	print("test here 2")
 	await text_animation(win_label, "You WON \n the GAME !!!!!", 1, Color.GREEN).finished
+	MainCommunicator.send_signal_to_main(
+			MainCommunicator.SignalType.START_DIALOGUE, 
+			[dialogue, personName[opponent] + "GameLose", [self]] 
+		) 
+	
 	exit()
 
 func opponent_won_game(): #condition à executer si l'opponent gagne la partie
+	print("test here")
 	await text_animation(win_label, "You LOST \n the GAME !!!!!", 1, Color.RED).finished
+	MainCommunicator.send_signal_to_main(
+			MainCommunicator.SignalType.START_DIALOGUE, 
+			[dialogue, personName[opponent] + "GameWin", [self]] 
+		) 
 	exit()
 
 func exit():
@@ -358,11 +368,12 @@ func show_number_of_each():
 	rock_label.text = str(current_numbers[Choice.ROCK])
 	paper_label.text = str(current_numbers[Choice.PAPER])
 	scissors_label.text = str(current_numbers[Choice.SCISSORS])
-
+	
 func show_points():
-	%showPoints.text = \
-	"player points = " + str(player_points) + " \\ " + str(points_to_win) + \
-	" opponent points = " + str(opponents_points) + " \\ " + str(points_to_win)
+	%showPoints.text = (
+		"You : " + str(player_points) + " | " + str(points_to_win)
+		+ "\n" + personName[opponent] + " : " + str(opponents_points) + " | " + str(points_to_win)
+	)
 
 func draw_cards():
 	if !has_player_drawn and has_game_started: 
@@ -378,12 +389,15 @@ func clear():
 		child.queue_free()
 
 func intro():
-	MainCommunicator.send_signal_to_main(
-		MainCommunicator.SignalType.START_DIALOGUE, 
-		[dialogue, personName[opponent] + "_intro", [self]] 
-	) # On lance le dialogue d'intro du personnage
-	await DialogueManager.dialogue_ended
-	await get_tree().create_timer(0.2).timeout
+	if !GlobalVars.tutorial_done : 
+		print(personName[opponent])
+		MainCommunicator.send_signal_to_main(
+			MainCommunicator.SignalType.START_DIALOGUE, 
+			[dialogue, personName[opponent] + "Tutorial", [self]] 
+		) # On lance le dialogue d'intro du personnage
+		await DialogueManager.dialogue_ended
+		GlobalVars.tutorial_done = true
+
 	start_game()
 
 func start_game(): 

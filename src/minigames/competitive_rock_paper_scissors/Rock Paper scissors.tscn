@@ -13,7 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://1xxjx047eo4l" path="res://src/minigames/competitive_rock_paper_scissors/asset/2D/rock.png" id="9_24ib3"]
 [ext_resource type="Texture2D" uid="uid://dxx8mm38nnd8g" path="res://src/minigames/competitive_rock_paper_scissors/asset/2D/paper.png" id="10_c10fi"]
 
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_24ib3"]
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_c10fi"]
 load_path = "res://.godot/imported/rock.png-3fda844716166c55d141e8ce87eef7f6.s3tc.ctex"
 
 [sub_resource type="LabelSettings" id="LabelSettings_73bh0"]
@@ -31,6 +31,10 @@ corner_radius_top_right = 3
 corner_radius_bottom_right = 3
 corner_radius_bottom_left = 3
 corner_detail = 5
+
+[sub_resource type="LabelSettings" id="LabelSettings_c10fi"]
+font = ExtResource("3_c10fi")
+font_size = 40
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_c10fi"]
 content_margin_left = 0.0
@@ -65,15 +69,17 @@ anchor_left = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = -193.0
-offset_top = 77.0
+offset_top = 59.0
 offset_right = -36.0
-offset_bottom = -98.0
+offset_bottom = -80.0
 grow_horizontal = 0
 grow_vertical = 2
 
 [node name="rockTex" type="TextureRect" parent="StockLabels" unique_id=1045611659]
+custom_minimum_size = Vector2(128, 156)
 layout_mode = 2
-texture = SubResource("CompressedTexture2D_24ib3")
+texture = SubResource("CompressedTexture2D_c10fi")
+expand_mode = 1
 
 [node name="RockLabel" type="Label" parent="StockLabels" unique_id=34583774]
 layout_mode = 2
@@ -81,8 +87,10 @@ label_settings = SubResource("LabelSettings_73bh0")
 horizontal_alignment = 1
 
 [node name="PaperTex" type="TextureRect" parent="StockLabels" unique_id=198005731]
+custom_minimum_size = Vector2(128, 156)
 layout_mode = 2
 texture = ExtResource("10_c10fi")
+expand_mode = 1
 
 [node name="PaperLabel" type="Label" parent="StockLabels" unique_id=899854522]
 layout_mode = 2
@@ -90,8 +98,10 @@ label_settings = SubResource("LabelSettings_73bh0")
 horizontal_alignment = 1
 
 [node name="ScissorsTex" type="TextureRect" parent="StockLabels" unique_id=2109268070]
+custom_minimum_size = Vector2(128, 156)
 layout_mode = 2
 texture = ExtResource("8_0lxge")
+expand_mode = 1
 
 [node name="ScissorsLabel" type="Label" parent="StockLabels" unique_id=986368711]
 layout_mode = 2
@@ -113,6 +123,13 @@ theme_override_constants/margin_bottom = 50
 [node name="PanelContainer" type="PanelContainer" parent="MarginContainer" unique_id=41155471]
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_24ib3")
+
+[node name="showPoints" type="Label" parent="MarginContainer/PanelContainer" unique_id=1091885699]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 8
+label_settings = SubResource("LabelSettings_c10fi")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/PanelContainer" unique_id=1218745472]
 layout_mode = 2
@@ -137,15 +154,6 @@ unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-
-[node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/PanelContainer/VBoxContainer" unique_id=359344537]
-layout_mode = 2
-size_flags_horizontal = 4
-theme_override_constants/separation = 50
-
-[node name="showPoints" type="Label" parent="MarginContainer/PanelContainer/VBoxContainer/HBoxContainer2" unique_id=1091885699]
-unique_name_in_owner = true
-layout_mode = 2
 
 [node name="EndGameLabel" type="RichTextLabel" parent="." unique_id=1725921560]
 z_index = 5

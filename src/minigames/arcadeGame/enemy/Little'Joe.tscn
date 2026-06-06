@@ -1,15 +1,15 @@
 [gd_scene format=3 uid="uid://rb0qk6nk0ixq"]
 
 [ext_resource type="Script" uid="uid://dnik6ol025g3b" path="res://src/minigames/arcadeGame/enemy/enemyAI.gd" id="1_dp52m"]
-[ext_resource type="Texture2D" uid="uid://cra208jmgv7f8" path="res://icon.svg" id="1_ikfqc"]
 [ext_resource type="PackedScene" uid="uid://dew10erbv0qyh" path="res://src/minigames/arcadeGame/Component/movement.tscn" id="2_p7eme"]
+[ext_resource type="Texture2D" uid="uid://clwybh5tqlae2" path="res://src/minigames/arcadeGame/player/heart2.png" id="2_xmtyd"]
 [ext_resource type="PackedScene" uid="uid://cbgt2i48kg0xj" path="res://src/minigames/arcadeGame/Component/hit_ball.tscn" id="3_m0eqn"]
 [ext_resource type="PackedScene" uid="uid://bff8owxdvdk7x" path="res://src/minigames/arcadeGame/player/aim.tscn" id="5_4pmwp"]
 [ext_resource type="PackedScene" uid="uid://cklna2vuo4rwf" path="res://src/minigames/arcadeGame/Component/die.tscn" id="7_e8caa"]
 [ext_resource type="Texture2D" uid="uid://rhy47auhb2o4" path="res://src/minigames/arcadeGame/assets/particles/star particle.png" id="7_xmtyd"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_p7eme"]
-size = Vector2(129, 129)
+size = Vector2(96, 95)
 
 [sub_resource type="Curve" id="Curve_e8caa"]
 _data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.09245932), 0.0, 0.0, 0, 0]
@@ -100,8 +100,8 @@ _data = {
 &"RESET": SubResource("Animation_e8caa")
 }
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_vlxni"]
-size = Vector2(129, 129)
+[sub_resource type="CircleShape2D" id="CircleShape2D_e8caa"]
+radius = 39.012817
 
 [sub_resource type="Gradient" id="Gradient_sjmj3"]
 offsets = PackedFloat32Array(0, 0.57224333)
@@ -122,11 +122,12 @@ ball_color = Color(0.89411765, 0, 0, 1)
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=784192347]
 visible = false
-modulate = Color(1, 0, 1, 1)
-texture = ExtResource("1_ikfqc")
+texture_filter = 1
+scale = Vector2(4, 4)
+texture = ExtResource("2_xmtyd")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=214211675]
-position = Vector2(0.5, 0.5)
+position = Vector2(0, -0.5)
 shape = SubResource("RectangleShape2D_p7eme")
 
 [node name="Movement" parent="." unique_id=321546894 instance=ExtResource("2_p7eme")]
@@ -174,8 +175,8 @@ animationPlayer = NodePath("../AnimationPlayer")
 death_animation_name = "Death"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Die" unique_id=485325261]
-position = Vector2(0.5, 0.5)
-shape = SubResource("RectangleShape2D_vlxni")
+position = Vector2(1, -3)
+shape = SubResource("CircleShape2D_e8caa")
 
 [node name="PointLight2D" type="PointLight2D" parent="." unique_id=293437323]
 visible = false
