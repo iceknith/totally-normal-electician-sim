@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c2336ibnyhhyr"
-path.s3tc="res://.godot/imported/tictactoe-3.png-2fcd87f8822d44791daf8ea86093e8ed.s3tc.ctex"
+uid="uid://c2uehocq77tiq"
+path.s3tc="res://.godot/imported/bibi.png-26a8dd5fb25f4d4a7ce57ba015460782.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://assets/pnjs/tictactoe-3.png"
-dest_files=["res://.godot/imported/tictactoe-3.png-2fcd87f8822d44791daf8ea86093e8ed.s3tc.ctex"]
+source_file="res://assets/pnjs/bibi.png"
+dest_files=["res://.godot/imported/bibi.png-26a8dd5fb25f4d4a7ce57ba015460782.s3tc.ctex"]
 
 [params]
 

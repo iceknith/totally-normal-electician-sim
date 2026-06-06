@@ -10,6 +10,22 @@ Fiona: Good afternoon, sir !
 - Hey
 => fiona_main
 
+~ start60
+Fiona: [speed=1.5][font_size=10] They're coming, pull yourself together !
+Fiona: Good afernoon, sir !
+- Good afternoon
+- Hey
+=> fiona_main
+
+~ start75
+Fiona: [shake rate=10 level=10] Nnn-ARGGGG [speed=1.5][font_size=10] Their coming, pull yourself together !
+Fiona: [shake rate=10 level=10] Good afernoon, sir !
+- Good afternoon
+- You okay ?
+	Fiona: [shake rate=20 level=10] Yes sir ! Nothing wrong at all !
+- Hey
+=> fiona_main
+
 ~ fiona_main
 Fiona: I'm sorry I can't help you with all these towers.
 - It's okay, you'll get your licence later...
@@ -58,4 +74,25 @@ Fiona: ... So... What do you want to do now ?
 - Do you want to play connect 4 ?
 	Fiona: I am really bad, tho
 	$> MainCommunicator.send_signal_to_main(MainCommunicator.SignalType.ADD_MINIGAME, [load("res://src/minigames/connect4/connect_4.tscn"), {"computer_playstyle":1}])
+=> END
+
+~ global80
+Fiona: [shake rate=40 level=10] NNN-ARGGGG...
+- Are you okay
+Fiona: [shake rate=40 level=10] YES SIR
+- ...
+- look at me
+	Fiona: *looks painfully at you*
+	- Are you okay ?
+	Fiona: [shake rate=40 level=10] ...Ngggg... [shake rate=20 level=40] NO !!!
+	Fiona: [shake rate=20 level=30] I feel like my insides are burning !!!
+	Fiona: [shake rate=20 level=30] I don't think I'll hold any longer !
+	Fiona: [shake rate=20 level=30] I'LL NEVER BE AN ELECTICIAAAN !
+	- ...
+	- Its gonna be okay, trust me !
+=> END
+
+~ global90
+Fiona: [shake rate=40 level=40] I DON'T WANNA DIE
+Fiona: [shake rate=40 level=40] SIR, PLEASE HELP ME !!!
 => END

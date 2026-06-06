@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://dtbh4bgoqly04"
+path="res://.godot/imported/Tac.dialogue-294f6bdc9543018d765e26ac3bab013e.tres"
+
+[deps]
+
+source_file="res://src/Dialogue/Tac.dialogue"
+dest_files=["res://.godot/imported/Tac.dialogue-294f6bdc9543018d765e26ac3bab013e.tres"]
+
+[params]
+
+defaults=true

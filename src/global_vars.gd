@@ -60,6 +60,14 @@ var mathew_algebra_finished:bool = false
 var vera_visited:bool = false
 var vera_told_secrets:bool = false
 
+var tic_visited:bool = false
+var tac_visited:bool = false
+
+var bibi_visited:bool = false
+
+var post_visits:int = 0
+var max_post_visits:int = 5
+
 var ducks:int = 0
 var max_ducks:int = 0
 

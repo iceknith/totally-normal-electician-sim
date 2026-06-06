@@ -23,7 +23,7 @@ Cathline: Whenever the day is hot like that, it reminds me of my little kitty ca
 => cats_discourse
 
 ~ start70
-Cathline: G...Good afternoon
+Cathline: GOOD afternoon
 - Good afternoon
 - Hi
 Cathline: Aren't you hungry ?
@@ -35,7 +35,10 @@ Cathline: Whenever I'm hungry like that, it reminds me of my little kitty cats !
 ~ global80
 Cathline: I am [shake rate=20 level=20] SO HUNGRY
 Cathline: LETS talk about cats !
-=> cats_discourse
+- O..kay ?
+	=> cats_discourse
+- I'm leaving !
+	=> END
 
 ~ global90
 Cathline: [shake rate=20 level=40] DO YOU HAVE A CAT ?

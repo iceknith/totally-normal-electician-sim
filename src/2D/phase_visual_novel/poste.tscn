@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://dd5w2ptvu7pou" path="res://src/minigames/minigame.gd" id="1_i2jai"]
 [ext_resource type="Texture2D" uid="uid://cxe54b1hwc0uy" path="res://assets/backgrounds/boulangerie_temporaire.jpg" id="2_rk674"]
 [ext_resource type="Script" uid="uid://i1towdpqubly" path="res://src/2D/interactables/interactables_2d_dialogue.gd" id="3_3pvqo"]
-[ext_resource type="Resource" uid="uid://by4dsg3f57xf6" path="res://src/Dialogue/Superette.dialogue" id="4_mt5p5"]
+[ext_resource type="Resource" uid="uid://b80inkgsiaq86" path="res://src/Dialogue/Poste.dialogue" id="4_i2jai"]
 [ext_resource type="Texture2D" uid="uid://pyw1x4i20iqj" path="res://assets/pnjs/post_guy.png" id="5_i2jai"]
 [ext_resource type="PackedScene" uid="uid://cnnuxnjiw3ait" path="res://src/2D/interactables/interactableText.tscn" id="6_jo147"]
 
@@ -69,8 +69,8 @@ label_settings = SubResource("LabelSettings_58a6v")
 
 [node name="Interactable2DDialogue" type="Area2D" parent="." unique_id=1779342648 node_paths=PackedStringArray("close_up", "interractable_dialogue")]
 script = ExtResource("3_3pvqo")
-unique_name = "Superette"
-dialogue = ExtResource("4_mt5p5")
+unique_name = "Poste"
+dialogue = ExtResource("4_i2jai")
 close_up = NodePath("../AnimatedSprite2D")
 close_up_start_animation = "normal"
 interractable_dialogue = NodePath("InteractableText")
