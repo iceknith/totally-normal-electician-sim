@@ -79,13 +79,13 @@ fog_depth_end = 200.0
 auto_exposure_scale = 0.3
 dof_blur_far_distance = 200.0
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_tqnhu"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_5uot1"]
 viewport_path = NodePath("SubViewport")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_clt24"]
 size = Vector3(1.341207, 2.3379288, 0.39674377)
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_5uot1"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_64pfx"]
 viewport_path = NodePath("SubViewport")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_tqnhu"]
@@ -94,10 +94,10 @@ size = Vector3(3.3690002, 3.3618798, 0.39674377)
 [sub_resource type="BoxShape3D" id="BoxShape3D_64pfx"]
 size = Vector3(0.80126953, 2.3551025, 2.69487)
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_64pfx"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_dygmt"]
 viewport_path = NodePath("SubViewport")
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_dygmt"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_e1shr"]
 viewport_path = NodePath("SubViewport")
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_e8reo"]
@@ -113,9 +113,6 @@ animations = [{
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_ivwwh"]
 radius = 0.72587484
-
-[sub_resource type="ViewportTexture" id="ViewportTexture_e1shr"]
-viewport_path = NodePath("SubViewport")
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_jye0b"]
 viewport_path = NodePath("SubViewport")
@@ -147,6 +144,9 @@ viewport_path = NodePath("SubViewport")
 [sub_resource type="ViewportTexture" id="ViewportTexture_e6gat"]
 viewport_path = NodePath("SubViewport")
 
+[sub_resource type="ViewportTexture" id="ViewportTexture_1rjro"]
+viewport_path = NodePath("SubViewport")
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_x4jwh"]
 albedo_color = Color(0, 0, 1, 1)
 
@@ -156,19 +156,19 @@ material = SubResource("StandardMaterial3D_x4jwh")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8pvm1"]
 albedo_color = Color(0.07700009, 0, 0.66, 1)
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_1rjro"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_ieahk"]
 viewport_path = NodePath("SubViewport")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gisxt"]
 albedo_color = Color(0.09315889, 0.65882355, 0, 1)
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_ieahk"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_e7fmu"]
 viewport_path = NodePath("SubViewport")
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_jye0b"]
 radius = 1.090664
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_e7fmu"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_leq0n"]
 viewport_path = NodePath("SubViewport")
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_jqxng"]
@@ -217,28 +217,32 @@ _data = [Vector2(0, 0), 0.0, -0.020783685, 0, 0, Vector2(1, 1), 2.8797717, 0.0, 
 point_count = 2
 
 [sub_resource type="Curve" id="Curve_e0nlv"]
-_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.89972144, 0.49617904), 1.486036, 1.486036, 0, 0, Vector2(1, 1), 2.9379032, 0.0, 0, 0]
-point_count = 3
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.7479253, 0.10984987), 0.56750715, 0.56750715, 0, 0, Vector2(0.9366359, 0.50777733), 3.3467336, 3.3467336, 0, 0, Vector2(1, 1), 2.9379032, 0.0, 0, 0]
+point_count = 4
 
-[sub_resource type="Curve" id="Curve_5f2gp"]
-_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1, 1), 3.3006797, 0.0, 0, 0]
+[sub_resource type="Curve" id="Curve_5uot1"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1, 1), 2.9379032, 0.0, 0, 0]
 point_count = 2
 
-[sub_resource type="Curve" id="Curve_lpsds"]
-_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.7656442, 0.4535902), 0.115969695, 0.115969695, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+[sub_resource type="Curve" id="Curve_5f2gp"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.7476958, 0.19914043), 0.7449857, 0.7449857, 0, 0, Vector2(1, 1), 3.3006797, 0.0, 0, 0]
 point_count = 3
 
+[sub_resource type="Curve" id="Curve_lpsds"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1, 1), 2.9561002, 0.0, 0, 0]
+point_count = 2
+
 [sub_resource type="Curve" id="Curve_clt24"]
-_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.57918555, 0), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.57918555, 0), 0.0, 0.0, 0, 0, Vector2(1, 1), 7.3902287, 0.0, 0, 0]
 point_count = 3
 
 [sub_resource type="Curve" id="Curve_jqxng"]
-_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.88579386, 0.5529476), 0.73959315, 0.73959315, 0, 0, Vector2(1, 1), 5.254197, 0.0, 0, 0]
-point_count = 3
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1, 1), 3.0484796, 0.0, 0, 0]
+point_count = 2
 
 [sub_resource type="Curve" id="Curve_yhicf"]
-_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1, 1), 2.1689944, 0.0, 0, 0]
-point_count = 2
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.74654377, 0.24171102), 0.98976797, 0.98976797, 0, 0, Vector2(0.9504608, 0.50777733), 3.7875047, 3.7875047, 0, 0, Vector2(1, 1), 2.1689944, 0.0, 0, 0]
+point_count = 4
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ro6to"]
 size = Vector3(400, 50, 1)
@@ -634,7 +638,7 @@ transform = Transform3D(-1.3577971, 0, 0.34115595, 0, 1.4, 0, -0.34115595, 0, -1
 transform = Transform3D(-0.47999907, 0, -1.3151432, 0, 1.4, 0, 1.3151432, 0, -0.47999907, -39.288597, -1.5066012, -71.58208)
 
 [node name="maisontexture83" parent="Objets/Houses" unique_id=1025650668 instance=ExtResource("8_e0nlv")]
-transform = Transform3D(-0.47999907, 0, -1.3151432, 0, 1.4, 0, 1.3151432, 0, -0.47999907, -44.267834, -1.5066012, -50.20566)
+transform = Transform3D(0.5196429, 0, 1.2999893, 0, 1.4, 0, -1.2999893, 0, 0.5196429, -44.26783, -1.5066012, -50.20566)
 
 [node name="maisontexture78" parent="Objets/Houses" unique_id=872969143 instance=ExtResource("8_e0nlv")]
 transform = Transform3D(-0.47999907, 0, -1.3151432, 0, 1.4, 0, 1.3151432, 0, -0.47999907, -47.00553, -1.5066012, -74.52786)
@@ -934,7 +938,7 @@ transform = Transform3D(0.048989207, 0, 0.9987993, 0, 1, 0, -0.9987993, 0, 0.048
 transform = Transform3D(0.96097255, 0, 0.27664384, 0, 1, 0, -0.27664384, 0, 0.96097255, 61.44846, 0, 118.64007)
 
 [node name="Tower15" parent="Objets/Towers" unique_id=562859087 instance=ExtResource("12_clt24")]
-transform = Transform3D(-0.46887034, 0, -0.883267, 0, 1, 0, 0.883267, 0, -0.46887034, 127.02874, 0, -55.245834)
+transform = Transform3D(-0.46887028, 0, -0.8832668, 0, 1, 0, 0.8832668, 0, -0.46887028, 127.64551, 0, -54.976467)
 
 [node name="Tower3" parent="Objets/Towers" unique_id=1995813380 instance=ExtResource("12_clt24")]
 transform = Transform3D(0.5770454, 0, -0.8167121, 0, 1, 0, 0.8167121, 0, 0.5770454, -74.54378, 0, -29.995604)
@@ -1019,7 +1023,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40.44335, 0, -98.93594)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 73.101875, 0, 43.324257)
 
 [node name="Duck17" parent="Objets/Ducks" unique_id=270729383 instance=ExtResource("8_x4jwh")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.779808, 0.9111985, 116.851654)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.779808, 0.6770245, 116.85164)
 
 [node name="Duck25" parent="Objets/Ducks" unique_id=1216722687 instance=ExtResource("8_x4jwh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.3107674, 0, 136.84183)
@@ -1059,7 +1063,7 @@ metadata/_custom_type_script = "uid://b3imm353l7y6u"
 
 [node name="InteractacleText3D" parent="Objets/Buildings/boulangerie/boulangerie" unique_id=1576660793 instance=ExtResource("10_e8reo")]
 transform = Transform3D(0.30000004, 0, 0, 0, 0.3, 0, 0, 0, 0.30000004, 0, 0.4931178, 0)
-texture = SubResource("ViewportTexture_tqnhu")
+texture = SubResource("ViewportTexture_5uot1")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Objets/Buildings/boulangerie/boulangerie" unique_id=1710995515]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0729332, 0.11338568, 0.06949043)
@@ -1077,7 +1081,7 @@ metadata/_custom_type_script = "uid://b3imm353l7y6u"
 
 [node name="InteractacleText3D" parent="Objets/Buildings/superette/superetteInteractable" unique_id=1215462892 instance=ExtResource("10_e8reo")]
 transform = Transform3D(0.30000004, 0, 3.7252903e-09, 0, 0.3, 0, -3.7252903e-09, 0, 0.30000004, -0.0068626404, 0.4931178, -0.07106018)
-texture = SubResource("ViewportTexture_5uot1")
+texture = SubResource("ViewportTexture_64pfx")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Objets/Buildings/superette/superetteInteractable" unique_id=71863611]
 transform = Transform3D(0.9999865, 0, 8.195639e-08, 0, 0.99998987, 0, -8.195639e-08, 0, 0.9999865, -0.084257126, 0.19547307, -0.18695068)
@@ -1099,7 +1103,7 @@ shape = SubResource("BoxShape3D_64pfx")
 
 [node name="InteractacleText3D" parent="Objets/Buildings/arcade_building/arcade" unique_id=1563667533 instance=ExtResource("10_e8reo")]
 transform = Transform3D(0.0001361277, 0, 0.20000008, 0, 0.2, 0, -0.20000008, 0, 0.0001361277, 6.0572624, 1.9019911, -6.2214165)
-texture = SubResource("ViewportTexture_64pfx")
+texture = SubResource("ViewportTexture_dygmt")
 
 [node name="garre" parent="Objets/Buildings" unique_id=1564049498 instance=ExtResource("22_xud6r")]
 transform = Transform3D(0.92746484, 0, -0.3739107, 0, 1, 0, 0.3739107, 0, 0.92746484, 41.57659, 0, -100.48637)
@@ -1116,7 +1120,7 @@ metadata/_custom_type_script = "uid://b3imm353l7y6u"
 
 [node name="InteractacleText3D" parent="Objets/Buildings/poste/posteInteractable" unique_id=1878352434 instance=ExtResource("10_e8reo")]
 transform = Transform3D(0.30000007, 0, 7.450581e-09, 0, 0.30000004, 0, -7.450581e-09, 0, 0.30000007, -0.46167755, 0.49311793, -0.012077332)
-texture = SubResource("ViewportTexture_dygmt")
+texture = SubResource("ViewportTexture_e1shr")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Objets/Buildings/poste/posteInteractable" unique_id=1868400818]
 transform = Transform3D(0.99999624, 0, 1.0728836e-06, 0, 0.9999994, 0, -1.0728836e-06, 0, 0.99999624, -0.4843979, -0.103832364, -0.20417786)
@@ -1152,7 +1156,7 @@ shape = SubResource("SphereShape3D_ivwwh")
 [node name="InteractacleText3D" parent="Objets/PNJs/InterractableDialogue" unique_id=1261401867 instance=ExtResource("10_e8reo")]
 transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0.8627713, 0)
 billboard = 2
-texture = SubResource("ViewportTexture_e1shr")
+texture = SubResource("ViewportTexture_jye0b")
 
 [node name="TicTacToeCharles" type="Area3D" parent="Objets/PNJs" unique_id=1096544833 node_paths=PackedStringArray("animated_sprite", "text_sprite", "camera_root")]
 transform = Transform3D(-0.8454946, 0, 0.5339834, 0, 1, 0, -0.5339834, 0, -0.8454946, 106.959, 1.3379271, 31.791172)
@@ -1180,7 +1184,7 @@ shape = SubResource("SphereShape3D_ivwwh")
 [node name="InteractacleText3D" parent="Objets/PNJs/TicTacToeCharles" unique_id=644921328 instance=ExtResource("10_e8reo")]
 transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0.8627713, 0)
 billboard = 2
-texture = SubResource("ViewportTexture_jye0b")
+texture = SubResource("ViewportTexture_osieg")
 
 [node name="TicTacToeBob" type="Area3D" parent="Objets/PNJs" unique_id=1093194011 node_paths=PackedStringArray("animated_sprite", "text_sprite", "camera_root")]
 transform = Transform3D(-0.8454946, 0, 0.5339834, 0, 1, 0, -0.5339834, 0, -0.8454946, 62.91656, 1.1798171, -98.42564)
@@ -1207,7 +1211,7 @@ shape = SubResource("SphereShape3D_ivwwh")
 [node name="InteractacleText3D" parent="Objets/PNJs/TicTacToeBob" unique_id=1316842840 instance=ExtResource("10_e8reo")]
 transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0.8627713, 0)
 billboard = 2
-texture = SubResource("ViewportTexture_osieg")
+texture = SubResource("ViewportTexture_yc2gj")
 
 [node name="TicTacToeJeffrey" type="Area3D" parent="Objets/PNJs" unique_id=806482794 node_paths=PackedStringArray("animated_sprite", "text_sprite", "camera_root")]
 transform = Transform3D(-0.8454946, 0, 0.5339834, 0, 1, 0, -0.5339834, 0, -0.8454946, 18.425377, 1.4715089, 74.374794)
@@ -1234,7 +1238,7 @@ shape = SubResource("SphereShape3D_ivwwh")
 [node name="InteractacleText3D" parent="Objets/PNJs/TicTacToeJeffrey" unique_id=1523883230 instance=ExtResource("10_e8reo")]
 transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0.8627713, 0)
 billboard = 2
-texture = SubResource("ViewportTexture_yc2gj")
+texture = SubResource("ViewportTexture_pd13m")
 
 [node name="Connect4Ada" type="Area3D" parent="Objets/PNJs" unique_id=230899438 node_paths=PackedStringArray("animated_sprite", "text_sprite", "camera_root")]
 transform = Transform3D(-0.8454946, 0, 0.5339834, 0, 1, 0, -0.5339834, 0, -0.8454946, 7.985673, 1.1798056, 11.015011)
@@ -1261,7 +1265,7 @@ shape = SubResource("SphereShape3D_ivwwh")
 [node name="InteractacleText3D" parent="Objets/PNJs/Connect4Ada" unique_id=1824979055 instance=ExtResource("10_e8reo")]
 transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0.8627713, 0)
 billboard = 2
-texture = SubResource("ViewportTexture_pd13m")
+texture = SubResource("ViewportTexture_dl85h")
 
 [node name="Connect4Noah" type="Area3D" parent="Objets/PNJs" unique_id=618464151 node_paths=PackedStringArray("animated_sprite", "text_sprite", "camera_root")]
 transform = Transform3D(-0.8454946, 0, 0.5339834, 0, 1, 0, -0.5339834, 0, -0.8454946, -33.905834, 1.1798209, 76.95161)
@@ -1288,7 +1292,7 @@ shape = SubResource("SphereShape3D_ivwwh")
 [node name="InteractacleText3D" parent="Objets/PNJs/Connect4Noah" unique_id=52934403 instance=ExtResource("10_e8reo")]
 transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0.8627713, 0)
 billboard = 2
-texture = SubResource("ViewportTexture_dl85h")
+texture = SubResource("ViewportTexture_l2on1")
 
 [node name="Connect4Hannah" type="Area3D" parent="Objets/PNJs" unique_id=270299998 node_paths=PackedStringArray("animated_sprite", "text_sprite", "camera_root")]
 transform = Transform3D(-0.8454946, 0, 0.5339834, 0, 1, 0, -0.5339834, 0, -0.8454946, -58.927517, 1.554305, -91.97762)
@@ -1315,7 +1319,7 @@ shape = SubResource("SphereShape3D_ivwwh")
 [node name="InteractacleText3D" parent="Objets/PNJs/Connect4Hannah" unique_id=1221517501 instance=ExtResource("10_e8reo")]
 transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0.8627713, 0)
 billboard = 2
-texture = SubResource("ViewportTexture_l2on1")
+texture = SubResource("ViewportTexture_lwi55")
 
 [node name="RPCStanley" type="Area3D" parent="Objets/PNJs" unique_id=58193940 node_paths=PackedStringArray("text_sprite")]
 transform = Transform3D(-0.40314606, 0, -0.91513556, 0, 1, 0, 0.91513556, 0, -0.40314606, -37.125057, 1.475202, 38.408195)
@@ -1339,7 +1343,7 @@ shape = SubResource("SphereShape3D_ivwwh")
 [node name="InteractacleText3D" parent="Objets/PNJs/RPCStanley" unique_id=366501995 instance=ExtResource("10_e8reo")]
 transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0.8627713, 0)
 billboard = 2
-texture = SubResource("ViewportTexture_lwi55")
+texture = SubResource("ViewportTexture_6v73m")
 
 [node name="RPCWilly" type="Area3D" parent="Objets/PNJs" unique_id=1278131754 node_paths=PackedStringArray("text_sprite")]
 transform = Transform3D(-0.40314606, 0, -0.91513556, 0, 1, 0, 0.91513556, 0, -0.40314606, -128.14491, 1.475202, 27.691944)
@@ -1363,7 +1367,7 @@ shape = SubResource("SphereShape3D_ivwwh")
 [node name="InteractacleText3D" parent="Objets/PNJs/RPCWilly" unique_id=903367634 instance=ExtResource("10_e8reo")]
 transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0.8627713, 0)
 billboard = 2
-texture = SubResource("ViewportTexture_6v73m")
+texture = SubResource("ViewportTexture_e7jxh")
 
 [node name="RPCBilly" type="Area3D" parent="Objets/PNJs" unique_id=2100176355 node_paths=PackedStringArray("text_sprite")]
 transform = Transform3D(-0.40314606, 0, -0.91513556, 0, 1, 0, 0.91513556, 0, -0.40314606, 84.458984, 1.475202, -13.276165)
@@ -1387,7 +1391,7 @@ shape = SubResource("SphereShape3D_ivwwh")
 [node name="InteractacleText3D" parent="Objets/PNJs/RPCBilly" unique_id=1595881025 instance=ExtResource("10_e8reo")]
 transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0.8627713, 0)
 billboard = 2
-texture = SubResource("ViewportTexture_e7jxh")
+texture = SubResource("ViewportTexture_e6gat")
 
 [node name="RPCRayly" type="Area3D" parent="Objets/PNJs" unique_id=1978183643 node_paths=PackedStringArray("text_sprite")]
 transform = Transform3D(-0.40314606, 0, -0.91513556, 0, 1, 0, 0.91513556, 0, -0.40314606, -2.3926802, 1.475202, -76.505)
@@ -1411,7 +1415,7 @@ shape = SubResource("SphereShape3D_ivwwh")
 [node name="InteractacleText3D" parent="Objets/PNJs/RPCRayly" unique_id=794435408 instance=ExtResource("10_e8reo")]
 transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0.8627713, 0)
 billboard = 2
-texture = SubResource("ViewportTexture_e6gat")
+texture = SubResource("ViewportTexture_1rjro")
 
 [node name="arcade" type="Area3D" parent="Objets/PNJs" unique_id=1975199288 node_paths=PackedStringArray("text_sprite")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38.0685, 2.2850838, -7.5898333)
@@ -1431,7 +1435,7 @@ shape = SubResource("SphereShape3D_ivwwh")
 
 [node name="InteractacleText3D" parent="Objets/PNJs/arcade" unique_id=467142444 instance=ExtResource("10_e8reo")]
 transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0.8773431, 0)
-texture = SubResource("ViewportTexture_1rjro")
+texture = SubResource("ViewportTexture_ieahk")
 
 [node name="boulangerieDebug" type="Area3D" parent="Objets/PNJs" unique_id=341763301 node_paths=PackedStringArray("text_sprite")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 54.481976, 0.73993564, 0.25229335)
@@ -1451,7 +1455,7 @@ shape = SubResource("SphereShape3D_ivwwh")
 
 [node name="InteractacleText3D" parent="Objets/PNJs/boulangerieDebug" unique_id=1253022848 instance=ExtResource("10_e8reo")]
 transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0.86451787, 0)
-texture = SubResource("ViewportTexture_ieahk")
+texture = SubResource("ViewportTexture_e7fmu")
 
 [node name="JoBoss" type="Area3D" parent="Objets/PNJs" unique_id=872440754 node_paths=PackedStringArray("text_sprite")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 46.925915, 0.37960505, -1.1396573)
@@ -1470,7 +1474,7 @@ shape = SubResource("SphereShape3D_jye0b")
 
 [node name="InteractacleText3D" parent="Objets/PNJs/JoBoss" unique_id=2001127438 instance=ExtResource("10_e8reo")]
 transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0.8773431, 0)
-texture = SubResource("ViewportTexture_e7fmu")
+texture = SubResource("ViewportTexture_leq0n")
 
 [node name="Tree" type="Node3D" parent="Objets" unique_id=1912448925]
 transform = Transform3D(0.9510564, 0, -0.309017, 0, 1, 0, 0.309017, 0, 0.9510564, 0.5693767, 0, 3.0004911)
@@ -2254,205 +2258,205 @@ transform = Transform3D(0.9455185, 0, -0.32556814, 0, 1, 0, 0.32556814, 0, 0.945
 [node name="StaticObj" type="Node3D" parent="Objets" unique_id=544645276]
 
 [node name="bench17" parent="Objets/StaticObj" unique_id=1713898993 instance=ExtResource("32_5uot1")]
-transform = Transform3D(1.9508328, 0, -0.18932182, 0, 1.9599993, 0, 0.18932182, 0, 1.9508328, -131.18442, 0.11283463, 18.82343)
+transform = Transform3D(1.3934535, 0, -0.13523002, 0, 1.4, 0, 0.13523002, 0, 1.3934535, -131.18442, 0.11283463, 18.82343)
 
 [node name="bench18" parent="Objets/StaticObj" unique_id=1845993710 instance=ExtResource("32_5uot1")]
-transform = Transform3D(1.9508328, 0, -0.18932182, 0, 1.9599993, 0, 0.18932182, 0, 1.9508328, -130.89159, 0.11283463, 15.801753)
+transform = Transform3D(1.3934535, 0, -0.13523002, 0, 1.4, 0, 0.13523002, 0, 1.3934535, -130.89159, 0.11283463, 15.801753)
 
 [node name="bench19" parent="Objets/StaticObj" unique_id=658176343 instance=ExtResource("32_5uot1")]
-transform = Transform3D(0.98067987, 0, 1.6970142, 0, 1.9599996, 0, -1.6970142, 0, 0.98067987, -122.05177, 0.11283463, 33.936436)
+transform = Transform3D(0.70048654, 0, 1.2121545, 0, 1.4, 0, -1.2121545, 0, 0.70048654, -122.05177, 0.11283463, 33.936436)
 
 [node name="bench20" parent="Objets/StaticObj" unique_id=941372198 instance=ExtResource("32_5uot1")]
-transform = Transform3D(0.98067987, 0, 1.6970142, 0, 1.9599996, 0, -1.6970142, 0, 0.98067987, -124.68047, 0.11283463, 32.417778)
+transform = Transform3D(0.70048654, 0, 1.2121545, 0, 1.4, 0, -1.2121545, 0, 0.70048654, -124.68047, 0.11283463, 32.417778)
 
 [node name="bench21" parent="Objets/StaticObj" unique_id=626844629 instance=ExtResource("32_5uot1")]
-transform = Transform3D(-0.70425195, 0, -1.829103, 0, 1.9599996, 0, 1.829103, 0, -0.70425195, -127.65125, 0.11283463, -19.076584)
+transform = Transform3D(-0.5030378, 0, -1.3065041, 0, 1.4, 0, 1.3065041, 0, -0.5030378, -127.65125, 0.040343463, -19.076584)
 
 [node name="bench22" parent="Objets/StaticObj" unique_id=1532952244 instance=ExtResource("32_5uot1")]
-transform = Transform3D(-0.70425195, 0, -1.829103, 0, 1.9599996, 0, 1.829103, 0, -0.70425195, -124.81798, 0.11283463, -17.98611)
+transform = Transform3D(-0.5030378, 0, -1.3065041, 0, 1.4, 0, 1.3065041, 0, -0.5030378, -124.81798, 0.040343463, -17.98611)
 
 [node name="bench23" parent="Objets/StaticObj" unique_id=1221927663 instance=ExtResource("32_5uot1")]
-transform = Transform3D(0.3689468, 0, 1.9249582, 0, 1.9599993, 0, -1.9249582, 0, 0.3689468, -90.122955, 0.11283463, -44.238895)
+transform = Transform3D(0.26353395, 0, 1.3749725, 0, 1.4, 0, -1.3749725, 0, 0.26353395, -90.12296, -0.04120928, -44.238895)
 
 [node name="bench24" parent="Objets/StaticObj" unique_id=2068521892 instance=ExtResource("32_5uot1")]
-transform = Transform3D(0.38707244, 0, 1.9213954, 0, 1.9599993, 0, -1.9213954, 0, 0.38707244, -98.60953, 0.11283463, -46.01625)
+transform = Transform3D(0.2764809, 0, 1.3724278, 0, 1.4, 0, -1.3724278, 0, 0.2764809, -98.60953, 0.004097879, -46.016254)
 
 [node name="bench26" parent="Objets/StaticObj" unique_id=918467789 instance=ExtResource("32_5uot1")]
-transform = Transform3D(-0.36639318, 0, -1.9254454, 0, 1.9599991, 0, 1.9254454, 0, -0.36639318, -90.33617, 0.11283463, -56.8922)
+transform = Transform3D(-0.26171, 0, -1.375321, 0, 1.4, 0, 1.375321, 0, -0.26171, -90.336174, 0.02222079, -56.892197)
 
 [node name="bench28" parent="Objets/StaticObj" unique_id=833196101 instance=ExtResource("32_5uot1")]
-transform = Transform3D(1.8705112, 0, -0.58546597, 0, 1.9599993, 0, 0.58546597, 0, 1.8705112, -83.332, 0.11283463, -64.24701)
+transform = Transform3D(1.3360825, 0, -0.41819093, 0, 1.4, 0, 0.41819093, 0, 1.3360825, -83.332, 0.031282127, -64.24701)
 
 [node name="bench29" parent="Objets/StaticObj" unique_id=1868197737 instance=ExtResource("32_5uot1")]
-transform = Transform3D(0.6197414, 8.827249e-09, -1.8594358, -5.1812075e-09, 1.9599993, 7.577738e-09, 1.8594358, 2.5193392e-09, 0.6197414, -68.676926, 0.11283463, -92.059944)
+transform = Transform3D(0.44267353, 6.30518e-09, -1.3281716, -3.7008714e-09, 1.4, 5.412684e-09, 1.3281716, 1.7995292e-09, 0.44267353, -68.676926, 0.014922738, -92.059944)
 
 [node name="bench30" parent="Objets/StaticObj" unique_id=1489870158 instance=ExtResource("32_5uot1")]
-transform = Transform3D(0.61974126, 8.827249e-09, -1.8594358, -5.1812075e-09, 1.9599993, 7.577738e-09, 1.8594358, 2.5193392e-09, 0.61974126, -65.79396, 0.11283463, -93.02132)
+transform = Transform3D(0.44267353, 6.305181e-09, -1.3281716, -3.7008718e-09, 1.4, 5.4126854e-09, 1.3281716, 1.7995293e-09, 0.44267353, -65.79397, 0.019818246, -93.021324)
 
 [node name="bench31" parent="Objets/StaticObj" unique_id=1909523854 instance=ExtResource("32_5uot1")]
-transform = Transform3D(-0.3594343, 6.499086e-09, -1.9267555, -5.1812075e-09, 1.9599993, 7.577738e-09, 1.9267555, 6.482998e-09, -0.3594343, 13.701544, 0.11283463, -80.787575)
+transform = Transform3D(-0.25673947, 4.6422044e-09, -1.3762575, -3.700872e-09, 1.4, 5.412684e-09, 1.3762575, 4.6307163e-09, -0.25673947, 13.701545, 0.010027111, -80.787575)
 
 [node name="bench32" parent="Objets/StaticObj" unique_id=520025422 instance=ExtResource("32_5uot1")]
-transform = Transform3D(-0.3594343, 6.499086e-09, -1.9267555, -5.1812075e-09, 1.9599993, 7.577738e-09, 1.9267555, 6.482998e-09, -0.3594343, 16.689125, 0.11283463, -80.23073)
+transform = Transform3D(-0.25673947, 4.6422044e-09, -1.3762575, -3.700872e-09, 1.4, 5.412684e-09, 1.3762575, 4.6307163e-09, -0.25673947, 16.689123, 0.010027111, -80.23073)
 
 [node name="bench33" parent="Objets/StaticObj" unique_id=1923816511 instance=ExtResource("32_5uot1")]
-transform = Transform3D(-0.35943428, 6.499086e-09, -1.9267553, -5.1812075e-09, 1.9599993, 7.577738e-09, 1.9267553, 6.482998e-09, -0.35943428, 28.44877, 0.11283463, -78.49645)
+transform = Transform3D(-0.25673947, 4.642205e-09, -1.3762575, -3.7008725e-09, 1.4, 5.412684e-09, 1.3762575, 4.6307163e-09, -0.25673947, 28.44877, 0.11283463, -78.49645)
 
 [node name="bench34" parent="Objets/StaticObj" unique_id=647704158 instance=ExtResource("32_5uot1")]
-transform = Transform3D(-0.35943428, 6.499086e-09, -1.9267553, -5.1812075e-09, 1.9599993, 7.577738e-09, 1.9267553, 6.482998e-09, -0.35943428, 31.436352, 0.11283463, -77.9396)
+transform = Transform3D(-0.25673947, 4.642205e-09, -1.3762575, -3.7008725e-09, 1.4, 5.412684e-09, 1.3762575, 4.6307163e-09, -0.25673947, 31.436352, 0.11283463, -77.9396)
 
 [node name="bench35" parent="Objets/StaticObj" unique_id=847001329 instance=ExtResource("32_5uot1")]
-transform = Transform3D(1.7972281, 7.77439e-09, -0.7820169, -5.181208e-09, 1.9599996, 7.57774e-09, 0.7820169, -4.8812163e-09, 1.7972281, 34.892166, 0.11283463, -82.12236)
+transform = Transform3D(1.2837378, 5.5531393e-09, -0.558585, -3.7008727e-09, 1.4, 5.412684e-09, 0.558585, -3.4865821e-09, 1.2837378, 34.892166, 0.11283463, -82.12236)
 
 [node name="bench36" parent="Objets/StaticObj" unique_id=700779817 instance=ExtResource("32_5uot1")]
-transform = Transform3D(1.7972281, 7.77439e-09, -0.7820169, -5.181208e-09, 1.9599996, 7.57774e-09, 0.7820169, -4.8812163e-09, 1.7972281, 36.104294, 0.11283463, -84.90921)
+transform = Transform3D(1.2837378, 5.5531393e-09, -0.558585, -3.7008727e-09, 1.4, 5.412684e-09, 0.558585, -3.4865821e-09, 1.2837378, 36.104294, 0.11283463, -84.90921)
 
 [node name="bench37" parent="Objets/StaticObj" unique_id=384254374 instance=ExtResource("32_5uot1")]
-transform = Transform3D(-1.8306082, -7.546783e-09, 0.7003229, -5.181208e-09, 1.9599993, 7.577739e-09, -0.7003229, 5.226226e-09, -1.8306082, 61.797062, 0.11283463, -98.3571)
+transform = Transform3D(-1.307581, -5.390563e-09, 0.5002321, -3.7008727e-09, 1.4, 5.4126827e-09, -0.5002321, 3.733018e-09, -1.307581, 61.797062, 0.11283463, -98.3571)
 
 [node name="bench38" parent="Objets/StaticObj" unique_id=1355097717 instance=ExtResource("32_5uot1")]
-transform = Transform3D(-1.8306082, -7.546783e-09, 0.7003229, -5.181208e-09, 1.9599993, 7.577739e-09, -0.7003229, 5.226226e-09, -1.8306082, 60.711613, 0.11283463, -95.5185)
+transform = Transform3D(-1.307581, -5.390563e-09, 0.5002321, -3.7008727e-09, 1.4, 5.4126827e-09, -0.5002321, 3.733018e-09, -1.307581, 60.711613, 0.11283463, -95.5185)
 
 [node name="bench39" parent="Objets/StaticObj" unique_id=1556746975 instance=ExtResource("32_5uot1")]
-transform = Transform3D(1.8463354, 7.4237247e-09, -0.6577408, -5.1812084e-09, 1.9599996, 7.57774e-09, 0.6577408, -5.3995963e-09, 1.8463354, 43.83809, 0.11283463, -105.87835)
+transform = Transform3D(1.3188149, 5.3026668e-09, -0.46981624, -3.700874e-09, 1.4, 5.4126814e-09, 0.46981624, -3.856853e-09, 1.3188149, 43.83809, 0.11283463, -105.87835)
 
 [node name="bench40" parent="Objets/StaticObj" unique_id=632742399 instance=ExtResource("32_5uot1")]
-transform = Transform3D(1.8463354, 7.4237247e-09, -0.6577408, -5.1812084e-09, 1.9599996, 7.57774e-09, 0.6577408, -5.3995963e-09, 1.8463354, 44.8575, 0.11283463, -108.74133)
+transform = Transform3D(1.3188149, 5.3026668e-09, -0.46981624, -3.700874e-09, 1.4, 5.4126814e-09, 0.46981624, -3.856853e-09, 1.3188149, 44.8575, 0.11283463, -108.74133)
 
 [node name="bench43" parent="Objets/StaticObj" unique_id=1619007286 instance=ExtResource("32_5uot1")]
-transform = Transform3D(-1.8231863, -7.601002e-09, 0.71942204, -5.1812075e-09, 1.9599993, 7.577739e-09, -0.71942204, 5.1470437e-09, -1.8231863, 148.46037, 0.11283463, -45.540646)
+transform = Transform3D(-1.3022798, -5.429295e-09, 0.51387453, -3.700874e-09, 1.4, 5.4126814e-09, -0.51387453, 3.6764582e-09, -1.3022798, 148.46037, 0.11283463, -45.540646)
 
 [node name="bench45" parent="Objets/StaticObj" unique_id=1495266305 instance=ExtResource("32_5uot1")]
-transform = Transform3D(-0.5927409, 5.6560245e-09, -1.8682169, -5.1812092e-09, 1.9599996, 7.577739e-09, 1.8682169, 7.2302653e-09, -0.5927409, 18.037058, 0.11283463, 116.06904)
+transform = Transform3D(-0.42338768, 4.0400154e-09, -1.3344448, -3.7008752e-09, 1.4, 5.412683e-09, 1.3344448, 5.1644835e-09, -0.42338768, 18.037058, 0.11283463, 116.06904)
 
 [node name="bench46" parent="Objets/StaticObj" unique_id=497117518 instance=ExtResource("32_5uot1")]
-transform = Transform3D(0.5066891, 8.6595895e-09, -1.8933675, -5.181209e-09, 1.9599996, 7.5777375e-09, 1.8933675, 3.046121e-09, 0.5066891, 27.855368, 0.11283654, 116.74499)
+transform = Transform3D(0.3619219, 6.185424e-09, -1.3524098, -3.7008758e-09, 1.4, 5.4126827e-09, 1.3524098, 2.175809e-09, 0.3619219, 27.855368, 0.11283654, 116.74499)
 
 [node name="bench49" parent="Objets/StaticObj" unique_id=1843633629 instance=ExtResource("32_5uot1")]
-transform = Transform3D(0.60661465, 8.809261e-09, -1.8637573, -5.181209e-09, 1.9599996, 7.5777375e-09, 1.8637573, 2.5815117e-09, 0.60661465, 44.56524, 0.11283463, 102.208496)
+transform = Transform3D(0.43329778, 6.2923338e-09, -1.33126, -3.7008765e-09, 1.4, 5.4126814e-09, 1.33126, 1.843947e-09, 0.43329778, 44.56524, 0.11283463, 102.208496)
 
 [node name="bench66" parent="Objets/StaticObj" unique_id=662258670 instance=ExtResource("32_5uot1")]
-transform = Transform3D(-1.0371867, -9.171587e-09, 1.663074, -5.1812075e-09, 1.9599996, 7.577737e-09, -1.663074, -3.8632253e-10, -1.0371867, 89.09768, 0.11283463, 121.02318)
+transform = Transform3D(-0.74085045, -6.5511414e-09, 1.1879144, -3.700876e-09, 1.4, 5.412681e-09, -1.1879144, -2.7595476e-10, -0.74085045, 89.09768, 0.11283463, 121.02318)
 
 [node name="bench47" parent="Objets/StaticObj" unique_id=817165095 instance=ExtResource("32_5uot1")]
-transform = Transform3D(-1.5699198, -8.686771e-09, 1.1734246, -5.181209e-09, 1.9599996, 7.5777375e-09, -1.1734246, 2.967714e-09, -1.5699198, 43.457405, 0.11283845, 120.31287)
+transform = Transform3D(-1.1213751, -6.204844e-09, 0.8381634, -3.700876e-09, 1.4, 5.4126823e-09, -0.8381634, 2.1197917e-09, -1.1213751, 43.457405, 0.11283845, 120.31287)
 
 [node name="bench48" parent="Objets/StaticObj" unique_id=1867924636 instance=ExtResource("32_5uot1")]
-transform = Transform3D(-1.4261013, -8.968188e-09, 1.3445477, -5.181209e-09, 1.9599996, 7.5777375e-09, -1.3445477, 1.9593198e-09, -1.4261013, 36.259197, 0.11283463, 129.37497)
+transform = Transform3D(-1.0186473, -6.405856e-09, 0.96039456, -3.700876e-09, 1.4, 5.4126823e-09, -0.96039456, 1.3995091e-09, -1.0186473, 36.259197, 0.11283463, 129.37497)
 
 [node name="bench44" parent="Objets/StaticObj" unique_id=575600808 instance=ExtResource("32_5uot1")]
-transform = Transform3D(-1.8093941, -7.696055e-09, 0.75343746, -5.181209e-09, 1.9599996, 7.57774e-09, -0.75343746, 5.0038027e-09, -1.8093941, 144.4702, 0.11283463, -35.54693)
+transform = Transform3D(-1.2924286, -5.4971916e-09, 0.5381715, -3.7008756e-09, 1.4, 5.4126823e-09, -0.5381715, 3.574142e-09, -1.2924286, 144.4702, -0.00955528, -35.54692)
 
 [node name="bench41" parent="Objets/StaticObj" unique_id=1949627046 instance=ExtResource("32_5uot1")]
-transform = Transform3D(1.8463352, 7.4237247e-09, -0.6577408, -5.1812084e-09, 1.9599996, 7.57774e-09, 0.6577408, -5.3995963e-09, 1.8463352, 38.943645, 0.11283463, -91.91885)
+transform = Transform3D(1.3188149, 5.302667e-09, -0.46981624, -3.7008743e-09, 1.4, 5.4126823e-09, 0.46981624, -3.8568535e-09, 1.3188149, 38.943645, 0.11283463, -91.91885)
 
 [node name="bench42" parent="Objets/StaticObj" unique_id=373683990 instance=ExtResource("32_5uot1")]
-transform = Transform3D(1.8463352, 7.4237247e-09, -0.6577408, -5.1812084e-09, 1.9599996, 7.57774e-09, 0.6577408, -5.3995963e-09, 1.8463352, 39.963047, 0.11283463, -94.78182)
+transform = Transform3D(1.3188149, 5.302667e-09, -0.46981624, -3.7008743e-09, 1.4, 5.4126823e-09, 0.46981624, -3.8568535e-09, 1.3188149, 39.963047, 0.11283463, -94.78182)
 
 [node name="bench27" parent="Objets/StaticObj" unique_id=80724169 instance=ExtResource("32_5uot1")]
-transform = Transform3D(-0.36639315, 0, -1.9254453, 0, 1.9599991, 0, 1.9254453, 0, -0.36639315, -99.69522, 0.11283463, -58.44273)
+transform = Transform3D(-0.26171, 0, -1.375321, 0, 1.4, 0, 1.375321, 0, -0.26171, -99.69521, 0.013159215, -58.44273)
 
 [node name="bench25" parent="Objets/StaticObj" unique_id=1017651033 instance=ExtResource("32_5uot1")]
-transform = Transform3D(0.087168574, 0, 1.9580566, 0, 1.9599993, 0, -1.9580566, 0, 0.087168574, -80.935585, 0.11283463, -42.58853)
+transform = Transform3D(0.06226334, 0, 1.3986146, 0, 1.4, 0, -1.3986146, 0, 0.06226334, -80.935585, 0.004097879, -42.58853)
 
 [node name="bench" parent="Objets/StaticObj" unique_id=2005540670 instance=ExtResource("32_5uot1")]
-transform = Transform3D(0.45586455, 0, 1.3237013, 0, 1.3999997, 0, -1.3237013, 0, 0.45586455, -20.545357, 0.04701443, 21.539997)
+transform = Transform3D(0.45586482, 0, 1.3237021, 0, 1.4, 0, -1.3237021, 0, 0.45586482, -20.545357, 0.04701443, 21.539997)
 
 [node name="bench2" parent="Objets/StaticObj" unique_id=277956452 instance=ExtResource("32_5uot1")]
-transform = Transform3D(0.45586455, 0, 1.3237013, 0, 1.3999997, 0, -1.3237013, 0, 0.45586455, -22.595732, 0.04701443, 20.834179)
+transform = Transform3D(0.45586482, 0, 1.3237021, 0, 1.4, 0, -1.3237021, 0, 0.45586482, -22.595732, 0.04701443, 20.834179)
 
 [node name="bench3" parent="Objets/StaticObj" unique_id=1462772059 instance=ExtResource("32_5uot1")]
-transform = Transform3D(0.496487, 0, 1.3090068, 0, 1.3999997, 0, -1.3090068, 0, 0.496487, -11.229576, 0.04701443, 24.975307)
+transform = Transform3D(0.49648723, 0, 1.3090074, 0, 1.4, 0, -1.3090074, 0, 0.49648723, -11.229576, 0.04701443, 24.975307)
 
 [node name="bench4" parent="Objets/StaticObj" unique_id=1089040828 instance=ExtResource("32_5uot1")]
-transform = Transform3D(0.496487, 0, 1.3090068, 0, 1.3999997, 0, -1.3090068, 0, 0.496487, -13.257199, 0.04701443, 24.206566)
+transform = Transform3D(0.49648723, 0, 1.3090074, 0, 1.4, 0, -1.3090074, 0, 0.49648723, -13.257199, 0.04701443, 24.206566)
 
 [node name="bench5" parent="Objets/StaticObj" unique_id=1277115661 instance=ExtResource("32_5uot1")]
-transform = Transform3D(-1.309084, 0, 0.49628133, 0, 1.3999999, 0, -0.49628133, 0, -1.309084, 16.91855, 0.04701443, 80.46676)
+transform = Transform3D(-1.3090852, 0, 0.4962818, 0, 1.4, 0, -0.4962818, 0, -1.3090852, 16.91855, 0.04701443, 80.46676)
 
 [node name="bench12" parent="Objets/StaticObj" unique_id=851525476 instance=ExtResource("32_5uot1")]
-transform = Transform3D(-1.309084, 0, 0.49628133, 0, 1.3999999, 0, -0.49628133, 0, -1.309084, 16.150135, 0.04701443, 82.4945)
+transform = Transform3D(-1.3090852, 0, 0.4962818, 0, 1.4, 0, -0.4962818, 0, -1.3090852, 16.150135, 0.04701443, 82.4945)
 
 [node name="bench13" parent="Objets/StaticObj" unique_id=610668999 instance=ExtResource("32_5uot1")]
-transform = Transform3D(-1.2931498, 0, 0.5364335, 0, 1.3999996, 0, -0.5364335, 0, -1.2931498, 20.638197, 0.04701443, 71.26082)
+transform = Transform3D(-1.2931508, 0, 0.5364337, 0, 1.4, 0, -0.5364337, 0, -1.2931508, 20.638197, 0.04701443, 71.26082)
 
 [node name="bench14" parent="Objets/StaticObj" unique_id=266388049 instance=ExtResource("32_5uot1")]
-transform = Transform3D(-1.2931498, 0, 0.5364335, 0, 1.3999996, 0, -0.5364335, 0, -1.2931498, 19.807579, 0.04701443, 73.263885)
+transform = Transform3D(-1.2931508, 0, 0.5364337, 0, 1.4, 0, -0.5364337, 0, -1.2931508, 19.807579, 0.04701443, 73.263885)
 
 [node name="bench6" parent="Objets/StaticObj" unique_id=647635829 instance=ExtResource("32_5uot1")]
-transform = Transform3D(-0.61459756, 0, -1.2578822, 0, 1.3999997, 0, 1.2578822, 0, -0.61459756, 16.710783, 0.04701443, 22.094753)
+transform = Transform3D(-0.61459786, 0, -1.257883, 0, 1.4, 0, 1.257883, 0, -0.61459786, 16.710783, 0.04701443, 22.094753)
 
 [node name="bench7" parent="Objets/StaticObj" unique_id=1251300636 instance=ExtResource("32_5uot1")]
-transform = Transform3D(-0.61459756, 0, -1.2578822, 0, 1.3999997, 0, 1.2578822, 0, -0.61459756, 18.65924, 0.04701443, 23.046444)
+transform = Transform3D(-0.61459786, 0, -1.257883, 0, 1.4, 0, 1.257883, 0, -0.61459786, 18.65924, 0.04701443, 23.046444)
 
 [node name="bench8" parent="Objets/StaticObj" unique_id=970347565 instance=ExtResource("32_5uot1")]
-transform = Transform3D(-0.61459756, 0, -1.257882, 0, 1.3999997, 0, 1.257882, 0, -0.61459756, 7.372039, 0.04701443, 17.623278)
+transform = Transform3D(-0.61459786, 0, -1.257883, 0, 1.4, 0, 1.257883, 0, -0.61459786, 7.372039, 0.04701443, 17.623278)
 
 [node name="bench10" parent="Objets/StaticObj" unique_id=1410140496 instance=ExtResource("32_5uot1")]
-transform = Transform3D(-1.2938884, 0, 0.5346502, 0, 1.3999999, 0, -0.5346502, 0, -1.2938884, 9.949246, 0.047010615, 5.0993004)
+transform = Transform3D(-1.2938889, 0, 0.53465056, 0, 1.4, 0, -0.53465056, 0, -1.2938889, 9.949246, 0.010765031, 5.0993004)
 
 [node name="bench11" parent="Objets/StaticObj" unique_id=354312340 instance=ExtResource("32_5uot1")]
-transform = Transform3D(1.2696551, 0, -0.58989304, 0, 1.3999997, 0, 0.58989304, 0, 1.2696551, -0.82181585, 0.047010615, 6.734064)
+transform = Transform3D(1.2696557, 0, -0.5898932, 0, 1.4, 0, 0.5898932, 0, 1.2696557, -0.82181585, -0.025480554, 6.734064)
 
 [node name="bench9" parent="Objets/StaticObj" unique_id=1661518836 instance=ExtResource("32_5uot1")]
-transform = Transform3D(-0.61459756, 0, -1.257882, 0, 1.3999997, 0, 1.257882, 0, -0.61459756, 9.320498, 0.04701443, 18.574966)
+transform = Transform3D(-0.61459786, 0, -1.257883, 0, 1.4, 0, 1.257883, 0, -0.61459786, 9.320498, 0.04701443, 18.574966)
 
 [node name="bench15" parent="Objets/StaticObj" unique_id=51748972 instance=ExtResource("32_5uot1")]
-transform = Transform3D(0.5947416, 0, 1.2673908, 0, 1.3999999, 0, -1.2673908, 0, 0.5947416, -59.7232, 0.04701443, 80.612595)
+transform = Transform3D(0.59474206, 0, 1.2673917, 0, 1.4, 0, -1.2673917, 0, 0.59474206, -59.7232, 0.04701443, 80.612595)
 
 [node name="bench67" parent="Objets/StaticObj" unique_id=1866299751 instance=ExtResource("32_5uot1")]
-transform = Transform3D(0.5947416, 0, 1.2673908, 0, 1.3999999, 0, -1.2673908, 0, 0.5947416, -23.463398, 0.04701443, 97.14259)
+transform = Transform3D(0.59474206, 0, 1.2673917, 0, 1.4, 0, -1.2673917, 0, 0.59474206, -23.463398, 0.04701443, 97.14259)
 
 [node name="bench50" parent="Objets/StaticObj" unique_id=500603319 instance=ExtResource("32_5uot1")]
-transform = Transform3D(-1.2819655, 0, 0.5626365, 0, 1.3999999, 0, -0.5626365, 0, -1.2819655, 54.47232, 0.04701419, -8.433552)
+transform = Transform3D(-1.281967, 0, 0.56263703, 0, 1.4, 0, -0.56263703, 0, -1.281967, 54.47232, 0.04701419, -8.433552)
 
 [node name="bench51" parent="Objets/StaticObj" unique_id=217745546 instance=ExtResource("32_5uot1")]
-transform = Transform3D(-0.6027363, 0, -1.2636067, 0, 1.3999997, 0, 1.2636067, 0, -0.6027363, 61.596085, 0.04701419, -1.7580729)
+transform = Transform3D(-0.60273725, 0, -1.263609, 0, 1.4, 0, 1.263609, 0, -0.60273725, 61.596085, 0.04701419, -1.7580729)
 
 [node name="bench52" parent="Objets/StaticObj" unique_id=1651900358 instance=ExtResource("32_5uot1")]
-transform = Transform3D(-0.69586843, 0, 1.2148085, 0, 1.3999999, 0, -1.2148085, 0, -0.69586843, 87.12401, 0.04701419, -3.8363123)
+transform = Transform3D(-0.69586986, 0, 1.2148107, 0, 1.4, 0, -1.2148107, 0, -0.69586986, 87.12401, 0.04701419, -3.8363123)
 
 [node name="bench53" parent="Objets/StaticObj" unique_id=2027292499 instance=ExtResource("32_5uot1")]
-transform = Transform3D(-0.46951646, 0, 1.318919, 0, 1.4, 0, -1.318919, 0, -0.46951646, 95.514534, 0.04701419, -7.5091677)
+transform = Transform3D(-0.4695173, 0, 1.3189213, 0, 1.4, 0, -1.3189213, 0, -0.4695173, 95.514534, 0.04701419, -7.5091677)
 
 [node name="bench54" parent="Objets/StaticObj" unique_id=1523422314 instance=ExtResource("32_5uot1")]
-transform = Transform3D(0.61880875, 0, -1.2558136, 0, 1.4, 0, 1.2558136, 0, 0.61880875, 92.97268, 0.04701419, -20.226646)
+transform = Transform3D(0.61881, 0, -1.2558161, 0, 1.4, 0, 1.2558161, 0, 0.61881, 92.97268, 0.04701419, -20.226646)
 
 [node name="bench55" parent="Objets/StaticObj" unique_id=600500227 instance=ExtResource("32_5uot1")]
-transform = Transform3D(0.61880875, 0, -1.2558136, 0, 1.4, 0, 1.2558136, 0, 0.61880875, 100.34131, 0.04701419, -22.867203)
+transform = Transform3D(0.61881, 0, -1.2558161, 0, 1.4, 0, 1.2558161, 0, 0.61881, 100.34131, 0.04701419, -22.867203)
 
 [node name="bench56" parent="Objets/StaticObj" unique_id=835648729 instance=ExtResource("32_5uot1")]
-transform = Transform3D(1.2136412, 0, -0.69790226, 0, 1.4000001, 0, 0.69790226, 0, 1.2136412, 73.691315, 0.04701419, -3.386283)
+transform = Transform3D(1.2136436, 0, -0.69790363, 0, 1.4, 0, 0.69790363, 0, 1.2136436, 73.691315, 0.04701419, -3.386283)
 
 [node name="bench57" parent="Objets/StaticObj" unique_id=1202345664 instance=ExtResource("32_5uot1")]
-transform = Transform3D(0.6037944, 0, 1.263101, 0, 1.4000001, 0, -1.263101, 0, 0.6037944, 70.48654, 0.04701419, 17.061668)
+transform = Transform3D(0.6037957, 0, 1.2631036, 0, 1.4, 0, -1.2631036, 0, 0.6037957, 70.486534, 0.0017072707, 17.061668)
 
 [node name="bench58" parent="Objets/StaticObj" unique_id=1144138161 instance=ExtResource("32_5uot1")]
-transform = Transform3D(0.6037944, 0, 1.263101, 0, 1.4000001, 0, -1.263101, 0, 0.6037944, 33.08903, 0.04701419, 0.2570591)
+transform = Transform3D(0.6037957, 0, 1.2631036, 0, 1.4, 0, -1.2631036, 0, 0.6037957, 33.08903, 0.04701419, 0.2570591)
 
 [node name="bench59" parent="Objets/StaticObj" unique_id=1847833166 instance=ExtResource("32_5uot1")]
-transform = Transform3D(1.3703065, 0, -0.28679585, 0, 1.4, 0, 0.28679585, 0, 1.3703065, 45.974194, 0.04701419, -30.873158)
+transform = Transform3D(1.3703094, 0, -0.28679648, 0, 1.4, 0, 0.28679648, 0, 1.3703094, 45.974194, 0.04701419, -30.873158)
 
 [node name="bench60" parent="Objets/StaticObj" unique_id=1471704808 instance=ExtResource("32_5uot1")]
-transform = Transform3D(1.3703065, 0, -0.28679585, 0, 1.4, 0, 0.28679585, 0, 1.3703065, 41.077557, 0.04701419, -12.872121)
+transform = Transform3D(1.3703094, 0, -0.28679648, 0, 1.4, 0, 0.28679648, 0, 1.3703094, 41.077557, 0.04701419, -12.872121)
 
 [node name="bench61" parent="Objets/StaticObj" unique_id=270273621 instance=ExtResource("32_5uot1")]
-transform = Transform3D(0.47257614, 0, 1.3178252, 0, 1.4000001, 0, -1.3178252, 0, 0.47257614, 45.86404, 0.04701419, -53.993423)
+transform = Transform3D(0.47257715, 0, 1.317828, 0, 1.4, 0, -1.317828, 0, 0.47257715, 45.86404, 0.04701419, -53.993423)
 
 [node name="bench62" parent="Objets/StaticObj" unique_id=735692901 instance=ExtResource("32_5uot1")]
-transform = Transform3D(0.48343903, 0, 1.3138789, 0, 1.4000001, 0, -1.3138789, 0, 0.48343903, 47.906715, 0.04701419, -53.251057)
+transform = Transform3D(0.4834401, 0, 1.313882, 0, 1.4, 0, -1.313882, 0, 0.4834401, 47.906715, 0.04701419, -53.251057)
 
 [node name="bench63" parent="Objets/StaticObj" unique_id=521522948 instance=ExtResource("32_5uot1")]
-transform = Transform3D(-1.3234365, 0, 0.45662576, 0, 1.4000002, 0, -0.45662576, 0, -1.3234365, 56.049313, 0.04701419, -69.41414)
+transform = Transform3D(-1.3234394, 0, 0.45662686, 0, 1.4, 0, -0.45662686, 0, -1.3234394, 56.049313, 0.04701419, -69.41414)
 
 [node name="bench64" parent="Objets/StaticObj" unique_id=348890670 instance=ExtResource("32_5uot1")]
-transform = Transform3D(-1.3196217, 0, 0.46753561, 0, 1.4, 0, -0.46753561, 0, -1.3196217, 56.76696, 0.04701419, -71.46563)
+transform = Transform3D(-1.3196247, 0, 0.4675368, 0, 1.4, 0, -0.4675368, 0, -1.3196247, 56.76696, 0.04701419, -71.46563)
 
 [node name="bench65" parent="Objets/StaticObj" unique_id=136013838 instance=ExtResource("32_5uot1")]
-transform = Transform3D(-0.522884, 0, -1.2986852, 0, 1.4000001, 0, 1.2986852, 0, -0.522884, 56.247227, 0.047015145, -75.14911)
+transform = Transform3D(-0.5228852, 0, -1.2986882, 0, 1.4, 0, 1.2986882, 0, -0.5228852, 56.247227, 0.047015145, -75.14911)
 
 [node name="bench16" parent="Objets/StaticObj" unique_id=938564943 instance=ExtResource("32_5uot1")]
-transform = Transform3D(0.5947416, 0, 1.2673908, 0, 1.3999999, 0, -1.2673908, 0, 0.5947416, -72.29632, 0.04701443, 74.76662)
+transform = Transform3D(0.59474206, 0, 1.2673917, 0, 1.4, 0, -1.2673917, 0, 0.59474206, -72.29632, 0.04701443, 74.76662)
 
 [node name="ShaderCanvasLayer" type="CanvasLayer" parent="." unique_id=1482458820]
 
@@ -2479,7 +2483,7 @@ shader_properties = Dictionary[String, Array]({
 "brightness": [0.0, -0.1, SubResource("Curve_ivwwh")],
 "colorLevels": [Vector3(10, 20, 20), Vector3(1, 5, 5), SubResource("Curve_e0nlv")],
 "contrast": [0.75, 2.0, SubResource("Curve_e0nlv")],
-"desaturation": [1.0, 2.0, SubResource("Curve_e0nlv")],
+"desaturation": [1.0, 2.0, SubResource("Curve_5uot1")],
 "displacementStrength": [0.0, 0.005, SubResource("Curve_5f2gp")],
 "ditherSpeed": [Vector2(0, 0), Vector2(0, 3), SubResource("Curve_lpsds")],
 "noiseStrength": [0.0, 0.05, SubResource("Curve_clt24")],

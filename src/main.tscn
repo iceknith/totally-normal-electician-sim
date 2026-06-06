@@ -31,11 +31,11 @@ _bundled = {
 }
 
 [sub_resource type="Curve" id="Curve_gh0ne"]
-_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.2532751, 0), 0.0, 0.0, 0, 0, Vector2(0.5, 0.005), 0.0, 0.0, 0, 0, Vector2(0.7838428, 0.19084913), 1.5256113, 1.5256113, 0, 0, Vector2(1, 1), 2.47858, 0.0, 0, 0]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.2532751, 0), 0.0, 0.0, 0, 0, Vector2(0.5, 0.005), 0.0, 0.0, 0, 0, Vector2(0.9068322, 0.25065506), 1.9518876, 1.9518876, 0, 0, Vector2(1, 1), 2.47858, 0.0, 0, 0]
 point_count = 5
 
 [sub_resource type="Curve" id="Curve_5q4o7"]
-_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.24206349, 0), 0.0, 0.0, 0, 0, Vector2(0.79694325, 0.18013185), 0.889271, 0.889271, 0, 0, Vector2(1, 1), 3.5207047, 0.0, 0, 0]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.24206349, 0), 0.0, 0.0, 0, 0, Vector2(0.85962725, 0.19388646), 0.889271, 0.889271, 0, 0, Vector2(1, 1), 3.5207047, 0.0, 0, 0]
 point_count = 4
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_gh0ne"]
@@ -58,7 +58,7 @@ metadata/_snap_enabled = true
 [node name="Main" type="Node3D" unique_id=1571594318]
 script = ExtResource("1_gh0ne")
 settings_scene = SubResource("PackedScene_kf8lf")
-end_of_world_max_time_mins = 1000.0
+end_of_world_max_time_mins = 30.0
 mouse_jitter_speed = 150.0
 mouse_jitter_intensity = Vector2(500, 500)
 camera_jitter_amount = 1.0
@@ -75,7 +75,6 @@ tempo_curve = SubResource("Curve_kmhfv")
 [node name="HUD" type="CanvasLayer" parent="." unique_id=410458702]
 
 [node name="GameOverlay" parent="HUD" unique_id=1667571156 instance=ExtResource("3_5q4o7")]
-visible = false
 
 [node name="Minigames" type="Control" parent="HUD" unique_id=1934620589]
 layout_mode = 3

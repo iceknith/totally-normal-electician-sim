@@ -15,8 +15,15 @@ func _ready() -> void:
 
 func start_interaction():
 	GlobalVars.ducks += 1
-	if GlobalVars.ducks >= GlobalVars.max_ducks:
-		title = "quest_end"
+	var temp_title:String = title
+	if GlobalVars.ducks == int(GlobalVars.max_ducks*1/4):
+		temp_title = "quest_1/4"
+	elif GlobalVars.ducks == int(GlobalVars.max_ducks/2):
+		temp_title = "quest_1/2"
+	if GlobalVars.ducks == int(GlobalVars.max_ducks*3/4):
+		temp_title = "quest_3/4"
+	elif GlobalVars.ducks >= GlobalVars.max_ducks:
+		temp_title = "quest_end"
 	super()
 	MainCommunicator.send_signal_to_main(MainCommunicator.SignalType.ELEM_DELETED, self)
 	queue_free.call_deferred()

@@ -7,8 +7,8 @@
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_41h8g"]
 
 [sub_resource type="Curve" id="Curve_bxhrw"]
-_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.9247136, 0.49461734), 1.5201889, 1.5201889, 0, 0, Vector2(1, 1), 2.0359712, 0.0, 0, 0]
-point_count = 3
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.6861575, 0.12430936), 0.46298298, 0.46298298, 0, 0, Vector2(0.9522673, 0.5055248), 4.02065, 4.02065, 0, 0, Vector2(1, 1), 2.0359712, 0.0, 0, 0]
+point_count = 4
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hr7rh"]
 resource_name = "Material"

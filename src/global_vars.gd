@@ -5,6 +5,7 @@ extends Node
 ###############
 
 var eow_meter:float
+var eow_max_time_s:float
 
 ##############
 ### Towers ###

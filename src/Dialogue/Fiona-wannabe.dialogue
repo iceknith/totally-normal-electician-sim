@@ -4,6 +4,12 @@ Fiona: Good morning, sir !
 - Hey
 => fiona_main
 
+~ start50
+Fiona: Good afternoon, sir !
+- Good afternoon
+- Hey
+=> fiona_main
+
 ~ fiona_main
 Fiona: I'm sorry I can't help you with all these towers.
 - It's okay, you'll get your licence later...
@@ -37,5 +43,19 @@ else:
 
 ~ fiona_wait
 Fiona: ... So... What do you want to do now ?
-Fiona: 
+- We can wait, to truly appreciate each others presence
+	while true:
+		[wait=3]
+		Fiona: ... sooo... Did we wait enough ?
+		- No, not yet
+		- Yeah
+			Fiona: It was really nice waiting around with you !
+			Fiona: Maybe wa can do that another time ?
+			=> END
+- Do you want to play tic tac toe ?
+	Fiona: Yeaaah
+	$> MainCommunicator.send_signal_to_main(MainCommunicator.SignalType.ADD_MINIGAME, [load("res://src/minigames/tic_tac_toe/tic_tac_toe.tscn"), {"computer_playstyle":1}])
+- Do you want to play connect 4 ?
+	Fiona: I am really bad, tho
+	$> MainCommunicator.send_signal_to_main(MainCommunicator.SignalType.ADD_MINIGAME, [load("res://src/minigames/connect4/connect_4.tscn"), {"computer_playstyle":1}])
 => END
