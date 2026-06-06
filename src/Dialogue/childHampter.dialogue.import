@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://77plvkjpnt6w"
+path="res://.godot/imported/childHampter.dialogue-890509a8ce5afbd36dee27c0899c4be6.tres"
+
+[deps]
+
+source_file="res://src/Dialogue/childHampter.dialogue"
+dest_files=["res://.godot/imported/childHampter.dialogue-890509a8ce5afbd36dee27c0899c4be6.tres"]
+
+[params]
+
+defaults=true

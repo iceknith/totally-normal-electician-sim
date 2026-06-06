@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://dk61x5fja7yub"
+path="res://.godot/imported/Tic.dialogue-2f065e9fe5b96976bc563bf57137799c.tres"
+
+[deps]
+
+source_file="res://src/Dialogue/Tic.dialogue"
+dest_files=["res://.godot/imported/Tic.dialogue-2f065e9fe5b96976bc563bf57137799c.tres"]
+
+[params]
+
+defaults=true

@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://but6c0oyklce5"
+path="res://.godot/imported/bibi.dialogue-9ea89898be3045855a7bc62d83912e7e.tres"
+
+[deps]
+
+source_file="res://src/Dialogue/bibi.dialogue"
+dest_files=["res://.godot/imported/bibi.dialogue-9ea89898be3045855a7bc62d83912e7e.tres"]
+
+[params]
+
+defaults=true

@@ -1,0 +1,124 @@
+~ start
+$> title = "start_other"
+$> GlobalVars.post_visits += 1
+Whitney: Welcome to... Oh... It's you again
+- Again ?
+	Whitney: True, it's the first time I see you... today...
+- Good morning
+=> main
+
+~ start50
+$> title = "start_other"
+$> GlobalVars.post_visits += 1
+Whitney: Welcome to... Oh... It's you again
+- Again ?
+	Whitney: True, it's the first time I see you... today...
+- Good afternoon
+=> main
+
+~ start70
+$> title = "start_other"
+$> GlobalVars.post_visits += 1
+Whitney: [speed=1.5][font_size=10] No, I said it for the thousandth time, I will not shoot no one...
+Whitney: Welcome to... Oh... It's you again
+- Again ?
+	Whitney: True, it's the first time I see you... today...
+- Good afternoon
+=> main
+
+~ start_other
+$> GlobalVars.post_visits += 1
+if GlobalVars.post_visits >= GlobalVars.max_post_visits:
+	=> bad_end
+%1 Whitney: Welcome... AAAAND it's you again !?!
+%1 Whitney: Welcome... Why is it you again ?!?
+- Again ?
+	Whitney: True, it's the first time I see you... TODAY
+	Whitney: You have come to my office EVRY SINGLE DAY FOR A MONTH
+- Good morning
+=> END
+
+~ start_other50
+$> GlobalVars.post_visits += 1
+if GlobalVars.post_visits >= GlobalVars.max_post_visits:
+	=> bad_end
+%1 Whitney: Welcome... AAAAND it's you again !?!
+%1 Whitney: Welcome... Why is it you again ?!?
+- Again ?
+	Whitney: True, it's the first time I see you... TODAY
+	Whitney: You have come to my office EVRY SINGLE DAY FOR A MONTH
+- Good afternoon
+=> END
+
+~ start_other70
+$> GlobalVars.post_visits += 1
+Whitney: [speed=1.5][font_size=10] No, I said it for the thousandth time, I will not shoot no one...
+%1 Whitney: Welcome... AAAAND it's you again !?!
+%1 Whitney: Welcome... Why is it you again ?!?
+- Again ?
+	Whitney: True, it's the first time I see you... TODAY
+	Whitney: You have come to my office EVRY SINGLE DAY FOR A MONTH
+- Good afternoon
+=> main
+
+~ main
+Whitney: So, I suppose you're here to check if your letter arrived ?
+- Yes !
+	Whitney: Let me check[wait=1].[wait=1].[wait=1]. No, it's not here !
+	$> GlobalVars.post_visits += 1
+	- You're sure ?
+		Whitney: I can check again, two second[wait=2].[wait=2].[wait=2]. No, still nothing
+		$> GlobalVars.post_visits += 1
+		- And what about the back ?
+			Whitney: I can go in the back, I'll be there in a minute[wait=3].[wait=13].[wait=3]. No, still nothing
+			$> GlobalVars.post_visits += 1
+			- And what about the other room ?
+				Whitney: And what about you leave me alone !?
+				Whitney: Now [shake rate=20 level=20] GET OUT !
+				=> END
+			- Okay...
+		- Okay...
+	- Okay...
+	Whitney: What's so special about this letter anyway ?
+	- You wouldn't get it
+	- You wouldn't get it
+	- You wouldn't get it
+	Whitney: Ah... Maybe more luck next time ? [speed=1.5][font_size=10] Why did I say that, I'm so stupid !
+- Actually... Nevermind...
+	Whitney: *Sigh* The customer sure is always right !
+=> END
+
+~ bad_end
+$> title = "bad_end_again"
+Whitney: It's been more than {{GlobalVars.max_post_visits}} times that you annoyed me today !
+Whitney: You know what that's called ?
+- Dedication ?
+- Love ?
+Whitney: [shake rate=20 level=20] HARASSMENT !
+Whitney: [shake rate=20 level=20] NOW GET OUT, OR I CALL THE COPS !
+=> END
+
+~ bad_end_again
+%1 Whitney: [shake rate=20 level=20] GET OUT !
+%1 Whitney: [shake rate=20 level=20] I WILL CALL THE COPS
+%1 Whitney: [shake rate=20 level=20] WHEN WILL YOU LEARN TO LEAVE ME ALONE !
+%1 Whitney: [shake rate=20 level=20] GET THE FRICK OUT !
+=> END
+
+~ bad_end_again65
+%1 Whitney: [shake rate=20 level=20] GET OUT, OR I WILL SHOOT YOU !
+%1 Whitney: [shake rate=20 level=20] I WILL CALL THE COPS TO SHOOT YOU !
+%1 Whitney: [shake rate=20 level=20] GET THE FRICK OUT, OR I'LL SHOOT YOU !
+=> END
+
+~ bad_end_again75
+Whitney: [speed=1.5][font_size=10] No, I said it for the thousandth time, I will not shoot no one... except
+Whitney: Oh, hey, didn't see you there !
+Whitney: You're lucky that laws exists !
+Whitney: If you do not like what the voices are saying [wave amp=30 freq=3] (kill them, shoot them in the head) [/wave] then GET OUT !
+=> END
+
+~ global85
+Whitney: EVERY CUSTOMER THAT HAS EVER BEEN MEAN TO ME WILL BE SHOT TO DEATH
+Whitney: I'M SURE THAT'LL MAKE THE VOICE DIE DOWN !
+=> END

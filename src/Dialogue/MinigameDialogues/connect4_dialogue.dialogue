@@ -1,63 +1,238 @@
 ~ ada_start
-Ada: Connect 4 is my favorite game.
-- Oh, my god, me too !
+Ada: Heyyyy !
+- Heyy
+- Good morning
+=> ada_main
+
+~ ada_start50
+Ada: Heyyyy !
+- Heyy
+- Good afternoon
+=> ada_main
+
+~ ada_start60
+Ada: H...Heyyy
+- Heyy
+- Good afternoon
+- Is everything alright ?
+	Ada: No... I think I ate too much sushi yesterday
+	Ada: I am feeling very sick !
+=> ada_main
+
+~ ada_start75
+Ada: [wave amp=50 freq=5] BEUUUUUUUGH I ATE TOO mUCH
+- Is everything alright ?
+Ada: [wave amp=50 freq=5] I'm FeeLIng SeA sICk oN LanD
+Ada: [wave amp=50 freq=5] MayBE pLayINg cONneCT 4 wILl HelP mE ?
+- Let's play !
+	Ada: [wave amp=50 freq=5] I waRN yOU I'M nOt StrOnG aT All
+	Ada: [wave amp=50 freq=5] ProBAblY NevER Be !
 	=> ada_launch_game
-- Ok
-	Ada: Do you want to play a game with me ?
-	- Why not ?
-		=> ada_launch_game
-	- No
-		Ada: Oh... That's okay... Maybe another time...
+- You're sure ?
+	Ada: [wave amp=50 freq=5] ConnEct 4 Is aLlWays ThE SolUTioN !
+	=> ada_launch_game
+- No
+	Ada: [wave amp=50 freq=5] AwwWWwwWWwwWW, SaaAAaaD
+=> END
+
+~ ada_main
+Ada: Do you want to know a biiig secret ?
+- What ?
+- Tell me !
+Ada: Connect 4 is my favorite game.
+- Nice !
+- Awesome !
+Ada: I am noooot strong, BUT, I will become the strongest of them all !
+- Thats the spirit !
+- Nice
+- Do you want to train with me ?
+	Ada: You would play with me ?
+	- Of course
+	- Sure
+	Ada: Yippee, good luck to you !
+	=> ada_launch_game
+Ada: Soooo, do you want to play a game with me ?
+- Why not ?
+	Ada: Yippee, good luck to you !
+	=> ada_launch_game
+- No
+	Ada: Oh... That's okay... Maybe another time...
+	Ada: See you !
 => END
 
 ~ ada_launch_game
-Ada: Yippee, good luck to you !
 $> MainCommunicator.send_signal_to_main(MainCommunicator.SignalType.ADD_MINIGAME, [load("res://src/minigames/connect4/connect_4.tscn"), {"computer_playstyle":0}])
 => END
 
+#--------------------------------#
+
 ~ noah_start
-Noah: I wanna become as strong as my big sibling Hannah.
+Noah: Good morning
+- Hey
+- Good morning
+Noah: You know what ?
+=> noah_main
+
+~ noah_start50
+Noah: Good afternoon
+- Hey
+- Good afternoon
+Noah: You know what ?
+=> noah_main
+
+~ noah_start60
+Noah: [shake rate=40 level=30] Achooo !
+- Bless you
+Noah: Thank
+- How are you doing
+	Noah: Eh... Hanging on
+- A cold in summer ?
+	Noah: Yeah, I know it sucks !
+Noah: But you know what ?
+=> noah_main
+
+~ noah_start75
+Noah: [shake rate=40 level=30] Achooo !
+- Bless you
+Noah: [shake rate=40 level=30] Achooo ! [/shake] Thank
+- How are you doing
+	Noah: [shake rate=40 level=30] Achooo ! [/shake] Eh... Hanging on
+- A cold in summer ?
+	Noah: [shake rate=40 level=30] Achooo ! [/shake] Yeah, It's odd ? Never happened to me before
+Noah: But you know what ?
+=> noah_main
+
+
+~ noah_start80
+Noah: [shake rate=40 level=30] Achooo ! Achooo ! Achoooo ! aAAAchooo ! Achooo !
+- Bless you
+- You're okay ?
+Noah: [shake rate=40 level=30] Achooo ! Achooo ! Achoooo !
+- Erm...
+Noah: [shake rate=40 level=30] Achooo ! Connect 4 ? Achoooo !
+- Yeah, why not ?
+	Noah: [shake rate=40 level=30] YAchoooy ! Achooo !
+	=> noah_launch_game
+- I have things to do...
+	Noah: [shake rate=40 level=30] Achooo ! AAAAAchooo !
+=> END
+
+~ noah_start90
+Noah: [shake rate=40 level=30] ARGHCOOO ! ARGCOHO ! AKRGIOIOOO ! aAAAcGHOOO ! ACHOOOO !
+- Bless you
+- You're okay ?
+Noah: [shake rate=40 level=30] ARGCOHO ! AKRGIOIOOO ! aAAAcGHOOO !
+- Erm...
+Noah: [shake rate=40 level=30] ARGCOOOO ! CoCHOOnect CHoooo ?
+- Yeah, why not ?
+	Noah: [shake rate=40 level=30] YAchoOOPooy ! ARGHKHEUFKHEUF
+	=> noah_launch_game
+- I have things to do...
+	Noah: [shake rate=40 level=30] ARGHKHEUFKHEUFAAAAAchooo !
+=> END
+
+
+~ noah_main
+Noah: Someday I'll become as strong as my big sister Hannah !
 - What ?
-	Noah: Nobody has ever beaten Hannah at connect 4.
+	Noah: Hannah is super strong at connect 4 !
 - Why ?
 	Noah: Because their's the best connect 4 player around !
 - You're already pretty strong !
 	Noah: You really think that ?
 Noah: Will you help me train ?
 - Yes
-	Noah: Yay
+	Noah: Yippee, thank you !
+	Noah: Good luck to you, I might not be the strongest, but I can still play !
 	=> noah_launch_game
 - Sorry, but I'm busy
 	Noah: That's okay, maybe another time
 => END
 
 ~ noah_launch_game
-Noah: Good luck to you !
 $> MainCommunicator.send_signal_to_main(MainCommunicator.SignalType.ADD_MINIGAME, [load("res://src/minigames/connect4/connect_4.tscn"), {"computer_playstyle":1}])
 => END
 
+#--------------------------------#
+
 ~ hannah_start
-Hannah: Hey
-- Good morning
-- Good afternoon
-- Hey
-Hannah: Do you like connect 4 ?
-- Yesss
+Hannah: Hey you !
+- G..good morning ?
+- H..hey
+=> hannah_main
+
+~ hannah_start50
+Hannah: Hey you !
+- G..good afternoon ?
+- H..hey
+=> hannah_main
+
+~ hannah_start60
+Hannah: [speed=1.5][font_size=10] Such a headache !
+Hannah: Hey you !
+- G..good afternoon ?
+- H..hey
+- You alright
+	Hannah: Of course ! Why wouldn't I be !
+=> hannah_main
+
+~ hannah_start75
+Hannah: [speed=1.5][font_size=10] Owwowowoww ! My head hurts so much ! I need to play connect 4 !
+Hannah: Hey you !
+- G..good afternoon ?
+- H..hey
+- You alright
+	Hannah: Of course ! Why wouldn't I be !
+=> hannah_main
+
+~ hannah_start80
+Hannah: Arghhh !!! my head ! [shake rate=30 level=30] IT HURTS SO MUCH [/shake] ! I [shake rate=30 level=30] NEED [/shake] to play connect 4 !
+Hannah: HEY YOU !
+Hannah: I CHALLENGE YOU TO A CONNECT4 MATCH !
+- O...of course..
+	Hannah: YESSS
+	=> hannah_launch_game
+- N..Noo
+	Hannah: Was worth the shot !
+=> END
+
+~ hannah_start90
+Hannah: [shake rate=30 level=30] ARGHHH MY HEAD !!
+Hannah: [shake rate=40 level=40] MAKE IT STOPPPP
+Hannah: [shake rate=40 level=40] MAKE IT STOPPPP
+- Can I help ?
+	Hannah: [shake rate=40 level=40] PLAY CONNECT 4 WITH ME !
+	=> hannah_launch_game
+- You okay ?
+	Hannah: [shake rate=40 level=40] DO I LOOK LIKE I'M OKAY ?
+
+Hannah: I CHALLENGE YOU TO A CONNECT4 MATCH !
+- O...of course..
+	Hannah: YESSS
+	=> hannah_launch_game
+- N..Noo
+	Hannah: Was worth the shot !
+=> END
+
+~ hannah_main
+Hannah: Do you like connect 4 !?
+- I mean... yeah
 	Hannah: Do you think you can beat me ?
 	- Certain
-		Hannah: A ballzy statement, I like it !
+		Hannah: [wave amp=50 freq=3] HAHAHAHAHA ! [/wave] A ballzy statement, I like it !
+		Hannah: I'll warn you, I'm not like Ada nor Noah, I play for real !
 		=> hannah_launch_game
-	- Pretty sure
+	- P..pretty sure
 		Hannah: Let's see what'cha got !
+		Hannah: I'll warn you, I'm not like Ada nor Noah, I play for real !
 		=> hannah_launch_game
-	- No
-		Hannah: That's a shame...
-- Not that much
+	- N..no
+		Hannah: Damn ! That's a shame !
+- N...not that much
 	Hannah: sigh...
 	Hannah: So uncultured...
 => END
 
 ~ hannah_launch_game
-Hannah: But, I'll warn you, I'm not like Ada nor Noah, I play for real !
 $> MainCommunicator.send_signal_to_main(MainCommunicator.SignalType.ADD_MINIGAME, [load("res://src/minigames/connect4/connect_4.tscn"), {"computer_playstyle":2}])
 => END

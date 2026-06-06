@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://dtboaaiu5kh5m"
+path="res://.godot/imported/Fiona-wannabe.dialogue-27338f1e7c4dc5e3e6281325da5448a0.tres"
+
+[deps]
+
+source_file="res://src/Dialogue/Fiona-wannabe.dialogue"
+dest_files=["res://.godot/imported/Fiona-wannabe.dialogue-27338f1e7c4dc5e3e6281325da5448a0.tres"]
+
+[params]
+
+defaults=true

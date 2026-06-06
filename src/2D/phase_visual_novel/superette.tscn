@@ -37,7 +37,7 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="Boulangerie" type="Control" unique_id=940681879]
+[node name="Superette" type="Control" unique_id=940681879]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0

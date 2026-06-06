@@ -1,0 +1,98 @@
+~ start
+Fiona: Good morning, sir !
+- Good morning
+- Hey
+=> fiona_main
+
+~ start50
+Fiona: Good afternoon, sir !
+- Good afternoon
+- Hey
+=> fiona_main
+
+~ start60
+Fiona: [speed=1.5][font_size=10] They're coming, pull yourself together !
+Fiona: Good afernoon, sir !
+- Good afternoon
+- Hey
+=> fiona_main
+
+~ start75
+Fiona: [shake rate=10 level=10] Nnn-ARGGGG [speed=1.5][font_size=10] Their coming, pull yourself together !
+Fiona: [shake rate=10 level=10] Good afernoon, sir !
+- Good afternoon
+- You okay ?
+	Fiona: [shake rate=20 level=10] Yes sir ! Nothing wrong at all !
+- Hey
+=> fiona_main
+
+~ fiona_main
+Fiona: I'm sorry I can't help you with all these towers.
+- It's okay, you'll get your licence later...
+	Fiona: Yeah... Maybe... It's the second time I failed the exam tho !
+	- You'll make it, I have faith in you !
+	- Everyone fails their first couple of tries !
+	Fiona: Is that true ?
+	Fiona: You don't know how much this means to me !
+	Fiona: Oh, sorry ! You have a lot of work to do !
+- Yeah...
+	Fiona: ...
+	Fiona: Oh, sorry... You have a lot of work to do !
+- You can watch if you want
+	Fiona: I can ?
+	- Of course
+	Fiona: Yeaaah !
+	Fiona: But my mom said I shouldn't go too far, I'll watch you from a distance.
+Fiona: I don't want to be a burden
+if GlobalVars.tower_amount == GlobalVars.tower_completed:
+	- Yeah, I should get back to work !
+		Fiona: You're right ! See you around !
+	- I finished it
+		Fiona: You did ? Really ? Wow, you're so cool !
+		Fiona: I can't wait to be like you someday !
+		$> title = "fiona wait"
+		=> fiona_wait
+else:
+	- Yeah, I should hurry back to work !
+	Fiona: See you later !
+=> END
+
+~ fiona_wait
+Fiona: ... So... What do you want to do now ?
+- We can wait, to truly appreciate each others presence
+	while true:
+		[wait=3]
+		Fiona: ... sooo... Did we wait enough ?
+		- No, not yet
+		- Yeah
+			Fiona: It was really nice waiting around with you !
+			Fiona: Maybe wa can do that another time ?
+			=> END
+- Do you want to play tic tac toe ?
+	Fiona: Yeaaah
+	$> MainCommunicator.send_signal_to_main(MainCommunicator.SignalType.ADD_MINIGAME, [load("res://src/minigames/tic_tac_toe/tic_tac_toe.tscn"), {"computer_playstyle":1}])
+- Do you want to play connect 4 ?
+	Fiona: I am really bad, tho
+	$> MainCommunicator.send_signal_to_main(MainCommunicator.SignalType.ADD_MINIGAME, [load("res://src/minigames/connect4/connect_4.tscn"), {"computer_playstyle":1}])
+=> END
+
+~ global80
+Fiona: [shake rate=40 level=10] NNN-ARGGGG...
+- Are you okay
+Fiona: [shake rate=40 level=10] YES SIR
+- ...
+- look at me
+	Fiona: *looks painfully at you*
+	- Are you okay ?
+	Fiona: [shake rate=40 level=10] ...Ngggg... [shake rate=20 level=40] NO !!!
+	Fiona: [shake rate=20 level=30] I feel like my insides are burning !!!
+	Fiona: [shake rate=20 level=30] I don't think I'll hold any longer !
+	Fiona: [shake rate=20 level=30] I'LL NEVER BE AN ELECTICIAAAN !
+	- ...
+	- Its gonna be okay, trust me !
+=> END
+
+~ global90
+Fiona: [shake rate=40 level=40] I DON'T WANNA DIE
+Fiona: [shake rate=40 level=40] SIR, PLEASE HELP ME !!!
+=> END
