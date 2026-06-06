@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://314oqtf8o637"]
+[gd_scene format=3 uid="uid://c2i06hrpn3ol4"]
 
 [ext_resource type="Script" uid="uid://dd5w2ptvu7pou" path="res://src/minigames/minigame.gd" id="1_jau64"]
 [ext_resource type="Texture2D" uid="uid://bjb6qkb8ayhnl" path="res://src/2D/levels/Arcade/assets/fond.png" id="2_482mc"]
