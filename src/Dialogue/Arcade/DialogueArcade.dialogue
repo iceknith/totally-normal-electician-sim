@@ -1,0 +1,67 @@
+
+~ LittleJo
+Little Jo : Hi ! I'm little Jo, the youngest brother of the Jo family.
+Little Jo: I'm a bit busy, so what do you want ? 
+- What are you doing ? 
+	Little Jo: I'm playing a game. Can't you see ?
+	- Can I play with you ? 
+		Little Jo: Aren't you supposed to work ? 
+		- No
+			Little Jo: ...
+			Little Jo: Why are you dressed like that then ?
+			- It's my everyday outfit !
+				Little Jo: So you never change your clothes !
+				Little Jo: I guess you also never shower !
+				Little Jo: You should be a strong opponent !
+				Little Jo: Wanna play ?
+			- I lied but I still want to play !
+				Little Jo: Okay ! 
+		- Yes 
+			Little Jo: Then go work ! 
+			=> END
+	- Good Game then !
+		Little Jo: Thanks !
+		=> END	
+~ AskTutorialLittleJo 
+Little Jo: Do you know how to play ?
+- Nah I need an explanation.
+	$> MainCommunicator.send_signal_to_main(MainCommunicator.SignalType.ADD_MINIGAME, [load("res://src/minigames/arcadeGame/level/FullArcadeGame.tscn"), {"opponent":0, "play_tutorial":true}])
+- It's okay ! I already know the rules !
+	$> MainCommunicator.send_signal_to_main(MainCommunicator.SignalType.ADD_MINIGAME, [load("res://src/minigames/arcadeGame/level/FullArcadeGame.tscn"), {"opponent":0, "play_tutorial":false}])
+=> END
+
+~ Tutorial1
+Little Jo: You play as the heart just there.
+Little Jo: Try moving using [color=#ffd166][font_size=30]{{GlobalVars.get_action_controls("left")}} {{GlobalVars.get_action_controls("right")}}, {{GlobalVars.get_action_controls("up")}} {{GlobalVars.get_action_controls("down")}}[/font_size][/color].
+=> END
+
+
+~ Tutorial2 
+Little Jo: See the ball right here. 
+Little Jo: You can hit it using [color=#ffd166][font_size=30]{{GlobalVars.get_action_controls("interact2")}}[/font_size][/color].
+Little Jo: The more you hit it the bigger it becomes, and the faster it goes.
+Little Jo: You can also hold [color=#ffd166][font_size=30]{{GlobalVars.get_action_controls("interact2")}}[/font_size][/color] to aim the ball.
+Little Jo: Try hitting it a couple of times to make it gain speed.
+=> END
+
+~ Tutorial3 
+Little Jo: Now try hitting these targets ! Don't forget you can aim !
+=> END
+
+~ Tutorial4 
+Little Jo: You mastered the basics ! Now you'll face me ! 
+Little Jo: Try dodging or sending back the ball when it's my color !
+=> END
+
+		
+~ LittleJoBeaten 
+Little Jo: You learn quickly !
+Little Jo: You should try playing against my brothers !
+Little Jo: Who knows, maybe one day you'll be able to beat Jo. Ahaha !
+Little Jo: ...
+$> SoundManager.stop_music.emit()
+Little Jo: It was a joke. 
+$> SoundManager.change_music.emit("Arcade")
+=> END
+
+

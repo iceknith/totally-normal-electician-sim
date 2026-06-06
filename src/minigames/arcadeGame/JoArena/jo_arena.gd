@@ -24,18 +24,23 @@ enum BALLSTATE
 	None
 }
 
-var PlayerScore:int
-var EnemyScore:int
-@export var ScoreToWin:int = 3
 
 
+
+
+### Setup signals and plays fight Intro
 func _ready() -> void:
-	PlayerScore = 0
-	EnemyScore = 0
-	player.inform_death.connect(reset)
-	await intro()
-	start_game()
-		
+
+	if GlobalVars.JoBeaten : 
+		jo_beaten()
+	else : 
+		jo_attacks.fight_over.connect(end_fight)
+		player.inform_death.connect(reset)
+
+		start_game()
+
+
+### Get all hitball component to connect the shockwave effect
 func get_hitballs(node: Node):
 	for child in node.get_children():
 		if child is Hitball:
@@ -43,11 +48,10 @@ func get_hitballs(node: Node):
 	return null
 	
 
-	
-func show_score():
-	$ScoreLabel.text = str(PlayerScore) + " - " + str(EnemyScore)
 
 
+
+### start the game
 func start_game():
 	var offset = Vector2(0, 100)
 	player.set_pause(true)
@@ -60,6 +64,7 @@ func start_game():
 	
 	
 	
+### Reset fights
 func reset(p:arcadePlayer):
 	jo_attacks.reset()
 	await get_tree().create_timer(1.0).timeout
@@ -67,20 +72,18 @@ func reset(p:arcadePlayer):
 	player.reset()
 	jo_attacks.start_fight(jo_attacks.fight_id)
 
+### Play the shockwave effect
 func play_shockwave(entity):
 	var shockwave:ShockWave = shock_wave_scene.instantiate()
 	add_child(shockwave)
 	shockwave.play_shockwave(entity)
 
-func check_if_end_game():
-	if PlayerScore == ScoreToWin : 
-		exit()
-	if EnemyScore == ScoreToWin : 
-		exit()
-	
+
+### Function to exit minigame
 func exit():
 	MainCommunicator.send_signal_to_main(MainCommunicator.SignalType.REMOVE_MINIGAME)
 	
+### Plays the Intro Dialogue and starts the fight
 func intro():
 	SoundManager.change_music.emit("JoeIntro")
 	
@@ -95,5 +98,24 @@ func intro():
 	await get_tree().create_timer(3).timeout
 	
 func end_fight():
-	pass
+	GlobalVars.JoBeaten = true
+	MainCommunicator.send_signal_to_main(
+	MainCommunicator.SignalType.START_DIALOGUE, 
+	[dialogue, "_wonFight", [self]] 
+	)
+
+
+	await DialogueManager.dialogue_ended
+	exit()
+	
+	
+func jo_beaten():
+	SoundManager.stop_music.emit()
+	await get_tree().create_timer(2).timeout
+	MainCommunicator.send_signal_to_main(
+	MainCommunicator.SignalType.START_DIALOGUE, 
+	[dialogue, "_joBeaten", [self]] 
+	)
+	await DialogueManager.dialogue_ended
+	exit()
 	

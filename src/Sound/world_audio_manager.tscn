@@ -26,3 +26,4 @@ eow_music_start_time = 38.8
 [node name="BackgroundMusicPlayer" type="AudioStreamPlayer" parent="." unique_id=2057556167]
 volume_db = -0.421
 autoplay = true
+bus = &"music"

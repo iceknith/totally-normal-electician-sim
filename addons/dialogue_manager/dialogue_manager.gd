@@ -508,7 +508,7 @@ func create_resource_from_text(text: String) -> Resource:
 
 
 ## Show the example balloon
-func show_example_dialogue_balloon(resource: DialogueResource, title: String = "", extra_game_states: Array = []) -> CanvasLayer:
+func show_example_dialogue_balloon(resource: DialogueResource, title: String = "", extra_game_states: Array = [], sfx = "") -> CanvasLayer:
 	var balloon: Node = load(_get_example_balloon_path()).instantiate()
 	_start_balloon.call_deferred(balloon, resource, title, extra_game_states)
 	return balloon
@@ -546,7 +546,7 @@ func static_id_to_line_ids(resource: DialogueResource, static_id: String) -> Pac
 
 
 # Call "start" on the given balloon.
-func _start_balloon(balloon: Node, resource: DialogueResource, title: String, extra_game_states: Array) -> void:
+func _start_balloon(balloon: Node, resource: DialogueResource, title: String, extra_game_states: Array, voice_sfx = "") -> void:
 	dialogue_started.emit(resource)
 
 	get_current_scene.call().add_child(balloon)

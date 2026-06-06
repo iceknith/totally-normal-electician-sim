@@ -1,24 +1,12 @@
 [gd_scene format=3 uid="uid://boloxxts85tff"]
 
 [ext_resource type="Script" uid="uid://dlkwf2mcbiags" path="res://src/minigames/competitive_rock_paper_scissors/button_rps.gd" id="1_ai1ol"]
-
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_ai1ol"]
+[ext_resource type="Texture2D" uid="uid://bc2xbfw5tytdl" path="res://src/minigames/competitive_rock_paper_scissors/asset/2D/RockPaperScissorsBg.png" id="2_d5ryg"]
 
 [node name="ButtonRps" type="Node2D" unique_id=1080382382]
 script = ExtResource("1_ai1ol")
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1894378236]
-modulate = Color(0.8440192, 3.85046e-06, 4.813075e-07, 1)
-self_modulate = Color(1, 0, 0, 1)
-z_index = 1
-z_as_relative = false
-position = Vector2(-1.9073486e-06, 1.5999966)
-scale = Vector2(126, 131.2)
-texture = SubResource("PlaceholderTexture2D_ai1ol")
-
 [node name="TextureButton" type="TextureButton" parent="." unique_id=99015314]
-z_index = 1
-z_as_relative = false
 custom_minimum_size = Vector2(128, 128)
 offset_left = -64.0
 offset_top = -64.0
@@ -27,7 +15,19 @@ offset_bottom = 64.0
 size_flags_horizontal = 4
 size_flags_vertical = 4
 mouse_filter = 1
+ignore_texture_size = true
 stretch_mode = 0
+
+[node name="TextureRect" type="TextureRect" parent="TextureButton" unique_id=1967188498]
+z_index = -1
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_d5ryg")
 
 [node name="Area2D" type="Area2D" parent="." unique_id=326578372]
 
