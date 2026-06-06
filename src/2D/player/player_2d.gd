@@ -16,7 +16,8 @@ func _ready():
 	
 
 func _process(delta):
-	manageInput(delta)
+	if MainCommunicator.is_in_dialogue : 
+		manageInput(delta)
 
 func manageInput(delta) -> void: #manage movements
 	

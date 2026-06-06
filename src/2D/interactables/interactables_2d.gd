@@ -53,9 +53,9 @@ func find_label(node:Node) -> Label:
 	return null
 
 func _process(_delta: float) -> void:
-	if action_type == ActionType.ActionPress &&\
-	 	is_currently_interractable && Input.is_action_just_pressed(action):
+	if action_type == ActionType.ActionPress && is_currently_interractable && Input.is_action_just_pressed(action) && !MainCommunicator.is_in_dialogue  :
 		start_interaction()
+		print("test")
 
 func _on_body_entered(body:Node2D):
 	if body as Player2D:

@@ -81,16 +81,16 @@ fill_from = Vector2(0.5, 0.5)
 polygon = PackedVector2Array(-46, -47, -47, 86, 44, 86, 45, -47)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_a31al"]
-size = Vector2(91, 114.5)
+size = Vector2(117, 114.5)
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_jau64"]
 polygon = PackedVector2Array(-47, -57, -47, 80, 46, 80, 45, -58)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tigbq"]
-size = Vector2(91, 175)
+size = Vector2(124, 113)
 
 [sub_resource type="Gradient" id="Gradient_482mc"]
-offsets = PackedFloat32Array(0.0016501651, 0.42079207)
+offsets = PackedFloat32Array(0.0016501651, 0.5726073)
 colors = PackedColorArray(0.23529412, 1, 0.30588236, 1, 0, 0, 0, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_jau64"]
@@ -104,10 +104,10 @@ fill_from = Vector2(0.5, 0.5)
 polygon = PackedVector2Array(-52, -56, -53, 80, 43, 80, 44, -55)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_x23mc"]
-size = Vector2(91, 175)
+size = Vector2(141, 103)
 
 [sub_resource type="Gradient" id="Gradient_fi17p"]
-offsets = PackedFloat32Array(0, 0.21287128)
+offsets = PackedFloat32Array(0, 0.37128714)
 colors = PackedColorArray(0.15294118, 0.16470589, 1, 1, 0, 0, 0, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_482mc"]
@@ -117,9 +117,6 @@ height = 128
 fill = 1
 fill_from = Vector2(0.5, 0.5)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_xsrp0"]
-size = Vector2(91, 175)
-
 [node name="Arcade" type="Control" unique_id=1662000706]
 layout_mode = 3
 anchors_preset = 15
@@ -128,6 +125,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_jau64")
+music_when_entering = "Arcade"
 change_music = true
 metadata/_custom_type_script = "uid://dd5w2ptvu7pou"
 
@@ -142,9 +140,11 @@ grow_vertical = 2
 stretch = true
 
 [node name="SubViewport" type="SubViewport" parent="SubViewportContainer" unique_id=374344782]
+handle_input_locally = false
 canvas_item_default_texture_filter = 0
 size = Vector2i(1152, 648)
 size_2d_override_stretch = true
+render_target_update_mode = 4
 
 [node name="ColorRect" type="ColorRect" parent="SubViewportContainer/SubViewport" unique_id=1333980717]
 anchors_preset = 15
@@ -275,7 +275,7 @@ scale = Vector2(0.5, 0.5)
 occluder = SubResource("OccluderPolygon2D_csu50")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SubViewportContainer/SubViewport/Node2D/Y-Sort/Interactables/Interactable2DMinigame2" unique_id=2142267921]
-position = Vector2(1, 36.25)
+position = Vector2(-0.5, 76)
 shape = SubResource("RectangleShape2D_a31al")
 
 [node name="InteractableText" parent="SubViewportContainer/SubViewport/Node2D/Y-Sort/Interactables/Interactable2DMinigame2" unique_id=4744531 instance=ExtResource("9_2r2t4")]
@@ -314,7 +314,7 @@ scale = Vector2(0.5, 0.5)
 occluder = SubResource("OccluderPolygon2D_jau64")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SubViewportContainer/SubViewport/Node2D/Y-Sort/Interactables/Interactable2DMinigame3" unique_id=2131961610]
-position = Vector2(-0.5, -11.5)
+position = Vector2(-1, 74.5)
 shape = SubResource("RectangleShape2D_tigbq")
 
 [node name="InteractableText" parent="SubViewportContainer/SubViewport/Node2D/Y-Sort/Interactables/Interactable2DMinigame3" unique_id=936344028 instance=ExtResource("9_2r2t4")]
@@ -359,7 +359,7 @@ scale = Vector2(0.5, 0.5)
 occluder = SubResource("OccluderPolygon2D_482mc")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SubViewportContainer/SubViewport/Node2D/Y-Sort/Interactables/Interactable2DMinigame4" unique_id=2069310951]
-position = Vector2(-0.5, -11.5)
+position = Vector2(0.5, 71.5)
 shape = SubResource("RectangleShape2D_x23mc")
 
 [node name="InteractableText" parent="SubViewportContainer/SubViewport/Node2D/Y-Sort/Interactables/Interactable2DMinigame4" unique_id=252005750 instance=ExtResource("9_2r2t4")]
@@ -378,51 +378,6 @@ scale = Vector2(3, 3)
 texture = ExtResource("14_urhql")
 
 [node name="PointLight2D" type="PointLight2D" parent="SubViewportContainer/SubViewport/Node2D/Y-Sort/Interactables/Interactable2DMinigame4" unique_id=945284601]
-position = Vector2(-6, -3)
-scale = Vector2(4, 4)
-energy = 0.65
-texture = SubResource("GradientTexture2D_482mc")
-
-[node name="Interactable2DMinigame5" type="Area2D" parent="SubViewportContainer/SubViewport/Node2D/Y-Sort/Interactables" unique_id=610853618 node_paths=PackedStringArray("interractable_dialogue")]
-position = Vector2(784, 182)
-script = ExtResource("6_cvjag")
-minigame = ExtResource("7_ue12u")
-action_type = 1
-interractable_dialogue = NodePath("InteractableText")
-metadata/_custom_type_script = "uid://dbf5k8vvysldd"
-
-[node name="Borne1" type="Sprite2D" parent="SubViewportContainer/SubViewport/Node2D/Y-Sort/Interactables/Interactable2DMinigame5" unique_id=1964051641]
-y_sort_enabled = true
-texture_filter = 1
-position = Vector2(-2, -1)
-scale = Vector2(2, 2)
-texture = ExtResource("13_ogxnh")
-
-[node name="LightOccluder2D" type="LightOccluder2D" parent="SubViewportContainer/SubViewport/Node2D/Y-Sort/Interactables/Interactable2DMinigame5/Borne1" unique_id=2089604499]
-position = Vector2(1, 0.5)
-scale = Vector2(0.5, 0.5)
-occluder = SubResource("OccluderPolygon2D_482mc")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="SubViewportContainer/SubViewport/Node2D/Y-Sort/Interactables/Interactable2DMinigame5" unique_id=107616686]
-position = Vector2(-0.5, -11.5)
-shape = SubResource("RectangleShape2D_xsrp0")
-
-[node name="InteractableText" parent="SubViewportContainer/SubViewport/Node2D/Y-Sort/Interactables/Interactable2DMinigame5" unique_id=1540986059 instance=ExtResource("9_2r2t4")]
-z_index = 1
-offset_left = -20.0
-offset_top = -100.0
-offset_right = 17.0
-offset_bottom = -37.999977
-pivot_offset_ratio = Vector2(0.5, 0.5)
-metadata/_edit_use_anchors_ = true
-
-[node name="Sprite2D" type="Sprite2D" parent="SubViewportContainer/SubViewport/Node2D/Y-Sort/Interactables/Interactable2DMinigame5" unique_id=1883868670]
-texture_filter = 1
-position = Vector2(-7, 24)
-scale = Vector2(3, 3)
-texture = ExtResource("14_urhql")
-
-[node name="PointLight2D" type="PointLight2D" parent="SubViewportContainer/SubViewport/Node2D/Y-Sort/Interactables/Interactable2DMinigame5" unique_id=1839858731]
 position = Vector2(-6, -3)
 scale = Vector2(4, 4)
 energy = 0.65

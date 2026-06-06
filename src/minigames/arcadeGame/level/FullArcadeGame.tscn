@@ -28,6 +28,10 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_l1j2u")
+music_when_entering = null
+change_music = null
+animationDuration = null
+baseMinigameLayoutActive = null
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1289738848]
 layout_mode = 1

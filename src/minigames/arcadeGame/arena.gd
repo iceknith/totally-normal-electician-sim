@@ -16,7 +16,7 @@ class_name ArcadeGame extends Minigame
 var last_loser:Node
 var in_reset_animation:bool
 var in_tutorial:bool = false
-var play_tutorial:bool = true
+var play_tutorial:bool = false
 
 
 @onready var dialogue:DialogueResource = preload("res://src/Dialogue/Arcade/DialogueArcade.dialogue")
@@ -176,7 +176,7 @@ func start_tutorial():
 			)
 			
 	await DialogueManager.dialogue_ended
-	await get_tree().create_timer(5).timeout
+	await get_tree().create_timer(4).timeout
 	
 	MainCommunicator.send_signal_to_main(
 		MainCommunicator.SignalType.START_DIALOGUE, 
@@ -185,12 +185,13 @@ func start_tutorial():
 	
 	await DialogueManager.dialogue_ended
 	
-	while (ball.mouvement_component.get_speed() < 300) : 
-		continue
-	
-	player.global_position = Vector2(randi_range(200, 952), randf_range(100, 548))
+	while (ball.mouvement_component.get_speed() < 600) : 
+		await get_tree().physics_frame
+	await ball.scale_down_animation()
+	ball.global_position = Vector2(1152/2, 648/2) 
 	ball.reset()
-	ball.global_position = Vector2(1152/2, 648/2)
+	await ball.scale_up_animation()
+
 	
 	MainCommunicator.send_signal_to_main(
 	MainCommunicator.SignalType.START_DIALOGUE, 
@@ -199,8 +200,7 @@ func start_tutorial():
 
 	
 	await spawn_and_wait_tutorial_targets()
-	await DialogueManager.dialogue_ended
-	
+	print("test fin tutoriel")
 		
 	MainCommunicator.send_signal_to_main(
 	MainCommunicator.SignalType.START_DIALOGUE, 
@@ -218,8 +218,10 @@ func start_tutorial():
 	
 func spawn_and_wait_tutorial_targets():
 	var target_positions = [
-		Vector2(400, 250),
-		Vector2(750, 250)
+		Vector2(200, 250),
+		Vector2(950, 250),
+		Vector2(200, 500),
+		Vector2(950, 500)
 	]
 	
 	var destroyed_targets:= 0
