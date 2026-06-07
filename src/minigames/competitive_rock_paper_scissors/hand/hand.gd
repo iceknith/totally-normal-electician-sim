@@ -28,12 +28,9 @@ func _ready():
 
 func draw_opponent_card(card:PackedScene, choice) : 
 	
-
-
-
 	rotation_degrees = starting_rotation
 	await rotate_hand(final_rotation).finished
-	
+	clear()
 	var instance = card.instantiate()
 	
 	match choice : 

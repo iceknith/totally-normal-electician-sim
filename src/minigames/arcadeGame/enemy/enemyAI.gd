@@ -86,6 +86,9 @@ func reset():
 	dead = false
 	
 
+func set_sprite_color(color:Color):
+	$Sprite2D.self_modulate = color
+	
 func setup_signals():
 	DieComponent.die.connect(death)
 

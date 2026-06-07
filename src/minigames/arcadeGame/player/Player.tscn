@@ -1,15 +1,15 @@
 [gd_scene format=3 uid="uid://cpc5mi3gyvm7y"]
 
 [ext_resource type="Script" uid="uid://n0tb5uwsj52w" path="res://src/minigames/arcadeGame/player/player.gd" id="1_lyefd"]
-[ext_resource type="Texture2D" uid="uid://cra208jmgv7f8" path="res://icon.svg" id="2_i3pg2"]
+[ext_resource type="Texture2D" uid="uid://clwybh5tqlae2" path="res://src/minigames/arcadeGame/player/heart2.png" id="2_sjmj3"]
 [ext_resource type="PackedScene" uid="uid://dew10erbv0qyh" path="res://src/minigames/arcadeGame/Component/movement.tscn" id="3_8q2ol"]
 [ext_resource type="PackedScene" uid="uid://cbgt2i48kg0xj" path="res://src/minigames/arcadeGame/Component/hit_ball.tscn" id="4_crhmk"]
 [ext_resource type="PackedScene" uid="uid://bff8owxdvdk7x" path="res://src/minigames/arcadeGame/player/aim.tscn" id="5_crhmk"]
 [ext_resource type="PackedScene" uid="uid://cklna2vuo4rwf" path="res://src/minigames/arcadeGame/Component/die.tscn" id="6_thjgy"]
 [ext_resource type="Texture2D" uid="uid://rhy47auhb2o4" path="res://src/minigames/arcadeGame/assets/particles/star particle.png" id="7_sjmj3"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_i3pg2"]
-size = Vector2(116, 120)
+[sub_resource type="CircleShape2D" id="CircleShape2D_t6jqt"]
+radius = 50.803543
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_thjgy"]
 size = Vector2(124, 127)
@@ -120,7 +120,9 @@ script = ExtResource("1_lyefd")
 ball_color = Color(0.35686275, 0.105882354, 0.3764706, 1)
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=322397758]
-texture = ExtResource("2_i3pg2")
+texture_filter = 1
+scale = Vector2(4, 4)
+texture = ExtResource("2_sjmj3")
 
 [node name="Movement" parent="." unique_id=321546894 instance=ExtResource("3_8q2ol")]
 speed = 350
@@ -145,8 +147,8 @@ animationPlayer = NodePath("../AnimationPlayer")
 death_animation_name = "Death"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Die" unique_id=1657388655]
-position = Vector2(1, 0)
-shape = SubResource("RectangleShape2D_i3pg2")
+position = Vector2(3, 0)
+shape = SubResource("CircleShape2D_t6jqt")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=745741321]
 position = Vector2(0, 0.5)

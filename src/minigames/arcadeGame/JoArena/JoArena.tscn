@@ -167,7 +167,6 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_utyyb")
-music_when_entering = ""
 
 [node name="TextureRect" type="ColorRect" parent="." unique_id=482453930]
 layout_mode = 1

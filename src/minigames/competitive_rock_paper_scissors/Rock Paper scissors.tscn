@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://dvg3cthpe104h" path="res://src/minigames/competitive_rock_paper_scissors/ChooseOption.tscn" id="1_q8qak"]
 [ext_resource type="PackedScene" uid="uid://boloxxts85tff" path="res://src/minigames/competitive_rock_paper_scissors/RPS_button.tscn" id="2_0lxge"]
 [ext_resource type="PackedScene" uid="uid://mecgfpfk6sbr" path="res://src/minigames/competitive_rock_paper_scissors/roll_sprite.tscn" id="2_ladea"]
+[ext_resource type="FontFile" uid="uid://dhoixqrkemx30" path="res://assets/gui/ithaca-font/Ithaca-LVB75.ttf" id="3_c10fi"]
 [ext_resource type="Texture2D" uid="uid://c5gyf7q6yvcp8" path="res://src/minigames/competitive_rock_paper_scissors/asset/2D/hand.png" id="5_uuwv0"]
 [ext_resource type="PackedScene" uid="uid://dt4mec201tdh3" path="res://src/minigames/competitive_rock_paper_scissors/personPlaying.tscn" id="5_xbnbg"]
 [ext_resource type="Script" uid="uid://c0sp2ilspegwv" path="res://src/minigames/competitive_rock_paper_scissors/hand_pile.gd" id="5_ynqdh"]
@@ -11,6 +12,41 @@
 [ext_resource type="Texture2D" uid="uid://cye1bhonrbtg7" path="res://src/minigames/competitive_rock_paper_scissors/asset/2D/Scissors.png" id="8_0lxge"]
 [ext_resource type="Texture2D" uid="uid://1xxjx047eo4l" path="res://src/minigames/competitive_rock_paper_scissors/asset/2D/rock.png" id="9_24ib3"]
 [ext_resource type="Texture2D" uid="uid://dxx8mm38nnd8g" path="res://src/minigames/competitive_rock_paper_scissors/asset/2D/paper.png" id="10_c10fi"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_c10fi"]
+load_path = "res://.godot/imported/rock.png-3fda844716166c55d141e8ce87eef7f6.s3tc.ctex"
+
+[sub_resource type="LabelSettings" id="LabelSettings_73bh0"]
+font = ExtResource("3_c10fi")
+font_size = 40
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_24ib3"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+bg_color = Color(0.101960786, 0.101960786, 0.101960786, 0)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
+
+[sub_resource type="LabelSettings" id="LabelSettings_c10fi"]
+font = ExtResource("3_c10fi")
+font_size = 40
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_c10fi"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+bg_color = Color(0.6, 0.6, 0.6, 0)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
 
 [node name="Rock Paper Scissors" type="Control" unique_id=213604419]
 layout_mode = 3
@@ -26,6 +62,52 @@ points_to_win = 5
 total_choice_number = 15
 card_scene = ExtResource("2_0lxge")
 
+[node name="StockLabels" type="VBoxContainer" parent="." unique_id=1521399152]
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -193.0
+offset_top = 59.0
+offset_right = -36.0
+offset_bottom = -80.0
+grow_horizontal = 0
+grow_vertical = 2
+
+[node name="rockTex" type="TextureRect" parent="StockLabels" unique_id=1045611659]
+custom_minimum_size = Vector2(128, 156)
+layout_mode = 2
+texture = SubResource("CompressedTexture2D_c10fi")
+expand_mode = 1
+
+[node name="RockLabel" type="Label" parent="StockLabels" unique_id=34583774]
+layout_mode = 2
+label_settings = SubResource("LabelSettings_73bh0")
+horizontal_alignment = 1
+
+[node name="PaperTex" type="TextureRect" parent="StockLabels" unique_id=198005731]
+custom_minimum_size = Vector2(128, 156)
+layout_mode = 2
+texture = ExtResource("10_c10fi")
+expand_mode = 1
+
+[node name="PaperLabel" type="Label" parent="StockLabels" unique_id=899854522]
+layout_mode = 2
+label_settings = SubResource("LabelSettings_73bh0")
+horizontal_alignment = 1
+
+[node name="ScissorsTex" type="TextureRect" parent="StockLabels" unique_id=2109268070]
+custom_minimum_size = Vector2(128, 156)
+layout_mode = 2
+texture = ExtResource("8_0lxge")
+expand_mode = 1
+
+[node name="ScissorsLabel" type="Label" parent="StockLabels" unique_id=986368711]
+layout_mode = 2
+label_settings = SubResource("LabelSettings_73bh0")
+horizontal_alignment = 1
+
 [node name="MarginContainer" type="MarginContainer" parent="." unique_id=2061799233]
 layout_mode = 1
 anchors_preset = 15
@@ -40,6 +122,14 @@ theme_override_constants/margin_bottom = 50
 
 [node name="PanelContainer" type="PanelContainer" parent="MarginContainer" unique_id=41155471]
 layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_24ib3")
+
+[node name="showPoints" type="Label" parent="MarginContainer/PanelContainer" unique_id=1091885699]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 8
+label_settings = SubResource("LabelSettings_c10fi")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/PanelContainer" unique_id=1218745472]
 layout_mode = 2
@@ -52,6 +142,7 @@ size_flags_vertical = 3
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_c10fi")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/PanelContainer/VBoxContainer/HBoxContainer/PanelContainer2" unique_id=1510990740]
 layout_mode = 2
@@ -63,66 +154,6 @@ unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-
-[node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/PanelContainer/VBoxContainer" unique_id=359344537]
-layout_mode = 2
-size_flags_horizontal = 4
-theme_override_constants/separation = 50
-
-[node name="Label" type="Label" parent="MarginContainer/PanelContainer/VBoxContainer/HBoxContainer2" unique_id=1803766276]
-layout_mode = 2
-
-[node name="showPoints" type="Label" parent="MarginContainer/PanelContainer/VBoxContainer/HBoxContainer2" unique_id=1091885699]
-unique_name_in_owner = true
-layout_mode = 2
-
-[node name="PanelContainer" type="PanelContainer" parent="MarginContainer/PanelContainer/VBoxContainer" unique_id=1759892786]
-layout_mode = 2
-size_flags_vertical = 6
-
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/PanelContainer/VBoxContainer/PanelContainer" unique_id=415566979]
-custom_minimum_size = Vector2(0, 256)
-layout_mode = 2
-
-[node name="PanelContainer" type="PanelContainer" parent="MarginContainer/PanelContainer/VBoxContainer/PanelContainer/VBoxContainer" unique_id=537758301]
-layout_mode = 2
-size_flags_vertical = 0
-
-[node name="PlayerChoiceLabel" type="Label" parent="MarginContainer/PanelContainer/VBoxContainer/PanelContainer/VBoxContainer/PanelContainer" unique_id=692810221]
-unique_name_in_owner = true
-custom_minimum_size = Vector2(50, 10)
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 0
-
-[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/PanelContainer/VBoxContainer/PanelContainer/VBoxContainer" unique_id=403219549]
-layout_mode = 2
-size_flags_vertical = 3
-theme_override_constants/margin_left = 50
-theme_override_constants/margin_top = 20
-theme_override_constants/margin_right = 50
-theme_override_constants/margin_bottom = 20
-
-[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/PanelContainer/VBoxContainer/PanelContainer/VBoxContainer/MarginContainer" unique_id=1192512717]
-layout_mode = 2
-theme_override_constants/separation = 40
-
-[node name="PanelContainer2" type="PanelContainer" parent="MarginContainer/PanelContainer/VBoxContainer/PanelContainer/VBoxContainer/MarginContainer/HBoxContainer" unique_id=844248952]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_stretch_ratio = 5.0
-
-[node name="HandPilePosition" type="Control" parent="MarginContainer/PanelContainer/VBoxContainer/PanelContainer/VBoxContainer/MarginContainer/HBoxContainer/PanelContainer2" unique_id=971449515]
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-
-[node name="PanelContainer" type="PanelContainer" parent="MarginContainer/PanelContainer/VBoxContainer/PanelContainer/VBoxContainer/MarginContainer/HBoxContainer" unique_id=1280155252]
-layout_mode = 2
-size_flags_horizontal = 3
-
-[node name="ColorRect" type="ColorRect" parent="MarginContainer/PanelContainer/VBoxContainer/PanelContainer/VBoxContainer/MarginContainer/HBoxContainer/PanelContainer" unique_id=1739205279]
-layout_mode = 2
 
 [node name="EndGameLabel" type="RichTextLabel" parent="." unique_id=1725921560]
 z_index = 5
@@ -154,13 +185,13 @@ unique_name_in_owner = true
 shuffle_time = 0.2
 
 [node name="DrawPile" type="Node2D" parent="." unique_id=1491806840]
-position = Vector2(980, 487)
+position = Vector2(1225, 314)
 
 [node name="HandPile" type="Node2D" parent="." unique_id=319843551]
 z_index = 2
 z_as_relative = false
 y_sort_enabled = true
-position = Vector2(482, 490)
+position = Vector2(571, 467)
 script = ExtResource("5_ynqdh")
 
 [node name="Hand" type="TextureRect" parent="." unique_id=1178589373]

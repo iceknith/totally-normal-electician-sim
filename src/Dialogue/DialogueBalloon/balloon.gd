@@ -117,7 +117,7 @@ func _notification(what: int) -> void:
 
 
 ## Start some dialogue
-func start(with_dialogue_resource: DialogueResource = null, title: String = "", extra_game_states: Array = []) -> void:
+func start(with_dialogue_resource: DialogueResource = null, title: String = "", extra_game_states: Array = [], voice_sfx = "") -> void:
 	temporary_game_states = [self] + extra_game_states
 	is_waiting_for_input = false
 	if is_instance_valid(with_dialogue_resource):
@@ -125,6 +125,7 @@ func start(with_dialogue_resource: DialogueResource = null, title: String = "", 
 	if not title.is_empty():
 		start_from_title = title
 	dialogue_line = await dialogue_resource.get_next_dialogue_line(start_from_title, temporary_game_states)
+	setup_voice(voice_sfx)
 	show()
 
 
@@ -220,6 +221,8 @@ func _on_balloon_gui_input(event: InputEvent) -> void:
 func _on_responses_menu_response_selected(response: DialogueResponse) -> void:
 	next(response.next_id)
 
+
+### plays sound 
 func play_speak_sound(letter:String, letter_index: int, speed: float):
 	match letter:
 		".", ",", "?", "!":
@@ -235,6 +238,8 @@ func play_speak_sound(letter:String, letter_index: int, speed: float):
 			new_audio_player.play()
 			await new_audio_player.finished
 			new_audio_player.queue_free()
-	pass
 
+func setup_voice(voice_sfx:String) : 
+	if voice_sfx != "" : 
+		voice_stream_player.stream = load(voice_sfx)
 #endregion

@@ -13,7 +13,7 @@
 
 [sub_resource type="Gradient" id="Gradient_41tw2"]
 offsets = PackedFloat32Array(0.38957056, 1)
-colors = PackedColorArray(0.24182856, 0, 0.0068073366, 1, 0, 0, 0, 1)
+colors = PackedColorArray(0.15294118, 0, 0.007843138, 1, 0, 0, 0, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_skady"]
 gradient = SubResource("Gradient_41tw2")
@@ -176,9 +176,6 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_skady")
-music_when_entering = null
-animationDuration = null
-baseMinigameLayoutActive = null
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=1350887286]
 layout_mode = 1
@@ -196,16 +193,16 @@ position = Vector2(492, 434)
 
 [node name="Right" type="StaticBody2D" parent="Walls" unique_id=2032400161]
 position = Vector2(1149, 357)
-collision_layer = 3
-collision_mask = 3
+collision_layer = 15
+collision_mask = 15
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Right" unique_id=2051602316]
 position = Vector2(1, -7)
 shape = SubResource("RectangleShape2D_50w5d")
 
 [node name="Up" type="StaticBody2D" parent="Walls" unique_id=38000795]
-collision_layer = 3
-collision_mask = 3
+collision_layer = 15
+collision_mask = 15
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Up" unique_id=228074278]
 position = Vector2(569, -4)
@@ -213,8 +210,8 @@ shape = SubResource("RectangleShape2D_gja22")
 
 [node name="Left" type="StaticBody2D" parent="Walls" unique_id=754183200]
 position = Vector2(-16, 360)
-collision_layer = 3
-collision_mask = 3
+collision_layer = 15
+collision_mask = 15
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Left" unique_id=1601021392]
 position = Vector2(1, -7)
@@ -222,8 +219,8 @@ shape = SubResource("RectangleShape2D_lh3vw")
 
 [node name="Down" type="StaticBody2D" parent="Walls" unique_id=2119867449]
 position = Vector2(-2, 654)
-collision_layer = 3
-collision_mask = 3
+collision_layer = 15
+collision_mask = 15
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Down" unique_id=1017536816]
 position = Vector2(569, -4)
@@ -259,7 +256,7 @@ ball_color = Color(0.6431373, 0.1764706, 0.9137255, 1)
 [node name="LittleJo" parent="Entities" unique_id=947143515 instance=ExtResource("5_sf31h")]
 position = Vector2(917, 225)
 scale = Vector2(0.5, 0.5)
-collision_layer = 4
+collision_layer = 8
 ball_color = Color(0, 0.9254902, 0.047058824, 1)
 
 [node name="JoManager" parent="Entities" unique_id=639065793 node_paths=PackedStringArray("enemy", "player", "ball") instance=ExtResource("6_sf31h")]

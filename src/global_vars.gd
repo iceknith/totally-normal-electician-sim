@@ -48,6 +48,33 @@ func get_current_title(title:String, dialogue:DialogueResource) -> String:
 ### World ###
 #############
 
+
+##############
+### Arcade ###
+##############
+
+var LittleJoBeaten:bool = false
+var JoListerBeaten:bool = false
+var BigJoBeaten:bool = false
+var JoBeaten:bool = false
+
+
+##############
+### RPS ###
+##############
+
+var tutorial_done:bool = false 
+
+var first_interaction_willy = true
+
+
+var willy_beaten = false
+var stanly_beaten = false
+
+var billy_won_game:bool = false
+var billy_beaten = false
+
+var has_cake:bool = false
 var bought_cake_superette:bool = false
 var visited_superette:bool = false
 var bought_cake_bakery:bool = false

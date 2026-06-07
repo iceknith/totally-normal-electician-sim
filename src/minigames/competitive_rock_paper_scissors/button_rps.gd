@@ -5,13 +5,16 @@ class_name RPS_button extends Node2D
 var my_choice:RPS.Choice
 
 
+func _ready():
+	pass
 func set_choice(choice:RPS.Choice) -> void :
 	var my_choice = choice
 
 func set_texture(texture:Texture):
 	$TextureButton.texture_normal = texture
 	
-	
+func set_ordering(i:int):
+	z_index +=i
 
 func setup_signals():
 	pass

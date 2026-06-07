@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cq31u4d5aah6n" path="res://src/minigames/arcadeGame/level/full_game.gd" id="1_l1j2u"]
 [ext_resource type="PackedScene" uid="uid://81drtmexlash" path="res://src/minigames/arcadeGame/arena.tscn" id="1_soqpu"]
-[ext_resource type="PackedScene" path="res://src/minigames/arcadeGame/level/borne3d.tscn" id="2_vvjij"]
+[ext_resource type="PackedScene" uid="uid://c1326xcwc7x4b" path="res://src/minigames/arcadeGame/level/borne3d.tscn" id="2_vvjij"]
 [ext_resource type="Shader" uid="uid://clv81aafjwt8i" path="res://src/minigames/arcadeGame/crt.gdshader" id="3_d1jky"]
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_hss7a"]
@@ -14,10 +14,10 @@ shader = ExtResource("3_d1jky")
 shader_parameter/input_texture = SubResource("ViewportTexture_hss7a")
 shader_parameter/shake = 0.0
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_vvjij"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_0stui"]
 viewport_path = NodePath("Jeu/RenduJeu")
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_0stui"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_vvjij"]
 viewport_path = NodePath("../../../RenduJeuCRT/SubViewport")
 
 [node name="FullGame" type="Control" unique_id=288012244]
@@ -28,6 +28,10 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_l1j2u")
+music_when_entering = null
+change_music = null
+animationDuration = null
+baseMinigameLayoutActive = null
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1289738848]
 layout_mode = 1
@@ -61,7 +65,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = SubResource("ViewportTexture_vvjij")
+texture = SubResource("ViewportTexture_0stui")
 
 [node name="Borne" type="SubViewportContainer" parent="." unique_id=543476878]
 texture_filter = 1
@@ -81,7 +85,7 @@ size = Vector2i(1152, 648)
 render_target_update_mode = 4
 
 [node name="Borne3d" parent="Borne/RenduBorne" unique_id=347642000 instance=ExtResource("2_vvjij")]
-texture = SubResource("ViewportTexture_0stui")
+texture = SubResource("ViewportTexture_vvjij")
 
 [node name="Jeu" type="SubViewportContainer" parent="." unique_id=584671865]
 z_index = -1

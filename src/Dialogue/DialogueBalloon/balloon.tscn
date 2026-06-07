@@ -203,7 +203,7 @@ stream = SubResource("AudioStreamMP3_64pbl")
 
 [node name="VoiceStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=244185477]
 stream = SubResource("AudioStreamMP3_1ebeg")
-volume_db = -5.0
+volume_db = -15.0
 pitch_scale = 2.0
 bus = &"sfx"
 

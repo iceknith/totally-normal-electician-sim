@@ -1,19 +1,32 @@
-~ billy_intro
-Billy: [wave amp=40 freq=5]Hi ! My name is Billy ![/wave] [#voice_sound=uid://bm1e4xlpgjw4p]
-Billy : [wave amp=40 freq=5]Everybody loves good ol'  Billy ![/wave][#voice_sound=uid://bm1e4xlpgjw4p]
-Billy : [wave amp=25 freq=5]I've been playing this game for a while you know ![/wave] [#voice_sound=uid://bm1e4xlpgjw4p]
-Billy : [wave amp=25 freq=5]So ! [wait=0.5] I'm pretty [speed=0.2][font_size=40][rainbow] [wait=0.5] [wave amp=60 freq=5]STRONG.[/wave][/rainbow][/font_size] [#voice_sound=uid://bm1e4xlpgjw4p]
-Billy : [wave amp=40 freq=5]I hope we both have a lot of fun ![/wave] [#voice_sound=uid://bm1e4xlpgjw4p]
+
+
+
+~ BillyIntro
+if GlobalVars.billy_beaten
+	Billy:  [shake rate=20 level=10] I don't want to talk to you anymore... [/shake]
+	Billy: [shake rate=20 level=10] Go away ! [/shake]
+elif GlobalVars.billy_won_game
+	Billy: [wave amp=40 freq=5]Helloooo my favorite  [speed=0.2][font_size=40][rainbow] [wait=0.5] [wave amp=60 freq=5]LOSER[/wave][/rainbow][/font_size].
+	Billy: [wave amp=40 freq=5] So you want a rematch ? [/wave] 
+	- Yes 
+		$> MainCommunicator.send_signal_to_main(MainCommunicator.SignalType.ADD_MINIGAME, [load("res://src/minigames/competitive_rock_paper_scissors/Rock Paper scissors.tscn"), {"opponent":2}])
+	- No 
+		Billy: [speed=0.2][font_size=40][rainbow] [wait=0.5] [wave amp=60 freq=5]LOSER[/wave][/rainbow][/font_size].
+
+else
+	Billy: [wave amp=40 freq=5]Hi ! My name is Billy ![/wave] [#voice_sound=uid://bm1e4xlpgjw4p]
+	Billy : [wave amp=40 freq=5]Everybody loves good ol'  Billy ![/wave][#voice_sound=uid://bm1e4xlpgjw4p]
+	Billy : [wave amp=25 freq=5]I've been playing competitive rock papers for a while ! ![/wave] [#voice_sound=uid://bm1e4xlpgjw4p]
+	Billy : [wave amp=25 freq=5]So ! [wait=0.5] I'm pretty [speed=0.2][font_size=40][rainbow] [wait=0.5] [wave amp=60 freq=5]STRONG.[/wave][/rainbow][/font_size] [#voice_sound=uid://bm1e4xlpgjw4p]
+	Billy: Wanna play a game with me ? 
+	- Yes 
+		Billy : [wave amp=40 freq=5]I hope we both have a lot of fun ![/wave] [#voice_sound=uid://bm1e4xlpgjw4p]
+		$> MainCommunicator.send_signal_to_main(MainCommunicator.SignalType.ADD_MINIGAME, [load("res://src/minigames/competitive_rock_paper_scissors/Rock Paper scissors.tscn"), {"opponent":2}])
+	- No 
+		Billy: [wave amp=40 freq=5] That's okay. Not everyone can be as good as ol'Billy.[/wave]
 => END
 
-~ billy_lose
-%
-	Billy : [shake rate=20 level=10]You're making me[wait=0.5] SAD !!![/shake]
-%
-	[font_size=40][shake rate=20 level=10] (,,>﹏<,,)[/shake] 
-=> END
-
-~ billy_win
+~ BillyWin
 %
 	Billy : I'm winning !!![next=auto]
 	Billy: [shake rate=20 level=10]Not that I'm not used to it ![/shake][next=auto]
@@ -21,38 +34,163 @@ Billy : [wave amp=40 freq=5]I hope we both have a lot of fun ![/wave] [#voice_so
 	Billy: [wave amp=25 freq=5]HJJAEJAEJKHAKJEHZKJ ! I'm winning ! HAOOHEAJHEA[/wave]
 => END
 
-~ stanly_intro
-Stanly: Hey, I'm Stanly
+~ BillyLose
+%
+	Billy : [shake rate=20 level=10]You're making me[wait=0.5] SAD !!![/shake]
+%
+	Billy : [font_size=40][shake rate=20 level=10] (,,>﹏<,,)[/shake] 
 => END
 
-~ stanly_lose
-Stanly: Oh no :C I've lost
+~ BillyTutorial
+Billy:  [wave amp=40 freq=5] WHAT ????? YOU'VE NEVER PLAYED COMPETITIVE ROCK PAPER SCISSORS BEFORE !!!!![/wave]
+Billy: [wave amp=40 freq=5] I'll teach you !!![/wave]
+Billy: [wave amp=40 freq=5] The rules are super simple !! [/wave]
+Billy: [wave amp=40 freq=5] It's like rock paper scissors except you can only choose one of the option of the cards you'll be given. [/wave]
+Billy: [wave amp=40 freq=5] You're given 3 cards per round and you can always see on the left how many cards of each there are left in the deck ! [/wave]
+Billy : [wave amp=25 freq=5]The game may seem simple but it's all about [wait=0.5] THE [speed=0.2][font_size=40][rainbow] [wait=0.5] [wave amp=60 freq=5]PHSYCHOLOGY[/wave][/rainbow][/font_size]
+Billy : [wave amp=25 freq=5]Let's play !!! [/wave]
 => END
 
-~ stanly_win
-Stanly: YESS, I've won !
+
+~ BillyGameWin 
+Billy: [speed = 2][shake rate=20 level=10] I won ???[/shake] [/speed]
+Billy: [speed = 30] HAHAHAHAHAHAH I WON !
+Billy: YOU STINK ! YOU'RE SO BAD.
+Billy: You're so bad that it's depressing !
+Billy: Try to get better before facing the great Billy again !
+Billy: Or just stay home. HAHAHAHAH ! 
+$> GlobalVars.billy_won_game = true
 => END
 
-~ willy_intro
-Willy: Hey, I'm Willy
+~ BillyGameLose
+Billy: ...
+Billy: ...
+Billy: You're a horrible person.
+Billy: I dont wanna play with you anymore.
+$> GlobalVars.billy_beaten = true 
 => END
 
-~ willy_lose
-Willy: Oh no :C I've lost
+
+~ StanlyIntro 
+Stanly : Me Stanly.
+Stanly: Me like play games.
+Stanly: You, me, play, now.
+Stanly: You play ?
+~ AskPlayerStanly 
+- No.
+	=> END
+- Yes 
+	Let's play.
+	$> MainCommunicator.send_signal_to_main(MainCommunicator.SignalType.ADD_MINIGAME, [load("res://src/minigames/competitive_rock_paper_scissors/Rock Paper scissors.tscn"), {"opponent":0}])
+- Who are you again ? 
+	Stanly: ME Stanly !!!!!!
+	Stanly: ME PLAY !!!
+	Stanly: YOU PLAY ??? => AskPlayerStanly
 => END
 
-~ willy_win
-Willy: YESS, I've won !
+
+~ StanlyTutorial
+Stanly: ...
+Stanly: You stupid.
+Stanly: You no played before.
+Stanly: Rules easy.
+Stanly: Rock, Papers, Scissors. 
+Stanly: You get 3 options. You chose. I also 3 options.
+Stanly: Left, numbers of each in deck.
+Stanly: You, me, play, now.
 => END
 
-~ rayly_intro
-Rayly: Hey, I'm Willy
+
+~ WillyIntro
+if GlobalVars.first_interaction_willy 
+	Willy: ...
+	Willy: Oy mate ! Got something to drink ? 
+	- No.
+		Willy: Disappointing 
+	- Yes.
+		Willy: Nice. Give it to me.
+		- I lied.
+			Willy : You think you're funny ?
+		if GlobalVars.ducks > 0 
+			- Give him a duck
+				Willy : That's not a drink.
+				Willy : ...
+				Willy: It'll do.
+				$> GlobalVars.ducks -=1
+				The plastic duck disappeared in Willy's mouth.
+				You feel in your heart that there will be dire consequences.
+$> GlobalVars.first_interaction_willy = false
+Willy: So you wanna play a game ?
+- No.
+	Willy: You're a bloody coward aren't you ? 
+	=> END
+- Yes
+	Willy: That's the spirit !
+	$> MainCommunicator.send_signal_to_main(MainCommunicator.SignalType.ADD_MINIGAME, [load("res://src/minigames/competitive_rock_paper_scissors/Rock Paper scissors.tscn"), {"opponent":1}])
+	
 => END
 
-~ rayly_lose
-Rayly: Oh no :C I've lost
+
+~ WillyGameWin
+Willy: Too bad, mate.
+Willy: Come back anytime.
+Willy: Preferably with something to drink.
 => END
 
-~ rayly_win
-Rayly: YESS, I've won !
+~ WillyGameLose
+Willy: You've become quite good, aye.
+Willy: Let's play again sometimes.
 => END
+
+
+~ WillyTutorial
+Willy: It's like rock, paper, scissors, except you can only pick one of the options from the cards you're given. Fancy that, eh?
+Willy: You get 3 cards each round and on the left you can always see how many of each card are still left in the deck. Use your eyes, yeah?
+Willy: Now, the game may look simple, but don't be fooled, you cheeky little muppet... you gotta think mate.
+Willy: Right then, enough faffing about. Let's bloody play!!!
+=> END
+
+
+~ StanlyLose
+% 
+	Stanly: Good.
+	Stanly: You play Good.
+% 
+	Stanly: Mmmmmmhhh.
+=> END
+
+~ StanlyWin
+% 
+	Stanly: STANLY WIN STANLY INVINCIBLE.
+%
+	Stanly: You stupid. Play better.
+=> END
+
+	
+~ StanlyGameWin
+Stanly: Thanks play with Stanly.
+Stanly: Stanly happy.
+=> END
+
+~ StanlyGameLose
+Stanly: Thanks play with Stanly.
+Stanly: Stanly happy.
+=> END
+
+	
+~ WillyLose
+% 
+	Willy: You dirty muppet !
+% 
+	Willy: You're getting good...
+=> END
+
+~ WillyWin
+% 
+	Willy: You owe me a drink !
+%
+	Willy : Aha ! Got ya ! 
+=> END
+
+
+

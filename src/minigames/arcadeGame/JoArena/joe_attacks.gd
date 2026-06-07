@@ -56,8 +56,10 @@ func ball_attack():
 		ball.set_player(player)
 		ball.set_timer(turn_back_timer)
 		ball.set_life_time(balls_life_time)
+		
 		ball.visible = true
 		attacks.add_child(ball)
+		ball.update_ball_color(ball_color)
 		ball_pool.append(ball)
 		ball_spawn_path.progress_ratio = float(i) / float(nb_ball)
 		ball.global_position = ball_spawn_path.global_position
