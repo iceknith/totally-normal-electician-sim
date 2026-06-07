@@ -1,10 +1,12 @@
 [gd_scene format=3 uid="uid://bbq15i7mvddty"]
 
-[ext_resource type="Script" uid="uid://cgyvdrykqnehb" path="res://src/ui/menues/sound_settings_menu.gd" id="1_63axh"]
-[ext_resource type="FontFile" uid="uid://dhoixqrkemx30" path="res://assets/gui/ithaca-font/Ithaca-LVB75.ttf" id="2_nubjj"]
+[ext_resource type="Script" path="res://src/ui/menues/sound_settings_menu.gd" id="1_63axh"]
+[ext_resource type="FontFile" uid="uid://dsk8fdbx0pieu" path="res://assets/gui/fonts/bubblebaz.ttf" id="2_nubjj"]
+[ext_resource type="Theme" uid="uid://1765abvag8jw" path="res://assets/gui/theme.tres" id="3_78bej"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ixk0t"]
-bg_color = Color(0.15, 0.15, 0.15, 1)
+[sub_resource type="LabelSettings" id="LabelSettings_hxmih"]
+font = ExtResource("2_nubjj")
+font_size = 60
 
 [sub_resource type="LabelSettings" id="LabelSettings_xy610"]
 font = ExtResource("2_nubjj")
@@ -17,17 +19,9 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("3_78bej")
 script = ExtResource("1_63axh")
 metadata/_custom_type_script = "uid://dd5w2ptvu7pou"
-
-[node name="ColorRect" type="ColorRect" parent="." unique_id=51887224]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0, 0, 0, 0.19607843)
 
 [node name="PanelContainer" type="PanelContainer" parent="." unique_id=1072085457]
 custom_minimum_size = Vector2(500, 600)
@@ -43,7 +37,6 @@ offset_right = 95.0
 offset_bottom = 192.5
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_ixk0t")
 
 [node name="MarginContainer" type="MarginContainer" parent="PanelContainer" unique_id=2018218630]
 layout_mode = 2
@@ -60,7 +53,7 @@ theme_override_constants/separation = 10
 layout_mode = 2
 size_flags_horizontal = 4
 text = "Sound Settings"
-label_settings = SubResource("LabelSettings_xy610")
+label_settings = SubResource("LabelSettings_hxmih")
 
 [node name="EmptySpace" type="Control" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=911892567]
 custom_minimum_size = Vector2(0, 100)
@@ -116,9 +109,9 @@ unique_name_in_owner = true
 custom_minimum_size = Vector2(150, 0)
 layout_mode = 2
 size_flags_horizontal = 4
-theme_override_fonts/font = ExtResource("2_nubjj")
+theme = ExtResource("3_78bej")
 theme_override_font_sizes/font_size = 36
-text = "Exit"
+text = "Back"
 
 [connection signal="value_changed" from="PanelContainer/MarginContainer/VBoxContainer/MasterVolume" to="." method="_on_master_volume_value_changed"]
 [connection signal="value_changed" from="PanelContainer/MarginContainer/VBoxContainer/MusicVolume" to="." method="_on_sound_volume_value_changed"]

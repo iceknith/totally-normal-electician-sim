@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://dvg3cthpe104h" path="res://src/minigames/competitive_rock_paper_scissors/ChooseOption.tscn" id="1_q8qak"]
 [ext_resource type="PackedScene" uid="uid://boloxxts85tff" path="res://src/minigames/competitive_rock_paper_scissors/RPS_button.tscn" id="2_0lxge"]
 [ext_resource type="PackedScene" uid="uid://mecgfpfk6sbr" path="res://src/minigames/competitive_rock_paper_scissors/roll_sprite.tscn" id="2_ladea"]
-[ext_resource type="FontFile" uid="uid://dhoixqrkemx30" path="res://assets/gui/ithaca-font/Ithaca-LVB75.ttf" id="3_c10fi"]
+[ext_resource type="FontFile" uid="uid://dcu0gks0yl1lh" path="res://assets/gui/fonts/Jersey10-Regular.ttf" id="3_c10fi"]
 [ext_resource type="Texture2D" uid="uid://c5gyf7q6yvcp8" path="res://src/minigames/competitive_rock_paper_scissors/asset/2D/hand.png" id="5_uuwv0"]
 [ext_resource type="PackedScene" uid="uid://dt4mec201tdh3" path="res://src/minigames/competitive_rock_paper_scissors/personPlaying.tscn" id="5_xbnbg"]
 [ext_resource type="Script" uid="uid://c0sp2ilspegwv" path="res://src/minigames/competitive_rock_paper_scissors/hand_pile.gd" id="5_ynqdh"]
@@ -33,7 +33,6 @@ corner_radius_bottom_left = 3
 corner_detail = 5
 
 [sub_resource type="LabelSettings" id="LabelSettings_c10fi"]
-font = ExtResource("3_c10fi")
 font_size = 40
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_c10fi"]

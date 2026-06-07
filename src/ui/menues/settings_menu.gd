@@ -20,8 +20,11 @@ func connect_signals() -> void:
 			[sound_settings_menu, {} as Dictionary[String, Callable]]
 		)
 	)
-	%ButtonExit.pressed.connect(
+	%ButtonBack.pressed.connect(
 		MainCommunicator.send_signal_to_main.bind(
 			MainCommunicator.SignalType.REMOVE_MINIGAME
 		)
+	)
+	%ButtonExit.pressed.connect(
+		get_tree().quit
 	)

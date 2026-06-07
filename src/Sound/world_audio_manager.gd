@@ -42,7 +42,6 @@ var current_music:String = ""
 
 func _ready():
 	music_base_volume_db = bg_music_player.volume_db
-	update_music(default_music)
 	SoundManager.change_music.connect(update_music)
 	SoundManager.stop_music.connect(stop_music)
 	MainCommunicator.ChangeGameState.connect(back_to_main_theme)
