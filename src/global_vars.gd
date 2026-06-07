@@ -64,15 +64,12 @@ var JoBeaten:bool = false
 ##############
 
 var tutorial_done:bool = false 
-
 var first_interaction_willy = true
-
-
 var willy_beaten = false
 var stanly_beaten = false
-
 var billy_won_game:bool = false
 var billy_beaten = false
+
 
 var has_cake:bool = false
 var bought_cake_superette:bool = false

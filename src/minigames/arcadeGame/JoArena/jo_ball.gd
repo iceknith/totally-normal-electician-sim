@@ -63,7 +63,7 @@ func set_player(p):
 func appear_animation(): #set up the appearing animation
 	var tween = create_tween()
 	disable_scale_management = true
-	tween.tween_property(self, "scale", Vector2.ONE*1.5, 0.8)
+	tween.tween_property(self, "scale", Vector2.ONE*1.3, 0.8)
 	await tween.finished
 	starting_animation_finished = true
 	disable_scale_management = false

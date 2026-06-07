@@ -49,23 +49,32 @@ signal fight_over
 func _ready():
 	fight_id = 0
 
-func ball_attack():
-	var balls = []
+func ball_attack(id = fight_id):
 	for i in range(nb_ball):
-		var ball: Jo_ball = JoBall.instantiate()
-		ball.set_player(player)
-		ball.set_timer(turn_back_timer)
-		ball.set_life_time(balls_life_time)
-		
-		ball.visible = true
-		attacks.add_child(ball)
-		ball.update_ball_color(ball_color)
-		ball_pool.append(ball)
+		if fight_id != id:
+			return
+
+		var jo_ball: Jo_ball = JoBall.instantiate()
+		jo_ball.set_player(player)
+		jo_ball.set_timer(turn_back_timer)
+		jo_ball.set_life_time(balls_life_time)
+
+		jo_ball.visible = true
+		attacks.add_child(jo_ball)
+
+		jo_ball.update_ball_color(ball_color)
+		ball_pool.append(jo_ball)
+
 		ball_spawn_path.progress_ratio = float(i) / float(nb_ball)
-		ball.global_position = ball_spawn_path.global_position
-		ball.process_mode = Node.PROCESS_MODE_INHERIT
-		var direction:Vector2 = player.global_position - ball.global_position
-		ball.update_direction(direction.normalized())
+		jo_ball.global_position = ball_spawn_path.global_position
+		jo_ball.process_mode = Node.PROCESS_MODE_INHERIT
+
+		var direction: Vector2 = player.global_position - jo_ball.global_position
+		jo_ball.update_direction(direction.normalized())
+
+		# Délai avant la prochaine boule, sauf après la dernière
+		if i < nb_ball - 1:
+			await get_tree().create_timer(time_between_ball_spawn).timeout
 
 
 
@@ -74,7 +83,7 @@ func ball_attack():
 func start_fight(id):
 	if fight_id != id :
 		return
-	ball_attack()
+	await ball_attack(id)
 	if fight_id != id :
 		return
 	await get_tree().create_timer(balls_life_time + 1).timeout
@@ -197,12 +206,13 @@ func reset_place():
 	
 func create_jo_manager(jo_ent:ArcadeEnemy, ball_ent :arcade_ball):
 	var manager: JoManager = jo_manager.instantiate()
-	manager.pause_movement = true
+	
 	manager.enemy = jo_ent
 	manager.player = player
 	manager.ball = ball_ent
 	manager.set_preset(JoManager.opponent.Jo)
 	manager.apply_jo_preset()
+	manager.pause_movement = true
 	return manager
 	
 	

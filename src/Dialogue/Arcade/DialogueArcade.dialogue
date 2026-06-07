@@ -1,5 +1,11 @@
 
-~ LittleJo
+~ LittleJoIntro
+
+if GlobalVars.LittleJoBeaten
+	Little Jo: Let's face again tomorrow !
+	Little Jo: I'm gonna train a lot to beat you.
+	Little Jo: Meanwhile, if you're looking for a challenge, go talk to my brothers.
+	=> END
 Little Jo : Hi ! I'm little Jo, the youngest brother of the Jo family.
 Little Jo: I'm a bit busy, so what do you want ? 
 - What are you doing ? 
@@ -14,6 +20,10 @@ Little Jo: I'm a bit busy, so what do you want ?
 				Little Jo: I guess you also never shower !
 				Little Jo: You should be a strong opponent !
 				Little Jo: Wanna play ?
+				- Yes 
+				- No 
+					Billy : Okay ! See you later.
+					=> END
 			- I lied but I still want to play !
 				Little Jo: Okay ! 
 		- Yes 
@@ -54,14 +64,140 @@ Little Jo: Try dodging or sending back the ball when it's my color !
 => END
 
 		
-~ LittleJoBeaten 
+~ BeatenLittleJo
+$> GlobalVars.LittleJoBeaten = true
 Little Jo: You learn quickly !
 Little Jo: You should try playing against my brothers !
 Little Jo: Who knows, maybe one day you'll be able to beat Jo. Ahaha !
 Little Jo: ...
 $> SoundManager.stop_music.emit()
 Little Jo: It was a joke. 
+Little Jo: Nobody beats Jo.
 $> SoundManager.change_music.emit("Arcade")
+
 => END
 
+~ WinLittleJo 
+Little Jo: Better luck next time !
+=> END
 
+~ JoListerIntro
+if GlobalVars.JoListerBeaten
+	Jolister: I didn't really lose.
+	Jolister: My hand was just a bit slippery that's it.
+	=> END
+Jolister : I'm Jolister. Middle child of the jo family.
+if GlobalVars.LittleJoBeaten
+	Jolister : So you've beaten our little brother.
+	Jolister: Not that it proves anything but...
+	Jolister: Would you care for a challenge ?
+	- Yes
+		Jolister: I'll avenge you little bro.
+		$> MainCommunicator.send_signal_to_main(MainCommunicator.SignalType.ADD_MINIGAME, [load("res://src/minigames/arcadeGame/level/FullArcadeGame.tscn"), {"opponent":1}])
+		=> END
+	- No 
+		Jolister: Tss..
+		=> END
+Jolister: What do you want ?
+- I want to play with you.
+	Jolister: You dare to challenge me even though you couldn't even beat my little brother.
+	Jolister: Go away and come back when you've learned the rules of the game.
+	=> END
+- Nothing. Just Watching.
+	Jolister: Go watch someone else.
+	=> END
+
+~ BeatenJoLister 
+$> GlobalVars.JoListerBeaten = true
+Jolister: I couldn't avenge you, brother...
+Jolister: I'm sorry...
+Little Jo: Stop being such a drama queen.
+Jolister: No one talked to you !
+Little Jo: Jolister is a drama queen ! Haha.
+Jolister: Everything's your fault ! Go away and let me play alone !
+=> END
+
+~ WinJoLister 
+Jolister: You've been avenged little bro !
+Little Jo: I'm still alive, you know !
+Jolister: I can still hear your beautiful voice from here.
+Little Jo: ...
+Jolister: You.
+Jolister : Come back whenever you want, I always like to carry a revenge.
+Jolister: Especially when my opponent is this bad. Haha.
+=> END
+
+~ BigJoIntro
+if GlobalVars.BigJoBeaten
+	BigJo: ...
+	=> END
+if !GlobalVars.LittleJoBeaten and !GlobalVars.JoListerBeaten
+	BigJo : ...
+	BigJo: Don't want to be mean but...
+	BigJo: You're still too weak.
+	=> END
+if GlobalVars.LittleJoBeaten and !GlobalVars.JoListerBeaten
+	BigJo: ...
+	BigJo: You've grown stronger.
+	BigJo: But you're still weak.
+	=> END
+if GlobalVars.LittleJoBeaten and GlobalVars.JoListerBeaten
+	BigJo: You have become worthy.
+	BigJo: Let's face each other.
+	- Yes
+		BigJo: Our battle will be legendary.
+		$> MainCommunicator.send_signal_to_main(MainCommunicator.SignalType.ADD_MINIGAME, [load("res://src/minigames/arcadeGame/level/FullArcadeGame.tscn"), {"opponent":2}])
+	- No 
+		BigJo: No need to rush.
+		BigJo: Come back when you feel ready.
+=> END
+		
+~ BeatenBigJo
+$> GlobalVars.BigJoBeaten = true
+BigJo: It was a beautiful game.
+BigJo: But I was never the final wall.
+BigJo: Try interacting with the machine at the right.
+BigJo: To truly become the best, one needs to beat the true Jo.
+BigJo: It may be difficult but I know you can do it.
+=> END
+
+~ WinBigJo
+BigJo: Don't feel ashamed.
+BigJo: It was a good game.
+BigJo: Come back whenever you want.
+=> END
+
+~ DancingCat 
+if GlobalVars.eow_meter < 0.5 
+	??? : I'm gonna become the greatest dancer in the world.
+	??? : And by that I mean the greatest Cat Cat Revolution Player.
+	??? : Tomorrow I have a very important tournament in the big city.
+	??? : I'm so excited to finally show my talent to the world.
+	??? : I need to train a lot !
+	=> END
+if GlobalVars.eow_meter < 0.7 
+	??? : I'm starting to feel a bit tired.
+	??? : But I won't give up !
+	=> END
+if GlobalVars.eow_meter < 0.8 
+	??? : Is it me or the music is getting slower ? 
+	??? : No !
+	??? : I shouldn't think about !
+	??? : I should continue dancing !
+	=> END
+if GlobalVars.eow_meter < 0.9 
+	??? : DANCE ! DANCE ! DANCE ! DANCE ! DANCE ! DANCE ! DANCE ! DANCE ! DANCE ! DANCE ! DANCE ! DANCE ! 
+	??? : Don't stop DANCING ! 
+	=> END
+	
+
+~ TheJoIntro
+if !GlobalVars.BigJoBeaten
+	As you try to touch the machine, a violent electric shock throws you back.
+	You are not worthy.
+	=> END
+The machine accepts you.
+On the other side you feel the presence of the true Jo.
+Let the challenge begin.
+$> MainCommunicator.send_signal_to_main(MainCommunicator.SignalType.ADD_MINIGAME, [load("res://src/minigames/arcadeGame/level/FullJoBoss.tscn")])
+=> END

@@ -36,8 +36,9 @@ func _ready() -> void:
 	else : 
 		jo_attacks.fight_over.connect(end_fight)
 		player.inform_death.connect(reset)
-
+		await intro()
 		start_game()
+		
 
 
 ### Get all hitball component to connect the shockwave effect
@@ -86,12 +87,12 @@ func exit():
 ### Plays the Intro Dialogue and starts the fight
 func intro():
 	SoundManager.change_music.emit("JoeIntro")
-	
+	await get_tree().create_timer(4).timeout
 	MainCommunicator.send_signal_to_main(
 	MainCommunicator.SignalType.START_DIALOGUE, 
 	[dialogue, "_intro", [self]] 
 	)
-	await DialogueManager.dialogue_ended
+	await wait_for_dialogue_end(dialogue)
 	animation_player.play("teleport")
 	await animation_player.animation_finished
 	SoundManager.change_music.emit("Joe")
@@ -110,6 +111,7 @@ func end_fight():
 	
 	
 func jo_beaten():
+	$Cinematics/Intro/Sprite2D.visible = false
 	SoundManager.stop_music.emit()
 	await get_tree().create_timer(2).timeout
 	MainCommunicator.send_signal_to_main(
@@ -119,3 +121,9 @@ func jo_beaten():
 	await DialogueManager.dialogue_ended
 	exit()
 	
+func wait_for_dialogue_end(target_dialogue: DialogueResource) -> void:
+	while true:
+		var ended_dialogue: DialogueResource = await DialogueManager.dialogue_ended
+		
+		if ended_dialogue == target_dialogue:
+			return

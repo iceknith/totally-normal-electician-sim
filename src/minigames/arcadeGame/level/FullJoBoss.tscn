@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cppr3lfytuf4v"]
 
-[ext_resource type="Script" uid="uid://cq31u4d5aah6n" path="res://src/minigames/arcadeGame/level/full_game.gd" id="1_nmw0c"]
+[ext_resource type="Script" uid="uid://5pmxtph2niwu" path="res://src/minigames/arcadeGame/level/full_jo_boss.gd" id="1_nmw0c"]
 [ext_resource type="Shader" uid="uid://clv81aafjwt8i" path="res://src/minigames/arcadeGame/crt.gdshader" id="2_l72mc"]
 [ext_resource type="PackedScene" uid="uid://c1326xcwc7x4b" path="res://src/minigames/arcadeGame/level/borne3d.tscn" id="3_a0e7l"]
 [ext_resource type="PackedScene" uid="uid://cclm786uyuncm" path="res://src/minigames/arcadeGame/JoArena/JoArena.tscn" id="4_nmw0c"]
@@ -28,7 +28,6 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_nmw0c")
-music_when_entering = "Jo"
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1289738848]
 layout_mode = 1
