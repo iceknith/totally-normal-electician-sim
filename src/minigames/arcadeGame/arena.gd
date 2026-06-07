@@ -28,10 +28,19 @@ enum BALLSTATE
 	EnemyControl,
 	None
 }
+const opponent_name:Dictionary[JoManager.opponent, String] = {
+	JoManager.opponent.LittleJo : "LittleJo",
+	JoManager.opponent.Jolister : "JoLister",
+	JoManager.opponent.BigJo : "BigJo"
+}
+
 var opponent_preset:JoManager.opponent = JoManager.opponent.LittleJo
 var PlayerScore:int
 var EnemyScore:int
 @export var ScoreToWin:int = 3
+
+var tutorial_destroyed_targets: int = 0
+var tutorial_total_targets: int = 0
 
 
 func _ready() -> void:
@@ -82,7 +91,8 @@ func update_winner(dead_one):
 		await show_score()
 		await get_tree().create_timer(2.0).timeout
 		reset()
-		check_if_end_game()
+		await check_if_end_game()
+		
 		start_round()
 		in_reset_animation = false
 
@@ -152,8 +162,22 @@ func start_round():
 	
 func check_if_end_game():
 	if PlayerScore == ScoreToWin : 
+		opponent.visible = false
+		opponent.process_mode = Node.PROCESS_MODE_DISABLED
+		MainCommunicator.send_signal_to_main(
+		MainCommunicator.SignalType.START_DIALOGUE, 
+		[dialogue,"Beaten" + opponent_name[opponent_preset], [self]])
+		await DialogueManager.dialogue_ended
 		exit()
+			
 	if EnemyScore == ScoreToWin : 
+		player.visible = false
+		player.process_mode = Node.PROCESS_MODE_DISABLED
+		MainCommunicator.send_signal_to_main(
+		MainCommunicator.SignalType.START_DIALOGUE, 
+		[dialogue, "Win"+opponent_name[opponent_preset], [self]] 
+		)
+		await DialogueManager.dialogue_ended
 		exit()
 	
 func exit():
@@ -165,11 +189,13 @@ func reset_game():
 	EnemyScore = 0
 	reset()
 	
-
+func _physics_process(delta):
+	print(opponent_name[opponent_preset])
 func start_tutorial():
 	in_tutorial = true
 	opponent.visible = false
 	opponent.process_mode = Node.PROCESS_MODE_DISABLED
+	await get_tree().create_timer(2).timeout
 	MainCommunicator.send_signal_to_main(
 			MainCommunicator.SignalType.START_DIALOGUE, 
 			[dialogue, "Tutorial1", [self]] 
@@ -198,15 +224,16 @@ func start_tutorial():
 	[dialogue, "Tutorial3", [self]] 
 	)
 
-	
+
 	await spawn_and_wait_tutorial_targets()
-	print("test fin tutoriel")
+
 		
 	MainCommunicator.send_signal_to_main(
 	MainCommunicator.SignalType.START_DIALOGUE, 
 	[dialogue, "Tutorial4", [self]] 
 	)
 	
+	await DialogueManager.dialogue_ended
 	opponent.visible = true
 	opponent.process_mode = Node.PROCESS_MODE_INHERIT
 	reset_game()
@@ -224,21 +251,23 @@ func spawn_and_wait_tutorial_targets():
 		Vector2(950, 500)
 	]
 	
-	var destroyed_targets:= 0
-	var total_targets = target_positions.size()
+	tutorial_destroyed_targets = 0
+	tutorial_total_targets = target_positions.size()
 	
 	for pos in target_positions:
 		var target_instance = tutorialTarget.instantiate()
 		entities.add_child(target_instance)
 		target_instance.global_position = pos
 		
-		target_instance.target_destroyed.connect(func():
-			destroyed_targets += 1
-		)
+		target_instance.target_destroyed.connect(_on_tutorial_target_destroyed)
 	
-	while destroyed_targets < total_targets:
+	while tutorial_destroyed_targets < tutorial_total_targets :
 		await get_tree().process_frame
-	
+
+
+func _on_tutorial_target_destroyed():
+	tutorial_destroyed_targets += 1
+
 	
 	
 	

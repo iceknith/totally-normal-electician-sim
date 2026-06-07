@@ -33,6 +33,7 @@ enum opponent {
 
 func _ready():
 	has_rolled_probabilities.connect(reset_roll)
+	await get_tree().physics_frame
 	apply_jo_preset()
 	if enemy != null : 
 		enemy.HitBallComponent.set_cooldown(attack_cooldown)

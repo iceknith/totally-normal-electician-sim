@@ -3,9 +3,9 @@
 [ext_resource type="Script" uid="uid://cf351f6tudq82" path="res://src/minigames/arcadeGame/JoArena/jo_arena.gd" id="1_utyyb"]
 [ext_resource type="Script" uid="uid://bmhhgdsuq00v7" path="res://src/minigames/arcadeGame/camera_2d.gd" id="3_dagtu"]
 [ext_resource type="PackedScene" uid="uid://cpc5mi3gyvm7y" path="res://src/minigames/arcadeGame/player/Player.tscn" id="4_fvot8"]
+[ext_resource type="Texture2D" uid="uid://bcm4fitljp602" path="res://src/minigames/arcadeGame/player/heartJo.png" id="8_5ppmw"]
 [ext_resource type="Script" uid="uid://bknhk8ood0d0l" path="res://src/minigames/arcadeGame/JoArena/joe_attacks.gd" id="8_eqm75"]
 [ext_resource type="Texture2D" uid="uid://rhy47auhb2o4" path="res://src/minigames/arcadeGame/assets/particles/star particle.png" id="8_jw1ux"]
-[ext_resource type="Texture2D" uid="uid://cra208jmgv7f8" path="res://icon.svg" id="9_eqm75"]
 [ext_resource type="FontFile" uid="uid://dhoixqrkemx30" path="res://assets/gui/ithaca-font/Ithaca-LVB75.ttf" id="9_o85oi"]
 [ext_resource type="PackedScene" uid="uid://dbmva1nkvkoj8" path="res://src/minigames/arcadeGame/countdown_label.tscn" id="10_4a1xh"]
 
@@ -345,8 +345,10 @@ z_index = 1
 [node name="Intro" type="Node2D" parent="Cinematics" unique_id=1526313556]
 
 [node name="Sprite2D" type="Sprite2D" parent="Cinematics/Intro" unique_id=498046939]
-modulate = Color(1, 1, 0, 1)
+modulate = Color(1, 0, 0, 1)
+self_modulate = Color(1, 0, 0, 1)
+texture_filter = 1
 material = SubResource("ShaderMaterial_fvot8")
 position = Vector2(554, 209)
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("9_eqm75")
+scale = Vector2(2, 2)
+texture = ExtResource("8_5ppmw")

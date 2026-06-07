@@ -53,9 +53,9 @@ func get_current_title(title:String, dialogue:DialogueResource) -> String:
 ### Arcade ###
 ##############
 
-var LittleJoBeaten:bool = false
-var JoListerBeaten:bool = false
-var BigJoBeaten:bool = false
+var LittleJoBeaten:bool = true
+var JoListerBeaten:bool = true
+var BigJoBeaten:bool = true
 var JoBeaten:bool = false
 
 
@@ -64,15 +64,12 @@ var JoBeaten:bool = false
 ##############
 
 var tutorial_done:bool = false 
-
 var first_interaction_willy = true
-
-
 var willy_beaten = false
 var stanly_beaten = false
-
 var billy_won_game:bool = false
 var billy_beaten = false
+
 
 var has_cake:bool = false
 var bought_cake_superette:bool = false

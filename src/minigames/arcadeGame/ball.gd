@@ -126,8 +126,8 @@ func get_trail():
 func scale_down_animation():
 	var tween = create_tween()
 	disable_scale_management = true
-	tween.tween_property(self, "scale", Vector2.ZERO, 3)
-	tween.parallel().tween_property(get_trail(), "width", 0, 3)
+	tween.tween_property(self, "scale", Vector2.ZERO, 0.5)
+	tween.parallel().tween_property(get_trail(), "width", 0, 0.5)
 	await tween.finished
 	force_release.emit()
 	

@@ -16,8 +16,10 @@ func _ready():
 	
 
 func _process(delta):
-	if MainCommunicator.is_in_dialogue : 
+	if !MainCommunicator.is_in_dialogue : 
 		manageInput(delta)
+	else : 
+		$Sprite2D.play("default")
 
 func manageInput(delta) -> void: #manage movements
 	
