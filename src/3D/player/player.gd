@@ -74,13 +74,17 @@ func in_interaction() -> bool:
 		 MainCommunicator.current_state != MainCommunicator.GameState.Game3D
 
 func manage_input(delta:float) -> void :
-		# Add the gravity.
+	# Add the gravity.
 	if not is_on_floor():
 		velocity += get_gravity() * delta
 
+	#if Input.is_action_pressed("ui_up"):
+	#	position.y += JUMP_VELOCITY * delta
+	#elif Input.is_action_pressed("ui_down"):
+	#	position.y -= JUMP_VELOCITY * delta
+	
 	# Handle jump.
 	#if Input.is_action_just_pressed("jump") and is_on_floor():
-	#	velocity.y = JUMP_VELOCITY
 
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.

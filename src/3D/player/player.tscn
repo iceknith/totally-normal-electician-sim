@@ -83,6 +83,7 @@ script = ExtResource("2_ihd86")
 
 [node name="handforEOW" parent="head/Camera3D" unique_id=2056753208 instance=ExtResource("3_41h8g")]
 transform = Transform3D(-0.013734085, 0, -0.0990524, 0, 0.1, 0, 0.0990524, 0, -0.013734085, 0.6477792, -0.30266118, -0.5381017)
+visible = false
 
 [node name="InteractableVision" type="RayCast3D" parent="head/Camera3D" unique_id=771690805]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.5188713)

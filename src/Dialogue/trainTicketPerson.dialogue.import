@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://qupaelm28sm2"
+path="res://.godot/imported/trainTicketPerson.dialogue-710646158ad3c558035a69440bd1a231.tres"
+
+[deps]
+
+source_file="res://src/Dialogue/trainTicketPerson.dialogue"
+dest_files=["res://.godot/imported/trainTicketPerson.dialogue-710646158ad3c558035a69440bd1a231.tres"]
+
+[params]
+
+defaults=true

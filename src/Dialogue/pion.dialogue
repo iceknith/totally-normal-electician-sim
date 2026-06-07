@@ -1,0 +1,55 @@
+~ start
+Principal Paul: Ah, hi, didn't see you coming
+- Good morning sir
+- Hi
+=> main
+
+~ start50
+Principal Paul: Ah, hi, didn't see you coming
+- Good afternoon sir
+- Hi
+=> main
+
+~ start70
+Principal Paul: Who's there, I can't see you!
+- Good afternoon sir
+- Sir, it's me!
+Principal Paul: Oh, it's you! My eyes aren't good as they were in the days
+=> main
+
+~ start80
+Principal Paul: Who's there, I can't see you!
+- Good afternoon sir
+- Sir, it's me!
+Principal Paul: Bibi! Is it you that's trying to sneak out unoticed!
+Principal Paul: I already told you!
+Principal Paul: No playing the electrician with the broken tower!
+Principal Paul: And you have to wait to get home!
+Principal Paul: I know that its your birthday, but that's not an excuse!
+=> END
+
+~ main
+Principal Paul: You're here to see your little sibling ?
+- Yes sir
+- Yup
+Principal Paul: Ah, those kids... Always causing trouble!
+- You're right!
+	Principal Paul: You bet I am!
+	Principal Paul: Twenty years in this school, and never was I ever wring.
+	- Yes sir!
+	- Yeeeaaaah... riight...
+- What did they do this time ?
+	Principal Paul: They touched the broken tower. Again
+	- Oh no, not again ?
+	- They're kids, it's not that bad
+	Principal Paul: But don't worry, in the end they weren't hurt that much
+- Maybe you're too harsh with them
+	Principal Paul: You're the one that's too soft on them.
+	Principal Paul: Kids like this need to be educated, need to have order in their life!
+	Principal Paul: Look at you, you were a good for nothing, and thanks to me you've become a productive member of society
+	- Yeah... Right...
+	- ...
+Principal Paul: Go see them, they should be in the playground
+- On my way!
+- ...
+=> END
