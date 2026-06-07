@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://2c5fc6y780ks"
+path="res://.godot/imported/childHomework.dialogue-eaf82e16cefce44a05a29be3b5dd9209.tres"
+
+[deps]
+
+source_file="res://src/Dialogue/childHomework.dialogue"
+dest_files=["res://.godot/imported/childHomework.dialogue-eaf82e16cefce44a05a29be3b5dd9209.tres"]
+
+[params]
+
+defaults=true

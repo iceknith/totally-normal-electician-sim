@@ -1,0 +1,48 @@
+~ start
+Stella: [speed=0.8] Heeey
+- Hi
+- Heeey?
+=> main
+
+~ start60
+Stella: [speed=0.8] Heeey
+- Hi
+- Heeey?
+=> main
+
+~ start70
+Stella: [speed=0.3] Heeey
+- Hi
+- Heeey?
+- You are good ?
+Stella: [speed=0.5] Yeaaah
+Stella: [speed=0.65] I am just a bit slower than usual, no worries!
+=> main
+
+~ start85
+Stella: [speed=0.1] Heeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeey
+- *You fell asleep*
+=> END
+
+~ main
+Stella: [speed=0.8] All of my firends go... To faaast for me!
+Stella: [speed=0.8] Especially finn! Finn's the worst!
+- Oh, no!
+- You want me to talk to them?
+	Stella: [speed=0.8] No, that's fine!
+Stella: [speed=0.8] I will just, stay here and wait!
+Stella: [speed=0.8] Time goes by so quickly!
+Stella: [speed=0.8] I never have time to play catch, do my homework, eat correctly...
+- You're sure you fine?
+	Stella: [speed=0.8] Yeah! That's the way life is!
+	Stella: [speed=0.8] Finn is really fast, and I am really slow! 
+	Stella: [speed=0.8] And it's fine! My popa always tells me that it'll be fine!
+	Stella: [speed=0.8] I draw a lot, do you want to see my drawings?
+	Stella: [speed=0.8] *shows their drawings*
+	- Oh my god, it's beautiful!
+	- Wow!
+	- Nice!
+	Stella: [speed=0.8] Thank you!
+	Stella: [speed=0.8] Everyone tells me I draw good!
+- Damn
+=> END

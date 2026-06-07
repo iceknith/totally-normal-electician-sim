@@ -1,0 +1,80 @@
+~ start
+Pearl: Good morning
+- Good morning
+- Hey
+=> main
+
+~ start50
+Pearl: Good morning
+- Good afternoon
+	Pearl: Oh, yeah, good afternoon, right!
+- Hey
+=> main
+
+~ start65
+Pearl: [font_size=10][speed=1.5] I must hurry, I must hurry [/font_size][/speed] Good morning
+- Good afternoon
+	Pearl: Oh, yeah.. good afternoon, right...
+- Hey
+=> main
+
+~ start75
+Pearl: [font_size=10][speed=1.5] There's no time, there's no time [/font_size][/speed] Good morning
+- Good afternoon
+	Pearl: Oh, yeah.. good afternoon, right...
+- Hey
+Pearl: [font_size=10][speed=1.5] I must hurry I must hurry!
+- Why must you hurry?
+- Are you okay?
+Pearl: I must hurry, because there's no time for my homework
+Pearl: I can't do my homework, and there's no time for it!
+=> main
+
+~ start85
+Pearl: [font_size=10][speed=1.5] There's no time, I must hurry! [next=auto]
+Pearl: [font_size=10][speed=1.5] But if I hurry, then my homework won't be good! [next=auto]
+Pearl: [font_size=10][speed=1.5] The teacher will be very disapointed in me! [next=auto]
+Pearl: [font_size=10][speed=1.5] They will be sososo sad! And then I'll be punished! [next=auto]
+Pearl: [font_size=10][speed=1.5] I don't wanna be punished! [next=auto]
+Pearl: [font_size=10][speed=1.5] So I must do my homework! [next=auto]
+Pearl: [font_size=10][speed=1.5] But there's no time! I simply cannot! [shake rate=20 level=10] ARGHHHH [next=auto]
+=> END
+
+~ main
+Pearl: Are you good with homework ?
+- Yeah!
+	=> french_homework
+- Depends what homework
+	Pearl: French homework !
+	- I can help
+		=> french_homework
+	- No, sorry
+		=> bad
+- No, sorry
+	=> bad
+=> END
+
+~ bad
+Pearl: That's okay, I'm also really bad!
+Pearl: If you become good with homework, can you come back to help me?
+Pearl: [wave amp=30 freq=3] Pweaaaase?
+=> END
+
+~ french_homework
+Pearl: Is that so?
+Pearl: Yippeee!
+Pearl: First, how do you say hello in french ?
+- Bonjour
+- Bonsoir
+- Salut
+Pearl: How do you say mom ?
+- Papa
+- Maman
+- Vieille peau
+Pearl: And how do you say goat ?
+- Le meilleur
+- Le sang de la veine qui coule dans mon corps
+- Chèvre
+Pearl: Oh, okay, I get it now!
+Pearl: Thank you for your help! The teacher will be so proud of me this time!
+=> END

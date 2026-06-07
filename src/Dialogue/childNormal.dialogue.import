@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://oiakdbd6ylrk"
+path="res://.godot/imported/childNormal.dialogue-86d896a7310c6e362bcb59999b69a703.tres"
+
+[deps]
+
+source_file="res://src/Dialogue/childNormal.dialogue"
+dest_files=["res://.godot/imported/childNormal.dialogue-86d896a7310c6e362bcb59999b69a703.tres"]
+
+[params]
+
+defaults=true

@@ -4,9 +4,9 @@ Vera: Haii
 - Good morning
 - Hi
 Vera: How are you doing
-- Fine and you ?
+- Fine and you?
 Vera: I'm doing... fine...
-- What's up ?
+- What's up?
 	=> quest_start
 - Nice, see ya
 => END
@@ -17,128 +17,131 @@ Vera: H-Hey...
 - Good afternoon
 - Hi
 Vera: How are you doing
-- Fine and you ?
+- Fine and you?
 Vera: I'm doing... fine...
-- What's up ?
+- What's up?
 	=> quest_start
 - Nice, see ya
 => END
 
 ~ start75
 $> GlobalVars.vera_visited = true
-Vera: Who's there ? [auto]
+Vera: Who's there? [auto]
 - Hello
 - Are you okay
-	Vera: ... Yeah... I think ?
-Vera: Ah ! I see you now !
+	Vera: ... Yeah... I think?
+Vera: Ah! I see you now!
 Vera: How are you doing
-- Fine and you ?
+- Fine and you?
 	Vera: Eh....
-- What's up ?
+- What's up?
 	=> quest_start
 - Nice, see ya
 => END
 
 ~ quest_start
-Vera: Are you good with math ?
+Vera: Are you good with math?
 if GlobalVars.mathew_algebra_finished:
-	- Mathew said so !
-		Vera: Oh my god !
-		Vera: You passed Mathew's enigmas ?
-		Vera: Could you please give me the answers ? [speed=1.5][font_size=12] I really want them to see me, but I'm not good at math.
-		- Yeah !
+	- Mathew said so!
+		Vera: Oh my god!
+		Vera: You passed Mathew's enigmas?
+		Vera: Could you please give me the answers? [speed=1.5][font_size=12] I really want them to see me, but I'm not good at math.
+		- Yeah!
 		- No, you should learn math yourself
 			Vera: [font_size=15] Mathew told me that they'll teach me whenever I pass his enigmas
-			Vera: But I don't want to fail !
+			Vera: But I don't want to fail!
 			- Ok, ok, you convinced me
-		Vera: Oh my god, thank you !
+		Vera: Oh my god, thank you!
 		=> quest
-	- Of course !
+	- Of course!
 	- Meh... Not my cup of tea
-		Vera: Oh... That's okay, maybe you can learn and come back to help me ? [font_size=30] [wave amp=20 freq=5] please [/wave]
+		Vera: Oh... That's okay, maybe you can learn and come back to help me? [font_size=30] [wave amp=20 freq=5] please [/wave]
 		=> END
 elif GlobalVars.mathew_algebra_has_failed:
 	- No, I failed Mathew's enigmas 
-		Vera: What a shame, 
-	- Of course !
+		=> quest_start_accept
+	- Of course!
+		=> quest_start_accept
 	- Meh... Not my cup of tea
-		
+		Vera: Oh... That's okay, maybe you can learn and come back to help me? [font_size=30] [wave amp=20 freq=5] please [/wave]
+		=> END
 else:
-	- Of course !
+	- Of course!
+		=> quest_start_accept
 	- Meh... Not my cup of tea
-		Vera: Oh... That's okay, maybe you can learn and come back to help me ? [font_size=30] [wave amp=20 freq=5] please [/wave]
+		Vera: Oh... That's okay, maybe you can learn and come back to help me? [font_size=30] [wave amp=20 freq=5] please [/wave]
 		=> END
 => END
 
 ~ quest_start_accept
-Vera: Is that so ?
-Vera: Oh my god, this must be my lucky day !
-Vera: Do you know Mathew ?
+Vera: Is that so?
+Vera: Oh my god, this must be my lucky day!
+Vera: Do you know Mathew?
 if GlobalVars.mathew_algebra_visited:
 	- Yeah
 	- Sadly...
-	Vera: [speed=1.5][font_size=10] What an awesome cutie patootie !
+	Vera: [speed=1.5][font_size=10] What an awesome cutie patootie!
 else:
 	- No
-	- Mathew ?
-	Vera: He's the awesomest person I know !
-	Vera: But he only thinks about math ! [speed=1.5][font_size=10] And I wished he thought about me too
+	- Mathew?
+	Vera: He's the awesomest person I know!
+	Vera: But he only thinks about math! [speed=1.5][font_size=10] And I wished he thought about me too
 Vera: He said he'd teach me math when I solve his enigmas.
-Vera: [shake rate=10 level=20] But I suck at math !
-Vera: Can you solve his enigmas, and give me the answers ?
-Vera: [font_size=30] [wave amp=20 freq=5] PLEASE ?
+Vera: [shake rate=10 level=20] But I suck at math!
+Vera: Can you solve his enigmas, and give me the answers?
+Vera: [font_size=30] [wave amp=20 freq=5] PLEASE?
 - Yeah, no problem
 - Hhh... Okay
-- I mean, why not ?
-Vera: Thank you very much !
+- I mean, why not?
+Vera: Thank you very much!
 $> title = "quest_comeback"
 => END
 
 ~ quest_start_reject
-Vera: Oh... That's okay, maybe you can learn and come back to help me ? [font_size=30] [wave amp=20 freq=5] PLEASE ? [/wave]
+Vera: Oh... That's okay, maybe you can learn and come back to help me? [font_size=30] [wave amp=20 freq=5] PLEASE? [/wave]
 => END
 
 ~ quest_comeback
 => quest_comeback_p2
 
 ~ quest_comeback75
-Vera: Who's there ?
+Vera: Who's there?
 - It's me
 - ...
 	=> END
-Vera: Oh, right !
+Vera: Oh, right!
 => quest_comeback
 
 ~ quest_comeback_p2
-Vera: [shake rate=5 level=5] Did you do it ?
+Vera: [shake rate=5 level=5] Did you do it?
 if GlobalVars.mathew_algebra_finished:
 	- Yeah
-	Vera: Awesome !
+	Vera: Awesome!
 	=> quest
 elif GlobalVars.mathew_algebra_has_failed:
 	- I tried...
 	- His enigmas are too difficult...
-	- Can you help me with an enigma ?
-		Vera: What enigma ?
+	- Can you help me with an enigma?
+		Vera: What enigma?
 		- 1 + 1
 			Vera: I think the answer is 2
 		- 6 × 7
-			Vera: I think the answer is 42, but I'm not sure !
+			Vera: I think the answer is 42, but I'm not sure!
 		- 5 × 2 + 3
-			Vera: I think the answer is 16, but I'm not sure !
+			Vera: I think the answer is 16, but I'm not sure!
 		- Something else
 			Vera: ... [next = auto]
 			Vera: I... I don't really know...
-		- What's the meaning of life ?
+		- What's the meaning of life?
 			Vera: ... [next = auto]
 			Vera: Let's stick to math, will you
-		Vera: Anyways ! [next = auto]
+		Vera: Anyways! [next = auto]
 else:
 	- No
 	- I can't seem to find him
 		Vera: He should be around (position de math)
-Vera: I know you can do it !
-Vera: I trust you !
+Vera: I know you can do it!
+Vera: I trust you!
 if GlobalVars.eow_meter > 0.75:
 	Vera: But if you could hurry up. I feel like we don't have much more time.
 elif GlobalVars.eow_meter > 0.6:
@@ -148,92 +151,92 @@ elif GlobalVars.eow_meter > 0.6:
 ~ quest
 $> GlobalVars.vera_told_secrets = true
 
-Vera: What is the answer to the first question ?
+Vera: What is the answer to the first question?
 - A
 - B
 	$> GlobalVars.vera_told_secrets = false
 - C
 	$> GlobalVars.vera_told_secrets = false
 
-Vera: And what is the answer to the second question ?
+Vera: And what is the answer to the second question?
 - A
 	$> GlobalVars.vera_told_secrets = false
 - B
 	$> GlobalVars.vera_told_secrets = false
 - C
 
-Vera: And what is the answer to the third question ?
+Vera: And what is the answer to the third question?
 - A
 	$> GlobalVars.vera_told_secrets = false
 - B
 	$> GlobalVars.vera_told_secrets = false
 - C
 
-Vera: And what is the answer to the fourth question ?
+Vera: And what is the answer to the fourth question?
 - A
 	$> GlobalVars.vera_told_secrets = false
 - B
 - C
 	$> GlobalVars.vera_told_secrets = false
 
-Vera: And what is the answer to the fifth question ?
+Vera: And what is the answer to the fifth question?
 - A
 - B
 	$> GlobalVars.vera_told_secrets = false
 - C
 	$> GlobalVars.vera_told_secrets = false
 
-Vera: And what is the answer to the sixth question ?
+Vera: And what is the answer to the sixth question?
 - A
 	$> GlobalVars.vera_told_secrets = false
 - B
 	$> GlobalVars.vera_told_secrets = false
 - C
 
-Vera: And what is the answer to the seventh question ?
+Vera: And what is the answer to the seventh question?
 - A
 	$> GlobalVars.vera_told_secrets = false
 - B
 	$> GlobalVars.vera_told_secrets = false
 - C
 
-Vera: And what is the answer to the eighth question ?
+Vera: And what is the answer to the eighth question?
 - A
 - B
 	$> GlobalVars.vera_told_secrets = false
 - C
 	$> GlobalVars.vera_told_secrets = false
 
-Vera: And what is the answer to the ninth question ?
+Vera: And what is the answer to the ninth question?
 - A
 	$> GlobalVars.vera_told_secrets = false
 - B
 - C
 	$> GlobalVars.vera_told_secrets = false
 
-Vera: And what is the answer to the tenth question ?
+Vera: And what is the answer to the tenth question?
 - A
 	$> GlobalVars.vera_told_secrets = false
 - B
 	$> GlobalVars.vera_told_secrets = false
 - C
 
-Vera: And what is the answer to the eleventh question ?
+Vera: And what is the answer to the eleventh question?
 - A
 - B
 	$> GlobalVars.vera_told_secrets = false
 - C
 	$> GlobalVars.vera_told_secrets = false
 
-Vera: And finally what is the answer to the last question ?
+Vera: And finally what is the answer to the last question?
 - A
 	$> GlobalVars.vera_told_secrets = false
 - B
 	$> GlobalVars.vera_told_secrets = false
 - C
 
-Vera: Thank you very much !
-Vera: I will give him the answer you've just given me !
+Vera: Thank you very much!
+Vera: I will give him the answer you've just given me!
 
 if GlobalVars.vera_told_secrets:
 	- Yeah
@@ -242,41 +245,41 @@ else:
 	- Yeah
 	- Wait, I think my answers weren't correct
 		Vera: Oh...
-		Vera: Do you want to give me the correct one now ?
+		Vera: Do you want to give me the correct one now?
 		- Yeah
 			=> quest
 		- I'm gonna check again
-			Vera: Okay, good luck !
+			Vera: Okay, good luck!
 => END
 
 ~ finished
-Vera: I just talked to them, [shake rate=20 level=10] it went well !
+Vera: I just talked to them, [shake rate=20 level=10] it went well!
 Vera: I think he likes me too~
-Vera: Thank you a lot ! This wouldn't have been possible without you !
+Vera: Thank you a lot! This wouldn't have been possible without you!
 => END
 
 ~ finished75
-Vera: Who's there ? I can't see you !
-- It's me !
+Vera: Who's there? I can't see you!
+- It's me!
 - ...
 	=> END
-Vera: I talked to them, [shake rate=20 level=10] it went well !
+Vera: I talked to them, [shake rate=20 level=10] it went well!
 Vera: I think he likes me too~
-Vera: Thank you a lot ! This wouldn't have been possible without you !
-Vera: I wished I could see him better tho !
+Vera: Thank you a lot! This wouldn't have been possible without you!
+Vera: I wished I could see him better tho!
 Vera: Oh, well...
 Vera: I'm happy like this
 => END
 
 ~ global87
 $> GlobalVars.vera_visited = true
-Vera: Who's there ? [auto]
-Vera: [shake rate=40 level=30] I heard something, is anyone there ?
-- Hello ?
+Vera: Who's there? [auto]
+Vera: [shake rate=40 level=30] I heard something, is anyone there?
+- Hello?
 - ...
-Vera: [shake rate=40 level=30] PLEASE ANSWER ME !
+Vera: [shake rate=40 level=30] PLEASE ANSWER ME!
 - HEYY
 - I'M IN FRONT OF YOU
-Vera: [shake rate=40 level=30] AM I CRAZY ?!?
+Vera: [shake rate=40 level=30] AM I CRAZY?!?
 Vera: [shake rate=40 level=30] MY EYES ARE BURNIIIING
 => END

@@ -1,0 +1,62 @@
+~ start
+Naomi: Hey
+- Hi
+- Hey
+=> main
+
+~ start50
+Naomi: Hey
+- Hi
+- Hey
+Naomi: It is hot in here!
+=> main
+
+~ start65
+Naomi: Hey
+- Hi
+- Hey
+Naomi: It is [shake rate=20 level=20] really hot [/shake] in here!
+=> main
+
+~ start75
+Naomi: H-Hey
+- Hi
+- Hey
+Naomi: I am [shake rate=20 level=20] BURNING [/shake], aren't you?
+Naomi: It's wierd!
+Naomi: It makes me sad when I think of the little duckies scattered around town!
+=> main
+
+~ start85
+Naomi: H-Hey
+- Hi
+- Hey
+Naomi: I AM [shake rate=20 level=20] BURNING [/shake] !
+Naomi: [shake rate=20 level=20] ARGH
+Naomi: [shake rate=20 level=20] POOR LITTLE DUCKIES, THEY HAVE TO SUFFER BURNING ALL ALONE!
+Naomi: [shake rate=20 level=20] PLEASE, CAN YOU SAVE THEM ?
+=> main
+
+~ main
+Naomi: Yesterday! I found out something BIIIIG!
+- What is it ?
+	=> secret
+- Cool
+	Naomi: You don't want to know what it is?
+	- Yes please
+		=> secret
+	- Nah, I'm good
+=> END
+
+~ secret
+Naomi: I found a little ducky in the forest!
+Naomi: They were cold, so I brought them back at school!
+Naomi: The little ducky was very kind, and told me all sorts of things!
+Naomi: Apparently, all of his siblings are scattered around the town!
+Naomi: And they all wait for someone to find them!
+Naomi: I can't do that, I'm too young.
+Naomi: But you, can you collect them all for me?
+if GlobalVars.ducks >= GlobalVars.max_ducks:
+	- I just did, look
+		Naomi: Oh, my god, that makes me sooo happy!
+=> END
