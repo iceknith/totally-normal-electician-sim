@@ -2,9 +2,14 @@
 
 [ext_resource type="Script" uid="uid://bdnx07d05e07x" path="res://src/ui/menues/settings_menu.gd" id="1_nyruk"]
 [ext_resource type="Theme" uid="uid://1765abvag8jw" path="res://assets/gui/theme.tres" id="2_nyruk"]
+[ext_resource type="FontFile" uid="uid://dsk8fdbx0pieu" path="res://assets/gui/fonts/bubblebaz.ttf" id="3_3o3fb"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_xy610"]
 font_size = 60
+
+[sub_resource type="LabelSettings" id="LabelSettings_ixk0t"]
+font = ExtResource("3_3o3fb")
+font_size = 40
 
 [node name="SettingsMenu" type="Control" unique_id=69117915]
 layout_mode = 3
@@ -50,8 +55,8 @@ size_flags_horizontal = 4
 text = "Settings"
 label_settings = SubResource("LabelSettings_xy610")
 
-[node name="EmptySpace" type="Control" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=911892567]
-custom_minimum_size = Vector2(0, 150)
+[node name="EmptySpace3" type="Control" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=1376023111]
+custom_minimum_size = Vector2(0, 70)
 layout_mode = 2
 
 [node name="ButtonKeys" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=1781576353]
@@ -70,8 +75,31 @@ size_flags_horizontal = 4
 theme_override_font_sizes/font_size = 36
 text = "Sound"
 
+[node name="EmptySpace" type="Control" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=911892567]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=1245251925]
+layout_mode = 2
+theme_override_constants/separation = 3
+
+[node name="MouseSensitivityLabel" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/VBoxContainer" unique_id=544008480]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Mouse sentitivity"
+label_settings = SubResource("LabelSettings_ixk0t")
+
+[node name="MouseSensitivity" type="HSlider" parent="PanelContainer/MarginContainer/VBoxContainer/VBoxContainer" unique_id=336446409]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 1
+min_value = 0.5
+max_value = 12.0
+step = 0.1
+value = 0.5
+
 [node name="EmptySpace2" type="Control" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=1223391942]
-custom_minimum_size = Vector2(0, 75)
 layout_mode = 2
 
 [node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=1076154477]
@@ -80,6 +108,7 @@ theme_override_constants/separation = 30
 alignment = 1
 
 [node name="ButtonBack" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer" unique_id=906012757]
+unique_name_in_owner = true
 custom_minimum_size = Vector2(150, 0)
 layout_mode = 2
 size_flags_horizontal = 4

@@ -6,6 +6,7 @@ extends Node
 
 var eow_meter:float
 var eow_max_time_s:float
+var mouse_sentitivity:float = 0.006
 
 ##############
 ### Towers ###

@@ -1,10 +1,12 @@
 class_name Player extends CharacterBody3D
 
-const SPEED = 20
+const SPEED = 5
 const JUMP_VELOCITY = 4.5
 const MAX_STEP_UP = 0.5
 
-@export var look_sensitivity : float = 0.006
+@export var look_sensitivity : float = 0.006:
+	get: return GlobalVars.mouse_sentitivity
+	set(new_val): GlobalVars.mouse_sentitivity = new_val
 var rotation_y = 0
 var rotation_x = 0
 

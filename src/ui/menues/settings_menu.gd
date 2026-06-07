@@ -5,6 +5,7 @@ class_name SettingsMenu extends Minigame
 
 func _ready() -> void:
 	super()
+	%MouseSensitivity.value = GlobalVars.mouse_sentitivity * 1000
 	connect_signals()
 
 func connect_signals() -> void:
@@ -28,3 +29,9 @@ func connect_signals() -> void:
 	%ButtonExit.pressed.connect(
 		get_tree().quit
 	)
+	%MouseSensitivity.value_changed.connect(
+		change_mouse_sensitivity
+	)
+
+func change_mouse_sensitivity(value:float):
+	GlobalVars.mouse_sentitivity = value / 1000

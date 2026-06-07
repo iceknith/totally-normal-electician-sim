@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bbq15i7mvddty"]
 
-[ext_resource type="Script" path="res://src/ui/menues/sound_settings_menu.gd" id="1_63axh"]
+[ext_resource type="Script" uid="uid://cgyvdrykqnehb" path="res://src/ui/menues/sound_settings_menu.gd" id="1_63axh"]
 [ext_resource type="FontFile" uid="uid://dsk8fdbx0pieu" path="res://assets/gui/fonts/bubblebaz.ttf" id="2_nubjj"]
 [ext_resource type="Theme" uid="uid://1765abvag8jw" path="res://assets/gui/theme.tres" id="3_78bej"]
 
@@ -71,7 +71,7 @@ layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 1
 min_value = -40.0
-max_value = 6.0
+max_value = 15.0
 
 [node name="SoundVolumeLabel" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=753185505]
 layout_mode = 2
@@ -83,8 +83,8 @@ label_settings = SubResource("LabelSettings_xy610")
 custom_minimum_size = Vector2(300, 0)
 layout_mode = 2
 size_flags_horizontal = 4
-min_value = -35.0
-max_value = 6.0
+min_value = -40.0
+max_value = 15.0
 
 [node name="SFXVolumeLabel" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=569742915]
 layout_mode = 2
@@ -98,7 +98,7 @@ layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 1
 min_value = -40.0
-max_value = 6.0
+max_value = 15.0
 
 [node name="EmptySpace2" type="Control" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=1223391942]
 custom_minimum_size = Vector2(0, 100)
@@ -114,6 +114,6 @@ theme_override_font_sizes/font_size = 36
 text = "Back"
 
 [connection signal="value_changed" from="PanelContainer/MarginContainer/VBoxContainer/MasterVolume" to="." method="_on_master_volume_value_changed"]
-[connection signal="value_changed" from="PanelContainer/MarginContainer/VBoxContainer/MusicVolume" to="." method="_on_sound_volume_value_changed"]
+[connection signal="value_changed" from="PanelContainer/MarginContainer/VBoxContainer/MusicVolume" to="." method="_on_music_volume_value_changed"]
 [connection signal="value_changed" from="PanelContainer/MarginContainer/VBoxContainer/SFXVolume" to="." method="_on_sfx_volume_value_changed"]
 [connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/ButtonExit" to="." method="_on_button_exit_pressed"]
