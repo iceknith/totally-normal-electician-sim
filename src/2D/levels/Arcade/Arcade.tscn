@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://08k3w0fw1tgf"]
+[gd_scene format=3 uid="uid://wkv0le3sa4xf"]
 
 [ext_resource type="Script" uid="uid://dd5w2ptvu7pou" path="res://src/minigames/minigame.gd" id="1_jau64"]
 [ext_resource type="Texture2D" uid="uid://bjb6qkb8ayhnl" path="res://src/2D/levels/Arcade/assets/fond.png" id="2_482mc"]
@@ -46,6 +46,12 @@ size = Vector2(90.125, 152)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_d37ci"]
 size = Vector2(67, 77)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_h2c0v"]
+size = Vector2(161, 158)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_w24ob"]
+size = Vector2(87, 62)
 
 [sub_resource type="Gradient" id="Gradient_fxxif"]
 offsets = PackedFloat32Array(0.016990291, 1)
@@ -378,6 +384,14 @@ shape = SubResource("RectangleShape2D_csu50")
 [node name="CollisionShape2D9" type="CollisionShape2D" parent="SubViewportContainer/SubViewport/Node2D/StaticBody2D" unique_id=455291075]
 position = Vector2(275.5, 511.5)
 shape = SubResource("RectangleShape2D_d37ci")
+
+[node name="CollisionShape2D10" type="CollisionShape2D" parent="SubViewportContainer/SubViewport/Node2D/StaticBody2D" unique_id=503552748]
+position = Vector2(423.5, 504)
+shape = SubResource("RectangleShape2D_h2c0v")
+
+[node name="CollisionShape2D11" type="CollisionShape2D" parent="SubViewportContainer/SubViewport/Node2D/StaticBody2D" unique_id=98653038]
+position = Vector2(1015.5, 354)
+shape = SubResource("RectangleShape2D_w24ob")
 
 [node name="Collisions" type="Node2D" parent="SubViewportContainer/SubViewport/Node2D" unique_id=126624472]
 
