@@ -11,6 +11,7 @@ var sfx_bus_idx = AudioServer.get_bus_index("sfx")
 var master_bus_idx = AudioServer.get_bus_index("Master")
 
 func _ready() -> void:
+	super()
 	master_volume_slider.value = AudioServer.get_bus_volume_db(master_bus_idx)
 	music_volume_slider.value = AudioServer.get_bus_volume_db(music_bus_idx)
 	sfx_volume_slider.value = AudioServer.get_bus_volume_db(sfx_bus_idx)

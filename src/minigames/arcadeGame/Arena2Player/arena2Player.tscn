@@ -4,9 +4,9 @@
 [ext_resource type="PackedScene" uid="uid://dwe78ck5jnrsy" path="res://src/minigames/arcadeGame/ball.tscn" id="2_lsaro"]
 [ext_resource type="Script" uid="uid://bmhhgdsuq00v7" path="res://src/minigames/arcadeGame/camera_2d.gd" id="3_0i34y"]
 [ext_resource type="PackedScene" uid="uid://cpc5mi3gyvm7y" path="res://src/minigames/arcadeGame/player/Player.tscn" id="4_uvj1y"]
+[ext_resource type="FontFile" uid="uid://dcu0gks0yl1lh" path="res://assets/gui/fonts/Jersey10-Regular.ttf" id="7_8yade"]
 [ext_resource type="Shader" uid="uid://cj1psxu38uyei" path="res://src/minigames/arcadeGame/shockwave.gdshader" id="7_50hr3"]
 [ext_resource type="Texture2D" uid="uid://rhy47auhb2o4" path="res://src/minigames/arcadeGame/assets/particles/star particle.png" id="8_g8eaq"]
-[ext_resource type="FontFile" uid="uid://dhoixqrkemx30" path="res://assets/gui/ithaca-font/Ithaca-LVB75.ttf" id="9_bft0j"]
 [ext_resource type="PackedScene" uid="uid://dbmva1nkvkoj8" path="res://src/minigames/arcadeGame/countdown_label.tscn" id="10_40og6"]
 
 [sub_resource type="Gradient" id="Gradient_41tw2"]
@@ -143,7 +143,7 @@ _data = {
 }
 
 [sub_resource type="LabelSettings" id="LabelSettings_lqgcn"]
-font = ExtResource("9_bft0j")
+font = ExtResource("7_8yade")
 font_size = 150
 font_color = Color(1.569, 1.569, 1.569, 1)
 shadow_color = Color(0, 0, 0, 1)
@@ -159,6 +159,7 @@ fill = 1
 fill_from = Vector2(0.50085473, 0.48376068)
 
 [sub_resource type="LabelSettings" id="LabelSettings_aqv87"]
+font = ExtResource("7_8yade")
 font_size = 256
 
 [node name="Arena" type="Control" unique_id=2119784583]

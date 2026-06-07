@@ -6,17 +6,17 @@
 [ext_resource type="Texture2D" uid="uid://c0dvn55rjo3t3" path="res://assets/pixelart/bar.png" id="4_7t0ye"]
 [ext_resource type="PackedScene" uid="uid://dogrjgdvi4jl4" path="res://src/minigames/electician_minigame/moving_section.tscn" id="4_a2g5q"]
 [ext_resource type="FontFile" uid="uid://dhoixqrkemx30" path="res://assets/gui/ithaca-font/Ithaca-LVB75.ttf" id="6_gf3wi"]
+[ext_resource type="FontFile" uid="uid://dcu0gks0yl1lh" path="res://assets/gui/fonts/Jersey10-Regular.ttf" id="6_jnjed"]
 [ext_resource type="Script" uid="uid://c3gj62w5i6thr" path="res://src/misc/key_adaptative_label.gd" id="7_3uqwc"]
-[ext_resource type="FontFile" uid="uid://dsk8fdbx0pieu" path="res://assets/gui/fonts/bubblebaz.ttf" id="7_jnjed"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_a2g5q"]
-font = ExtResource("7_jnjed")
+font = ExtResource("6_jnjed")
 font_size = 36
 outline_size = 6
 outline_color = Color(0, 0, 0, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_7t0ye"]
-font = ExtResource("6_gf3wi")
+font = ExtResource("6_jnjed")
 font_size = 100
 font_color = Color(1, 0.69803923, 0, 1)
 outline_size = 10
@@ -30,14 +30,14 @@ outline_size = 10
 outline_color = Color(0, 0, 0, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_gf3wi"]
-font = ExtResource("7_jnjed")
+font = ExtResource("6_jnjed")
 font_size = 150
 font_color = Color(1, 0, 0, 1)
 outline_size = 10
 outline_color = Color(0, 0, 0, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_nmo0h"]
-font = ExtResource("7_jnjed")
+font = ExtResource("6_jnjed")
 font_size = 36
 
 [node name="ElecticianMinigame" type="Control" unique_id=1566750814]
@@ -285,7 +285,7 @@ metadata/_custom_type_script = "uid://c3gj62w5i6thr"
 [node name="Button" type="Button" parent="InfoVboxContainer" unique_id=1263216879]
 layout_mode = 2
 size_flags_horizontal = 4
-theme_override_fonts/font = ExtResource("6_gf3wi")
+theme_override_fonts/font = ExtResource("6_jnjed")
 theme_override_font_sizes/font_size = 40
 text = " Okay "
 
