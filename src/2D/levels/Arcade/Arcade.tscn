@@ -434,12 +434,15 @@ expand_mode = 3
 [node name="Interactables" type="Node2D" parent="SubViewportContainer/SubViewport/Node2D/Y-Sort" unique_id=2099914179]
 y_sort_enabled = true
 
-[node name="Interactable2DMinigame2" type="Area2D" parent="SubViewportContainer/SubViewport/Node2D/Y-Sort/Interactables" unique_id=588353347]
+[node name="Interactable2DMinigame2" type="Area2D" parent="SubViewportContainer/SubViewport/Node2D/Y-Sort/Interactables" unique_id=588353347 node_paths=PackedStringArray("interractable_dialogue")]
 position = Vector2(379, 180)
 script = ExtResource("8_6qrce")
 unique_name = "LittleJo"
 dialogue = ExtResource("9_a31al")
 title = "LittleJoIntro"
+has_close_up = false
+action_type = 1
+interractable_dialogue = NodePath("InteractableText")
 metadata/_custom_type_script = "uid://i1towdpqubly"
 
 [node name="PointLight2D" type="PointLight2D" parent="SubViewportContainer/SubViewport/Node2D/Y-Sort/Interactables/Interactable2DMinigame2" unique_id=1561608277]
