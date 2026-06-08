@@ -80,12 +80,12 @@ Vera: Do you know Mathew?
 if GlobalVars.mathew_algebra_visited:
 	- Yeah
 	- Sadly...
-	Vera: [speed=1.5][font_size=10] What an awesome cutie patootie!
+	Vera: [speed=1.5][font_size=15] What an awesome cutie patootie!
 else:
 	- No
 	- Mathew?
 	Vera: He's the awesomest person I know!
-	Vera: But he only thinks about math! [speed=1.5][font_size=10] And I wished he thought about me too
+	Vera: But he only thinks about math! [speed=1.5][font_size=15] And I wished he thought about me too
 Vera: He said he'd teach me math when I solve his enigmas.
 Vera: [shake rate=10 level=20] But I suck at math!
 Vera: Can you solve his enigmas, and give me the answers?

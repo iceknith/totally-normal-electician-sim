@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bl7p78tpy2xmy"]
 
-[ext_resource type="FontFile" uid="uid://dhoixqrkemx30" path="res://assets/gui/ithaca-font/Ithaca-LVB75.ttf" id="1_rwbkg"]
 [ext_resource type="Script" uid="uid://bnooujonvvxo8" path="res://src/minigames/base_minigame_layout.gd" id="1_trhuy"]
+[ext_resource type="FontFile" uid="uid://dcu0gks0yl1lh" path="res://assets/gui/fonts/Jersey10-Regular.ttf" id="2_trhuy"]
 
 [node name="BaseMinigameLayout" type="MarginContainer" unique_id=1606891865]
 anchors_preset = 15
@@ -21,6 +21,6 @@ z_index = 10
 layout_mode = 2
 size_flags_horizontal = 8
 size_flags_vertical = 0
-theme_override_fonts/font = ExtResource("1_rwbkg")
+theme_override_fonts/font = ExtResource("2_trhuy")
 theme_override_font_sizes/font_size = 36
 text = " Exit "

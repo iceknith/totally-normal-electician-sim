@@ -11,17 +11,18 @@ var sfx_bus_idx = AudioServer.get_bus_index("sfx")
 var master_bus_idx = AudioServer.get_bus_index("Master")
 
 func _ready() -> void:
+	super()
 	master_volume_slider.value = AudioServer.get_bus_volume_db(master_bus_idx)
 	music_volume_slider.value = AudioServer.get_bus_volume_db(music_bus_idx)
 	sfx_volume_slider.value = AudioServer.get_bus_volume_db(sfx_bus_idx)
 
 	
-func _on_sound_volume_value_changed(value):
-	SoundManager.change_music_volume.emit(value)
+func _on_music_volume_value_changed(value):
+	AudioServer.set_bus_volume_db(music_bus_idx, value)
 
 
 func _on_sfx_volume_value_changed(value):
-	SoundManager.change_sfx_volume.emit(value)
+	AudioServer.set_bus_volume_db(sfx_bus_idx, value)
 
 
 func _on_button_exit_pressed():
@@ -29,4 +30,4 @@ func _on_button_exit_pressed():
 
 
 func _on_master_volume_value_changed(value):
-	SoundManager.change_master_volume.emit(value)
+	AudioServer.set_bus_volume_db(master_bus_idx, value)

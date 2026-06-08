@@ -54,6 +54,7 @@ func _init() -> void:
 func _ready() -> void:
 	set_global_vars()
 	connect_signals()
+	create_eow_timers()
 	init_state()
 	
 	# Mets une seed pseudo aléatoire une fois que le jeu a été généré.
@@ -96,7 +97,6 @@ func receive_signal(type, data):
 
 func launch_game() -> void:
 	#world3D.start_game()
-	create_eow_timers()
 	reset_state()
 
 func reset_state():

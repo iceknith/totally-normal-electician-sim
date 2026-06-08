@@ -62,7 +62,7 @@ Cathline: Do you have cats?
 	Cathline: Ewww, dogs!
 	Cathline: I really despise them, what have they that cats don't?
 	- It's a matter of preferences
-		Cathline: That I can understand! [speed=1.5][font_size=10] For me you'll always be a freak tho!
+		Cathline: That I can understand! [speed=1.5][font_size=15] For me you'll always be a freak tho!
 	- Dogs are loyal
 		Cathline: Cats are way more loyal. They just don't give their loyalty blindly!
 	- Dogs don't hate you
@@ -73,7 +73,7 @@ Cathline: Do you have cats?
 	- I like dogs 
 		Cathline: [shake rate=20 level=20] WELL YOU SHOULDN'T!
 	Cathline: But... You know what!
-	Cathline: I can understand [speed=1.5][font_size=10] (to some remote extent)
+	Cathline: I can understand [speed=1.5][font_size=15] (to some remote extent)
 	Cathline: You can always return to the path of sanity by adopting a cat!
 - No, I prefer being alone
 	$> title = "cat_adopted"
@@ -228,7 +228,7 @@ Cathline: [shake rate=10 level=10] I'm watching you!!! So that you don't steal a
 ~ bad_ending70
 $> title = "bad_ending"
 Cathline: [shake rate=10 level=10] I'm watching you!!! So that you don't steal any more kitty cats from me!
-Cathline: [speed=1.5][font_size=10] Where are my cats?! I am so so so hungry!!!
+Cathline: [speed=1.5][font_size=15] Where are my cats?! I am so so so hungry!!!
 => END
 
 ~ brother_bad_ending
@@ -239,6 +239,6 @@ Cathline: I always knew there was something up with my sibling! I'll talk some s
 ~ brother_bad_ending70
 $> title = "brother_bad_ending"
 Cathline: I always knew there was something up with my sibling! I'll talk some sense into them next time I see him!
-Cathline: [speed=1.5][font_size=10] Where are my cats?! 
-Cathline: [speed=1.5][font_size=10] I am so so so hungry!!!
+Cathline: [speed=1.5][font_size=15] Where are my cats?! 
+Cathline: [speed=1.5][font_size=15] I am so so so hungry!!!
 => END

@@ -21,7 +21,7 @@
 [ext_resource type="PackedScene" uid="uid://c6lu1xsiprij5" path="res://src/minigames/competitive_rock_paper_scissors/Rock Paper scissors.tscn" id="14_ivwwh"]
 [ext_resource type="PackedScene" uid="uid://d2b7b6sp2kyp2" path="res://src/2D/phase_visual_novel/boulangerie.tscn" id="14_lpsds"]
 [ext_resource type="PackedScene" uid="uid://bxd7l2fjgm1hi" path="res://assets/blender/superette.blend" id="14_w7gwu"]
-[ext_resource type="PackedScene" uid="uid://bhqwyhmgp4t82" path="res://src/2D/levels/Arcade/Arcade.tscn" id="14_yhicf"]
+[ext_resource type="PackedScene" uid="uid://c2i06hrpn3ol4" path="res://src/2D/levels/Arcade/Arcade.tscn" id="14_yhicf"]
 [ext_resource type="Texture2D" uid="uid://cpcco8dbpih5i" path="res://assets/pnjs/connect4-2.png" id="15_imnrk"]
 [ext_resource type="Resource" uid="uid://b8mcrhwaogcdw" path="res://src/Dialogue/MinigameDialogues/connect4_dialogue.dialogue" id="16_impf6"]
 [ext_resource type="PackedScene" uid="uid://b3nng2yxnwllt" path="res://assets/blender/foresttree2.blend" id="17_ro6to"]

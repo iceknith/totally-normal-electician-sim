@@ -1,6 +1,10 @@
 [gd_scene format=3 uid="uid://cnnuxnjiw3ait"]
 
+[ext_resource type="FontFile" uid="uid://dcu0gks0yl1lh" path="res://assets/gui/fonts/Jersey10-Regular.ttf" id="1_0kqpp"]
+[ext_resource type="Script" uid="uid://c3gj62w5i6thr" path="res://src/misc/key_adaptative_label.gd" id="2_28bqp"]
+
 [sub_resource type="LabelSettings" id="LabelSettings_ahwjy"]
+font = ExtResource("1_0kqpp")
 font_size = 30
 
 [node name="InteractableText" type="PanelContainer" unique_id=936344028]
@@ -19,9 +23,11 @@ theme_override_constants/margin_right = 10
 theme_override_constants/margin_bottom = 10
 metadata/_edit_lock_ = true
 
-[node name="Label" type="Label" parent="MarginContainer" unique_id=1119443501]
+[node name="Label" type="Label" parent="MarginContainer" unique_id=1128090842]
 layout_mode = 2
 size_flags_horizontal = 4
-text = "E"
+text = "$interact1$"
 label_settings = SubResource("LabelSettings_ahwjy")
 horizontal_alignment = 1
+script = ExtResource("2_28bqp")
+metadata/_custom_type_script = "uid://c3gj62w5i6thr"
