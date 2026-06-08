@@ -115,17 +115,16 @@ func set_enemy(e):
 func apply_jo_preset():
 	match jo_preset:
 		opponent.LittleJo:
-			attack_cooldown = 1.0
+			attack_cooldown = 1.3
 			opponent_move_speed = 250
 			max_manageable_speed = 600
 			jo_sprite_color = Color.GREEN
 
-	
 		opponent.Jolister:
-			attack_cooldown = 0.8
+			attack_cooldown = 1
 			opponent_move_speed = 300
 			max_manageable_speed = 900
-			jo_sprite_color = Color.PINK
+			jo_sprite_color = Color.YELLOW
 		
 		opponent.BigJo:
 			attack_cooldown = 0.7
