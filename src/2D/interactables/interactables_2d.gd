@@ -23,9 +23,9 @@ enum ActionType
 
 func _ready() -> void:
 	if interractable_dialogue == null: push_error("Interractable dialogue should be set !")
-	#interractable_label = find_label(interractable_dialogue)
-	#if interractable_label == null: push_error("Interractable dialogue should have a label !")
-	#interractable_label.text = GlobalVars.get_action_controls("interact1")
+	interractable_label = find_label(interractable_dialogue)
+	if interractable_label == null: push_error("Interractable dialogue should have a label !")
+	interractable_label.text = GlobalVars.get_action_controls("interact1")
 	
 	match action_type:
 		ActionType.Click:

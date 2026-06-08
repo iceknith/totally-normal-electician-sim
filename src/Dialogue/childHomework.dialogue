@@ -41,11 +41,11 @@ Pearl: [font_size=10][speed=1.5] But there's no time! I simply cannot! [shake ra
 => END
 
 ~ main
-Pearl: Are you good with homework ?
+Pearl: Are you good with homework?
 - Yeah!
 	=> french_homework
 - Depends what homework
-	Pearl: French homework !
+	Pearl: French homework!
 	- I can help
 		=> french_homework
 	- No, sorry
@@ -63,15 +63,15 @@ Pearl: [wave amp=30 freq=3] Pweaaaase?
 ~ french_homework
 Pearl: Is that so?
 Pearl: Yippeee!
-Pearl: First, how do you say hello in french ?
+Pearl: First, how do you say hello in french?
 - Bonjour
 - Bonsoir
 - Salut
-Pearl: How do you say mom ?
+Pearl: How do you say mom?
 - Papa
 - Maman
 - Vieille peau
-Pearl: And how do you say goat ?
+Pearl: And how do you say goat?
 - Le meilleur
 - Le sang de la veine qui coule dans mon corps
 - Chèvre

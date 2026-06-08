@@ -3,8 +3,8 @@ Cloven: Good morning
 - Good morning
 - Hi
 - Haiii
-Cloven: How are you doing ?
-- Fine and you ?
+Cloven: How are you doing?
+- Fine and you?
 Cloven: I had a question.
 - Let me hear it
 	=> sandwich_intro
@@ -18,22 +18,22 @@ Cloven: Good afternoon
 - Hi
 - Haiii
 - Good morning
-Cloven: How are you doing ?
-- Fine and you ?
+Cloven: How are you doing?
+- Fine and you?
 - Uh... Feeling a bit down
-	Cloven: You too ? [wave amp=30 freq=1] Awww maaan.
+	Cloven: You too? [wave amp=30 freq=1] Awww maaan.
 => END
 
 ~ start70
-Cloven: [wave amp=30 freq=1] H.. Hi ?
+Cloven: [wave amp=30 freq=1] H.. Hi?
 - Good afternoon
 - Hi
-- Is everything alright ?
-	Cloven: [wave amp=30 freq=1] Yeah... Just feeling a bit... odd ?
-Cloven: How are you doing ?
-- Fine and you ?
+- Is everything alright?
+	Cloven: [wave amp=30 freq=1] Yeah... Just feeling a bit... odd?
+Cloven: How are you doing?
+- Fine and you?
 - Uh... Feeling a bit down
-	Cloven: You too ? [wave amp=30 freq=1] Awww maaan.
+	Cloven: You too? [wave amp=30 freq=1] Awww maaan.
 Cloven: I had a question
 - Let me hear it
 	=> sandwich_intro
@@ -42,34 +42,34 @@ Cloven: I had a question
 => END
 
 ~ global80
-Cloven: Do you have a sandwich ?
+Cloven: Do you have a sandwich?
 - No
 - Sorry, but no
 - ...
-Cloven: [wave amp=50 freq=5] Aww man !
+Cloven: [wave amp=50 freq=5] Aww man!
 Cloven: [wave amp=50 freq=5] I could really use a sandwich right now :C
 => END
 
 ~ global90
 Cloven: [shake rate=40 level=20] PLEASE HELP
 Cloven: [shake rate=40 level=25] I FEEL LIKE MY INSIDES ARE OUTSIDE
-Cloven: [shake rate=40 level=30] IS THAT NORMAL ?
-Cloven: [shake rate=40 level=35] GOD WHY ??? AM I ABOUT TO GET SANDWICHED ???
+Cloven: [shake rate=40 level=30] IS THAT NORMAL?
+Cloven: [shake rate=40 level=35] GOD WHY??? AM I ABOUT TO GET SANDWICHED???
 => END
 
 ~ sandwich_intro
-Cloven: Okay, so I just asked myself "What's a sandwich ?"
-Cloven: Because the concept of sandwich is a bit fuzzy, isn't it ?
+Cloven: Okay, so I just asked myself "What's a sandwich?"
+Cloven: Because the concept of sandwich is a bit fuzzy, isn't it?
 - Well... It's quite easy to define
 	Cloven: Oh... Okay.
-	Cloven: Could you give me your definition of a sandwich then ?
+	Cloven: Could you give me your definition of a sandwich then?
 	=> sandwich_loop
 - Yeah...
 	Cloven: Yeah...
-	Cloven: Do you want to help me define what a sandwich is ?
+	Cloven: Do you want to help me define what a sandwich is?
 	- Yes
 		=> sandwich_loop
-	- Why not ?
+	- Why not?
 		=> sandwich_loop
 	- No, sorry
 => END
@@ -77,94 +77,94 @@ Cloven: Because the concept of sandwich is a bit fuzzy, isn't it ?
 ~ sandwich_loop
 - A sandwich is defined by what's inside.
 	Cloven: Okay... That's an unorthodox approach
-	Cloven: But what must the inside of a sandwich be made of ?
+	Cloven: But what must the inside of a sandwich be made of?
 	- Salty
-		Cloven: So anything salty is a sandwich ? 
-		Cloven: So seawater is a sandwich ?
+		Cloven: So anything salty is a sandwich? 
+		Cloven: So seawater is a sandwich?
 	- Sugary
-		Cloven: So anything sugary is a sandwich ? 
-		Cloven: So a popsicle is a sandwich ?
+		Cloven: So anything sugary is a sandwich? 
+		Cloven: So a popsicle is a sandwich?
 	- Meat
-		Cloven: So anything that has meat in it is a sandwich ? 
-		Cloven: So a grilled steak is a sandwich ?
+		Cloven: So anything that has meat in it is a sandwich? 
+		Cloven: So a grilled steak is a sandwich?
 	- Veggies
-		Cloven: So anything that has veggies is a sandwich ? 
-		Cloven: So a salad is a sandwich ?
+		Cloven: So anything that has veggies is a sandwich? 
+		Cloven: So a salad is a sandwich?
 - A sandwich is defined by its shape
-	Cloven: What do you mean by that ?
+	Cloven: What do you mean by that?
 	- It has two times the same thing, one on the top, one on the bottom
-		Cloven: So you are currently in an air sandwich ?
+		Cloven: So you are currently in an air sandwich?
 	- It must be some kind of container
-		Cloven: So a pool is a sandwich ?
+		Cloven: So a pool is a sandwich?
 - A sandwich is defined by what's outside.
 	Cloven: Yeah, that much is obvious
 	Cloven: But what defines the outside of a sandwich
 	- It's made of bread
-		Cloven: So anything with a bread outside is a sandwich ?
-		Cloven: So a toast is a sandwich ?
+		Cloven: So anything with a bread outside is a sandwich?
+		Cloven: So a toast is a sandwich?
 	- It's made of two layers, a top and a bottom
 		Cloven: Oooh, okay
-		Cloven: What are the layers made of ?
+		Cloven: What are the layers made of?
 		- Bread
-			Cloven: Hmmm... But doesn't that mean that hot dogs aren't sandwiches ?
-			Cloven: Are you satisfied by this definition ?
+			Cloven: Hmmm... But doesn't that mean that hot dogs aren't sandwiches?
+			Cloven: Are you satisfied by this definition?
 		- Anything
-			Cloven: So anything with two outer layers is a sandwich ?
-			Cloven: So a building is a sandwich ?
+			Cloven: So anything with two outer layers is a sandwich?
+			Cloven: So a building is a sandwich?
 	- It holds the content of the sandwich
 		Cloven: Oooh, okay
-		Cloven: What are the layers made of ?
+		Cloven: What are the layers made of?
 		- Bread
-			Cloven: So anything with a bread outer layer is a sandwich ?
-			Cloven: So a tacos is not a sandwich ?
+			Cloven: So anything with a bread outer layer is a sandwich?
+			Cloven: So a tacos is not a sandwich?
 		- Starch based
-			Cloven: So anything with a starch based container is a sandwich ?
+			Cloven: So anything with a starch based container is a sandwich?
 			- Yeah
-				Cloven: So a lasagna is a sandwich ?
+				Cloven: So a lasagna is a sandwich?
 			- It must also be eatable standing
 				Cloven: Right
-				Cloven: So an ice cone is a sandwich ?
+				Cloven: So an ice cone is a sandwich?
 		- Anything
-			Cloven: So anything with a container is a sandwich ?
-			Cloven: So a soup plate is a sandwich ?
+			Cloven: So anything with a container is a sandwich?
+			Cloven: So a soup plate is a sandwich?
 - A sandwich is defined by its use
-	Cloven: That's an interesting idea, what are you thinking ?
+	Cloven: That's an interesting idea, what are you thinking?
 	- A sandwich is what is usually considered as one
 	- A sandwich is something that can be eaten standing up
 		Cloven: I like where you're going.
 		Cloven: So a 
 		- Yes
-			Cloven: So anything eatible standing up is a sandwich ?
-			Cloven: So a popsicle is a sandwich ?
+			Cloven: So anything eatible standing up is a sandwich?
+			Cloven: So a popsicle is a sandwich?
 		- No, it must still be made of a container and a content
-			Cloven: So anything eatible standing up made of a container and a content is a sandwich ?
-			Cloven: So a fried chicken wings is a sandwich ? (the breading being the container)
+			Cloven: So anything eatible standing up made of a container and a content is a sandwich?
+			Cloven: So a fried chicken wings is a sandwich? (the breading being the container)
 	- A sandwich is what I consider to be one
-		Cloven: That's... a bit individualistic, isn't it ?
+		Cloven: That's... a bit individualistic, isn't it?
 		- Yeah
 		- Of course
-		Cloven: O-kay ?
-		Cloven: I don't like this definition, we can come up with a better one !
-		Cloven: So, for you, what's the defining trait of a sandwich ?
+		Cloven: O-kay?
+		Cloven: I don't like this definition, we can come up with a better one!
+		Cloven: So, for you, what's the defining trait of a sandwich?
 		=> sandwich_loop
 => sandwich_next
 
 ~ sandwich_next
 - Yes
-	Cloven: Yeah, I agree, I think we nailed it !
+	Cloven: Yeah, I agree, I think we nailed it!
 	=> END
 - Not quite...
 - No
-Cloven: Yeah, I agree. So, for you, what's the defining trait of a sandwich ?
+Cloven: Yeah, I agree. So, for you, what's the defining trait of a sandwich?
 => sandwich_loop
 
 ~ sandwich_end
 $> title = "sandwich_end"
-Cloven: I am glad we took the time to properly define the sandwich. Thank you for that !
+Cloven: I am glad we took the time to properly define the sandwich. Thank you for that!
 - You're welcome
 - Um... Actually, I don't like our definition anymore
-	Cloven: Is that so ?
-	Cloven: So, for you, what's the defining trait of a sandwich ?
+	Cloven: Is that so?
+	Cloven: So, for you, what's the defining trait of a sandwich?
 	=> sandwich_loop
 => END
 
@@ -173,39 +173,39 @@ $> title = "sandwich_end"
 Cloven: Maaan, I'm sooo hungry
 - Yeah, me too
 	Cloven: I could really use a sandwich
-- You need anything ?
+- You need anything?
 	Cloven: If you find a sandwich, bring it to me.
 	Cloven: Even though I doubt that you'll find one...
 - ...
 	Cloven: ...
-Cloven: But still, I am glad we took the time to properly define the sandwich. Thank you for that !
+Cloven: But still, I am glad we took the time to properly define the sandwich. Thank you for that!
 - You're welcome
 - Um... Actually, I don't like our definition anymore
-	Cloven: Is that so ?
-	Cloven: So, for you, what's the defining trait of a sandwich ?
+	Cloven: Is that so?
+	Cloven: So, for you, what's the defining trait of a sandwich?
 	=> sandwich_loop
 => END
 
 ~ sandwich_end75
 $> title = "sandwich_end"
-Cloven: [wave amp=30 freq=1] H.. Hey ?
+Cloven: [wave amp=30 freq=1] H.. Hey?
 - Good afternoon
 - Heey
-- Is everything alright ?
-	Cloven: [wave amp=30 freq=1] Yeah... Just feeling a bit... odd ?
-Cloven: How are you doing ?
-- Fine and you ?
+- Is everything alright?
+	Cloven: [wave amp=30 freq=1] Yeah... Just feeling a bit... odd?
+Cloven: How are you doing?
+- Fine and you?
 - Uh... Feeling a bit down
-	Cloven: You too ? [wave amp=30 freq=1] Awww maaan.
+	Cloven: You too? [wave amp=30 freq=1] Awww maaan.
 - I think we are doomed
-	Cloven: You are [shake rate=40 level=10] freaking me out !
-Cloven: But still, thank god we properly defined the sandwich !
-Cloven: When I'm down, I think about our definition, and I suddenly feel better !
+	Cloven: You are [shake rate=40 level=10] freaking me out!
+Cloven: But still, thank god we properly defined the sandwich!
+Cloven: When I'm down, I think about our definition, and I suddenly feel better!
 - Yay
-- Stay strong soldier !
+- Stay strong soldier!
 - Um... Actually, I don't like our definition anymore
 	Cloven: Oh... ok...
-	Cloven: So, for you, what's the defining trait of a sandwich ?
+	Cloven: So, for you, what's the defining trait of a sandwich?
 	=> sandwich_loop
 => END
 

@@ -33,6 +33,7 @@ corner_radius_bottom_left = 3
 corner_detail = 5
 
 [sub_resource type="LabelSettings" id="LabelSettings_c10fi"]
+font = ExtResource("3_c10fi")
 font_size = 40
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_c10fi"]

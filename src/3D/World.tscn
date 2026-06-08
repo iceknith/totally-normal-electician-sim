@@ -484,9 +484,6 @@ mesh = SubResource("PlaneMesh_clt24")
 [node name="Player" parent="." unique_id=192968154 instance=ExtResource("1_34ihj")]
 transform = Transform3D(-0.9886858, 0, 0.1500013, 0, 1, 0, -0.1500013, 0, -0.9886858, 51.705986, 0.31401062, -23.751694)
 
-[node name="Newspaper" parent="." unique_id=940145597 instance=ExtResource("4_ku2v5")]
-transform = Transform3D(-0.7113027, 0, 0.7028858, 0, 1, 0, -0.7028858, 0, -0.7113027, 42.56691, 0.0063438416, -13.818116)
-
 [node name="Sun" type="DirectionalLight3D" parent="." unique_id=164570066]
 transform = Transform3D(1, 0, 0, 0, -0.8181497, 0.5750051, 0, -0.5750051, -0.8181497, 0, 104.529724, 0)
 light_color = Color(0.9628863, 0.84937793, 0.6261448, 1)
@@ -2996,6 +2993,77 @@ transform = Transform3D(-0.5228852, 0, -1.2986882, 0, 1.4, 0, 1.2986882, 0, -0.5
 
 [node name="bench16" parent="Objets/StaticObj" unique_id=938564943 instance=ExtResource("32_5uot1")]
 transform = Transform3D(0.59474206, 0, 1.2673917, 0, 1.4, 0, -1.2673917, 0, 0.59474206, -72.29632, 0.04701443, 74.76662)
+
+[node name="Newspaper" type="Node3D" parent="Objets" unique_id=1110055336]
+
+[node name="Newspaper" parent="Objets/Newspaper" unique_id=940145597 instance=ExtResource("4_ku2v5")]
+transform = Transform3D(-0.5443609, 0, 0.8388507, 0, 1, 0, -0.8388507, 0, -0.5443609, 71.18401, 0.5944905, 17.311089)
+
+[node name="Newspaper2" parent="Objets/Newspaper" unique_id=937133408 instance=ExtResource("4_ku2v5")]
+transform = Transform3D(0.44360316, 0, -0.89622325, 0, 1, 0, 0.89622325, 0, 0.44360316, 54.128773, 0.62622863, -7.8398075)
+
+[node name="Newspaper3" parent="Objets/Newspaper" unique_id=852958136 instance=ExtResource("4_ku2v5")]
+transform = Transform3D(0.949972, 0, -0.31233472, 0, 1, 0, 0.31233472, 0, 0.949972, 99.7559, 0.62622863, -22.530842)
+
+[node name="Newspaper4" parent="Objets/Newspaper" unique_id=476419893 instance=ExtResource("4_ku2v5")]
+transform = Transform3D(-0.0660474, 0, -0.9978162, 0, 1, 0, 0.9978162, 0, -0.0660474, 6.7192135, 0.62622863, 17.395426)
+
+[node name="Newspaper5" parent="Objets/Newspaper" unique_id=1224767940 instance=ExtResource("4_ku2v5")]
+transform = Transform3D(-0.6025393, 0, -0.7980888, 0, 1, 0, 0.7980888, 0, -0.6025393, -23.294876, 0.62622863, 20.526218)
+
+[node name="Newspaper6" parent="Objets/Newspaper" unique_id=1021257369 instance=ExtResource("4_ku2v5")]
+transform = Transform3D(-0.44210064, 0, -0.8969651, 0, 1, 0, 0.8969651, 0, -0.44210064, 19.51994, 0.62622863, 73.877945)
+
+[node name="Newspaper7" parent="Objets/Newspaper" unique_id=2007697665 instance=ExtResource("4_ku2v5")]
+transform = Transform3D(0.65694094, 0, 0.75394166, 0, 1, 0, -0.75394166, 0, 0.65694094, 45.191593, 0.69412434, 102.14531)
+
+[node name="Newspaper8" parent="Objets/Newspaper" unique_id=1719702606 instance=ExtResource("4_ku2v5")]
+transform = Transform3D(-0.98082584, 0, 0.19488487, 0, 1, 0, -0.19488487, 0, -0.98082584, -121.34738, 0.69412434, 34.216175)
+
+[node name="Newspaper9" parent="Objets/Newspaper" unique_id=1264817637 instance=ExtResource("4_ku2v5")]
+transform = Transform3D(0.6208739, 0, 0.7839098, 0, 1, 0, -0.7839098, 0, 0.6208739, -130.72388, 0.69412434, 15.021651)
+
+[node name="Newspaper20" parent="Objets/Newspaper" unique_id=155928698 instance=ExtResource("4_ku2v5")]
+transform = Transform3D(-0.6687151, 0, 0.7435181, 0, 1, 0, -0.7435181, 0, -0.6687151, -80.188805, 0.69412434, -42.584206)
+
+[node name="Newspaper21" parent="Objets/Newspaper" unique_id=443420072 instance=ExtResource("4_ku2v5")]
+transform = Transform3D(0.55216956, 0, 0.83373135, 0, 1, 0, -0.83373135, 0, 0.55216956, -67.977036, 0.69412434, -92.25021)
+
+[node name="Newspaper10" parent="Objets/Newspaper" unique_id=1910212019 instance=ExtResource("4_ku2v5")]
+transform = Transform3D(-0.9997946, 0, -0.02024442, 0, 1, 0, 0.02024442, 0, -0.9997946, -59.04938, 0.69412434, 80.82627)
+
+[node name="Newspaper11" parent="Objets/Newspaper" unique_id=614081042 instance=ExtResource("4_ku2v5")]
+transform = Transform3D(0.6196142, 0, 0.7849057, 0, 1, 0, -0.7849057, 0, 0.6196142, 38.778095, 0.69412434, -91.28579)
+
+[node name="Newspaper12" parent="Objets/Newspaper" unique_id=1257116011 instance=ExtResource("4_ku2v5")]
+transform = Transform3D(0.6844704, 0, -0.7290397, 0, 1, 0, 0.7290397, 0, 0.6844704, 16.139631, 0.69412434, -80.50033)
+
+[node name="Newspaper13" parent="Objets/Newspaper" unique_id=45129989 instance=ExtResource("4_ku2v5")]
+transform = Transform3D(-0.9990984, 0, -0.042433858, 0, 1, 0, 0.042433858, 0, -0.9990984, 45.26666, 0.69412434, -54.182514)
+
+[node name="Newspaper14" parent="Objets/Newspaper" unique_id=1994752156 instance=ExtResource("4_ku2v5")]
+transform = Transform3D(-0.9407616, 0, 0.33906573, 0, 1, 0, -0.33906573, 0, -0.9407616, 73.575294, 0.022075295, -176.29413)
+
+[node name="Newspaper22" parent="Objets/Newspaper" unique_id=1979278434 instance=ExtResource("4_ku2v5")]
+transform = Transform3D(-0.9407616, 0, 0.33906567, 0, 1, 0, -0.33906567, 0, -0.9407616, -107.25614, 0.022075295, -69.35062)
+
+[node name="Newspaper23" parent="Objets/Newspaper" unique_id=1714256164 instance=ExtResource("4_ku2v5")]
+transform = Transform3D(-0.9407617, 0, 0.3390656, 0, 1, 0, -0.3390656, 0, -0.9407617, -153.84212, 0.022075295, 64.46454)
+
+[node name="Newspaper18" parent="Objets/Newspaper" unique_id=1614617905 instance=ExtResource("4_ku2v5")]
+transform = Transform3D(-0.9407616, 0, 0.33906567, 0, 1, 0, -0.33906567, 0, -0.9407616, 7.8753195, 0.022075295, -112.39916)
+
+[node name="Newspaper19" parent="Objets/Newspaper" unique_id=717381231 instance=ExtResource("4_ku2v5")]
+transform = Transform3D(-0.9407617, 0, 0.3390656, 0, 1, 0, -0.3390656, 0, -0.9407617, 51.327805, 0.022075295, 125.65818)
+
+[node name="Newspaper15" parent="Objets/Newspaper" unique_id=1495218728 instance=ExtResource("4_ku2v5")]
+transform = Transform3D(-0.25249174, 0, 0.96759814, 0, 1, 0, -0.96759814, 0, -0.25249174, 57.314423, 0.08171141, 71.36102)
+
+[node name="Newspaper16" parent="Objets/Newspaper" unique_id=570388759 instance=ExtResource("4_ku2v5")]
+transform = Transform3D(0.12010157, 0, 0.99276036, 0, 1, 0, -0.99276036, 0, 0.12010157, 87.10499, 1.7970514, 99.25453)
+
+[node name="Newspaper17" parent="Objets/Newspaper" unique_id=69514381 instance=ExtResource("4_ku2v5")]
+transform = Transform3D(0.9096048, 0, 0.4154712, 0, 1, 0, -0.4154712, 0, 0.9096048, 87.054245, 1.7970514, 98.59065)
 
 [node name="ShaderCanvasLayer" type="CanvasLayer" parent="." unique_id=1482458820]
 
