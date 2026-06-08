@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://vjhf550mtvym"
+path="res://.godot/imported/childSlow.dialogue-387356642ac636c9c18c4f13d4df31ee.tres"
+
+[deps]
+
+source_file="res://src/Dialogue/childSlow.dialogue"
+dest_files=["res://.godot/imported/childSlow.dialogue-387356642ac636c9c18c4f13d4df31ee.tres"]
+
+[params]
+
+defaults=true

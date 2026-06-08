@@ -8,10 +8,9 @@ enum personPlaying
 	RAYLY = 3
 }
 const personName:Dictionary[personPlaying, String] = {
-	personPlaying.STANLY : 'stanly',
-	personPlaying.WILLY : 'willy',
-	personPlaying.BILLY : 'billy',
-	personPlaying.RAYLY : 'rayly',
+	personPlaying.STANLY : 'Stanly',
+	personPlaying.WILLY : 'Willy',
+	personPlaying.BILLY : 'Billy',
 }
 enum Choice 
 {
@@ -30,11 +29,8 @@ enum Result{
 
 #@onready var balloon = load("res://src/Dialogue/DialogueBalloon/textBox.tscn")
 @onready var chooseOption:Node =%ChooseOption
-@onready var player1_choice_label:Node =%PlayerChoiceLabel
 @onready var rolling_sprite:Node = %RollSprite
-
 @onready var hand:Node = %Hand
-
 @onready var hand_pile:Node =$HandPile
 @onready var draw_pile:Node = $DrawPile
 @onready var play_pile:Node = $PlayPile
@@ -42,6 +38,8 @@ enum Result{
 
 
 var dialogue:DialogueResource = preload("res://src/minigames/competitive_rock_paper_scissors/dialogue/rpc_dialogues.dialogue")
+
+
 
 
 
@@ -54,6 +52,14 @@ var dialogue:DialogueResource = preload("res://src/minigames/competitive_rock_pa
 
 @export var total_choice_number:int
 @export var card_scene = load("res://src/minigames/competitive_rock_paper_scissors/RPS_button.tscn")
+
+
+## labels for stock 
+
+@onready var rock_label = $StockLabels/RockLabel
+@onready var paper_label = $StockLabels/PaperLabel
+@onready var scissors_label = $StockLabels/ScissorsLabel
+
 
 var choices:Array = []
 var opponents_points:int = 0
@@ -101,15 +107,16 @@ func _ready():
 	setup_signals()
 	show_points()
 	show_number_of_each()
+	await get_tree().create_timer(1).timeout
 	intro()
+
 	
 func _process(delta):
 	show_points()
-	show_number_of_each()
+	
 
 func setup_signals():
 	chooseOption.PlayerHasChosen.connect(update_player_choice)
-	rolling_sprite.rolling_finished.connect(show_winner)
 	hand.handAnimation.connect(show_winner)
 
 func update_player_choice(choice):
@@ -128,21 +135,13 @@ func update_player_choice(choice):
 		hand.draw_opponent_card(card_scene, opponent_choice)
 		clear()
 		
-	match player_choice : 
-		Choice.ROCK:
-			player1_choice_label.text = "ROCK"
-		Choice.PAPER:
-			player1_choice_label.text = "PAPER"
-		Choice.SCISSORS:
-			player1_choice_label.text = "SCISSORS"
-		Choice.NOTHING : 
-			player1_choice_label.text = ""
 
 func update_current_total_choice_number():
 	current_total_choice_number = current_numbers[Choice.ROCK] + current_numbers[Choice.SCISSORS] + current_numbers[Choice.PAPER]
 
 func show_winner():
 	current_round_number +=1
+	show_number_of_each()
 	var winner = get_result(player_choice, opponent_choice)
 	update_current_total_choice_number()
 	match winner :
@@ -155,8 +154,10 @@ func show_winner():
 	if rounds_number == current_round_number : 
 		end_game()
 	elif player_points == points_to_win : 
+	
 		player_won_game()
 	elif opponents_points == points_to_win : 
+		
 		opponent_won_game()
 	elif current_total_choice_number < choice_per_round * 2 : 
 		await text_animation(win_label, \
@@ -212,14 +213,14 @@ func player_loses():
 func dialogue_loses():
 	MainCommunicator.send_signal_to_main(
 		MainCommunicator.SignalType.START_DIALOGUE, 
-		[dialogue, personName[opponent] + "_lose", [self]] 
+		[dialogue, personName[opponent] + "Lose", [self]] 
 	)
 	await DialogueManager.dialogue_ended
 
 func dialogue_wins():
 	MainCommunicator.send_signal_to_main(
 		MainCommunicator.SignalType.START_DIALOGUE, 
-		[dialogue, personName[opponent] + "_win", [self]] 
+		[dialogue, personName[opponent] + "Win", [self]] 
 	)
 	await DialogueManager.dialogue_ended
 
@@ -294,11 +295,22 @@ func end_game():
 	exit()
 
 func player_won_game(): #condition à executer si le player gagne la partie
+	print("test here 2")
 	await text_animation(win_label, "You WON \n the GAME !!!!!", 1, Color.GREEN).finished
+	MainCommunicator.send_signal_to_main(
+			MainCommunicator.SignalType.START_DIALOGUE, 
+			[dialogue, personName[opponent] + "GameLose", [self]] 
+		) 
+	
 	exit()
 
 func opponent_won_game(): #condition à executer si l'opponent gagne la partie
+	print("test here")
 	await text_animation(win_label, "You LOST \n the GAME !!!!!", 1, Color.RED).finished
+	MainCommunicator.send_signal_to_main(
+			MainCommunicator.SignalType.START_DIALOGUE, 
+			[dialogue, personName[opponent] + "GameWin", [self]] 
+		) 
 	exit()
 
 func exit():
@@ -353,15 +365,15 @@ func generate_shuffle_choice() -> Array: #regénère une liste à partir du nomb
 	return new_choices
 
 func show_number_of_each():
-	$MarginContainer/PanelContainer/VBoxContainer/HBoxContainer2/Label.text = \
-	"rocks = " + str(current_numbers[Choice.ROCK]) + \
-	" papers = " + str(current_numbers[Choice.PAPER]) + \
-	" scissors = " + str(current_numbers[Choice.SCISSORS])
-
+	rock_label.text = str(current_numbers[Choice.ROCK])
+	paper_label.text = str(current_numbers[Choice.PAPER])
+	scissors_label.text = str(current_numbers[Choice.SCISSORS])
+	
 func show_points():
-	%showPoints.text = \
-	"player points = " + str(player_points) + " \\ " + str(points_to_win) + \
-	" opponent points = " + str(opponents_points) + " \\ " + str(points_to_win)
+	%showPoints.text = (
+		"You : " + str(player_points) + " | " + str(points_to_win)
+		+ "\n" + personName[opponent] + " : " + str(opponents_points) + " | " + str(points_to_win)
+	)
 
 func draw_cards():
 	if !has_player_drawn and has_game_started: 
@@ -372,28 +384,20 @@ func draw_cards():
 		chooseOption.roll_players(player_choices, hand_pile, draw_pile, play_pile)
 		has_player_drawn = true	
 
-func won_game():
-	pass
-
-func _on_setup_button_pressed():
-	#if !has_game_started : 
-		#setup_game()
-		#draw_cards()
-	pass
-
 func clear(): 
 	for child in hand_pile.get_children():
 		child.queue_free()
 
-func _on_exit_button_pressed():
-	exit()
-
 func intro():
-	MainCommunicator.send_signal_to_main(
-		MainCommunicator.SignalType.START_DIALOGUE, 
-		[dialogue, personName[opponent] + "_intro", [self]] 
-	) # On lance le dialogue d'intro du personnage
-	await DialogueManager.dialogue_ended
+	if !GlobalVars.tutorial_done : 
+		print(personName[opponent])
+		MainCommunicator.send_signal_to_main(
+			MainCommunicator.SignalType.START_DIALOGUE, 
+			[dialogue, personName[opponent] + "Tutorial", [self]] 
+		) # On lance le dialogue d'intro du personnage
+		await DialogueManager.dialogue_ended
+		GlobalVars.tutorial_done = true
+
 	start_game()
 
 func start_game(): 

@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://boc5lvj7gp288"]
 
 [ext_resource type="Script" uid="uid://cjnfoepovyhi0" path="res://src/Sound/world_audio_manager.gd" id="1_msy5a"]
+[ext_resource type="AudioStream" uid="uid://cqp23qvwa5mjk" path="res://src/Sound/Musics/World end.ogg" id="2_g86xl"]
 
 [sub_resource type="Curve" id="Curve_5bqhe"]
 _limits = [0.0, 2.0, 0.0, 1.0]
@@ -18,7 +19,11 @@ metadata/_snap_enabled = true
 script = ExtResource("1_msy5a")
 pitch_curve = SubResource("Curve_5bqhe")
 tempo_curve = SubResource("Curve_g86xl")
+eow_music = ExtResource("2_g86xl")
+eow_music_fadeout_time = 45.0
+eow_music_start_time = 38.8
 
 [node name="BackgroundMusicPlayer" type="AudioStreamPlayer" parent="." unique_id=2057556167]
 volume_db = -0.421
 autoplay = true
+bus = &"music"

@@ -1,10 +1,12 @@
 class_name Player extends CharacterBody3D
 
-const SPEED = 5
+const SPEED = 20#5
 const JUMP_VELOCITY = 4.5
 const MAX_STEP_UP = 0.5
 
-@export var look_sensitivity : float = 0.006
+@export var look_sensitivity : float = 0.006:
+	get: return GlobalVars.mouse_sentitivity
+	set(new_val): GlobalVars.mouse_sentitivity = new_val
 var rotation_y = 0
 var rotation_x = 0
 
@@ -74,13 +76,17 @@ func in_interaction() -> bool:
 		 MainCommunicator.current_state != MainCommunicator.GameState.Game3D
 
 func manage_input(delta:float) -> void :
-		# Add the gravity.
+	# Add the gravity.
 	if not is_on_floor():
 		velocity += get_gravity() * delta
 
+	#if Input.is_action_pressed("ui_up"):
+	#	position.y += JUMP_VELOCITY * delta
+	#elif Input.is_action_pressed("ui_down"):
+	#	position.y -= JUMP_VELOCITY * delta
+	
 	# Handle jump.
 	#if Input.is_action_just_pressed("jump") and is_on_floor():
-	#	velocity.y = JUMP_VELOCITY
 
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
@@ -115,7 +121,7 @@ func manage_input(delta:float) -> void :
 
 func step_up_handler(_delta):
 	
-	if is_on_wall():
+	if is_on_wall() && abs(velocity.x) + abs(velocity.z) >= 0.01:
 		$StairUpRay.rotation = -rotation
 		$StairUpRayUnder.rotation = -rotation
 		

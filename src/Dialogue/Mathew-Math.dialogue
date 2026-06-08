@@ -49,7 +49,7 @@ Mathew: You wanna do [font_size=50] MATH ?
 - Why are you like this ?
 	Mathew: I can only think about [font_size=40] MATH
 	Mathew: Do [font_size=40] MATH with me !
-Mathew: [speed=1.5][font_size=10] Okay, now mathew, collect yourself ! You're speaking about math, try to be normal !
+Mathew: [speed=1.5][font_size=15] Okay, now mathew, collect yourself ! You're speaking about math, try to be normal !
 => enigma_start
 
 ~ start90
@@ -186,17 +186,17 @@ $> GlobalVars.mathew_algebra_finished = true
 %2 Mathew: This answer is... wrong !
 %2 Mathew: Have you ever studied math ?
 %1 Mathew: No, of course not ! You're a disgrace to mathematics !
-Mathew: Hhh... It's okay. [speed=1.5][font_size=10] I mean not really, but my psychaetrist told me to be nicer to people.
+Mathew: Hhh... It's okay. [speed=1.5][font_size=15] I mean not really, but my psychaetrist told me to be nicer to people.
 $> GlobalVars.mathew_algebra_has_failed = true
 => enigma_restart
 
 ~ enigma_restart
 Mathew: You want another try ?
 - Yes please !
-	Mathew: [speed=1.5][font_size=10] Of course you do.
+	Mathew: [speed=1.5][font_size=15] Of course you do.
 	=> enigma_start
 - No !
-	Mathew: [speed=1.5][font_size=10] Right, it's not like this is the single best use of your time.
+	Mathew: [speed=1.5][font_size=15] Right, it's not like this is the single best use of your time.
 => END
 
 ~ enigma_win

@@ -5,6 +5,8 @@ extends Node
 ###############
 
 var eow_meter:float
+var eow_max_time_s:float
+var mouse_sentitivity:float = 0.006
 
 ##############
 ### Towers ###
@@ -47,6 +49,30 @@ func get_current_title(title:String, dialogue:DialogueResource) -> String:
 ### World ###
 #############
 
+
+##############
+### Arcade ###
+##############
+
+var LittleJoBeaten:bool = false
+var JoListerBeaten:bool = false
+var BigJoBeaten:bool = false
+var JoBeaten:bool = false
+
+
+##############
+### RPS ###
+##############
+
+var tutorial_done:bool = false 
+var first_interaction_willy = true
+var willy_beaten = false
+var stanly_beaten = false
+var billy_won_game:bool = false
+var billy_beaten = false
+
+
+var has_cake:bool = false
 var bought_cake_superette:bool = false
 var visited_superette:bool = false
 var bought_cake_bakery:bool = false
@@ -58,6 +84,14 @@ var mathew_algebra_finished:bool = false
 
 var vera_visited:bool = false
 var vera_told_secrets:bool = false
+
+var tic_visited:bool = false
+var tac_visited:bool = false
+
+var bibi_visited:bool = false
+
+var post_visits:int = 0
+var max_post_visits:int = 5
 
 var ducks:int = 0
 var max_ducks:int = 0

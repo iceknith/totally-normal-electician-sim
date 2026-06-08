@@ -25,6 +25,8 @@ var unhandled_mouse_offset:Vector2
 @onready var world3D:Node3D = $World
 @onready var minigame_container:Control = $HUD/Minigames
 
+
+
 var minigames:Array[Minigame]
 
 var timer_eow
@@ -44,14 +46,28 @@ var is_in_dialogue:bool = false:
 
 ### Init ###
 
+func _init() -> void:
+	# Mets une seed par défaut dès que le jeu se lance, histoire
+	# que la génération de la map soit déterministe (les textures des canards & journaux).
+	seed(0)
+
 func _ready() -> void:
+	set_global_vars()
 	connect_signals()
+	create_eow_timers()
 	init_state()
+	
+	# Mets une seed pseudo aléatoire une fois que le jeu a été généré.
+	# Garantit que le reste du jeu est pseudo aléatoire
+	seed(Time.get_datetime_string_from_system().hash())
 	
 	# Debug - Launch imediatly game
 	#launch_game()
 	# Debug - See debug screen
 	#DebugMenu.style = DebugMenu.Style.VISIBLE_DETAILED
+
+func set_global_vars() -> void:
+	GlobalVars.eow_max_time_s = end_of_world_max_time_mins * 60
 
 func init_state() -> void:
 	# If we start with minigames
@@ -81,7 +97,6 @@ func receive_signal(type, data):
 
 func launch_game() -> void:
 	#world3D.start_game()
-	create_eow_timers()
 	reset_state()
 
 func reset_state():
@@ -225,7 +240,11 @@ func increment_eow_meter(node:Node):
 
 func end_of_world():
 	get_parent().add_child(credits_scene.instantiate())
-	queue_free()
+	if timer_eow_update: disconnect_eow_update_timer(world3D, timer_eow_update.timeout)
+	if timer_eow_update: disconnect_eow_update_timer($HUD, timer_eow_update.timeout)
+	world3D.queue_free()
+	$HUD.queue_free()
+	hide()
 
 ### Runtime functions ###
 

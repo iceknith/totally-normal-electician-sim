@@ -1,17 +1,58 @@
-[gd_scene format=3 uid="uid://bhqwyhmgp4t82"]
+[gd_scene format=3 uid="uid://wkv0le3sa4xf"]
 
-[ext_resource type="Script" uid="uid://dd5w2ptvu7pou" path="res://src/minigames/minigame.gd" id="1_sb0yd"]
-[ext_resource type="Shader" uid="uid://ctbl58rioj50b" path="res://src/2D/levels/Arcade/shaders/distorsion.gdshader" id="2_fxxif"]
-[ext_resource type="PackedScene" uid="uid://7ykeb0dnh705" path="res://src/2D/player/player2D.tscn" id="2_o5jlv"]
-[ext_resource type="Texture2D" uid="uid://bjb6qkb8ayhnl" path="res://src/2D/levels/Arcade/assets/fond.png" id="2_pdjh2"]
-[ext_resource type="Texture2D" uid="uid://j5t8bh7tv72m" path="res://src/2D/levels/Arcade/shaders/circles.png" id="3_fxxif"]
-[ext_resource type="PackedScene" uid="uid://cm7dhny7qqs7p" path="res://src/minigames/arcadeGame/level/FullArcadeGame.tscn" id="5_4vtsk"]
-[ext_resource type="Script" uid="uid://dbf5k8vvysldd" path="res://src/2D/interactables/interactables_2d_minigame.gd" id="6_4vtsk"]
-[ext_resource type="PackedScene" uid="uid://cnnuxnjiw3ait" path="res://src/2D/interactables/interactableText.tscn" id="6_sb0yd"]
-[ext_resource type="PackedScene" uid="uid://cppr3lfytuf4v" path="res://src/minigames/arcadeGame/level/FullJoBoss.tscn" id="9_xsrp0"]
+[ext_resource type="Script" uid="uid://dd5w2ptvu7pou" path="res://src/minigames/minigame.gd" id="1_jau64"]
+[ext_resource type="Texture2D" uid="uid://bjb6qkb8ayhnl" path="res://src/2D/levels/Arcade/assets/fond.png" id="2_482mc"]
+[ext_resource type="PackedScene" uid="uid://7ykeb0dnh705" path="res://src/2D/player/player2D.tscn" id="3_a31al"]
+[ext_resource type="Shader" uid="uid://ctbl58rioj50b" path="res://src/2D/levels/Arcade/shaders/distorsion.gdshader" id="4_tigbq"]
+[ext_resource type="Texture2D" uid="uid://j5t8bh7tv72m" path="res://src/2D/levels/Arcade/shaders/circles.png" id="5_x23mc"]
+[ext_resource type="Script" uid="uid://b5kdd6u41o437" path="res://src/2D/levels/Arcade/arcade_minigame.gd" id="8_6qrce"]
+[ext_resource type="Script" uid="uid://i1towdpqubly" path="res://src/2D/interactables/interactables_2d_dialogue.gd" id="8_482mc"]
+[ext_resource type="Texture2D" uid="uid://bebn8axhpyefo" path="res://src/2D/levels/Arcade/assets/Bornes/borne1.png" id="8_mjrqe"]
+[ext_resource type="PackedScene" uid="uid://cnnuxnjiw3ait" path="res://src/2D/interactables/interactableText.tscn" id="9_2r2t4"]
+[ext_resource type="Resource" uid="uid://bau4icmy6o8ha" path="res://src/Dialogue/Arcade/DialogueArcade.dialogue" id="9_a31al"]
+[ext_resource type="Texture2D" uid="uid://b1sdij61wb0pd" path="res://src/2D/levels/Arcade/assets/Jo/Jo.png" id="10_dd50p"]
+[ext_resource type="Texture2D" uid="uid://b6gsnmfmn5r0i" path="res://src/2D/levels/Arcade/assets/Bornes/borne3.png" id="11_1dopb"]
+[ext_resource type="Texture2D" uid="uid://c4veny6bns2w8" path="res://src/2D/levels/Arcade/assets/Jo/Jolister.png" id="12_vy2sq"]
+[ext_resource type="Texture2D" uid="uid://d1qr2fx85h3t2" path="res://src/2D/levels/Arcade/assets/Bornes/borne4.png" id="13_ogxnh"]
+[ext_resource type="Texture2D" uid="uid://bsk6vycciopco" path="res://src/2D/levels/Arcade/assets/Jo/BigJo.png" id="14_urhql"]
+[ext_resource type="Texture2D" uid="uid://cs8bblgpa4f63" path="res://src/2D/levels/Arcade/assets/tapisRouge2.png" id="15_07osa"]
+[ext_resource type="Texture2D" uid="uid://jm84t4qq2tx2" path="res://src/2D/levels/Arcade/assets/tapisRouge1.png" id="16_k3dwm"]
+[ext_resource type="Texture2D" uid="uid://b7nx8rwfg5g0a" path="res://src/2D/levels/Arcade/assets/Bornes/tapis-export.png" id="17_qffvi"]
+[ext_resource type="Texture2D" uid="uid://dyiicarx06ply" path="res://src/2D/levels/Arcade/assets/Bornes/borne2.png" id="18_6qrce"]
+[ext_resource type="Texture2D" uid="uid://bkgslpu4oqfdq" path="res://src/2D/levels/Arcade/assets/cat-breakdance-Sheet.png" id="19_l30lm"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_4vtsk"]
-size = Vector2(112.5, 198)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_83i5v"]
+size = Vector2(838, 114)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_to0sm"]
+size = Vector2(842, 53)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xn33l"]
+size = Vector2(77, 617)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qffvi"]
+size = Vector2(229.25, 288)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6qrce"]
+size = Vector2(238.25, 237)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jau64"]
+size = Vector2(90.125, 152)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_482mc"]
+size = Vector2(90.125, 152)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_csu50"]
+size = Vector2(90.125, 152)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_d37ci"]
+size = Vector2(67, 77)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_h2c0v"]
+size = Vector2(161, 158)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_w24ob"]
+size = Vector2(87, 62)
 
 [sub_resource type="Gradient" id="Gradient_fxxif"]
 offsets = PackedFloat32Array(0.016990291, 1)
@@ -22,7 +63,7 @@ gradient = SubResource("Gradient_fxxif")
 repeat = 1
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_o5jlv"]
-shader = ExtResource("2_fxxif")
+shader = ExtResource("4_tigbq")
 shader_parameter/screen_height = 648.0
 shader_parameter/amplitude = 0.075
 shader_parameter/frequency = 0.0
@@ -36,76 +77,618 @@ shader_parameter/enable_palette_cycling = true
 shader_parameter/palette = SubResource("GradientTexture2D_4vtsk")
 shader_parameter/palette_speed = 0.1
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_xsrp0"]
-size = Vector2(112.5, 198)
+[sub_resource type="Gradient" id="Gradient_jau64"]
+offsets = PackedFloat32Array(0.004950495, 0.5759076)
+colors = PackedColorArray(1, 0.28627452, 0.3764706, 1, 0, 0, 0, 1)
 
-[node name="Arcade" type="Control" unique_id=1662000706]
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_rd26i"]
+gradient = SubResource("Gradient_jau64")
+width = 128
+height = 128
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_csu50"]
+polygon = PackedVector2Array(-46, 70, -42, 84, 44, 86, 44, 73)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a31al"]
+size = Vector2(117, 114.5)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_jau64"]
+polygon = PackedVector2Array(-46, 72, -47, 80, 46, 80, 40, 72)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tigbq"]
+size = Vector2(124, 113)
+
+[sub_resource type="Gradient" id="Gradient_482mc"]
+offsets = PackedFloat32Array(0.0016501651, 0.5726073)
+colors = PackedColorArray(0.23529412, 1, 0.30588236, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_jau64"]
+gradient = SubResource("Gradient_482mc")
+width = 128
+height = 128
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_482mc"]
+polygon = PackedVector2Array(-47, 82, -52, 88, 41, 88, 40, 83)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_x23mc"]
+size = Vector2(141, 103)
+
+[sub_resource type="Gradient" id="Gradient_fi17p"]
+offsets = PackedFloat32Array(0, 0.37128714)
+colors = PackedColorArray(0.15294118, 0.16470589, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_482mc"]
+gradient = SubResource("Gradient_fi17p")
+width = 128
+height = 128
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f4nr8"]
+size = Vector2(216, 208)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h2c0v"]
+atlas = ExtResource("19_l30lm")
+region = Rect2(0, 0, 200, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w24ob"]
+atlas = ExtResource("19_l30lm")
+region = Rect2(200, 0, 200, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8fqon"]
+atlas = ExtResource("19_l30lm")
+region = Rect2(400, 0, 200, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ov1vm"]
+atlas = ExtResource("19_l30lm")
+region = Rect2(600, 0, 200, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mo4j1"]
+atlas = ExtResource("19_l30lm")
+region = Rect2(800, 0, 200, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gulxt"]
+atlas = ExtResource("19_l30lm")
+region = Rect2(1000, 0, 200, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_60c41"]
+atlas = ExtResource("19_l30lm")
+region = Rect2(1200, 0, 200, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j1bas"]
+atlas = ExtResource("19_l30lm")
+region = Rect2(1400, 0, 200, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_au7bt"]
+atlas = ExtResource("19_l30lm")
+region = Rect2(1600, 0, 200, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vt26t"]
+atlas = ExtResource("19_l30lm")
+region = Rect2(1800, 0, 200, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dib6j"]
+atlas = ExtResource("19_l30lm")
+region = Rect2(2000, 0, 200, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1uhb7"]
+atlas = ExtResource("19_l30lm")
+region = Rect2(2200, 0, 200, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l3ud7"]
+atlas = ExtResource("19_l30lm")
+region = Rect2(2400, 0, 200, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fq1yt"]
+atlas = ExtResource("19_l30lm")
+region = Rect2(2600, 0, 200, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2vk2x"]
+atlas = ExtResource("19_l30lm")
+region = Rect2(2800, 0, 200, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_317mu"]
+atlas = ExtResource("19_l30lm")
+region = Rect2(3000, 0, 200, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_diybw"]
+atlas = ExtResource("19_l30lm")
+region = Rect2(3200, 0, 200, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nkl7k"]
+atlas = ExtResource("19_l30lm")
+region = Rect2(3400, 0, 200, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ddgin"]
+atlas = ExtResource("19_l30lm")
+region = Rect2(3600, 0, 200, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r2ycb"]
+atlas = ExtResource("19_l30lm")
+region = Rect2(3800, 0, 200, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6rtj0"]
+atlas = ExtResource("19_l30lm")
+region = Rect2(4000, 0, 200, 200)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ykes6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h2c0v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w24ob")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8fqon")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ov1vm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mo4j1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gulxt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_60c41")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j1bas")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_au7bt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vt26t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dib6j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1uhb7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l3ud7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fq1yt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2vk2x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_317mu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_diybw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nkl7k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ddgin")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r2ycb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6rtj0")
+}],
+"loop": true,
+"name": &"default",
+"speed": 12.0
+}]
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_qffvi"]
+polygon = PackedVector2Array(-40, 79, -40, 87, 46, 86, 47, 79)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_l30lm"]
+size = Vector2(129, 80)
+
+[node name="Arcade2" type="Control" unique_id=1662000706]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_sb0yd")
+script = ExtResource("1_jau64")
+music_when_entering = "Arcade"
 change_music = true
 metadata/_custom_type_script = "uid://dd5w2ptvu7pou"
 
-[node name="bg" type="TextureRect" parent="." unique_id=351131469]
-z_index = -1
+[node name="SubViewportContainer" type="SubViewportContainer" parent="." unique_id=1540674174]
+texture_filter = 1
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("2_pdjh2")
+stretch = true
 
-[node name="Player2d" parent="." unique_id=86314008 instance=ExtResource("2_o5jlv")]
-position = Vector2(168, 325)
+[node name="SubViewport" type="SubViewport" parent="SubViewportContainer" unique_id=374344782]
+handle_input_locally = false
+canvas_item_default_texture_filter = 0
+size = Vector2i(1152, 648)
+size_2d_override_stretch = true
+render_target_update_mode = 4
 
-[node name="Interactable2DMinigame" type="Area2D" parent="." unique_id=631324671 node_paths=PackedStringArray("interractable_dialogue")]
-script = ExtResource("6_4vtsk")
-minigame = ExtResource("5_4vtsk")
-action_type = 1
-interractable_dialogue = NodePath("InteractableText")
-metadata/_custom_type_script = "uid://dbf5k8vvysldd"
+[node name="ColorRect" type="ColorRect" parent="SubViewportContainer/SubViewport" unique_id=1333980717]
+z_index = -1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.07444572, 0.07444573, 0.07444573, 1)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactable2DMinigame" unique_id=2005501467]
-position = Vector2(468.75, 156)
-shape = SubResource("RectangleShape2D_4vtsk")
+[node name="bg" type="TextureRect" parent="SubViewportContainer/SubViewport" unique_id=351131469]
+z_index = -1
+texture_filter = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -328.0
+offset_top = -35.0
+offset_right = -63.71277
+offset_bottom = -35.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.2860315, 1.2154281)
+texture = ExtResource("2_482mc")
+expand_mode = 1
 
-[node name="InteractableText" parent="Interactable2DMinigame" unique_id=936344028 instance=ExtResource("6_sb0yd")]
-offset_left = 447.0
-offset_top = 74.0
-offset_right = 484.0
-offset_bottom = 136.0
+[node name="Node2D" type="Node2D" parent="SubViewportContainer/SubViewport" unique_id=389789798]
 
-[node name="TextureRect" type="TextureRect" parent="." unique_id=88397276]
+[node name="StaticBody2D" type="StaticBody2D" parent="SubViewportContainer/SubViewport/Node2D" unique_id=1520152983]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SubViewportContainer/SubViewport/Node2D/StaticBody2D" unique_id=866662587]
+position = Vector2(652, 88)
+shape = SubResource("RectangleShape2D_83i5v")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="SubViewportContainer/SubViewport/Node2D/StaticBody2D" unique_id=1063975782]
+position = Vector2(645, 624.5)
+shape = SubResource("RectangleShape2D_to0sm")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="SubViewportContainer/SubViewport/Node2D/StaticBody2D" unique_id=1528279673]
+position = Vector2(1111.5, 339.5)
+shape = SubResource("RectangleShape2D_xn33l")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="SubViewportContainer/SubViewport/Node2D/StaticBody2D" unique_id=2098860793]
+position = Vector2(116.375, 176)
+shape = SubResource("RectangleShape2D_qffvi")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="SubViewportContainer/SubViewport/Node2D/StaticBody2D" unique_id=1803466858]
+position = Vector2(103.875, 530.5)
+shape = SubResource("RectangleShape2D_6qrce")
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="SubViewportContainer/SubViewport/Node2D/StaticBody2D" unique_id=1898852875]
+position = Vector2(373, 198)
+shape = SubResource("RectangleShape2D_jau64")
+
+[node name="CollisionShape2D7" type="CollisionShape2D" parent="SubViewportContainer/SubViewport/Node2D/StaticBody2D" unique_id=1920822132]
+position = Vector2(568, 190)
+shape = SubResource("RectangleShape2D_482mc")
+
+[node name="CollisionShape2D8" type="CollisionShape2D" parent="SubViewportContainer/SubViewport/Node2D/StaticBody2D" unique_id=1006755783]
+position = Vector2(776, 199)
+shape = SubResource("RectangleShape2D_csu50")
+
+[node name="CollisionShape2D9" type="CollisionShape2D" parent="SubViewportContainer/SubViewport/Node2D/StaticBody2D" unique_id=455291075]
+position = Vector2(275.5, 511.5)
+shape = SubResource("RectangleShape2D_d37ci")
+
+[node name="CollisionShape2D10" type="CollisionShape2D" parent="SubViewportContainer/SubViewport/Node2D/StaticBody2D" unique_id=503552748]
+position = Vector2(423.5, 504)
+shape = SubResource("RectangleShape2D_h2c0v")
+
+[node name="CollisionShape2D11" type="CollisionShape2D" parent="SubViewportContainer/SubViewport/Node2D/StaticBody2D" unique_id=98653038]
+position = Vector2(1015.5, 354)
+shape = SubResource("RectangleShape2D_w24ob")
+
+[node name="Collisions" type="Node2D" parent="SubViewportContainer/SubViewport/Node2D" unique_id=126624472]
+
+[node name="Y-Sort" type="Node2D" parent="SubViewportContainer/SubViewport/Node2D" unique_id=481702942]
+y_sort_enabled = true
+
+[node name="TapisRouge" type="Sprite2D" parent="SubViewportContainer/SubViewport/Node2D/Y-Sort" unique_id=2075490703]
+y_sort_enabled = true
+texture_filter = 1
+position = Vector2(988, 278)
+scale = Vector2(2, 2)
+texture = ExtResource("15_07osa")
+offset = Vector2(0, 35.725)
+
+[node name="Sprite2D" type="Sprite2D" parent="SubViewportContainer/SubViewport/Node2D/Y-Sort/TapisRouge" unique_id=1386923634]
+texture = ExtResource("16_k3dwm")
+offset = Vector2(0, 35.725)
+
+[node name="Sprite2D2" type="Sprite2D" parent="SubViewportContainer/SubViewport/Node2D/Y-Sort/TapisRouge" unique_id=295587967]
+position = Vector2(0, 73.36)
+texture = ExtResource("16_k3dwm")
+
+[node name="Player2d" parent="SubViewportContainer/SubViewport/Node2D/Y-Sort" unique_id=86314008 instance=ExtResource("3_a31al")]
+y_sort_enabled = true
+position = Vector2(101, 327)
+
+[node name="TextureRect" type="TextureRect" parent="SubViewportContainer/SubViewport/Node2D/Y-Sort" unique_id=88397276]
 visible = false
 texture_repeat = 2
 material = SubResource("ShaderMaterial_o5jlv")
-layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("3_fxxif")
+texture = ExtResource("5_x23mc")
 expand_mode = 3
 
-[node name="Interactable2DMinigame2" type="Area2D" parent="." unique_id=653010850 node_paths=PackedStringArray("interractable_dialogue")]
-script = ExtResource("6_4vtsk")
-minigame = ExtResource("9_xsrp0")
+[node name="Interactables" type="Node2D" parent="SubViewportContainer/SubViewport/Node2D/Y-Sort" unique_id=2099914179]
+y_sort_enabled = true
+
+[node name="Interactable2DMinigame2" type="Area2D" parent="SubViewportContainer/SubViewport/Node2D/Y-Sort/Interactables" unique_id=588353347]
+position = Vector2(379, 180)
+script = ExtResource("8_6qrce")
+unique_name = "LittleJo"
+dialogue = ExtResource("9_a31al")
+title = "LittleJoIntro"
+metadata/_custom_type_script = "uid://i1towdpqubly"
+
+[node name="PointLight2D" type="PointLight2D" parent="SubViewportContainer/SubViewport/Node2D/Y-Sort/Interactables/Interactable2DMinigame2" unique_id=1561608277]
+position = Vector2(-2, -1)
+scale = Vector2(2, 2)
+energy = 1.05
+texture = SubResource("GradientTexture2D_rd26i")
+
+[node name="Borne1" type="Sprite2D" parent="SubViewportContainer/SubViewport/Node2D/Y-Sort/Interactables/Interactable2DMinigame2" unique_id=262175843]
+y_sort_enabled = true
+texture_filter = 1
+position = Vector2(-2, -1)
+scale = Vector2(2, 2)
+texture = ExtResource("8_mjrqe")
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="SubViewportContainer/SubViewport/Node2D/Y-Sort/Interactables/Interactable2DMinigame2/Borne1" unique_id=87865383]
+position = Vector2(1, 0.5)
+scale = Vector2(0.5, 0.5)
+occluder = SubResource("OccluderPolygon2D_csu50")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SubViewportContainer/SubViewport/Node2D/Y-Sort/Interactables/Interactable2DMinigame2" unique_id=2142267921]
+position = Vector2(-0.5, 76)
+shape = SubResource("RectangleShape2D_a31al")
+
+[node name="InteractableText" parent="SubViewportContainer/SubViewport/Node2D/Y-Sort/Interactables/Interactable2DMinigame2" unique_id=4744531 instance=ExtResource("9_2r2t4")]
+z_index = 1
+offset_left = -20.0
+offset_top = -100.0
+offset_right = 17.0
+offset_bottom = -37.999977
+pivot_offset_ratio = Vector2(0.5, 0.5)
+metadata/_edit_use_anchors_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="SubViewportContainer/SubViewport/Node2D/Y-Sort/Interactables/Interactable2DMinigame2" unique_id=328868824]
+texture_filter = 1
+position = Vector2(-5, 28)
+scale = Vector2(3, 3)
+texture = ExtResource("10_dd50p")
+
+[node name="Interactable2DMinigame3" type="Area2D" parent="SubViewportContainer/SubViewport/Node2D/Y-Sort/Interactables" unique_id=1232167287 node_paths=PackedStringArray("interractable_dialogue")]
+position = Vector2(569, 181)
+script = ExtResource("8_482mc")
+unique_name = "JoLister"
+dialogue = ExtResource("9_a31al")
+title = "JoListerIntro"
+has_close_up = false
 action_type = 1
 interractable_dialogue = NodePath("InteractableText")
-metadata/_custom_type_script = "uid://dbf5k8vvysldd"
+metadata/_custom_type_script = "uid://i1towdpqubly"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactable2DMinigame2" unique_id=2142267921]
-position = Vector2(594, 151)
-shape = SubResource("RectangleShape2D_xsrp0")
+[node name="Borne1" type="Sprite2D" parent="SubViewportContainer/SubViewport/Node2D/Y-Sort/Interactables/Interactable2DMinigame3" unique_id=415306800]
+y_sort_enabled = true
+texture_filter = 1
+position = Vector2(-2, -1)
+scale = Vector2(2, 2)
+texture = ExtResource("11_1dopb")
 
-[node name="InteractableText" parent="Interactable2DMinigame2" unique_id=4744531 instance=ExtResource("6_sb0yd")]
-offset_left = 571.0
-offset_top = 73.0
-offset_right = 608.0
-offset_bottom = 135.0
+[node name="LightOccluder2D" type="LightOccluder2D" parent="SubViewportContainer/SubViewport/Node2D/Y-Sort/Interactables/Interactable2DMinigame3/Borne1" unique_id=1808514130]
+position = Vector2(1, 0.5)
+scale = Vector2(0.5, 0.5)
+occluder = SubResource("OccluderPolygon2D_jau64")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SubViewportContainer/SubViewport/Node2D/Y-Sort/Interactables/Interactable2DMinigame3" unique_id=2131961610]
+position = Vector2(-1, 74.5)
+shape = SubResource("RectangleShape2D_tigbq")
+
+[node name="InteractableText" parent="SubViewportContainer/SubViewport/Node2D/Y-Sort/Interactables/Interactable2DMinigame3" unique_id=936344028 instance=ExtResource("9_2r2t4")]
+z_index = 1
+offset_left = -20.0
+offset_top = -100.0
+offset_right = 17.0
+offset_bottom = -37.999977
+pivot_offset_ratio = Vector2(0.5, 0.5)
+metadata/_edit_use_anchors_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="SubViewportContainer/SubViewport/Node2D/Y-Sort/Interactables/Interactable2DMinigame3" unique_id=1148004594]
+texture_filter = 1
+position = Vector2(-4, 24)
+scale = Vector2(3, 3)
+texture = ExtResource("12_vy2sq")
+
+[node name="PointLight2D" type="PointLight2D" parent="SubViewportContainer/SubViewport/Node2D/Y-Sort/Interactables/Interactable2DMinigame3" unique_id=1796077961]
+position = Vector2(-2, -1)
+scale = Vector2(2, 2)
+energy = 0.44
+texture = SubResource("GradientTexture2D_jau64")
+
+[node name="Interactable2DMinigame4" type="Area2D" parent="SubViewportContainer/SubViewport/Node2D/Y-Sort/Interactables" unique_id=1397647529 node_paths=PackedStringArray("interractable_dialogue")]
+position = Vector2(784, 182)
+script = ExtResource("8_482mc")
+unique_name = "BigJo"
+dialogue = ExtResource("9_a31al")
+title = "BigJoIntro"
+has_close_up = false
+action_type = 1
+interractable_dialogue = NodePath("InteractableText")
+metadata/_custom_type_script = "uid://i1towdpqubly"
+
+[node name="Borne1" type="Sprite2D" parent="SubViewportContainer/SubViewport/Node2D/Y-Sort/Interactables/Interactable2DMinigame4" unique_id=700508307]
+y_sort_enabled = true
+texture_filter = 1
+position = Vector2(-2, -1)
+scale = Vector2(2, 2)
+texture = ExtResource("13_ogxnh")
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="SubViewportContainer/SubViewport/Node2D/Y-Sort/Interactables/Interactable2DMinigame4/Borne1" unique_id=42884825]
+position = Vector2(1, 0.5)
+scale = Vector2(0.5, 0.5)
+occluder = SubResource("OccluderPolygon2D_482mc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SubViewportContainer/SubViewport/Node2D/Y-Sort/Interactables/Interactable2DMinigame4" unique_id=2069310951]
+position = Vector2(0.5, 71.5)
+shape = SubResource("RectangleShape2D_x23mc")
+
+[node name="InteractableText" parent="SubViewportContainer/SubViewport/Node2D/Y-Sort/Interactables/Interactable2DMinigame4" unique_id=252005750 instance=ExtResource("9_2r2t4")]
+z_index = 1
+offset_left = -20.0
+offset_top = -100.0
+offset_right = 17.0
+offset_bottom = -37.999977
+pivot_offset_ratio = Vector2(0.5, 0.5)
+metadata/_edit_use_anchors_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="SubViewportContainer/SubViewport/Node2D/Y-Sort/Interactables/Interactable2DMinigame4" unique_id=1964034014]
+texture_filter = 1
+position = Vector2(-7, 24)
+scale = Vector2(3, 3)
+texture = ExtResource("14_urhql")
+
+[node name="PointLight2D" type="PointLight2D" parent="SubViewportContainer/SubViewport/Node2D/Y-Sort/Interactables/Interactable2DMinigame4" unique_id=945284601]
+position = Vector2(-6, -3)
+scale = Vector2(4, 4)
+energy = 0.61
+texture = SubResource("GradientTexture2D_482mc")
+
+[node name="Interactable2DMinigame5" type="Area2D" parent="SubViewportContainer/SubViewport/Node2D/Y-Sort/Interactables" unique_id=1664092853 node_paths=PackedStringArray("interractable_dialogue")]
+position = Vector2(288, 496)
+script = ExtResource("8_482mc")
+unique_name = "DancingCat"
+dialogue = ExtResource("9_a31al")
+title = "DancingCat"
+has_close_up = false
+action_type = 1
+interractable_dialogue = NodePath("InteractableText")
+metadata/_custom_type_script = "uid://i1towdpqubly"
+
+[node name="Sprite2D" type="Sprite2D" parent="SubViewportContainer/SubViewport/Node2D/Y-Sort/Interactables/Interactable2DMinigame5" unique_id=2005819148]
+z_index = -1
+texture_filter = 1
+position = Vector2(136, 9)
+scale = Vector2(2, 2)
+texture = ExtResource("17_qffvi")
+
+[node name="Borne1" type="Sprite2D" parent="SubViewportContainer/SubViewport/Node2D/Y-Sort/Interactables/Interactable2DMinigame5" unique_id=2061033410]
+y_sort_enabled = true
+texture_filter = 1
+position = Vector2(1, -31)
+scale = Vector2(2, 2)
+texture = ExtResource("18_6qrce")
+flip_h = true
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="SubViewportContainer/SubViewport/Node2D/Y-Sort/Interactables/Interactable2DMinigame5/Borne1" unique_id=1445902919]
+visible = false
+position = Vector2(1, 0.5)
+scale = Vector2(0.5, 0.5)
+occluder = SubResource("OccluderPolygon2D_482mc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SubViewportContainer/SubViewport/Node2D/Y-Sort/Interactables/Interactable2DMinigame5" unique_id=1293016817]
+position = Vector2(142, -2)
+shape = SubResource("RectangleShape2D_f4nr8")
+
+[node name="InteractableText" parent="SubViewportContainer/SubViewport/Node2D/Y-Sort/Interactables/Interactable2DMinigame5" unique_id=973989285 instance=ExtResource("9_2r2t4")]
+z_index = 1
+offset_left = 119.0
+offset_top = -140.0
+offset_right = 156.0
+offset_bottom = -77.99998
+pivot_offset_ratio = Vector2(0.5, 0.5)
+metadata/_edit_use_anchors_ = true
+
+[node name="PointLight2D" type="PointLight2D" parent="SubViewportContainer/SubViewport/Node2D/Y-Sort/Interactables/Interactable2DMinigame5" unique_id=1613387588]
+position = Vector2(-6, -3)
+scale = Vector2(4, 4)
+energy = 0.65
+texture = SubResource("GradientTexture2D_482mc")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="SubViewportContainer/SubViewport/Node2D/Y-Sort/Interactables/Interactable2DMinigame5" unique_id=49518385]
+position = Vector2(131, -11.000001)
+scale = Vector2(0.8, 0.8)
+sprite_frames = SubResource("SpriteFrames_ykes6")
+autoplay = "default"
+frame_progress = 0.5151281
+
+[node name="PointLight2D2" type="PointLight2D" parent="SubViewportContainer/SubViewport/Node2D/Y-Sort/Interactables/Interactable2DMinigame5" unique_id=271665407]
+position = Vector2(145, 8)
+scale = Vector2(4, 4)
+energy = 0.65
+texture = SubResource("GradientTexture2D_482mc")
+
+[node name="Interactable2DMinigame6" type="Area2D" parent="SubViewportContainer/SubViewport/Node2D/Y-Sort/Interactables" unique_id=1574295420 node_paths=PackedStringArray("interractable_dialogue")]
+position = Vector2(1014, 304)
+script = ExtResource("8_482mc")
+unique_name = "Jo"
+dialogue = ExtResource("9_a31al")
+title = "TheJoIntro"
+has_close_up = false
+action_type = 1
+interractable_dialogue = NodePath("InteractableText")
+metadata/_custom_type_script = "uid://i1towdpqubly"
+
+[node name="Borne1" type="Sprite2D" parent="SubViewportContainer/SubViewport/Node2D/Y-Sort/Interactables/Interactable2DMinigame6" unique_id=1329345609]
+y_sort_enabled = true
+texture_filter = 1
+position = Vector2(-2, -1)
+scale = Vector2(2, 2)
+texture = ExtResource("18_6qrce")
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="SubViewportContainer/SubViewport/Node2D/Y-Sort/Interactables/Interactable2DMinigame6/Borne1" unique_id=1489111692]
+position = Vector2(1, 0.5)
+scale = Vector2(0.5, 0.5)
+occluder = SubResource("OccluderPolygon2D_qffvi")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SubViewportContainer/SubViewport/Node2D/Y-Sort/Interactables/Interactable2DMinigame6" unique_id=935592845]
+position = Vector2(-26.5, 59)
+shape = SubResource("RectangleShape2D_l30lm")
+
+[node name="InteractableText" parent="SubViewportContainer/SubViewport/Node2D/Y-Sort/Interactables/Interactable2DMinigame6" unique_id=362019212 instance=ExtResource("9_2r2t4")]
+z_index = 1
+offset_left = -20.0
+offset_top = -100.0
+offset_right = 17.0
+offset_bottom = -37.999977
+pivot_offset_ratio = Vector2(0.5, 0.5)
+metadata/_edit_use_anchors_ = true
+
+[node name="PointLight2D" type="PointLight2D" parent="SubViewportContainer/SubViewport/Node2D/Y-Sort/Interactables/Interactable2DMinigame6" unique_id=609080603]
+position = Vector2(-6, -3)
+scale = Vector2(4, 4)
+energy = 0.65
+texture = SubResource("GradientTexture2D_482mc")
+
+[node name="Props" type="Node2D" parent="SubViewportContainer/SubViewport/Node2D/Y-Sort" unique_id=1117184629]
+y_sort_enabled = true
+
+[node name="Node2D" type="Node2D" parent="SubViewportContainer/SubViewport/Node2D/Y-Sort" unique_id=1866498207]
+
+[node name="DirectionalLight2D" type="DirectionalLight2D" parent="SubViewportContainer/SubViewport/Node2D/Y-Sort/Node2D" unique_id=1969492407]
+position = Vector2(1139, 12)
+color = Color(0.27058825, 0.23529412, 0.2509804, 1)
+energy = 0.23
+shadow_enabled = true
+shadow_color = Color(0, 0, 0, 0.7294118)

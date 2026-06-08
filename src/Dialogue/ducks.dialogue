@@ -8,11 +8,36 @@ Phone: [shake rate=10 level=5] Driiing, Driiiing
 %1 Anonymous: [shake rate=20 level=10] Hawk Hawk
 => END
 
+~ quest_1/4
+Phone: [shake rate=10 level=5] Driiing, Driiiing
+- Pick Up
+Anonymous: [shake rate=10 level=5] Coin Coin ! [/shake] Keep up your good work !
+- Who are you ?
+Anonymous: You will know soon enough !
+=> END
+
+~ quest_1/2
+Phone: [shake rate=10 level=5] Driiing, Driiiing
+- Pick Up
+Anonymous: [shake rate=10 level=5] Coin Coin ! [/shake] Half way there !
+- Who are you ?
+Anonymous: Patience !
+=> END
+
+~ quest_3/4
+Phone: [shake rate=10 level=5] Driiing, Driiiing
+- Pick Up
+Anonymous: [shake rate=10 level=5] Coin Coin ! [/shake] Almost there !
+- Who are you ?
+Anonymous: Almost there !
+=> END
+
 ~ quest_end
 Phone: [shake rate=10 level=5] Driiing, Driiiing
 - Pick Up
-Anonymous: [shake rate=10 level=5] Coin Coin
-- Who are you
+Anonymous: [shake rate=10 level=5] Coin Coin [/shake] Thank you !
+- Who are you ?
+Anonymous: It has been time we revealed our identity !
 Anonymous: We are the all seeing and all knowing ducks.
 The all seeing and all knowing Ducks: By collecting our {{GlobalVars.max_ducks}} lost children, you have become our god.
 The all seeing and all knowing Ducks: From now on, all ducks will be your friends, and aid you (to their best ability) in your everyday life.

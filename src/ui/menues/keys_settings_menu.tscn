@@ -1,18 +1,13 @@
 [gd_scene format=3 uid="uid://dltcf3mdq7iqg"]
 
 [ext_resource type="Script" uid="uid://bwjj7r100vs2d" path="res://src/ui/menues/keys_settings_menu.gd" id="1_4tmrq"]
-[ext_resource type="FontFile" uid="uid://dhoixqrkemx30" path="res://assets/gui/ithaca-font/Ithaca-LVB75.ttf" id="2_bxjqa"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4tmrq"]
-bg_color = Color(0.15, 0.15, 0.15, 1)
+[ext_resource type="Theme" uid="uid://1765abvag8jw" path="res://assets/gui/theme.tres" id="1_bxjqa"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_xy610"]
-font = ExtResource("2_bxjqa")
 font_size = 40
 
 [sub_resource type="LabelSettings" id="LabelSettings_bxjqa"]
-font = ExtResource("2_bxjqa")
-font_size = 24
+font_size = 30
 
 [node name="KeysSettingsMenu" type="Control" unique_id=69117915]
 layout_mode = 3
@@ -21,18 +16,10 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("1_bxjqa")
 script = ExtResource("1_4tmrq")
 baseMinigameLayoutActive = false
 metadata/_custom_type_script = "uid://dd5w2ptvu7pou"
-
-[node name="ColorRect" type="ColorRect" parent="." unique_id=51887224]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0, 0, 0, 0.19607843)
 
 [node name="PanelContainer" type="PanelContainer" parent="." unique_id=1072085457]
 custom_minimum_size = Vector2(500, 600)
@@ -48,7 +35,6 @@ offset_right = 95.0
 offset_bottom = 192.5
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_4tmrq")
 
 [node name="MarginContainer" type="MarginContainer" parent="PanelContainer" unique_id=2018218630]
 layout_mode = 2
@@ -68,21 +54,19 @@ text = "Keys Settings"
 label_settings = SubResource("LabelSettings_xy610")
 
 [node name="EmptySpace" type="Control" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=911892567]
-custom_minimum_size = Vector2(0, 100)
+custom_minimum_size = Vector2(0, 20)
 layout_mode = 2
 
 [node name="MappingContainer" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=456185249]
 layout_mode = 2
-size_flags_vertical = 3
-theme_override_constants/separation = 10
-
-[node name="Left" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/MappingContainer" unique_id=703277517]
-layout_mode = 2
+size_flags_vertical = 6
+theme_override_constants/separation = 30
 
 [node name="Action" type="VBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/MappingContainer" unique_id=320602583]
 layout_mode = 2
 size_flags_horizontal = 3
-theme_override_constants/separation = 5
+size_flags_vertical = 4
+theme_override_constants/separation = 33
 
 [node name="left" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/MappingContainer/Action" unique_id=549446979]
 custom_minimum_size = Vector2(0, 27)
@@ -136,14 +120,14 @@ vertical_alignment = 1
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
-theme_override_constants/separation = 5
+size_flags_vertical = 4
+theme_override_constants/separation = 33
 
 [node name="left" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/MappingContainer/Keys" unique_id=265144180]
 z_index = 1000
 custom_minimum_size = Vector2(75, 27)
 layout_mode = 2
 size_flags_horizontal = 0
-theme_override_fonts/font = ExtResource("2_bxjqa")
 theme_override_font_sizes/font_size = 18
 text = "-"
 
@@ -152,7 +136,6 @@ z_index = 1000
 custom_minimum_size = Vector2(75, 27)
 layout_mode = 2
 size_flags_horizontal = 0
-theme_override_fonts/font = ExtResource("2_bxjqa")
 theme_override_font_sizes/font_size = 18
 text = "-"
 
@@ -161,7 +144,6 @@ z_index = 1000
 custom_minimum_size = Vector2(75, 27)
 layout_mode = 2
 size_flags_horizontal = 0
-theme_override_fonts/font = ExtResource("2_bxjqa")
 theme_override_font_sizes/font_size = 18
 text = "-"
 
@@ -170,7 +152,6 @@ z_index = 1000
 custom_minimum_size = Vector2(75, 27)
 layout_mode = 2
 size_flags_horizontal = 0
-theme_override_fonts/font = ExtResource("2_bxjqa")
 theme_override_font_sizes/font_size = 18
 text = "-"
 
@@ -179,7 +160,6 @@ z_index = 1000
 custom_minimum_size = Vector2(75, 27)
 layout_mode = 2
 size_flags_horizontal = 0
-theme_override_fonts/font = ExtResource("2_bxjqa")
 theme_override_font_sizes/font_size = 18
 text = "-"
 
@@ -188,12 +168,11 @@ z_index = 1000
 custom_minimum_size = Vector2(75, 27)
 layout_mode = 2
 size_flags_horizontal = 0
-theme_override_fonts/font = ExtResource("2_bxjqa")
 theme_override_font_sizes/font_size = 18
 text = "-"
 
 [node name="EmptySpace2" type="Control" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=2121614702]
-custom_minimum_size = Vector2(0, 100)
+custom_minimum_size = Vector2(0, 20)
 layout_mode = 2
 
 [node name="ButtonExit" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=468078516]
@@ -201,6 +180,5 @@ unique_name_in_owner = true
 custom_minimum_size = Vector2(150, 0)
 layout_mode = 2
 size_flags_horizontal = 4
-theme_override_fonts/font = ExtResource("2_bxjqa")
 theme_override_font_sizes/font_size = 36
-text = "Exit"
+text = "Back"

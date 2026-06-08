@@ -122,3 +122,18 @@ func set_launchable(v:bool):
 
 func get_trail():
 	return $ballSprite/Trail
+	
+func scale_down_animation():
+	var tween = create_tween()
+	disable_scale_management = true
+	tween.tween_property(self, "scale", Vector2.ZERO, 0.5)
+	tween.parallel().tween_property(get_trail(), "width", 0, 0.5)
+	await tween.finished
+	force_release.emit()
+	
+func scale_up_animation(): #set up the appearing animation
+	var tween = create_tween()
+	disable_scale_management = true
+	tween.tween_property(self, "scale", Vector2.ONE, 0.8)
+	await tween.finished
+	disable_scale_management = false

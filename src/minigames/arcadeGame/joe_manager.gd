@@ -5,7 +5,7 @@ extends Node2D
 @export var enemy: ArcadeEnemy
 @export var player: arcadePlayer
 @export var ball: arcade_ball 
-@export var distance_to_hit = 75
+@export var distance_to_hit = 100
 @export var distance_max_to_ball = 75
 @export var opponent_move_speed = 250
 var pause_movement: bool
@@ -15,6 +15,7 @@ var dir_to_ball: Vector2
 
 
 @export var jo_preset: opponent = opponent.LittleJo
+var jo_sprite_color: Color = Color.GREEN
 
 
 signal has_rolled_probabilities
@@ -32,6 +33,7 @@ enum opponent {
 
 func _ready():
 	has_rolled_probabilities.connect(reset_roll)
+	await get_tree().physics_frame
 	apply_jo_preset()
 	if enemy != null : 
 		enemy.HitBallComponent.set_cooldown(attack_cooldown)
@@ -113,24 +115,32 @@ func set_enemy(e):
 func apply_jo_preset():
 	match jo_preset:
 		opponent.LittleJo:
-			attack_cooldown = 1.0
-			opponent_move_speed = 250
-			max_manageable_speed = 600
-		
+			attack_cooldown = 1.7
+			opponent_move_speed = 200
+			max_manageable_speed = 400
+			jo_sprite_color = Color.GREEN
+
 		opponent.Jolister:
-			attack_cooldown = 0.8
+			attack_cooldown = 0.9
 			opponent_move_speed = 300
-			max_manageable_speed = 900
+			max_manageable_speed = 600
+			jo_sprite_color = Color.PINK
 		
 		opponent.BigJo:
-			attack_cooldown = 0.7
+			attack_cooldown = 0.9
 			opponent_move_speed = 325
 			max_manageable_speed = 1100
-		
+			jo_sprite_color = Color.BLUE
+			
 		opponent.Jo:
 			attack_cooldown = 0.4
-			opponent_move_speed = 350
+			opponent_move_speed = 400
 			max_manageable_speed = 1400
+			jo_sprite_color = Color.RED
 			
+	enemy.set_sprite_color(jo_sprite_color)
+	enemy.HitBallComponent.ball_color = jo_sprite_color
+	
+	
 func set_preset(preset:JoManager.opponent):
 	jo_preset = preset

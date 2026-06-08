@@ -1,0 +1,180 @@
+~ start
+$> GlobalVars.tic_visited = true
+Tic: 'morning
+- Good morning
+- You seem troubled
+	Tic: I'm not
+	- Okay, have a nice day then
+		=> END
+	- You're sure ?
+		Tic: YES, I'M SURE
+		- Okay, okay....
+			=> END
+	- If you want to talk, I'm here
+		=> quest_start
+Tic: ...
+- If there's anything you want to talk about, I'm here
+	=> quest_start
+- Have a nice day 
+=> END
+
+~ start50
+$> GlobalVars.tic_visited = true
+Tic: 'noon
+- Good afternoon
+- You seem troubled
+	Tic: I'm not
+	- Okay, have a nice day then
+		=> END
+	- You're sure ?
+		Tic: YES, I'M SURE
+		- Okay, okay....
+			=> END
+	- If you want to talk, I'm here
+		=> quest_start
+Tic: ...
+- If there's anything you want to talk about, I'm here
+	=> quest_start
+- Have a nice day 
+=> END
+
+~ start70
+$> GlobalVars.tic_visited = true
+Tic: 'n.o..
+- Good afternoon ?
+- You seem troubled
+	Tic: I;m n*t
+	- Okay, have a nice day then
+		=> END
+	- You're sure ?
+		Tic: Y3S, 1'M S.R3
+		- Okay, okay....
+			=> END
+	- If you want to talk, I'm here
+		=> quest_start
+Tic: ...
+- If there's anything you want to talk about, I'm here
+	=> quest_start
+- Have a nice day 
+=> END
+
+~ quest_start
+Tic: ...
+Tic: I may have a little problem !
+Tic: Do you know my friend Tac ?
+if GlobalVars.tac_visited:
+	- Yes, I do
+else:
+	- No, I don't
+Tic: Yesterday, we wanted to bake a biiig cake for bibi, because today is their birthday !
+Tic: Tac... Tac wanted to bake a chocolate cake.
+Tic: But I don't like chocolate cake ! I wanted a strawberry cake !
+Tic: But tac said "It's not for you, its for bibi !", and they got really angry !
+Tic: So I got really angry and I hit them in the face !
+Tic: But... now I regret...
+Tic: I'm afraid Tac might hate me...
+Tic: Can you talk to Tac, tell them I'm sorry ?
+if GlobalVars.tac_visited:
+	- I just talked to them !
+		=> quest_return_main
+else:
+	- I can do that for you
+		Tic: Thank you so so so much !
+	- Sorry, I have other things to do
+		Tic: Oh... That's... okay...
+		Tic: But if you happen to meet them, you can slip a few words about me...
+	Tic: Good luck !
+	$> title = "quest_return"
+=> END
+
+~ quest_return
+Tic: How was it ?
+if GlobalVars.tac_visited:
+	- I just talked to them !
+		=> quest_return_main
+else:
+	- I hadn't had the time to speak to them, sorry...
+	Tic: It's okay, maybe another time...
+=> END
+
+~ quest_return_main
+Tic: Oh ! And what did they tell you ?
+- They're really sorry too
+	Tic: Oh... really !?!
+	Tic: I knew our friendship was strong !
+	=> good_ending
+- They hate you for what you've done !
+	Tic: Oh... I figured so...
+	Tic: It's... Okay...
+	Tic: I guess I'll live my life without my best friend from now on...
+	Tic: hhhh....
+	=> bad_ending
+=> END
+
+~ good_ending
+$> title = "good_ending"
+Tic: What a relief !
+=> END
+
+~ good_ending60
+$> title = "good_ending"
+Tic: What a relief !
+Tic: I don't know why, but I should hurry telling them how much I love them !
+=> END
+
+~ good_ending70
+$> title = "good_ending"
+Tic: Wh4t 4 r3li3f !
+Tic: 1 d0n't kn0w why, but 1 sh0uld hurry t3ll1ng th3m h0w much 1 l0ve th3m !
+=> END
+
+~ bad_ending
+$> title = "bad_ending"
+Tic: [wave amp=30 freq=1] I'm soo saaaad !
+Tic: [wave amp=20 freq=1] Do you have a tissue for me to cry in ?
+- Here you go
+	Tic: [wave amp=20 freq=1] Thank youuuuu
+	Tic: [wave amp=20 freq=1] *sobs*
+- No, sorry
+	Tic: [wave amp=30 freq=1] ...I understand...
+	Tic: [wave amp=30 freq=1] I am not worthy of a piece of tissue
+	Tic: [wave amp=50 freq=2] Tac was right to hate me !
+=> END
+
+~ bad_ending60
+$> title = "bad_ending"
+Tic: [wave amp=30 freq=1] I'm soo saaaad !
+Tic: [wave amp=20 freq=1] Why is this world so macabre ?!?
+=> END
+
+~ bad_ending70
+$> title = "bad_ending"
+Tic: [wave amp=30 freq=1] I'm so0 sa444d !
+Tic: [wave amp=20 freq=1] Why 1s th1s w0rld so0000 m4c4br3 ?!?
+=> END
+
+~ global80
+Tic: 'n.o..
+- Good afternoon ?
+- Hey ?
+- I can't understand you !
+Tic: .6.t4rd4y, wsq wgHrd t0 .:$ke a b1.1g c4k3 f4 B1bsq, \3caNs. bod3y /s t_-i5 b1rthd4Y !
+Tic: I D8.;t L1kk CqCq4te C4.:
+Tic: 1 {:t \h_m 1n t#e [shake rate=10 level=20] f4C782EI/E£%m !
+=> END
+
+~ global90
+Tic: [shake rate=40 level=20] to*&pfQ!urx!KCw4tg1p
+- Hey
+- You okay ?
+Tic: [shake rate=40 level=20] wfhr7w*#xCwf*XEAX3jG
+- YOU OKAY ?
+Tic: [shake rate=40 level=20] BvU38QFfORx5UFJuu$z9
+- TIC !
+Tic: [shake rate=40 level=20] hQ5%4WgeneMC=0bVrSS+
+if GlobalVars.tac_visited || GlobalVars.tic_visited:
+	- THINK ABOUT TAC !
+else:
+	- ...
+Tic: [shake rate=40 level=20] sF4RxPVfzrb%K=AC71mF
+=> END

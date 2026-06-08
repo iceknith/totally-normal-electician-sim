@@ -15,3 +15,6 @@ func connect_signals():
 			[settings_menu, {} as Dictionary[String, Callable]]
 		)
 	)
+	$VBoxContainer/ButtonQuit.pressed.connect(
+		get_tree().quit
+	)

@@ -15,6 +15,12 @@ class_name ArcadeGame extends Minigame
 
 var last_loser:Node
 var in_reset_animation:bool
+var in_tutorial:bool = false
+var play_tutorial:bool = false
+
+
+@onready var dialogue:DialogueResource = preload("res://src/Dialogue/Arcade/DialogueArcade.dialogue")
+@onready var tutorialTarget = load("res://src/minigames/arcadeGame/tutorialArena/target.tscn")
 
 enum BALLSTATE
 {
@@ -22,17 +28,30 @@ enum BALLSTATE
 	EnemyControl,
 	None
 }
+const opponent_name:Dictionary[JoManager.opponent, String] = {
+	JoManager.opponent.LittleJo : "LittleJo",
+	JoManager.opponent.Jolister : "JoLister",
+	JoManager.opponent.BigJo : "BigJo"
+}
 
+var opponent_preset:JoManager.opponent = JoManager.opponent.LittleJo
 var PlayerScore:int
 var EnemyScore:int
 @export var ScoreToWin:int = 3
+
+var tutorial_destroyed_targets: int = 0
+var tutorial_total_targets: int = 0
 
 
 func _ready() -> void:
 	$ShockWave.visible = false
 	PlayerScore = 0
 	EnemyScore = 0
-	start_game()
+	JoManagerComponent.jo_preset = opponent_preset
+	if play_tutorial : 
+		start_tutorial()
+	else : 
+		start_game()
 	setup_signals()
 	
 func setup_signals(): 
@@ -72,7 +91,8 @@ func update_winner(dead_one):
 		await show_score()
 		await get_tree().create_timer(2.0).timeout
 		reset()
-		check_if_end_game()
+		await check_if_end_game()
+		
 		start_round()
 		in_reset_animation = false
 
@@ -142,9 +162,111 @@ func start_round():
 	
 func check_if_end_game():
 	if PlayerScore == ScoreToWin : 
+		opponent.visible = false
+		opponent.process_mode = Node.PROCESS_MODE_DISABLED
+		MainCommunicator.send_signal_to_main(
+		MainCommunicator.SignalType.START_DIALOGUE, 
+		[dialogue,"Beaten" + opponent_name[opponent_preset], [self]])
+		await DialogueManager.dialogue_ended
 		exit()
+			
 	if EnemyScore == ScoreToWin : 
+		player.visible = false
+		player.process_mode = Node.PROCESS_MODE_DISABLED
+		MainCommunicator.send_signal_to_main(
+		MainCommunicator.SignalType.START_DIALOGUE, 
+		[dialogue, "Win"+opponent_name[opponent_preset], [self]] 
+		)
+		await DialogueManager.dialogue_ended
 		exit()
 	
 func exit():
 	MainCommunicator.send_signal_to_main(MainCommunicator.SignalType.REMOVE_MINIGAME)
+
+
+func reset_game():
+	PlayerScore = 0
+	EnemyScore = 0
+	reset()
+	
+
+func start_tutorial():
+	in_tutorial = true
+	opponent.visible = false
+	opponent.process_mode = Node.PROCESS_MODE_DISABLED
+	await get_tree().create_timer(2).timeout
+	MainCommunicator.send_signal_to_main(
+			MainCommunicator.SignalType.START_DIALOGUE, 
+			[dialogue, "Tutorial1", [self]] 
+			)
+			
+	await DialogueManager.dialogue_ended
+	await get_tree().create_timer(4).timeout
+	
+	MainCommunicator.send_signal_to_main(
+		MainCommunicator.SignalType.START_DIALOGUE, 
+		[dialogue, "Tutorial2", [self]] 
+		)
+	
+	await DialogueManager.dialogue_ended
+	
+	while (ball.mouvement_component.get_speed() < 600) : 
+		await get_tree().physics_frame
+	await ball.scale_down_animation()
+	ball.global_position = Vector2(1152/2, 648/2) 
+	ball.reset()
+	await ball.scale_up_animation()
+
+	
+	MainCommunicator.send_signal_to_main(
+	MainCommunicator.SignalType.START_DIALOGUE, 
+	[dialogue, "Tutorial3", [self]] 
+	)
+
+
+	await spawn_and_wait_tutorial_targets()
+
+		
+	MainCommunicator.send_signal_to_main(
+	MainCommunicator.SignalType.START_DIALOGUE, 
+	[dialogue, "Tutorial4", [self]] 
+	)
+	
+	await DialogueManager.dialogue_ended
+	opponent.visible = true
+	opponent.process_mode = Node.PROCESS_MODE_INHERIT
+	reset_game()
+	start_game()
+	
+	
+	
+	
+	
+func spawn_and_wait_tutorial_targets():
+	var target_positions = [
+		Vector2(200, 250),
+		Vector2(950, 250),
+		Vector2(200, 500),
+		Vector2(950, 500)
+	]
+	
+	tutorial_destroyed_targets = 0
+	tutorial_total_targets = target_positions.size()
+	
+	for pos in target_positions:
+		var target_instance = tutorialTarget.instantiate()
+		entities.add_child(target_instance)
+		target_instance.global_position = pos
+		
+		target_instance.target_destroyed.connect(_on_tutorial_target_destroyed)
+	
+	while tutorial_destroyed_targets < tutorial_total_targets :
+		await get_tree().process_frame
+
+
+func _on_tutorial_target_destroyed():
+	tutorial_destroyed_targets += 1
+
+	
+	
+	

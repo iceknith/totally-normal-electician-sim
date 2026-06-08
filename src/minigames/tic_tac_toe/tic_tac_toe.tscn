@@ -5,10 +5,11 @@
 [ext_resource type="Texture2D" uid="uid://bcu8m8efnxa2l" path="res://assets/pixelart/tictactoe/cross.png" id="3_id0t8"]
 [ext_resource type="Texture2D" uid="uid://dejlkko35u7rl" path="res://assets/pixelart/tictactoe/circle.png" id="4_nv2wk"]
 [ext_resource type="Texture2D" uid="uid://cjsghwo4q4rg7" path="res://assets/pixelart/tictactoe/bg.png" id="6_id0t8"]
+[ext_resource type="FontFile" uid="uid://dcu0gks0yl1lh" path="res://assets/gui/fonts/Jersey10-Regular.ttf" id="6_nv2wk"]
 [ext_resource type="FontFile" uid="uid://dhoixqrkemx30" path="res://assets/gui/ithaca-font/Ithaca-LVB75.ttf" id="6_p80xj"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_id0t8"]
-font = ExtResource("6_p80xj")
+font = ExtResource("6_nv2wk")
 font_size = 100
 font_color = Color(1, 0.69803923, 0, 1)
 outline_size = 10

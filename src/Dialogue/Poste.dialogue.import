@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://b80inkgsiaq86"
+path="res://.godot/imported/Poste.dialogue-a4d30fe2fbf21ed9831b323418ec6f31.tres"
+
+[deps]
+
+source_file="res://src/Dialogue/Poste.dialogue"
+dest_files=["res://.godot/imported/Poste.dialogue-a4d30fe2fbf21ed9831b323418ec6f31.tres"]
+
+[params]
+
+defaults=true

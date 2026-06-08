@@ -5,6 +5,7 @@ class_name SettingsMenu extends Minigame
 
 func _ready() -> void:
 	super()
+	%MouseSensitivity.value = GlobalVars.mouse_sentitivity * 1000
 	connect_signals()
 
 func connect_signals() -> void:
@@ -20,8 +21,17 @@ func connect_signals() -> void:
 			[sound_settings_menu, {} as Dictionary[String, Callable]]
 		)
 	)
-	%ButtonExit.pressed.connect(
+	%ButtonBack.pressed.connect(
 		MainCommunicator.send_signal_to_main.bind(
 			MainCommunicator.SignalType.REMOVE_MINIGAME
 		)
 	)
+	%ButtonExit.pressed.connect(
+		get_tree().quit
+	)
+	%MouseSensitivity.value_changed.connect(
+		change_mouse_sensitivity
+	)
+
+func change_mouse_sensitivity(value:float):
+	GlobalVars.mouse_sentitivity = value / 1000

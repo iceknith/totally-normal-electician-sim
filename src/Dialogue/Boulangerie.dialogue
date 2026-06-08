@@ -29,7 +29,7 @@ Patrick: So, should I wrap the cake ?
 $> close_up_start_animation = "content"
 $> GlobalVars.bought_cake_bakery = true
 Patrick: Wonderful ! I knew you'd loke it
-(As Patrick hands you the cake, his hands brushes against yours)
+Observation: (As Patrick hands you the cake, his hands brushes against yours)
 - Thank you Patrick !
 - I'll think of you when I eat it !
 Patrick: See you later cinnamon roll
@@ -98,7 +98,7 @@ Patrick: Oh, hell-.[shake rate=40 level=50].. GET OUT OF MY SHOP !
 => END
 
 ~ global75
-Patrick: [wave amp=30 freq=1] Why is everything wierd ?
+Patrick: [wave amp=30 freq=3] Why is everything wierd ?
 => END
 
 ~ global90

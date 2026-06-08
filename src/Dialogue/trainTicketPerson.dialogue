@@ -1,0 +1,99 @@
+~ start
+Rupert: Good morning!
+- Hey
+- Good morning
+=> main
+
+~ start50
+Rupert: Good afternoon!
+- Hey
+- Good afternoon
+=> main
+
+~ start60
+Rupert: G-good morning!
+- Hey
+- Good afternoon
+	Rupert: Oh, right!
+=> main
+
+~ start70
+Rupert: G-good afternoon
+- Hey
+- Good afternoon
+Rupert: Do you wanna leave this town too ?
+- Yes
+	Rupert: Frick! You too?
+	Rupert: I thought you were a good one!
+	Rupert: You're sure you want to leave
+	- Yes
+		Rupert: ...
+		=> buy_ticket
+	- No
+		Rupert: Wfiouf, what a relief!
+- No ?
+	Rupert: Wfiouf, what a relief!
+	Rupert: You don't know the amount of people that have been leaving recently.
+	Rupert: Freaking me out!
+=> END
+
+~ start80
+Rupert: G-good afternoon
+- Hey
+- Good afternoon
+Rupert: Please buy me a ticket, and then bring me with you on the train!
+Rupert: I NEED TO LEAVE THIS TOWN!
+Rupert: IT'S FREAKING ME OUT!
+Rupert: PLEASE DON'T LEAVE ME BEHIND
+- Okay, I'm taking the train
+	Rupert: THANK YOU!!!
+	=> train_start
+- No, I want to stay here
+	Rupert: BUT WHY?
+=> END
+
+~ start90
+Rupert: PLEAASE BUY ME A TICKET SI I CAN GO ON THE TRAIN WITH YOU !
+Rupert: I NEED TO LEAVE THIS TOWN!
+Rupert: IT'S FREAKING ME OUT!
+Rupert: PLEASE DON'T LEAVE ME BEHIND
+- Okay, I'm taking the train
+	Rupert: THANK YOU!!!
+	=> train_start
+- No, I want to stay here
+	Rupert: BUT WHY?
+=> END
+
+~ main
+Rupert: So, what can I do for you?
+- What can you do?
+	Rupert: Hhh...
+	Rupert: Sell you tickets. I mean you're kinda at a train station right now.
+	Rupert: So do you wanna buy a ticket or what?
+	- Yes please
+		=> buy_ticket
+	- No, maybe later tho
+		Rupert: Goodbye.
+- Buy a ticket
+- Nevermind
+Rupert: Goodbye.
+=> END
+
+~ buy_ticket
+Rupert: Okay, where do you wanna go?
+- Riverborough Beach
+	Rupert: Somebody sure needed vacation, am I right?
+	- Yeah !
+	- ...
+	Rupert: One ticket to riverborough beach it is!
+- Pineton
+	Rupert: One ticket to Pineton in is!
+- Stardew Valley
+	Rupert: One ticket to stardew valley it is!
+- Nevermind...
+	=> END
+=> train_start
+
+~ train_start
+Narrator: Starting the train cutscene
+=> END

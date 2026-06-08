@@ -18,28 +18,56 @@
 [ext_resource type="PackedScene" uid="uid://cng5vwx5qm31h" path="res://src/3D/objects/tower.tscn" id="12_clt24"]
 [ext_resource type="Script" uid="uid://c4gbdbfsdgnw7" path="res://src/shaders/shader_applyer.gd" id="12_e0nlv"]
 [ext_resource type="Resource" uid="uid://bjx3nwf8qdnjy" path="res://src/Dialogue/dialogueTest/testDialogue.dialogue" id="13_gisxt"]
-[ext_resource type="Resource" uid="uid://dhpfsyl8hvq2p" path="res://src/Dialogue/Mathew-Math.dialogue" id="14_imnrk"]
 [ext_resource type="PackedScene" uid="uid://c6lu1xsiprij5" path="res://src/minigames/competitive_rock_paper_scissors/Rock Paper scissors.tscn" id="14_ivwwh"]
 [ext_resource type="PackedScene" uid="uid://d2b7b6sp2kyp2" path="res://src/2D/phase_visual_novel/boulangerie.tscn" id="14_lpsds"]
 [ext_resource type="PackedScene" uid="uid://bxd7l2fjgm1hi" path="res://assets/blender/superette.blend" id="14_w7gwu"]
-[ext_resource type="Texture2D" uid="uid://bltwiikv373cw" path="res://assets/pnjs/geenric_png.png" id="14_xud6r"]
-[ext_resource type="PackedScene" uid="uid://bhqwyhmgp4t82" path="res://src/2D/levels/Arcade/Arcade.tscn" id="14_yhicf"]
+[ext_resource type="PackedScene" uid="uid://c2i06hrpn3ol4" path="res://src/2D/levels/Arcade/Arcade.tscn" id="14_yhicf"]
+[ext_resource type="Texture2D" uid="uid://cpcco8dbpih5i" path="res://assets/pnjs/connect4-2.png" id="15_imnrk"]
 [ext_resource type="Resource" uid="uid://b8mcrhwaogcdw" path="res://src/Dialogue/MinigameDialogues/connect4_dialogue.dialogue" id="16_impf6"]
 [ext_resource type="PackedScene" uid="uid://b3nng2yxnwllt" path="res://assets/blender/foresttree2.blend" id="17_ro6to"]
 [ext_resource type="PackedScene" uid="uid://dgtuon8krwmkg" path="res://src/3D/objects/forest_New.tscn" id="17_ttchh"]
 [ext_resource type="Resource" uid="uid://b3kxo7cvgi3tj" path="res://src/Dialogue/MinigameDialogues/tictactoe.dialogue" id="18_imnrk"]
+[ext_resource type="PackedScene" uid="uid://cba84c07orjm4" path="res://assets/blender/ecole.blend" id="19_imnrk"]
+[ext_resource type="PackedScene" uid="uid://b2ya8xqtu4610" path="res://src/2D/phase_visual_novel/poste.tscn" id="19_tqnhu"]
 [ext_resource type="Script" uid="uid://gp32lnioffiv" path="res://addons/scene_object_brush/clean_up_height.gd" id="21_8pvm1"]
-[ext_resource type="PackedScene" uid="uid://cppr3lfytuf4v" path="res://src/minigames/arcadeGame/level/FullJoBoss.tscn" id="21_gisxt"]
 [ext_resource type="PackedScene" uid="uid://cuca3b2go2ndc" path="res://src/2D/phase_visual_novel/superette.tscn" id="21_impf6"]
 [ext_resource type="PackedScene" uid="uid://cpm4sncsn8qu2" path="res://assets/blender/arcade.blend" id="21_wnywt"]
 [ext_resource type="PackedScene" uid="uid://bthe0lnwfgtu4" path="res://assets/blender/garre.blend" id="22_xud6r"]
+[ext_resource type="Resource" uid="uid://dwr51uf31poch" path="res://src/Dialogue/Vera-Math2.dialogue" id="25_6c255"]
+[ext_resource type="Texture2D" uid="uid://c2336ibnyhhyr" path="res://assets/pnjs/tictactoe-3.png" id="25_dygmt"]
+[ext_resource type="Texture2D" uid="uid://t0k4d1dyottj" path="res://assets/pnjs/tictactoe-2.png" id="25_e1shr"]
+[ext_resource type="Texture2D" uid="uid://wp2j5lrbpqo1" path="res://assets/pnjs/tictactoe-1.png" id="25_jye0b"]
+[ext_resource type="Texture2D" uid="uid://dveqnca44g0np" path="res://assets/pnjs/connect4-1.png" id="26_5uot1"]
+[ext_resource type="Resource" uid="uid://dk61x5fja7yub" path="res://src/Dialogue/Tic.dialogue" id="26_hjgcf"]
+[ext_resource type="Texture2D" uid="uid://0x2pywhqr4yj" path="res://assets/pnjs/connect4-3.png" id="27_64pfx"]
+[ext_resource type="Resource" uid="uid://qupaelm28sm2" path="res://src/Dialogue/trainTicketPerson.dialogue" id="27_24100"]
+[ext_resource type="Resource" uid="uid://dtbh4bgoqly04" path="res://src/Dialogue/Tac.dialogue" id="27_nhq6p"]
+[ext_resource type="Texture2D" uid="uid://c2uehocq77tiq" path="res://assets/pnjs/bibi.png" id="27_osieg"]
 [ext_resource type="PackedScene" uid="uid://bjgnetr0axl38" path="res://assets/blender/poste.blend" id="27_xud6r"]
+[ext_resource type="Resource" uid="uid://but6c0oyklce5" path="res://src/Dialogue/bibi.dialogue" id="27_yc2gj"]
+[ext_resource type="Texture2D" uid="uid://cyil7f1pyputm" path="res://assets/pnjs/ticket-sell.png" id="28_7x2nm"]
+[ext_resource type="Resource" uid="uid://c4n74pg37hdmd" path="res://src/Dialogue/Cathline-Cats.dialogue" id="28_ku2v5"]
+[ext_resource type="Resource" uid="uid://deugj5ejd11md" path="res://src/Dialogue/Cloven-Sandwiches.dialogue" id="29_cley4"]
+[ext_resource type="Resource" uid="uid://77plvkjpnt6w" path="res://src/Dialogue/childHampter.dialogue" id="29_dl85h"]
+[ext_resource type="Resource" uid="uid://dtboaaiu5kh5m" path="res://src/Dialogue/Fiona-wannabe.dialogue" id="30_0mh1u"]
+[ext_resource type="Texture2D" uid="uid://bhp6u4q0l4x1u" path="res://assets/pnjs/hampter_child.png" id="30_l2on1"]
+[ext_resource type="Resource" uid="uid://by8wexrm7j38r" path="res://src/Dialogue/childFast.dialogue" id="31_lwi55"]
+[ext_resource type="PackedScene" uid="uid://bedc3twc61x81" path="res://assets/blender/bench.blend" id="32_5uot1"]
+[ext_resource type="Texture2D" uid="uid://cply08pcdslg" path="res://assets/pnjs/kid3.png" id="32_6v73m"]
+[ext_resource type="Resource" uid="uid://oiakdbd6ylrk" path="res://src/Dialogue/childNormal.dialogue" id="33_e7jxh"]
+[ext_resource type="Texture2D" uid="uid://cploklwcrxp5k" path="res://assets/pnjs/kid2.png" id="34_e6gat"]
+[ext_resource type="Resource" uid="uid://vjhf550mtvym" path="res://src/Dialogue/childSlow.dialogue" id="35_1rjro"]
+[ext_resource type="Texture2D" uid="uid://680yakajud1s" path="res://assets/pnjs/kid1.png" id="36_ieahk"]
+[ext_resource type="Resource" uid="uid://2c5fc6y780ks" path="res://src/Dialogue/childHomework.dialogue" id="37_e7fmu"]
+[ext_resource type="Texture2D" uid="uid://bktw8qys1sehj" path="res://assets/pnjs/kid4.png" id="38_leq0n"]
+[ext_resource type="Texture2D" uid="uid://ojpmlmgowg3i" path="res://assets/pnjs/pion.png" id="40_hjgcf"]
+[ext_resource type="Resource" uid="uid://ddswprqvd4u7v" path="res://src/Dialogue/pion.dialogue" id="40_nhq6p"]
+[ext_resource type="Resource" uid="uid://dhpfsyl8hvq2p" path="res://src/Dialogue/Mathew-Math.dialogue" id="44_doxgq"]
+[ext_resource type="Texture2D" uid="uid://bltwiikv373cw" path="res://assets/pnjs/geenric_png.png" id="45_nmc2l"]
 
 [sub_resource type="Curve" id="Curve_w7gwu"]
 _data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.8090909, 0.56875753), 1.2034676, 1.2034676, 0, 0, Vector2(1, 1), 2.0254266, 0.0, 0, 0]
 point_count = 3
-
-[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_ro6to"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_awi42"]
 albedo_texture = ExtResource("1_l8jxy")
@@ -64,7 +92,6 @@ sky = SubResource("Sky_co47k")
 ambient_light_source = 3
 reflected_light_source = 2
 glow_hdr_threshold = 1.5
-fog_enabled = true
 fog_mode = 1
 fog_light_color = Color(0.8235294, 0.9254902, 0.9843137, 1)
 fog_density = 1.0
@@ -78,17 +105,32 @@ fog_depth_end = 200.0
 auto_exposure_scale = 0.3
 dof_blur_far_distance = 200.0
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_tqnhu"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_nhq6p"]
 viewport_path = NodePath("SubViewport")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_clt24"]
-size = Vector3(1.9559784, 2.7723694, 0.15948486)
+size = Vector3(1.341207, 2.3379288, 0.39674377)
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_ku2v5"]
+viewport_path = NodePath("SubViewport")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_tqnhu"]
+size = Vector3(3.3690002, 3.3618798, 0.39674377)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_64pfx"]
+size = Vector3(0.80126953, 2.3551025, 2.69487)
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_cley4"]
+viewport_path = NodePath("SubViewport")
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_0mh1u"]
+viewport_path = NodePath("SubViewport")
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_e8reo"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("14_xud6r")
+"texture": ExtResource("45_nmc2l")
 }],
 "loop": true,
 "name": &"normal",
@@ -96,82 +138,249 @@ animations = [{
 }]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_ivwwh"]
-radius = 0.72587484
+radius = 1.6869905
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_5uot1"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_qauko"]
 viewport_path = NodePath("SubViewport")
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_64pfx"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_7swc5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("45_nmc2l")
+}],
+"loop": true,
+"name": &"normal",
+"speed": 5.0
+}]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_iqkni"]
 viewport_path = NodePath("SubViewport")
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_dygmt"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_2reqj"]
 viewport_path = NodePath("SubViewport")
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_e1shr"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_u858c"]
 viewport_path = NodePath("SubViewport")
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_jye0b"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_bbyu7"]
 viewport_path = NodePath("SubViewport")
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_osieg"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_e0aau"]
 viewport_path = NodePath("SubViewport")
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_yc2gj"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_qvsh1"]
 viewport_path = NodePath("SubViewport")
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_pd13m"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_j4fpo"]
 viewport_path = NodePath("SubViewport")
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_dl85h"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_yc2gj"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("25_jye0b")
+}],
+"loop": true,
+"name": &"normal",
+"speed": 5.0
+}]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_y8yem"]
 viewport_path = NodePath("SubViewport")
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_l2on1"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_jye0b"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("25_e1shr")
+}],
+"loop": true,
+"name": &"normal",
+"speed": 5.0
+}]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_kr6i8"]
 viewport_path = NodePath("SubViewport")
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_lwi55"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_osieg"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("25_dygmt")
+}],
+"loop": true,
+"name": &"normal",
+"speed": 5.0
+}]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_2mgps"]
 viewport_path = NodePath("SubViewport")
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_6v73m"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_64pfx"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("26_5uot1")
+}],
+"loop": true,
+"name": &"normal",
+"speed": 5.0
+}]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_xkadw"]
 viewport_path = NodePath("SubViewport")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_x4jwh"]
-albedo_color = Color(0, 0, 1, 1)
+[sub_resource type="SpriteFrames" id="SpriteFrames_r318u"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("15_imnrk")
+}],
+"loop": true,
+"name": &"normal",
+"speed": 5.0
+}]
 
-[sub_resource type="PrismMesh" id="PrismMesh_lpsds"]
-material = SubResource("StandardMaterial3D_x4jwh")
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8pvm1"]
-albedo_color = Color(0.07700009, 0, 0.66, 1)
-
-[sub_resource type="ViewportTexture" id="ViewportTexture_e7jxh"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_x6xw6"]
 viewport_path = NodePath("SubViewport")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gisxt"]
-albedo_color = Color(0.09315889, 0.65882355, 0, 1)
+[sub_resource type="SpriteFrames" id="SpriteFrames_dygmt"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("27_64pfx")
+}],
+"loop": true,
+"name": &"normal",
+"speed": 5.0
+}]
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_e6gat"]
+[sub_resource type="SphereShape3D" id="SphereShape3D_e1shr"]
+radius = 2.1577005
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_o8rpk"]
 viewport_path = NodePath("SubViewport")
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_1rjro"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_xyyw1"]
 viewport_path = NodePath("SubViewport")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_impf6"]
-albedo_color = Color(0.43, 0.43, 0.43, 1)
-
-[sub_resource type="BoxMesh" id="BoxMesh_x4jwh"]
-material = SubResource("StandardMaterial3D_impf6")
-size = Vector3(1.615, 3.43, 0.055)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_64pfx"]
-size = Vector3(0.80126953, 2.3551025, 2.69487)
-
-[sub_resource type="ViewportTexture" id="ViewportTexture_ieahk"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_cua6p"]
 viewport_path = NodePath("SubViewport")
 
-[sub_resource type="SphereShape3D" id="SphereShape3D_jye0b"]
-radius = 1.090664
+[sub_resource type="ViewportTexture" id="ViewportTexture_74tlw"]
+viewport_path = NodePath("SubViewport")
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_e7fmu"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_nhq6p"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("40_hjgcf")
+}],
+"loop": true,
+"name": &"normal",
+"speed": 5.0
+}]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_iiaan"]
+viewport_path = NodePath("SubViewport")
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_pd13m"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("27_osieg")
+}],
+"loop": true,
+"name": &"normal",
+"speed": 5.0
+}]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_drvwa"]
+viewport_path = NodePath("SubViewport")
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_doxgq"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("28_7x2nm")
+}],
+"loop": true,
+"name": &"normal",
+"speed": 5.0
+}]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_r8k0m"]
+viewport_path = NodePath("SubViewport")
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_lwi55"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("30_l2on1")
+}],
+"loop": true,
+"name": &"normal",
+"speed": 5.0
+}]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_r8jgy"]
+viewport_path = NodePath("SubViewport")
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_nmc2l"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("32_6v73m")
+}],
+"loop": true,
+"name": &"normal",
+"speed": 5.0
+}]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_d0d3r"]
+viewport_path = NodePath("SubViewport")
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1rjro"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("34_e6gat")
+}],
+"loop": true,
+"name": &"normal",
+"speed": 5.0
+}]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_n1psr"]
+viewport_path = NodePath("SubViewport")
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_e7fmu"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("36_ieahk")
+}],
+"loop": true,
+"name": &"normal",
+"speed": 5.0
+}]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_lvg38"]
+viewport_path = NodePath("SubViewport")
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_24100"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("38_leq0n")
+}],
+"loop": true,
+"name": &"normal",
+"speed": 5.0
+}]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_1pwqi"]
 viewport_path = NodePath("SubViewport")
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_jqxng"]
@@ -220,28 +429,32 @@ _data = [Vector2(0, 0), 0.0, -0.020783685, 0, 0, Vector2(1, 1), 2.8797717, 0.0, 
 point_count = 2
 
 [sub_resource type="Curve" id="Curve_e0nlv"]
-_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.89972144, 0.49617904), 1.486036, 1.486036, 0, 0, Vector2(1, 1), 2.9379032, 0.0, 0, 0]
-point_count = 3
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.7479253, 0.10984987), 0.56750715, 0.56750715, 0, 0, Vector2(0.9366359, 0.50777733), 3.3467336, 3.3467336, 0, 0, Vector2(1, 1), 2.9379032, 0.0, 0, 0]
+point_count = 4
 
-[sub_resource type="Curve" id="Curve_5f2gp"]
-_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1, 1), 3.3006797, 0.0, 0, 0]
+[sub_resource type="Curve" id="Curve_5uot1"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1, 1), 2.9379032, 0.0, 0, 0]
 point_count = 2
 
-[sub_resource type="Curve" id="Curve_lpsds"]
-_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.7656442, 0.4535902), 0.115969695, 0.115969695, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+[sub_resource type="Curve" id="Curve_5f2gp"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.7476958, 0.19914043), 0.7449857, 0.7449857, 0, 0, Vector2(1, 1), 3.3006797, 0.0, 0, 0]
 point_count = 3
 
+[sub_resource type="Curve" id="Curve_lpsds"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1, 1), 2.9561002, 0.0, 0, 0]
+point_count = 2
+
 [sub_resource type="Curve" id="Curve_clt24"]
-_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.57918555, 0), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.57918555, 0), 0.0, 0.0, 0, 0, Vector2(1, 1), 7.3902287, 0.0, 0, 0]
 point_count = 3
 
 [sub_resource type="Curve" id="Curve_jqxng"]
-_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.88579386, 0.5529476), 0.73959315, 0.73959315, 0, 0, Vector2(1, 1), 5.254197, 0.0, 0, 0]
-point_count = 3
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1, 1), 3.0484796, 0.0, 0, 0]
+point_count = 2
 
 [sub_resource type="Curve" id="Curve_yhicf"]
-_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1, 1), 2.1689944, 0.0, 0, 0]
-point_count = 2
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.74654377, 0.24171102), 0.98976797, 0.98976797, 0, 0, Vector2(0.9504608, 0.50777733), 3.7875047, 3.7875047, 0, 0, Vector2(1, 1), 2.1689944, 0.0, 0, 0]
+point_count = 4
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ro6to"]
 size = Vector3(400, 50, 1)
@@ -260,13 +473,6 @@ skyBotStartColor = Color(0.6666667, 0.9372549, 0.972549, 1)
 skyTopEndColor = Color(0.6509804, 0.105882354, 0.14901961, 1)
 skyBotEndColor = Color(0.03529412, 0.039215688, 0.21568628, 1)
 skyChangeCurve = SubResource("Curve_w7gwu")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=428998300]
-collision_layer = 0
-collision_mask = 128
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=300533612]
-shape = SubResource("WorldBoundaryShape3D_ro6to")
 
 [node name="Layout" type="MeshInstance3D" parent="." unique_id=41461789]
 transform = Transform3D(0.94632256, 0, 0.32322383, 0, 1, 0, -0.32322383, 0, 0.94632256, 0, 0.1, 0)
@@ -637,7 +843,7 @@ transform = Transform3D(-1.3577971, 0, 0.34115595, 0, 1.4, 0, -0.34115595, 0, -1
 transform = Transform3D(-0.47999907, 0, -1.3151432, 0, 1.4, 0, 1.3151432, 0, -0.47999907, -39.288597, -1.5066012, -71.58208)
 
 [node name="maisontexture83" parent="Objets/Houses" unique_id=1025650668 instance=ExtResource("8_e0nlv")]
-transform = Transform3D(-0.47999907, 0, -1.3151432, 0, 1.4, 0, 1.3151432, 0, -0.47999907, -44.267834, -1.5066012, -50.20566)
+transform = Transform3D(0.5196429, 0, 1.2999893, 0, 1.4, 0, -1.2999893, 0, 0.5196429, -44.26783, -1.5066012, -50.20566)
 
 [node name="maisontexture78" parent="Objets/Houses" unique_id=872969143 instance=ExtResource("8_e0nlv")]
 transform = Transform3D(-0.47999907, 0, -1.3151432, 0, 1.4, 0, 1.3151432, 0, -0.47999907, -47.00553, -1.5066012, -74.52786)
@@ -816,9 +1022,6 @@ transform = Transform3D(-1.3474705, 2.1468172e-10, 0.37989897, 2.0652306e-10, 1.
 [node name="maisontexture173" parent="Objets/Houses" unique_id=1199034961 instance=ExtResource("12_5f2gp")]
 transform = Transform3D(-0.50816464, 2.1468172e-10, -1.3045186, 7.8272513e-11, 1.4, 1.999045e-10, 1.3045186, -3.7569944e-13, -0.50816464, 126.31828, -1.5107809, -18.36536)
 
-[node name="maisontexture179" parent="Objets/Houses" unique_id=1641880324 instance=ExtResource("12_5f2gp")]
-transform = Transform3D(0.50426906, 2.1468173e-10, 1.3060292, -7.7678766e-11, 1.4, -2.001359e-10, -1.3060292, -3.7569888e-13, 0.50426906, 142.22495, -1.5107809, -37.66715)
-
 [node name="maisontexture48" parent="Objets/Houses" unique_id=1648552370 instance=ExtResource("12_5f2gp")]
 transform = Transform3D(0.5408547, -2.1443294e-10, 1.291308, 9.2375003e-11, 1.4000001, 1.9379168e-10, -1.291308, 1.0338473e-11, 0.5408547, 67.91757, -1.5107809, -2.8173056)
 
@@ -836,10 +1039,6 @@ transform = Transform3D(1.3464382, 0, -0.38354298, 0, 1.4000001, 0, 0.38354298, 
 
 [node name="maisontexture12" parent="Objets/Houses" unique_id=729528372 instance=ExtResource("12_5f2gp")]
 transform = Transform3D(-0.5796812, 0, -1.2743508, 0, 1.4, 0, 1.2743508, 0, -0.5796812, 18.789015, -1.5107809, -2.5035508)
-
-[node name="maisontexture14" parent="Objets/Houses" unique_id=220874325 instance=ExtResource("12_5f2gp")]
-transform = Transform3D(-0.49369916, -4.5178683e-10, -1.3100613, -1.6149143e-10, 1.3999999, -4.2194467e-10, 1.3100613, 2.323003e-12, -0.49369916, 35.281544, -1.5107809, 7.5684857)
-visible = false
 
 [node name="maisontexture15" parent="Objets/Houses" unique_id=150626914 instance=ExtResource("12_5f2gp")]
 transform = Transform3D(-0.5922414, 0, -1.2685623, 0, 1.3999999, 0, 1.2685623, 0, -0.5922414, 44.663204, -1.5107809, 9.330028)
@@ -940,10 +1139,10 @@ transform = Transform3D(0.048989207, 0, 0.9987993, 0, 1, 0, -0.9987993, 0, 0.048
 transform = Transform3D(0.96097255, 0, 0.27664384, 0, 1, 0, -0.27664384, 0, 0.96097255, 61.44846, 0, 118.64007)
 
 [node name="Tower15" parent="Objets/Towers" unique_id=562859087 instance=ExtResource("12_clt24")]
-transform = Transform3D(-0.95945185, 0, 0.2818725, 0, 1, 0, -0.2818725, 0, -0.95945185, 120.92389, 0, -41.301323)
+transform = Transform3D(-0.46887028, 0, -0.8832668, 0, 1, 0, 0.8832668, 0, -0.46887028, 127.64551, 0, -54.976467)
 
 [node name="Tower3" parent="Objets/Towers" unique_id=1995813380 instance=ExtResource("12_clt24")]
-transform = Transform3D(0.5770454, 0, -0.8167121, 0, 1, 0, 0.8167121, 0, 0.5770454, -74.54378, 0, -29.995604)
+transform = Transform3D(-0.55927956, 0, -0.82897884, 0, 1, 0, 0.82897884, 0, -0.55927956, -61.208694, 0, -94.74978)
 
 [node name="Tower4" parent="Objets/Towers" unique_id=1750263578 instance=ExtResource("12_clt24")]
 transform = Transform3D(-0.33538583, 0, -0.94208086, 0, 1, 0, 0.94208086, 0, -0.33538583, -3.4805005, 0, 13.05793)
@@ -973,60 +1172,168 @@ transform = Transform3D(-0.99023646, 0, -0.1393977, 0, 1, 0, 0.1393977, 0, -0.99
 [node name="Tower11" parent="Objets/Towers" unique_id=1555346870 instance=ExtResource("12_clt24")]
 transform = Transform3D(0.9361762, 0, -0.3515312, 0, 1, 0, 0.3515312, 0, 0.9361762, -118.61699, 0, -1.2685626)
 
-[node name="Interactables" type="Node3D" parent="Objets" unique_id=250600695]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.749743, 0, -0.7360313)
+[node name="Ducks" type="Node3D" parent="Objets" unique_id=769191485]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.7497427, 0, -0.7360313)
 
-[node name="Ducks" type="Node3D" parent="Objets/Interactables" unique_id=769191485]
+[node name="Duck1" parent="Objets/Ducks" unique_id=940145597 instance=ExtResource("8_x4jwh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 47.5935, 2.3841858e-07, 16.40528)
 
-[node name="Duck" parent="Objets/Interactables/Ducks" unique_id=940145597 instance=ExtResource("8_x4jwh")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 54.171806, 0, 6.707733)
+[node name="Duck2" parent="Objets/Ducks" unique_id=459956950 instance=ExtResource("8_x4jwh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.43295, 0, 19.654533)
 
-[node name="Duck2" parent="Objets/Interactables/Ducks" unique_id=459956950 instance=ExtResource("8_x4jwh")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 42.09155, 0, 2.4316452)
+[node name="Duck3" parent="Objets/Ducks" unique_id=2109657494 instance=ExtResource("8_x4jwh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.462264, 0, 44.908054)
 
-[node name="boulangerie" parent="Objets/Interactables" unique_id=629317831 instance=ExtResource("11_5f2gp")]
-transform = Transform3D(-0.5200055, 0, -1.2998441, 0, 1.4, 0, 1.2998441, 0, -0.5200055, -77.9224, -0.0048953295, -3.5548165)
+[node name="Duck4" parent="Objets/Ducks" unique_id=514572473 instance=ExtResource("8_x4jwh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.826444, 0, 75.65346)
 
-[node name="boulangerie" type="Area3D" parent="Objets/Interactables/boulangerie" unique_id=1185456266 node_paths=PackedStringArray("text_sprite")]
+[node name="Duck5" parent="Objets/Ducks" unique_id=1543591571 instance=ExtResource("8_x4jwh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.2123003, 0, 140.48436)
+
+[node name="Duck6" parent="Objets/Ducks" unique_id=1898811408 instance=ExtResource("8_x4jwh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 112.87243, 0, 104.235504)
+
+[node name="Duck7" parent="Objets/Ducks" unique_id=1510833725 instance=ExtResource("8_x4jwh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 130.21167, 0, 11.182747)
+
+[node name="Duck8" parent="Objets/Ducks" unique_id=2119775743 instance=ExtResource("8_x4jwh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -65.65561, 0, 94.43112)
+
+[node name="Duck9" parent="Objets/Ducks" unique_id=877593073 instance=ExtResource("8_x4jwh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -78.77061, 0, 37.203102)
+
+[node name="Duck13" parent="Objets/Ducks" unique_id=190384380 instance=ExtResource("8_x4jwh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 140.17776, 3.0653272, -45.481716)
+
+[node name="Duck10" parent="Objets/Ducks" unique_id=1025460447 instance=ExtResource("8_x4jwh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -140.56529, 0, 16.874374)
+
+[node name="Duck11" parent="Objets/Ducks" unique_id=1481651700 instance=ExtResource("8_x4jwh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -121.377525, 0, -34.71726)
+
+[node name="Duck12" parent="Objets/Ducks" unique_id=1191737688 instance=ExtResource("8_x4jwh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 241.86362, 0, 126.505554)
+
+[node name="Duck14" parent="Objets/Ducks" unique_id=791787380 instance=ExtResource("8_x4jwh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26.105015, 0, -38.803944)
+
+[node name="Duck15" parent="Objets/Ducks" unique_id=911680191 instance=ExtResource("8_x4jwh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 41.69839, 0, -100.41168)
+
+[node name="Duck16" parent="Objets/Ducks" unique_id=1299262948 instance=ExtResource("8_x4jwh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 73.101875, 0, 43.324257)
+
+[node name="Duck17" parent="Objets/Ducks" unique_id=270729383 instance=ExtResource("8_x4jwh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.779808, 0.6770245, 116.85164)
+
+[node name="Duck25" parent="Objets/Ducks" unique_id=1216722687 instance=ExtResource("8_x4jwh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.3107674, 0, 136.84183)
+
+[node name="Duck18" parent="Objets/Ducks" unique_id=390943941 instance=ExtResource("8_x4jwh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -57.725437, 0, -3.2913542)
+
+[node name="Duck19" parent="Objets/Ducks" unique_id=148574653 instance=ExtResource("8_x4jwh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -46.512257, 0, -103.81569)
+
+[node name="Duck20" parent="Objets/Ducks" unique_id=1634333493 instance=ExtResource("8_x4jwh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -54.638706, 0, -53.76369)
+
+[node name="Duck21" parent="Objets/Ducks" unique_id=2015223591 instance=ExtResource("8_x4jwh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 75.12302, 0, -84.63016)
+
+[node name="Duck22" parent="Objets/Ducks" unique_id=1080436865 instance=ExtResource("8_x4jwh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 74.7065, 0, -83.26073)
+
+[node name="Duck23" parent="Objets/Ducks" unique_id=877900658 instance=ExtResource("8_x4jwh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 75.774185, 0, -86.44142)
+
+[node name="Duck24" parent="Objets/Ducks" unique_id=68129385 instance=ExtResource("8_x4jwh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -196.18349, 0, 67.17514)
+
+[node name="Buildings" type="Node3D" parent="Objets" unique_id=1843015089]
+
+[node name="boulangerie" parent="Objets/Buildings" unique_id=629317831 instance=ExtResource("11_5f2gp")]
+transform = Transform3D(-0.5200055, 0, -1.2998441, 0, 1.4, 0, 1.2998441, 0, -0.5200055, -79.67215, -0.0048953295, -4.2908487)
+
+[node name="boulangerie" type="Area3D" parent="Objets/Buildings/boulangerie" unique_id=1185456266 node_paths=PackedStringArray("text_sprite")]
 transform = Transform3D(0.028877407, 0, 0.7137017, 0, 0.71428573, 0, -0.7137017, 0, 0.028877407, 2.823923, 1.0146847, -1.1281819)
 script = ExtResource("9_ttchh")
 minigame = ExtResource("14_lpsds")
 text_sprite = NodePath("InteractacleText3D")
 metadata/_custom_type_script = "uid://b3imm353l7y6u"
 
-[node name="InteractacleText3D" parent="Objets/Interactables/boulangerie/boulangerie" unique_id=1576660793 instance=ExtResource("10_e8reo")]
+[node name="InteractacleText3D" parent="Objets/Buildings/boulangerie/boulangerie" unique_id=1576660793 instance=ExtResource("10_e8reo")]
 transform = Transform3D(0.30000004, 0, 0, 0, 0.3, 0, 0, 0, 0.30000004, 0, 0.4931178, 0)
-texture = SubResource("ViewportTexture_tqnhu")
+texture = SubResource("ViewportTexture_nhq6p")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Objets/Interactables/boulangerie/boulangerie" unique_id=1710995515]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Objets/Buildings/boulangerie/boulangerie" unique_id=1710995515]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0729332, 0.11338568, 0.06949043)
 shape = SubResource("BoxShape3D_clt24")
 
-[node name="debug" type="Area3D" parent="Objets/Interactables" unique_id=264236302 node_paths=PackedStringArray("animated_sprite", "text_sprite")]
-transform = Transform3D(-0.40314606, 0, -0.91513556, 0, 1, 0, 0.91513556, 0, -0.40314606, 56.553482, 1.475202, 8.1829815)
-script = ExtResource("11_nho6y")
-unique_name = "debug"
-dialogue = ExtResource("14_imnrk")
-animated_sprite = NodePath("AnimatedSprite3D")
-animated_sprite_start_animation = "normal"
+[node name="superette" parent="Objets/Buildings" unique_id=185217472 instance=ExtResource("14_w7gwu")]
+transform = Transform3D(-1.260691, 0, 0.6088176, 0, 1.4000001, 0, -0.6088176, 0, -1.260691, -39.208416, 0, 7.0844936)
+
+[node name="superetteInteractable" type="Area3D" parent="Objets/Buildings/superette" unique_id=235592674 node_paths=PackedStringArray("text_sprite")]
+transform = Transform3D(0.0010471046, 0, -0.71428525, 0, 0.7142857, 0, 0.71428525, 0, 0.0010471046, -2.7700443, 1.0146847, -3.9358034)
+script = ExtResource("9_ttchh")
+minigame = ExtResource("21_impf6")
 text_sprite = NodePath("InteractacleText3D")
-metadata/_custom_type_script = "uid://sd0g0r1lwus3"
+metadata/_custom_type_script = "uid://b3imm353l7y6u"
 
-[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="Objets/Interactables/debug" unique_id=538041579]
-transform = Transform3D(0.21, 0, -3.7252903e-09, 0, 0.21, 0, 3.7252903e-09, 0, 0.21, 0, -0.42, 0)
-billboard = 2
-sprite_frames = SubResource("SpriteFrames_e8reo")
-animation = &"normal"
+[node name="InteractacleText3D" parent="Objets/Buildings/superette/superetteInteractable" unique_id=1215462892 instance=ExtResource("10_e8reo")]
+transform = Transform3D(0.30000004, 0, 3.7252903e-09, 0, 0.3, 0, -3.7252903e-09, 0, 0.30000004, -0.0068626404, 0.4931178, -0.07106018)
+texture = SubResource("ViewportTexture_ku2v5")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Objets/Interactables/debug" unique_id=869473257]
-shape = SubResource("SphereShape3D_ivwwh")
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Objets/Buildings/superette/superetteInteractable" unique_id=71863611]
+transform = Transform3D(0.9999865, 0, 8.195639e-08, 0, 0.99998987, 0, -8.195639e-08, 0, 0.9999865, -0.084257126, 0.19547307, -0.18695068)
+shape = SubResource("BoxShape3D_tqnhu")
+debug_color = Color(0.7, 0, 0.061528776, 1)
 
-[node name="InteractacleText3D" parent="Objets/Interactables/debug" unique_id=797862596 instance=ExtResource("10_e8reo")]
-transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0.8627713, 0)
-billboard = 2
-texture = SubResource("ViewportTexture_5uot1")
+[node name="arcade_building" parent="Objets/Buildings" unique_id=1676123660 instance=ExtResource("21_wnywt")]
+transform = Transform3D(0.44619775, 0, 0.89493436, 0, 1, 0, -0.89493436, 0, 0.44619775, -11.659646, -0.032199144, 69.00305)
 
-[node name="InterractableDialogue" type="Area3D" parent="Objets/Interactables" unique_id=827773963 node_paths=PackedStringArray("animated_sprite", "text_sprite", "camera_root")]
+[node name="arcade" type="Area3D" parent="Objets/Buildings/arcade_building" unique_id=156998866 node_paths=PackedStringArray("text_sprite")]
+script = ExtResource("9_ttchh")
+minigame = ExtResource("14_yhicf")
+text_sprite = NodePath("InteractacleText3D")
+metadata/_custom_type_script = "uid://b3imm353l7y6u"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Objets/Buildings/arcade_building/arcade" unique_id=1375443910]
+transform = Transform3D(0.999901, 0, 0.014084376, 0, 1, 0, -0.014084376, 0, 0.999901, 5.6797943, 1.2233021, -6.258234)
+shape = SubResource("BoxShape3D_64pfx")
+
+[node name="InteractacleText3D" parent="Objets/Buildings/arcade_building/arcade" unique_id=1563667533 instance=ExtResource("10_e8reo")]
+transform = Transform3D(0.0001361277, 0, 0.20000008, 0, 0.2, 0, -0.20000008, 0, 0.0001361277, 6.0572624, 1.9019911, -6.2214165)
+texture = SubResource("ViewportTexture_cley4")
+
+[node name="garre" parent="Objets/Buildings" unique_id=1564049498 instance=ExtResource("22_xud6r")]
+transform = Transform3D(0.92746484, 0, -0.3739107, 0, 1, 0, 0.3739107, 0, 0.92746484, 41.57659, 0, -100.48637)
+
+[node name="poste" parent="Objets/Buildings" unique_id=466939189 instance=ExtResource("27_xud6r")]
+transform = Transform3D(1.2500489, 0, -0.63037765, 0, 1.3999997, 0, 0.63037765, 0, 1.2500489, 80.369865, 0, 102.373085)
+
+[node name="posteInteractable" type="Area3D" parent="Objets/Buildings/poste" unique_id=1048909024 node_paths=PackedStringArray("text_sprite")]
+transform = Transform3D(-0.0046250597, 0, 0.7142709, 0, 0.7142846, 0, -0.7142709, 0, -0.0046250597, 2.4860458, 0.72884977, -0.29977798)
+script = ExtResource("9_ttchh")
+minigame = ExtResource("19_tqnhu")
+text_sprite = NodePath("InteractacleText3D")
+metadata/_custom_type_script = "uid://b3imm353l7y6u"
+
+[node name="InteractacleText3D" parent="Objets/Buildings/poste/posteInteractable" unique_id=1878352434 instance=ExtResource("10_e8reo")]
+transform = Transform3D(0.30000007, 0, 7.450581e-09, 0, 0.30000004, 0, -7.450581e-09, 0, 0.30000007, -0.46167755, 0.49311793, -0.012077332)
+texture = SubResource("ViewportTexture_0mh1u")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Objets/Buildings/poste/posteInteractable" unique_id=1868400818]
+transform = Transform3D(0.99999624, 0, 1.0728836e-06, 0, 0.9999994, 0, -1.0728836e-06, 0, 0.99999624, -0.4843979, -0.103832364, -0.20417786)
+shape = SubResource("BoxShape3D_clt24")
+
+[node name="ecole" parent="Objets/Buildings" unique_id=650405049 instance=ExtResource("19_imnrk")]
+transform = Transform3D(-0.52478886, 0, -1.29792, 0, 1.4000001, 0, 1.29792, 0, -0.52478886, 128.14297, 0.40124583, -43.592083)
+
+[node name="PNJs" type="Node3D" parent="Objets" unique_id=250600695]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.749743, 0, -0.7360313)
+
+[node name="DebugDialogue" type="Area3D" parent="Objets/PNJs" unique_id=827773963 node_paths=PackedStringArray("animated_sprite", "text_sprite", "camera_root")]
 transform = Transform3D(-0.8454946, 0, 0.5339834, 0, 1, 0, -0.5339834, 0, -0.8454946, 55.49503, 1.3362136, 0.7503469)
 visible = false
 script = ExtResource("11_nho6y")
@@ -1039,21 +1346,212 @@ interactionAnimation = 1
 camera_root = NodePath(".")
 metadata/_custom_type_script = "uid://sd0g0r1lwus3"
 
-[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="Objets/Interactables/InterractableDialogue" unique_id=1128965945]
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="Objets/PNJs/DebugDialogue" unique_id=1128965945]
+transform = Transform3D(0.17, 0, 0, 0, 0.17, 0, 0, 0, 0.17, 0, 0, 0)
 billboard = 2
+alpha_cut = 1
 sprite_frames = SubResource("SpriteFrames_e8reo")
 animation = &"normal"
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Objets/Interactables/InterractableDialogue" unique_id=92960897]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Objets/PNJs/DebugDialogue" unique_id=92960897]
 shape = SubResource("SphereShape3D_ivwwh")
 
-[node name="InteractacleText3D" parent="Objets/Interactables/InterractableDialogue" unique_id=1261401867 instance=ExtResource("10_e8reo")]
+[node name="InteractacleText3D" parent="Objets/PNJs/DebugDialogue" unique_id=1261401867 instance=ExtResource("10_e8reo")]
 transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0.8627713, 0)
 billboard = 2
-texture = SubResource("ViewportTexture_64pfx")
+texture = SubResource("ViewportTexture_qauko")
 
-[node name="TicTacToeCharles" type="Area3D" parent="Objets/Interactables" unique_id=1096544833 node_paths=PackedStringArray("animated_sprite", "text_sprite", "camera_root")]
-transform = Transform3D(-0.8454946, 0, 0.5339834, 0, 1, 0, -0.5339834, 0, -0.8454946, 106.959, 1.3379271, 31.791172)
+[node name="Mathew-Math" type="Area3D" parent="Objets/PNJs" unique_id=978442564 node_paths=PackedStringArray("animated_sprite", "text_sprite", "camera_root")]
+transform = Transform3D(-0.8454946, 0, 0.5339834, 0, 1, 0, -0.5339834, 0, -0.8454946, -64.48084, 1.032838, -21.841696)
+script = ExtResource("11_nho6y")
+unique_name = "mathew_math"
+dialogue = ExtResource("44_doxgq")
+animated_sprite = NodePath("AnimatedSprite3D")
+animated_sprite_start_animation = "normal"
+text_sprite = NodePath("InteractacleText3D")
+interactionAnimation = 1
+camera_root = NodePath(".")
+metadata/_custom_type_script = "uid://sd0g0r1lwus3"
+
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="Objets/PNJs/Mathew-Math" unique_id=911339833]
+transform = Transform3D(0.17000005, 0, -1.1175871e-08, 0, 0.17, 0, 1.1175871e-08, 0, 0.17000005, 0, -0.282, 0)
+billboard = 2
+alpha_cut = 1
+sprite_frames = SubResource("SpriteFrames_7swc5")
+animation = &"normal"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Objets/PNJs/Mathew-Math" unique_id=1506073824]
+shape = SubResource("SphereShape3D_ivwwh")
+
+[node name="InteractacleText3D" parent="Objets/PNJs/Mathew-Math" unique_id=2027926951 instance=ExtResource("10_e8reo")]
+transform = Transform3D(0.2, 0, -7.450581e-09, 0, 0.2, 0, 7.450581e-09, 0, 0.2, 0, 0.69260275, 0)
+billboard = 2
+texture = SubResource("ViewportTexture_iqkni")
+
+[node name="Vera-Math2" type="Area3D" parent="Objets/PNJs" unique_id=656674121 node_paths=PackedStringArray("animated_sprite", "text_sprite", "camera_root")]
+transform = Transform3D(-0.8454946, 0, 0.5339834, 0, 1, 0, -0.5339834, 0, -0.8454946, -15.321879, 1.032838, 23.525135)
+script = ExtResource("11_nho6y")
+unique_name = "vera_math2"
+dialogue = ExtResource("25_6c255")
+animated_sprite = NodePath("AnimatedSprite3D")
+animated_sprite_start_animation = "normal"
+text_sprite = NodePath("InteractacleText3D")
+interactionAnimation = 1
+camera_root = NodePath(".")
+metadata/_custom_type_script = "uid://sd0g0r1lwus3"
+
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="Objets/PNJs/Vera-Math2" unique_id=408543646]
+transform = Transform3D(0.17000003, 0, -1.1175871e-08, 0, 0.17, 0, 1.1175871e-08, 0, 0.17000003, 0, -0.2820989, 0)
+billboard = 2
+alpha_cut = 1
+sprite_frames = SubResource("SpriteFrames_7swc5")
+animation = &"normal"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Objets/PNJs/Vera-Math2" unique_id=1068492668]
+shape = SubResource("SphereShape3D_ivwwh")
+
+[node name="InteractacleText3D" parent="Objets/PNJs/Vera-Math2" unique_id=450256475 instance=ExtResource("10_e8reo")]
+transform = Transform3D(0.2, 0, -7.450581e-09, 0, 0.2, 0, 7.450581e-09, 0, 0.2, 0, 0.69260275, 0)
+billboard = 2
+texture = SubResource("ViewportTexture_2reqj")
+
+[node name="Tic" type="Area3D" parent="Objets/PNJs" unique_id=2068338831 node_paths=PackedStringArray("animated_sprite", "text_sprite", "camera_root")]
+transform = Transform3D(-0.8454946, 0, 0.5339834, 0, 1, 0, -0.5339834, 0, -0.8454946, 119.998276, 1.032838, 33.49736)
+script = ExtResource("11_nho6y")
+unique_name = "tic"
+dialogue = ExtResource("26_hjgcf")
+animated_sprite = NodePath("AnimatedSprite3D")
+animated_sprite_start_animation = "normal"
+text_sprite = NodePath("InteractacleText3D")
+interactionAnimation = 1
+camera_root = NodePath(".")
+metadata/_custom_type_script = "uid://sd0g0r1lwus3"
+
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="Objets/PNJs/Tic" unique_id=261105432]
+transform = Transform3D(0.17000003, 0, -1.1175871e-08, 0, 0.17, 0, 1.1175871e-08, 0, 0.17000003, 0, -0.2820989, 0)
+billboard = 2
+alpha_cut = 1
+sprite_frames = SubResource("SpriteFrames_7swc5")
+animation = &"normal"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Objets/PNJs/Tic" unique_id=954796544]
+shape = SubResource("SphereShape3D_ivwwh")
+
+[node name="InteractacleText3D" parent="Objets/PNJs/Tic" unique_id=1435483746 instance=ExtResource("10_e8reo")]
+transform = Transform3D(0.2, 0, -7.450581e-09, 0, 0.2, 0, 7.450581e-09, 0, 0.2, 0, 0.69260275, 0)
+billboard = 2
+texture = SubResource("ViewportTexture_u858c")
+
+[node name="Tac" type="Area3D" parent="Objets/PNJs" unique_id=939884958 node_paths=PackedStringArray("animated_sprite", "text_sprite", "camera_root")]
+transform = Transform3D(-0.8454946, 0, 0.5339834, 0, 1, 0, -0.5339834, 0, -0.8454946, 8.300216, 1.032838, -68.15268)
+script = ExtResource("11_nho6y")
+unique_name = "tac"
+dialogue = ExtResource("27_nhq6p")
+animated_sprite = NodePath("AnimatedSprite3D")
+animated_sprite_start_animation = "normal"
+text_sprite = NodePath("InteractacleText3D")
+interactionAnimation = 1
+camera_root = NodePath(".")
+metadata/_custom_type_script = "uid://sd0g0r1lwus3"
+
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="Objets/PNJs/Tac" unique_id=1031468599]
+transform = Transform3D(0.17000003, 0, -1.1175871e-08, 0, 0.17, 0, 1.1175871e-08, 0, 0.17000003, 0, -0.2820989, 0)
+billboard = 2
+alpha_cut = 1
+sprite_frames = SubResource("SpriteFrames_7swc5")
+animation = &"normal"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Objets/PNJs/Tac" unique_id=30820330]
+shape = SubResource("SphereShape3D_ivwwh")
+
+[node name="InteractacleText3D" parent="Objets/PNJs/Tac" unique_id=168760506 instance=ExtResource("10_e8reo")]
+transform = Transform3D(0.2, 0, -7.450581e-09, 0, 0.2, 0, 7.450581e-09, 0, 0.2, 0, 0.69260275, 0)
+billboard = 2
+texture = SubResource("ViewportTexture_bbyu7")
+
+[node name="Catheline-Cats" type="Area3D" parent="Objets/PNJs" unique_id=969527095 node_paths=PackedStringArray("animated_sprite", "text_sprite", "camera_root")]
+transform = Transform3D(-0.8454946, 0, 0.5339834, 0, 1, 0, -0.5339834, 0, -0.8454946, -126.790985, 1.0328361, 29.191246)
+script = ExtResource("11_nho6y")
+unique_name = "catheline_cats"
+dialogue = ExtResource("28_ku2v5")
+animated_sprite = NodePath("AnimatedSprite3D")
+animated_sprite_start_animation = "normal"
+text_sprite = NodePath("InteractacleText3D")
+interactionAnimation = 1
+camera_root = NodePath(".")
+metadata/_custom_type_script = "uid://sd0g0r1lwus3"
+
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="Objets/PNJs/Catheline-Cats" unique_id=912404473]
+transform = Transform3D(0.17000003, 0, -1.1175871e-08, 0, 0.17, 0, 1.1175871e-08, 0, 0.17000003, 0, -0.2820989, 0)
+billboard = 2
+alpha_cut = 1
+sprite_frames = SubResource("SpriteFrames_7swc5")
+animation = &"normal"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Objets/PNJs/Catheline-Cats" unique_id=24328059]
+shape = SubResource("SphereShape3D_ivwwh")
+
+[node name="InteractacleText3D" parent="Objets/PNJs/Catheline-Cats" unique_id=1830970642 instance=ExtResource("10_e8reo")]
+transform = Transform3D(0.2, 0, -7.450581e-09, 0, 0.2, 0, 7.450581e-09, 0, 0.2, 0, 0.69260275, 0)
+billboard = 2
+texture = SubResource("ViewportTexture_e0aau")
+
+[node name="Cloven-Sandwiches" type="Area3D" parent="Objets/PNJs" unique_id=2033902036 node_paths=PackedStringArray("animated_sprite", "text_sprite", "camera_root")]
+transform = Transform3D(-0.8454946, 0, 0.5339834, 0, 1, 0, -0.5339834, 0, -0.8454946, -75.53564, 1.032838, 2.5621984)
+script = ExtResource("11_nho6y")
+unique_name = "cloven_sandwiches"
+dialogue = ExtResource("29_cley4")
+animated_sprite = NodePath("AnimatedSprite3D")
+animated_sprite_start_animation = "normal"
+text_sprite = NodePath("InteractacleText3D")
+interactionAnimation = 1
+camera_root = NodePath(".")
+metadata/_custom_type_script = "uid://sd0g0r1lwus3"
+
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="Objets/PNJs/Cloven-Sandwiches" unique_id=848678258]
+transform = Transform3D(0.17000005, 0, -1.1175871e-08, 0, 0.17, 0, 1.1175871e-08, 0, 0.17000005, 0, -0.27594662, 0)
+billboard = 2
+alpha_cut = 1
+sprite_frames = SubResource("SpriteFrames_7swc5")
+animation = &"normal"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Objets/PNJs/Cloven-Sandwiches" unique_id=1158792461]
+shape = SubResource("SphereShape3D_ivwwh")
+
+[node name="InteractacleText3D" parent="Objets/PNJs/Cloven-Sandwiches" unique_id=1537854191 instance=ExtResource("10_e8reo")]
+transform = Transform3D(0.2, 0, -7.450581e-09, 0, 0.2, 0, 7.450581e-09, 0, 0.2, 0, 0.69260275, 0)
+billboard = 2
+texture = SubResource("ViewportTexture_qvsh1")
+
+[node name="Fiona-Wannabe" type="Area3D" parent="Objets/PNJs" unique_id=1338492128 node_paths=PackedStringArray("animated_sprite", "text_sprite", "camera_root")]
+transform = Transform3D(-0.8454946, 0, 0.5339834, 0, 1, 0, -0.5339834, 0, -0.8454946, -8.499789, 1.032838, 86.64496)
+script = ExtResource("11_nho6y")
+unique_name = "fiona_wannabe"
+dialogue = ExtResource("30_0mh1u")
+animated_sprite = NodePath("AnimatedSprite3D")
+animated_sprite_start_animation = "normal"
+text_sprite = NodePath("InteractacleText3D")
+interactionAnimation = 1
+camera_root = NodePath(".")
+metadata/_custom_type_script = "uid://sd0g0r1lwus3"
+
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="Objets/PNJs/Fiona-Wannabe" unique_id=1488251583]
+transform = Transform3D(0.17000003, 0, -1.1175871e-08, 0, 0.17, 0, 1.1175871e-08, 0, 0.17000003, 0, -0.2820989, 0)
+billboard = 2
+alpha_cut = 1
+sprite_frames = SubResource("SpriteFrames_7swc5")
+animation = &"normal"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Objets/PNJs/Fiona-Wannabe" unique_id=1665818855]
+shape = SubResource("SphereShape3D_ivwwh")
+
+[node name="InteractacleText3D" parent="Objets/PNJs/Fiona-Wannabe" unique_id=1919382824 instance=ExtResource("10_e8reo")]
+transform = Transform3D(0.2, 0, -7.450581e-09, 0, 0.2, 0, 7.450581e-09, 0, 0.2, 0, 0.69260275, 0)
+billboard = 2
+texture = SubResource("ViewportTexture_j4fpo")
+
+[node name="TicTacToeCharles" type="Area3D" parent="Objets/PNJs" unique_id=1096544833 node_paths=PackedStringArray("animated_sprite", "text_sprite", "camera_root")]
+transform = Transform3D(-0.8454946, 0, 0.5339834, 0, 1, 0, -0.5339834, 0, -0.8454946, 82.07352, 1.204203, -10.566198)
 script = ExtResource("11_nho6y")
 unique_name = "tictactoe_charles"
 dialogue = ExtResource("18_imnrk")
@@ -1065,23 +1563,24 @@ interactionAnimation = 1
 camera_root = NodePath(".")
 metadata/_custom_type_script = "uid://sd0g0r1lwus3"
 
-[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="Objets/Interactables/TicTacToeCharles" unique_id=1276325148]
-transform = Transform3D(0.2, 0, -7.450581e-09, 0, 0.2, 0, 7.450581e-09, 0, 0.2, 0, -0.42, 0)
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="Objets/PNJs/TicTacToeCharles" unique_id=1276325148]
+transform = Transform3D(0.17, 0, -6.3329937e-09, 0, 0.17, 0, 6.3329937e-09, 0, 0.17, 0, -0.42, 0)
 billboard = 2
-sprite_frames = SubResource("SpriteFrames_e8reo")
+alpha_cut = 1
+sprite_frames = SubResource("SpriteFrames_yc2gj")
 animation = &"normal"
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Objets/Interactables/TicTacToeCharles" unique_id=867585896]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Objets/PNJs/TicTacToeCharles" unique_id=867585896]
 transform = Transform3D(1.0000001, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 0, 0, 0)
 shape = SubResource("SphereShape3D_ivwwh")
 
-[node name="InteractacleText3D" parent="Objets/Interactables/TicTacToeCharles" unique_id=644921328 instance=ExtResource("10_e8reo")]
+[node name="InteractacleText3D" parent="Objets/PNJs/TicTacToeCharles" unique_id=644921328 instance=ExtResource("10_e8reo")]
 transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0.8627713, 0)
 billboard = 2
-texture = SubResource("ViewportTexture_dygmt")
+texture = SubResource("ViewportTexture_y8yem")
 
-[node name="TicTacToeBob" type="Area3D" parent="Objets/Interactables" unique_id=1093194011 node_paths=PackedStringArray("animated_sprite", "text_sprite", "camera_root")]
-transform = Transform3D(-0.8454946, 0, 0.5339834, 0, 1, 0, -0.5339834, 0, -0.8454946, 62.91656, 1.1798171, -98.42564)
+[node name="TicTacToeBob" type="Area3D" parent="Objets/PNJs" unique_id=1093194011 node_paths=PackedStringArray("animated_sprite", "text_sprite", "camera_root")]
+transform = Transform3D(-0.8454946, 0, 0.5339834, 0, 1, 0, -0.5339834, 0, -0.8454946, -38.680233, 1.1798171, 42.162598)
 script = ExtResource("11_nho6y")
 unique_name = "tictactoe_bob"
 dialogue = ExtResource("18_imnrk")
@@ -1093,26 +1592,27 @@ interactionAnimation = 1
 camera_root = NodePath(".")
 metadata/_custom_type_script = "uid://sd0g0r1lwus3"
 
-[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="Objets/Interactables/TicTacToeBob" unique_id=232291110]
-transform = Transform3D(0.21, 0, -7.823109e-09, 0, 0.21, 0, 7.823109e-09, 0, 0.21, 0, -0.42, 0)
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="Objets/PNJs/TicTacToeBob" unique_id=232291110]
+transform = Transform3D(0.17000002, 0, -7.450581e-09, 0, 0.17, 0, 7.450581e-09, 0, 0.17000002, 0, -0.24730754, 0)
 billboard = 2
-sprite_frames = SubResource("SpriteFrames_e8reo")
+alpha_cut = 1
+sprite_frames = SubResource("SpriteFrames_jye0b")
 animation = &"normal"
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Objets/Interactables/TicTacToeBob" unique_id=189269287]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Objets/PNJs/TicTacToeBob" unique_id=189269287]
 shape = SubResource("SphereShape3D_ivwwh")
 
-[node name="InteractacleText3D" parent="Objets/Interactables/TicTacToeBob" unique_id=1316842840 instance=ExtResource("10_e8reo")]
-transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0.8627713, 0)
+[node name="InteractacleText3D" parent="Objets/PNJs/TicTacToeBob" unique_id=1316842840 instance=ExtResource("10_e8reo")]
+transform = Transform3D(0.2, 0, -3.7252903e-09, 0, 0.2, 0, 3.7252903e-09, 0, 0.2, 0, 0.93411005, 0)
 billboard = 2
-texture = SubResource("ViewportTexture_e1shr")
+texture = SubResource("ViewportTexture_kr6i8")
 
-[node name="TicTacToeJeffrey" type="Area3D" parent="Objets/Interactables" unique_id=806482794 node_paths=PackedStringArray("animated_sprite", "text_sprite", "camera_root")]
-transform = Transform3D(-0.8454946, 0, 0.5339834, 0, 1, 0, -0.5339834, 0, -0.8454946, 18.425377, 1.4715089, 74.374794)
+[node name="TicTacToeJasmine" type="Area3D" parent="Objets/PNJs" unique_id=806482794 node_paths=PackedStringArray("animated_sprite", "text_sprite", "camera_root")]
+transform = Transform3D(-0.8454946, 0, 0.5339834, 0, 1, 0, -0.5339834, 0, -0.8454946, -3.5422888, 1.5928253, 122.8149)
 script = ExtResource("11_nho6y")
-unique_name = "tictactoe_jeffrey"
+unique_name = "tictactoe_jasmine"
 dialogue = ExtResource("18_imnrk")
-title = "jeffrey_start"
+title = "jasmine_start"
 animated_sprite = NodePath("AnimatedSprite3D")
 animated_sprite_start_animation = "normal"
 text_sprite = NodePath("InteractacleText3D")
@@ -1120,22 +1620,23 @@ interactionAnimation = 1
 camera_root = NodePath(".")
 metadata/_custom_type_script = "uid://sd0g0r1lwus3"
 
-[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="Objets/Interactables/TicTacToeJeffrey" unique_id=340510566]
-transform = Transform3D(0.25, 0, -9.313226e-09, 0, 0.25, 0, 9.313226e-09, 0, 0.25, 0, -0.42, 0)
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="Objets/PNJs/TicTacToeJasmine" unique_id=340510566]
+transform = Transform3D(0.17, 0, -6.3329937e-09, 0, 0.17, 0, 6.3329937e-09, 0, 0.17, 0, -0.42, 0)
 billboard = 2
-sprite_frames = SubResource("SpriteFrames_e8reo")
+alpha_cut = 1
+sprite_frames = SubResource("SpriteFrames_osieg")
 animation = &"normal"
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Objets/Interactables/TicTacToeJeffrey" unique_id=1103047127]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Objets/PNJs/TicTacToeJasmine" unique_id=1103047127]
 shape = SubResource("SphereShape3D_ivwwh")
 
-[node name="InteractacleText3D" parent="Objets/Interactables/TicTacToeJeffrey" unique_id=1523883230 instance=ExtResource("10_e8reo")]
-transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0.8627713, 0)
+[node name="InteractacleText3D" parent="Objets/PNJs/TicTacToeJasmine" unique_id=1523883230 instance=ExtResource("10_e8reo")]
+transform = Transform3D(0.2, 0, -3.7252903e-09, 0, 0.2, 0, 3.7252903e-09, 0, 0.2, 0, 1.0383664, 0)
 billboard = 2
-texture = SubResource("ViewportTexture_jye0b")
+texture = SubResource("ViewportTexture_2mgps")
 
-[node name="Connect4Ada" type="Area3D" parent="Objets/Interactables" unique_id=230899438 node_paths=PackedStringArray("animated_sprite", "text_sprite", "camera_root")]
-transform = Transform3D(-0.8454946, 0, 0.5339834, 0, 1, 0, -0.5339834, 0, -0.8454946, 7.985673, 1.1798056, 11.015011)
+[node name="Connect4Ada" type="Area3D" parent="Objets/PNJs" unique_id=230899438 node_paths=PackedStringArray("animated_sprite", "text_sprite", "camera_root")]
+transform = Transform3D(-0.8454946, 0, 0.5339834, 0, 1, 0, -0.5339834, 0, -0.8454946, 10.333164, 1.1603419, 5.406997)
 script = ExtResource("11_nho6y")
 unique_name = "connect4_ada"
 dialogue = ExtResource("16_impf6")
@@ -1147,22 +1648,23 @@ interactionAnimation = 1
 camera_root = NodePath(".")
 metadata/_custom_type_script = "uid://sd0g0r1lwus3"
 
-[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="Objets/Interactables/Connect4Ada" unique_id=6753364]
-transform = Transform3D(0.2, 0, -1.1175871e-08, 0, 0.2, 0, 1.1175871e-08, 0, 0.2, 0, -0.07033479, 0)
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="Objets/PNJs/Connect4Ada" unique_id=6753364]
+transform = Transform3D(0.165, 0, -1.117587e-08, 0, 0.165, 0, 1.117587e-08, 0, 0.165, 0, -0.2814479, 0)
 billboard = 2
-sprite_frames = SubResource("SpriteFrames_e8reo")
+alpha_cut = 1
+sprite_frames = SubResource("SpriteFrames_64pfx")
 animation = &"normal"
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Objets/Interactables/Connect4Ada" unique_id=1412566393]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Objets/PNJs/Connect4Ada" unique_id=1412566393]
 shape = SubResource("SphereShape3D_ivwwh")
 
-[node name="InteractacleText3D" parent="Objets/Interactables/Connect4Ada" unique_id=1824979055 instance=ExtResource("10_e8reo")]
-transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0.8627713, 0)
+[node name="InteractacleText3D" parent="Objets/PNJs/Connect4Ada" unique_id=1824979055 instance=ExtResource("10_e8reo")]
+transform = Transform3D(0.2, 0, -7.450581e-09, 0, 0.2, 0, 7.450581e-09, 0, 0.2, 0, 0.69260275, 0)
 billboard = 2
-texture = SubResource("ViewportTexture_osieg")
+texture = SubResource("ViewportTexture_xkadw")
 
-[node name="Connect4Noah" type="Area3D" parent="Objets/Interactables" unique_id=618464151 node_paths=PackedStringArray("animated_sprite", "text_sprite", "camera_root")]
-transform = Transform3D(-0.8454946, 0, 0.5339834, 0, 1, 0, -0.5339834, 0, -0.8454946, -33.905834, 1.1798209, 76.95161)
+[node name="Connect4Noah" type="Area3D" parent="Objets/PNJs" unique_id=618464151 node_paths=PackedStringArray("animated_sprite", "text_sprite", "camera_root")]
+transform = Transform3D(-0.8454946, 0, 0.5339834, 0, 1, 0, -0.5339834, 0, -0.8454946, 59.65341, 1.1798207, -91.717285)
 script = ExtResource("11_nho6y")
 unique_name = "connect4_noah"
 dialogue = ExtResource("16_impf6")
@@ -1174,22 +1676,23 @@ interactionAnimation = 1
 camera_root = NodePath(".")
 metadata/_custom_type_script = "uid://sd0g0r1lwus3"
 
-[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="Objets/Interactables/Connect4Noah" unique_id=1740885959]
-transform = Transform3D(0.21, 0, -7.823109e-09, 0, 0.21, 0, 7.823109e-09, 0, 0.21, 0, -0.42, 0)
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="Objets/PNJs/Connect4Noah" unique_id=1740885959]
+transform = Transform3D(0.17000003, 0, -7.450581e-09, 0, 0.17, 0, 7.450581e-09, 0, 0.17000003, 0, -0.32237828, 0)
 billboard = 2
-sprite_frames = SubResource("SpriteFrames_e8reo")
+alpha_cut = 1
+sprite_frames = SubResource("SpriteFrames_r318u")
 animation = &"normal"
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Objets/Interactables/Connect4Noah" unique_id=1919168706]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Objets/PNJs/Connect4Noah" unique_id=1919168706]
 shape = SubResource("SphereShape3D_ivwwh")
 
-[node name="InteractacleText3D" parent="Objets/Interactables/Connect4Noah" unique_id=52934403 instance=ExtResource("10_e8reo")]
-transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0.8627713, 0)
+[node name="InteractacleText3D" parent="Objets/PNJs/Connect4Noah" unique_id=52934403 instance=ExtResource("10_e8reo")]
+transform = Transform3D(0.2, 0, -3.7252903e-09, 0, 0.2, 0, 3.7252903e-09, 0, 0.2, 0, 0.8108431, 0)
 billboard = 2
-texture = SubResource("ViewportTexture_yc2gj")
+texture = SubResource("ViewportTexture_x6xw6")
 
-[node name="Connect4Hannah" type="Area3D" parent="Objets/Interactables" unique_id=270299998 node_paths=PackedStringArray("animated_sprite", "text_sprite", "camera_root")]
-transform = Transform3D(-0.8454946, 0, 0.5339834, 0, 1, 0, -0.5339834, 0, -0.8454946, -58.927517, 1.554305, -91.97762)
+[node name="Connect4Hannah" type="Area3D" parent="Objets/PNJs" unique_id=270299998 node_paths=PackedStringArray("animated_sprite", "text_sprite", "camera_root")]
+transform = Transform3D(-0.8454946, 0, 0.5339834, 0, 1, 0, -0.5339834, 0, -0.8454946, 105.76297, 1.554305, 90.6516)
 script = ExtResource("11_nho6y")
 unique_name = "connect4_hannah"
 dialogue = ExtResource("16_impf6")
@@ -1201,22 +1704,23 @@ interactionAnimation = 1
 camera_root = NodePath(".")
 metadata/_custom_type_script = "uid://sd0g0r1lwus3"
 
-[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="Objets/Interactables/Connect4Hannah" unique_id=1749593105]
-transform = Transform3D(0.25, 0, -9.313226e-09, 0, 0.25, 0, 9.313226e-09, 0, 0.25, 0, -0.42, 0)
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="Objets/PNJs/Connect4Hannah" unique_id=1749593105]
+transform = Transform3D(0.17000002, 0, -7.450581e-09, 0, 0.17, 0, 7.450581e-09, 0, 0.17000002, 0, -0.3576188, 0)
 billboard = 2
-sprite_frames = SubResource("SpriteFrames_e8reo")
+alpha_cut = 1
+sprite_frames = SubResource("SpriteFrames_dygmt")
 animation = &"normal"
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Objets/Interactables/Connect4Hannah" unique_id=731783302]
-shape = SubResource("SphereShape3D_ivwwh")
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Objets/PNJs/Connect4Hannah" unique_id=731783302]
+shape = SubResource("SphereShape3D_e1shr")
 
-[node name="InteractacleText3D" parent="Objets/Interactables/Connect4Hannah" unique_id=1221517501 instance=ExtResource("10_e8reo")]
-transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0.8627713, 0)
+[node name="InteractacleText3D" parent="Objets/PNJs/Connect4Hannah" unique_id=1221517501 instance=ExtResource("10_e8reo")]
+transform = Transform3D(0.2, 0, -3.7252903e-09, 0, 0.2, 0, 3.7252903e-09, 0, 0.2, 0, 1.2467934, 0)
 billboard = 2
-texture = SubResource("ViewportTexture_pd13m")
+texture = SubResource("ViewportTexture_o8rpk")
 
-[node name="RPCStanley" type="Area3D" parent="Objets/Interactables" unique_id=58193940 node_paths=PackedStringArray("text_sprite")]
-transform = Transform3D(-0.40314606, 0, -0.91513556, 0, 1, 0, 0.91513556, 0, -0.40314606, -37.125057, 1.475202, 38.408195)
+[node name="RPCStanley" type="Area3D" parent="Objets/PNJs" unique_id=58193940 node_paths=PackedStringArray("text_sprite")]
+transform = Transform3D(-0.40314606, 0, -0.91513556, 0, 1, 0, 0.91513556, 0, -0.40314606, 31.915241, 1.2088314, 42.024513)
 script = ExtResource("9_ttchh")
 minigame = ExtResource("14_ivwwh")
 variables = Dictionary[String, Variant]({
@@ -1225,22 +1729,23 @@ variables = Dictionary[String, Variant]({
 text_sprite = NodePath("InteractacleText3D")
 metadata/_custom_type_script = "uid://b3imm353l7y6u"
 
-[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="Objets/Interactables/RPCStanley" unique_id=597548625]
-transform = Transform3D(0.21, 0, -7.823109e-09, 0, 0.21, 0, 7.823109e-09, 0, 0.21, 0, -0.42, 0)
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="Objets/PNJs/RPCStanley" unique_id=597548625]
+transform = Transform3D(0.17, 0, -6.3329937e-09, 0, 0.17, 0, 6.3329937e-09, 0, 0.17, 0, -0.42, 0)
 billboard = 2
+alpha_cut = 1
 sprite_frames = SubResource("SpriteFrames_e8reo")
 animation = &"normal"
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Objets/Interactables/RPCStanley" unique_id=1187711839]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Objets/PNJs/RPCStanley" unique_id=1187711839]
 shape = SubResource("SphereShape3D_ivwwh")
 
-[node name="InteractacleText3D" parent="Objets/Interactables/RPCStanley" unique_id=366501995 instance=ExtResource("10_e8reo")]
+[node name="InteractacleText3D" parent="Objets/PNJs/RPCStanley" unique_id=366501995 instance=ExtResource("10_e8reo")]
 transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0.8627713, 0)
 billboard = 2
-texture = SubResource("ViewportTexture_dl85h")
+texture = SubResource("ViewportTexture_xyyw1")
 
-[node name="RPCWilly" type="Area3D" parent="Objets/Interactables" unique_id=1278131754 node_paths=PackedStringArray("text_sprite")]
-transform = Transform3D(-0.40314606, 0, -0.91513556, 0, 1, 0, 0.91513556, 0, -0.40314606, -128.14491, 1.475202, 27.691944)
+[node name="RPCWilly" type="Area3D" parent="Objets/PNJs" unique_id=1278131754 node_paths=PackedStringArray("text_sprite")]
+transform = Transform3D(-0.40314606, 0, -0.91513556, 0, 1, 0, 0.91513556, 0, -0.40314606, -101.53965, 1.1567587, 51.200977)
 script = ExtResource("9_ttchh")
 minigame = ExtResource("14_ivwwh")
 variables = Dictionary[String, Variant]({
@@ -1249,22 +1754,23 @@ variables = Dictionary[String, Variant]({
 text_sprite = NodePath("InteractacleText3D")
 metadata/_custom_type_script = "uid://b3imm353l7y6u"
 
-[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="Objets/Interactables/RPCWilly" unique_id=641578095]
-transform = Transform3D(0.21, 0, -7.823109e-09, 0, 0.21, 0, 7.823109e-09, 0, 0.21, 0, -0.42, 0)
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="Objets/PNJs/RPCWilly" unique_id=641578095]
+transform = Transform3D(0.17, 0, -6.3329937e-09, 0, 0.17, 0, 6.3329937e-09, 0, 0.17, 0, -0.42, 0)
 billboard = 2
+alpha_cut = 1
 sprite_frames = SubResource("SpriteFrames_e8reo")
 animation = &"normal"
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Objets/Interactables/RPCWilly" unique_id=1002696131]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Objets/PNJs/RPCWilly" unique_id=1002696131]
 shape = SubResource("SphereShape3D_ivwwh")
 
-[node name="InteractacleText3D" parent="Objets/Interactables/RPCWilly" unique_id=903367634 instance=ExtResource("10_e8reo")]
+[node name="InteractacleText3D" parent="Objets/PNJs/RPCWilly" unique_id=903367634 instance=ExtResource("10_e8reo")]
 transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0.8627713, 0)
 billboard = 2
-texture = SubResource("ViewportTexture_l2on1")
+texture = SubResource("ViewportTexture_cua6p")
 
-[node name="RPCBilly" type="Area3D" parent="Objets/Interactables" unique_id=2100176355 node_paths=PackedStringArray("text_sprite")]
-transform = Transform3D(-0.40314606, 0, -0.91513556, 0, 1, 0, 0.91513556, 0, -0.40314606, 84.458984, 1.475202, -13.276165)
+[node name="RPCBilly" type="Area3D" parent="Objets/PNJs" unique_id=2100176355 node_paths=PackedStringArray("text_sprite")]
+transform = Transform3D(-0.40314606, 0, -0.91513556, 0, 1, 0, 0.91513556, 0, -0.40314606, -81.69094, 1.1959769, -59.98342)
 script = ExtResource("9_ttchh")
 minigame = ExtResource("14_ivwwh")
 variables = Dictionary[String, Variant]({
@@ -1273,147 +1779,237 @@ variables = Dictionary[String, Variant]({
 text_sprite = NodePath("InteractacleText3D")
 metadata/_custom_type_script = "uid://b3imm353l7y6u"
 
-[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="Objets/Interactables/RPCBilly" unique_id=53850588]
-transform = Transform3D(0.21, 0, -7.823109e-09, 0, 0.21, 0, 7.823109e-09, 0, 0.21, 0, -0.42, 0)
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="Objets/PNJs/RPCBilly" unique_id=53850588]
+transform = Transform3D(0.17, 0, -6.3329937e-09, 0, 0.17, 0, 6.3329937e-09, 0, 0.17, 0, -0.42, 0)
 billboard = 2
+alpha_cut = 1
 sprite_frames = SubResource("SpriteFrames_e8reo")
 animation = &"normal"
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Objets/Interactables/RPCBilly" unique_id=880043268]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Objets/PNJs/RPCBilly" unique_id=880043268]
 shape = SubResource("SphereShape3D_ivwwh")
 
-[node name="InteractacleText3D" parent="Objets/Interactables/RPCBilly" unique_id=1595881025 instance=ExtResource("10_e8reo")]
+[node name="InteractacleText3D" parent="Objets/PNJs/RPCBilly" unique_id=1595881025 instance=ExtResource("10_e8reo")]
 transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0.8627713, 0)
 billboard = 2
-texture = SubResource("ViewportTexture_lwi55")
+texture = SubResource("ViewportTexture_74tlw")
 
-[node name="RPCRayly" type="Area3D" parent="Objets/Interactables" unique_id=1978183643 node_paths=PackedStringArray("text_sprite")]
-transform = Transform3D(-0.40314606, 0, -0.91513556, 0, 1, 0, 0.91513556, 0, -0.40314606, -2.3926802, 1.475202, -76.505)
-script = ExtResource("9_ttchh")
-minigame = ExtResource("14_ivwwh")
-variables = Dictionary[String, Variant]({
-"opponent": 3
-})
+[node name="Pion" type="Area3D" parent="Objets/PNJs" unique_id=529310728 node_paths=PackedStringArray("animated_sprite", "text_sprite", "camera_root")]
+transform = Transform3D(-0.8454946, 0, 0.5339834, 0, 1, 0, -0.5339834, 0, -0.8454946, 140.40344, 1.3691952, -32.883858)
+script = ExtResource("11_nho6y")
+unique_name = "pion"
+dialogue = ExtResource("40_nhq6p")
+animated_sprite = NodePath("AnimatedSprite3D")
+animated_sprite_start_animation = "normal"
 text_sprite = NodePath("InteractacleText3D")
-metadata/_custom_type_script = "uid://b3imm353l7y6u"
+interactionAnimation = 1
+camera_root = NodePath(".")
+metadata/_custom_type_script = "uid://sd0g0r1lwus3"
 
-[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="Objets/Interactables/RPCRayly" unique_id=738742258]
-transform = Transform3D(0.21, 0, -7.823109e-09, 0, 0.21, 0, 7.823109e-09, 0, 0.21, 0, -0.42, 0)
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="Objets/PNJs/Pion" unique_id=798509305]
+transform = Transform3D(0.17000005, 0, -1.1175871e-08, 0, 0.17, 0, 1.1175871e-08, 0, 0.17000005, 0, -0.282, 0)
 billboard = 2
-sprite_frames = SubResource("SpriteFrames_e8reo")
+alpha_cut = 1
+sprite_frames = SubResource("SpriteFrames_nhq6p")
 animation = &"normal"
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Objets/Interactables/RPCRayly" unique_id=713651235]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Objets/PNJs/Pion" unique_id=6048511]
 shape = SubResource("SphereShape3D_ivwwh")
 
-[node name="InteractacleText3D" parent="Objets/Interactables/RPCRayly" unique_id=794435408 instance=ExtResource("10_e8reo")]
-transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0.8627713, 0)
+[node name="InteractacleText3D" parent="Objets/PNJs/Pion" unique_id=440811458 instance=ExtResource("10_e8reo")]
+transform = Transform3D(0.2, 0, -1.1175871e-08, 0, 0.2, 0, 1.1175871e-08, 0, 0.2, 0, 1.1284895, 0)
 billboard = 2
-texture = SubResource("ViewportTexture_6v73m")
+texture = SubResource("ViewportTexture_iiaan")
 
-[node name="arcade" type="Area3D" parent="Objets/Interactables" unique_id=1975199288 node_paths=PackedStringArray("text_sprite")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38.0685, 2.2850838, -7.5898333)
-visible = false
-script = ExtResource("9_ttchh")
-minigame = ExtResource("14_yhicf")
+[node name="Bibi" type="Area3D" parent="Objets/PNJs" unique_id=621789651 node_paths=PackedStringArray("animated_sprite", "text_sprite", "camera_root")]
+transform = Transform3D(-0.8454946, 0, 0.5339834, 0, 1, 0, -0.5339834, 0, -0.8454946, 128.7238, 0.78955054, -49.547832)
+script = ExtResource("11_nho6y")
+unique_name = "bibi"
+dialogue = ExtResource("27_yc2gj")
+animated_sprite = NodePath("AnimatedSprite3D")
+animated_sprite_start_animation = "normal"
 text_sprite = NodePath("InteractacleText3D")
-metadata/_custom_type_script = "uid://b3imm353l7y6u"
+interactionAnimation = 1
+camera_root = NodePath(".")
+metadata/_custom_type_script = "uid://sd0g0r1lwus3"
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Objets/Interactables/arcade" unique_id=24126742]
-transform = Transform3D(1, -1.4901161e-08, -1.4901161e-08, -1.4901161e-08, 1, -2.9802322e-08, -1.4901161e-08, 0, 1, 0, 1.1920929e-07, 2.3841858e-07)
-mesh = SubResource("PrismMesh_lpsds")
-surface_material_override/0 = SubResource("StandardMaterial3D_8pvm1")
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="Objets/PNJs/Bibi" unique_id=1665459647]
+transform = Transform3D(0.17000002, 0, -7.450581e-09, 0, 0.17, 0, 7.450581e-09, 0, 0.17000002, 0, -0.24730754, 0)
+billboard = 2
+alpha_cut = 1
+sprite_frames = SubResource("SpriteFrames_pd13m")
+animation = &"normal"
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Objets/Interactables/arcade" unique_id=1961930336]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Objets/PNJs/Bibi" unique_id=1676881203]
 shape = SubResource("SphereShape3D_ivwwh")
 
-[node name="InteractacleText3D" parent="Objets/Interactables/arcade" unique_id=467142444 instance=ExtResource("10_e8reo")]
-transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0.8773431, 0)
-texture = SubResource("ViewportTexture_e7jxh")
+[node name="InteractacleText3D" parent="Objets/PNJs/Bibi" unique_id=1523595930 instance=ExtResource("10_e8reo")]
+transform = Transform3D(0.2, 0, -7.450581e-09, 0, 0.2, 0, 7.450581e-09, 0, 0.2, 0, 0.52253187, 0)
+billboard = 2
+texture = SubResource("ViewportTexture_drvwa")
 
-[node name="boulangerieDebug" type="Area3D" parent="Objets/Interactables" unique_id=341763301 node_paths=PackedStringArray("text_sprite")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 54.481976, 0.73993564, 0.25229335)
-visible = false
-script = ExtResource("9_ttchh")
-minigame = ExtResource("14_lpsds")
+[node name="TrainTicketSeller" type="Area3D" parent="Objets/PNJs" unique_id=1473036680 node_paths=PackedStringArray("animated_sprite", "text_sprite", "camera_root")]
+transform = Transform3D(-0.8454946, 0, 0.5339834, 0, 1, 0, -0.5339834, 0, -0.8454946, 43.300503, 1.3708895, -99.835434)
+script = ExtResource("11_nho6y")
+unique_name = "train_ticket_seller"
+dialogue = ExtResource("27_24100")
+animated_sprite = NodePath("AnimatedSprite3D")
+animated_sprite_start_animation = "normal"
 text_sprite = NodePath("InteractacleText3D")
-metadata/_custom_type_script = "uid://b3imm353l7y6u"
+interactionAnimation = 1
+camera_root = NodePath(".")
+metadata/_custom_type_script = "uid://sd0g0r1lwus3"
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Objets/Interactables/boulangerieDebug" unique_id=2096247065]
-transform = Transform3D(1, -1.4901161e-08, -1.4901161e-08, -1.4901161e-08, 1, -2.9802322e-08, -1.4901161e-08, 0, 1, 0, 1.1920929e-07, 2.3841858e-07)
-mesh = SubResource("PrismMesh_lpsds")
-surface_material_override/0 = SubResource("StandardMaterial3D_gisxt")
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="Objets/PNJs/TrainTicketSeller" unique_id=187177227]
+transform = Transform3D(0.17000002, 0, -7.450581e-09, 0, 0.17, 0, 7.450581e-09, 0, 0.17000002, 0, -0.24730754, 0)
+billboard = 2
+alpha_cut = 1
+sprite_frames = SubResource("SpriteFrames_doxgq")
+animation = &"normal"
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Objets/Interactables/boulangerieDebug" unique_id=2005041025]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Objets/PNJs/TrainTicketSeller" unique_id=1264661148]
 shape = SubResource("SphereShape3D_ivwwh")
 
-[node name="InteractacleText3D" parent="Objets/Interactables/boulangerieDebug" unique_id=1253022848 instance=ExtResource("10_e8reo")]
-transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0.86451787, 0)
-texture = SubResource("ViewportTexture_e6gat")
+[node name="InteractacleText3D" parent="Objets/PNJs/TrainTicketSeller" unique_id=1236271660 instance=ExtResource("10_e8reo")]
+transform = Transform3D(0.2, 0, -7.450581e-09, 0, 0.2, 0, 7.450581e-09, 0, 0.2, 0, 1.1014107, 0)
+billboard = 2
+no_depth_test = true
+texture = SubResource("ViewportTexture_r8k0m")
 
-[node name="superette" parent="Objets/Interactables" unique_id=185217472 instance=ExtResource("14_w7gwu")]
-transform = Transform3D(1.2724622, 0, -0.58381486, 0, 1.4, 0, 0.58381486, 0, 1.2724622, -37.65221, 0, 8.07334)
-
-[node name="superette" type="Area3D" parent="Objets/Interactables/superette" unique_id=235592674 node_paths=PackedStringArray("text_sprite")]
-transform = Transform3D(-0.0016205832, 0, 0.71428424, 0, 0.71428585, 0, -0.71428424, 0, -0.0016205832, 2.957756, 1.0146849, 3.9153328)
-script = ExtResource("9_ttchh")
-minigame = ExtResource("21_impf6")
+[node name="HampterChild" type="Area3D" parent="Objets/PNJs" unique_id=1037341578 node_paths=PackedStringArray("animated_sprite", "text_sprite", "camera_root")]
+transform = Transform3D(-0.8454946, 0, 0.5339834, 0, 1, 0, -0.5339834, 0, -0.8454946, 149.13922, 0.6742766, -46.30398)
+script = ExtResource("11_nho6y")
+unique_name = "hampter_child"
+dialogue = ExtResource("29_dl85h")
+animated_sprite = NodePath("AnimatedSprite3D")
+animated_sprite_start_animation = "normal"
 text_sprite = NodePath("InteractacleText3D")
-metadata/_custom_type_script = "uid://b3imm353l7y6u"
+interactionAnimation = 1
+camera_root = NodePath(".")
+metadata/_custom_type_script = "uid://sd0g0r1lwus3"
 
-[node name="InteractacleText3D" parent="Objets/Interactables/superette/superette" unique_id=1215462892 instance=ExtResource("10_e8reo")]
-transform = Transform3D(0.30000004, 0, 3.7252903e-09, 0, 0.3, 0, -3.7252903e-09, 0, 0.30000004, -0.0068626404, 0.4931178, -0.07106018)
-texture = SubResource("ViewportTexture_1rjro")
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="Objets/PNJs/HampterChild" unique_id=762666008]
+transform = Transform3D(0.17000002, 0, -7.450581e-09, 0, 0.17, 0, 7.450581e-09, 0, 0.17000002, 0, -0.24730754, 0)
+billboard = 2
+alpha_cut = 1
+sprite_frames = SubResource("SpriteFrames_lwi55")
+animation = &"normal"
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Objets/Interactables/superette/superette" unique_id=71863611]
-transform = Transform3D(1, 0, 2.2351742e-08, 0, 1, 0, -2.2351742e-08, 0, 1, -0.11082077, 0.11338532, -0.32279968)
-shape = SubResource("BoxShape3D_clt24")
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Objets/PNJs/HampterChild" unique_id=1333634158]
+shape = SubResource("SphereShape3D_ivwwh")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Objets/Interactables/superette/superette" unique_id=766225852]
-transform = Transform3D(1, 0, 2.2351742e-08, 0, 1, 0, -2.2351742e-08, 0, 1, -0.035146713, 0, -0.36397552)
-mesh = SubResource("BoxMesh_x4jwh")
+[node name="InteractacleText3D" parent="Objets/PNJs/HampterChild" unique_id=35424463 instance=ExtResource("10_e8reo")]
+transform = Transform3D(0.2, 0, -7.450581e-09, 0, 0.2, 0, 7.450581e-09, 0, 0.2, 0, 0.52253187, 0)
+billboard = 2
+texture = SubResource("ViewportTexture_r8jgy")
 
-[node name="arcade_building" parent="Objets/Interactables" unique_id=1676123660 instance=ExtResource("21_wnywt")]
-transform = Transform3D(0.44619775, 0, 0.89493436, 0, 1, 0, -0.89493436, 0, 0.44619775, -9.9099, -0.032199144, 69.73908)
-
-[node name="arcade" type="Area3D" parent="Objets/Interactables/arcade_building" unique_id=156998866 node_paths=PackedStringArray("text_sprite")]
-script = ExtResource("9_ttchh")
-minigame = ExtResource("14_yhicf")
+[node name="FastChild" type="Area3D" parent="Objets/PNJs" unique_id=1759886429 node_paths=PackedStringArray("animated_sprite", "text_sprite", "camera_root")]
+transform = Transform3D(-0.8454946, 0, 0.5339834, 0, 1, 0, -0.5339834, 0, -0.8454946, 139.65714, 1.0273311, -39.769444)
+script = ExtResource("11_nho6y")
+unique_name = "fast_child"
+dialogue = ExtResource("31_lwi55")
+animated_sprite = NodePath("AnimatedSprite3D")
+animated_sprite_start_animation = "normal"
 text_sprite = NodePath("InteractacleText3D")
-metadata/_custom_type_script = "uid://b3imm353l7y6u"
+interactionAnimation = 1
+camera_root = NodePath(".")
+metadata/_custom_type_script = "uid://sd0g0r1lwus3"
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Objets/Interactables/arcade_building/arcade" unique_id=1375443910]
-transform = Transform3D(0.999901, 0, 0.014084376, 0, 1, 0, -0.014084376, 0, 0.999901, 5.6797943, 1.2233021, -6.258234)
-shape = SubResource("BoxShape3D_64pfx")
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="Objets/PNJs/FastChild" unique_id=1981490919]
+transform = Transform3D(0.17000002, 0, -7.450581e-09, 0, 0.17, 0, 7.450581e-09, 0, 0.17000002, 0, -0.24730754, 0)
+billboard = 2
+alpha_cut = 1
+sprite_frames = SubResource("SpriteFrames_nmc2l")
+animation = &"normal"
 
-[node name="InteractacleText3D" parent="Objets/Interactables/arcade_building/arcade" unique_id=1563667533 instance=ExtResource("10_e8reo")]
-transform = Transform3D(0.0001361277, 0, 0.20000008, 0, 0.2, 0, -0.20000008, 0, 0.0001361277, 6.0572624, 1.9019911, -6.2214165)
-texture = SubResource("ViewportTexture_ieahk")
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Objets/PNJs/FastChild" unique_id=959049417]
+shape = SubResource("SphereShape3D_ivwwh")
 
-[node name="garre" parent="Objets/Interactables" unique_id=1564049498 instance=ExtResource("22_xud6r")]
-transform = Transform3D(0.92746484, 0, -0.3739107, 0, 1, 0, 0.3739107, 0, 0.92746484, 41.50532, 0, -98.79685)
+[node name="InteractacleText3D" parent="Objets/PNJs/FastChild" unique_id=1572538758 instance=ExtResource("10_e8reo")]
+transform = Transform3D(0.2, 0, -1.1175871e-08, 0, 0.2, 0, 1.1175871e-08, 0, 0.2, 0, 0.74586236, 0)
+billboard = 2
+texture = SubResource("ViewportTexture_d0d3r")
 
-[node name="poste" parent="Objets/Interactables" unique_id=466939189 instance=ExtResource("27_xud6r")]
-transform = Transform3D(1.2500489, 0, -0.63037765, 0, 1.3999997, 0, 0.63037765, 0, 1.2500489, 82.11961, 0, 103.10912)
-
-[node name="JoBoss" type="Area3D" parent="Objets/Interactables" unique_id=872440754 node_paths=PackedStringArray("text_sprite")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 46.925915, 0.37960505, -1.1396573)
-visible = false
-script = ExtResource("9_ttchh")
-minigame = ExtResource("21_gisxt")
+[node name="DuckChild" type="Area3D" parent="Objets/PNJs" unique_id=1275971161 node_paths=PackedStringArray("animated_sprite", "text_sprite", "camera_root")]
+transform = Transform3D(-0.8454946, 0, 0.5339834, 0, 1, 0, -0.5339834, 0, -0.8454946, 143.07727, 1.0273311, -43.288124)
+script = ExtResource("11_nho6y")
+unique_name = "duck_child"
+dialogue = ExtResource("33_e7jxh")
+animated_sprite = NodePath("AnimatedSprite3D")
+animated_sprite_start_animation = "normal"
 text_sprite = NodePath("InteractacleText3D")
-metadata/_custom_type_script = "uid://b3imm353l7y6u"
+interactionAnimation = 1
+camera_root = NodePath(".")
+metadata/_custom_type_script = "uid://sd0g0r1lwus3"
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Objets/Interactables/JoBoss" unique_id=1815564471]
-transform = Transform3D(1, -1.4901161e-08, -1.4901161e-08, -1.4901161e-08, 1, -2.9802322e-08, -1.4901161e-08, 0, 1, 0, 1.1920929e-07, 2.3841858e-07)
-mesh = SubResource("PrismMesh_lpsds")
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="Objets/PNJs/DuckChild" unique_id=1322581751]
+transform = Transform3D(0.17000002, 0, -7.450581e-09, 0, 0.17, 0, 7.450581e-09, 0, 0.17000002, 0, -0.24730754, 0)
+billboard = 2
+alpha_cut = 1
+sprite_frames = SubResource("SpriteFrames_1rjro")
+animation = &"normal"
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Objets/Interactables/JoBoss" unique_id=1484427522]
-shape = SubResource("SphereShape3D_jye0b")
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Objets/PNJs/DuckChild" unique_id=1812658908]
+shape = SubResource("SphereShape3D_ivwwh")
 
-[node name="InteractacleText3D" parent="Objets/Interactables/JoBoss" unique_id=2001127438 instance=ExtResource("10_e8reo")]
-transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0.8773431, 0)
-texture = SubResource("ViewportTexture_e7fmu")
+[node name="InteractacleText3D" parent="Objets/PNJs/DuckChild" unique_id=284265059 instance=ExtResource("10_e8reo")]
+transform = Transform3D(0.2, 0, -1.1175871e-08, 0, 0.2, 0, 1.1175871e-08, 0, 0.2, 0, 0.74586236, 0)
+billboard = 2
+texture = SubResource("ViewportTexture_n1psr")
+
+[node name="SlowChild" type="Area3D" parent="Objets/PNJs" unique_id=888616997 node_paths=PackedStringArray("animated_sprite", "text_sprite", "camera_root")]
+transform = Transform3D(-0.8454946, 0, 0.5339834, 0, 1, 0, -0.5339834, 0, -0.8454946, 146.49332, 1.0273311, -36.83585)
+script = ExtResource("11_nho6y")
+unique_name = "slow_child"
+dialogue = ExtResource("35_1rjro")
+animated_sprite = NodePath("AnimatedSprite3D")
+animated_sprite_start_animation = "normal"
+text_sprite = NodePath("InteractacleText3D")
+interactionAnimation = 1
+camera_root = NodePath(".")
+metadata/_custom_type_script = "uid://sd0g0r1lwus3"
+
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="Objets/PNJs/SlowChild" unique_id=1055224309]
+transform = Transform3D(0.17000002, 0, -7.450581e-09, 0, 0.17, 0, 7.450581e-09, 0, 0.17000002, 0, -0.24730754, 0)
+billboard = 2
+alpha_cut = 1
+sprite_frames = SubResource("SpriteFrames_e7fmu")
+animation = &"normal"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Objets/PNJs/SlowChild" unique_id=2079475414]
+shape = SubResource("SphereShape3D_ivwwh")
+
+[node name="InteractacleText3D" parent="Objets/PNJs/SlowChild" unique_id=622215310 instance=ExtResource("10_e8reo")]
+transform = Transform3D(0.2, 0, -1.1175871e-08, 0, 0.2, 0, 1.1175871e-08, 0, 0.2, 0, 0.74586236, 0)
+billboard = 2
+texture = SubResource("ViewportTexture_lvg38")
+
+[node name="HomeworkChild" type="Area3D" parent="Objets/PNJs" unique_id=505807268 node_paths=PackedStringArray("animated_sprite", "text_sprite", "camera_root")]
+transform = Transform3D(-0.8454946, 0, 0.5339834, 0, 1, 0, -0.5339834, 0, -0.8454946, 137.54628, 1.0273311, -50.816757)
+script = ExtResource("11_nho6y")
+unique_name = "homework_child"
+dialogue = ExtResource("37_e7fmu")
+animated_sprite = NodePath("AnimatedSprite3D")
+animated_sprite_start_animation = "normal"
+text_sprite = NodePath("InteractacleText3D")
+interactionAnimation = 1
+camera_root = NodePath(".")
+metadata/_custom_type_script = "uid://sd0g0r1lwus3"
+
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="Objets/PNJs/HomeworkChild" unique_id=968088654]
+transform = Transform3D(0.17000003, 0, -7.450581e-09, 0, 0.17, 0, 7.450581e-09, 0, 0.17000003, 0, -0.247, 0)
+billboard = 2
+alpha_cut = 1
+sprite_frames = SubResource("SpriteFrames_24100")
+animation = &"normal"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Objets/PNJs/HomeworkChild" unique_id=1327409164]
+shape = SubResource("SphereShape3D_ivwwh")
+
+[node name="InteractacleText3D" parent="Objets/PNJs/HomeworkChild" unique_id=1183915907 instance=ExtResource("10_e8reo")]
+transform = Transform3D(0.2, 0, -1.1175871e-08, 0, 0.2, 0, 1.1175871e-08, 0, 0.2, 0, 0.74586236, 0)
+billboard = 2
+texture = SubResource("ViewportTexture_1pwqi")
 
 [node name="Tree" type="Node3D" parent="Objets" unique_id=1912448925]
 transform = Transform3D(0.9510564, 0, -0.309017, 0, 1, 0, 0.309017, 0, 0.9510564, 0.5693767, 0, 3.0004911)
@@ -1799,7 +2395,7 @@ transform = Transform3D(0.43186876, 0, 0, 0, 0.43186876, 0, 0, 0, 0.43186876, -4
 transform = Transform3D(0.46559387, 0, 0, 0, 0.46559387, 0, 0, 0, 0.46559387, -42.86471, 0.0023798943, 11.194318)
 
 [node name="Tree_1776012754_87414" parent="Objets/Tree" unique_id=1301486946 instance=ExtResource("9_yhicf")]
-transform = Transform3D(0.46934572, 0, 0, 0, 0.46934572, 0, 0, 0, 0.46934572, -40.493664, 0.0023796558, 8.275948)
+transform = Transform3D(0.46934575, 0, 0, 0, 0.46934572, 0, 0, 0, 0.46934575, -42.029423, 0.0023796558, 6.839352)
 
 [node name="Tree_1776012755_07347" parent="Objets/Tree" unique_id=2029702817 instance=ExtResource("9_yhicf")]
 transform = Transform3D(0.53223884, 0, 0, 0, 0.53223884, 0, 0, 0, 0.53223884, -39.38855, 0.0023798943, -0.5998431)
@@ -1919,7 +2515,7 @@ transform = Transform3D(0.48548165, 0, 0, 0, 0.48548165, 0, 0, 0, 0.48548165, -1
 transform = Transform3D(0.5150259, 0, 0, 0, 0.5150259, 0, 0, 0, 0.5150259, -121.74465, 0.0023796558, -4.9321566)
 
 [node name="Tree_1776012812_73654" parent="Objets/Tree" unique_id=1581485470 instance=ExtResource("17_ro6to")]
-transform = Transform3D(0.40699407, 0, 0, 0, 0.40699407, 0, 0, 0, 0.40699407, -97.97799, 0.0023801327, -15.166478)
+transform = Transform3D(0.4069941, 0, 0, 0, 0.40699407, 0, 0, 0, 0.4069941, -95.95603, 0.0023801327, -14.509859)
 
 [node name="Tree_1776012813_29507" parent="Objets/Tree" unique_id=841824749 instance=ExtResource("9_yhicf")]
 transform = Transform3D(0.44477165, 0, 0, 0, 0.44477165, 0, 0, 0, 0.44477165, -89.764336, 0.0023796558, 12.714015)
@@ -1937,7 +2533,10 @@ transform = Transform3D(0.42239705, 0, 0, 0, 0.42239705, 0, 0, 0, 0.42239705, -1
 transform = Transform3D(0.45936283, 0, 0, 0, 0.45936283, 0, 0, 0, 0.45936283, -112.434235, 0.0023796558, 5.564666)
 
 [node name="Tree_1776012817_31516" parent="Objets/Tree" unique_id=391855709 instance=ExtResource("17_ro6to")]
-transform = Transform3D(0.42629626, 0, 0, 0, 0.42629626, 0, 0, 0, 0.42629626, -108.74041, 0.0023798943, -13.833105)
+transform = Transform3D(0.4262963, 0, 0, 0, 0.42629626, 0, 0, 0, 0.4262963, -103.716835, 0.0023798943, -13.632448)
+
+[node name="Tree_1776012817_31517" parent="Objets/Tree" unique_id=741688957 instance=ExtResource("17_ro6to")]
+transform = Transform3D(0.42629632, 0, 0, 0, 0.42629626, 0, 0, 0, 0.42629632, -119.72849, 0.0023798943, -12.1044445)
 
 [node name="Tree_1776012818_69868" parent="Objets/Tree" unique_id=352786878 instance=ExtResource("9_yhicf")]
 transform = Transform3D(0.5157793, 0, 0, 0, 0.5157793, 0, 0, 0, 0.5157793, -112.14928, 0.0023798943, -35.44635)
@@ -2089,11 +2688,8 @@ transform = Transform3D(0.41109246, 0, 0, 0, 0.41109246, 0, 0, 0, 0.41109246, 82
 [node name="Tree_1776012903_56888" parent="Objets/Tree" unique_id=1618413296 instance=ExtResource("17_ro6to")]
 transform = Transform3D(0.46630305, 0, 0, 0, 0.46630305, 0, 0, 0, 0.46630305, 75.53416, 0.0023798943, -136.47514)
 
-[node name="Tree_1776012904_48125" parent="Objets/Tree" unique_id=1051446203 instance=ExtResource("9_yhicf")]
-transform = Transform3D(0.48424673, 0, 0, 0, 0.48424673, 0, 0, 0, 0.48424673, 112.46231, 0.0023798943, -88.28887)
-
 [node name="Tree_1776012905_45924" parent="Objets/Tree" unique_id=1308754735 instance=ExtResource("17_ro6to")]
-transform = Transform3D(0.50368, 0, 0, 0, 0.50368, 0, 0, 0, 0.50368, 100.99288, 0.0023798943, -95.46097)
+transform = Transform3D(0.50368, 0, 1.8626451e-09, 0, 0.50368, 0, -1.8626451e-09, 0, 0.50368, 94.83676, 0.0023798943, -93.46271)
 
 [node name="Tree_1776012905_68046" parent="Objets/Tree" unique_id=2125034431 instance=ExtResource("9_yhicf")]
 transform = Transform3D(0.43141165, 0, 0, 0, 0.43141165, 0, 0, 0, 0.43141165, 88.83121, 0.0023798943, -96.132195)
@@ -2194,6 +2790,209 @@ transform = Transform3D(0.47671407, 0, 0, 0, 0.47671407, 0, 0, 0, 0.47671407, -2
 [node name="Forest" parent="Objets" unique_id=2094210011 instance=ExtResource("17_ttchh")]
 transform = Transform3D(0.9455185, 0, -0.32556814, 0, 1, 0, 0.32556814, 0, 0.9455185, -0.131, -0.5, 0.899)
 
+[node name="StaticObj" type="Node3D" parent="Objets" unique_id=544645276]
+
+[node name="bench17" parent="Objets/StaticObj" unique_id=1713898993 instance=ExtResource("32_5uot1")]
+transform = Transform3D(1.3934535, 0, -0.13523002, 0, 1.4, 0, 0.13523002, 0, 1.3934535, -131.18442, 0.11283463, 18.82343)
+
+[node name="bench18" parent="Objets/StaticObj" unique_id=1845993710 instance=ExtResource("32_5uot1")]
+transform = Transform3D(1.3934535, 0, -0.13523002, 0, 1.4, 0, 0.13523002, 0, 1.3934535, -130.89159, 0.11283463, 15.801753)
+
+[node name="bench19" parent="Objets/StaticObj" unique_id=658176343 instance=ExtResource("32_5uot1")]
+transform = Transform3D(0.70048654, 0, 1.2121545, 0, 1.4, 0, -1.2121545, 0, 0.70048654, -122.05177, 0.11283463, 33.936436)
+
+[node name="bench20" parent="Objets/StaticObj" unique_id=941372198 instance=ExtResource("32_5uot1")]
+transform = Transform3D(0.70048654, 0, 1.2121545, 0, 1.4, 0, -1.2121545, 0, 0.70048654, -124.68047, 0.11283463, 32.417778)
+
+[node name="bench21" parent="Objets/StaticObj" unique_id=626844629 instance=ExtResource("32_5uot1")]
+transform = Transform3D(-0.5030378, 0, -1.3065041, 0, 1.4, 0, 1.3065041, 0, -0.5030378, -127.65125, 0.040343463, -19.076584)
+
+[node name="bench22" parent="Objets/StaticObj" unique_id=1532952244 instance=ExtResource("32_5uot1")]
+transform = Transform3D(-0.5030378, 0, -1.3065041, 0, 1.4, 0, 1.3065041, 0, -0.5030378, -124.81798, 0.040343463, -17.98611)
+
+[node name="bench23" parent="Objets/StaticObj" unique_id=1221927663 instance=ExtResource("32_5uot1")]
+transform = Transform3D(0.26353395, 0, 1.3749725, 0, 1.4, 0, -1.3749725, 0, 0.26353395, -90.12296, -0.04120928, -44.238895)
+
+[node name="bench24" parent="Objets/StaticObj" unique_id=2068521892 instance=ExtResource("32_5uot1")]
+transform = Transform3D(0.2764809, 0, 1.3724278, 0, 1.4, 0, -1.3724278, 0, 0.2764809, -98.60953, 0.004097879, -46.016254)
+
+[node name="bench26" parent="Objets/StaticObj" unique_id=918467789 instance=ExtResource("32_5uot1")]
+transform = Transform3D(-0.26171, 0, -1.375321, 0, 1.4, 0, 1.375321, 0, -0.26171, -90.336174, 0.02222079, -56.892197)
+
+[node name="bench28" parent="Objets/StaticObj" unique_id=833196101 instance=ExtResource("32_5uot1")]
+transform = Transform3D(1.3360825, 0, -0.41819093, 0, 1.4, 0, 0.41819093, 0, 1.3360825, -83.332, 0.031282127, -64.24701)
+
+[node name="bench29" parent="Objets/StaticObj" unique_id=1868197737 instance=ExtResource("32_5uot1")]
+transform = Transform3D(0.44267353, 6.30518e-09, -1.3281716, -3.7008714e-09, 1.4, 5.412684e-09, 1.3281716, 1.7995292e-09, 0.44267353, -68.676926, 0.014922738, -92.059944)
+
+[node name="bench30" parent="Objets/StaticObj" unique_id=1489870158 instance=ExtResource("32_5uot1")]
+transform = Transform3D(0.44267353, 6.305181e-09, -1.3281716, -3.7008718e-09, 1.4, 5.4126854e-09, 1.3281716, 1.7995293e-09, 0.44267353, -65.79397, 0.019818246, -93.021324)
+
+[node name="bench31" parent="Objets/StaticObj" unique_id=1909523854 instance=ExtResource("32_5uot1")]
+transform = Transform3D(-0.25673947, 4.6422044e-09, -1.3762575, -3.700872e-09, 1.4, 5.412684e-09, 1.3762575, 4.6307163e-09, -0.25673947, 13.701545, 0.010027111, -80.787575)
+
+[node name="bench32" parent="Objets/StaticObj" unique_id=520025422 instance=ExtResource("32_5uot1")]
+transform = Transform3D(-0.25673947, 4.6422044e-09, -1.3762575, -3.700872e-09, 1.4, 5.412684e-09, 1.3762575, 4.6307163e-09, -0.25673947, 16.689123, 0.010027111, -80.23073)
+
+[node name="bench33" parent="Objets/StaticObj" unique_id=1923816511 instance=ExtResource("32_5uot1")]
+transform = Transform3D(-0.25673947, 4.642205e-09, -1.3762575, -3.7008725e-09, 1.4, 5.412684e-09, 1.3762575, 4.6307163e-09, -0.25673947, 28.44877, 0.11283463, -78.49645)
+
+[node name="bench34" parent="Objets/StaticObj" unique_id=647704158 instance=ExtResource("32_5uot1")]
+transform = Transform3D(-0.25673947, 4.642205e-09, -1.3762575, -3.7008725e-09, 1.4, 5.412684e-09, 1.3762575, 4.6307163e-09, -0.25673947, 31.436352, 0.11283463, -77.9396)
+
+[node name="bench35" parent="Objets/StaticObj" unique_id=847001329 instance=ExtResource("32_5uot1")]
+transform = Transform3D(1.2837378, 5.5531393e-09, -0.558585, -3.7008727e-09, 1.4, 5.412684e-09, 0.558585, -3.4865821e-09, 1.2837378, 34.892166, 0.11283463, -82.12236)
+
+[node name="bench36" parent="Objets/StaticObj" unique_id=700779817 instance=ExtResource("32_5uot1")]
+transform = Transform3D(1.2837378, 5.5531393e-09, -0.558585, -3.7008727e-09, 1.4, 5.412684e-09, 0.558585, -3.4865821e-09, 1.2837378, 36.104294, 0.11283463, -84.90921)
+
+[node name="bench37" parent="Objets/StaticObj" unique_id=384254374 instance=ExtResource("32_5uot1")]
+transform = Transform3D(-1.307581, -5.390563e-09, 0.5002321, -3.7008727e-09, 1.4, 5.4126827e-09, -0.5002321, 3.733018e-09, -1.307581, 61.797062, 0.11283463, -98.3571)
+
+[node name="bench38" parent="Objets/StaticObj" unique_id=1355097717 instance=ExtResource("32_5uot1")]
+transform = Transform3D(-1.307581, -5.390563e-09, 0.5002321, -3.7008727e-09, 1.4, 5.4126827e-09, -0.5002321, 3.733018e-09, -1.307581, 60.711613, 0.11283463, -95.5185)
+
+[node name="bench39" parent="Objets/StaticObj" unique_id=1556746975 instance=ExtResource("32_5uot1")]
+transform = Transform3D(1.3188149, 5.3026668e-09, -0.46981624, -3.700874e-09, 1.4, 5.4126814e-09, 0.46981624, -3.856853e-09, 1.3188149, 43.83809, 0.11283463, -105.87835)
+
+[node name="bench40" parent="Objets/StaticObj" unique_id=632742399 instance=ExtResource("32_5uot1")]
+transform = Transform3D(1.3188149, 5.3026668e-09, -0.46981624, -3.700874e-09, 1.4, 5.4126814e-09, 0.46981624, -3.856853e-09, 1.3188149, 44.8575, 0.11283463, -108.74133)
+
+[node name="bench43" parent="Objets/StaticObj" unique_id=1619007286 instance=ExtResource("32_5uot1")]
+transform = Transform3D(-1.3022798, -5.429295e-09, 0.51387453, -3.700874e-09, 1.4, 5.4126814e-09, -0.51387453, 3.6764582e-09, -1.3022798, 148.46037, 0.11283463, -45.540646)
+
+[node name="bench45" parent="Objets/StaticObj" unique_id=1495266305 instance=ExtResource("32_5uot1")]
+transform = Transform3D(-0.42338768, 4.0400154e-09, -1.3344448, -3.7008752e-09, 1.4, 5.412683e-09, 1.3344448, 5.1644835e-09, -0.42338768, 18.037058, 0.11283463, 116.06904)
+
+[node name="bench46" parent="Objets/StaticObj" unique_id=497117518 instance=ExtResource("32_5uot1")]
+transform = Transform3D(0.3619219, 6.185424e-09, -1.3524098, -3.7008758e-09, 1.4, 5.4126827e-09, 1.3524098, 2.175809e-09, 0.3619219, 27.855368, 0.11283654, 116.74499)
+
+[node name="bench49" parent="Objets/StaticObj" unique_id=1843633629 instance=ExtResource("32_5uot1")]
+transform = Transform3D(0.43329778, 6.2923338e-09, -1.33126, -3.7008765e-09, 1.4, 5.4126814e-09, 1.33126, 1.843947e-09, 0.43329778, 44.56524, 0.11283463, 102.208496)
+
+[node name="bench66" parent="Objets/StaticObj" unique_id=662258670 instance=ExtResource("32_5uot1")]
+transform = Transform3D(-0.74085045, -6.5511414e-09, 1.1879144, -3.700876e-09, 1.4, 5.412681e-09, -1.1879144, -2.7595476e-10, -0.74085045, 89.09768, 0.11283463, 121.02318)
+
+[node name="bench47" parent="Objets/StaticObj" unique_id=817165095 instance=ExtResource("32_5uot1")]
+transform = Transform3D(-1.1213751, -6.204844e-09, 0.8381634, -3.700876e-09, 1.4, 5.4126823e-09, -0.8381634, 2.1197917e-09, -1.1213751, 43.457405, 0.11283845, 120.31287)
+
+[node name="bench48" parent="Objets/StaticObj" unique_id=1867924636 instance=ExtResource("32_5uot1")]
+transform = Transform3D(-1.0186473, -6.405856e-09, 0.96039456, -3.700876e-09, 1.4, 5.4126823e-09, -0.96039456, 1.3995091e-09, -1.0186473, 36.259197, 0.11283463, 129.37497)
+
+[node name="bench44" parent="Objets/StaticObj" unique_id=575600808 instance=ExtResource("32_5uot1")]
+transform = Transform3D(-1.2924286, -5.4971916e-09, 0.5381715, -3.7008756e-09, 1.4, 5.4126823e-09, -0.5381715, 3.574142e-09, -1.2924286, 144.4702, -0.00955528, -35.54692)
+
+[node name="bench41" parent="Objets/StaticObj" unique_id=1949627046 instance=ExtResource("32_5uot1")]
+transform = Transform3D(1.3188149, 5.302667e-09, -0.46981624, -3.7008743e-09, 1.4, 5.4126823e-09, 0.46981624, -3.8568535e-09, 1.3188149, 38.943645, 0.11283463, -91.91885)
+
+[node name="bench42" parent="Objets/StaticObj" unique_id=373683990 instance=ExtResource("32_5uot1")]
+transform = Transform3D(1.3188149, 5.302667e-09, -0.46981624, -3.7008743e-09, 1.4, 5.4126823e-09, 0.46981624, -3.8568535e-09, 1.3188149, 39.963047, 0.11283463, -94.78182)
+
+[node name="bench27" parent="Objets/StaticObj" unique_id=80724169 instance=ExtResource("32_5uot1")]
+transform = Transform3D(-0.26171, 0, -1.375321, 0, 1.4, 0, 1.375321, 0, -0.26171, -99.69521, 0.013159215, -58.44273)
+
+[node name="bench25" parent="Objets/StaticObj" unique_id=1017651033 instance=ExtResource("32_5uot1")]
+transform = Transform3D(0.06226334, 0, 1.3986146, 0, 1.4, 0, -1.3986146, 0, 0.06226334, -80.935585, 0.004097879, -42.58853)
+
+[node name="bench" parent="Objets/StaticObj" unique_id=2005540670 instance=ExtResource("32_5uot1")]
+transform = Transform3D(0.45586482, 0, 1.3237021, 0, 1.4, 0, -1.3237021, 0, 0.45586482, -20.545357, 0.04701443, 21.539997)
+
+[node name="bench2" parent="Objets/StaticObj" unique_id=277956452 instance=ExtResource("32_5uot1")]
+transform = Transform3D(0.45586482, 0, 1.3237021, 0, 1.4, 0, -1.3237021, 0, 0.45586482, -22.595732, 0.04701443, 20.834179)
+
+[node name="bench3" parent="Objets/StaticObj" unique_id=1462772059 instance=ExtResource("32_5uot1")]
+transform = Transform3D(0.49648723, 0, 1.3090074, 0, 1.4, 0, -1.3090074, 0, 0.49648723, -11.229576, 0.04701443, 24.975307)
+
+[node name="bench4" parent="Objets/StaticObj" unique_id=1089040828 instance=ExtResource("32_5uot1")]
+transform = Transform3D(0.49648723, 0, 1.3090074, 0, 1.4, 0, -1.3090074, 0, 0.49648723, -13.257199, 0.04701443, 24.206566)
+
+[node name="bench5" parent="Objets/StaticObj" unique_id=1277115661 instance=ExtResource("32_5uot1")]
+transform = Transform3D(-1.3090852, 0, 0.4962818, 0, 1.4, 0, -0.4962818, 0, -1.3090852, 16.91855, 0.04701443, 80.46676)
+
+[node name="bench12" parent="Objets/StaticObj" unique_id=851525476 instance=ExtResource("32_5uot1")]
+transform = Transform3D(-1.3090852, 0, 0.4962818, 0, 1.4, 0, -0.4962818, 0, -1.3090852, 16.150135, 0.04701443, 82.4945)
+
+[node name="bench13" parent="Objets/StaticObj" unique_id=610668999 instance=ExtResource("32_5uot1")]
+transform = Transform3D(-1.2931508, 0, 0.5364337, 0, 1.4, 0, -0.5364337, 0, -1.2931508, 20.638197, 0.04701443, 71.26082)
+
+[node name="bench14" parent="Objets/StaticObj" unique_id=266388049 instance=ExtResource("32_5uot1")]
+transform = Transform3D(-1.2931508, 0, 0.5364337, 0, 1.4, 0, -0.5364337, 0, -1.2931508, 19.807579, 0.04701443, 73.263885)
+
+[node name="bench6" parent="Objets/StaticObj" unique_id=647635829 instance=ExtResource("32_5uot1")]
+transform = Transform3D(-0.61459786, 0, -1.257883, 0, 1.4, 0, 1.257883, 0, -0.61459786, 16.710783, 0.04701443, 22.094753)
+
+[node name="bench7" parent="Objets/StaticObj" unique_id=1251300636 instance=ExtResource("32_5uot1")]
+transform = Transform3D(-0.61459786, 0, -1.257883, 0, 1.4, 0, 1.257883, 0, -0.61459786, 18.65924, 0.04701443, 23.046444)
+
+[node name="bench8" parent="Objets/StaticObj" unique_id=970347565 instance=ExtResource("32_5uot1")]
+transform = Transform3D(-0.61459786, 0, -1.257883, 0, 1.4, 0, 1.257883, 0, -0.61459786, 7.372039, 0.04701443, 17.623278)
+
+[node name="bench10" parent="Objets/StaticObj" unique_id=1410140496 instance=ExtResource("32_5uot1")]
+transform = Transform3D(-1.2938889, 0, 0.53465056, 0, 1.4, 0, -0.53465056, 0, -1.2938889, 9.949246, 0.010765031, 5.0993004)
+
+[node name="bench11" parent="Objets/StaticObj" unique_id=354312340 instance=ExtResource("32_5uot1")]
+transform = Transform3D(1.2696557, 0, -0.5898932, 0, 1.4, 0, 0.5898932, 0, 1.2696557, -0.82181585, -0.025480554, 6.734064)
+
+[node name="bench9" parent="Objets/StaticObj" unique_id=1661518836 instance=ExtResource("32_5uot1")]
+transform = Transform3D(-0.61459786, 0, -1.257883, 0, 1.4, 0, 1.257883, 0, -0.61459786, 9.320498, 0.04701443, 18.574966)
+
+[node name="bench15" parent="Objets/StaticObj" unique_id=51748972 instance=ExtResource("32_5uot1")]
+transform = Transform3D(0.59474206, 0, 1.2673917, 0, 1.4, 0, -1.2673917, 0, 0.59474206, -59.7232, 0.04701443, 80.612595)
+
+[node name="bench67" parent="Objets/StaticObj" unique_id=1866299751 instance=ExtResource("32_5uot1")]
+transform = Transform3D(0.59474206, 0, 1.2673917, 0, 1.4, 0, -1.2673917, 0, 0.59474206, -23.463398, 0.04701443, 97.14259)
+
+[node name="bench50" parent="Objets/StaticObj" unique_id=500603319 instance=ExtResource("32_5uot1")]
+transform = Transform3D(-1.281967, 0, 0.56263703, 0, 1.4, 0, -0.56263703, 0, -1.281967, 54.47232, 0.04701419, -8.433552)
+
+[node name="bench51" parent="Objets/StaticObj" unique_id=217745546 instance=ExtResource("32_5uot1")]
+transform = Transform3D(-0.60273725, 0, -1.263609, 0, 1.4, 0, 1.263609, 0, -0.60273725, 61.596085, 0.04701419, -1.7580729)
+
+[node name="bench52" parent="Objets/StaticObj" unique_id=1651900358 instance=ExtResource("32_5uot1")]
+transform = Transform3D(-0.69586986, 0, 1.2148107, 0, 1.4, 0, -1.2148107, 0, -0.69586986, 87.12401, 0.04701419, -3.8363123)
+
+[node name="bench53" parent="Objets/StaticObj" unique_id=2027292499 instance=ExtResource("32_5uot1")]
+transform = Transform3D(-0.4695173, 0, 1.3189213, 0, 1.4, 0, -1.3189213, 0, -0.4695173, 95.514534, 0.04701419, -7.5091677)
+
+[node name="bench54" parent="Objets/StaticObj" unique_id=1523422314 instance=ExtResource("32_5uot1")]
+transform = Transform3D(0.61881, 0, -1.2558161, 0, 1.4, 0, 1.2558161, 0, 0.61881, 92.97268, 0.04701419, -20.226646)
+
+[node name="bench55" parent="Objets/StaticObj" unique_id=600500227 instance=ExtResource("32_5uot1")]
+transform = Transform3D(0.61881, 0, -1.2558161, 0, 1.4, 0, 1.2558161, 0, 0.61881, 100.34131, 0.04701419, -22.867203)
+
+[node name="bench56" parent="Objets/StaticObj" unique_id=835648729 instance=ExtResource("32_5uot1")]
+transform = Transform3D(1.2136436, 0, -0.69790363, 0, 1.4, 0, 0.69790363, 0, 1.2136436, 73.691315, 0.04701419, -3.386283)
+
+[node name="bench57" parent="Objets/StaticObj" unique_id=1202345664 instance=ExtResource("32_5uot1")]
+transform = Transform3D(0.6037957, 0, 1.2631036, 0, 1.4, 0, -1.2631036, 0, 0.6037957, 70.486534, 0.0017072707, 17.061668)
+
+[node name="bench58" parent="Objets/StaticObj" unique_id=1144138161 instance=ExtResource("32_5uot1")]
+transform = Transform3D(0.6037957, 0, 1.2631036, 0, 1.4, 0, -1.2631036, 0, 0.6037957, 33.08903, 0.04701419, 0.2570591)
+
+[node name="bench59" parent="Objets/StaticObj" unique_id=1847833166 instance=ExtResource("32_5uot1")]
+transform = Transform3D(1.3703094, 0, -0.28679648, 0, 1.4, 0, 0.28679648, 0, 1.3703094, 45.974194, 0.04701419, -30.873158)
+
+[node name="bench60" parent="Objets/StaticObj" unique_id=1471704808 instance=ExtResource("32_5uot1")]
+transform = Transform3D(1.3703094, 0, -0.28679648, 0, 1.4, 0, 0.28679648, 0, 1.3703094, 41.077557, 0.04701419, -12.872121)
+
+[node name="bench61" parent="Objets/StaticObj" unique_id=270273621 instance=ExtResource("32_5uot1")]
+transform = Transform3D(0.47257715, 0, 1.317828, 0, 1.4, 0, -1.317828, 0, 0.47257715, 45.86404, 0.04701419, -53.993423)
+
+[node name="bench62" parent="Objets/StaticObj" unique_id=735692901 instance=ExtResource("32_5uot1")]
+transform = Transform3D(0.4834401, 0, 1.313882, 0, 1.4, 0, -1.313882, 0, 0.4834401, 47.906715, 0.04701419, -53.251057)
+
+[node name="bench63" parent="Objets/StaticObj" unique_id=521522948 instance=ExtResource("32_5uot1")]
+transform = Transform3D(-1.3234394, 0, 0.45662686, 0, 1.4, 0, -0.45662686, 0, -1.3234394, 56.049313, 0.04701419, -69.41414)
+
+[node name="bench64" parent="Objets/StaticObj" unique_id=348890670 instance=ExtResource("32_5uot1")]
+transform = Transform3D(-1.3196247, 0, 0.4675368, 0, 1.4, 0, -0.4675368, 0, -1.3196247, 56.76696, 0.04701419, -71.46563)
+
+[node name="bench65" parent="Objets/StaticObj" unique_id=136013838 instance=ExtResource("32_5uot1")]
+transform = Transform3D(-0.5228852, 0, -1.2986882, 0, 1.4, 0, 1.2986882, 0, -0.5228852, 56.247227, 0.047015145, -75.14911)
+
+[node name="bench16" parent="Objets/StaticObj" unique_id=938564943 instance=ExtResource("32_5uot1")]
+transform = Transform3D(0.59474206, 0, 1.2673917, 0, 1.4, 0, -1.2673917, 0, 0.59474206, -72.29632, 0.04701443, 74.76662)
+
 [node name="ShaderCanvasLayer" type="CanvasLayer" parent="." unique_id=1482458820]
 
 [node name="TempImahe" type="TextureRect" parent="ShaderCanvasLayer" unique_id=1586868777]
@@ -2219,7 +3018,7 @@ shader_properties = Dictionary[String, Array]({
 "brightness": [0.0, -0.1, SubResource("Curve_ivwwh")],
 "colorLevels": [Vector3(10, 20, 20), Vector3(1, 5, 5), SubResource("Curve_e0nlv")],
 "contrast": [0.75, 2.0, SubResource("Curve_e0nlv")],
-"desaturation": [1.0, 2.0, SubResource("Curve_e0nlv")],
+"desaturation": [1.0, 2.0, SubResource("Curve_5uot1")],
 "displacementStrength": [0.0, 0.005, SubResource("Curve_5f2gp")],
 "ditherSpeed": [Vector2(0, 0), Vector2(0, 3), SubResource("Curve_lpsds")],
 "noiseStrength": [0.0, 0.05, SubResource("Curve_clt24")],

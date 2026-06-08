@@ -3,12 +3,13 @@
 [ext_resource type="Script" uid="uid://b32ei6ddyi8kc" path="res://src/3D/player/player.gd" id="1_f043j"]
 [ext_resource type="Script" uid="uid://csqj305by4a8c" path="res://src/3D/player/Camera/playerCamera.gd" id="2_ihd86"]
 [ext_resource type="PackedScene" uid="uid://cb5jqhnceqws" path="res://assets/blender/handforEOW.blend" id="3_41h8g"]
+[ext_resource type="AudioStream" uid="uid://rk63nxhqexgp" path="res://src/Sound/sfx/footseps2.wav" id="4_bxhrw"]
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_41h8g"]
 
 [sub_resource type="Curve" id="Curve_bxhrw"]
-_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.9247136, 0.49461734), 1.5201889, 1.5201889, 0, 0, Vector2(1, 1), 2.0359712, 0.0, 0, 0]
-point_count = 3
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.6861575, 0.12430936), 0.46298298, 0.46298298, 0, 0, Vector2(0.9522673, 0.5055248), 4.02065, 4.02065, 0, 0, Vector2(1, 1), 2.0359712, 0.0, 0, 0]
+point_count = 4
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hr7rh"]
 resource_name = "Material"
@@ -82,6 +83,7 @@ script = ExtResource("2_ihd86")
 
 [node name="handforEOW" parent="head/Camera3D" unique_id=2056753208 instance=ExtResource("3_41h8g")]
 transform = Transform3D(-0.013734085, 0, -0.0990524, 0, 0.1, 0, 0.0990524, 0, -0.013734085, 0.6477792, -0.30266118, -0.5381017)
+visible = false
 
 [node name="InteractableVision" type="RayCast3D" parent="head/Camera3D" unique_id=771690805]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.5188713)
@@ -108,7 +110,8 @@ target_position = Vector3(0, 0, -0.7)
 hit_from_inside = true
 
 [node name="PlayerSoundEffects" type="AudioStreamPlayer3D" parent="." unique_id=942735582]
-volume_db = -28.0
+stream = ExtResource("4_bxhrw")
+volume_db = -32.0
 bus = &"sfx"
 
 [node name="footstepsTimer" type="Timer" parent="PlayerSoundEffects" unique_id=1461522989]
