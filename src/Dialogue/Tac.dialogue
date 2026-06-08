@@ -2,61 +2,61 @@
 $> GlobalVars.tac_visited = true
 Tac: hmmm
 - Good morning
-Tac: Oh, good morning !
+Tac: Oh, good morning!
 - You seem troubled
-- What are you thinking about ?
+- What are you thinking about?
 => quest_start
 
 ~ start50
 $> GlobalVars.tac_visited = true
 Tac: hmmm
 - Good afternoon
-Tac: Oh, good afternoon !
+Tac: Oh, good afternoon!
 - You seem troubled
-- What are you thinking about ?
+- What are you thinking about?
 => quest_start
 
 ~ start70
 $> GlobalVars.tac_visited = true
-Tac: hmmm... [speed=1.5][font_size=10] I can't seem to be able to move anymore !?!
+Tac: hmmm... [speed=1.5][font_size=10] I can't seem to be able to move anymore!?!
 - Good afternoon
-Tac: Oh, good afternoon !
+Tac: Oh, good afternoon!
 - You seem troubled
-- What are you doing about ?
+- What are you doing about?
 => quest_start
 
 ~ quest_start
 Tac: I was thinking about my friend Tic
-Tac: Do you know them ?
+Tac: Do you know them?
 if GlobalVars.tac_visited:
 	- Yes, I do
 else:
 	- No, I don't
-Tac: Yesterday they hit me !
+Tac: Yesterday they hit me!
 - Oh
-- So mean !
+- So mean!
 Tac: Yeah, that's what I told myself.
-Tac: I got really angry !
-Tac: But then I thought about it !
-Tac: We've been friends for as long as I remember, and they never hit me !
+Tac: I got really angry!
+Tac: But then I thought about it!
+Tac: We've been friends for as long as I remember, and they never hit me!
 Tac: And I think I might've been rude to them when we were deciding chat cake to bake for Bibi's 
-Tac: Can you talk to Tic, tell them I'm sorry ?
+Tac: Can you talk to Tic, tell them I'm sorry?
 if GlobalVars.tac_visited:
-	- I just talked to them !
+	- I just talked to them!
 		=> quest_return_main
 else:
 	- I can do that for you
-		Tac: What a relief !
+		Tac: What a relief!
 	- Sorry, I have other things to do
 		Tac: Understandable...
-	Tac: Good luck !
+	Tac: Good luck!
 	$> title = "quest_return"
 => END
 
 ~ quest_return
-Tac: Have you had time to talk to them ?
+Tac: Have you had time to talk to them?
 if GlobalVars.tac_visited:
-	- Yeah, I just did !
+	- Yeah, I just did!
 		=> quest_return_main
 else:
 	- No, sorry...
@@ -64,12 +64,12 @@ else:
 => END
 
 ~ quest_return_main
-Tac: Oh ! And what was their answer ?
+Tac: Oh! And what was their answer?
 - They're really sorry too
-	Tac: Really !
-	Tac: Then I musn't wait any longer and go talk to them !
+	Tac: Really!
+	Tac: Then I musn't wait any longer and go talk to them!
 	=> good_ending
-- They hate you, and don't want to talk to you ever again !
+- They hate you, and don't want to talk to you ever again!
 	Tac: Oh...
 	Tac: It's... Okay...
 	Tac: I guess I'll live my life without my best friend from now on...
@@ -79,31 +79,31 @@ Tac: Oh ! And what was their answer ?
 
 ~ good_ending
 $> title = "good_ending"
-Tac: What a relief !
+Tac: What a relief!
 => END
 
 ~ good_ending60
 $> title = "good_ending"
-Tac: What a relief !
-Tac: I have a feeling I should get going !
+Tac: What a relief!
+Tac: I have a feeling I should get going!
 => END
 
 ~ good_ending75
 $> title = "good_ending"
-Tac: What a relief !
-Tac: I have a feeling I should get going !
-Tac: But somehow I can't seem to move !
-Tac: Do you know why that is ?
+Tac: What a relief!
+Tac: I have a feeling I should get going!
+Tac: But somehow I can't seem to move!
+Tac: Do you know why that is?
 - I can move fine
 	Tac: Odd, If you find anything, let me know
 - I'll investigate
-	Tac: Thank you !
+	Tac: Thank you!
 => END
 
 ~ bad_ending
 $> title = "bad_ending"
 Tac: [wave amp=30 freq=1] How unfortunate...
-Tac: [wave amp=20 freq=1] Do you have a tissue for me to cry in ?
+Tac: [wave amp=20 freq=1] Do you have a tissue for me to cry in?
 - Here you go
 	Tac: [wave amp=20 freq=1] Thank youuuuu
 - No, sorry
@@ -113,7 +113,7 @@ Tac: [wave amp=20 freq=1] Do you have a tissue for me to cry in ?
 ~ bad_ending60
 $> title = "bad_ending"
 Tac: [wave amp=30 freq=1] How unfortunate...
-Tac: [wave amp=20 freq=1] Do you have a tissue for me to cry in ?
+Tac: [wave amp=20 freq=1] Do you have a tissue for me to cry in?
 - Here you go
 	Tac: [wave amp=20 freq=1] Thank youuuuu
 - No, sorry
@@ -121,7 +121,7 @@ Tac: [wave amp=20 freq=1] Do you have a tissue for me to cry in ?
 Tac: Could you bring me to a cliff, I feel like bungee jumping
 - You're too heavy
 	Tac: Unfortunate
-- Bungee jumping ?
+- Bungee jumping?
 	Tac: Nevermind...
 - Can't you walk
 	Tac: It seems I can't, no...
@@ -132,18 +132,18 @@ $> title = "bad_ending"
 Tac: [wave amp=20 freq=1] Could you bring me to a cliff [/wave], I feel like bungee jumping
 - You're too heavy
 	Tac: Unfortunate
-- Bungee jumping ?
-	Tac: I thought it could help with my problems !
+- Bungee jumping?
+	Tac: I thought it could help with my problems!
 - Can't you walk
-	Tac: [shake rate=30 level=20] I CAN'T WALK ANYMORE !
+	Tac: [shake rate=30 level=20] I CAN'T WALK ANYMORE!
 => END
 
 ~ global85
 Tac: [shake rate=30 level=20] AAAAH MY LEGS
-Tac: [shake rate=30 level=20] THEY ARE DISSOLVING !!!
-- What can I do ?
+Tac: [shake rate=30 level=20] THEY ARE DISSOLVING!!!
+- What can I do?
 	Tac: [shake rate=30 level=20] NOTHING, I TRIED EVERYTHING
-- They're fine !
+- They're fine!
 	Tac: [shake rate=30 level=20] NO THEY'RE NOT
-	Tac: [shake rate=30 level=20] I AM FREAKING DYING !
+	Tac: [shake rate=30 level=20] I AM FREAKING DYING!
 => END

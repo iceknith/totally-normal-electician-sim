@@ -8,10 +8,10 @@ Ben: Howdy
 Ben: H-Howdy
 - Hi
 - Hey
-Ben: H-H-ave y-you e-ver s-tuttered ?
-- No, why ?
+Ben: H-H-ave y-you e-ver s-tuttered?
+- No, why?
 Ben: O-O-h O-Kay
-Ben: I- Try-y t-to -focus [wait=2] better !
+Ben: I- Try-y t-to -focus [wait=2] better!
 => main
 
 ~ start70
@@ -19,7 +19,7 @@ Ben: H-H-Howdy
 - Hi
 - Hey
 Ben: I-I-I k-k-keep s-s-stuttering
-Ben: I-I-It-t-t's-s A-a-a-noy-ying me ! V-v-very much !
+Ben: I-I-It-t-t's-s A-a-a-noy-ying me! V-v-very much!
 Ben: P-P-pa-pa will not be happy
 => main
 
@@ -27,47 +27,47 @@ Ben: P-P-pa-pa will not be happy
 Ben: [shake rate=20 level=20] H-H-H-H-H-H-H-H-H-H-H-H
 - Hi
 - Hey
-- Are you okay ?
+- Are you okay?
 Ben: [shake rate=20 level=20] I-I-I-I-I-I-I-I-I-I-I-I-I-I
 Ben: [shake rate=20 level=40] A-A-A-A-A-A-A-A-A-A-A-A-A-A
-Ben: [shake rate=20 level=30] H-H-H-H-H-H-H-H-H-H-L-L-L-L-P-P-P-P-P !
+Ben: [shake rate=20 level=30] H-H-H-H-H-H-H-H-H-H-L-L-L-L-P-P-P-P-P!
 => main
 
 ~ main
-Ben: What are you doing in the school ?
-- I am repairing the towers !
+Ben: What are you doing in the school?
+- I am repairing the towers!
 Ben: Ah, okay
-Ben: Aren't you the big sibling of Bibi ?
-- Yes I am !
-- Yup !
-- And proud to be !
+Ben: Aren't you the big sibling of Bibi?
+- Yes I am!
+- Yup!
+- And proud to be!
 Ben: Ooooh, okay
-Ben: How is it to have siblings ?
+Ben: How is it to have siblings?
 - Nice
 - Anoying
 - Wholesome
-Ben: Oooooh !
+Ben: Oooooh!
 Ben: I wouldn't know, I am an only child
-- Is that so ?
-- How sad !
-- How nice !
-Ben: Yeah, my papa and my mama always fight, so they never have the time to climb the big mountain to go search the nice pretty flower that makes babies !
+- Is that so?
+- How sad!
+- How nice!
+Ben: Yeah, my papa and my mama always fight, so they never have the time to climb the big mountain to go search the nice pretty flower that makes babies!
 - Yeah...
 - Must be hard...
-Ben: Yeah, and they're always in their shop ! I am always alone at home !
-- Oh !
-- They must be horrible parents !
+Ben: Yeah, and they're always in their shop! I am always alone at home!
+- Oh!
+- They must be horrible parents!
 Ben: Yeah...
-Ben: About that, isn't it Bibi's birthday today !
-Ben: *Whispers* Did you buy them a nice cake ?
+Ben: About that, isn't it Bibi's birthday today!
+Ben: *Whispers* Did you buy them a nice cake?
 if GlobalVars.bought_cake_bakery :
 	- I bought a cake at the bakery
-	Ben: Oh, nice, papa told me that he put a lot of effort into the cake !
+	Ben: Oh, nice, papa told me that he put a lot of effort into the cake!
 elif GlobalVars.bought_cake_bakery:
 	- I bought a cake at the supermarket
 	Ben: Oh... nice... It must be very nice and... industrial...
 else:
 	- Not yet
-	Ben: Don't forget !
-Ben: See you !
+	Ben: Don't forget!
+Ben: See you!
 => END

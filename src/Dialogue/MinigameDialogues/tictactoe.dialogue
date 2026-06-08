@@ -2,69 +2,69 @@
 Charles: Heyyy
 - Good morning
 - Heyyy
-Charles: How are you doing ?
-- Fine, and you ?
-	Charles: I'm doing fine thank you !
+Charles: How are you doing?
+- Fine, and you?
+	Charles: I'm doing fine thank you!
 - Lot of work to do
-	Charles: Oh, that's so sad !
-Charles: I have a special technique to be always happy !
-- Oh ?
-- What is it ?
-Charles: I play lots and lots of tic tac toe !
+	Charles: Oh, that's so sad!
+Charles: I have a special technique to be always happy!
+- Oh?
+- What is it?
+Charles: I play lots and lots of tic tac toe!
 => charles_main
 
 ~ charles_start50
 Charles: Heyyy
 - Good afternoon
 - Heyyy
-Charles: How are you doing ?
-- Fine, and you ?
-	Charles: I'm doing fine thank you !
+Charles: How are you doing?
+- Fine, and you?
+	Charles: I'm doing fine thank you!
 - Lot of work to do
-	Charles: Oh, that's so sad !
-Charles: I have a special technique to be always happy !
-- Oh ?
-- What is it ?
-Charles: I play lots and lots of tic tac toe !
+	Charles: Oh, that's so sad!
+Charles: I have a special technique to be always happy!
+- Oh?
+- What is it?
+Charles: I play lots and lots of tic tac toe!
 => charles_main
 
 ~ charles_start60
 Charles: Heyyy
 - Good afternoon
 - Heyyy
-Charles: What did you say, I couldn't quite hear ya !
+Charles: What did you say, I couldn't quite hear ya!
 - Good afternoon
 - Heyyy
-Charles: How are you doing ?
-- Fine, and you ?
-	Charles: WHAT ?
-	- Fine, and you ?
-	Charles: I'm doing fine thank you !
+Charles: How are you doing?
+- Fine, and you?
+	Charles: WHAT?
+	- Fine, and you?
+	Charles: I'm doing fine thank you!
 - Lot of work to do
-	Charles: WHAT ?
+	Charles: WHAT?
 	- Lot of work to do
-	Charles: Oh, that's so sad !
-Charles: I have a special technique to be always happy !
-- Oh ?
-- What is it ?
-Charles: I play lots and lots of tic tac toe !
+	Charles: Oh, that's so sad!
+Charles: I have a special technique to be always happy!
+- Oh?
+- What is it?
+Charles: I play lots and lots of tic tac toe!
 => charles_main
 
 ~ charles_start76
 Charles: Heyyy
 - Good afternoon
 - Heyyy
-Charles: WHAT ?
+Charles: WHAT?
 - GOOD AFTERNOON
 - HEYYY
-Charles: WHAT ?
+Charles: WHAT?
 - GOOD AFTERNOON
 - HEYYY
-- ARE YOU OKAY ?
+- ARE YOU OKAY?
 Charles: I CAN'T HEAR YA
 Charles: MY EARS ARE RINGING
 Charles: TO BE HAPPY, I PLAY TIC TAC TOE
-Charles: YOU WANT TO PLAY ?
+Charles: YOU WANT TO PLAY?
 - YES
 - NO
 Charles: NOD YOUR HEAD, I CAN'T HEAR YOU
@@ -79,47 +79,47 @@ Charles: NOD YOUR HEAD, I CAN'T HEAR YOU
 Charles: [shake rate=20 level=20] AOUCHHHH
 - Good afternoon
 - Heyyy
-- are you okay ?
-Charles: [shake rate=20 level=20] WHAT ?
+- are you okay?
+Charles: [shake rate=20 level=20] WHAT?
 - GOOD AFTERNOON
 - HEYY
-- ARE YOU OKAY ?
-Charles: [shake rate=20 level=20] WHAT ?
+- ARE YOU OKAY?
+Charles: [shake rate=20 level=20] WHAT?
 - GOOD AFTERNOON
 - HEYY
-- YOU OKAY ?
+- YOU OKAY?
 Charles: [shake rate=20 level=20] I CAN'T HEAR YA
 Charles: [shake rate=20 level=20] MY EARS ARE BLEADING WITH SOUND OF HELL
 Charles: [shake rate=20 level=20] TO BE HAPPY, I PLAYED TIC TAC TOE
-Charles: [shake rate=20 level=20] YOU WANT TO PLAY ?
+Charles: [shake rate=20 level=20] YOU WANT TO PLAY?
 - YES
 - NO
 Charles: [shake rate=20 level=20] THANK YOU VERY MUCH!
-Chales: [shake rate=20 level=20] I AM BAD, PLEASE BE NICE !
+Chales: [shake rate=20 level=20] I AM BAD, PLEASE BE NICE!
 => charles_start
 
 ~ charles_main
-Charles: Do you like tic tac toe ?
-- I do !
-	Charles: Awesome, do you want to play against me ?
+Charles: Do you like tic tac toe?
+- I do!
+	Charles: Awesome, do you want to play against me?
 	- Why not
-		Charles: Yippeee !!! Also, please go easy on me, I'm not very good !
+		Charles: Yippeee!!! Also, please go easy on me, I'm not very good!
 		=> charles_launch_game
 	- No
-		Charles: Oh... Another time, maybe ?
-- I don't really enjoy it !
-	Charles: Oh... Why ?
+		Charles: Oh... Another time, maybe?
+- I don't really enjoy it!
+	Charles: Oh... Why?
 	- I'm too bad
-		Charles: I'm bad too, and I still enjoy it !
+		Charles: I'm bad too, and I still enjoy it!
 	- I just don't like it
 		Charles: Maybe you haven't played with the right persons.
 		Charles: I'm weak, so my big siblings say I'm nice to play against.
-	Charles: Do you wanna play to see if you'll envoy it ?
+	Charles: Do you wanna play to see if you'll envoy it?
 	- Why not
 		Charles: Yippeee, good luck to you~
 		=> charles_launch_game
 	- No
-		Charles: Oh... Another time, maybe ?
+		Charles: Oh... Another time, maybe?
 => END
 
 ~ charles_launch_game
@@ -144,9 +144,9 @@ Bob: Good afternoon
 Bob: Gooooooood afternoooooooon
 - Good afternoon
 - 'nooooooon
-- Everything alright ?
+- Everything alright?
 	Bob: Yeah, just a biiit sleepy
-	Bob: I must focus !
+	Bob: I must focus!
 => bob_main
 
 ~ bob_start70
@@ -154,34 +154,34 @@ Bob: Gooooooood afternoooooooonzzz
 - Good afternoon
 - 'nooooooooon
 - Are you sleepy
-Bob: Aren't you sleepy ?
-Bob: I am soooooooooo sleepy right now !
+Bob: Aren't you sleepy?
+Bob: I am soooooooooo sleepy right now!
 Bob: I wish I could sleep
 - You can
-	Bob: I can't !
-	Bob: I need to practice tic tac toe to be as good as jasmine !
+	Bob: I can't!
+	Bob: I need to practice tic tac toe to be as good as jasmine!
 - Stay awake
 	Bob: That's what Jasmine tells me everyday
 	Bob: They tell me to stay awake and motivated to play tic tac toe
-Bob: You wanna play ?
+Bob: You wanna play?
 - Yeah
 - Maybe later
-	Bob: See ya ! [wave amp=50 freq=5]zzzzzzzzzzz
+	Bob: See ya! [wave amp=50 freq=5]zzzzzzzzzzz
 => END
 
 ~ bob_start78
 Bob: [wave amp=50 freq=5]zzzzZZZZzzZZZzzzzZzzzz
-- Hello ?
-- Hi ?
+- Hello?
+- Hi?
 - *Let them sleep*
 	=> END
 Bob: [wave amp=50 freq=5]ZZZZZZZZZZZZZZZZZZZZZZZZZZ
-- HELLO ?
-- HI ?
+- HELLO?
+- HI?
 - *Let them sleep*
 	=> END
-Bob: [shake rate=20 level=20]  Eugh ! I didn't sleep ! I never sleep !
-Bob: You want to play tic tac toe to keep me [shake rate=20 level=20] not [/shake] sleeping ?
+Bob: [shake rate=20 level=20]  Eugh! I didn't sleep! I never sleep!
+Bob: You want to play tic tac toe to keep me [shake rate=20 level=20] not [/shake] sleeping?
 - Yes 
 	Bob: Thank you, jasmine will be happy
 	=> bob_launch_game
@@ -191,24 +191,24 @@ Bob: You want to play tic tac toe to keep me [shake rate=20 level=20] not [/shak
 
 ~ bob_start90
 Bob: [wave amp=50 freq=5]zzzzZZZZzzZZZzzzzZzzzz
-- Hello ?
-- Hi ?
+- Hello?
+- Hi?
 - *Let them sleep*
 	=> END
 Bob: [wave amp=50 freq=5]ZZZZZZZZZZZZZZZZZZZZZZZZZZ
-- HELLO ?
-- HI ?
+- HELLO?
+- HI?
 - *Let them sleep*
 	=> END
 Bob: [wave amp=50 freq=5]ZZZZZZZZZZZZZZZZZZZZZZZZZZ
-- HEYYYYY ?
-- DO YOU NEED ASSISTANCE ?
+- HEYYYYY?
+- DO YOU NEED ASSISTANCE?
 - *Let them sleep*
 	=> END
 while True:
 	Bob: [wave amp=50 freq=5]ZZZticZZtacZZZtoeZZZZ
-	- HEYYYYY ?
-	- DO YOU NEED ASSISTANCE ?
+	- HEYYYYY?
+	- DO YOU NEED ASSISTANCE?
 	- *Set up the tic tac toe playing grid*
 		=> bob_launch_game
 	- *Let them sleep*
@@ -216,21 +216,21 @@ while True:
 => END
 
 ~ bob_main
-Bob: What is it that motivates you everyday ?
+Bob: What is it that motivates you everyday?
 - The towers
 - My little sibling, bibi
 - The ducks
-Bob: Interesting... For me it's tic tac toe !
-Bob: But I am not as strong as I'd wished to be !
-Bob: Jasmine is still leagues ahead of me !
-Bob: Would you please help me train ?
+Bob: Interesting... For me it's tic tac toe!
+Bob: But I am not as strong as I'd wished to be!
+Bob: Jasmine is still leagues ahead of me!
+Bob: Would you please help me train?
 - Yeah, we'll show this jasmine
-	Bob: I don't know about that, no one has ever beaten jasmine !
-	Bob: Good luck to you !
+	Bob: I don't know about that, no one has ever beaten jasmine!
+	Bob: Good luck to you!
 	=> bob_launch_game
-- Why not ?
-	Bob: Oh, thank you very much, you're so kind !
-	Bob: Good luck to you !
+- Why not?
+	Bob: Oh, thank you very much, you're so kind!
+	Bob: Good luck to you!
 	=> bob_launch_game
 -  Sorry, I'm a bit busy
 => END
@@ -242,31 +242,31 @@ $> MainCommunicator.send_signal_to_main(MainCommunicator.SignalType.ADD_MINIGAME
 #-----------------------------------------------------------#
 
 ~ jasmine_start
-Jasmine: 'sup ?
+Jasmine: 'sup?
 - Good morning
 - Hey
 => jasmine_main
 
 ~ jasmine_start50
-Jasmine: 'sup ?
+Jasmine: 'sup?
 - Good afternoon
 - Hey
 => jasmine_main
 
 ~ jasmine_start60
-Jasmine: 'sup ?
+Jasmine: 'sup?
 - Good morning
 - Hey
-Jasmine: Doesn't the world seem wierd ?
+Jasmine: Doesn't the world seem wierd?
 - No, why
 Jasmine: Nothing, nevermind...
 => jasmine_main
 
 ~ jasmine_start70
-Jasmine: 'sup ?
+Jasmine: 'sup?
 - Good morning
 - Hey
-Jasmine: Doesn't the world seem transparent ?
+Jasmine: Doesn't the world seem transparent?
 - No, why
 - No, but it sure is wierd
 Jasmine: Huh...
@@ -274,50 +274,50 @@ Jasmine: Huh...
 
 ~ jasmine_start80
 Jasmine: I feel like I see in the futur
-Jasmine: "What ?"
-- What ?
-Jasmine: Don't worry, let's pretend this didn't happen ! [speed=1.5] And no swearing please !
-- What the fuck ?
+Jasmine: "What?"
+- What?
+Jasmine: Don't worry, let's pretend this didn't happen! [speed=1.5] And no swearing please!
+- What the fuck?
 => jasmine_main
 
 ~ jasmine_start90
 Jasmine: I SEE THE WHOLE UNIVERSE.
-Jasmine: It all makes sense now. We are nothing but glass panes on a tiny existence plane !
-Jasmine: "What ?"
-- What ?
-Jasmine: I just aquired the capacity to look in other reality planes !
-- How ?
-Jasmine: If I'm cheating, then see for yourself, and try to beat me at tic tac toe !
-- You're cheating !
+Jasmine: It all makes sense now. We are nothing but glass panes on a tiny existence plane!
+Jasmine: "What?"
+- What?
+Jasmine: I just aquired the capacity to look in other reality planes!
+- How?
+Jasmine: If I'm cheating, then see for yourself, and try to beat me at tic tac toe!
+- You're cheating!
 => jasmine_launch_game
 
 ~ jasmine_main
-Jasmine: Do you believe in perfection ?
+Jasmine: Do you believe in perfection?
 - Yes
-	Jasmine: You do ?
-	Jasmine: I don't ! But everyone keeps telling me I play perfectly !
-	Jasmine: That doesn't make any sense ! It's a game so complex, solving it would be discovering innate truths about our universe !
-	Jasmine: Would you do me honor of trying to beat me ?
-	- Why not, how hard can it be ?
+	Jasmine: You do?
+	Jasmine: I don't! But everyone keeps telling me I play perfectly!
+	Jasmine: That doesn't make any sense! It's a game so complex, solving it would be discovering innate truths about our universe!
+	Jasmine: Would you do me honor of trying to beat me?
+	- Why not, how hard can it be?
 		Jasmine: Trust me, it's very hard.
-		Jasmine: Good luck !
+		Jasmine: Good luck!
 		=> jasmine_launch_game
 	- Sorry, I'm a bit busy right now
-		Jasmine: Oh... Maybe later ?
+		Jasmine: Oh... Maybe later?
 - No
-	Jasmine: Is that so ?
-	Jasmine: Then I would need your help to prove something wrong !
-	- What is it ?
-		Jasmine: There's a little game I play really good. And everyone says I play perfectly !
-		Jasmine: But I disagree, there is no such thing as perfection !
-		Jasmine: So, I want you to beat me !
-		Jasmine: You're ready ?
-		- Like hell I am !
-		- I'm ready !
+	Jasmine: Is that so?
+	Jasmine: Then I would need your help to prove something wrong!
+	- What is it?
+		Jasmine: There's a little game I play really good. And everyone says I play perfectly!
+		Jasmine: But I disagree, there is no such thing as perfection!
+		Jasmine: So, I want you to beat me!
+		Jasmine: You're ready?
+		- Like hell I am!
+		- I'm ready!
 		Jasmine: Here we go
 		=> jasmine_launch_game
 	- Sorry, I'm a bit busy right now 
-		Jasmine: Oh... Maybe later ?
+		Jasmine: Oh... Maybe later?
 => END
 
 ~ jasmine_launch_game

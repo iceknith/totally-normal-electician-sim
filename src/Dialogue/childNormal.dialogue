@@ -31,15 +31,15 @@ Naomi: It makes me sad when I think of the little duckies scattered around town!
 Naomi: H-Hey
 - Hi
 - Hey
-Naomi: I AM [shake rate=20 level=20] BURNING [/shake] !
+Naomi: I AM [shake rate=20 level=20] BURNING [/shake]!
 Naomi: [shake rate=20 level=20] ARGH
 Naomi: [shake rate=20 level=20] POOR LITTLE DUCKIES, THEY HAVE TO SUFFER BURNING ALL ALONE!
-Naomi: [shake rate=20 level=20] PLEASE, CAN YOU SAVE THEM ?
+Naomi: [shake rate=20 level=20] PLEASE, CAN YOU SAVE THEM?
 => main
 
 ~ main
 Naomi: Yesterday! I found out something BIIIIG!
-- What is it ?
+- What is it?
 	=> secret
 - Cool
 	Naomi: You don't want to know what it is?

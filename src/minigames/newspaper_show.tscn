@@ -1,0 +1,50 @@
+[gd_scene format=3 uid="uid://xasd04diswwd"]
+
+[ext_resource type="Script" uid="uid://7t5g6m4ipch5" path="res://src/minigames/newspaper_show.gd" id="1_xc50h"]
+[ext_resource type="Texture2D" uid="uid://bagxpr8f5to1a" path="res://assets/misc/newspaper/aliens.png" id="2_j8s71"]
+[ext_resource type="FontFile" uid="uid://dcu0gks0yl1lh" path="res://assets/gui/fonts/Jersey10-Regular.ttf" id="3_mtfft"]
+
+[node name="NewspaperShow" type="Control" unique_id=1793148797]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_xc50h")
+metadata/_custom_type_script = "uid://dd5w2ptvu7pou"
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1813407725]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 25
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 25
+theme_override_constants/margin_bottom = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=1924920638]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer" unique_id=66461007]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+texture = ExtResource("2_j8s71")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="Exit" type="Button" parent="MarginContainer/VBoxContainer" unique_id=1970478047]
+z_index = 10
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme_override_fonts/font = ExtResource("3_mtfft")
+theme_override_font_sizes/font_size = 36
+text = " Okay "
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Exit" to="." method="_on_exit_pressed"]

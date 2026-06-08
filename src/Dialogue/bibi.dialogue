@@ -1,101 +1,101 @@
 ~ start
-Bibi: Haii big sibling !
+Bibi: Haii big sibling!
 - Hello bibi
 - Good morning bibi
 => bibi_main
 
 ~ start50
-Bibi: Haii big sibling !
+Bibi: Haii big sibling!
 - Hello bibi
 - Good afternoon bibi
 => bibi_main
 
 ~ start60
-Bibi: Haii big sibling !
+Bibi: Haii big sibling!
 - Hello bibi
 - Good afternoon bibi
-- You look wierd, everything okay ?
-	Bibi: Yess ! I think I ate too much cake at luch !
-	- Don't make yourself sick !
+- You look wierd, everything okay?
+	Bibi: Yess! I think I ate too much cake at luch!
+	- Don't make yourself sick!
 		Bibi: Okaaaay
-	- Okay, I won't tell mom !
+	- Okay, I won't tell mom!
 		Bibi: Thank youuu
 => bibi_main
 
 ~ start73
-Bibi: Big sibling ?
+Bibi: Big sibling?
 - Hello Bibi
-- What's up, Bibi ?
-Bibi: I don't feel too good ?
+- What's up, Bibi?
+Bibi: I don't feel too good?
 - Oh, no, what happened
-	Bibi: My tummy hurts a lot !
+	Bibi: My tummy hurts a lot!
 - Didn't you go to the infirmary
-	Bibi: The nurse lady is not here !
+	Bibi: The nurse lady is not here!
 Bibi: I don't think I can party tonight.
-- Oh, no !
-- It's okay ! we'll celebrate your birthday tomorrow !
-	Bibi: Thank you ! You're the best !
+- Oh, no!
+- It's okay! we'll celebrate your birthday tomorrow!
+	Bibi: Thank you! You're the best!
 Bibi: I will lie down, I am sleepy
 => END
 
 ~ start87
 Bibi: [shake rate=30 level=20] AAARGZ
-- BIBI !
-- BIBI, ARE YOU OKAY ?
-Bibi: Big Sibling !
+- BIBI!
+- BIBI, ARE YOU OKAY?
+Bibi: Big Sibling!
 Bibi: I... I don't think I'll be able to... [shake rate=30 level=20] ARGZ [/shake]
 - LIE DOWN
 - GET SOME REST
 - WE'LL BE FINE
-	Bibi: Will we ?
+	Bibi: Will we?
 	- I PROMISE
-		Bibi: pinky promise !
+		Bibi: pinky promise!
 		- PINKY PROMISE
 			Bibi: That's nice! 
 Bibi: I'm happy to have you as my big sibling
-Bibi: You're the best !
+Bibi: You're the best!
 Bibi: Tell mom and dad I loved them
-- You'll tell them yourself !
-- I will !
+- You'll tell them yourself!
+- I will!
 - ...
-Bibi: Thank you !
+Bibi: Thank you!
 => END
 
 ~ bibi_main
 if !visited_bibi:
 	$> visited_bibi = true
-	Bibi: What are you doing in the school yard ?
-	Bibi: You're repeating your scholarship ?
+	Bibi: What are you doing in the school yard?
+	Bibi: You're repeating your scholarship?
 	- No, silly, I'm repairing the tower in the yard
-		Bibi: Aaaaah, right !
-	- Why not ?
-		Bibi: But you can't you've got the towers to fix !
+		Bibi: Aaaaah, right!
+	- Why not?
+		Bibi: But you can't you've got the towers to fix!
 		- You're right
-			Bibi: Hehe, I am so smart !
-Bibi: Are you working good ?
+			Bibi: Hehe, I am so smart!
+Bibi: Are you working good?
 - Yess
-- I am doing my best !
+- I am doing my best!
 Bibi: You should probably get back to work...
 - I can wait here a bit
-	- Especially when its your birthday !!
-		- Happy birthday !
-			Bibi: Thank youuuu !
+	- Especially when its your birthday!!
+		- Happy birthday!
+			Bibi: Thank youuuu!
 			if GlobalVars.bought_cake_bakery || GlobalVars.bought_cake_superette:
-				- And I bought an awesome cake just for you !
+				- And I bought an awesome cake just for you!
 			else:
-				- And I will buy an awesome cake just for you !
-			Bibi: You're the best !
+				- And I will buy an awesome cake just for you!
+			Bibi: You're the best!
 			Bibi: I'm sooo happy
-			Bibi: I can't wait to be this eavening !
+			Bibi: I can't wait to be this eavening!
 - You're right
 	- But I will come back
-		Bibi: Okay, I will see you then !
+		Bibi: Okay, I will see you then!
 	- We will see each other at home tonight
 		Bibi: Yeaaaay
 		if GlobalVars.bought_cake_bakery || GlobalVars.bought_cake_superette:
 			- And eat a delicious cake for someone's birthday
 			Bibi: Yaaay, yippeee
 			Bibi: I love you soo much
-Bibi: Goodbyyye !
-Bibi: I'm sososoo excited for tonight !!!
+Bibi: Goodbyyye!
+Bibi: I'm sososoo excited for tonight!!!
 => END

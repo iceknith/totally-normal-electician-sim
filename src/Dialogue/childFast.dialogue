@@ -14,41 +14,41 @@ Finn: Heyy
 Finn: [speed=1.5] Heyy
 - Hi
 - Good morning
-Finn: [speed=1.75] Why are you so slow ?
+Finn: [speed=1.75] Why are you so slow?
 - I don't know
-- Why are you so fast !
-Finn: [speed=2] I am the fastest kid in the whole town !
-Finn: [speed=1.25] I'll slow down so that you can understand me !
+- Why are you so fast!
+Finn: [speed=2] I am the fastest kid in the whole town!
+Finn: [speed=1.25] I'll slow down so that you can understand me!
 => main
 
 ~ start80
-Finn: [speed=2] Hey, [speed=2] How is it going ? [next=auto]
+Finn: [speed=2] Hey, [speed=2] How is it going? [next=auto]
 Finn: [speed=2.25] Me I am doing very well, everyone tells me I am going a bit fast, but I disagree. It's not me that is fast, it is them that are slow [next=auto]
-Finn: [speed=2.5] Are you slow too, you seem slow ! why are you slow ? This is confusing ! I bet everyone is just playing tricks on me ! I don't like that [next=auto]
-Finn: [speed=3] Oh no, I don't like that a single bit ! I tell you I am very disapointed ! Next time I will be able to do very awesome things and you won't be prepared for it ! Be careful of what you wish for my mama always says, and she's not wrong, be always the veryest of the careful because it is cool to be ! [next=auto]
-Finn: [speed=4] Bye, you're too slow to keep up ! [next=auto]
+Finn: [speed=2.5] Are you slow too, you seem slow! why are you slow? This is confusing! I bet everyone is just playing tricks on me! I don't like that [next=auto]
+Finn: [speed=3] Oh no, I don't like that a single bit! I tell you I am very disapointed! Next time I will be able to do very awesome things and you won't be prepared for it! Be careful of what you wish for my mama always says, and she's not wrong, be always the veryest of the careful because it is cool to be! [next=auto]
+Finn: [speed=4] Bye, you're too slow to keep up! [next=auto]
 => END
 
 ~ start90
-Finn: [speed=5][size=5] Hey, How is it going ? Me I am doing very well, everyone tells me I am going a bit fast, but I disagree. It's not me that is fast, it is them that are slow ! Are you slow too, you seem slow ! why are you slow ? This is confusing ! I bet everyone is just playing tricks on me ! I don't like that ! Oh no, I don't like that a single bit ! I tell you I am very disapointed ! Next time I will be able to do very awesome things and you won't be prepared for it ! Be careful of what you wish for my mama always says, and she's not wrong, be always the veryest of the careful because it is cool to be ! Bye, you're too slow to keep up ! [next=auto]
+Finn: [speed=5][size=5] Hey, How is it going? Me I am doing very well, everyone tells me I am going a bit fast, but I disagree. It's not me that is fast, it is them that are slow! Are you slow too, you seem slow! why are you slow? This is confusing! I bet everyone is just playing tricks on me! I don't like that! Oh no, I don't like that a single bit! I tell you I am very disapointed! Next time I will be able to do very awesome things and you won't be prepared for it! Be careful of what you wish for my mama always says, and she's not wrong, be always the veryest of the careful because it is cool to be! Bye, you're too slow to keep up! [next=auto]
 
 ~ main
-Finn: Can you run fast ?
+Finn: Can you run fast?
 - Yes
-	Finn: Is that so !
-	Finn: Because, they call me "the bullet kid" [font_size=10] because I can run, really fast !
-	Finn: Do you want to know how fast I can run ?
-	- Of course !
-		Finn: I ran to the end of the road, that leaves the town, in under 30 minutes !
+	Finn: Is that so!
+	Finn: Because, they call me "the bullet kid" [font_size=10] because I can run, really fast!
+	Finn: Do you want to know how fast I can run?
+	- Of course!
+		Finn: I ran to the end of the road, that leaves the town, in under 30 minutes!
 		- Wow
-		- ... wooow ?
-		- what road ?
-			Finn: The biiig looong road to the right of the school !
+		- ... wooow?
+		- what road?
+			Finn: The biiig looong road to the right of the school!
 			=> END
-		Finn: Yeah, right !
-		Finn: I bet you're impressed !
+		Finn: Yeah, right!
+		Finn: I bet you're impressed!
 	- Nah, I'm goood
-		Finn: You're just jealous !
+		Finn: You're just jealous!
 - No
 	Finn: Then you're a [wave amp=30 freq=5] loooser [/wave]!
 => END

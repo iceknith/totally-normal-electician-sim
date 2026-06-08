@@ -21,7 +21,7 @@ Rupert: G-good morning!
 Rupert: G-good afternoon
 - Hey
 - Good afternoon
-Rupert: Do you wanna leave this town too ?
+Rupert: Do you wanna leave this town too?
 - Yes
 	Rupert: Frick! You too?
 	Rupert: I thought you were a good one!
@@ -31,7 +31,7 @@ Rupert: Do you wanna leave this town too ?
 		=> buy_ticket
 	- No
 		Rupert: Wfiouf, what a relief!
-- No ?
+- No?
 	Rupert: Wfiouf, what a relief!
 	Rupert: You don't know the amount of people that have been leaving recently.
 	Rupert: Freaking me out!
@@ -53,7 +53,7 @@ Rupert: PLEASE DON'T LEAVE ME BEHIND
 => END
 
 ~ start90
-Rupert: PLEAASE BUY ME A TICKET SI I CAN GO ON THE TRAIN WITH YOU !
+Rupert: PLEAASE BUY ME A TICKET SI I CAN GO ON THE TRAIN WITH YOU!
 Rupert: I NEED TO LEAVE THIS TOWN!
 Rupert: IT'S FREAKING ME OUT!
 Rupert: PLEASE DON'T LEAVE ME BEHIND
@@ -83,7 +83,7 @@ Rupert: Goodbye.
 Rupert: Okay, where do you wanna go?
 - Riverborough Beach
 	Rupert: Somebody sure needed vacation, am I right?
-	- Yeah !
+	- Yeah!
 	- ...
 	Rupert: One ticket to riverborough beach it is!
 - Pineton

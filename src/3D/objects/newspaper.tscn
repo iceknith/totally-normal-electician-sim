@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://c58pgkaum1tdk"]
+
+[ext_resource type="Script" uid="uid://dqgvjg5gbc68x" path="res://src/3D/objects/newspaper.gd" id="1_4dnm3"]
+[ext_resource type="Texture2D" uid="uid://bagxpr8f5to1a" path="res://assets/misc/newspaper/aliens.png" id="3_bhqr6"]
+[ext_resource type="PackedScene" uid="uid://ddq2i6ppa2upf" path="res://src/3D/interactables/interactacle_text_3d.tscn" id="12_qfnwj"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_4s2vi"]
+radius = 1.2514932
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_4dnm3"]
+viewport_path = NodePath("SubViewport")
+
+[node name="Newspaper" type="Area3D" unique_id=937133408 node_paths=PackedStringArray("text_sprite")]
+script = ExtResource("1_4dnm3")
+text_sprite = NodePath("InteractacleText3D")
+metadata/_custom_type_script = "uid://dqgvjg5gbc68x"
+
+[node name="Sprite3D" type="Sprite3D" parent="." unique_id=19961450]
+transform = Transform3D(0.025, 0, 0, 0, -1.0927848e-09, 0.025, 0, -0.025, -1.0927848e-09, 0, 0, 0)
+texture = ExtResource("3_bhqr6")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1236729596]
+transform = Transform3D(1.0000001, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 0, 0, 0)
+shape = SubResource("SphereShape3D_4s2vi")
+
+[node name="InteractacleText3D" parent="." unique_id=1576660793 instance=ExtResource("12_qfnwj")]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0.58725023, 0)
+billboard = 2
+texture = SubResource("ViewportTexture_4dnm3")

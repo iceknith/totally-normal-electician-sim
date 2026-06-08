@@ -1,41 +1,41 @@
 ~ start
 $> GlobalVars.visited_superette = true
-Yvonne: Mhhhh ?
-- Hey, ummm, I saw that there was a cake for sale ?
+Yvonne: Mhhhh?
+- Hey, ummm, I saw that there was a cake for sale?
 	$> title = "quick_start"
-	Yvonne: Why do you care ?
+	Yvonne: Why do you care?
 	- It's my little sibling"s birthday today
 		if GlobalVars.bought_cake_bakery:
-			Yvonne: And your fat ass wanted a second cake ?
+			Yvonne: And your fat ass wanted a second cake?
 			$> title = "neutral_ending"
 			=> END
 		else:
 			Yvonne: Who asked
 			- You... Nevermind...
-				Yvonne: That's what I thought !
+				Yvonne: That's what I thought!
 				Yvonne: Here you go, it'll be 15$.
 				- ... Fine.
 					=> buy_cake
-				- That's a bit pricy, isn't it ?
-			- You did !
-				Yvonne: Hmpf !
+				- That's a bit pricy, isn't it?
+			- You did!
+				Yvonne: Hmpf!
 				Yvonne: It'll be 50$.
 				- ... Fine.
 					=> buy_cake
-				- 50$ ? That's ridiculous !
-			- How about I pay you money and you give me my cake !
+				- 50$? That's ridiculous!
+			- How about I pay you money and you give me my cake!
 				Yvonne: Geez... Don't be such a fun killer.
 				Yvonne: Here you go, it'll be 30$.
 				- ... Fine.
 					=> buy_cake
-				- 30$ ? That's expensive
+				- 30$? That's expensive
 			
-			Yvonne: You got anywhere else to go ?
+			Yvonne: You got anywhere else to go?
 			if GlobalVars.visited_bakery:
 				- ...
 					=> buy_cake
-				- You know what ! I do actually !
-					Yvonne: Then stop wasting my fricking time !!!
+				- You know what! I do actually!
+					Yvonne: Then stop wasting my fricking time!!!
 					$> title = "bad_ending"
 					=> END
 			else:
@@ -55,17 +55,17 @@ Yvonne: So, you finally decided to buy this cake or what
 ~ buy_cake
 $> GlobalVars.bought_cake_superette = true
 Credit Card: [shake rate=20 level=10] BIIIP
-Yvonne: Now get out !
+Yvonne: Now get out!
 $> title = "second_round"
 => END
 
 ~ second_round
-Yvonne: Oh it's you... again !
+Yvonne: Oh it's you... again!
 if GlobalVars.visited_bakery:
-	- Why did you lie about the bakery ?
-	Yvonne: I didn't, you're the one who forgot !
+	- Why did you lie about the bakery?
+	Yvonne: I didn't, you're the one who forgot!
 	- Why are you so mean
-	Yvonne: ... Get out !
+	Yvonne: ... Get out!
 	$> title = "bad_ending"
 else: 
 	- ...
@@ -73,18 +73,18 @@ else:
 => END
 
 ~ neutral_ending
-Yvonne: Don't you have things to do ?
+Yvonne: Don't you have things to do?
 => END
 
 ~ bad_ending
-Yvonne: Get out !
+Yvonne: Get out!
 => END
 
 ~ global70
-Yvonne: [wave amp=30 freq=1] Is it just me or is everything wierd ?
+Yvonne: [wave amp=30 freq=1] Is it just me or is everything wierd?
 => END
 
 ~ global90
-Yvonne: [shake rate=40 level=20] AAAAAAAAH, WE'RE GONNA DIE !!!
-Yvonne: [shake rate=40 level=20] TELL MY HUSBAND I LOVED HIM !
+Yvonne: [shake rate=40 level=20] AAAAAAAAH, WE'RE GONNA DIE!!!
+Yvonne: [shake rate=40 level=20] TELL MY HUSBAND I LOVED HIM!
 => END
