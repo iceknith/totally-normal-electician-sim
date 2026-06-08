@@ -120,22 +120,21 @@ func apply_jo_preset():
 			max_manageable_speed = 400
 			jo_sprite_color = Color.GREEN
 
-	
 		opponent.Jolister:
 			attack_cooldown = 0.9
-			opponent_move_speed = 200
+			opponent_move_speed = 300
 			max_manageable_speed = 600
 			jo_sprite_color = Color.PINK
 		
 		opponent.BigJo:
 			attack_cooldown = 0.9
-			opponent_move_speed = 300
+			opponent_move_speed = 325
 			max_manageable_speed = 1100
 			jo_sprite_color = Color.BLUE
 			
 		opponent.Jo:
 			attack_cooldown = 0.4
-			opponent_move_speed = 300
+			opponent_move_speed = 400
 			max_manageable_speed = 1400
 			jo_sprite_color = Color.RED
 			

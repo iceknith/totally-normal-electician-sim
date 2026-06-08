@@ -189,8 +189,7 @@ func reset_game():
 	EnemyScore = 0
 	reset()
 	
-func _physics_process(delta):
-	print(opponent_name[opponent_preset])
+
 func start_tutorial():
 	in_tutorial = true
 	opponent.visible = false

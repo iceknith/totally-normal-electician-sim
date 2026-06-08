@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://7ykeb0dnh705" path="res://src/2D/player/player2D.tscn" id="3_a31al"]
 [ext_resource type="Shader" uid="uid://ctbl58rioj50b" path="res://src/2D/levels/Arcade/shaders/distorsion.gdshader" id="4_tigbq"]
 [ext_resource type="Texture2D" uid="uid://j5t8bh7tv72m" path="res://src/2D/levels/Arcade/shaders/circles.png" id="5_x23mc"]
+[ext_resource type="Script" uid="uid://b5kdd6u41o437" path="res://src/2D/levels/Arcade/arcade_minigame.gd" id="8_6qrce"]
 [ext_resource type="Script" uid="uid://i1towdpqubly" path="res://src/2D/interactables/interactables_2d_dialogue.gd" id="8_482mc"]
 [ext_resource type="Texture2D" uid="uid://bebn8axhpyefo" path="res://src/2D/levels/Arcade/assets/Bornes/borne1.png" id="8_mjrqe"]
 [ext_resource type="PackedScene" uid="uid://cnnuxnjiw3ait" path="res://src/2D/interactables/interactableText.tscn" id="9_2r2t4"]
@@ -435,7 +436,7 @@ y_sort_enabled = true
 
 [node name="Interactable2DMinigame2" type="Area2D" parent="SubViewportContainer/SubViewport/Node2D/Y-Sort/Interactables" unique_id=588353347 node_paths=PackedStringArray("interractable_dialogue")]
 position = Vector2(379, 180)
-script = ExtResource("8_482mc")
+script = ExtResource("8_6qrce")
 unique_name = "LittleJo"
 dialogue = ExtResource("9_a31al")
 title = "LittleJoIntro"

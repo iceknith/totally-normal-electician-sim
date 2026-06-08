@@ -196,6 +196,10 @@ if !GlobalVars.BigJoBeaten
 	As you try to touch the machine, a violent electric shock throws you back.
 	You are not worthy.
 	=> END
+	
+if GlobalVars.JoBeaten
+	$> MainCommunicator.send_signal_to_main(MainCommunicator.SignalType.ADD_MINIGAME, [load("res://src/minigames/arcadeGame/level/FullJoBoss.tscn")])
+	=> END
 The machine accepts you.
 On the other side you feel the presence of the true Jo.
 Let the challenge begin.
