@@ -30,10 +30,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -95.0
-offset_top = -192.5
-offset_right = 95.0
-offset_bottom = 192.5
+offset_left = -250.0
+offset_top = -300.0
+offset_right = 250.0
+offset_bottom = 300.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("2_nyruk")
@@ -47,6 +47,8 @@ theme_override_constants/margin_bottom = 30
 
 [node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer" unique_id=1247810165]
 layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
 theme_override_constants/separation = 32
 
 [node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=1485208585]
@@ -56,7 +58,7 @@ text = "Settings"
 label_settings = SubResource("LabelSettings_xy610")
 
 [node name="EmptySpace3" type="Control" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=1376023111]
-custom_minimum_size = Vector2(0, 70)
+custom_minimum_size = Vector2(0, 20)
 layout_mode = 2
 
 [node name="ButtonKeys" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=1781576353]
@@ -78,17 +80,21 @@ text = "Sound"
 [node name="EmptySpace" type="Control" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=911892567]
 layout_mode = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=1245251925]
+[node name="VBoxContainer2" type="VBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=114858468]
+layout_mode = 2
+theme_override_constants/separation = 50
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/VBoxContainer2" unique_id=1245251925]
 layout_mode = 2
 theme_override_constants/separation = 3
 
-[node name="MouseSensitivityLabel" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/VBoxContainer" unique_id=544008480]
+[node name="MouseSensitivityLabel" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/VBoxContainer2/VBoxContainer" unique_id=544008480]
 layout_mode = 2
 size_flags_horizontal = 4
 text = "Mouse sentitivity"
 label_settings = SubResource("LabelSettings_ixk0t")
 
-[node name="MouseSensitivity" type="HSlider" parent="PanelContainer/MarginContainer/VBoxContainer/VBoxContainer" unique_id=336446409]
+[node name="MouseSensitivity" type="HSlider" parent="PanelContainer/MarginContainer/VBoxContainer/VBoxContainer2/VBoxContainer" unique_id=336446409]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(300, 0)
 layout_mode = 2
@@ -99,26 +105,18 @@ max_value = 12.0
 step = 0.1
 value = 0.5
 
-[node name="EmptySpace2" type="Control" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=1223391942]
-layout_mode = 2
-
-[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=1076154477]
-layout_mode = 2
-theme_override_constants/separation = 30
-alignment = 1
-
-[node name="ButtonBack" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer" unique_id=906012757]
+[node name="ButtonBack" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/VBoxContainer2" unique_id=906012757]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(150, 0)
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_font_sizes/font_size = 36
-text = "Back"
+text = "Back to Game"
 
-[node name="ButtonExit" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer" unique_id=1533842190]
+[node name="ButtonExit" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/VBoxContainer2" unique_id=1533842190]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(150, 0)
+custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
 size_flags_horizontal = 4
-theme_override_font_sizes/font_size = 36
-text = "Exit"
+theme_override_font_sizes/font_size = 24
+text = "Exit Game"
