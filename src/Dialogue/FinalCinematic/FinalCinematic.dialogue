@@ -1,0 +1,22 @@
+~ start
+There's one last thing to fix.
+The repair team is around, they could help you set up the ladder but it might take some time.
+Call the repair team ? 
+- Yes 
+	$> MainCommunicator.fadeIn(2)
+	$> SoundManager.stop_music()
+	[await = 2]
+	You wait for the repair team to arrive. [await = 1] [next=auto]
+	... [await = 1]  [next=auto]
+	They're here. 
+	You get to work.
+	You setup the ladder together.
+	Then they leave.
+	$> GlobalVars.eow_meter = 0.8
+	Time to climb the tower.
+	$> MainCommunicator.fadeOut(2)
+	=> END
+- No
+	=> END
+
+=> END

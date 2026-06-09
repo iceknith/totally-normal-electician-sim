@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://bt2cfkqaa56vk"
+path="res://.godot/imported/FinalCinematic.dialogue-d7bf231f17d48161fc2f0608d63d8cd1.tres"
+
+[deps]
+
+source_file="res://src/Dialogue/FinalCinematic/FinalCinematic.dialogue"
+dest_files=["res://.godot/imported/FinalCinematic.dialogue-d7bf231f17d48161fc2f0608d63d8cd1.tres"]
+
+[params]
+
+defaults=true

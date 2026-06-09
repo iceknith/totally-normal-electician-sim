@@ -14,10 +14,13 @@ var mouse_sentitivity:float = 0.006
 
 var electrician_minigame_current_stage:ElectricianMinigame.Stages = ElectricianMinigame.Stages.TutorialWires
 signal tower_completed_value_change
+signal all_tower_completed
 var tower_completed:int = 0:
 	set(new_val):
 		tower_completed = new_val
 		tower_completed_value_change.emit()
+		if tower_amount == tower_completed : 
+			all_tower_completed.emit()
 var tower_amount:int = 0
 
 ################

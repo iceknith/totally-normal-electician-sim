@@ -23,5 +23,10 @@ signal ChangeGameState(newState:GameState)
 signal signalMain(type, content) 
 signal signalCamera(callable:String, arguments)
 
+signal fadeIn(fade_duration:float)
+signal fadeOut(fade_duration:float)
+signal fadeFinished
+
+
 func send_signal_to_main(type, content=null):
 	signalMain.emit(type, content)
