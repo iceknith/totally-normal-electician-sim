@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://wkv0le3sa4xf"]
 
-[ext_resource type="Script" uid="uid://dd5w2ptvu7pou" path="res://src/minigames/minigame.gd" id="1_jau64"]
+[ext_resource type="Script" uid="uid://da82x4l1hysan" path="res://src/2D/levels/Arcade/arcade.gd" id="1_qffvi"]
 [ext_resource type="Texture2D" uid="uid://bjb6qkb8ayhnl" path="res://src/2D/levels/Arcade/assets/fond.png" id="2_482mc"]
 [ext_resource type="PackedScene" uid="uid://7ykeb0dnh705" path="res://src/2D/player/player2D.tscn" id="3_a31al"]
 [ext_resource type="Shader" uid="uid://ctbl58rioj50b" path="res://src/2D/levels/Arcade/shaders/distorsion.gdshader" id="4_tigbq"]
@@ -292,6 +292,20 @@ polygon = PackedVector2Array(-40, 79, -40, 87, 46, 86, 47, 79)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_l30lm"]
 size = Vector2(129, 80)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8fqon"]
+size = Vector2(40, 71)
+
+[sub_resource type="Gradient" id="Gradient_ov1vm"]
+offsets = PackedFloat32Array(0, 0.46369636)
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_mo4j1"]
+gradient = SubResource("Gradient_ov1vm")
+width = 128
+height = 128
+fill = 1
+fill_from = Vector2(0.47008547, 0.45982906)
+
 [node name="Arcade2" type="Control" unique_id=1662000706]
 layout_mode = 3
 anchors_preset = 15
@@ -299,7 +313,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_jau64")
+script = ExtResource("1_qffvi")
 music_when_entering = "Arcade"
 change_music = true
 metadata/_custom_type_script = "uid://dd5w2ptvu7pou"
@@ -695,3 +709,15 @@ color = Color(0.27058825, 0.23529412, 0.2509804, 1)
 energy = 0.23
 shadow_enabled = true
 shadow_color = Color(0, 0, 0, 0.7294118)
+
+[node name="exit" type="Area2D" parent="SubViewportContainer/SubViewport/Node2D" unique_id=616223903]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SubViewportContainer/SubViewport/Node2D/exit" unique_id=951169990]
+position = Vector2(18, 375.5)
+shape = SubResource("RectangleShape2D_8fqon")
+
+[node name="PointLight2D" type="PointLight2D" parent="SubViewportContainer/SubViewport/Node2D/exit" unique_id=228567146]
+position = Vector2(13, 380)
+texture = SubResource("GradientTexture2D_mo4j1")
+
+[connection signal="body_entered" from="SubViewportContainer/SubViewport/Node2D/exit" to="." method="_on_exit_body_entered"]
