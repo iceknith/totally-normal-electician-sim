@@ -1,7 +1,15 @@
 [gd_scene format=3 uid="uid://cnnuxnjiw3ait"]
 
 [ext_resource type="FontFile" uid="uid://dcu0gks0yl1lh" path="res://assets/gui/fonts/Jersey10-Regular.ttf" id="1_0kqpp"]
+[ext_resource type="Theme" uid="uid://cykgqgnvokfvb" path="res://assets/gui/minigameTheme.tres" id="1_28bqp"]
 [ext_resource type="Script" uid="uid://c3gj62w5i6thr" path="res://src/misc/key_adaptative_label.gd" id="2_28bqp"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_28bqp"]
+bg_color = Color(0.1, 0.20000005, 0.4, 0.6862745)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
 
 [sub_resource type="LabelSettings" id="LabelSettings_ahwjy"]
 font = ExtResource("1_0kqpp")
@@ -14,6 +22,8 @@ offset_right = 19.0
 offset_bottom = 31.0
 size_flags_horizontal = 0
 size_flags_vertical = 4
+theme = ExtResource("1_28bqp")
+theme_override_styles/panel = SubResource("StyleBoxFlat_28bqp")
 
 [node name="MarginContainer" type="MarginContainer" parent="." unique_id=406221037]
 layout_mode = 2

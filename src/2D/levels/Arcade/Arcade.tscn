@@ -316,6 +316,7 @@ grow_vertical = 2
 script = ExtResource("1_qffvi")
 music_when_entering = "Arcade"
 change_music = true
+baseMinigameLayoutActive = false
 metadata/_custom_type_script = "uid://dd5w2ptvu7pou"
 
 [node name="SubViewportContainer" type="SubViewportContainer" parent="." unique_id=1540674174]
