@@ -52,6 +52,7 @@ func _init() -> void:
 	seed(0)
 
 func _ready() -> void:
+
 	set_global_vars()
 	connect_signals()
 	create_eow_timers()

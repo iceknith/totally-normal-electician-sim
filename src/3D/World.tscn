@@ -19,7 +19,6 @@
 [ext_resource type="PackedScene" uid="uid://cng5vwx5qm31h" path="res://src/3D/objects/tower.tscn" id="12_clt24"]
 [ext_resource type="Script" uid="uid://c4gbdbfsdgnw7" path="res://src/shaders/shader_applyer.gd" id="12_e0nlv"]
 [ext_resource type="Resource" uid="uid://bjx3nwf8qdnjy" path="res://src/Dialogue/dialogueTest/testDialogue.dialogue" id="13_gisxt"]
-[ext_resource type="PackedScene" uid="uid://c6lu1xsiprij5" path="res://src/minigames/competitive_rock_paper_scissors/Rock Paper scissors.tscn" id="14_ivwwh"]
 [ext_resource type="PackedScene" uid="uid://d2b7b6sp2kyp2" path="res://src/2D/phase_visual_novel/boulangerie.tscn" id="14_lpsds"]
 [ext_resource type="PackedScene" uid="uid://bxd7l2fjgm1hi" path="res://assets/blender/superette.blend" id="14_w7gwu"]
 [ext_resource type="PackedScene" uid="uid://wkv0le3sa4xf" path="res://src/2D/levels/Arcade/Arcade.tscn" id="14_yhicf"]
@@ -61,6 +60,7 @@
 [ext_resource type="Texture2D" uid="uid://680yakajud1s" path="res://assets/pnjs/kid1.png" id="36_ieahk"]
 [ext_resource type="Resource" uid="uid://2c5fc6y780ks" path="res://src/Dialogue/childHomework.dialogue" id="37_e7fmu"]
 [ext_resource type="Texture2D" uid="uid://bktw8qys1sehj" path="res://assets/pnjs/kid4.png" id="38_leq0n"]
+[ext_resource type="Resource" uid="uid://bah3g2x2rouh0" path="res://src/minigames/competitive_rock_paper_scissors/dialogue/rpc_dialogues.dialogue" id="40_cley4"]
 [ext_resource type="Texture2D" uid="uid://ojpmlmgowg3i" path="res://assets/pnjs/pion.png" id="40_hjgcf"]
 [ext_resource type="Resource" uid="uid://ddswprqvd4u7v" path="res://src/Dialogue/pion.dialogue" id="40_nhq6p"]
 [ext_resource type="Resource" uid="uid://dhpfsyl8hvq2p" path="res://src/Dialogue/Mathew-Math.dialogue" id="44_doxgq"]
@@ -1720,15 +1720,18 @@ transform = Transform3D(0.2, 0, -3.7252903e-09, 0, 0.2, 0, 3.7252903e-09, 0, 0.2
 billboard = 2
 texture = SubResource("ViewportTexture_xyyw1")
 
-[node name="RPCStanley" type="Area3D" parent="Objets/PNJs" unique_id=58193940 node_paths=PackedStringArray("text_sprite")]
+[node name="RPCStanley" type="Area3D" parent="Objets/PNJs" unique_id=1335970460 node_paths=PackedStringArray("animated_sprite", "text_sprite", "camera_root")]
 transform = Transform3D(-0.40314606, 0, -0.91513556, 0, 1, 0, 0.91513556, 0, -0.40314606, 31.915241, 1.2088314, 42.024513)
-script = ExtResource("9_ttchh")
-minigame = ExtResource("14_ivwwh")
-variables = Dictionary[String, Variant]({
-"opponent": 0
-})
+script = ExtResource("11_nho6y")
+unique_name = "Stanley"
+dialogue = ExtResource("40_cley4")
+title = "StanleyIntro"
+animated_sprite = NodePath("AnimatedSprite3D")
+animated_sprite_start_animation = "normal"
 text_sprite = NodePath("InteractacleText3D")
-metadata/_custom_type_script = "uid://b3imm353l7y6u"
+interactionAnimation = 1
+camera_root = NodePath(".")
+metadata/_custom_type_script = "uid://sd0g0r1lwus3"
 
 [node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="Objets/PNJs/RPCStanley" unique_id=597548625]
 transform = Transform3D(0.17, 0, -6.3329937e-09, 0, 0.17, 0, 6.3329937e-09, 0, 0.17, 0, -0.42, 0)
@@ -1745,15 +1748,18 @@ transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0.8627713, 0)
 billboard = 2
 texture = SubResource("ViewportTexture_cua6p")
 
-[node name="RPCWilly" type="Area3D" parent="Objets/PNJs" unique_id=1278131754 node_paths=PackedStringArray("text_sprite")]
+[node name="RPCWilly" type="Area3D" parent="Objets/PNJs" unique_id=97185346 node_paths=PackedStringArray("animated_sprite", "text_sprite", "camera_root")]
 transform = Transform3D(-0.40314606, 0, -0.91513556, 0, 1, 0, 0.91513556, 0, -0.40314606, -101.53965, 1.1567587, 51.200977)
-script = ExtResource("9_ttchh")
-minigame = ExtResource("14_ivwwh")
-variables = Dictionary[String, Variant]({
-"opponent": 1
-})
+script = ExtResource("11_nho6y")
+unique_name = "Willy"
+dialogue = ExtResource("40_cley4")
+title = "WillyIntro"
+animated_sprite = NodePath("AnimatedSprite3D")
+animated_sprite_start_animation = "normal"
 text_sprite = NodePath("InteractacleText3D")
-metadata/_custom_type_script = "uid://b3imm353l7y6u"
+interactionAnimation = 1
+camera_root = NodePath(".")
+metadata/_custom_type_script = "uid://sd0g0r1lwus3"
 
 [node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="Objets/PNJs/RPCWilly" unique_id=641578095]
 transform = Transform3D(0.17, 0, -6.3329937e-09, 0, 0.17, 0, 6.3329937e-09, 0, 0.17, 0, -0.42, 0)
@@ -1770,15 +1776,18 @@ transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0.8627713, 0)
 billboard = 2
 texture = SubResource("ViewportTexture_74tlw")
 
-[node name="RPCBilly" type="Area3D" parent="Objets/PNJs" unique_id=2100176355 node_paths=PackedStringArray("text_sprite")]
+[node name="RPCBilly" type="Area3D" parent="Objets/PNJs" unique_id=1623499690 node_paths=PackedStringArray("animated_sprite", "text_sprite", "camera_root")]
 transform = Transform3D(-0.40314606, 0, -0.91513556, 0, 1, 0, 0.91513556, 0, -0.40314606, -81.69094, 1.1959769, -59.98342)
-script = ExtResource("9_ttchh")
-minigame = ExtResource("14_ivwwh")
-variables = Dictionary[String, Variant]({
-"opponent": 2
-})
+script = ExtResource("11_nho6y")
+unique_name = "Billy"
+dialogue = ExtResource("40_cley4")
+title = "BillyIntro"
+animated_sprite = NodePath("AnimatedSprite3D")
+animated_sprite_start_animation = "normal"
 text_sprite = NodePath("InteractacleText3D")
-metadata/_custom_type_script = "uid://b3imm353l7y6u"
+interactionAnimation = 1
+camera_root = NodePath(".")
+metadata/_custom_type_script = "uid://sd0g0r1lwus3"
 
 [node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="Objets/PNJs/RPCBilly" unique_id=53850588]
 transform = Transform3D(0.17, 0, -6.3329937e-09, 0, 0.17, 0, 6.3329937e-09, 0, 0.17, 0, -0.42, 0)

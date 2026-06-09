@@ -160,10 +160,12 @@ func show_winner():
 		
 		opponent_won_game()
 	elif current_total_choice_number < choice_per_round * 2 : 
+		
 		await text_animation(win_label, \
 			 " [center] [wave amp = 512 freq = 24] [rainbow] Reshuffling !!!", \
 			2).finished
 		await generate_choices()
+		show_number_of_each()
 		draw_cards()
 	else: 
 		draw_cards()
