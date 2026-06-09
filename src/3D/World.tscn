@@ -2707,9 +2707,6 @@ transform = Transform3D(0.42971575, 0, 0, 0, 0.42971575, 0, 0, 0, 0.42971575, 71
 [node name="Tree_1776012907_69395" parent="Objets/Tree" unique_id=1848238565 instance=ExtResource("9_yhicf")]
 transform = Transform3D(0.40304598, 0, 0, 0, 0.40304598, 0, 0, 0, 0.40304598, 38.40328, 0.0023798943, -124.53335)
 
-[node name="Tree_1776012908_01955" parent="Objets/Tree" unique_id=1060405471 instance=ExtResource("9_yhicf")]
-transform = Transform3D(0.5262765, 0, 0, 0, 0.5262765, 0, 0, 0, 0.5262765, 36.13697, 0.0023801327, -108.06861)
-
 [node name="Tree_1776012910_27325" parent="Objets/Tree" unique_id=507900763 instance=ExtResource("17_ro6to")]
 transform = Transform3D(0.5223081, 0, 0, 0, 0.5223081, 0, 0, 0, 0.5223081, 49.745857, 0.0023796558, -137.08658)
 

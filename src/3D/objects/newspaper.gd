@@ -3,7 +3,7 @@ class_name Newspaper extends Interactable3D
 @onready var sprite:Sprite3D = $Sprite3D
 
 static var newspaper_show_scene:PackedScene = preload("res://src/minigames/newspaper_show.tscn")
-static var newspaper_directory:String = "res://assets/misc/newspaper/"
+static var newspaper_directory:String = "res://assets/newspaper/"
 static var newspaper_textures:Array[Texture] = []
 
 static func init_textures():

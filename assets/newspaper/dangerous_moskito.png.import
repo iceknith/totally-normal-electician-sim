@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dnou4n0pslar8"
-path="res://.godot/imported/sudoku.png-b41b347a6104f2b09dcb8f6b63f4304b.ctex"
+uid="uid://cd1w1by81avt8"
+path="res://.godot/imported/dangerous_moskito.png-d7228bd4295dbdfd258753fb6cc03c8c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/misc/newspaper/sudoku.png"
-dest_files=["res://.godot/imported/sudoku.png-b41b347a6104f2b09dcb8f6b63f4304b.ctex"]
+source_file="res://assets/newspaper/dangerous_moskito.png"
+dest_files=["res://.godot/imported/dangerous_moskito.png-d7228bd4295dbdfd258753fb6cc03c8c.ctex"]
 
 [params]
 

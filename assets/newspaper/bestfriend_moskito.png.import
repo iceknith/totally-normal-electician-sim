@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://fa37qe0xhb5x"
-path="res://.godot/imported/sun.png-0772c047b46aacface48a357fe6c8dec.ctex"
+uid="uid://2dth7ehfkh6c"
+path="res://.godot/imported/bestfriend_moskito.png-2b8948bf388cca9b6ece6bd2773be65b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/misc/newspaper/sun.png"
-dest_files=["res://.godot/imported/sun.png-0772c047b46aacface48a357fe6c8dec.ctex"]
+source_file="res://assets/newspaper/bestfriend_moskito.png"
+dest_files=["res://.godot/imported/bestfriend_moskito.png-2b8948bf388cca9b6ece6bd2773be65b.ctex"]
 
 [params]
 
