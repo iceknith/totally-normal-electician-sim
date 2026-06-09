@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c26hn55o3wuad"
-path="res://.godot/imported/nucelar.png-7d4366281bd4fb282500bee5149df8af.ctex"
+uid="uid://ba7y0ws20a4jl"
+path="res://.godot/imported/newspaper-melting-skin.png-c4281bf3fafa07e19364da8a2f3da208.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/misc/newspaper/nucelar.png"
-dest_files=["res://.godot/imported/nucelar.png-7d4366281bd4fb282500bee5149df8af.ctex"]
+source_file="res://assets/newspaper/newspaper-melting-skin.png"
+dest_files=["res://.godot/imported/newspaper-melting-skin.png-c4281bf3fafa07e19364da8a2f3da208.ctex"]
 
 [params]
 

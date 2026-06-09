@@ -28,7 +28,7 @@
 [ext_resource type="PackedScene" uid="uid://dgtuon8krwmkg" path="res://src/3D/objects/forest_New.tscn" id="17_ttchh"]
 [ext_resource type="Resource" uid="uid://b3kxo7cvgi3tj" path="res://src/Dialogue/MinigameDialogues/tictactoe.dialogue" id="18_imnrk"]
 [ext_resource type="PackedScene" uid="uid://cba84c07orjm4" path="res://assets/blender/ecole.blend" id="19_imnrk"]
-[ext_resource type="PackedScene" path="res://src/2D/phase_visual_novel/poste.tscn" id="19_tqnhu"]
+[ext_resource type="PackedScene" uid="uid://b2ya8xqtu4610" path="res://src/2D/phase_visual_novel/poste.tscn" id="19_tqnhu"]
 [ext_resource type="Script" uid="uid://gp32lnioffiv" path="res://addons/scene_object_brush/clean_up_height.gd" id="21_8pvm1"]
 [ext_resource type="PackedScene" uid="uid://cuca3b2go2ndc" path="res://src/2D/phase_visual_novel/superette.tscn" id="21_impf6"]
 [ext_resource type="PackedScene" uid="uid://cpm4sncsn8qu2" path="res://assets/blender/arcade.blend" id="21_wnywt"]
@@ -2715,9 +2715,6 @@ transform = Transform3D(0.42971575, 0, 0, 0, 0.42971575, 0, 0, 0, 0.42971575, 71
 
 [node name="Tree_1776012907_69395" parent="Objets/Tree" unique_id=1848238565 instance=ExtResource("9_yhicf")]
 transform = Transform3D(0.40304598, 0, 0, 0, 0.40304598, 0, 0, 0, 0.40304598, 38.40328, 0.0023798943, -124.53335)
-
-[node name="Tree_1776012908_01955" parent="Objets/Tree" unique_id=1060405471 instance=ExtResource("9_yhicf")]
-transform = Transform3D(0.5262765, 0, 0, 0, 0.5262765, 0, 0, 0, 0.5262765, 36.13697, 0.0023801327, -108.06861)
 
 [node name="Tree_1776012910_27325" parent="Objets/Tree" unique_id=507900763 instance=ExtResource("17_ro6to")]
 transform = Transform3D(0.5223081, 0, 0, 0, 0.5223081, 0, 0, 0, 0.5223081, 49.745857, 0.0023796558, -137.08658)

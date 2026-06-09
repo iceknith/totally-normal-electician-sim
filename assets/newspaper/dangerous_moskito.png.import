@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cev1dhu4ddn6w"
-path="res://.godot/imported/newspaper-melting-skin.png-db6c90c2b015fc1cf2953219af81a663.ctex"
+uid="uid://cd1w1by81avt8"
+path="res://.godot/imported/dangerous_moskito.png-d7228bd4295dbdfd258753fb6cc03c8c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/misc/newspaper-melting-skin.png"
-dest_files=["res://.godot/imported/newspaper-melting-skin.png-db6c90c2b015fc1cf2953219af81a663.ctex"]
+source_file="res://assets/newspaper/dangerous_moskito.png"
+dest_files=["res://.godot/imported/dangerous_moskito.png-d7228bd4295dbdfd258753fb6cc03c8c.ctex"]
 
 [params]
 

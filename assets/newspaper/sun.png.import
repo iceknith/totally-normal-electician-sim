@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://di4dt2qtvxmvo"
-path="res://.godot/imported/virus.png-d545d7c7f553b9e2b0303b0b3d7643d0.ctex"
+uid="uid://fa37qe0xhb5x"
+path="res://.godot/imported/sun.png-eea9d5b44da3e2617cb05b2f2b6fa9e5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/misc/newspaper/virus.png"
-dest_files=["res://.godot/imported/virus.png-d545d7c7f553b9e2b0303b0b3d7643d0.ctex"]
+source_file="res://assets/newspaper/sun.png"
+dest_files=["res://.godot/imported/sun.png-eea9d5b44da3e2617cb05b2f2b6fa9e5.ctex"]
 
 [params]
 

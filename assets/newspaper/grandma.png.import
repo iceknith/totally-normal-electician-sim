@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c0aoa4u3j3ajp"
-path="res://.godot/imported/meta-newspaper.png-a7dec7ce014ed54ba0fced3633e038a3.ctex"
+uid="uid://cgmwoceq0yemc"
+path="res://.godot/imported/grandma.png-ead9d95a9af283afaab55cee9503df0a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/misc/newspaper/meta-newspaper.png"
-dest_files=["res://.godot/imported/meta-newspaper.png-a7dec7ce014ed54ba0fced3633e038a3.ctex"]
+source_file="res://assets/newspaper/grandma.png"
+dest_files=["res://.godot/imported/grandma.png-ead9d95a9af283afaab55cee9503df0a.ctex"]
 
 [params]
 

@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://xasd04diswwd"]
 
 [ext_resource type="Script" uid="uid://7t5g6m4ipch5" path="res://src/minigames/newspaper_show.gd" id="1_xc50h"]
-[ext_resource type="Texture2D" uid="uid://bagxpr8f5to1a" path="res://assets/misc/newspaper/aliens.png" id="2_j8s71"]
+[ext_resource type="Texture2D" uid="uid://bagxpr8f5to1a" path="res://assets/newspaper/aliens.png" id="2_j8s71"]
 [ext_resource type="FontFile" uid="uid://dcu0gks0yl1lh" path="res://assets/gui/fonts/Jersey10-Regular.ttf" id="3_mtfft"]
 
 [node name="NewspaperShow" type="Control" unique_id=1793148797]
