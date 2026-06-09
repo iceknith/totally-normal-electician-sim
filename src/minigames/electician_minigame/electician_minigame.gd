@@ -2,10 +2,15 @@ class_name ElectricianMinigame extends Minigame
 
 enum Stages {
 	TutorialWires = 0,
-	TutorialMovingCircle = 1,
-	TutorialTiming = 2,
-	FullGame = 3
+	Wires = 1,
+	TutorialMovingCircle = 2,
+	MovingCircle = 3,
+	TutorialTiming = 4,
+	FullGame = 5,
 }
+const tutorial_stages:Array[Stages] = [
+	Stages.TutorialWires, Stages.TutorialMovingCircle, Stages.TutorialTiming
+]
 
 signal win
 
@@ -49,24 +54,30 @@ func _ready() -> void:
 func init_stage() -> void:
 	if stage == Stages.FullGame: return
 	
-	info_label.text = tutorialTexts[stage]
-	info_exit_button.disabled = true
-	info_exit_button.pressed.connect(hide_tutorial)
-	
-	var tween:Tween = create_tween()
-	tween.set_ease(Tween.EASE_IN_OUT).set_trans(Tween.TRANS_CIRC)
-	tween.tween_property(info_container, "scale", Vector2.ONE, 0.5)
-	tween.tween_property(info_exit_button, "disabled", false, 0.01)
+	if stage in tutorial_stages:
+		info_label.text = tutorialTexts[stage]
+		info_exit_button.disabled = true
+		info_exit_button.pressed.connect(hide_tutorial)
+		
+		var tween:Tween = create_tween()
+		tween.set_ease(Tween.EASE_IN_OUT).set_trans(Tween.TRANS_CIRC)
+		tween.tween_property(info_container, "scale", Vector2.ONE, 0.5)
+		tween.tween_property(info_exit_button, "disabled", false, 0.01)
 	
 	match stage:
 		Stages.TutorialWires:
 			$MarginContainer/GamesContainer/TimingContainer.queue_free()
 			$MarginContainer/GamesContainer/MovingContainer.queue_free()
 			cable_section.process_mode = Node.PROCESS_MODE_DISABLED
+		Stages.Wires:
+			$MarginContainer/GamesContainer/TimingContainer.queue_free()
+			$MarginContainer/GamesContainer/MovingContainer.queue_free()
 		Stages.TutorialMovingCircle:
 			$MarginContainer/GamesContainer/TimingContainer.queue_free()
 			for section in [cable_section, moving_section]:
 				section.process_mode = Node.PROCESS_MODE_DISABLED
+		Stages.Wires:
+			$MarginContainer/GamesContainer/TimingContainer.queue_free()
 		Stages.TutorialTiming:
 			for section in [cable_section, moving_section, timing_section]:
 				section.process_mode = Node.PROCESS_MODE_DISABLED
