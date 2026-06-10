@@ -9,6 +9,7 @@ enum SignalType {
 	START_DIALOGUE,
 	IN_INTERACTION,
 	ELEM_DELETED,
+	TRIGGER_END_OF_WORLD
 }
 
 enum GameState {

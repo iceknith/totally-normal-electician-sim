@@ -99,12 +99,13 @@ func receive_signal(type, data):
 		MainCommunicator.SignalType.SHOW_GAME3D: show_game3D()
 		MainCommunicator.SignalType.START_DIALOGUE : start_dialogue(data)
 		MainCommunicator.SignalType.ELEM_DELETED : disconnect_eow_update_timer(data, timer_eow_update.timeout)
+		MainCommunicator.SignalType.TRIGGER_END_OF_WORLD : end_of_world()
 
 func launch_game() -> void:
 	# Debug
-	eow_meter = 0.9362
+	# eow_meter = 0.9362
 	
-	world3D.start_game()
+	#world3D.start_game()
 	reset_state()
 
 func reset_state():
@@ -246,9 +247,9 @@ func increment_eow_meter():
 func end_of_world():
 	get_parent().add_child(credits_scene.instantiate())
 	if timer_eow_update: disconnect_eow_update_timer(world3D, timer_eow_update.timeout)
-	if timer_eow_update: disconnect_eow_update_timer($HUD, timer_eow_update.timeout)
+	#if timer_eow_update: disconnect_eow_update_timer($HUD, timer_eow_update.timeout)
 	world3D.queue_free()
-	$HUD.queue_free()
+	#$HUD.queue_free()
 	hide()
 
 ### Runtime functions ###

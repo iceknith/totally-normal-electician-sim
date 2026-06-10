@@ -16,18 +16,12 @@ font_size = 90
 font = ExtResource("2_73yjm")
 font_size = 55
 
-[node name="Credits" type="Control" unique_id=1317297176]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+[node name="Credits" type="CanvasLayer" unique_id=832409761]
+layer = 10000
 script = ExtResource("1_2y887")
 wait_time = 4.2
 
 [node name="ColorRect2" type="ColorRect" parent="." unique_id=707112631]
-layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -36,7 +30,6 @@ grow_vertical = 2
 color = Color(0, 0, 0, 1)
 
 [node name="Title" type="Label" parent="." unique_id=870865604]
-layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -54,7 +47,7 @@ autowrap_trim_flags = 0
 justification_flags = 0
 
 [node name="Control" type="Control" parent="." unique_id=102228529]
-layout_mode = 1
+layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0

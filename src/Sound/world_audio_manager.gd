@@ -49,7 +49,6 @@ func _ready():
 	
 	await get_tree().process_frame
 	eow_music_start_perc = (GlobalVars.eow_max_time_s - (eow_music_start_time + eow_silence_time + eow_music_fadeout_time)) / GlobalVars.eow_max_time_s
-	print(eow_music_start_perc)
 
 func update_music(music:String):
 	if eow_music_playing: return
@@ -135,6 +134,13 @@ func start_eow_music():
 		bg_music_player.volume_db = music_base_volume_db
 		bg_music_player.pitch_scale = 1
 		bg_music_player.play(0)
+
+func force_start_eow_music():
+	bg_music_player.bus = "end of world"
+	bg_music_player.stream = eow_music
+	bg_music_player.volume_db = music_base_volume_db
+	bg_music_player.pitch_scale = 1
+	bg_music_player.play(0)
 
 func modify_music_pitch(new_pitch:float):
 	var pitch_effect: AudioEffectPitchShift = AudioServer.get_bus_effect(bus_idx, 0)
