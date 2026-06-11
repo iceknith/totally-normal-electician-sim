@@ -1,0 +1,26 @@
+~ start
+There's one last thing to fix.
+The repair team is around, they could help you set up the ladder but it might take some time.
+Call the repair team ? 
+- Yes 
+	$> MainCommunicator.fadeIn.emit(2)
+	$> SoundManager.stop_music.emit()
+	$> wait(3)
+	You wait for the repair team to arrive. [next=auto]
+	$> wait(1)
+	...   [next=auto]
+	$> wait(2)
+	They're here. 
+	You get to work.
+	You setup the ladder together.
+	Then they leave.
+	$> GlobalVars.eow_meter = 0.95
+	Time for a final repair.
+	$> MainCommunicator.fadeOut.emit(2)
+	$> GlobalVars.playFinalCutscene.emit()
+	$> wait(90)
+	
+- No
+	=> END
+
+=> END

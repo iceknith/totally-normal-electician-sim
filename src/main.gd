@@ -57,6 +57,7 @@ func _init() -> void:
 	seed(0)
 
 func _ready() -> void:
+
 	set_global_vars()
 	connect_signals()
 	create_eow_timers()
@@ -70,6 +71,7 @@ func _ready() -> void:
 	#launch_game()
 	# Debug - See debug screen
 	#DebugMenu.style = DebugMenu.Style.VISIBLE_DETAILED
+
 
 func set_global_vars() -> void:
 	GlobalVars.eow_max_time_s = end_of_world_max_time_mins * 60

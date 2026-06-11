@@ -144,6 +144,8 @@ Willy: Let's play again sometimes.
 
 
 ~ WillyTutorial
+Willy: So you never played this game before ?
+Willy: It shows in your little muppet eyes.
 Willy: It's like rock, paper, scissors, except you can only pick one of the options from the cards you're given. Fancy that, eh?
 Willy: You get 3 cards each round and on the left you can always see how many of each card are still left in the deck. Use your eyes, yeah?
 Willy: Now, the game may look simple, but don't be fooled, you cheeky little muppet... you gotta think mate.
@@ -169,12 +171,18 @@ Willy: Right then, enough faffing about. Let's bloody play!!!
 	
 ~ StanlyGameWin
 Stanly: Thanks play with Stanly.
-Stanly: Stanly happy.
+Stanly: Stanley happy.
+Stanly: Stanley tell you interesting fact then.
+Stanly: Competitive Rock Papers Scissors is mental game.
+Stanly: Players have habits.
+Stanly: If you find pattern, can win everytime.
+Stanly: That's why Stanley never sees his card before playing.
 => END
 
 ~ StanlyGameLose
 Stanly: Thanks play with Stanly.
 Stanly: Stanly happy.
+Stanly: If beat Stanley, Stanley tell you interesting fact.
 => END
 
 	

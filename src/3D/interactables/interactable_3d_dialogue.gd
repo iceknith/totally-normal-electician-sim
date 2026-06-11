@@ -17,7 +17,8 @@ class_name Interactable3DDialogue extends Interactable3D
 
 func _ready() -> void:
 	super()
-	animated_sprite.play(animated_sprite_start_animation)
+	if animated_sprite : 
+		animated_sprite.play(animated_sprite_start_animation)
 
 func start_interaction():
 	MainCommunicator.send_signal_to_main(
