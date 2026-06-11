@@ -245,7 +245,7 @@ func disconnect_eow_update_timer(node:Node, timer_timeout:Signal):
 		disconnect_eow_update_timer(child, timer_timeout)
 
 func increment_eow_meter():
-	eow_meter += eow_delta
+	eow_meter = GlobalVars.eow_meter + eow_delta
 
 func end_of_world():
 	get_parent().add_child(credits_scene.instantiate())
