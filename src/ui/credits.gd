@@ -1,4 +1,4 @@
-extends Control
+extends CanvasLayer
 
 @export var anim_time:float = 0.5
 @export var wait_time:float = 2.5

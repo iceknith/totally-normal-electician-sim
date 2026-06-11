@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://bl7p78tpy2xmy"]
 
 [ext_resource type="Script" uid="uid://bnooujonvvxo8" path="res://src/minigames/base_minigame_layout.gd" id="1_trhuy"]
+[ext_resource type="Theme" uid="uid://cykgqgnvokfvb" path="res://assets/gui/minigameTheme.tres" id="1_xofwg"]
 [ext_resource type="FontFile" uid="uid://dcu0gks0yl1lh" path="res://assets/gui/fonts/Jersey10-Regular.ttf" id="2_trhuy"]
 
 [node name="BaseMinigameLayout" type="MarginContainer" unique_id=1606891865]
@@ -10,6 +11,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
+theme = ExtResource("1_xofwg")
 theme_override_constants/margin_left = 50
 theme_override_constants/margin_top = 30
 theme_override_constants/margin_right = 50

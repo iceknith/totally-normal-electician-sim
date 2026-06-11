@@ -11,14 +11,14 @@ Rupert: Good afternoon!
 => main
 
 ~ start60
-Rupert: G-good morning!
+Rupert: G-g-good morning!
 - Hey
 - Good afternoon
-	Rupert: Oh, right!
+	Rupert: Oh... right!
 => main
 
 ~ start70
-Rupert: G-good afternoon
+Rupert: G-g-good afternoon
 - Hey
 - Good afternoon
 Rupert: Do you wanna leave this town too?
@@ -47,7 +47,7 @@ Rupert: IT'S FREAKING ME OUT!
 Rupert: PLEASE DON'T LEAVE ME BEHIND
 - Okay, I'm taking the train
 	Rupert: THANK YOU!!!
-	=> train_start
+	=> train_launch
 - No, I want to stay here
 	Rupert: BUT WHY?
 => END
@@ -59,7 +59,7 @@ Rupert: IT'S FREAKING ME OUT!
 Rupert: PLEASE DON'T LEAVE ME BEHIND
 - Okay, I'm taking the train
 	Rupert: THANK YOU!!!
-	=> train_start
+	=> train_launch
 - No, I want to stay here
 	Rupert: BUT WHY?
 => END
@@ -75,6 +75,7 @@ Rupert: So, what can I do for you?
 	- No, maybe later tho
 		Rupert: Goodbye.
 - Buy a ticket
+	=> buy_ticket
 - Nevermind
 Rupert: Goodbye.
 => END
@@ -92,8 +93,8 @@ Rupert: Okay, where do you wanna go?
 	Rupert: One ticket to stardew valley it is!
 - Nevermind...
 	=> END
-=> train_start
+=> train_launch
 
-~ train_start
-Narrator: Starting the train cutscene
+~ train_launch
+$> MainCommunicator.send_signal_to_main(MainCommunicator.SignalType.ADD_MINIGAME, [load("res://src/minigames/train_cinematic.tscn")])
 => END

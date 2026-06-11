@@ -20,8 +20,6 @@ script = ExtResource("1_msy5a")
 pitch_curve = SubResource("Curve_5bqhe")
 tempo_curve = SubResource("Curve_g86xl")
 eow_music = ExtResource("2_g86xl")
-eow_music_fadeout_time = 45.0
-eow_music_start_time = 38.8
 
 [node name="BackgroundMusicPlayer" type="AudioStreamPlayer" parent="." unique_id=2057556167]
 volume_db = -0.421

@@ -1,13 +1,21 @@
 [gd_scene format=3 uid="uid://ddq2i6ppa2upf"]
 
-[ext_resource type="FontFile" uid="uid://dcu0gks0yl1lh" path="res://assets/gui/fonts/Jersey10-Regular.ttf" id="1_ysbuy"]
+[ext_resource type="Theme" uid="uid://cykgqgnvokfvb" path="res://assets/gui/minigameTheme.tres" id="1_ysbuy"]
+[ext_resource type="FontFile" uid="uid://dcu0gks0yl1lh" path="res://assets/gui/fonts/Jersey10-Regular.ttf" id="2_iwdg7"]
 [ext_resource type="Script" uid="uid://c3gj62w5i6thr" path="res://src/misc/key_adaptative_label.gd" id="2_ysbuy"]
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_ahwjy"]
 viewport_path = NodePath("SubViewport")
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_iwdg7"]
+bg_color = Color(0.1, 0.20000005, 0.4, 0.6862745)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
 [sub_resource type="LabelSettings" id="LabelSettings_04vy4"]
-font = ExtResource("1_ysbuy")
+font = ExtResource("2_iwdg7")
 font_size = 200
 
 [node name="InteractacleText3D" type="Sprite3D" unique_id=1576660793]
@@ -32,6 +40,8 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 0
 size_flags_vertical = 4
+theme = ExtResource("1_ysbuy")
+theme_override_styles/panel = SubResource("StyleBoxFlat_iwdg7")
 
 [node name="MarginContainer" type="MarginContainer" parent="SubViewport/PanelContainer" unique_id=1001859408]
 layout_mode = 2

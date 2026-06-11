@@ -9,7 +9,13 @@ signal eow_meter_changed(new_eow_var:float)
 @export var end_of_world_max_time_mins:float = 20
 @export var end_of_world_change_interval_s:float = 0.1
 @onready var eow_delta:float = end_of_world_change_interval_s / (end_of_world_max_time_mins * 60)
-var eow_meter:float
+var eow_meter:float:
+	set(new_val):
+		eow_meter = new_val
+		if eow_meter >= 1 && !world_ended:
+			world_ended = true
+			end_of_world()
+var world_ended:bool = false
 
 @export_group("mouse jitter")
 @export var has_mouse_jitter:bool = true
@@ -29,7 +35,6 @@ var unhandled_mouse_offset:Vector2
 
 var minigames:Array[Minigame]
 
-var timer_eow
 var timer_eow_update
 var timer_eow_connection_map:Dictionary[Node,Callable]
 
@@ -96,8 +101,12 @@ func receive_signal(type, data):
 		MainCommunicator.SignalType.SHOW_GAME3D: show_game3D()
 		MainCommunicator.SignalType.START_DIALOGUE : start_dialogue(data)
 		MainCommunicator.SignalType.ELEM_DELETED : disconnect_eow_update_timer(data, timer_eow_update.timeout)
+		MainCommunicator.SignalType.TRIGGER_END_OF_WORLD : end_of_world()
 
 func launch_game() -> void:
+	# Debug
+	# eow_meter = 0.9362
+	
 	#world3D.start_game()
 	reset_state()
 
@@ -204,15 +213,12 @@ func end_dialogue(_dialogue_data):
 ### EOW Handlers ###
 
 func create_eow_timers():
-	timer_eow = Timer.new()
 	timer_eow_update = Timer.new()
 	
-	timer_eow.timeout.connect(end_of_world)
-	timer_eow.one_shot = true
-	add_child(timer_eow)
-	timer_eow.start(end_of_world_max_time_mins * 60)
+	timer_eow_update.timeout.connect(increment_eow_meter)
+	for child in self.get_children():
+		connect_eow_update_timer(child, timer_eow_update.timeout)
 	
-	connect_eow_update_timer(self, timer_eow_update.timeout)
 	connect_eow_update_timer(GlobalVars, timer_eow_update.timeout)
 	add_child(timer_eow_update)
 	timer_eow_update.start(end_of_world_change_interval_s)
@@ -221,7 +227,7 @@ func connect_eow_update_timer(node:Node, timer_timeout:Signal):
 	if not node: return
 	
 	if node.get("eow_meter") != null:
-		timer_eow_connection_map[node] = func(): node.eow_meter += eow_delta
+		timer_eow_connection_map[node] = func(): node.eow_meter = eow_meter
 		timer_timeout.connect(timer_eow_connection_map[node])
 	
 	for child in node.get_children():
@@ -237,15 +243,15 @@ func disconnect_eow_update_timer(node:Node, timer_timeout:Signal):
 	for child in node.get_children():
 		disconnect_eow_update_timer(child, timer_timeout)
 
-func increment_eow_meter(node:Node):
-	node.eow_meter += eow_delta
+func increment_eow_meter():
+	eow_meter += eow_delta
 
 func end_of_world():
 	get_parent().add_child(credits_scene.instantiate())
 	if timer_eow_update: disconnect_eow_update_timer(world3D, timer_eow_update.timeout)
-	if timer_eow_update: disconnect_eow_update_timer($HUD, timer_eow_update.timeout)
+	#if timer_eow_update: disconnect_eow_update_timer($HUD, timer_eow_update.timeout)
 	world3D.queue_free()
-	$HUD.queue_free()
+	#$HUD.queue_free()
 	hide()
 
 ### Runtime functions ###
