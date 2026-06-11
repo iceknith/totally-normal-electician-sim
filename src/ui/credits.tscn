@@ -96,20 +96,20 @@ theme_override_constants/separation = 30
 
 [node name="Dimi" type="Label" parent="Control/ColorRect2/VBoxContainer" unique_id=1684862760]
 layout_mode = 2
-text = "Dimitri Maréchal"
+text = "Iceknith"
 label_settings = SubResource("LabelSettings_gferm")
 
 [node name="Djo" type="Label" parent="Control/ColorRect2/VBoxContainer" unique_id=1777183807]
 layout_mode = 2
-text = "Djo Couzy"
+text = "Ecclesiastic Vacuum"
 label_settings = SubResource("LabelSettings_gferm")
 
 [node name="Nines" type="Label" parent="Control/ColorRect2/VBoxContainer" unique_id=3230720]
 layout_mode = 2
-text = "Nines Diamant-Berger"
+text = "Slaughter.png"
 label_settings = SubResource("LabelSettings_gferm")
 
 [node name="Ib" type="Label" parent="Control/ColorRect2/VBoxContainer" unique_id=1008777333]
 layout_mode = 2
-text = "Don Moulay Monsieur Ibrahim El Ouazzani Messire"
+text = "Fahas"
 label_settings = SubResource("LabelSettings_gferm")

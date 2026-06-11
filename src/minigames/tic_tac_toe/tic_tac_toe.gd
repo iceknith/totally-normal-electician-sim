@@ -23,6 +23,8 @@ signal tie()
 @export_range(0,PLAYER_COUNT-1) var player_game_turn:int = 0
 
 @export var computer_playstyle:Playstyles
+@export var computer_name:String
+@export var dialogue:DialogueResource
 
 # Game descriptors
 @onready var texture_container:VBoxContainer = $TextureMarginContainer/TextureContainer
@@ -130,16 +132,30 @@ func end_check(last_move:Vector2, player:int):
 	if game_finished:
 		var label:Label = tie_label
 		var end_signal:Signal = tie
+		var title:String = "_tie"
 		if has_winner:
-			label = win_label if player == player_game_turn else lose_label
-			end_signal = win if player == player_game_turn else lose
+			if player == player_game_turn:
+				label = win_label
+				end_signal = win
+				title = "_lose"
+			else:
+				label = lose_label
+				end_signal = lose
+				title = "_win"
 		
 		var tween = create_tween()
 		tween.set_ease(Tween.EASE_IN_OUT).set_trans(Tween.TRANS_CIRC)
 		tween.tween_property(label, "scale", Vector2.ONE, 0.5)
 		tween.tween_interval(2)
 		tween.tween_callback(end_signal.emit)
+		title = computer_name + title
 		tween.tween_callback(exit)
+		tween.tween_callback(
+			MainCommunicator.send_signal_to_main.bind(
+				MainCommunicator.SignalType.START_DIALOGUE, 
+				[dialogue, title, [self]]
+			)
+		)
 
 func win_check(pos:Vector2, player:int, board:Array[Array]=values_matrix) -> bool:
 	return direction_win_check(pos, player, Vector2(1,0), board) ||\

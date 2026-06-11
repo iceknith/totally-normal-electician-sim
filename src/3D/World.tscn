@@ -62,7 +62,7 @@
 [ext_resource type="Texture2D" uid="uid://680yakajud1s" path="res://assets/pnjs/kid1.png" id="36_ieahk"]
 [ext_resource type="Resource" uid="uid://2c5fc6y780ks" path="res://src/Dialogue/childHomework.dialogue" id="37_e7fmu"]
 [ext_resource type="Texture2D" uid="uid://bktw8qys1sehj" path="res://assets/pnjs/kid4.png" id="38_leq0n"]
-[ext_resource type="Resource" uid="uid://bah3g2x2rouh0" path="res://src/minigames/competitive_rock_paper_scissors/dialogue/rpc_dialogues.dialogue" id="40_cley4"]
+[ext_resource type="Resource" uid="uid://bah3g2x2rouh0" path="res://src/minigames/competitive_rock_paper_scissors/dialogue/rpc_dialogues.dialogue" id="39_ku2v5"]
 [ext_resource type="Texture2D" uid="uid://ojpmlmgowg3i" path="res://assets/pnjs/pion.png" id="40_hjgcf"]
 [ext_resource type="Resource" uid="uid://ddswprqvd4u7v" path="res://src/Dialogue/pion.dialogue" id="40_nhq6p"]
 [ext_resource type="Resource" uid="uid://dhpfsyl8hvq2p" path="res://src/Dialogue/Mathew-Math.dialogue" id="44_doxgq"]
@@ -565,7 +565,7 @@ _data = [Vector2(0, 0), 0.0, -0.020783685, 0, 0, Vector2(1, 1), 2.8797717, 0.0, 
 point_count = 2
 
 [sub_resource type="Curve" id="Curve_e0nlv"]
-_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.7479253, 0.10984987), 0.56750715, 0.56750715, 0, 0, Vector2(0.9366359, 0.50777733), 3.3467336, 3.3467336, 0, 0, Vector2(1, 1), 2.9379032, 0.0, 0, 0]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.7479253, 0.10984987), 0.56750715, 0.56750715, 0, 0, Vector2(0.974468, 0.5143296), 3.3467336, 3.3467336, 0, 0, Vector2(1, 1), 2.9379032, 0.0, 0, 0]
 point_count = 4
 
 [sub_resource type="Curve" id="Curve_5uot1"]
@@ -585,8 +585,8 @@ _data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.57918555, 0), 0.0, 0.0, 0, 0, 
 point_count = 3
 
 [sub_resource type="Curve" id="Curve_jqxng"]
-_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1, 1), 3.0484796, 0.0, 0, 0]
-point_count = 2
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.9588652, 0.50767654), 0.9874478, 13.736053, 0, 0, Vector2(1, 1), 3.0484796, 0.0, 0, 0]
+point_count = 3
 
 [sub_resource type="Curve" id="Curve_yhicf"]
 _data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.74654377, 0.24171102), 0.98976797, 0.98976797, 0, 0, Vector2(0.9504608, 0.50777733), 3.7875047, 3.7875047, 0, 0, Vector2(1, 1), 2.1689944, 0.0, 0, 0]
@@ -1908,17 +1908,17 @@ interactionAnimation = 1
 camera_root = NodePath(".")
 metadata/_custom_type_script = "uid://sd0g0r1lwus3"
 
-[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="Objets/PNJs/RPCWilly" unique_id=641578095]
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="Objets/PNJs/RPCWilly" unique_id=74901250]
 transform = Transform3D(0.17, 0, -6.3329937e-09, 0, 0.17, 0, 6.3329937e-09, 0, 0.17, 0, -0.42, 0)
 billboard = 2
 alpha_cut = 1
 sprite_frames = SubResource("SpriteFrames_e8reo")
 animation = &"normal"
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Objets/PNJs/RPCWilly" unique_id=1002696131]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Objets/PNJs/RPCWilly" unique_id=1959770534]
 shape = SubResource("SphereShape3D_ivwwh")
 
-[node name="InteractacleText3D" parent="Objets/PNJs/RPCWilly" unique_id=903367634 instance=ExtResource("10_e8reo")]
+[node name="InteractacleText3D" parent="Objets/PNJs/RPCWilly" unique_id=1172209508 instance=ExtResource("10_e8reo")]
 transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0.8627713, 0)
 billboard = 2
 texture = SubResource("ViewportTexture_r8jgy")
@@ -1936,17 +1936,17 @@ interactionAnimation = 1
 camera_root = NodePath(".")
 metadata/_custom_type_script = "uid://sd0g0r1lwus3"
 
-[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="Objets/PNJs/RPCBilly" unique_id=53850588]
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="Objets/PNJs/RPCBilly" unique_id=1018017357]
 transform = Transform3D(0.17, 0, -6.3329937e-09, 0, 0.17, 0, 6.3329937e-09, 0, 0.17, 0, -0.42, 0)
 billboard = 2
 alpha_cut = 1
 sprite_frames = SubResource("SpriteFrames_e8reo")
 animation = &"normal"
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Objets/PNJs/RPCBilly" unique_id=880043268]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Objets/PNJs/RPCBilly" unique_id=569869552]
 shape = SubResource("SphereShape3D_ivwwh")
 
-[node name="InteractacleText3D" parent="Objets/PNJs/RPCBilly" unique_id=1595881025 instance=ExtResource("10_e8reo")]
+[node name="InteractacleText3D" parent="Objets/PNJs/RPCBilly" unique_id=1198654359 instance=ExtResource("10_e8reo")]
 transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0.8627713, 0)
 billboard = 2
 texture = SubResource("ViewportTexture_d0d3r")
