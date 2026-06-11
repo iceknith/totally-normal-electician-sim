@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://codij3qt7dkdj"]
+
+[ext_resource type="Script" uid="uid://cnw58e0gc24hi" path="res://src/minigames/train_cinematic.gd" id="1_hhkyc"]
+[ext_resource type="AudioStream" uid="uid://cqp23qvwa5mjk" path="res://src/Sound/Musics/World end.ogg" id="2_tdrho"]
+
+[node name="TrainCinematic" type="Control" unique_id=532465174]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_hhkyc")
+eow_delay = 40.0
+music_when_entering = "Train"
+change_music = true
+baseMinigameLayoutActive = false
+metadata/_custom_type_script = "uid://dd5w2ptvu7pou"
+
+[node name="EOW_Player" type="AudioStreamPlayer" parent="." unique_id=1831411989]
+stream = ExtResource("2_tdrho")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1754485628]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)

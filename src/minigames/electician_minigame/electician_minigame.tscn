@@ -8,6 +8,7 @@
 [ext_resource type="FontFile" uid="uid://dhoixqrkemx30" path="res://assets/gui/ithaca-font/Ithaca-LVB75.ttf" id="6_gf3wi"]
 [ext_resource type="FontFile" uid="uid://dcu0gks0yl1lh" path="res://assets/gui/fonts/Jersey10-Regular.ttf" id="6_jnjed"]
 [ext_resource type="Script" uid="uid://c3gj62w5i6thr" path="res://src/misc/key_adaptative_label.gd" id="7_3uqwc"]
+[ext_resource type="Theme" uid="uid://cykgqgnvokfvb" path="res://assets/gui/minigameTheme.tres" id="8_qowss"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_a2g5q"]
 font = ExtResource("6_jnjed")
@@ -256,6 +257,7 @@ offset_bottom = 200.0
 grow_horizontal = 2
 grow_vertical = 2
 pivot_offset_ratio = Vector2(0.5, 0.5)
+theme = ExtResource("8_qowss")
 
 [node name="InfoContainer" type="PanelContainer" parent="InfoVboxContainer" unique_id=785610125]
 layout_mode = 2
@@ -269,7 +271,6 @@ theme_override_constants/margin_right = 10
 theme_override_constants/margin_bottom = 10
 
 [node name="InfoLabel" type="Label" parent="InfoVboxContainer/InfoContainer/MarginContainer" unique_id=1393530913]
-z_index = 10
 custom_minimum_size = Vector2(400, 0)
 layout_mode = 2
 text = "Connectez les fils de la même couleur avec [clic gauche]
