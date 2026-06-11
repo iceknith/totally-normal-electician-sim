@@ -28,7 +28,7 @@ Tac: Oh, good afternoon!
 ~ quest_start
 Tac: I was thinking about my friend Tic
 Tac: Do you know them?
-if GlobalVars.tac_visited:
+if GlobalVars.tic_visited:
 	- Yes, I do
 else:
 	- No, I don't

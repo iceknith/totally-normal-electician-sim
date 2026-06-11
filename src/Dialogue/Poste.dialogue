@@ -1,5 +1,5 @@
 ~ start
-$> title = "start_other"
+$> title = "other_start"
 $> GlobalVars.post_visits += 1
 Whitney: Welcome to... Oh... It's you again
 - Again?
@@ -8,7 +8,7 @@ Whitney: Welcome to... Oh... It's you again
 => main
 
 ~ start50
-$> title = "start_other"
+$> title = "other_start"
 $> GlobalVars.post_visits += 1
 Whitney: Welcome to... Oh... It's you again
 - Again?
@@ -17,7 +17,7 @@ Whitney: Welcome to... Oh... It's you again
 => main
 
 ~ start70
-$> title = "start_other"
+$> title = "other_start"
 $> GlobalVars.post_visits += 1
 Whitney: [speed=1.5][font_size=10] No, I said it for the thousandth time, I will not shoot no one...
 Whitney: Welcome to... Oh... It's you again
@@ -26,38 +26,34 @@ Whitney: Welcome to... Oh... It's you again
 - Good afternoon
 => main
 
-~ start_other
+~ other_start
 $> GlobalVars.post_visits += 1
 if GlobalVars.post_visits >= GlobalVars.max_post_visits:
 	=> bad_end
 %1 Whitney: Welcome... AAAAND it's you again!?!
 %1 Whitney: Welcome... Why is it you again?!?
-- Again?
-	Whitney: True, it's the first time I see you... TODAY
-	Whitney: You have come to my office EVRY SINGLE DAY FOR A MONTH
+- Hey
 - Good morning
-=> END
+=> main
 
-~ start_other50
+~ other_start50
 $> GlobalVars.post_visits += 1
 if GlobalVars.post_visits >= GlobalVars.max_post_visits:
 	=> bad_end
 %1 Whitney: Welcome... AAAAND it's you again!?!
 %1 Whitney: Welcome... Why is it you again?!?
-- Again?
-	Whitney: True, it's the first time I see you... TODAY
-	Whitney: You have come to my office EVRY SINGLE DAY FOR A MONTH
+- Hey
 - Good afternoon
-=> END
+=> main
 
-~ start_other70
+~ other_start70
 $> GlobalVars.post_visits += 1
-Whitney: [speed=1.5][font_size=10] No, I said it for the thousandth time, I will not shoot no one...
+if GlobalVars.post_visits >= GlobalVars.max_post_visits:
+	=> bad_end
+Whitney: [speed=1.5][font_size=15] No, I said it for the thousandth time, I will not shoot no one...
 %1 Whitney: Welcome... AAAAND it's you again!?!
 %1 Whitney: Welcome... Why is it you again?!?
-- Again?
-	Whitney: True, it's the first time I see you... TODAY
-	Whitney: You have come to my office EVRY SINGLE DAY FOR A MONTH
+- Hey
 - Good afternoon
 => main
 
@@ -74,6 +70,8 @@ Whitney: So, I suppose you're here to check if your letter arrived?
 			$> GlobalVars.post_visits += 1
 			- And what about the other room?
 				Whitney: And what about you leave me alone!?
+				if GlobalVars.post_visits >= GlobalVars.max_post_visits:
+					=> bad_end
 				Whitney: Now [shake rate=20 level=20] GET OUT!
 				=> END
 			- Okay...
