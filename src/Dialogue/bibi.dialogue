@@ -62,8 +62,8 @@ Bibi: Thank you!
 => END
 
 ~ bibi_main
-if !GlobalVars.visited_bibi:
-	$> GlobalVars.visited_bibi = true
+if !visited_bibi:
+	$> visited_bibi = true
 	Bibi: What are you doing in the school yard?
 	Bibi: You're repeating your scholarship?
 	- No, silly, I'm repairing the tower in the yard

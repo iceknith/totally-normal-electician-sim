@@ -4,7 +4,6 @@
 [ext_resource type="Texture2D" uid="uid://d2ly6kk6r3ukc" path="res://assets/pixelart/connect4/hovered.png" id="2_xsdc2"]
 [ext_resource type="Texture2D" uid="uid://c4tfkocgry7vo" path="res://assets/pixelart/connect4/circleBlue.png" id="3_xsdc2"]
 [ext_resource type="Texture2D" uid="uid://c4my0im0dog44" path="res://assets/pixelart/connect4/circleOrange.png" id="4_5q8y2"]
-[ext_resource type="Resource" uid="uid://b8mcrhwaogcdw" path="res://src/Dialogue/MinigameDialogues/connect4_dialogue.dialogue" id="5_6boak"]
 [ext_resource type="Texture2D" uid="uid://iiechi4nfo3n" path="res://assets/pixelart/connect4/bg.png" id="6_5q8y2"]
 [ext_resource type="FontFile" uid="uid://dcu0gks0yl1lh" path="res://assets/gui/fonts/Jersey10-Regular.ttf" id="6_6boak"]
 [ext_resource type="FontFile" uid="uid://dhoixqrkemx30" path="res://assets/gui/ithaca-font/Ithaca-LVB75.ttf" id="6_q8o05"]
@@ -42,7 +41,6 @@ columns_hovered_texture = ExtResource("2_xsdc2")
 player_textures = Array[Texture2D]([ExtResource("3_xsdc2"), ExtResource("4_5q8y2")])
 margin = Vector2(12, 10)
 computer_playstyle = 1
-dialogue = ExtResource("5_6boak")
 metadata/_custom_type_script = "uid://dd5w2ptvu7pou"
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=1109826292]

@@ -1,12 +1,11 @@
 [gd_scene format=3 uid="uid://d2b7b6sp2kyp2"]
 
 [ext_resource type="Script" uid="uid://dd5w2ptvu7pou" path="res://src/minigames/minigame.gd" id="1_mrb55"]
-[ext_resource type="Texture2D" uid="uid://y1ogou64om6q" path="res://assets/backgrounds/bakery/bakery_back.png" id="2_jatnb"]
+[ext_resource type="Texture2D" uid="uid://cxe54b1hwc0uy" path="res://assets/backgrounds/boulangerie_temporaire.jpg" id="1_wnlb3"]
 [ext_resource type="Script" uid="uid://i1towdpqubly" path="res://src/2D/interactables/interactables_2d_dialogue.gd" id="3_u7l6m"]
 [ext_resource type="Resource" uid="uid://dc8sbca7307di" path="res://src/Dialogue/Boulangerie.dialogue" id="4_jsyf0"]
 [ext_resource type="PackedScene" uid="uid://cnnuxnjiw3ait" path="res://src/2D/interactables/interactableText.tscn" id="5_035p5"]
 [ext_resource type="Texture2D" uid="uid://b28dcobaqe7da" path="res://assets/pnjs/baker.png" id="5_jsyf0"]
-[ext_resource type="Texture2D" uid="uid://ci2t0xqi6yg7o" path="res://assets/backgrounds/bakery/bakery_front.png" id="7_035p5"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_u7l6m"]
 animations = [{
@@ -47,7 +46,7 @@ script = ExtResource("1_mrb55")
 music_when_entering = "Bakery"
 change_music = true
 
-[node name="bg" type="TextureRect" parent="." unique_id=1225841445]
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1225841445]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -55,12 +54,10 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
-texture = ExtResource("2_jatnb")
+texture = ExtResource("1_wnlb3")
 expand_mode = 1
-metadata/_edit_lock_ = true
 
 [node name="Interactable2DDialogue" type="Area2D" parent="." unique_id=1779342648 node_paths=PackedStringArray("close_up", "interractable_dialogue")]
-position = Vector2(8, -35)
 script = ExtResource("3_u7l6m")
 unique_name = "Boulangerie"
 dialogue = ExtResource("4_jsyf0")
@@ -75,36 +72,20 @@ scale = Vector2(0.34, 0.34)
 texture = ExtResource("5_jsyf0")
 region_enabled = true
 region_rect = Rect2(0, 0, 714, 866)
-metadata/_edit_lock_ = true
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Interactable2DDialogue" unique_id=334459102]
 position = Vector2(510, 251.00002)
 scale = Vector2(0.34, 0.34)
-polygon = PackedVector2Array(-214.70593, -564.70593, -202.94116, -385.29416, -125.7, -381, -127.100006, -381, -123, -295.9, -123, -287.8, -127.3, -287, -131.6, -287, -138.6, -282, -140.4, -282, -147.4, -261, -149.6, -261, -146, -247, -146, -243.4, -140, -234.4, -140, -232.2, -111.899994, -202, -110.7, -202, -107, -184.6, -107, -183.4, -149.4, -167, -152.5, -167, -181.5, -150, -183.7, -150, -216.7, -123, -218.9, -123, -249.9, -90, -251, -90, -278, -51, -279.2, -51, -289.2, -32, -290.3, -32, -313.2, 18, -314.4, 18, -333, 71.70001, -333, 74.70001, -335.5, 76, -343, 76, -347, 81, -348.6, 81, -352.6, 98, -353.8, 98, -357, 122.79999, -357, 174.79999, -350.9, 182, -345.6, 182, -320.6, 172, -318.5, 172, -308, 218, -308, 222.29999, -284.4, 288, -274.8, 402, -274, 402, -274, 413.7, -279, 429.7, -279, 433, 316, 433, 304.59998, 376, 304, 376, 302, 244, 302, 219.40002, 317.40002, 175, 318.59998, 175, 330, 129.20001, 330, 128.40002, 346, 131.59998, 346, 134.20001, 356.5, 129, 357, 42.100006, 351, 37, 351, 35.600006, 333.40002, 29, 325, 0.7000122, 325, -2.5, 315, -22.5, 315, -25.600006, 298, -53.600006, 298, -55.700012, 279, -79.70001, 279, -81.79999, 242, -118.79999, 242, -120, 207, -145.1, 207, -146.20001, 157, -172.29999, 157, -173.4, 102.29999, -193, 99.5, -193, 105, -219.8, 105, -223, 114.600006, -230, 116.899994, -230, 126.899994, -241, 128.20001, -241, 133.20001, -251, 134.70001, -251, 136.70001, -263, 138.6, -263, 134, -281, 134, -284.1, 115.600006, -296, 113.100006, -296, 115, -350, 200, -385.29416, 202.94116, -561.7647)
-metadata/_edit_lock_ = true
+polygon = PackedVector2Array(-48, -433, -70, -433, -76.79999, -426, -78.20001, -426, -84.5, -413.7, -91, -419, -91, -420.4, -100, -423.5, -100, -425.3, -109.3, -424, -111.899994, -424, -117.899994, -417, -119.7, -417, -125.7, -381, -127.100006, -381, -123, -295.9, -123, -287.8, -127.3, -287, -131.6, -287, -138.6, -282, -140.4, -282, -147.4, -261, -149.6, -261, -146, -247, -146, -243.4, -140, -234.4, -140, -232.2, -111.899994, -202, -110.7, -202, -107, -184.6, -107, -183.4, -149.4, -167, -152.5, -167, -181.5, -150, -183.7, -150, -216.7, -123, -218.9, -123, -249.9, -90, -251, -90, -278, -51, -279.2, -51, -289.2, -32, -290.3, -32, -313.2, 18, -314.4, 18, -333, 71.70001, -333, 74.70001, -335.5, 76, -343, 76, -347, 81, -348.6, 81, -352.6, 98, -353.8, 98, -357, 122.79999, -357, 174.79999, -350.9, 182, -345.6, 182, -320.6, 172, -318.5, 172, -308, 218, -308, 222.29999, -284.4, 288, -274.8, 402, -274, 402, -274, 413.7, -279, 429.7, -279, 433, 316, 433, 304.59998, 376, 304, 376, 302, 244, 302, 219.40002, 317.40002, 175, 318.59998, 175, 330, 129.20001, 330, 128.40002, 346, 131.59998, 346, 134.20001, 356.5, 129, 357, 42.100006, 351, 37, 351, 35.600006, 333.40002, 29, 325, 0.7000122, 325, -2.5, 315, -22.5, 315, -25.600006, 298, -53.600006, 298, -55.700012, 279, -79.70001, 279, -81.79999, 242, -118.79999, 242, -120, 207, -145.1, 207, -146.20001, 157, -172.29999, 157, -173.4, 102.29999, -193, 99.5, -193, 105, -219.8, 105, -223, 114.600006, -230, 116.899994, -230, 126.899994, -241, 128.20001, -241, 133.20001, -251, 134.70001, -251, 136.70001, -263, 138.6, -263, 134, -281, 134, -284.1, 115.600006, -296, 113.100006, -296, 115, -350, 115, -376.4, 107, -394.4, 107, -397, 90, -410, 90, -411.6, 68, -416.7, 68, -417.8, 45, -419.9, 45, -421, 0, -420, -27.700012, -420, -34.600006, -423, -36.299988, -423)
 
 [node name="InteractableText" parent="Interactable2DDialogue" unique_id=936344028 instance=ExtResource("5_035p5")]
-offset_left = 439.0
-offset_top = 59.0
-offset_right = 578.0
-offset_bottom = 121.0
-metadata/_edit_use_anchors_ = true
-metadata/_edit_lock_ = true
-
-[node name="fg" type="TextureRect" parent="." unique_id=927803425]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2
-texture = ExtResource("7_035p5")
-expand_mode = 1
-metadata/_edit_lock_ = true
+offset_left = 489.0
+offset_top = 62.0
+offset_right = 526.0
+offset_bottom = 124.0
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1478044044]
-position = Vector2(576, 462)
+position = Vector2(573, 462)
 scale = Vector2(0.585, 0.585)
 sprite_frames = SubResource("SpriteFrames_u7l6m")
 animation = &"triste"

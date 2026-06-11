@@ -1,6 +1,5 @@
 [gd_scene format=3 uid="uid://xasd04diswwd"]
 
-[ext_resource type="Theme" uid="uid://cykgqgnvokfvb" path="res://assets/gui/minigameTheme.tres" id="1_j8s71"]
 [ext_resource type="Script" uid="uid://7t5g6m4ipch5" path="res://src/minigames/newspaper_show.gd" id="1_xc50h"]
 [ext_resource type="Texture2D" uid="uid://bagxpr8f5to1a" path="res://assets/newspaper/aliens.png" id="2_j8s71"]
 [ext_resource type="FontFile" uid="uid://dcu0gks0yl1lh" path="res://assets/gui/fonts/Jersey10-Regular.ttf" id="3_mtfft"]
@@ -12,7 +11,6 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme = ExtResource("1_j8s71")
 script = ExtResource("1_xc50h")
 metadata/_custom_type_script = "uid://dd5w2ptvu7pou"
 

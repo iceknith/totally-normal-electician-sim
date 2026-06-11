@@ -95,7 +95,7 @@ Charles: [shake rate=20 level=20] YOU WANT TO PLAY?
 - YES
 - NO
 Charles: [shake rate=20 level=20] THANK YOU VERY MUCH!
-Charles: [shake rate=20 level=20] I AM BAD, PLEASE BE NICE!
+Chales: [shake rate=20 level=20] I AM BAD, PLEASE BE NICE!
 => charles_start
 
 ~ charles_main
@@ -123,22 +123,7 @@ Charles: Do you like tic tac toe?
 => END
 
 ~ charles_launch_game
-$> MainCommunicator.send_signal_to_main(MainCommunicator.SignalType.ADD_MINIGAME, [load("res://src/minigames/tic_tac_toe/tic_tac_toe.tscn"), {"computer_playstyle":0, "computer_name":"charles"}])
-=> END
-
-~ charles_win
-Charles: Yay, Yippee, I've finally won!
-Charles: That makes me sooo happy!
-=> END
-
-~ charles_lose
-Charles: Oh no... I've lost...
-Charles: Its okay, I'm still happy because
-=> END
-
-~ charles_tie
-Charles: I've managed to tie someone!
-Charles: That makes me sososo happy!
+$> MainCommunicator.send_signal_to_main(MainCommunicator.SignalType.ADD_MINIGAME, [load("res://src/minigames/tic_tac_toe/tic_tac_toe.tscn"), {"computer_playstyle":0}])
 => END
 
 #-----------------------------------------------------------#
@@ -251,29 +236,7 @@ Bob: Would you please help me train?
 => END
 
 ~ bob_launch_game
-$> MainCommunicator.send_signal_to_main(MainCommunicator.SignalType.ADD_MINIGAME, [load("res://src/minigames/tic_tac_toe/tic_tac_toe.tscn"), {"computer_playstyle":2,"computer_name":"bob"}])
-=> END
-
-~ bob_win
-Bob: Yesss! Thank you so much for the practice!
-=> END
-
-~ bob_lose
-Bob: Whyy! What did I do wrong?
-- Your first move could've been better
-	Bob: Oh, I see!
-	Bob: Would you want to play again so that I can test it ?
-	- Yes
-		=> bob_launch_game
-	- Sorry, I'm busy right now
-		Bob: Bye!
-- I don't know
-	Bob: *Sigh* I guess I have to play again to find out!
-=> END
-
-~ bob_tie
-Bob: Ooof, what a tense match! Well played!
-Bob: I'll stay here, if you still wanna play with me.
+$> MainCommunicator.send_signal_to_main(MainCommunicator.SignalType.ADD_MINIGAME, [load("res://src/minigames/tic_tac_toe/tic_tac_toe.tscn"), {"computer_playstyle":2}])
 => END
 
 #-----------------------------------------------------------#
@@ -358,23 +321,5 @@ Jasmine: Do you believe in perfection?
 => END
 
 ~ jasmine_launch_game
-$> MainCommunicator.send_signal_to_main(MainCommunicator.SignalType.ADD_MINIGAME, [load("res://src/minigames/tic_tac_toe/tic_tac_toe.tscn"), {"computer_playstyle":3, "computer_name":"jasmine"}])
-=> END
-
-~ jasmine_win
-Jasmine: Predictible! You could've played better!
-Jasmine: Don't hesitate to play again, maybe you'll improve!
-=> END
-
-~ jasmine_lose
-Jasmine: ... Impossible...
-Jasmine: You... You cheated, right?
-- Yes
-	Jasmine: I hate cheaters!
-- No
-	Jasmine: Oh, my god, thank you so so so very much!
-=> END
-
-~ jasmine_tie
-Jasmine: Impressive! But, like I told you, you can't beat me!
+$> MainCommunicator.send_signal_to_main(MainCommunicator.SignalType.ADD_MINIGAME, [load("res://src/minigames/tic_tac_toe/tic_tac_toe.tscn"), {"computer_playstyle":3}])
 => END
