@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://m1vlj0bw46qk" path="res://src/3D/player/player.tscn" id="1_34ihj"]
 [ext_resource type="Script" uid="uid://dp5rxhie836us" path="res://src/3D/world.gd" id="1_co47k"]
 [ext_resource type="Texture2D" uid="uid://ccubsulhsdhv4" path="res://assets/map.png" id="1_l8jxy"]
-[ext_resource type="Script" uid="uid://1y203up537kj" path="res://src/3D/final_cinematic.gd" id="2_0mh1u"]
+[ext_resource type="Script" path="res://src/3D/final_cinematic.gd" id="2_0mh1u"]
 [ext_resource type="PackedScene" uid="uid://c58pgkaum1tdk" path="res://src/3D/objects/newspaper.tscn" id="4_ku2v5"]
 [ext_resource type="PackedScene" uid="uid://cgxd45lteivhd" path="res://src/3D/objects/map.tscn" id="5_x4jwh"]
 [ext_resource type="PackedScene" uid="uid://72l0c20pg0ko" path="res://assets/blender/maisontexture1.blend" id="8_e0nlv"]
@@ -1448,6 +1448,10 @@ texture = SubResource("ViewportTexture_iqkni")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0729332, 0.11338568, 0.06949043)
 shape = SubResource("BoxShape3D_clt24")
 
+[node name="OmniLight3D" type="OmniLight3D" parent="Objets/Buildings/boulangerie/boulangerie" unique_id=916717380]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.015670776, 0.29485416, 0.58301544)
+light_energy = 2.0
+
 [node name="superette" parent="Objets/Buildings" unique_id=185217472 instance=ExtResource("14_w7gwu")]
 transform = Transform3D(-1.260691, 0, 0.6088176, 0, 1.4000001, 0, -0.6088176, 0, -1.260691, -39.208416, 0, 7.0844936)
 
@@ -1466,6 +1470,10 @@ texture = SubResource("ViewportTexture_2reqj")
 transform = Transform3D(0.9999865, 0, 8.195639e-08, 0, 0.99998987, 0, -8.195639e-08, 0, 0.9999865, -0.084257126, 0.19547307, -0.18695068)
 shape = SubResource("BoxShape3D_tqnhu")
 debug_color = Color(0.7, 0, 0.061528776, 1)
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="Objets/Buildings/superette/superetteInteractable" unique_id=627990876]
+transform = Transform3D(0.99999934, 0, -2.9802322e-08, 0, 1, 0, 2.9802322e-08, 0, 0.99999934, -0.12576103, 0.49711776, -1.1699677)
+light_energy = 3.0
 
 [node name="arcade_building" parent="Objets/Buildings" unique_id=1676123660 instance=ExtResource("21_wnywt")]
 transform = Transform3D(0.44619775, 0, 0.89493436, 0, 1, 0, -0.89493436, 0, 0.44619775, -11.659646, -0.032199144, 69.00305)
@@ -1513,6 +1521,10 @@ texture = SubResource("ViewportTexture_bbyu7")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Objets/Buildings/poste/posteInteractable" unique_id=1868400818]
 transform = Transform3D(0.99999624, 0, 1.0728836e-06, 0, 0.9999994, 0, -1.0728836e-06, 0, 0.99999624, -0.4843979, -0.103832364, -0.20417786)
 shape = SubResource("BoxShape3D_clt24")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Objets/Buildings/poste/posteInteractable" unique_id=1876928314]
+transform = Transform3D(1.0000004, 0, 2.9802322e-08, 0, 1.0000018, 0, -2.9802322e-08, 0, 1.0000004, -0.46467972, 0.2948544, 0.58303833)
+light_energy = 1.5
 
 [node name="ecole" parent="Objets/Buildings" unique_id=650405049 instance=ExtResource("19_imnrk")]
 transform = Transform3D(-0.52478886, 0, -1.29792, 0, 1.4000001, 0, 1.29792, 0, -0.52478886, 128.14297, 0.40124583, -43.592083)
@@ -1909,7 +1921,7 @@ texture = SubResource("ViewportTexture_drvwa")
 transform = Transform3D(-0.40314606, 0, -0.91513556, 0, 1, 0, 0.91513556, 0, -0.40314606, 31.915241, 1.2088314, 42.024513)
 script = ExtResource("11_nho6y")
 unique_name = "Stanley"
-dialogue = ExtResource("40_cley4")
+dialogue = ExtResource("39_ku2v5")
 title = "StanleyIntro"
 animated_sprite = NodePath("AnimatedSprite3D")
 animated_sprite_start_animation = "normal"
@@ -1937,7 +1949,7 @@ texture = SubResource("ViewportTexture_r8k0m")
 transform = Transform3D(-0.40314606, 0, -0.91513556, 0, 1, 0, 0.91513556, 0, -0.40314606, -101.53965, 1.1567587, 51.200977)
 script = ExtResource("11_nho6y")
 unique_name = "Willy"
-dialogue = ExtResource("40_cley4")
+dialogue = ExtResource("39_ku2v5")
 title = "WillyIntro"
 animated_sprite = NodePath("AnimatedSprite3D")
 animated_sprite_start_animation = "normal"
@@ -1965,7 +1977,7 @@ texture = SubResource("ViewportTexture_r8jgy")
 transform = Transform3D(-0.40314606, 0, -0.91513556, 0, 1, 0, 0.91513556, 0, -0.40314606, -81.69094, 1.1959769, -59.98342)
 script = ExtResource("11_nho6y")
 unique_name = "Billy"
-dialogue = ExtResource("40_cley4")
+dialogue = ExtResource("39_ku2v5")
 title = "BillyIntro"
 animated_sprite = NodePath("AnimatedSprite3D")
 animated_sprite_start_animation = "normal"

@@ -19,7 +19,7 @@ font_size = 55
 [node name="Credits" type="CanvasLayer" unique_id=832409761]
 layer = 10000
 script = ExtResource("1_2y887")
-wait_time = 4.2
+wait_time = 3.5
 
 [node name="ColorRect2" type="ColorRect" parent="." unique_id=707112631]
 anchors_preset = 15

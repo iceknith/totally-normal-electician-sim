@@ -76,7 +76,7 @@ func init_stage() -> void:
 			$MarginContainer/GamesContainer/TimingContainer.queue_free()
 			for section in [cable_section, moving_section]:
 				section.process_mode = Node.PROCESS_MODE_DISABLED
-		Stages.Wires:
+		Stages.MovingCircle:
 			$MarginContainer/GamesContainer/TimingContainer.queue_free()
 		Stages.TutorialTiming:
 			for section in [cable_section, moving_section, timing_section]:

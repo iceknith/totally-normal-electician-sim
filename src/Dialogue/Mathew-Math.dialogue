@@ -109,7 +109,7 @@ Mathew: (5, 6) · (7, 10)
 	=> enigma_fail
 Mathew: Okay!
 
-Mathew: What is approximately the area of a circle which radius is 1.56?
+Mathew: What is approximately the area of a circle which perimeter is 1.56?
 - A. 2.45
 	=> enigma_fail
 - B. 1.37

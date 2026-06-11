@@ -24,6 +24,9 @@ func start_interaction():
 		temp_title = "quest_3/4"
 	elif GlobalVars.ducks >= GlobalVars.max_ducks:
 		temp_title = "quest_end"
-	super()
+	MainCommunicator.send_signal_to_main(
+		MainCommunicator.SignalType.START_DIALOGUE, 
+		[dialogue, temp_title, [self]] 
+	)
 	MainCommunicator.send_signal_to_main(MainCommunicator.SignalType.ELEM_DELETED, self)
 	queue_free.call_deferred()

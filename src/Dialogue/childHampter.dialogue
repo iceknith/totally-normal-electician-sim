@@ -60,12 +60,12 @@ Ben: Yeah, and they're always in their shop! I am always alone at home!
 Ben: Yeah...
 Ben: About that, isn't it Bibi's birthday today!
 Ben: *Whispers* Did you buy them a nice cake?
-if GlobalVars.bought_cake_bakery :
+if GlobalVars.bought_cake_bakery || GlobalVars.bought_cake_superette:
 	- I bought a cake at the bakery
 	Ben: Oh, nice, papa told me that he put a lot of effort into the cake!
-elif GlobalVars.bought_cake_bakery:
+elif GlobalVars.bought_cake_superette:
 	- I bought a cake at the supermarket
-	Ben: Oh... nice... It must be very nice and... industrial...
+	Ben: Oh... yeah... It must be very nice and... industrial...
 else:
 	- Not yet
 	Ben: Don't forget!
