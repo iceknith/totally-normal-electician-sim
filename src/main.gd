@@ -67,6 +67,7 @@ func _ready() -> void:
 	# Debug - See debug screen
 	#DebugMenu.style = DebugMenu.Style.VISIBLE_DETAILED
 
+
 func set_global_vars() -> void:
 	GlobalVars.eow_max_time_s = end_of_world_max_time_mins * 60
 

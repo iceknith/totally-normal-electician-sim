@@ -6,8 +6,6 @@ func _ready() -> void:
 	$FinalInterractable.monitoring = false
 	setup_signals()
 	
-func _physics_process(delta):
-	pass
 	
 
 func setup_signals():

@@ -23,6 +23,13 @@ var tower_completed:int = 0:
 			all_tower_completed.emit()
 var tower_amount:int = 0
 
+######################
+### Final Cutscene ###
+######################
+
+signal playFinalCutscene
+
+
 ################
 ### Dialogue ###
 ################

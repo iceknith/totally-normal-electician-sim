@@ -23,6 +23,10 @@ signal ChangeGameState(newState:GameState)
 signal signalMain(type, content) 
 signal signalCamera(callable:String, arguments)
 
+signal switchCamera(camera:Camera3D)
+signal switchToPlayerCamera
+
+
 signal fadeIn(fade_duration:float)
 signal fadeOut(fade_duration:float)
 signal fadeFinished
