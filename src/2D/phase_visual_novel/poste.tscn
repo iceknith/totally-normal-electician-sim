@@ -1,14 +1,12 @@
 [gd_scene format=3 uid="uid://b2ya8xqtu4610"]
 
 [ext_resource type="Script" uid="uid://dd5w2ptvu7pou" path="res://src/minigames/minigame.gd" id="1_i2jai"]
-[ext_resource type="Texture2D" uid="uid://cxe54b1hwc0uy" path="res://assets/backgrounds/boulangerie_temporaire.jpg" id="2_rk674"]
+[ext_resource type="Texture2D" uid="uid://bv6pp58wa6cjs" path="res://assets/backgrounds/poste/poste_bg.png" id="2_rk674"]
 [ext_resource type="Script" uid="uid://i1towdpqubly" path="res://src/2D/interactables/interactables_2d_dialogue.gd" id="3_3pvqo"]
 [ext_resource type="Resource" uid="uid://b80inkgsiaq86" path="res://src/Dialogue/Poste.dialogue" id="4_i2jai"]
 [ext_resource type="Texture2D" uid="uid://pyw1x4i20iqj" path="res://assets/pnjs/post_guy.png" id="5_i2jai"]
 [ext_resource type="PackedScene" uid="uid://cnnuxnjiw3ait" path="res://src/2D/interactables/interactableText.tscn" id="6_jo147"]
-
-[sub_resource type="LabelSettings" id="LabelSettings_58a6v"]
-font_size = 34
+[ext_resource type="Texture2D" uid="uid://o3ndtjw8u7gu" path="res://assets/backgrounds/poste/poste_fg.png" id="7_3pvqo"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_u7l6m"]
 animations = [{
@@ -47,7 +45,7 @@ grow_vertical = 2
 mouse_filter = 2
 script = ExtResource("1_i2jai")
 
-[node name="TextureRect" type="TextureRect" parent="." unique_id=1225841445]
+[node name="bg" type="TextureRect" parent="." unique_id=1225841445]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -57,15 +55,6 @@ grow_vertical = 2
 mouse_filter = 2
 texture = ExtResource("2_rk674")
 expand_mode = 1
-
-[node name="Label" type="Label" parent="." unique_id=238319654]
-layout_mode = 0
-offset_left = 237.0
-offset_top = 13.0
-offset_right = 819.0
-offset_bottom = 60.0
-text = "POSTE (utilise ton imagination)"
-label_settings = SubResource("LabelSettings_58a6v")
 
 [node name="Interactable2DDialogue" type="Area2D" parent="." unique_id=1779342648 node_paths=PackedStringArray("close_up", "interractable_dialogue")]
 script = ExtResource("3_3pvqo")
@@ -77,25 +66,37 @@ interractable_dialogue = NodePath("InteractableText")
 metadata/_custom_type_script = "uid://i1towdpqubly"
 
 [node name="Sprite2D" type="Sprite2D" parent="Interactable2DDialogue" unique_id=220578743]
-position = Vector2(541.972, 253.55202)
+position = Vector2(517, 250.00002)
 scale = Vector2(0.34, 0.34)
 texture = ExtResource("5_i2jai")
 region_enabled = true
 region_rect = Rect2(0, 0, 714, 820.97)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Interactable2DDialogue" unique_id=85056568]
-visible = false
 position = Vector2(541.972, 253.55202)
 scale = Vector2(0.34, 0.34)
-polygon = PackedVector2Array(-78.600006, -433, -121.8, -433, -144.5, -424, -146.7, -424, -159.7, -413, -161.9, -413, -181.9, -389, -183.1, -389, -202, -357.6, -202, -355, -208, -355, -225.8, -359, -228.1, -359, -239.1, -371, -239.7, -371, -246, -385.4, -246, -397.2, -230, -414.2, -230, -421, -237, -426.1, -237, -429.4, -248.5, -423, -251, -423, -263, -408, -264.3, -408, -272, -390.4, -272, -378.6, -263, -356.5, -263, -354.2, -251.2, -342.4, -262.4, -340, -265.5, -340, -284.5, -330, -286.8, -330, -305.7, -313, -307.3, -313, -314.3, -296, -315.8, -296, -320, -255.5, -338.3, -250, -355.1, -250, -357, -247.2, -357, -232.5, -347, -224.1, -347, -222.6, -337, -218.7, -337, -217.3, -322.2, -215, -314.7, -215, -293, -221.7, -293, -207.4, -288, -199.4, -288, -197.2, -278, -186.3, -278, -185, -262.6, -174, -262, -172.70001, -262, -167.70001, -268, -159.70001, -268, -156.9, -281.7, -145, -283.2, -145, -289, -133.5, -289, -122.5, -285, -114.5, -285, -112, -267.7, -99, -266.5, -99, -265.6, -95, -264.5, -95, -264, -93, -264, -82.399994, -271, -47.200012, -271, -36.700012, -265, -18.700012, -265, -16.200012, -256, -7.200012, -256, -5.600006, -251.3, -4, -245.9, -4, -239.9, -13, -238.3, -13, -231, -59.799988, -231, -63.399994, -217, -83, -215.5, -83, -211.5, -97, -209.6, -97, -210.7, -102.399994, -195.9, -86, -193.5, -80.29999, -200, -50.200012, -200, -44.5, -195, -34.5, -195, -31.899994, -189, -27.899994, -189, -26, -185.6, -26, -192.6, -21, -195.1, -21, -200.1, -13, -201.5, -13, -231.5, 81, -232.6, 81, -250, 167.79999, -250, 172.09998, -259.2, 173, -267.8, 173, -272.8, 178, -275.1, 178, -272, 239.09998, -272, 246.70001, -266, 254.59998, -266, 256.40002, -255.3, 260, -251, 260, -250, 338, -250, 355, -253, 429, -253, 433, 58, 433, 51, 258.90002, 51, 248.70001, 56.299988, 248, 63, 248, 67, 243, 69.100006, 243, 68, 220.90002, 68, 205.79999, 63, 179.59998, 63, 172.29999, 57, 165.20001, 57, 162.59998, 49.600006, 164, 42, 164, 42, 161, 40.700012, 161, 31, 95.70001, 31, 89.79999, 23, 57, 23, 51.700012, 8, -2, 8, -6.399994, 0, -26.5, 0, -30, -18.399994, -43, -20.100006, -43, -33, -56.899994, -33, -58, -57, -75.100006, -57, -76.29999, -76.100006, -84.79999, -77, -108.100006, -77, -111, -76, -111, -76, -119.29999, -57.200012, -139, -46.100006, -123, -45.5, -123, -38, -92, -38, -87.399994, -33, -79.399994, -33, -77.100006, -22, -68.100006, -22, -66.600006, -1.3999939, -59, 1.2999878, -59, 7.299988, -54, 8.899994, -54, 22, -34.399994, 22, -31.899994, 28, -27.899994, 28, -25.399994, 34.100006, -27, 37.200012, -27, 43.200012, -39, 45.200012, -39, 44, -53.200012, 44, -57.600006, 34, -73.70001, 34, -75.70001, 16.899994, -96, 9.399994, -117, 10, -129.9, 10, -136.6, 20.399994, -164, 21.899994, -164, 22.700012, -179.8, 31, -169, 31.600006, -169, 41, -139.79999, 41, -136.5, 49, -120.5, 49, -118.100006, 63, -106.100006, 63, -104.399994, 89.79999, -98, 91, -98, 107, -78.20001, 107, -76, 118.100006, -76, 121.100006, -81, 122.79999, -81, 123.79999, -91, 125, -91, 125, -104.29999, 120, -119.29999, 120, -122.70001, 104, -141.79999, 104, -143.1, 87.600006, -153, 86, -153, 79, -162, 73, -181, 73, -194.6, 77.70001, -217, 79.20001, -217, 78, -231.2, 94, -228.4, 94, -226.8, 108.20001, -228, 113.600006, -228, 123.5, -234, 126, -234, 137, -249, 139, -249, 139, -272.1, 136, -274.1, 136, -276, 127.20001, -276, 117.20001, -266, 105.70001, -266, 95.70001, -274, 90, -299.4, 90, -304.6, 85, -312.7, 85, -314.9, 62.700012, -334, 66.5, -346, 68.5, -346, 63, -371.4, 63, -374.6, 44, -402.7, 44, -404.8, 34, -414.8, 34, -417, 25, -417, 21, -412, 19, -412, 19, -404.4, 27, -393, 28.200012, -383, 27, -369.1, 27, -364.5, 22, -354.5, 22, -353.1, 9, -345.1, -10.200012, -343, -12, -351.4, -12, -355.4, -25, -385.4, -25, -387.7, -36, -402.7, -36, -404.9, -53, -419.9, -53, -421.3)
+polygon = PackedVector2Array(-426.38806, -551.62354, -429.32922, -383.97647, -279.32922, -31.03534, -405.7998, 271.90582, -44.035156, 283.67047, -138.15283, 42.49408, -67.564575, 16.023499, -49.917603, -75.152954, -158.74109, -128.09418, -114.62341, -233.9765, -120.50574, -266.32944, -14.623413, -383.97647, -8.741089, -557.50586)
 
 [node name="InteractableText" parent="Interactable2DDialogue" unique_id=936344028 instance=ExtResource("6_jo147")]
-offset_left = 489.0
-offset_top = 62.0
-offset_right = 526.0
-offset_bottom = 124.0
+offset_left = 399.0
+offset_top = 64.0
+offset_right = 538.0
+offset_bottom = 126.0
+
+[node name="fg" type="TextureRect" parent="." unique_id=518491446]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("7_3pvqo")
+expand_mode = 1
+metadata/_edit_lock_ = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1478044044]
+visible = false
 position = Vector2(534, 471.99997)
 scale = Vector2(0.585, 0.585)
 sprite_frames = SubResource("SpriteFrames_u7l6m")

@@ -77,6 +77,7 @@ func set_global_vars() -> void:
 func init_state() -> void:
 	# If we start with minigames
 	if minigame_container.get_child_count() > 0: 
+		$HUD/GameOverlay.hide()
 		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 		world3D.process_mode = Node.PROCESS_MODE_DISABLED
 		currentState = MainCommunicator.GameState.MiniGame
@@ -106,6 +107,7 @@ func launch_game() -> void:
 	# eow_meter = 0.9362
 	
 	#world3D.start_game()
+	$HUD/GameOverlay.show()
 	reset_state()
 
 func reset_state():
@@ -157,7 +159,6 @@ func add_minigame(data:Array):
 		create_minigame(data)
 
 func remove_minigame():
-	print(minigames.size())
 	if minigames.size() <= 1:
 		show_game3D()
 		
@@ -270,12 +271,12 @@ func settings_launch_handler():
 			if minigame as SettingsMenu:
 				has_settings_in_minigames = true
 				break
-		if  currentState == MainCommunicator.GameState.MiniGame && has_settings_in_minigames:
+		if currentState == MainCommunicator.GameState.MiniGame && has_settings_in_minigames:
 			remove_minigame()
 		
 		# Else
 		else:
-			add_minigame([settings_scene, {} as Dictionary[String, Callable]])
+			add_minigame([settings_scene])
 
 ### Mouse jitter ###
 

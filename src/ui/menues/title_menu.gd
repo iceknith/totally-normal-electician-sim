@@ -18,3 +18,15 @@ func connect_signals():
 	$VBoxContainer/ButtonQuit.pressed.connect(
 		get_tree().quit
 	)
+
+func remove() -> void:
+	# Disable process for all children
+	for child in get_children(): child.process_mode = Node.PROCESS_MODE_DISABLED
+	
+	# Define Tween
+	var hide_tween:Tween = create_tween()
+	hide_tween.set_trans(Tween.TRANS_CIRC).set_ease(Tween.EASE_IN_OUT)
+	
+	# Add properties
+	hide_tween.tween_property(self, "modulate", Color(1,1,1,0), animationDuration)
+	hide_tween.tween_callback(queue_free)
