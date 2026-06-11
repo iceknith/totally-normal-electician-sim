@@ -15,8 +15,9 @@ Call the repair team ?
 	You setup the ladder together.
 	Then they leave.
 	Time for a final repair.
-	$> GlobalVars.eow_meter = 0.9
+	
 	$> MainCommunicator.fadeOut.emit(2)
+	$> GlobalVars.eow_meter = 0.9
 	$> GlobalVars.playFinalCutscene.emit()
 	$> wait(20)
 	Do your job now.

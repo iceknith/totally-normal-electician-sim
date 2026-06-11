@@ -46,6 +46,7 @@ mouse_jitter_speed_curve = SubResource("Curve_5q4o7")
 mouse_jitter_noise = SubResource("FastNoiseLite_gh0ne")
 
 [node name="World" parent="." unique_id=600883011 instance=ExtResource("2_5q4o7")]
+unique_name_in_owner = true
 
 [node name="CameraSubViewport" type="SubViewport" parent="." unique_id=1224069917]
 size = Vector2i(1152, 648)

@@ -28,7 +28,7 @@ var world_ended:bool = false
 var mouse_noise_pos:float
 var unhandled_mouse_offset:Vector2
 
-@onready var world3D:Node3D = $World
+@onready var world3D:Node3D =%World
 @onready var minigame_container:Control = $HUD/Minigames
 
 
@@ -58,6 +58,7 @@ func _init() -> void:
 
 func _ready() -> void:
 
+	print(world3D.name)
 	set_global_vars()
 	connect_signals()
 	create_eow_timers()

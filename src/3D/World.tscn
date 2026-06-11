@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://m1vlj0bw46qk" path="res://src/3D/player/player.tscn" id="1_34ihj"]
 [ext_resource type="Script" uid="uid://dp5rxhie836us" path="res://src/3D/world.gd" id="1_co47k"]
 [ext_resource type="Texture2D" uid="uid://ccubsulhsdhv4" path="res://assets/map.png" id="1_l8jxy"]
-[ext_resource type="Script" path="res://src/3D/final_cinematic.gd" id="2_0mh1u"]
+[ext_resource type="Script" uid="uid://1y203up537kj" path="res://src/3D/final_cinematic.gd" id="2_0mh1u"]
 [ext_resource type="PackedScene" uid="uid://c58pgkaum1tdk" path="res://src/3D/objects/newspaper.tscn" id="4_ku2v5"]
 [ext_resource type="PackedScene" uid="uid://cgxd45lteivhd" path="res://src/3D/objects/map.tscn" id="5_x4jwh"]
 [ext_resource type="PackedScene" uid="uid://72l0c20pg0ko" path="res://assets/blender/maisontexture1.blend" id="8_e0nlv"]
@@ -87,7 +87,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 2.46, 6.633333, 7.2838826, 11.3077545, 12.4, 14.9, 17.9, 18.533333),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 0,
-"values": [Vector3(49.933, 0.314, -18.223), Vector3(50.108, 0.314, -17.018), Vector3(50.108, 0.314, -17.018), Vector3(49.798, 6.659, -16.998), Vector3(49.923, 8, -16.998), Vector3(49.923, 12, -16.998), Vector3(50.853, 12, -16.998), Vector3(50.853, 12, -16.678), Vector3(49.813, 24.808, -11.796)]
+"values": [Vector3(49.933, 0.314, -18.223), Vector3(50.108, 0.314, -17.018), Vector3(50.108, 0.314, -17.018), Vector3(49.798, 6.659, -16.998), Vector3(49.923, 8, -16.998), Vector3(49.923, 12, -16.998), Vector3(50.853, 12, -16.998), Vector3(50.853, 12, -16.678), Vector3(49.813, 23.278, -11.796)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -1921,7 +1921,7 @@ texture = SubResource("ViewportTexture_drvwa")
 transform = Transform3D(-0.40314606, 0, -0.91513556, 0, 1, 0, 0.91513556, 0, -0.40314606, 31.915241, 1.2088314, 42.024513)
 script = ExtResource("11_nho6y")
 unique_name = "Stanley"
-dialogue = ExtResource("39_ku2v5")
+dialogue = ExtResource("40_cley4")
 title = "StanleyIntro"
 animated_sprite = NodePath("AnimatedSprite3D")
 animated_sprite_start_animation = "normal"
@@ -1949,7 +1949,7 @@ texture = SubResource("ViewportTexture_r8k0m")
 transform = Transform3D(-0.40314606, 0, -0.91513556, 0, 1, 0, 0.91513556, 0, -0.40314606, -101.53965, 1.1567587, 51.200977)
 script = ExtResource("11_nho6y")
 unique_name = "Willy"
-dialogue = ExtResource("39_ku2v5")
+dialogue = ExtResource("40_cley4")
 title = "WillyIntro"
 animated_sprite = NodePath("AnimatedSprite3D")
 animated_sprite_start_animation = "normal"
@@ -1977,7 +1977,7 @@ texture = SubResource("ViewportTexture_r8jgy")
 transform = Transform3D(-0.40314606, 0, -0.91513556, 0, 1, 0, 0.91513556, 0, -0.40314606, -81.69094, 1.1959769, -59.98342)
 script = ExtResource("11_nho6y")
 unique_name = "Billy"
-dialogue = ExtResource("39_ku2v5")
+dialogue = ExtResource("40_cley4")
 title = "BillyIntro"
 animated_sprite = NodePath("AnimatedSprite3D")
 animated_sprite_start_animation = "normal"
