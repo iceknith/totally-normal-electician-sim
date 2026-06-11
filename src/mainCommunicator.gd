@@ -28,6 +28,7 @@ signal switchCamera(camera:Camera3D)
 signal switchToPlayerCamera
 
 
+
 signal fadeIn(fade_duration:float)
 signal fadeOut(fade_duration:float)
 signal fadeFinished
