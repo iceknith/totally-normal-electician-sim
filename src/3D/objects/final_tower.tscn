@@ -6,17 +6,18 @@
 [ext_resource type="Script" uid="uid://b3imm353l7y6u" path="res://src/3D/interactables/interactable_3d_minigame.gd" id="3_lpbik"]
 [ext_resource type="PackedScene" uid="uid://bgwp5tg6h76il" path="res://src/minigames/electician_minigame/electician_minigame.tscn" id="4_cbaar"]
 [ext_resource type="PackedScene" uid="uid://ddq2i6ppa2upf" path="res://src/3D/interactables/interactacle_text_3d.tscn" id="5_tuflv"]
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_lpbik"]
-size = Vector3(1, 1.1303711, 1.168457)
-
-[sub_resource type="ViewportTexture" id="ViewportTexture_h5mvg"]
-viewport_path = NodePath("SubViewport")
+[ext_resource type="Resource" uid="uid://bt2cfkqaa56vk" path="res://src/Dialogue/FinalCinematic/FinalCinematic.dialogue" id="7_lpbik"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_fgjub"]
 size = Vector3(0.7093904, 0.6569786, 0.3464985)
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_lpbik"]
+viewport_path = NodePath("SubViewport")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_lpbik"]
+size = Vector3(1, 1.1303711, 1.168457)
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_cbaar"]
 viewport_path = NodePath("SubViewport")
 
 [sub_resource type="Animation" id="Animation_fgjub"]
@@ -117,6 +118,9 @@ _data = {
 &"alarm": SubResource("Animation_sqo52")
 }
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_tuflv"]
+size = Vector3(3.9088135, 3.3623047, 1)
+
 [sub_resource type="BoxMesh" id="BoxMesh_lsc47"]
 size = Vector3(3, 0.1, 3)
 
@@ -128,18 +132,6 @@ script = ExtResource("1_lsc47")
 
 [node name="tour" parent="." unique_id=500165753 instance=ExtResource("2_h5mvg")]
 transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0, 4.3276844, -0.016131878)
-
-[node name="FinalInterractable" type="Area3D" parent="." unique_id=731977804]
-script = ExtResource("3_h5mvg")
-metadata/_custom_type_script = "uid://sd0g0r1lwus3"
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="FinalInterractable" unique_id=1783539144]
-transform = Transform3D(-0.7489556, 0, -0.66262, 0, 1, 0, 0.66262, 0, -0.7489556, 0.038335163, 1.0377741, -0.05955855)
-shape = SubResource("BoxShape3D_lpbik")
-
-[node name="InteractacleText3D" parent="FinalInterractable" unique_id=1576660793 instance=ExtResource("5_tuflv")]
-transform = Transform3D(0.16992693, 0, -0.004983961, 0, 0.17, 0, 0.004983961, 0, 0.16992693, -0.005797118, 0.12886083, 0.267196)
-texture = SubResource("ViewportTexture_h5mvg")
 
 [node name="Interractable" type="Area3D" parent="." unique_id=2095934099 node_paths=PackedStringArray("text_sprite")]
 transform = Transform3D(-0.9373976, 0, 0.34826136, 0, 1, 0, -0.34826136, 0, -0.9373976, 0.16412556, 1.0637094, -0.41626066)
@@ -157,6 +149,21 @@ shape = SubResource("BoxShape3D_fgjub")
 [node name="InteractacleText3D" parent="Interractable" unique_id=2065454063 instance=ExtResource("5_tuflv")]
 transform = Transform3D(0.16992693, 0, -0.004983961, 0, 0.17, 0, 0.004983961, 0, 0.16992693, -0.005797118, 0.12886083, 0.267196)
 texture = SubResource("ViewportTexture_lpbik")
+
+[node name="FinalInterractable" type="Area3D" parent="." unique_id=731977804 node_paths=PackedStringArray("text_sprite")]
+script = ExtResource("3_h5mvg")
+unique_name = "FinalCinematic"
+dialogue = ExtResource("7_lpbik")
+text_sprite = NodePath("InteractacleText3D")
+metadata/_custom_type_script = "uid://sd0g0r1lwus3"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="FinalInterractable" unique_id=1783539144]
+transform = Transform3D(-0.7489556, 0, -0.66262, 0, 1, 0, 0.66262, 0, -0.7489556, 0.038335163, 1.0377741, -0.05955855)
+shape = SubResource("BoxShape3D_lpbik")
+
+[node name="InteractacleText3D" parent="FinalInterractable" unique_id=1576660793 instance=ExtResource("5_tuflv")]
+transform = Transform3D(0.16992693, 0, -0.004983961, 0, 0.17, 0, 0.004983961, 0, 0.16992693, -0.005797118, 0.12886083, 0.267196)
+texture = SubResource("ViewportTexture_cbaar")
 
 [node name="AlarmBot" type="OmniLight3D" parent="." unique_id=617167616]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3381364, 1.3172702, -0.81733996)
@@ -191,6 +198,24 @@ omni_range = 40.0
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1371625375]
 libraries/ = SubResource("AnimationLibrary_2y3h0")
 autoplay = &"alarm"
+
+[node name="StaticBody3D2" type="StaticBody3D" parent="." unique_id=769531870]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D2" unique_id=678961403]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.12674856, 24.209248, -1.9685862)
+shape = SubResource("BoxShape3D_tuflv")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="StaticBody3D2" unique_id=1560099274]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.12674832, 24.233713, 2.088971)
+shape = SubResource("BoxShape3D_tuflv")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="StaticBody3D2" unique_id=37601869]
+transform = Transform3D(-0.034027368, 0, -0.9994209, 0, 1, 0, 0.9994209, 0, -0.034027368, 1.4878545, 24.233713, 0.07365203)
+shape = SubResource("BoxShape3D_tuflv")
+
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="StaticBody3D2" unique_id=1014878367]
+transform = Transform3D(-0.034027368, 0, -0.9994209, 0, 1, 0, 0.9994209, 0, -0.034027368, -1.4916631, 24.233713, 0.12970322)
+shape = SubResource("BoxShape3D_tuflv")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=1615815383]
 

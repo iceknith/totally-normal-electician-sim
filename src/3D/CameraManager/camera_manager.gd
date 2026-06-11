@@ -37,6 +37,8 @@ func setup_signals():
 
 
 func switch_camera(camera_path):
+	print(camera_path)
+	print($"../Player".global_position)
 	var camera := get_node_or_null(camera_path) as Camera3D
 
 	if camera == null:
@@ -44,6 +46,8 @@ func switch_camera(camera_path):
 		return
 
 	camera.make_current()
+	print(camera.name)
 	
 func switch_back_to_player_cam():
 	player_camera.make_current()
+	

@@ -1,6 +1,6 @@
-[gd_scene format=3 uid="uid://codij3qt7dkdj"]
+[gd_scene format=3 uid="uid://b7gb7axo0amyk"]
 
-[ext_resource type="Script" uid="uid://cnw58e0gc24hi" path="res://src/minigames/train_cinematic.gd" id="1_hhkyc"]
+[ext_resource type="Script" path="res://src/minigames/train_cinematic.gd" id="1_hhkyc"]
 [ext_resource type="AudioStream" uid="uid://cqp23qvwa5mjk" path="res://src/Sound/Musics/World end.ogg" id="2_tdrho"]
 
 [node name="TrainCinematic" type="Control" unique_id=532465174]

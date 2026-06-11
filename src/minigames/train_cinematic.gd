@@ -1,6 +1,6 @@
 extends Minigame
 
-@export var eow_delay:float = 20
+@export var eow_delay:float = 10
 @export var eow_playing_time:float = 38.8
 
 func _ready() -> void:
