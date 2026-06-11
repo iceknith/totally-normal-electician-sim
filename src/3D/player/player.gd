@@ -4,6 +4,8 @@ const SPEED = 20#5
 const JUMP_VELOCITY = 4.5
 const MAX_STEP_UP = 0.5
 
+@onready var collision_shape: CollisionShape3D = $CollisionShape3D
+
 @export var look_sensitivity : float = 0.006:
 	get: return GlobalVars.mouse_sentitivity
 	set(new_val): GlobalVars.mouse_sentitivity = new_val
@@ -34,6 +36,8 @@ var walk_jitter_noise_pos:float
 @export var footstep_timer:Timer
 var can_play_footstep:bool
 
+var no_clip_mode:bool
+
 func _ready() -> void:
 	# plus tard on voudra avoir des moments ou on libère le curseur pour pouvoir acceder à l'ui au lieu qu'il serve à tourner la drirection dans laquelle on regarde.
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
@@ -58,7 +62,19 @@ func _unhandled_input(event: InputEvent) -> void:
 			%Camera3D.rotation.x = rotation_x + initRotation.x
 
 func _physics_process(delta: float) -> void:
+	print(global_position)
 	#Handles movement
+	if Input.is_action_just_pressed("noclip"):
+		if no_clip_mode :
+			no_clip_mode = false
+		else : 
+			no_clip_mode = true
+			
+	if !no_clip_mode and not is_on_floor() : 
+		velocity += get_gravity() * delta
+		
+	if no_clip_mode : 
+		manage_no_clip(delta)
 	if !in_interaction() : #check if we are in an interaction
 		manage_input(delta)
 		# Handle Interactable Vision
@@ -77,8 +93,7 @@ func in_interaction() -> bool:
 
 func manage_input(delta:float) -> void :
 	# Add the gravity.
-	if not is_on_floor():
-		velocity += get_gravity() * delta
+
 
 	#if Input.is_action_pressed("ui_up"):
 	#	position.y += JUMP_VELOCITY * delta
@@ -217,6 +232,11 @@ func footsteps_sounds():
 		
 	
 	
+func manage_no_clip(delta):
+	if Input.is_action_pressed("jump") : 
+		global_position.y += 20*delta
+	if Input.is_action_pressed("fly_down") : 
+		global_position.y -= 20*delta
 	
 
 func manage_sounds():
@@ -226,3 +246,19 @@ func manage_sounds():
 
 func _on_footsteps_timer_timeout():
 	can_play_footstep = true
+
+func get_camera(): 
+	return %Camera3D
+	
+func teleport_to(new_pos):
+	
+	global_position = new_pos
+	print(global_position)
+	
+
+
+func disable_collision():
+	collision_shape.set_deferred("disabled", true)
+
+func enable_collision():
+	collision_shape.set_deferred("disabled", false)

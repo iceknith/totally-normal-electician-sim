@@ -18,11 +18,11 @@ Fiona: Good afernoon, sir!
 => fiona_main
 
 ~ start75
-Fiona: [shake rate=10 level=10] Nnn-ARGGGG [speed=1.5][font_size=10] They're coming, pull yourself together!
+Fiona: [shake rate=10 level=10] Nnn-ARGGGG [speed=1.5][font_size=10] Their coming, pull yourself together!
 Fiona: [shake rate=10 level=10] Good afernoon, sir!
 - Good afternoon
 - You okay?
-	Fiona: [shake rate=20 level=10] Yes sir! N-N-Nothing wrong at all!
+	Fiona: [shake rate=20 level=10] Yes sir! Nothing wrong at all!
 - Hey
 => fiona_main
 

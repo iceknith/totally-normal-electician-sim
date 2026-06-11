@@ -14,11 +14,14 @@ Call the repair team ?
 	You get to work.
 	You setup the ladder together.
 	Then they leave.
-	$> GlobalVars.eow_meter = 0.95
 	Time for a final repair.
+	
 	$> MainCommunicator.fadeOut.emit(2)
+	$> GlobalVars.eow_meter = 0.9
 	$> GlobalVars.playFinalCutscene.emit()
-	$> wait(90)
+	$> wait(20)
+	Do your job now.
+	=> END
 	
 - No
 	=> END
