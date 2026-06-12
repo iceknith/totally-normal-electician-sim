@@ -1,0 +1,80 @@
+~ start
+if GlobalVars.eow_meter < 0.8 
+	if GlobalVars.dialogue_counter_maryjolene == 0 : 
+		Mary Joe: Hey you ! Wanna see a cool trick ?
+		- No 
+			Mary Joe: Well, I'll do it anyway.
+		- Yes
+			Mary Joe: Let me show you.
+			Mary Joe: Hum, Hum...
+			Mary Joe: My name is Mary Joe and my glasses are awesome.
+			$> SoundManager.play_sfx.emit("res://src/Sound/sfx/guitarRiff.mp3")
+			$> wait(3)
+		Mary Joe: SEEE ! It was cool right !?
+		Jolene : How did you do that ? You don't even have a guitar.
+		Mary Joe: Well, it just happens when[speed=0.2] you're cool enough. 
+		$> SoundManager.play_sfx.emit("res://src/Sound/sfx/guitarRiff.mp3")
+		$> wait(3)
+		Jolene: ...
+		Jolene: Tell me how you do it.
+		Mary Joe: No.
+		Jolene: Tell me !!!!!
+		Mary Joe: Never.
+		$> GlobalVars.dialogue_counter_maryjolene += 1
+		=> END
+	if GlobalVars.dialogue_counter_maryjolene == 1 : 
+		Jolene: Tell me how you do it !
+		Mary Joe: No.
+		Jolene: Tell me or I'll never help you find your skateboard again.
+		Mary Joe: Hey that's unfair !
+		Jolene: Sooooo, what will it be ?
+		Mary Joe: ...
+		Mary Joe: You promise not to tell a soul ?
+		Jolene: I promise on my favorite teapot.
+		Mary Joe: I like it when you're hardcore.
+		Mary Joe: The trick is to say something really stupid super confidently.
+		Jolene: That's it ?
+		Mary Joe: Yep. Try it.
+		Jolene: Hum Hum.
+		Jolene: Orange and blue make yellow.
+		$> SoundManager.play_sfx.emit("res://src/Sound/sfx/guitarRiff.mp3")
+		$> wait(3)
+		Jolene: It's incredible !
+		Mary Joe: I knew you'd love it.
+		$> GlobalVars.dialogue_counter_maryjolene += 1
+		=> END
+	if GlobalVars.dialogue_counter_maryjolene == 2 : 
+		Mary Joe: What are we planning for today ?
+		Jolene: Nothing really.
+		Mary Joe: We aren't even going to move ?
+		Jolene: Nop.
+		Mary Joe: Not even to go to the town's arcade ?
+		Jolene: Nop.
+		Mary Joe: Ok... I know what to do then.
+		Jolene: What ?
+		Mary Joe: I'm just going to get lost in your [speed=0.2][font_size=40][rainbow] [wait=0.5] [wave amp=60 freq=5]Beautiful eyes[/wave][/rainbow][/font_size].
+		Jolene: Hey ! Stop it ! Someone's listening  [font_size=15] Not that I don't like when you talk to me like that. [\font_size] 
+		Mary Joe: [wave amp=40 freq=5] I'm not listening ! [/wave] 
+		Jolene: Fine ! I'll also get lost in your beautiful eyes !
+		They start staring at each other intensely.
+		$> GlobalVars.dialogue_counter_maryjolene += 1
+		=> END
+	if GlobalVars.dialogue_counter_maryjolene > 2 : 
+		They stare at each other intensely in silence.
+		=> END
+		
+Mary Joe : Look Jolene ! The sun is your favorite color.
+Jolene : My favorite color is green.
+Mary Joe: ...
+Mary Joe: Well now it's red.
+Jolene: That's not how it works.
+Jolene: But is the sun supposed to be like that ?
+Mary Joe: I don't know.
+Jolene: Aren't you an astrophysicist ?
+Mary Joe: Not when I wear my cool glasses.
+Jolene: ...
+Jolene: We're gonna die, aren't we ?
+Mary Joe: Yep.
+Jolene: I love you.
+Mary Joe: I love you more.
+=> END

@@ -28,6 +28,7 @@ var tower_amount:int = 0
 ######################
 
 signal playFinalCutscene
+var eow_music_trigger:float = 0
 
 
 ################
@@ -81,6 +82,7 @@ var billy_beaten = false
 ### World ###
 #############
 
+
 var has_cake:bool = false
 var bought_cake_superette:bool = false
 var visited_superette:bool = false
@@ -98,6 +100,8 @@ var tic_visited:bool = false
 var tac_visited:bool = false
 
 var bibi_visited:bool = false
+
+var dialogue_counter_maryjolene = 0
 
 var post_visits:int = 0
 var max_post_visits:int = 5

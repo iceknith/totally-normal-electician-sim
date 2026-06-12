@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://wpm8jn0675gk"
+path="res://.godot/imported/MaryJolene.dialogue-6c0cc51eac4ae197ecd06b6a06d7a0cf.tres"
+
+[deps]
+
+source_file="res://src/Dialogue/MaryJolene.dialogue"
+dest_files=["res://.godot/imported/MaryJolene.dialogue-6c0cc51eac4ae197ecd06b6a06d7a0cf.tres"]
+
+[params]
+
+defaults=true
