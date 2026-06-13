@@ -22,11 +22,11 @@ Finn: [speed=1.25] I'll slow down so that you can understand me!
 => main
 
 ~ start80
-Finn: [speed=2] Hey, [speed=2] How is it going? [next=auto]
-Finn: [speed=2.25] Me I am doing very well, everyone tells me I am going a bit fast, but I disagree. It's not me that is fast, it is them that are slow [next=auto]
-Finn: [speed=2.5] Are you slow too, you seem slow! why are you slow? This is confusing! I bet everyone is just playing tricks on me! I don't like that [next=auto]
-Finn: [speed=3] Oh no, I don't like that a single bit! I tell you I am very disapointed! Next time I will be able to do very awesome things and you won't be prepared for it! Be careful of what you wish for my mama always says, and she's not wrong, be always the veryest of the careful because it is cool to be! [next=auto]
-Finn: [speed=4] Bye, you're too slow to keep up! [next=auto]
+Finn: [speed=2] Hey, [speed=2] How is it going?
+Finn: [speed=2.25] Me I am doing very well, everyone tells me I am going a bit fast, but I disagree. It's not me that is fast, it is them that are slow
+Finn: [speed=2.5] Are you slow too, you seem slow! why are you slow? This is confusing! I bet everyone is just playing tricks on me! I don't like that
+Finn: [speed=3] Oh no, I don't like that a single bit! I tell you I am very disapointed! Next time I will be able to do very awesome things and you won't be prepared for it! Be careful of what you wish for my mama always says, and she's not wrong, be always the veryest of the careful because it is cool to be!
+Finn: [speed=4] Bye, you're too slow to keep up!
 => END
 
 ~ start90

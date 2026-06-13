@@ -321,7 +321,7 @@ libraries/ = SubResource("AnimationLibrary_dagtu")
 [node name="JoeAttacks" type="Node2D" parent="." unique_id=1774538303]
 script = ExtResource("8_eqm75")
 balls_life_time = 13
-time_between_ball_spawn = 5
+time_between_ball_spawn = 2
 slash_number = 30
 slash_interval = 1.0
 slash_interval_curve = SubResource("Curve_5ppmw")

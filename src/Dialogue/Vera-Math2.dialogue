@@ -139,7 +139,7 @@ elif GlobalVars.mathew_algebra_has_failed:
 else:
 	- No
 	- I can't seem to find him
-		Vera: He should be around (position de math)
+		Vera: He should be in the road behind the supermarket.
 Vera: I know you can do it!
 Vera: I trust you!
 if GlobalVars.eow_meter > 0.75:

@@ -20,8 +20,14 @@ Cloven: Good afternoon
 - Good morning
 Cloven: How are you doing?
 - Fine and you?
+	Cloven: Uh... Feeling a bit down...
 - Uh... Feeling a bit down
 	Cloven: You too? [wave amp=30 freq=1] Awww maaan.
+Cloven: I had a question.
+- Let me hear it
+	=> sandwich_intro
+- Maybe later, I'm pretty busy right now
+	Cloven: Okay...
 => END
 
 ~ start70
@@ -32,6 +38,7 @@ Cloven: [wave amp=30 freq=1] H.. Hi?
 	Cloven: [wave amp=30 freq=1] Yeah... Just feeling a bit... odd?
 Cloven: How are you doing?
 - Fine and you?
+	Cloven: Feeling really BAAD
 - Uh... Feeling a bit down
 	Cloven: You too? [wave amp=30 freq=1] Awww maaan.
 Cloven: I had a question
@@ -41,13 +48,14 @@ Cloven: I had a question
 	Cloven: Okay...
 => END
 
-~ global80
+~ global75
 Cloven: Do you have a sandwich?
 - No
 - Sorry, but no
 - ...
 Cloven: [wave amp=50 freq=5] Aww man!
 Cloven: [wave amp=50 freq=5] I could really use a sandwich right now :C
+Cloven: [wave amp=50 freq=5] My tummy hurts REALLY MUCH OF A LOT !
 => END
 
 ~ global90
@@ -208,4 +216,3 @@ Cloven: When I'm down, I think about our definition, and I suddenly feel better!
 	Cloven: So, for you, what's the defining trait of a sandwich?
 	=> sandwich_loop
 => END
-

@@ -88,4 +88,5 @@ mouse_filter = 2
 texture = SubResource("ViewportTexture_kmhfv")
 
 [node name="Warning" parent="HUD" unique_id=317795652 instance=ExtResource("7_rlaii")]
-wait_time = 7.0
+wait_time = 0.0
+transition_duration = 0.0
