@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://bndu330phrfut" path="res://assets/pixelart/tictactoe/outline.png" id="2_p80xj"]
 [ext_resource type="Texture2D" uid="uid://bcu8m8efnxa2l" path="res://assets/pixelart/tictactoe/cross.png" id="3_id0t8"]
 [ext_resource type="Texture2D" uid="uid://dejlkko35u7rl" path="res://assets/pixelart/tictactoe/circle.png" id="4_nv2wk"]
+[ext_resource type="Resource" uid="uid://b3kxo7cvgi3tj" path="res://src/Dialogue/MinigameDialogues/tictactoe.dialogue" id="5_nv2wk"]
 [ext_resource type="Texture2D" uid="uid://cjsghwo4q4rg7" path="res://assets/pixelart/tictactoe/bg.png" id="6_id0t8"]
 [ext_resource type="FontFile" uid="uid://dcu0gks0yl1lh" path="res://assets/gui/fonts/Jersey10-Regular.ttf" id="6_nv2wk"]
 [ext_resource type="FontFile" uid="uid://dhoixqrkemx30" path="res://assets/gui/ithaca-font/Ithaca-LVB75.ttf" id="6_p80xj"]
@@ -41,6 +42,7 @@ empty_hovered_texture = ExtResource("2_p80xj")
 player_textures = Array[Texture2D]([ExtResource("3_id0t8"), ExtResource("4_nv2wk")])
 margin = Vector2(15, 15)
 computer_playstyle = 3
+dialogue = ExtResource("5_nv2wk")
 metadata/_custom_type_script = "uid://dd5w2ptvu7pou"
 
 [node name="bg" type="TextureRect" parent="." unique_id=1562605027]

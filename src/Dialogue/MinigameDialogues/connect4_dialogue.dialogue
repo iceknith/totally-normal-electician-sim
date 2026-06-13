@@ -61,7 +61,28 @@ Ada: Soooo, do you want to play a game with me?
 => END
 
 ~ ada_launch_game
-$> MainCommunicator.send_signal_to_main(MainCommunicator.SignalType.ADD_MINIGAME, [load("res://src/minigames/connect4/connect_4.tscn"), {"computer_playstyle":0}])
+$> MainCommunicator.send_signal_to_main(MainCommunicator.SignalType.ADD_MINIGAME, [load("res://src/minigames/connect4/connect_4.tscn"), {"computer_playstyle":0, "computer_name":"ada"}])
+=> END
+
+~ ada_win
+Ada: Yay! I have finally won a game!
+Ada: Hannah will be so proud of me!
+=> END
+
+~ ada_lose
+Ada: Oh no! I didn't see that coming!
+Ada: What a shame, I've lost AGAIN!
+Ada: Would you mind playing again ?
+- Why not ?
+	Ada: Yippee
+	=> ada_launch_game
+- Sorry, I'm busy
+	Ada: Okay... Maybe another time?
+=> END
+
+~ ada_tie
+Ada: Yipeee I've finally managed to tie someone!
+Ada: I'm so happy! Hannah will be so proud of me!
 => END
 
 #--------------------------------#
@@ -87,7 +108,7 @@ Noah: Thank
 - How are you doing
 	Noah: Eh... Hanging on
 - A cold in summer?
-	Noah: Yeah, I know it sucks!
+	Noah: Yeah, I know, it sucks!
 Noah: But you know what?
 => noah_main
 
@@ -150,7 +171,26 @@ Noah: Will you help me train?
 => END
 
 ~ noah_launch_game
-$> MainCommunicator.send_signal_to_main(MainCommunicator.SignalType.ADD_MINIGAME, [load("res://src/minigames/connect4/connect_4.tscn"), {"computer_playstyle":1}])
+$> MainCommunicator.send_signal_to_main(MainCommunicator.SignalType.ADD_MINIGAME, [load("res://src/minigames/connect4/connect_4.tscn"), {"computer_playstyle":1, "computer_name":"noah"}])
+=> END
+
+~ noah_win
+Noah: Nice! Well played!
+Noah: You think I have my chances against Hannah?
+- Go for it!
+	Noah: I will, thank you!
+- You should train a bit more!
+	Noah: You're right! I'll do that!
+=> END
+
+~ noah_lose
+Noah: Woah, I didn't see that coming at all!
+Noah: What a nice game! I learned a lot, thank you!
+=> END
+
+~ noah_tie
+Noah: Woah, what a nice interesting game!
+Noah: I feel like I learnt a lot, thank you!
 => END
 
 #--------------------------------#
@@ -234,5 +274,23 @@ Hannah: Do you like connect 4!?
 => END
 
 ~ hannah_launch_game
-$> MainCommunicator.send_signal_to_main(MainCommunicator.SignalType.ADD_MINIGAME, [load("res://src/minigames/connect4/connect_4.tscn"), {"computer_playstyle":2}])
+$> MainCommunicator.send_signal_to_main(MainCommunicator.SignalType.ADD_MINIGAME, [load("res://src/minigames/connect4/connect_4.tscn"), {"computer_playstyle":2, "computer_name":"hannah"}])
+=> END
+
+~ hannah_win
+Hannah: See! I told you! You have no chance against me!
+=> END
+
+~ hannah_lose
+Hannah: Pfff! That doesn't mean anything I didn't play seriously!
+=> END
+
+~ hannah_tie
+Hannah: What a nice refreshing game!
+Hannah: Would you want to break the tie and play another one?
+- Yes please!
+	Hannah: Here I come! and I won't hold off this time!
+	=> hannah_launch_game
+- Sorry, I'm busy
+	Hannah: Coward...
 => END
