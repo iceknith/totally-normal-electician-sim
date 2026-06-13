@@ -62,7 +62,6 @@ func _unhandled_input(event: InputEvent) -> void:
 			%Camera3D.rotation.x = rotation_x + initRotation.x
 
 func _physics_process(delta: float) -> void:
-	print(global_position)
 	#Handles movement
 	if Input.is_action_just_pressed("noclip"):
 		if no_clip_mode :

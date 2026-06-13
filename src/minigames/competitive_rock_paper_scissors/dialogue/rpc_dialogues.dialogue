@@ -2,6 +2,28 @@
 
 
 ~ BillyIntro
+
+if GlobalVars.eow_meter > 0.8 
+	Billy: [shake rate=20 level=10] Hey...
+	Billy: [shake rate=20 level=10] I'm a bit scared...
+	Billy: [shake rate=20 level=10]Could you stay beside me for a bit ?
+	- Yes
+		Billy: Thank you.
+	- No 
+		Billy: [shake rate=20 level=10] Oh...
+		if GlobalVars.billy_won_game
+			Billy: [shake rate=20 level=10] I'm sorry if I have been mean.
+			Billy: [shake rate=20 level=10] But I'm really scared.
+			Billy: Please stay with me, just for a bit.
+			~ BillyAsk
+			- Yes
+				Billy: Thank you. I feel better already.
+				=> END
+			- No
+				Billy: [shake rate=20 level=10] That's mean ); .
+				=> END
+		Billy:[shake rate=20 level=10] Please I'm really scared...
+		=> BillyAsk
 if GlobalVars.billy_beaten
 	Billy:  [shake rate=20 level=10] I don't want to talk to you anymore... [/shake]
 	Billy: [shake rate=20 level=10] Go away! [/shake]
@@ -72,6 +94,10 @@ $> GlobalVars.billy_beaten = true
 
 
 ~ StanlyIntro 
+
+if GlobalVars.eow_meter > 0.8 
+	Stanly: ROCK, PAPERS, SCISSORS, ROCK, PAPERS, SCISSORS, ROCK, PAPERS, SCISSORS, ROCK, PAPERS, SCISSORS, ROCK, PAPERS, SCISSORS, ROCK, PAPERS, SCISSORS, ROCK, PAPERS, SCISSORS, ROCK, PAPERS, SCISSORS.
+	=> AskPlayerStanly
 Stanly : Me Stanly.
 Stanly: Me like play games.
 Stanly: You, me, play, now.
@@ -102,6 +128,15 @@ Stanly: You, me, play, now.
 
 
 ~ WillyIntro
+
+if GlobalVars.eow_meter > 0.8 
+	Willy: Sorry I think I drank too much to talk.
+	Willy: Everything's spinning...
+	=> END
+if GlobalVars.eow_meter > 0.6 
+	Willy: I should hold back on the drink.
+	Willy: I'm starting to feel a bit dizzy.
+	Willy: Oh well, what's a 63rd glass ever done to a man?
 if GlobalVars.first_interaction_willy 
 	Willy: ...
 	Willy: Oy mate! Got something to drink? 

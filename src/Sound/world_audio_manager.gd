@@ -14,7 +14,7 @@ class_name WorldAudioManager extends Node
 @export_group("End Of World Music")
 @export var eow_music:AudioStream
 @export var eow_music_fadeout_time:float = 45
-@export var eow_silence_time:float = 30
+@export var eow_silence_time:float = 15
 @export var eow_music_start_time:float = 38.8
 var eow_music_start_perc:float = 1
 var eow_music_playing:bool = false
@@ -44,12 +44,17 @@ func _ready():
 	music_base_volume_db = bg_music_player.volume_db
 	SoundManager.change_music.connect(update_music)
 	SoundManager.stop_music.connect(stop_music)
+	SoundManager.play_sfx.connect(playSfx)
 	MainCommunicator.ChangeGameState.connect(back_to_main_theme)
 	SoundManager.reset_music.connect(reset_music)
 	
 	await get_tree().process_frame
-	eow_music_start_perc = (GlobalVars.eow_max_time_s - (eow_music_start_time + eow_silence_time + eow_music_fadeout_time)) / GlobalVars.eow_max_time_s
 
+	eow_music_start_perc = (GlobalVars.eow_max_time_s - (eow_music_start_time + eow_silence_time + eow_music_fadeout_time)) / GlobalVars.eow_max_time_s
+	print(eow_music_start_perc)
+	GlobalVars.eow_music_trigger = eow_music_start_perc
+	
+	
 func update_music(music:String):
 	if eow_music_playing: return
 	
@@ -184,3 +189,19 @@ func stop_music(fade_duration: float = 0.6):
 	bg_music_player.stop()
 	bg_music_player.volume_db = music_base_volume_db
 	current_music = ""
+	
+func playSfx(sfxPath: String):
+	print(sfxPath)
+	var sfx := load(sfxPath) as AudioStream
+	
+	if sfx == null:
+		push_warning("SFX introuvable : " + sfxPath)
+		return
+	
+	var audio_player := AudioStreamPlayer.new()
+	audio_player.stream = sfx
+	
+	add_child(audio_player)
+	
+	audio_player.finished.connect(audio_player.queue_free)
+	audio_player.play()

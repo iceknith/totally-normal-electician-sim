@@ -7,3 +7,5 @@ signal change_music(music_name)
 
 signal stop_music(fade_duration)
 signal reset_music(music_name)
+
+signal play_sfx(sfxPath:String)

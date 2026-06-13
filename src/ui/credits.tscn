@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://eisnt6fxfnp6" path="res://src/ui/credits.gd" id="1_2y887"]
 [ext_resource type="FontFile" uid="uid://beucp7h0famth" path="res://assets/gui/fonts/impact.ttf" id="2_73yjm"]
+[ext_resource type="FontFile" uid="uid://dcu0gks0yl1lh" path="res://assets/gui/fonts/Jersey10-Regular.ttf" id="3_gferm"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_oo4xn"]
 line_spacing = -63.77
@@ -9,11 +10,11 @@ font = ExtResource("2_73yjm")
 font_size = 233
 
 [sub_resource type="LabelSettings" id="LabelSettings_73yjm"]
-font = ExtResource("2_73yjm")
+font = ExtResource("3_gferm")
 font_size = 90
 
 [sub_resource type="LabelSettings" id="LabelSettings_gferm"]
-font = ExtResource("2_73yjm")
+font = ExtResource("3_gferm")
 font_size = 55
 
 [node name="Credits" type="CanvasLayer" unique_id=832409761]
@@ -111,5 +112,5 @@ label_settings = SubResource("LabelSettings_gferm")
 
 [node name="Ib" type="Label" parent="Control/ColorRect2/VBoxContainer" unique_id=1008777333]
 layout_mode = 2
-text = "Fahas"
+text = "Fashas"
 label_settings = SubResource("LabelSettings_gferm")

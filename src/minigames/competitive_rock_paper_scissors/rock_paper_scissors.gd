@@ -213,18 +213,20 @@ func player_loses():
 	reset()
 
 func dialogue_loses():
-	MainCommunicator.send_signal_to_main(
-		MainCommunicator.SignalType.START_DIALOGUE, 
-		[dialogue, personName[opponent] + "Lose", [self]] 
-	)
-	await DialogueManager.dialogue_ended
+	if GlobalVars.eow_meter < 0.8 : 
+		MainCommunicator.send_signal_to_main(
+			MainCommunicator.SignalType.START_DIALOGUE, 
+			[dialogue, personName[opponent] + "Lose", [self]] 
+		)
+		await DialogueManager.dialogue_ended
 
 func dialogue_wins():
-	MainCommunicator.send_signal_to_main(
-		MainCommunicator.SignalType.START_DIALOGUE, 
-		[dialogue, personName[opponent] + "Win", [self]] 
-	)
-	await DialogueManager.dialogue_ended
+	if GlobalVars.eow_meter < 0.8 : 
+		MainCommunicator.send_signal_to_main(
+			MainCommunicator.SignalType.START_DIALOGUE, 
+			[dialogue, personName[opponent] + "Win", [self]] 
+		)
+		await DialogueManager.dialogue_ended
 
 func get_result(choice1:int, choice2:int) -> int:
 	if choice1 == choice2:
@@ -297,22 +299,23 @@ func end_game():
 	exit()
 
 func player_won_game(): #condition à executer si le player gagne la partie
-	print("test here 2")
 	await text_animation(win_label, "You WON \n the GAME !!!!!", 1, Color.GREEN).finished
-	MainCommunicator.send_signal_to_main(
-			MainCommunicator.SignalType.START_DIALOGUE, 
-			[dialogue, personName[opponent] + "GameLose", [self]] 
+	if GlobalVars.eow_meter < 0.8 : 
+		MainCommunicator.send_signal_to_main(
+				MainCommunicator.SignalType.START_DIALOGUE, 
+				[dialogue, personName[opponent] + "GameLose", [self]] 
 		) 
 	
 	exit()
 
 func opponent_won_game(): #condition à executer si l'opponent gagne la partie
-	print("test here")
 	await text_animation(win_label, "You LOST \n the GAME !!!!!", 1, Color.RED).finished
-	MainCommunicator.send_signal_to_main(
-			MainCommunicator.SignalType.START_DIALOGUE, 
-			[dialogue, personName[opponent] + "GameWin", [self]] 
-		) 
+	if GlobalVars.eow_meter < 0.8 : 
+	
+		MainCommunicator.send_signal_to_main(
+				MainCommunicator.SignalType.START_DIALOGUE, 
+				[dialogue, personName[opponent] + "GameWin", [self]] 
+			) 
 	exit()
 
 func exit():
