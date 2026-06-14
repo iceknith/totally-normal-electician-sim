@@ -90,7 +90,7 @@ Little Jo: Better luck next time !
 if GlobalVars.JoBeaten
 	Jolister: WHAT ????
 	Jolister: You beat JO ????
-	Jolister : Does that mean you're new my big brother now ?
+	Jolister : Does that mean you're my new big brother now ?
 	=> END
 	
 if GlobalVars.JoListerBeaten
