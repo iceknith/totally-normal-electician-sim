@@ -220,13 +220,13 @@ backface_collision = true
 [sub_resource type="BoxShape3D" id="BoxShape3D_fgjub"]
 size = Vector3(0.7093904, 0.6569786, 0.3464985)
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_ib1oc"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_n6t12"]
 viewport_path = NodePath("SubViewport")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_lpbik"]
 size = Vector3(2.7988434, 0.88586426, 1.879242)
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_bqatb"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_rfmjj"]
 viewport_path = NodePath("SubViewport")
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_4ge1e"]
@@ -326,7 +326,7 @@ radius = 0.72753906
 [sub_resource type="BoxShape3D" id="BoxShape3D_mf3uy"]
 size = Vector3(1.3945313, 1, 1.4379883)
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_dxp3g"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_m0rdy"]
 viewport_path = NodePath("SubViewport")
 
 [sub_resource type="LabelSettings" id="LabelSettings_a2g5q"]
@@ -377,7 +377,7 @@ Déconnectez les fils avec [clic droit]", SubResource("LabelSettings_nmo0h"), 1,
 "version": 3
 }
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_kdfas"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_mc2iw"]
 viewport_path = NodePath("SubViewport")
 
 [node name="Tower" type="Node3D" unique_id=472412556]
@@ -453,7 +453,7 @@ shape = SubResource("BoxShape3D_fgjub")
 
 [node name="InteractacleText3D" parent="Interractable" unique_id=2065454063 instance=ExtResource("5_tuflv")]
 transform = Transform3D(0.16992693, 0, -0.004983961, 0, 0.17, 0, 0.004983961, 0, 0.16992693, -0.005797118, 0.12886083, 0.267196)
-texture = SubResource("ViewportTexture_ib1oc")
+texture = SubResource("ViewportTexture_n6t12")
 
 [node name="FinalInterractable" type="Area3D" parent="." unique_id=731977804 node_paths=PackedStringArray("animated_sprite", "text_sprite", "camera_root")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.6426318, 0.18939376, 0.803)
@@ -475,7 +475,7 @@ shape = SubResource("BoxShape3D_lpbik")
 
 [node name="InteractacleText3D" parent="FinalInterractable" unique_id=1576660793 instance=ExtResource("5_tuflv")]
 transform = Transform3D(-0.16930035, 0, 0.015407526, 0, 0.17, 0, -0.015407526, 0, -0.16930035, -0.30672038, 0.12900001, -0.21098685)
-texture = SubResource("ViewportTexture_bqatb")
+texture = SubResource("ViewportTexture_rfmjj")
 
 [node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="FinalInterractable" unique_id=436867683]
 sprite_frames = SubResource("SpriteFrames_4ge1e")
@@ -550,7 +550,7 @@ shape = SubResource("BoxShape3D_mf3uy")
 
 [node name="InteractacleText3D" parent="Ladder" unique_id=2090397398 instance=ExtResource("5_tuflv")]
 transform = Transform3D(-0.0026168497, 0, -0.16997986, 0, 0.17, 0, 0.16997986, 0, -0.0026168497, -0.572776, 0.53300095, 0.106916085)
-texture = SubResource("ViewportTexture_dxp3g")
+texture = SubResource("ViewportTexture_m0rdy")
 
 [node name="FinalMinigame" type="Area3D" parent="." unique_id=1492570691 node_paths=PackedStringArray("text_sprite")]
 transform = Transform3D(-0.9269812, 0, 0.37510818, 0, 1, 0, -0.37510818, 0, -0.9269812, 0.17018434, 18.51658, -0.36864877)
@@ -567,6 +567,6 @@ shape = SubResource("BoxShape3D_fgjub")
 
 [node name="InteractacleText3D" parent="FinalMinigame" unique_id=1556505926 instance=ExtResource("5_tuflv")]
 transform = Transform3D(0.16992693, 0, -0.004983961, 0, 0.17, 0, 0.004983961, 0, 0.16992693, -0.005797118, 0.12886083, 0.267196)
-texture = SubResource("ViewportTexture_kdfas")
+texture = SubResource("ViewportTexture_mc2iw")
 
 [connection signal="body_entered" from="FinalInterractable" to="." method="_on_final_interractable_body_entered"]
