@@ -48,3 +48,4 @@ func reset() -> void:
 
 func _on_pince_area_entered(_area: Area2D) -> void:
 	failed.emit()
+	$AudioStreamPlayer.play()

@@ -29,7 +29,7 @@ size = Vector2(838, 114)
 size = Vector2(842, 53)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xn33l"]
-size = Vector2(77, 617)
+size = Vector2(85, 617)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qffvi"]
 size = Vector2(229.25, 288)
@@ -38,13 +38,7 @@ size = Vector2(229.25, 288)
 size = Vector2(238.25, 237)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jau64"]
-size = Vector2(90.125, 152)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_482mc"]
-size = Vector2(90.125, 152)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_csu50"]
-size = Vector2(90.125, 152)
+size = Vector2(798, 134)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_d37ci"]
 size = Vector2(67, 77)
@@ -54,6 +48,9 @@ size = Vector2(161, 158)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_w24ob"]
 size = Vector2(87, 62)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ov1vm"]
+size = Vector2(8.5, 47)
 
 [sub_resource type="Gradient" id="Gradient_fxxif"]
 offsets = PackedFloat32Array(0.016990291, 1)
@@ -365,7 +362,6 @@ expand_mode = 1
 [node name="Node2D" type="Node2D" parent="SubViewportContainer/SubViewport" unique_id=389789798]
 
 [node name="StaticBody2D" type="StaticBody2D" parent="SubViewportContainer/SubViewport/Node2D" unique_id=1520152983]
-visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SubViewportContainer/SubViewport/Node2D/StaticBody2D" unique_id=866662587]
 position = Vector2(652, 88)
@@ -376,7 +372,7 @@ position = Vector2(645, 624.5)
 shape = SubResource("RectangleShape2D_to0sm")
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="SubViewportContainer/SubViewport/Node2D/StaticBody2D" unique_id=1528279673]
-position = Vector2(1111.5, 339.5)
+position = Vector2(1107.5, 339.5)
 shape = SubResource("RectangleShape2D_xn33l")
 
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="SubViewportContainer/SubViewport/Node2D/StaticBody2D" unique_id=2098860793]
@@ -388,16 +384,8 @@ position = Vector2(103.875, 530.5)
 shape = SubResource("RectangleShape2D_6qrce")
 
 [node name="CollisionShape2D6" type="CollisionShape2D" parent="SubViewportContainer/SubViewport/Node2D/StaticBody2D" unique_id=1898852875]
-position = Vector2(373, 198)
+position = Vector2(646, 189)
 shape = SubResource("RectangleShape2D_jau64")
-
-[node name="CollisionShape2D7" type="CollisionShape2D" parent="SubViewportContainer/SubViewport/Node2D/StaticBody2D" unique_id=1920822132]
-position = Vector2(568, 190)
-shape = SubResource("RectangleShape2D_482mc")
-
-[node name="CollisionShape2D8" type="CollisionShape2D" parent="SubViewportContainer/SubViewport/Node2D/StaticBody2D" unique_id=1006755783]
-position = Vector2(776, 199)
-shape = SubResource("RectangleShape2D_csu50")
 
 [node name="CollisionShape2D9" type="CollisionShape2D" parent="SubViewportContainer/SubViewport/Node2D/StaticBody2D" unique_id=455291075]
 position = Vector2(275.5, 511.5)
@@ -410,6 +398,10 @@ shape = SubResource("RectangleShape2D_h2c0v")
 [node name="CollisionShape2D11" type="CollisionShape2D" parent="SubViewportContainer/SubViewport/Node2D/StaticBody2D" unique_id=98653038]
 position = Vector2(1015.5, 354)
 shape = SubResource("RectangleShape2D_w24ob")
+
+[node name="CollisionShape2D7" type="CollisionShape2D" parent="SubViewportContainer/SubViewport/Node2D/StaticBody2D" unique_id=341587661]
+position = Vector2(1055.25, 390.5)
+shape = SubResource("RectangleShape2D_ov1vm")
 
 [node name="Collisions" type="Node2D" parent="SubViewportContainer/SubViewport/Node2D" unique_id=126624472]
 
@@ -465,7 +457,7 @@ metadata/_custom_type_script = "uid://i1towdpqubly"
 [node name="PointLight2D" type="PointLight2D" parent="SubViewportContainer/SubViewport/Node2D/Y-Sort/Interactables/Interactable2DMinigame2" unique_id=1561608277]
 position = Vector2(-2, -1)
 scale = Vector2(2, 2)
-energy = 1.05
+energy = 0.5
 texture = SubResource("GradientTexture2D_rd26i")
 metadata/_edit_lock_ = true
 
@@ -546,7 +538,7 @@ metadata/_edit_lock_ = true
 [node name="PointLight2D" type="PointLight2D" parent="SubViewportContainer/SubViewport/Node2D/Y-Sort/Interactables/Interactable2DMinigame3" unique_id=1796077961]
 position = Vector2(-2, -1)
 scale = Vector2(2, 2)
-energy = 0.44
+energy = 1.05
 texture = SubResource("GradientTexture2D_jau64")
 metadata/_edit_lock_ = true
 
@@ -596,7 +588,7 @@ texture = ExtResource("17_d37ci")
 [node name="PointLight2D" type="PointLight2D" parent="SubViewportContainer/SubViewport/Node2D/Y-Sort/Interactables/Interactable2DMinigame4" unique_id=945284601]
 position = Vector2(-6, -3)
 scale = Vector2(4, 4)
-energy = 0.61
+energy = 1.05
 texture = SubResource("GradientTexture2D_482mc")
 metadata/_edit_lock_ = true
 
@@ -648,7 +640,7 @@ metadata/_edit_use_anchors_ = true
 [node name="PointLight2D" type="PointLight2D" parent="SubViewportContainer/SubViewport/Node2D/Y-Sort/Interactables/Interactable2DMinigame5" unique_id=1613387588]
 position = Vector2(-6, -3)
 scale = Vector2(4, 4)
-energy = 0.65
+energy = 1.05
 texture = SubResource("GradientTexture2D_482mc")
 metadata/_edit_lock_ = true
 
@@ -717,11 +709,21 @@ position = Vector2(290, 176)
 scale = Vector2(2, 2)
 texture = ExtResource("8_mjrqe")
 
+[node name="LightOccluder2D" type="LightOccluder2D" parent="SubViewportContainer/SubViewport/Node2D/Y-Sort/Props/Borne" unique_id=270796829]
+position = Vector2(1, 0.5)
+scale = Vector2(0.5, 0.5)
+occluder = SubResource("OccluderPolygon2D_csu50")
+
 [node name="Borne2" type="Sprite2D" parent="SubViewportContainer/SubViewport/Node2D/Y-Sort/Props" unique_id=2113570380]
 z_index = -1
 position = Vector2(492, 176)
 scale = Vector2(2, 2)
 texture = ExtResource("8_mjrqe")
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="SubViewportContainer/SubViewport/Node2D/Y-Sort/Props/Borne2" unique_id=1799922753]
+position = Vector2(1, 0.5)
+scale = Vector2(0.5, 0.5)
+occluder = SubResource("OccluderPolygon2D_csu50")
 
 [node name="Borne3" type="Sprite2D" parent="SubViewportContainer/SubViewport/Node2D/Y-Sort/Props" unique_id=1948863438]
 z_index = -1
@@ -729,17 +731,32 @@ position = Vector2(694, 176)
 scale = Vector2(2, 2)
 texture = ExtResource("8_mjrqe")
 
+[node name="LightOccluder2D" type="LightOccluder2D" parent="SubViewportContainer/SubViewport/Node2D/Y-Sort/Props/Borne3" unique_id=1048905703]
+position = Vector2(1, 0.5)
+scale = Vector2(0.5, 0.5)
+occluder = SubResource("OccluderPolygon2D_csu50")
+
 [node name="Borne4" type="Sprite2D" parent="SubViewportContainer/SubViewport/Node2D/Y-Sort/Props" unique_id=777961243]
 z_index = -1
 position = Vector2(896, 176)
 scale = Vector2(2, 2)
 texture = ExtResource("8_mjrqe")
 
+[node name="LightOccluder2D" type="LightOccluder2D" parent="SubViewportContainer/SubViewport/Node2D/Y-Sort/Props/Borne4" unique_id=1355990082]
+position = Vector2(1, 0.5)
+scale = Vector2(0.5, 0.5)
+occluder = SubResource("OccluderPolygon2D_csu50")
+
 [node name="Borne5" type="Sprite2D" parent="SubViewportContainer/SubViewport/Node2D/Y-Sort/Props" unique_id=1122866082]
 z_index = -1
 position = Vector2(997, 176)
 scale = Vector2(2, 2)
 texture = ExtResource("8_mjrqe")
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="SubViewportContainer/SubViewport/Node2D/Y-Sort/Props/Borne5" unique_id=1596971962]
+position = Vector2(1, 0.5)
+scale = Vector2(0.5, 0.5)
+occluder = SubResource("OccluderPolygon2D_csu50")
 
 [node name="Node2D" type="Node2D" parent="SubViewportContainer/SubViewport/Node2D/Y-Sort" unique_id=1866498207]
 

@@ -16,6 +16,10 @@ signal failed
 
 var current_cube_touched:bool = false
 
+@onready var link_sound_effect = preload("res://src/minigames/electician_minigame/sfx/link.wav")
+@onready var cancel_sound_effect = preload("res://src/minigames/electician_minigame/sfx/cancel.wav")
+@onready var sfx_stream = $AudioStreamPlayer
+
 func _ready() -> void:
 	$BaseRect.position.y = -$BaseRect.size.y
 	$MockUpRect.position.y = $BaseRect.position.y
@@ -61,14 +65,21 @@ func _process(delta: float) -> void:
 		if $BaseRect.get_rect().has_point(size/2):
 			$BaseRect.texture = cube_sucess_text
 			current_cube_touched = true
+			sfx_stream.stream = link_sound_effect
+			sfx_stream.pitch_scale = randf_range(0.8, 1.2)
+			sfx_stream.play()
 		else:
 			$BaseRect.texture = cube_failed_text
 			failed.emit()
+			sfx_stream.stream = cancel_sound_effect
+			sfx_stream.play()
 	
 	# Fail
 	if $BaseRect.position.y - size.y/2 > 5 && !current_cube_touched:
 		$BaseRect.texture = cube_failed_text
 		failed.emit()
+		sfx_stream.stream = cancel_sound_effect
+		sfx_stream.play()
 
 func reset() -> void:
 	$BaseRect.position.y = 0

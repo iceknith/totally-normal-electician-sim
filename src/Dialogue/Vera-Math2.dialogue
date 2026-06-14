@@ -26,7 +26,7 @@ Vera: I'm doing... fine...
 
 ~ start75
 $> GlobalVars.vera_visited = true
-Vera: Who's there? [auto]
+Vera: Who's there? [next=auto]
 - Hello
 - Are you okay
 	Vera: ... Yeah... I think?

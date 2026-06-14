@@ -200,6 +200,12 @@ func idle_handler():
 			if circle_color < -1:
 				unvalidate_path((-circle_color-2)%color_count)
 				completed_count -= 1
+				
+				sfx_stream.stream = cancel_sound_effect
+				sfx_stream.volume_db = -6
+				sfx_stream.play()
+				await sfx_stream.finished
+				sfx_stream.volume_db = 0
 
 func cable_selected_handler():
 	var current_cable:Line2D = cables[current_color]
@@ -219,6 +225,10 @@ func cable_selected_handler():
 			
 			images[circle_pos.x][circle_pos.y].texture = button_textures[current_color]
 			set_circle_color(circle_pos, -2-current_color)
+			
+			sfx_stream.stream = link_sound_effect
+			sfx_stream.pitch_scale = randf_range(0.8, 1.2)
+			sfx_stream.play()
 		
 		elif circle_color == current_color && start_circle_pos != circle_pos:
 			current_cable.set_point_position(line_length-1, get_screen_pos_centered(circle_pos))

@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://r14dr1h4t38i" path="res://assets/pixelart/canBeTouchedBubble.png" id="4_f0nen"]
 [ext_resource type="Texture2D" uid="uid://wuu41gmymw5" path="res://assets/pixelart/validatedBubble.png" id="5_aske6"]
 [ext_resource type="Texture2D" uid="uid://dmtrnsw0yl4tm" path="res://assets/pixelart/failesBubble.png" id="6_djlht"]
+[ext_resource type="AudioStream" uid="uid://b12pnv2rlaiq0" path="res://src/minigames/electician_minigame/sfx/cancel.wav" id="8_aske6"]
 
 [node name="TimingSection" type="NinePatchRect" unique_id=399789398]
 clip_children = 2
@@ -72,3 +73,7 @@ patch_margin_top = 6
 patch_margin_bottom = 8
 axis_stretch_vertical = 1
 metadata/_edit_lock_ = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=771039688]
+stream = ExtResource("8_aske6")
+bus = &"sfx"

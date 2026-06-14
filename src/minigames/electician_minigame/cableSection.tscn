@@ -25,3 +25,5 @@ min_border_perc = 0.52
 cable_width = 8.0
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=2095826830]
+process_mode = 3
+bus = &"sfx"

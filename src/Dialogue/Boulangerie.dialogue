@@ -92,12 +92,12 @@ Patrick: [wave amp=10 freq=3] Welcome back strawberry pie~.
 Patrick: [wave amp=30 freq=1] I ate too much yesterday, I'm feeling sick.
 => END
 
-~ bad_ending65
+~ bad_ending60
 Patrick: [wave amp=30 freq=1] I don't feel so good.
 Patrick: Oh, hell-.[shake rate=40 level=50].. GET OUT OF MY SHOP!
 => END
 
-~ global75
+~ global79
 Patrick: [wave amp=30 freq=3] Why is everything weird?
 => END
 
