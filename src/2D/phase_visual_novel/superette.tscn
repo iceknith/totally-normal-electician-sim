@@ -85,6 +85,7 @@ offset_left = 436.0
 offset_top = 62.0
 offset_right = 575.0
 offset_bottom = 124.0
+mouse_filter = 2
 
 [node name="fg" type="TextureRect" parent="." unique_id=1743836522]
 layout_mode = 1

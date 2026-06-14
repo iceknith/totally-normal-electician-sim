@@ -109,6 +109,7 @@ func launch_game() -> void:
 	# eow_meter = 0.9362
 	
 	#world3D.start_game()
+	$HUD/GameOverlay.show()
 	reset_state()
 
 func reset_state():

@@ -5,9 +5,6 @@
 [ext_resource type="PackedScene" uid="uid://b3nng2yxnwllt" path="res://assets/blender/foresttree2.blend" id="3_24bvc"]
 [ext_resource type="Texture2D" uid="uid://cjvrmuugp6xso" path="res://assets/blender/forest tree texture.png" id="4_24bvc"]
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_fxhpr"]
-size = Vector3(507.2356, 50, 483.65918)
-
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3xrf7"]
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_i74aj"]
@@ -278,15 +275,6 @@ buffer = PackedFloat32Array(-0.4098996, 0, 0, -14.128205, 0, 0.4098996, 0, 0, 0,
 
 [node name="Forest" type="Node3D" unique_id=2094210011]
 transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 0.99999994, 0, 0, 0)
-
-[node name="worldBoxBig" type="Area3D" parent="." unique_id=2102984664]
-collision_layer = 0
-collision_mask = 2
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="worldBoxBig" unique_id=1373596979]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.598755, 0, -8.17041)
-shape = SubResource("BoxShape3D_fxhpr")
-debug_color = Color(1, 0.105669856, 0, 1)
 
 [node name="PhysicsTrees" type="Node3D" parent="." unique_id=971788062]
 script = ExtResource("1_kpdfn")
@@ -1628,52 +1616,61 @@ transform = Transform3D(0.4748462, 0, 0, 0, 0.4748462, 0, 0, 0, 0.4748462, -74.3
 transform = Transform3D(0.46504623, 0, 0, 0, 0.46504623, 0, 0, 0, 0.46504623, -68.52436, 0, -121.589134)
 
 [node name="Forest_1775998634_75368" parent="PhysicsTrees" unique_id=998949565 instance=ExtResource("2_lfuvo")]
-transform = Transform3D(0.49990785, 0, 0, 0, 0.49990785, 0, 0, 0, 0.49990785, -2.088768, 0, -181.65932)
+transform = Transform3D(0.4994027, 0, -0.022468127, 0, 0.49990785, 0, 0.022468127, 0, 0.4994027, -12.91681, 0, -188.0806)
 
 [node name="Forest_1775998634_75384" parent="PhysicsTrees" unique_id=2145648598 instance=ExtResource("2_lfuvo")]
-transform = Transform3D(0.45659304, 0, 0, 0, 0.45659304, 0, 0, 0, 0.45659304, -4.356682, 0, -181.15247)
+transform = Transform3D(0.45613164, 0, -0.020521358, 0, 0.45659304, 0, 0.020521358, 0, 0.45613164, -14.246522, 0, -187.01738)
 
 [node name="Forest_1775998634_75405" parent="PhysicsTrees" unique_id=1610574324 instance=ExtResource("2_lfuvo")]
-transform = Transform3D(0.4586485, 0, 0, 0, 0.4586485, 0, 0, 0, 0.4586485, -0.971015, 0, -179.49959)
+transform = Transform3D(0.45818505, 0, -0.020613745, 0, 0.4586485, 0, 0.020613745, 0, 0.45818505, -10.905376, 0, -185.3909)
 
 [node name="Forest_1775998634_75414" parent="PhysicsTrees" unique_id=1253414251 instance=ExtResource("2_lfuvo")]
-transform = Transform3D(0.40523195, 0, 0, 0, 0.40523195, 0, 0, 0, 0.40523195, -3.7083633, 0, -176.25899)
+transform = Transform3D(0.40522805, 0, 0.0017822975, 0, 0.40523195, 0, -0.0017822975, 0, 0.40522805, -11.669574, 0, -178.548)
 
 [node name="Forest_1775998634_75418" parent="PhysicsTrees" unique_id=49820822 instance=ExtResource("2_lfuvo")]
-transform = Transform3D(0.42831823, 0, 0, 0, 0.42831823, 0, 0, 0, 0.42831823, -8.41927, 0, -175.0535)
+transform = Transform3D(0.4283141, 0, 0.0018838359, 0, 0.42831823, 0, -0.0018838359, 0, 0.4283141, -16.332798, 0, -182.68575)
 
 [node name="Forest_1775998636_58009" parent="PhysicsTrees" unique_id=1909626460 instance=ExtResource("2_lfuvo")]
-transform = Transform3D(0.4064758, 0, 0, 0, 0.4064758, 0, 0, 0, 0.4064758, 7.351584, 0, -194.90373)
+transform = Transform3D(0.4064758, 0, 0, 0, 0.4064758, 0, 0, 0, 0.4064758, -4.4496307, 0, -225.57265)
 
 [node name="Forest_1775998636_5802" parent="PhysicsTrees" unique_id=712509723 instance=ExtResource("2_lfuvo")]
-transform = Transform3D(0.40445632, 0, 0, 0, 0.40445632, 0, 0, 0, 0.40445632, 3.743581, 0, -183.58304)
+transform = Transform3D(0.4040476, 0, -0.018178098, 0, 0.40445632, 0, 0.018178098, 0, 0.4040476, -7.1538305, 0, -187.08351)
+
+[node name="Forest_1775998636_5803" parent="PhysicsTrees" unique_id=1308462970 instance=ExtResource("2_lfuvo")]
+transform = Transform3D(0.4040476, 0, -0.018178098, 0, 0.40445632, 0, 0.018178098, 0, 0.4040476, -6.1913557, 0, -239.0366)
+
+[node name="Forest_1775998636_5805" parent="PhysicsTrees" unique_id=590756236 instance=ExtResource("2_lfuvo")]
+transform = Transform3D(0.4040476, 0, -0.018178098, 0, 0.40445632, 0, 0.018178098, 0, 0.4040476, -2.1166747, 0, -247.32233)
+
+[node name="Forest_1775998636_5807" parent="PhysicsTrees" unique_id=452508747 instance=ExtResource("2_lfuvo")]
+transform = Transform3D(0.4040476, 0, -0.018178098, 0, 0.40445632, 0, 0.018178098, 0, 0.4040476, -3.2079606, 0, -267.78082)
 
 [node name="Forest_1775998636_58031" parent="PhysicsTrees" unique_id=1276480462 instance=ExtResource("3_24bvc")]
-transform = Transform3D(0.40335876, 0, 0, 0, 0.40335876, 0, 0, 0, 0.40335876, 0.09821746, 0, -185.58978)
+transform = Transform3D(0.40295115, 0, -0.018128771, 0, 0.40335876, 0, 0.018128771, 0, 0.40295115, -9.567238, 0, -190.39944)
 
 [node name="Forest_1775998636_5804" parent="PhysicsTrees" unique_id=909781643 instance=ExtResource("2_lfuvo")]
-transform = Transform3D(0.46426007, 0, 0, 0, 0.46426007, 0, 0, 0, 0.46426007, 7.121008, 0, -190.67755)
+transform = Transform3D(0.46379092, 0, -0.020865947, 0, 0.46426007, 0, 0.020865947, 0, 0.46379092, -2.9349012, 0, -201.00528)
 
 [node name="Forest_1775998636_58051" parent="PhysicsTrees" unique_id=508952927 instance=ExtResource("3_24bvc")]
-transform = Transform3D(0.40853086, 0, 0, 0, 0.40853086, 0, 0, 0, 0.40853086, 2.1575212, 0, -187.16454)
+transform = Transform3D(0.40811804, 0, -0.018361222, 0, 0.40853086, 0, 0.018361222, 0, 0.40811804, -5.617486, 0, -198.61403)
 
 [node name="Forest_1775998636_58071" parent="PhysicsTrees" unique_id=1479538511 instance=ExtResource("3_24bvc")]
-transform = Transform3D(0.4473094, 0, 0, 0, 0.4473094, 0, 0, 0, 0.4473094, 6.4378223, 0, -187.60661)
+transform = Transform3D(0.4468574, 0, -0.020104103, 0, 0.4473094, 0, 0.020104103, 0, 0.4468574, -3.9877765, 0, -195.6365)
 
 [node name="Forest_1775998637_48984" parent="PhysicsTrees" unique_id=1490228725 instance=ExtResource("2_lfuvo")]
-transform = Transform3D(0.4028964, 0, 0, 0, 0.4028964, 0, 0, 0, 0.4028964, -17.059778, 0, -166.96927)
+transform = Transform3D(0.4028925, 0, 0.0017720253, 0, 0.4028964, 0, -0.0017720253, 0, 0.4028925, -29.786947, 0, -165.43571)
 
 [node name="Forest_1775998637_48993" parent="PhysicsTrees" unique_id=1658338097 instance=ExtResource("3_24bvc")]
 transform = Transform3D(0.40694767, 0, 0, 0, 0.40694767, 0, 0, 0, 0.40694767, -7.531268, 0, -178.22096)
 
 [node name="Forest_1775998637_49003" parent="PhysicsTrees" unique_id=1888394207 instance=ExtResource("2_lfuvo")]
-transform = Transform3D(0.43582362, 0, 0, 0, 0.43582362, 0, 0, 0, 0.43582362, -12.482186, 0, -173.51257)
+transform = Transform3D(0.43581942, 0, 0.0019168463, 0, 0.43582362, 0, -0.0019168463, 0, 0.43581942, -21.044403, 0, -175.9744)
 
 [node name="Forest_1775998637_49007" parent="PhysicsTrees" unique_id=925763402 instance=ExtResource("3_24bvc")]
-transform = Transform3D(0.419473, 0, 0, 0, 0.419473, 0, 0, 0, 0.419473, -14.198612, 0, -171.81862)
+transform = Transform3D(0.41946894, 0, 0.0018449327, 0, 0.419473, 0, -0.0018449327, 0, 0.41946894, -16.023808, 0, -174.08783)
 
 [node name="Forest_1775998638_70519" parent="PhysicsTrees" unique_id=355093704 instance=ExtResource("2_lfuvo")]
-transform = Transform3D(0.4169585, 0, 0, 0, 0.4169585, 0, 0, 0, 0.4169585, -25.061804, 0, -163.15343)
+transform = Transform3D(0.4169585, 0, 0, 0, 0.4169585, 0, 0, 0, 0.4169585, -13.834157, 0, -169.97021)
 
 [node name="Forest_1775998638_70523" parent="PhysicsTrees" unique_id=630298637 instance=ExtResource("2_lfuvo")]
 transform = Transform3D(0.4579934, 0, 0, 0, 0.4579934, 0, 0, 0, 0.4579934, -29.910366, 0, -154.04591)
@@ -1757,10 +1754,10 @@ transform = Transform3D(0.40652224, 0, 0, 0, 0.40652224, 0, 0, 0, 0.40652224, -5
 transform = Transform3D(0.44702414, 0, 0, 0, 0.44702414, 0, 0, 0, 0.44702414, -60.03901, 0, -137.41893)
 
 [node name="Forest_1775998641_57443" parent="PhysicsTrees" unique_id=664158459 instance=ExtResource("2_lfuvo")]
-transform = Transform3D(0.43298268, 0, 0, 0, 0.43298268, 0, 0, 0, 0.43298268, -18.395027, 0, -171.97046)
+transform = Transform3D(0.4329785, 0, 0.0019043512, 0, 0.43298268, 0, -0.0019043512, 0, 0.4329785, -26.90143, 0, -174.41623)
 
 [node name="Forest_1775998641_57466" parent="PhysicsTrees" unique_id=966155931 instance=ExtResource("2_lfuvo")]
-transform = Transform3D(0.47066215, 0, 0, 0, 0.47066215, 0, 0, 0, 0.47066215, -17.697664, 0, -168.47368)
+transform = Transform3D(0.47065762, 0, 0.0020700735, 0, 0.47066215, 0, -0.0020700735, 0, 0.47065762, -23.034698, 0, -172.13477)
 
 [node name="Forest_1775998641_57532" parent="PhysicsTrees" unique_id=271470564 instance=ExtResource("3_24bvc")]
 transform = Transform3D(0.45454046, 0, 0, 0, 0.45454046, 0, 0, 0, 0.45454046, -22.1486, 0, -166.47182)
@@ -3239,79 +3236,73 @@ transform = Transform3D(0.49920157, 0, 0, 0, 0.49920157, 0, 0, 0, 0.49920157, 31
 transform = Transform3D(0.43308786, 0, 0, 0, 0.43308786, 0, 0, 0, 0.43308786, 33.761215, 0, -259.33746)
 
 [node name="Forest_1776000480_59555" parent="PhysicsTrees" unique_id=1595847335 instance=ExtResource("3_24bvc")]
-transform = Transform3D(0.463292, 0, 0, 0, 0.463292, 0, 0, 0, 0.463292, 3.2527552, 0, -257.16852)
+transform = Transform3D(0.463292, 0, 0, 0, 0.463292, 0, 0, 0, 0.463292, -5.379081, 0, -263.21082)
 
 [node name="Forest_1776000480_59571" parent="PhysicsTrees" unique_id=1518137284 instance=ExtResource("2_lfuvo")]
-transform = Transform3D(0.4917831, 0, 0, 0, 0.4917831, 0, 0, 0, 0.4917831, 4.052074, 0, -254.40466)
+transform = Transform3D(0.4917831, 0, 0, 0, 0.4917831, 0, 0, 0, 0.4917831, -3.7565827, 0, -258.4355)
 
 [node name="Forest_1776000480_88561" parent="PhysicsTrees" unique_id=1189055082 instance=ExtResource("3_24bvc")]
-transform = Transform3D(0.42690822, 0, 0, 0, 0.42690822, 0, 0, 0, 0.42690822, 5.177302, 0, -241.72708)
-
-[node name="Forest_1776000480_88569" parent="PhysicsTrees" unique_id=368680328 instance=ExtResource("3_24bvc")]
-transform = Transform3D(0.45428777, 0, 0, 0, 0.45428777, 0, 0, 0, 0.45428777, 2.2893713, 0, -244.02977)
-
-[node name="Forest_1776000481_75597" parent="PhysicsTrees" unique_id=1746385992 instance=ExtResource("3_24bvc")]
-transform = Transform3D(0.46223328, 0, 0, 0, 0.46223328, 0, 0, 0, 0.46223328, 1.9212384, 0, -238.5937)
+transform = Transform3D(0.42690822, 0, 0, 0, 0.42690822, 0, 0, 0, 0.42690822, -9.076782, 0, -247.14119)
 
 [node name="Forest_1776000481_75606" parent="PhysicsTrees" unique_id=148167008 instance=ExtResource("3_24bvc")]
-transform = Transform3D(0.40776685, 0, 0, 0, 0.40776685, 0, 0, 0, 0.40776685, 1.9196091, 0, -234.33885)
+transform = Transform3D(0.40776685, 0, 0, 0, 0.40776685, 0, 0, 0, 0.40776685, -7.4499197, 0, -253.01411)
 
 [node name="Forest_1776000481_75625" parent="PhysicsTrees" unique_id=2088840466 instance=ExtResource("2_lfuvo")]
-transform = Transform3D(0.4176804, 0, 0, 0, 0.4176804, 0, 0, 0, 0.4176804, 4.987571, 0, -238.11887)
+transform = Transform3D(0.4176804, 0, 0, 0, 0.4176804, 0, 0, 0, 0.4176804, -8.9584055, 0, -243.41594)
 
 [node name="Forest_1776000481_75626" parent="PhysicsTrees" unique_id=1125646290 instance=ExtResource("2_lfuvo")]
-transform = Transform3D(0.4176804, 0, 0, 0, 0.4176804, 0, 0, 0, 0.4176804, 4.9875746, 0, -233.50322)
+transform = Transform3D(0.4176804, 0, 0, 0, 0.4176804, 0, 0, 0, 0.4176804, -8.865533, 0, -239.63611)
 
 [node name="Forest_1776000482_24523" parent="PhysicsTrees" unique_id=1558003253 instance=ExtResource("3_24bvc")]
-transform = Transform3D(0.4607201, 0, 0, 0, 0.4607201, 0, 0, 0, 0.4607201, 0.9129512, 0, -208.25917)
+transform = Transform3D(0.4607201, 0, 0, 0, 0.4607201, 0, 0, 0, 0.4607201, -7.9094443, 0, -194.28264)
 
 [node name="Forest_1776000482_24532" parent="PhysicsTrees" unique_id=496346614 instance=ExtResource("3_24bvc")]
-transform = Transform3D(0.45127848, 0, 0, 0, 0.45127848, 0, 0, 0, 0.45127848, 3.406914, 0, -205.95947)
+transform = Transform3D(0.45127848, 0, 0, 0, 0.45127848, 0, 0, 0, 0.45127848, -5.001092, 0, -211.8451)
 
 [node name="Forest_1776000482_24537" parent="PhysicsTrees" unique_id=1923690401 instance=ExtResource("2_lfuvo")]
-transform = Transform3D(0.47487646, 0, 0, 0, 0.47487646, 0, 0, 0, 0.47487646, 4.246944, 0, -217.75099)
+transform = Transform3D(0.47487646, 0, 0, 0, 0.47487646, 0, 0, 0, 0.47487646, -8.895878, 0, -223.94438)
 
 [node name="Forest_1776000482_24541" parent="PhysicsTrees" unique_id=1971425422 instance=ExtResource("2_lfuvo")]
-transform = Transform3D(0.46883062, 0, 0, 0, 0.46883062, 0, 0, 0, 0.46883062, 5.9258976, 0, -221.06938)
+transform = Transform3D(0.46883062, 0, 0, 0, 0.46883062, 0, 0, 0, 0.46883062, -8.843718, 0, -228.26779)
 
 [node name="Forest_1776000482_24548" parent="PhysicsTrees" unique_id=1748522489 instance=ExtResource("3_24bvc")]
-transform = Transform3D(0.42642042, 0, 0, 0, 0.42642042, 0, 0, 0, 0.42642042, 3.0225549, 0, -210.34282)
+transform = Transform3D(0.42642042, 0, 0, 0, 0.42642042, 0, 0, 0, 0.42642042, -4.922307, 0, -215.90424)
 
 [node name="Forest_1776000482_52371" parent="PhysicsTrees" unique_id=565749732 instance=ExtResource("3_24bvc")]
-transform = Transform3D(0.41166186, 0, 0, 0, 0.41166186, 0, 0, 0, 0.41166186, 4.1740136, 0, -230.244)
+transform = Transform3D(0.41166186, 0, 0, 0, 0.41166186, 0, 0, 0, 0.41166186, -4.7986155, 0, -235.14659)
 
 [node name="Forest_1776000482_52379" parent="PhysicsTrees" unique_id=1599504282 instance=ExtResource("2_lfuvo")]
-transform = Transform3D(0.49021694, 0, 0, 0, 0.49021694, 0, 0, 0, 0.49021694, 5.694056, 0, -227.62036)
+transform = Transform3D(0.49021694, 0, 0, 0, 0.49021694, 0, 0, 0, 0.49021694, -10.231742, 0, -233.02682)
 
 [node name="Forest_1776000482_52388" parent="PhysicsTrees" unique_id=1684708572 instance=ExtResource("3_24bvc")]
-transform = Transform3D(0.43914923, 0, 0, 0, 0.43914923, 0, 0, 0, 0.43914923, 7.747354, 0, -227.22762)
+transform = Transform3D(0.43914923, 0, 0, 0, 0.43914923, 0, 0, 0, 0.43914923, -5.6602736, 0, -245.20114)
 
 [node name="Forest_1776000482_81461" parent="PhysicsTrees" unique_id=1400369444 instance=ExtResource("2_lfuvo")]
-transform = Transform3D(0.41575518, 0, 0, 0, 0.41575518, 0, 0, 0, 0.41575518, 6.038348, 0, -202.45428)
+transform = Transform3D(0.41575518, 0, 0, 0, 0.41575518, 0, 0, 0, 0.41575518, -2.9352822, 0, -208.55852)
 
 [node name="Forest_1776000482_81475" parent="PhysicsTrees" unique_id=57672227 instance=ExtResource("3_24bvc")]
-transform = Transform3D(0.45040607, 0, 0, 0, 0.45040607, 0, 0, 0, 0.45040607, 5.999213, 0, -198.91333)
+transform = Transform3D(0.45040607, 0, 0, 0, 0.45040607, 0, 0, 0, 0.45040607, -2.392538, 0, -204.78757)
 
 [node name="Forest_1776000482_81479" parent="PhysicsTrees" unique_id=1117571274 instance=ExtResource("2_lfuvo")]
-transform = Transform3D(0.45528182, 0, 0, 0, 0.45528182, 0, 0, 0, 0.45528182, 6.575561, 0, -206.81285)
+transform = Transform3D(0.45528182, 0, 0, 0, 0.45528182, 0, 0, 0, 0.45528182, -8.625892, 0, -212.58679)
 
 [node name="Forest_1776000483_6009" parent="PhysicsTrees" unique_id=1363508919 instance=ExtResource("2_lfuvo")]
-transform = Transform3D(0.47143683, 0, 0, 0, 0.47143683, 0, 0, 0, 0.47143683, 4.101901, 0, -213.82625)
+transform = Transform3D(0.47143683, 0, 0, 0, 0.47143683, 0, 0, 0, 0.47143683, -1.6521139, 0, -251.03581)
 
 [node name="Forest_1776000483_89326" parent="PhysicsTrees" unique_id=601491511 instance=ExtResource("2_lfuvo")]
-transform = Transform3D(0.4419601, 0, 0, 0, 0.4419601, 0, 0, 0, 0.4419601, 4.5361023, 0, -224.68762)
+transform = Transform3D(0.4419601, 0, 0, 0, 0.4419601, 0, 0, 0, 0.4419601, -5.4481654, 0, -230.4517)
 
 [node name="Forest_1776000484_40398" parent="PhysicsTrees" unique_id=1931528333 instance=ExtResource("3_24bvc")]
-transform = Transform3D(0.4602215, 0, 0, 0, 0.4602215, 0, 0, 0, 0.4602215, 9.552118, 0, -218.9193)
+transform = Transform3D(0.4602215, 0, 0, 0, 0.4602215, 0, 0, 0, 0.4602215, -6.710148, 0, -219.74654)
 
 [node name="Forest_1776000485_08916" parent="PhysicsTrees" unique_id=77449018 instance=ExtResource("3_24bvc")]
-transform = Transform3D(0.4703969, 0, 0, 0, 0.4703969, 0, 0, 0, 0.4703969, 6.2005997, 0, -250.85521)
+transform = Transform3D(0.4703969, 0, 0, 0, 0.4703969, 0, 0, 0, 0.4703969, -9.505532, 0, -256.82086)
 
 [node name="Forest_1776000485_08927" parent="PhysicsTrees" unique_id=1760212189 instance=ExtResource("3_24bvc")]
-transform = Transform3D(0.41181585, 0, 0, 0, 0.41181585, 0, 0, 0, 0.41181585, 6.2782755, 0, -244.75883)
+transform = Transform3D(0.41181585, 0, 0, 0, 0.41181585, 0, 0, 0, 0.41181585, -7.471888, 0, -249.98154)
 
 [node name="Forest_1776000485_08937" parent="PhysicsTrees" unique_id=108153961 instance=ExtResource("2_lfuvo")]
-transform = Transform3D(0.45612606, 0, 0, 0, 0.45612606, 0, 0, 0, 0.45612606, 3.704677, 0, -247.96303)
+transform = Transform3D(0.45612606, 0, 0, 0, 0.45612606, 0, 0, 0, 0.45612606, -4.7936463, 0, -253.91187)
 
 [node name="Forest_1776000532_57896" parent="PhysicsTrees" unique_id=1803438349 instance=ExtResource("2_lfuvo")]
 transform = Transform3D(0.48463413, 0, 0, 0, 0.48463413, 0, 0, 0, 0.48463413, 270.77408, 0, 56.374847)
@@ -4055,13 +4046,13 @@ transform = Transform3D(0.45924103, 0, 0, 0, 0.45924103, 0, 0, 0, 0.45924103, -3
 transform = Transform3D(0.49818337, 0, 0, 0, 0.49818337, 0, 0, 0, 0.49818337, -21.427355, 0, -161.11253)
 
 [node name="Forest_1776000794_40757" parent="PhysicsTrees" unique_id=1644340817 instance=ExtResource("3_24bvc")]
-transform = Transform3D(0.45345998, 0, 0, 0, 0.45345998, 0, 0, 0, 0.45345998, 1.2855996, 0, -168.66936)
+transform = Transform3D(0.45345998, 0, 0, 0, 0.45345998, 0, 0, 0, 0.45345998, -15.956855, 0, -152.73012)
 
 [node name="Forest_1776000797_99581" parent="PhysicsTrees" unique_id=159334266 instance=ExtResource("2_lfuvo")]
-transform = Transform3D(0.43825087, 0, 0, 0, 0.43825087, 0, 0, 0, 0.43825087, -5.3207426, 0, -163.82741)
+transform = Transform3D(0.43825087, 0, 0, 0, 0.43825087, 0, 0, 0, 0.43825087, -8.428386, 0, -171.34592)
 
 [node name="Forest_1776000798_35888" parent="PhysicsTrees" unique_id=1781244182 instance=ExtResource("3_24bvc")]
-transform = Transform3D(0.46417534, 0, 0, 0, 0.46417534, 0, 0, 0, 0.46417534, -6.179553, 0, -159.28024)
+transform = Transform3D(0.46417534, 0, 0, 0, 0.46417534, 0, 0, 0, 0.46417534, -11.793384, 0, -162.08714)
 
 [node name="Forest_1776000799_82029" parent="PhysicsTrees" unique_id=1732512728 instance=ExtResource("3_24bvc")]
 transform = Transform3D(0.47435564, 0, 0, 0, 0.47435564, 0, 0, 0, 0.47435564, -99.466576, 0, -76.016655)
@@ -4211,13 +4202,13 @@ transform = Transform3D(0.46616557, 0, 0, 0, 0.46616557, 0, 0, 0, 0.46616557, -5
 transform = Transform3D(0.45924103, 0, 0, 0, 0.45924103, 0, 0, 0, 0.45924103, -42.67167, 0, -141.91515)
 
 [node name="Forest_1776000794_40758" parent="PhysicsTrees" unique_id=2084451560 instance=ExtResource("3_24bvc")]
-transform = Transform3D(0.45345998, 0, 0, 0, 0.45345998, 0, 0, 0, 0.45345998, -11.124888, 0, -176.6475)
+transform = Transform3D(0.4534556, 0, 0.0019944147, 0, 0.45345998, 0, -0.0019944147, 0, 0.4534556, -20.033588, 0, -179.20895)
 
 [node name="Forest_1776000797_99582" parent="PhysicsTrees" unique_id=1349166020 instance=ExtResource("2_lfuvo")]
-transform = Transform3D(0.43825087, 0, 0, 0, 0.43825087, 0, 0, 0, 0.43825087, -17.314981, 0, -171.53798)
+transform = Transform3D(0.43824664, 0, 0.0019275218, 0, 0.43825087, 0, -0.0019275218, 0, 0.43824664, -25.924883, 0, -174.0135)
 
 [node name="Forest_1776000798_35889" parent="PhysicsTrees" unique_id=1419456561 instance=ExtResource("3_24bvc")]
-transform = Transform3D(0.46417534, 0, 0, 0, 0.46417534, 0, 0, 0, 0.46417534, -18.883305, 0, -167.44693)
+transform = Transform3D(0.46417087, 0, 0.0020415431, 0, 0.46417534, 0, -0.0020415431, 0, 0.46417087, -28.002522, 0, -170.0689)
 
 [node name="Forest_1776000800_90474" parent="PhysicsTrees" unique_id=1115720089 instance=ExtResource("2_lfuvo")]
 transform = Transform3D(0.40605518, 0, 0, 0, 0.40605518, 0, 0, 0, 0.40605518, -117.17577, 0, -71.31669)
@@ -4703,27 +4694,27 @@ transform = Transform3D(-0.019424036, 0, 0.9998109, 0, 1, 0, -0.9998109, 0, -0.0
 multimesh = SubResource("MultiMesh_swx53")
 
 [node name="MultiMeshInstance3D54" type="MultiMeshInstance3D" parent="MultiMeshes" unique_id=1945312891]
-transform = Transform3D(-0.019424036, 0, 0.9998109, 0, 1, 0, -0.9998109, 0, -0.019424036, -1.7631187, 0, -445.40176)
+transform = Transform3D(-0.019424036, 0, 0.9998109, 0, 1, 0, -0.9998109, 0, -0.019424036, -13.458424, 0, -445.17456)
 multimesh = SubResource("MultiMesh_swx53")
 
 [node name="MultiMeshInstance3D55" type="MultiMeshInstance3D" parent="MultiMeshes" unique_id=908752766]
-transform = Transform3D(-0.019424036, 0, 0.9998109, 0, 1, 0, -0.9998109, 0, -0.019424036, -3.493725, 0, -393.05103)
+transform = Transform3D(-0.019424036, 0, 0.9998109, 0, 1, 0, -0.9998109, 0, -0.019424036, -15.18903, 0, -392.82382)
 multimesh = SubResource("MultiMesh_swx53")
 
 [node name="MultiMeshInstance3D56" type="MultiMeshInstance3D" parent="MultiMeshes" unique_id=1921302524]
-transform = Transform3D(-0.019424036, 0, 0.9998109, 0, 1, 0, -0.9998109, 0, -0.019424036, -3.0610774, 0, -340.26767)
+transform = Transform3D(-0.019424036, 0, 0.9998109, 0, 1, 0, -0.9998109, 0, -0.019424036, -14.756382, 0, -340.04047)
 multimesh = SubResource("MultiMesh_swx53")
 
 [node name="MultiMeshInstance3D57" type="MultiMeshInstance3D" parent="MultiMeshes" unique_id=1510472953]
-transform = Transform3D(-0.019424036, 0, 0.9998109, 0, 1, 0, -0.9998109, 0, -0.019424036, -4.7916837, 0, -286.619)
+transform = Transform3D(-0.019424036, 0, 0.9998109, 0, 1, 0, -0.9998109, 0, -0.019424036, -16.486988, 0, -286.39178)
 multimesh = SubResource("MultiMesh_swx53")
 
 [node name="MultiMeshInstance3D58" type="MultiMeshInstance3D" parent="MultiMeshes" unique_id=305989402]
-transform = Transform3D(-0.019424036, 0, 0.9998109, 0, 1, 0, -0.9998109, 0, -0.019424036, -11.386222, 0, -232.28285)
+transform = Transform3D(-0.019424036, 0, 0.9998109, 0, 1, 0, -0.9998109, 0, -0.019424036, -21.4558, 0, -237.09352)
 multimesh = SubResource("MultiMesh_swx53")
 
 [node name="MultiMeshInstance3D59" type="MultiMeshInstance3D" parent="MultiMeshes" unique_id=399345818]
-transform = Transform3D(0.78889084, 0, 0.61453253, 0, 1, 0, -0.61453253, 0, 0.78889084, -20.823475, 0, -187.0728)
+transform = Transform3D(0.5211437, 0, 0.85346836, 0, 1, 0, -0.85346836, 0, 0.5211437, -26.204464, 0, -191.89714)
 multimesh = SubResource("MultiMesh_swx53")
 
 [node name="MultiMeshInstance3D60" type="MultiMeshInstance3D" parent="MultiMeshes" unique_id=1157989025]
@@ -4799,23 +4790,43 @@ transform = Transform3D(0.9997232, 0, -0.023507737, 0, 1, 0, 0.023507737, 0, 0.9
 multimesh = SubResource("MultiMesh_swx53")
 
 [node name="MultiMeshInstance3D78" type="MultiMeshInstance3D" parent="MultiMeshes" unique_id=134322804]
-transform = Transform3D(-0.997888, 0, 0.06495054, 0, 1, 0, -0.06495054, 0, -0.997888, -276.7034, 0, 36.042362)
+transform = Transform3D(-0.9995267, 0, -0.030747578, 0, 1, 0, 0.030747578, 0, -0.9995267, -273.59766, 0, 38.297874)
 multimesh = SubResource("MultiMesh_swx53")
 
 [node name="MultiMeshInstance3D79" type="MultiMeshInstance3D" parent="MultiMeshes" unique_id=2053187108]
-transform = Transform3D(-0.99943817, 0, -0.03350377, 0, 1, 0, 0.03350377, 0, -0.99943817, -325.9652, 0, 33.76874)
+transform = Transform3D(-0.99943817, 0, -0.03350377, 0, 1, 0, 0.03350377, 0, -0.99943817, -321.98822, 0, 38.382053)
 multimesh = SubResource("MultiMesh_swx53")
 
 [node name="MultiMeshInstance3D80" type="MultiMeshInstance3D" parent="MultiMeshes" unique_id=219068168]
-transform = Transform3D(-0.99943817, 0, -0.03350377, 0, 1, 0, 0.03350377, 0, -0.99943817, -377.6674, 0, 31.564383)
+transform = Transform3D(-0.99943817, 0, -0.03350377, 0, 1, 0, 0.03350377, 0, -0.99943817, -368.7589, 0, 38.08665)
 multimesh = SubResource("MultiMesh_swx53")
 
 [node name="MultiMeshInstance3D81" type="MultiMeshInstance3D" parent="MultiMeshes" unique_id=1023000854]
-transform = Transform3D(-0.99943817, 0, -0.03350377, 0, 1, 0, 0.03350377, 0, -0.99943817, -429.16916, 0, 29.961212)
+transform = Transform3D(-0.99943817, 0, -0.03350377, 0, 1, 0, 0.03350377, 0, -0.99943817, -416.2837, 0, 38.392437)
+multimesh = SubResource("MultiMesh_swx53")
+
+[node name="MultiMeshInstance3D96" type="MultiMeshInstance3D" parent="MultiMeshes" unique_id=1230031611]
+transform = Transform3D(-0.9985802, 0, 0.053259935, 0, 1, 0, -0.053259935, 0, -0.9985802, -400.37573, 0, 2.9176414)
+multimesh = SubResource("MultiMesh_swx53")
+
+[node name="MultiMeshInstance3D100" type="MultiMeshInstance3D" parent="MultiMeshes" unique_id=1773873137]
+transform = Transform3D(-0.9997758, 0, 0.021152072, 0, 1, 0, -0.021152072, 0, -0.9997758, -441.85928, 0, 2.727131)
+multimesh = SubResource("MultiMesh_swx53")
+
+[node name="MultiMeshInstance3D97" type="MultiMeshInstance3D" parent="MultiMeshes" unique_id=789019418]
+transform = Transform3D(-0.9985802, 0, 0.053259935, 0, 1, 0, -0.053259935, 0, -0.9985802, -355.99246, 0, 3.8721168)
+multimesh = SubResource("MultiMesh_swx53")
+
+[node name="MultiMeshInstance3D98" type="MultiMeshInstance3D" parent="MultiMeshes" unique_id=1193849386]
+transform = Transform3D(-0.9985802, 0, 0.053259935, 0, 1, 0, -0.053259935, 0, -0.9985802, -310.01837, 0, 3.0767162)
+multimesh = SubResource("MultiMesh_swx53")
+
+[node name="MultiMeshInstance3D99" type="MultiMeshInstance3D" parent="MultiMeshes" unique_id=1223276380]
+transform = Transform3D(-0.9985802, 0, 0.053259935, 0, 1, 0, -0.053259935, 0, -0.9985802, -271.04382, 0, 1.6449955)
 multimesh = SubResource("MultiMesh_swx53")
 
 [node name="MultiMeshInstance3D82" type="MultiMeshInstance3D" parent="MultiMeshes" unique_id=764504122]
-transform = Transform3D(0.35046846, 0, -0.9365741, 0, 1, 0, 0.9365741, 0, 0.35046846, -145.25436, 0, 73.71929)
+transform = Transform3D(0.35046846, 0, -0.9365741, 0, 1, 0, 0.9365741, 0, 0.35046846, -147.28786, 0, 75.8213)
 multimesh = SubResource("MultiMesh_swx53")
 
 [node name="MultiMeshInstance3D83" type="MultiMeshInstance3D" parent="MultiMeshes" unique_id=295535189]

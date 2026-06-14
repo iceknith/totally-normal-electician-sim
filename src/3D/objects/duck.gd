@@ -16,7 +16,7 @@ func _ready() -> void:
 func start_interaction():
 	GlobalVars.ducks += 1
 	var temp_title:String = title
-	if GlobalVars.ducks == int(GlobalVars.max_ducks*1/4):
+	if GlobalVars.ducks == int(GlobalVars.max_ducks*1/6):
 		temp_title = "quest_1/4"
 	elif GlobalVars.ducks == int(GlobalVars.max_ducks/2):
 		temp_title = "quest_1/2"

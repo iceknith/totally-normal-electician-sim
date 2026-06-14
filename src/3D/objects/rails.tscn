@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://bhkhrqa072x8g"]
+
+[ext_resource type="PackedScene" uid="uid://u8i4fjxitvyn" path="res://assets/blender/rails.blend" id="1_djup3"]
+
+[node name="rails" unique_id=1088836241 instance=ExtResource("1_djup3")]
+
+[node name="Cube_col" parent="Cube" parent_id_path=PackedInt32Array(2132795368) index="0" unique_id=1810750767]
+collision_layer = 9

@@ -40,7 +40,9 @@
 [ext_resource type="Texture2D" uid="uid://t0k4d1dyottj" path="res://assets/pnjs/tictactoe-2.png" id="25_e1shr"]
 [ext_resource type="Texture2D" uid="uid://wp2j5lrbpqo1" path="res://assets/pnjs/tictactoe-1.png" id="25_jye0b"]
 [ext_resource type="Texture2D" uid="uid://dveqnca44g0np" path="res://assets/pnjs/connect4-1.png" id="26_5uot1"]
+[ext_resource type="PackedScene" uid="uid://bhkhrqa072x8g" path="res://src/3D/objects/rails.tscn" id="26_74tlw"]
 [ext_resource type="Resource" uid="uid://dk61x5fja7yub" path="res://src/Dialogue/Tic.dialogue" id="26_hjgcf"]
+[ext_resource type="PackedScene" uid="uid://u8i4fjxitvyn" path="res://assets/blender/rails.blend" id="26_xyyw1"]
 [ext_resource type="Texture2D" uid="uid://0x2pywhqr4yj" path="res://assets/pnjs/connect4-3.png" id="27_64pfx"]
 [ext_resource type="Resource" uid="uid://qupaelm28sm2" path="res://src/Dialogue/trainTicketPerson.dialogue" id="27_24100"]
 [ext_resource type="Resource" uid="uid://dtbh4bgoqly04" path="res://src/Dialogue/Tac.dialogue" id="27_nhq6p"]
@@ -81,6 +83,8 @@
 [ext_resource type="Texture2D" uid="uid://dtrnnk6t2jpre" path="res://assets/pnjs/Jolene.png" id="60_bbyu7"]
 [ext_resource type="Script" uid="uid://ddt1myp727thl" path="res://src/3D/Final_Cinematic/FadeInAndOut.gd" id="66_cley4"]
 [ext_resource type="Script" uid="uid://b3vo2qh42dwa8" path="res://src/3D/CameraManager/camera_manager.gd" id="68_qauko"]
+[ext_resource type="PackedScene" uid="uid://d38hh25qw1aun" path="res://assets/blender/pylone2.blend" id="77_cua6p"]
+[ext_resource type="PackedScene" uid="uid://8kftnko1vi3m" path="res://assets/blender/poubelle.blend" id="78_74tlw"]
 
 [sub_resource type="Curve" id="Curve_w7gwu"]
 _data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.8090909, 0.56875753), 1.2034676, 1.2034676, 0, 0, Vector2(1, 1), 2.0254266, 0.0, 0, 0]
@@ -297,7 +301,6 @@ sky = SubResource("Sky_co47k")
 ambient_light_source = 3
 reflected_light_source = 2
 glow_hdr_threshold = 1.5
-fog_enabled = true
 fog_mode = 1
 fog_light_color = Color(0.8235294, 0.9254902, 0.9843137, 1)
 fog_density = 1.0
@@ -314,31 +317,34 @@ dof_blur_far_distance = 200.0
 [sub_resource type="BoxShape3D" id="BoxShape3D_2mgps"]
 size = Vector3(1, 3.3145752, 2.397461)
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_o8rpk"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_74tlw"]
 viewport_path = NodePath("SubViewport")
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_xyyw1"]
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_xyyw1"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_iiaan"]
 viewport_path = NodePath("SubViewport")
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_clt24"]
-size = Vector3(1.341207, 2.3379288, 0.39674377)
+[sub_resource type="SphereShape3D" id="SphereShape3D_iiaan"]
+radius = 2.21538
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_cua6p"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_drvwa"]
 viewport_path = NodePath("SubViewport")
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_tqnhu"]
-size = Vector3(3.3690002, 3.3618798, 0.39674377)
+[sub_resource type="SphereShape3D" id="SphereShape3D_74tlw"]
+radius = 3.6536303
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_64pfx"]
 size = Vector3(0.80126953, 2.3551025, 2.69487)
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_74tlw"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_r8k0m"]
 viewport_path = NodePath("SubViewport")
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_iiaan"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_r8jgy"]
 viewport_path = NodePath("SubViewport")
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_drvwa"]
+radius = 3.0330272
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_j4fpo"]
 animations = [{
@@ -354,7 +360,7 @@ animations = [{
 [sub_resource type="SphereShape3D" id="SphereShape3D_ivwwh"]
 radius = 2.0122404
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_drvwa"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_d0d3r"]
 viewport_path = NodePath("SubViewport")
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_y8yem"]
@@ -368,7 +374,7 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_r8k0m"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_n1psr"]
 viewport_path = NodePath("SubViewport")
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_kr6i8"]
@@ -382,7 +388,7 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_r8jgy"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_lvg38"]
 viewport_path = NodePath("SubViewport")
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_7swc5"]
@@ -396,7 +402,7 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_d0d3r"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_1pwqi"]
 viewport_path = NodePath("SubViewport")
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_xkadw"]
@@ -410,7 +416,7 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_n1psr"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_0fw0w"]
 viewport_path = NodePath("SubViewport")
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_x6xw6"]
@@ -424,7 +430,7 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_lvg38"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_hmbph"]
 viewport_path = NodePath("SubViewport")
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_o8rpk"]
@@ -438,7 +444,7 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_1pwqi"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_62knr"]
 viewport_path = NodePath("SubViewport")
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_yc2gj"]
@@ -452,7 +458,7 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_0fw0w"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_38v5h"]
 viewport_path = NodePath("SubViewport")
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_jye0b"]
@@ -466,7 +472,7 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_hmbph"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_ldli8"]
 viewport_path = NodePath("SubViewport")
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_osieg"]
@@ -480,7 +486,7 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_62knr"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_p7tyv"]
 viewport_path = NodePath("SubViewport")
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_64pfx"]
@@ -494,7 +500,7 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_38v5h"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_k36hp"]
 viewport_path = NodePath("SubViewport")
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_r318u"]
@@ -508,7 +514,7 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_ldli8"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_2f6ad"]
 viewport_path = NodePath("SubViewport")
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_dygmt"]
@@ -525,7 +531,7 @@ animations = [{
 [sub_resource type="SphereShape3D" id="SphereShape3D_e1shr"]
 radius = 2.1577005
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_p7tyv"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_lk4m0"]
 viewport_path = NodePath("SubViewport")
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_1pwqi"]
@@ -539,7 +545,7 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_k36hp"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_yayb3"]
 viewport_path = NodePath("SubViewport")
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_rw73f"]
@@ -553,7 +559,7 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_2f6ad"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_rw73f"]
 viewport_path = NodePath("SubViewport")
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_e8reo"]
@@ -570,7 +576,7 @@ animations = [{
 [sub_resource type="SphereShape3D" id="SphereShape3D_s7gtf"]
 radius = 1.055608
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_lk4m0"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_vxar4"]
 viewport_path = NodePath("SubViewport")
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_nhq6p"]
@@ -584,7 +590,7 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_yayb3"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_s7gtf"]
 viewport_path = NodePath("SubViewport")
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_pd13m"]
@@ -598,7 +604,7 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_rw73f"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_el6uu"]
 viewport_path = NodePath("SubViewport")
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_doxgq"]
@@ -612,7 +618,7 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_vxar4"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_5ekyj"]
 viewport_path = NodePath("SubViewport")
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_lwi55"]
@@ -626,7 +632,7 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_s7gtf"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_hpb1e"]
 viewport_path = NodePath("SubViewport")
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_nmc2l"]
@@ -640,7 +646,7 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_el6uu"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_yf4kw"]
 viewport_path = NodePath("SubViewport")
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_1rjro"]
@@ -654,7 +660,7 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_5ekyj"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_i4ijg"]
 viewport_path = NodePath("SubViewport")
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_e7fmu"]
@@ -668,7 +674,7 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_hpb1e"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_tfui1"]
 viewport_path = NodePath("SubViewport")
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_24100"]
@@ -682,7 +688,7 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_yf4kw"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_f7jbe"]
 viewport_path = NodePath("SubViewport")
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_yayb3"]
@@ -699,7 +705,7 @@ animations = [{
 [sub_resource type="SphereShape3D" id="SphereShape3D_rw73f"]
 radius = 1.5243969
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_i4ijg"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_y47dy"]
 viewport_path = NodePath("SubViewport")
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_s7gtf"]
@@ -823,7 +829,7 @@ mesh = SubResource("PlaneMesh_clt24")
 transform = Transform3D(-0.9986295, 0, -0.05233605, 0, 1, 0, 0.05233605, 0, -0.9986295, 50.853363, 0.3140111, -18.507906)
 
 [node name="CinematicCam" type="Camera3D" parent="Player" unique_id=1471657381]
-transform = Transform3D(0.99999946, 0, 0, 0, 1, 0, 0, 0, 0.9999995, -0.125, 1.465, -5.225)
+transform = Transform3D(0.9999991, 0, 0, 0, 1, 0, 0, 0, 0.99999917, -0.125, 1.465, -5.225)
 
 [node name="Sun" type="DirectionalLight3D" parent="." unique_id=164570066]
 transform = Transform3D(1, 0, 0, 0, -0.8181497, 0.5750051, 0, -0.5750051, -0.8181497, 0, 104.529724, 0)
@@ -838,7 +844,7 @@ environment = SubResource("Environment_00xeg")
 camera_attributes = SubResource("CameraAttributesPractical_co47k")
 
 [node name="map" parent="." unique_id=1370427406 instance=ExtResource("5_x4jwh")]
-transform = Transform3D(2.45, 0, 0, 0, 2.45, 0, 0, 0, 2.45, 0, -0.469, 0)
+transform = Transform3D(2.45, 0, 0, 0, 2.45, 0, 0, 0, 2.45, 0.28758812, -0.469, 0.24291039)
 
 [node name="Objets" type="Node3D" parent="." unique_id=609111776]
 transform = Transform3D(0.94551855, 0, 0.32556817, 0, 1, 0, -0.32556817, 0, 0.94551855, -1.5152206, 0, -2.6516492)
@@ -1532,7 +1538,7 @@ shape = SubResource("BoxShape3D_2mgps")
 
 [node name="InteractacleText3D" parent="Objets/Towers/FinalTower/Interactable3DDialogue" unique_id=1576660793 instance=ExtResource("10_e8reo")]
 transform = Transform3D(0.09296842, 0, -0.17707874, 0, 0.2, 0, 0.17707874, 0, 0.09296842, 0, 1.432, 0)
-texture = SubResource("ViewportTexture_o8rpk")
+texture = SubResource("ViewportTexture_74tlw")
 
 [node name="CameraRoot" type="Node3D" parent="Objets/Towers/FinalTower/Interactable3DDialogue" unique_id=1939056848]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 71.529816, -13.040636, -45.76399)
@@ -1592,7 +1598,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 241.86362, 0, 126.505554)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26.105015, 0, -38.803944)
 
 [node name="Duck15" parent="Objets/Ducks" unique_id=911680191 instance=ExtResource("8_x4jwh")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 41.69839, 0, -100.41168)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 39.59116, 9.536743e-07, -100.186935)
 
 [node name="Duck16" parent="Objets/Ducks" unique_id=1299262948 instance=ExtResource("8_x4jwh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 73.101875, 0, 43.324257)
@@ -1638,14 +1644,14 @@ metadata/_custom_type_script = "uid://b3imm353l7y6u"
 
 [node name="InteractacleText3D" parent="Objets/Buildings/boulangerie/boulangerie" unique_id=1392304844 instance=ExtResource("10_e8reo")]
 transform = Transform3D(0.30000004, 0, 0, 0, 0.3, 0, 0, 0, 0.30000004, 0, 0.4931178, 0)
-texture = SubResource("ViewportTexture_xyyw1")
+texture = SubResource("ViewportTexture_iiaan")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Objets/Buildings/boulangerie/boulangerie" unique_id=1710995515]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0729332, 0.11338568, 0.06949043)
-shape = SubResource("BoxShape3D_clt24")
+shape = SubResource("SphereShape3D_iiaan")
 
 [node name="OmniLight3D" type="OmniLight3D" parent="Objets/Buildings/boulangerie/boulangerie" unique_id=916717380]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.015670776, 0.29485416, 0.58301544)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.013763428, 0.29485416, 0.60435486)
 light_energy = 2.0
 
 [node name="superette" parent="Objets/Buildings" unique_id=185217472 instance=ExtResource("14_w7gwu")]
@@ -1659,12 +1665,12 @@ text_sprite = NodePath("InteractacleText3D")
 metadata/_custom_type_script = "uid://b3imm353l7y6u"
 
 [node name="InteractacleText3D" parent="Objets/Buildings/superette/superetteInteractable" unique_id=1215462892 instance=ExtResource("10_e8reo")]
-transform = Transform3D(0.30000004, 0, 3.7252903e-09, 0, 0.3, 0, -3.7252903e-09, 0, 0.30000004, -0.0068626404, 0.4931178, -0.07106018)
-texture = SubResource("ViewportTexture_cua6p")
+transform = Transform3D(0.30000004, 0, 3.7252903e-09, 0, 0.3, 0, -3.7252903e-09, 0, 0.30000004, 0.008161545, 0.4931178, 0.05696106)
+texture = SubResource("ViewportTexture_drvwa")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Objets/Buildings/superette/superetteInteractable" unique_id=71863611]
 transform = Transform3D(0.9999865, 0, 8.195639e-08, 0, 0.99998987, 0, -8.195639e-08, 0, 0.9999865, -0.084257126, 0.19547307, -0.18695068)
-shape = SubResource("BoxShape3D_tqnhu")
+shape = SubResource("SphereShape3D_74tlw")
 debug_color = Color(0.7, 0, 0.061528776, 1)
 
 [node name="OmniLight3D2" type="OmniLight3D" parent="Objets/Buildings/superette/superetteInteractable" unique_id=627990876]
@@ -1687,7 +1693,7 @@ shape = SubResource("BoxShape3D_64pfx")
 [node name="InteractacleText3D" parent="Objets/Buildings/arcade_building/arcade" unique_id=1563667533 instance=ExtResource("10_e8reo")]
 transform = Transform3D(0.0001361277, 0, 0.20000008, 0, 0.2, 0, -0.20000008, 0, 0.0001361277, 6.0572624, 1.9019911, -6.2214165)
 visible = false
-texture = SubResource("ViewportTexture_74tlw")
+texture = SubResource("ViewportTexture_r8k0m")
 
 [node name="DirectionalLight3D" type="SpotLight3D" parent="Objets/Buildings/arcade_building/arcade" unique_id=1536201746]
 transform = Transform3D(0.026491009, 0, -0.9996492, 0, 1, 0, 0.9996492, 0, 0.026491009, 6.191025, 3.5091667, 1.6140194)
@@ -1720,11 +1726,11 @@ metadata/_custom_type_script = "uid://b3imm353l7y6u"
 
 [node name="InteractacleText3D" parent="Objets/Buildings/poste/posteInteractable" unique_id=1878352434 instance=ExtResource("10_e8reo")]
 transform = Transform3D(0.30000007, 0, 7.450581e-09, 0, 0.30000004, 0, -7.450581e-09, 0, 0.30000007, -0.46167755, 0.49311793, -0.012077332)
-texture = SubResource("ViewportTexture_iiaan")
+texture = SubResource("ViewportTexture_r8jgy")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Objets/Buildings/poste/posteInteractable" unique_id=1868400818]
 transform = Transform3D(0.99999624, 0, 1.0728836e-06, 0, 0.9999994, 0, -1.0728836e-06, 0, 0.99999624, -0.4843979, -0.103832364, -0.20417786)
-shape = SubResource("BoxShape3D_clt24")
+shape = SubResource("SphereShape3D_drvwa")
 
 [node name="OmniLight3D" type="OmniLight3D" parent="Objets/Buildings/poste/posteInteractable" unique_id=1876928314]
 transform = Transform3D(1.0000004, 0, 2.9802322e-08, 0, 1.0000018, 0, -2.9802322e-08, 0, 1.0000004, -0.46467972, 0.2948544, 0.58303833)
@@ -1732,6 +1738,18 @@ light_energy = 1.5
 
 [node name="ecole" parent="Objets/Buildings" unique_id=650405049 instance=ExtResource("19_imnrk")]
 transform = Transform3D(-0.52478886, 0, -1.29792, 0, 1.4000001, 0, 1.29792, 0, -0.52478886, 128.14297, 0.40124583, -43.592083)
+
+[node name="rails3" parent="Objets/Buildings" unique_id=1088836241 instance=ExtResource("26_74tlw")]
+transform = Transform3D(0.33873776, 0, 0.94088036, 0, 1, 0, -0.94088036, 0, 0.33873776, 35.139343, 0.15018845, -95.516914)
+
+[node name="rails" parent="Objets/Buildings" unique_id=2076534477 instance=ExtResource("26_xyyw1")]
+transform = Transform3D(0.33873776, 0, 0.94088036, 0, 1, 0, -0.94088036, 0, 0.33873776, 35.139343, 0.15018845, -95.516914)
+
+[node name="rails4" parent="Objets/Buildings" unique_id=1980270613 instance=ExtResource("26_74tlw")]
+transform = Transform3D(0.33873776, 0, 0.94088036, 0, 1, 0, -0.94088036, 0, 0.33873776, 108.77905, 0.15018845, -300.1037)
+
+[node name="rails2" parent="Objets/Buildings" unique_id=2066683924 instance=ExtResource("26_xyyw1")]
+transform = Transform3D(0.33873776, 0, 0.94088036, 0, 1, 0, -0.94088036, 0, 0.33873776, 108.77907, 0.15018845, -300.10373)
 
 [node name="PNJs" type="Node3D" parent="Objets" unique_id=250600695]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.749743, 0, -0.7360313)
@@ -1761,7 +1779,7 @@ shape = SubResource("SphereShape3D_ivwwh")
 [node name="InteractacleText3D" parent="Objets/PNJs/Mathew-Math" unique_id=2027926951 instance=ExtResource("10_e8reo")]
 transform = Transform3D(0.20000002, 0, -1.4901161e-08, 0, 0.2, 0, 1.4901161e-08, 0, 0.20000002, 0, 1.2223936, 0)
 billboard = 2
-texture = SubResource("ViewportTexture_drvwa")
+texture = SubResource("ViewportTexture_d0d3r")
 
 [node name="Vera-Math2" type="Area3D" parent="Objets/PNJs" unique_id=656674121 node_paths=PackedStringArray("animated_sprite", "text_sprite", "camera_root")]
 transform = Transform3D(-0.8454946, 0, 0.5339834, 0, 1, 0, -0.5339834, 0, -0.8454946, -15.321879, 1.032838, 23.525135)
@@ -1788,7 +1806,7 @@ shape = SubResource("SphereShape3D_ivwwh")
 [node name="InteractacleText3D" parent="Objets/PNJs/Vera-Math2" unique_id=450256475 instance=ExtResource("10_e8reo")]
 transform = Transform3D(0.2, 0, -1.1175871e-08, 0, 0.2, 0, 1.1175871e-08, 0, 0.2, 0, 1.2631384, 0)
 billboard = 2
-texture = SubResource("ViewportTexture_r8k0m")
+texture = SubResource("ViewportTexture_n1psr")
 
 [node name="Tic" type="Area3D" parent="Objets/PNJs" unique_id=2068338831 node_paths=PackedStringArray("animated_sprite", "text_sprite", "camera_root")]
 transform = Transform3D(-0.8454946, 0, 0.5339834, 0, 1, 0, -0.5339834, 0, -0.8454946, 119.998276, 1.032838, 33.49736)
@@ -1815,7 +1833,7 @@ shape = SubResource("SphereShape3D_ivwwh")
 [node name="InteractacleText3D" parent="Objets/PNJs/Tic" unique_id=1435483746 instance=ExtResource("10_e8reo")]
 transform = Transform3D(0.2, 0, -1.1175871e-08, 0, 0.2, 0, 1.1175871e-08, 0, 0.2, 0, 1.3729247, 0)
 billboard = 2
-texture = SubResource("ViewportTexture_r8jgy")
+texture = SubResource("ViewportTexture_lvg38")
 
 [node name="Tac" type="Area3D" parent="Objets/PNJs" unique_id=939884958 node_paths=PackedStringArray("animated_sprite", "text_sprite", "camera_root")]
 transform = Transform3D(-0.8454946, 0, 0.5339834, 0, 1, 0, -0.5339834, 0, -0.8454946, 8.300216, 1.032838, -68.15268)
@@ -1842,7 +1860,7 @@ shape = SubResource("SphereShape3D_ivwwh")
 [node name="InteractacleText3D" parent="Objets/PNJs/Tac" unique_id=168760506 instance=ExtResource("10_e8reo")]
 transform = Transform3D(0.2, 0, -1.1175871e-08, 0, 0.2, 0, 1.1175871e-08, 0, 0.2, 0, 1.2969817, 0)
 billboard = 2
-texture = SubResource("ViewportTexture_d0d3r")
+texture = SubResource("ViewportTexture_1pwqi")
 
 [node name="Catheline-Cats" type="Area3D" parent="Objets/PNJs" unique_id=969527095 node_paths=PackedStringArray("animated_sprite", "text_sprite", "camera_root")]
 transform = Transform3D(-0.8454946, 0, 0.5339834, 0, 1, 0, -0.5339834, 0, -0.8454946, -126.790985, 1.0328361, 29.191246)
@@ -1869,10 +1887,10 @@ shape = SubResource("SphereShape3D_ivwwh")
 [node name="InteractacleText3D" parent="Objets/PNJs/Catheline-Cats" unique_id=1830970642 instance=ExtResource("10_e8reo")]
 transform = Transform3D(0.2, 0, -1.1175871e-08, 0, 0.2, 0, 1.1175871e-08, 0, 0.2, 0, 1.3472706, 0)
 billboard = 2
-texture = SubResource("ViewportTexture_n1psr")
+texture = SubResource("ViewportTexture_0fw0w")
 
 [node name="Cloven-Sandwiches" type="Area3D" parent="Objets/PNJs" unique_id=2033902036 node_paths=PackedStringArray("animated_sprite", "text_sprite", "camera_root")]
-transform = Transform3D(-0.8454946, 0, 0.5339834, 0, 1, 0, -0.5339834, 0, -0.8454946, -75.53564, 1.032838, 2.5621984)
+transform = Transform3D(-0.8454946, 0, 0.5339834, 0, 1, 0, -0.5339834, 0, -0.8454946, -73.86632, 1.032838, 1.531841)
 script = ExtResource("11_nho6y")
 unique_name = "cloven_sandwiches"
 dialogue = ExtResource("29_cley4")
@@ -1896,7 +1914,7 @@ shape = SubResource("SphereShape3D_ivwwh")
 [node name="InteractacleText3D" parent="Objets/PNJs/Cloven-Sandwiches" unique_id=1537854191 instance=ExtResource("10_e8reo")]
 transform = Transform3D(0.2, 0, -1.1175871e-08, 0, 0.2, 0, 1.1175871e-08, 0, 0.2, 0, 1.5506791, 0)
 billboard = 2
-texture = SubResource("ViewportTexture_lvg38")
+texture = SubResource("ViewportTexture_hmbph")
 
 [node name="Fiona-Wannabe" type="Area3D" parent="Objets/PNJs" unique_id=1338492128 node_paths=PackedStringArray("animated_sprite", "text_sprite", "camera_root")]
 transform = Transform3D(-0.8454946, 0, 0.5339834, 0, 1, 0, -0.5339834, 0, -0.8454946, -8.499789, 1.032838, 86.64496)
@@ -1923,7 +1941,7 @@ shape = SubResource("SphereShape3D_ivwwh")
 [node name="InteractacleText3D" parent="Objets/PNJs/Fiona-Wannabe" unique_id=1919382824 instance=ExtResource("10_e8reo")]
 transform = Transform3D(0.2, 0, -1.1175871e-08, 0, 0.2, 0, 1.1175871e-08, 0, 0.2, 0, 0.84309924, 0)
 billboard = 2
-texture = SubResource("ViewportTexture_1pwqi")
+texture = SubResource("ViewportTexture_62knr")
 
 [node name="TicTacToeCharles" type="Area3D" parent="Objets/PNJs" unique_id=1096544833 node_paths=PackedStringArray("animated_sprite", "text_sprite", "camera_root")]
 transform = Transform3D(-0.8454946, 0, 0.5339834, 0, 1, 0, -0.5339834, 0, -0.8454946, 82.07352, 1.204203, -10.566198)
@@ -1952,7 +1970,7 @@ shape = SubResource("SphereShape3D_ivwwh")
 [node name="InteractacleText3D" parent="Objets/PNJs/TicTacToeCharles" unique_id=644921328 instance=ExtResource("10_e8reo")]
 transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0.8627713, 0)
 billboard = 2
-texture = SubResource("ViewportTexture_0fw0w")
+texture = SubResource("ViewportTexture_38v5h")
 
 [node name="TicTacToeBob" type="Area3D" parent="Objets/PNJs" unique_id=1093194011 node_paths=PackedStringArray("animated_sprite", "text_sprite", "camera_root")]
 transform = Transform3D(-0.8454946, 0, 0.5339834, 0, 1, 0, -0.5339834, 0, -0.8454946, -38.680233, 1.1798171, 42.162598)
@@ -1980,7 +1998,7 @@ shape = SubResource("SphereShape3D_ivwwh")
 [node name="InteractacleText3D" parent="Objets/PNJs/TicTacToeBob" unique_id=1316842840 instance=ExtResource("10_e8reo")]
 transform = Transform3D(0.2, 0, -3.7252903e-09, 0, 0.2, 0, 3.7252903e-09, 0, 0.2, 0, 0.93411005, 0)
 billboard = 2
-texture = SubResource("ViewportTexture_hmbph")
+texture = SubResource("ViewportTexture_ldli8")
 
 [node name="TicTacToeJasmine" type="Area3D" parent="Objets/PNJs" unique_id=806482794 node_paths=PackedStringArray("animated_sprite", "text_sprite", "camera_root")]
 transform = Transform3D(-0.8454946, 0, 0.5339834, 0, 1, 0, -0.5339834, 0, -0.8454946, -3.5422888, 1.5928253, 122.8149)
@@ -2008,7 +2026,7 @@ shape = SubResource("SphereShape3D_ivwwh")
 [node name="InteractacleText3D" parent="Objets/PNJs/TicTacToeJasmine" unique_id=1523883230 instance=ExtResource("10_e8reo")]
 transform = Transform3D(0.2, 0, -3.7252903e-09, 0, 0.2, 0, 3.7252903e-09, 0, 0.2, 0, 1.0383664, 0)
 billboard = 2
-texture = SubResource("ViewportTexture_62knr")
+texture = SubResource("ViewportTexture_p7tyv")
 
 [node name="Connect4Ada" type="Area3D" parent="Objets/PNJs" unique_id=230899438 node_paths=PackedStringArray("animated_sprite", "text_sprite", "camera_root")]
 transform = Transform3D(-0.8454946, 0, 0.5339834, 0, 1, 0, -0.5339834, 0, -0.8454946, 10.333164, 1.1603419, 5.406997)
@@ -2036,7 +2054,7 @@ shape = SubResource("SphereShape3D_ivwwh")
 [node name="InteractacleText3D" parent="Objets/PNJs/Connect4Ada" unique_id=1824979055 instance=ExtResource("10_e8reo")]
 transform = Transform3D(0.2, 0, -7.450581e-09, 0, 0.2, 0, 7.450581e-09, 0, 0.2, 0, 0.69260275, 0)
 billboard = 2
-texture = SubResource("ViewportTexture_38v5h")
+texture = SubResource("ViewportTexture_k36hp")
 
 [node name="Connect4Noah" type="Area3D" parent="Objets/PNJs" unique_id=618464151 node_paths=PackedStringArray("animated_sprite", "text_sprite", "camera_root")]
 transform = Transform3D(-0.8454946, 0, 0.5339834, 0, 1, 0, -0.5339834, 0, -0.8454946, 59.65341, 1.1798207, -91.717285)
@@ -2064,7 +2082,7 @@ shape = SubResource("SphereShape3D_ivwwh")
 [node name="InteractacleText3D" parent="Objets/PNJs/Connect4Noah" unique_id=52934403 instance=ExtResource("10_e8reo")]
 transform = Transform3D(0.2, 0, -3.7252903e-09, 0, 0.2, 0, 3.7252903e-09, 0, 0.2, 0, 0.8108431, 0)
 billboard = 2
-texture = SubResource("ViewportTexture_ldli8")
+texture = SubResource("ViewportTexture_2f6ad")
 
 [node name="Connect4Hannah" type="Area3D" parent="Objets/PNJs" unique_id=270299998 node_paths=PackedStringArray("animated_sprite", "text_sprite", "camera_root")]
 transform = Transform3D(-0.8454946, 0, 0.5339834, 0, 1, 0, -0.5339834, 0, -0.8454946, 105.76297, 1.554305, 90.6516)
@@ -2092,7 +2110,7 @@ shape = SubResource("SphereShape3D_e1shr")
 [node name="InteractacleText3D" parent="Objets/PNJs/Connect4Hannah" unique_id=1221517501 instance=ExtResource("10_e8reo")]
 transform = Transform3D(0.2, 0, -3.7252903e-09, 0, 0.2, 0, 3.7252903e-09, 0, 0.2, 0, 1.2467934, 0)
 billboard = 2
-texture = SubResource("ViewportTexture_p7tyv")
+texture = SubResource("ViewportTexture_lk4m0")
 
 [node name="RPCStanley" type="Area3D" parent="Objets/PNJs" unique_id=1335970460 node_paths=PackedStringArray("animated_sprite", "text_sprite", "camera_root")]
 transform = Transform3D(-0.40314606, 0, -0.91513556, 0, 1, 0, 0.91513556, 0, -0.40314606, 31.915241, 1.2088314, 42.024513)
@@ -2120,7 +2138,7 @@ shape = SubResource("SphereShape3D_ivwwh")
 [node name="InteractacleText3D" parent="Objets/PNJs/RPCStanley" unique_id=366501995 instance=ExtResource("10_e8reo")]
 transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 1.4779314, 0)
 billboard = 2
-texture = SubResource("ViewportTexture_k36hp")
+texture = SubResource("ViewportTexture_yayb3")
 
 [node name="RPCWilly" type="Area3D" parent="Objets/PNJs" unique_id=97185346 node_paths=PackedStringArray("animated_sprite", "text_sprite", "camera_root")]
 transform = Transform3D(-0.40314606, 0, -0.91513556, 0, 1, 0, 0.91513556, 0, -0.40314606, -101.53965, 1.1567587, 51.200977)
@@ -2148,7 +2166,7 @@ shape = SubResource("SphereShape3D_ivwwh")
 [node name="InteractacleText3D" parent="Objets/PNJs/RPCWilly" unique_id=903367634 instance=ExtResource("10_e8reo")]
 transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, -0.02, 1.41, 0)
 billboard = 2
-texture = SubResource("ViewportTexture_2f6ad")
+texture = SubResource("ViewportTexture_rw73f")
 
 [node name="RPCBilly" type="Area3D" parent="Objets/PNJs" unique_id=1623499690 node_paths=PackedStringArray("animated_sprite", "text_sprite", "camera_root")]
 transform = Transform3D(-0.40314606, 0, -0.91513556, 0, 1, 0, 0.91513556, 0, -0.40314606, -81.62318, 1.5782932, -59.960087)
@@ -2177,7 +2195,7 @@ shape = SubResource("SphereShape3D_s7gtf")
 [node name="InteractacleText3D" parent="Objets/PNJs/RPCBilly" unique_id=1693138033 instance=ExtResource("10_e8reo")]
 transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0.253, 0)
 billboard = 2
-texture = SubResource("ViewportTexture_lk4m0")
+texture = SubResource("ViewportTexture_vxar4")
 
 [node name="Pion" type="Area3D" parent="Objets/PNJs" unique_id=529310728 node_paths=PackedStringArray("animated_sprite", "text_sprite", "camera_root")]
 transform = Transform3D(-0.8454946, 0, 0.5339834, 0, 1, 0, -0.5339834, 0, -0.8454946, 140.40344, 1.3691952, -32.883858)
@@ -2204,7 +2222,7 @@ shape = SubResource("SphereShape3D_ivwwh")
 [node name="InteractacleText3D" parent="Objets/PNJs/Pion" unique_id=440811458 instance=ExtResource("10_e8reo")]
 transform = Transform3D(0.2, 0, -1.1175871e-08, 0, 0.2, 0, 1.1175871e-08, 0, 0.2, 0, 1.1284895, 0)
 billboard = 2
-texture = SubResource("ViewportTexture_yayb3")
+texture = SubResource("ViewportTexture_s7gtf")
 
 [node name="Bibi" type="Area3D" parent="Objets/PNJs" unique_id=621789651 node_paths=PackedStringArray("animated_sprite", "text_sprite", "camera_root")]
 transform = Transform3D(-0.8454946, 0, 0.5339834, 0, 1, 0, -0.5339834, 0, -0.8454946, 128.7238, 0.78955054, -49.547832)
@@ -2231,7 +2249,7 @@ shape = SubResource("SphereShape3D_ivwwh")
 [node name="InteractacleText3D" parent="Objets/PNJs/Bibi" unique_id=1523595930 instance=ExtResource("10_e8reo")]
 transform = Transform3D(0.2, 0, -7.450581e-09, 0, 0.2, 0, 7.450581e-09, 0, 0.2, 0, 0.52253187, 0)
 billboard = 2
-texture = SubResource("ViewportTexture_rw73f")
+texture = SubResource("ViewportTexture_el6uu")
 
 [node name="TrainTicketSeller" type="Area3D" parent="Objets/PNJs" unique_id=1473036680 node_paths=PackedStringArray("animated_sprite", "text_sprite", "camera_root")]
 transform = Transform3D(-0.8454946, 0, 0.5339834, 0, 1, 0, -0.5339834, 0, -0.8454946, 43.300503, 1.3708895, -99.835434)
@@ -2259,7 +2277,7 @@ shape = SubResource("SphereShape3D_ivwwh")
 transform = Transform3D(0.2, 0, -7.450581e-09, 0, 0.2, 0, 7.450581e-09, 0, 0.2, 0, 1.1014107, 0)
 billboard = 2
 no_depth_test = true
-texture = SubResource("ViewportTexture_vxar4")
+texture = SubResource("ViewportTexture_5ekyj")
 
 [node name="HampterChild" type="Area3D" parent="Objets/PNJs" unique_id=1037341578 node_paths=PackedStringArray("animated_sprite", "text_sprite", "camera_root")]
 transform = Transform3D(-0.8454946, 0, 0.5339834, 0, 1, 0, -0.5339834, 0, -0.8454946, 149.13922, 0.6742766, -46.30398)
@@ -2286,7 +2304,7 @@ shape = SubResource("SphereShape3D_ivwwh")
 [node name="InteractacleText3D" parent="Objets/PNJs/HampterChild" unique_id=35424463 instance=ExtResource("10_e8reo")]
 transform = Transform3D(0.2, 0, -7.450581e-09, 0, 0.2, 0, 7.450581e-09, 0, 0.2, 0, 0.52253187, 0)
 billboard = 2
-texture = SubResource("ViewportTexture_s7gtf")
+texture = SubResource("ViewportTexture_hpb1e")
 
 [node name="FastChild" type="Area3D" parent="Objets/PNJs" unique_id=1759886429 node_paths=PackedStringArray("animated_sprite", "text_sprite", "camera_root")]
 transform = Transform3D(-0.8454946, 0, 0.5339834, 0, 1, 0, -0.5339834, 0, -0.8454946, 139.65714, 1.0273311, -39.769444)
@@ -2313,7 +2331,7 @@ shape = SubResource("SphereShape3D_ivwwh")
 [node name="InteractacleText3D" parent="Objets/PNJs/FastChild" unique_id=1572538758 instance=ExtResource("10_e8reo")]
 transform = Transform3D(0.2, 0, -1.1175871e-08, 0, 0.2, 0, 1.1175871e-08, 0, 0.2, 0, 0.74586236, 0)
 billboard = 2
-texture = SubResource("ViewportTexture_el6uu")
+texture = SubResource("ViewportTexture_yf4kw")
 
 [node name="DuckChild" type="Area3D" parent="Objets/PNJs" unique_id=1275971161 node_paths=PackedStringArray("animated_sprite", "text_sprite", "camera_root")]
 transform = Transform3D(-0.8454946, 0, 0.5339834, 0, 1, 0, -0.5339834, 0, -0.8454946, 143.07727, 1.0273311, -43.288124)
@@ -2340,7 +2358,7 @@ shape = SubResource("SphereShape3D_ivwwh")
 [node name="InteractacleText3D" parent="Objets/PNJs/DuckChild" unique_id=284265059 instance=ExtResource("10_e8reo")]
 transform = Transform3D(0.2, 0, -1.1175871e-08, 0, 0.2, 0, 1.1175871e-08, 0, 0.2, 0, 0.74586236, 0)
 billboard = 2
-texture = SubResource("ViewportTexture_5ekyj")
+texture = SubResource("ViewportTexture_i4ijg")
 
 [node name="SlowChild" type="Area3D" parent="Objets/PNJs" unique_id=888616997 node_paths=PackedStringArray("animated_sprite", "text_sprite", "camera_root")]
 transform = Transform3D(-0.8454946, 0, 0.5339834, 0, 1, 0, -0.5339834, 0, -0.8454946, 146.49332, 1.0273311, -36.83585)
@@ -2367,7 +2385,7 @@ shape = SubResource("SphereShape3D_ivwwh")
 [node name="InteractacleText3D" parent="Objets/PNJs/SlowChild" unique_id=622215310 instance=ExtResource("10_e8reo")]
 transform = Transform3D(0.2, 0, -1.1175871e-08, 0, 0.2, 0, 1.1175871e-08, 0, 0.2, 0, 0.74586236, 0)
 billboard = 2
-texture = SubResource("ViewportTexture_hpb1e")
+texture = SubResource("ViewportTexture_tfui1")
 
 [node name="HomeworkChild" type="Area3D" parent="Objets/PNJs" unique_id=505807268 node_paths=PackedStringArray("animated_sprite", "text_sprite", "camera_root")]
 transform = Transform3D(-0.8454946, 0, 0.5339834, 0, 1, 0, -0.5339834, 0, -0.8454946, 137.54628, 1.0273311, -50.816757)
@@ -2394,7 +2412,7 @@ shape = SubResource("SphereShape3D_ivwwh")
 [node name="InteractacleText3D" parent="Objets/PNJs/HomeworkChild" unique_id=1183915907 instance=ExtResource("10_e8reo")]
 transform = Transform3D(0.2, 0, -1.1175871e-08, 0, 0.2, 0, 1.1175871e-08, 0, 0.2, 0, 0.74586236, 0)
 billboard = 2
-texture = SubResource("ViewportTexture_yf4kw")
+texture = SubResource("ViewportTexture_f7jbe")
 
 [node name="MaryJo" type="Area3D" parent="Objets/PNJs" unique_id=1348588607 node_paths=PackedStringArray("animated_sprite", "text_sprite", "camera_root")]
 transform = Transform3D(-0.8454946, 0, 0.5339834, 0, 1, 0, -0.5339834, 0, -0.8454946, 133.16463, 1.2988452, 94.08548)
@@ -2422,7 +2440,7 @@ shape = SubResource("SphereShape3D_rw73f")
 [node name="InteractacleText3D" parent="Objets/PNJs/MaryJo" unique_id=1660474670 instance=ExtResource("10_e8reo")]
 transform = Transform3D(0.2000001, 0, -1.8626451e-08, 0, 0.2, 0, 1.8626451e-08, 0, 0.2000001, -0.58447266, 1.5395316, -0.1663742)
 billboard = 2
-texture = SubResource("ViewportTexture_i4ijg")
+texture = SubResource("ViewportTexture_y47dy")
 
 [node name="CameraRoot" type="Node3D" parent="Objets/PNJs/MaryJo" unique_id=757847060]
 transform = Transform3D(1.0000002, 0, -1.4901161e-08, 0, 1, 0, 1.4901161e-08, 0, 1.0000002, -0.3657074, 0.5911205, -0.021770477)
@@ -2536,7 +2554,7 @@ transform = Transform3D(0.4138504, 0, 0, 0, 0.4138504, 0, 0, 0, 0.4138504, 80.04
 transform = Transform3D(0.5122056, 0, 0, 0, 0.5122056, 0, 0, 0, 0.5122056, 44.453712, 0.0023798943, 39.916317)
 
 [node name="Tree_1776012439_74476" parent="Objets/Tree" unique_id=958883853 instance=ExtResource("17_ro6to")]
-transform = Transform3D(0.44401675, 0, 9.313226e-10, 0, 0.44401675, 0, -9.313226e-10, 0, 0.44401675, 99.01919, 0.0023801327, 68.8304)
+transform = Transform3D(0.44401675, 0, 1.3969839e-09, 0, 0.44401675, 0, -1.3969839e-09, 0, 0.44401675, 100.4088, 0.0023801327, 67.59696)
 
 [node name="Tree_1776012442_59807" parent="Objets/Tree" unique_id=87098334 instance=ExtResource("17_ro6to")]
 transform = Transform3D(0.45829976, 0, 0, 0, 0.45829976, 0, 0, 0, 0.45829976, 61.329857, 0.0023798943, 71.44599)
@@ -2552,6 +2570,36 @@ transform = Transform3D(0.44329315, 0, 0, 0, 0.44329315, 0, 0, 0, 0.44329315, 73
 
 [node name="Tree_1776012448_69095" parent="Objets/Tree" unique_id=1073924713 instance=ExtResource("17_ro6to")]
 transform = Transform3D(0.44824466, 0, 0, 0, 0.44824466, 0, 0, 0, 0.44824466, 64.05929, 0.0023798943, 80.09762)
+
+[node name="Tree_1776012448_69096" parent="Objets/Tree" unique_id=741688957 instance=ExtResource("17_ro6to")]
+transform = Transform3D(0.4482447, 0, 0, 0, 0.44824466, 0, 0, 0, 0.4482447, 137.51299, 0.0023798943, 71.34518)
+
+[node name="Tree_1776012448_69097" parent="Objets/Tree" unique_id=1068550420 instance=ExtResource("17_ro6to")]
+transform = Transform3D(0.44824472, 0, 9.313226e-10, 0, 0.44824466, 0, -9.313226e-10, 0, 0.44824472, 126.53218, 0.0023798943, 85.815445)
+
+[node name="Tree_1776012448_69098" parent="Objets/Tree" unique_id=560502789 instance=ExtResource("17_ro6to")]
+transform = Transform3D(0.44824478, 0, 9.313226e-10, 0, 0.44824466, 0, -9.313226e-10, 0, 0.44824478, 123.30792, 0.0023798943, 94.341774)
+
+[node name="Tree_1776012448_69099" parent="Objets/Tree" unique_id=2031786810 instance=ExtResource("17_ro6to")]
+transform = Transform3D(0.4482448, 0, 9.313226e-10, 0, 0.44824466, 0, -9.313226e-10, 0, 0.4482448, 95.27786, 0.0023798943, 98.07227)
+
+[node name="Tree_1776012448_69100" parent="Objets/Tree" unique_id=570503308 instance=ExtResource("17_ro6to")]
+transform = Transform3D(0.44824484, 0, 9.313226e-10, 0, 0.44824466, 0, -9.313226e-10, 0, 0.44824484, 113.25838, 0.0023798943, 100.531784)
+
+[node name="Tree_1776012448_69101" parent="Objets/Tree" unique_id=1956308850 instance=ExtResource("17_ro6to")]
+transform = Transform3D(0.44824487, 0, 9.313226e-10, 0, 0.44824466, 0, -9.313226e-10, 0, 0.44824487, 74.68256, 0.0023798943, 130.68428)
+
+[node name="Tree_1776012448_69102" parent="Objets/Tree" unique_id=75252101 instance=ExtResource("17_ro6to")]
+transform = Transform3D(0.4482449, 0, 9.313226e-10, 0, 0.44824466, 0, -9.313226e-10, 0, 0.4482449, 46.062305, 0.0023798943, 127.252335)
+
+[node name="Tree_1776012448_69103" parent="Objets/Tree" unique_id=681785682 instance=ExtResource("17_ro6to")]
+transform = Transform3D(0.44824496, 0, 1.8626451e-09, 0, 0.44824466, 0, -1.8626451e-09, 0, 0.44824496, 51.832935, 0.0023798943, 132.64565)
+
+[node name="Tree_1776012448_69104" parent="Objets/Tree" unique_id=1183569851 instance=ExtResource("17_ro6to")]
+transform = Transform3D(0.44824496, 0, 1.8626451e-09, 0, 0.44824466, 0, -1.8626451e-09, 0, 0.44824496, 56.27165, 0.0023798943, 140.59052)
+
+[node name="Tree_1776012448_69105" parent="Objets/Tree" unique_id=1240074848 instance=ExtResource("17_ro6to")]
+transform = Transform3D(0.448245, 0, 2.7939677e-09, 0, 0.44824466, 0, -2.7939677e-09, 0, 0.448245, 62.23698, 0.0023798943, 134.82988)
 
 [node name="Tree_1776012449_89642" parent="Objets/Tree" unique_id=102921550 instance=ExtResource("9_yhicf")]
 transform = Transform3D(0.49242756, 0, 0, 0, 0.49242756, 0, 0, 0, 0.49242756, 46.699013, 0.0023798943, 67.702484)
@@ -2694,9 +2742,6 @@ transform = Transform3D(0.5491278, 0, 0, 0, 0.5491278, 0, 0, 0, 0.5491278, -45.7
 [node name="Tree_1776012610_89672" parent="Objets/Tree" unique_id=228521563 instance=ExtResource("17_ro6to")]
 transform = Transform3D(0.43092576, 0, 0, 0, 0.43092576, 0, 0, 0, 0.43092576, -21.498068, 0.0023794174, -150.00215)
 
-[node name="Tree_1776012611_53828" parent="Objets/Tree" unique_id=541888334 instance=ExtResource("9_yhicf")]
-transform = Transform3D(0.5258486, 0, 0, 0, 0.5258486, 0, 0, 0, 0.5258486, -3.7980664, 0.0023794174, -142.44693)
-
 [node name="Tree_1776012618_21831" parent="Objets/Tree" unique_id=585510159 instance=ExtResource("17_ro6to")]
 transform = Transform3D(0.5298092, 0, 0, 0, 0.5298092, 0, 0, 0, 0.5298092, -37.501995, 0.0023794174, -117.47614)
 
@@ -2705,9 +2750,6 @@ transform = Transform3D(0.4777245, 0, 0, 0, 0.4777245, 0, 0, 0, 0.4777245, -22.7
 
 [node name="Tree_1776012618_96052" parent="Objets/Tree" unique_id=397391299 instance=ExtResource("9_yhicf")]
 transform = Transform3D(0.4777245, 0, 0, 0, 0.4777245, 0, 0, 0, 0.4777245, -17.54935, 0.0023794174, -95.3084)
-
-[node name="Tree_1776012618_96053" parent="Objets/Tree" unique_id=1938852122 instance=ExtResource("9_yhicf")]
-transform = Transform3D(0.22373308, 0, -0.422095, 0, 0.4777245, 0, 0.422095, 0, 0.22373308, -1.107995, 0.0023794174, -129.67686)
 
 [node name="Tree_1776012618_96054" parent="Objets/Tree" unique_id=1185698007 instance=ExtResource("9_yhicf")]
 transform = Transform3D(0.4777245, 0, 0, 0, 0.4777245, 0, 0, 0, 0.4777245, -13.139142, 0.0023794174, -162.06958)
@@ -2720,9 +2762,6 @@ transform = Transform3D(0.4777245, 0, 0, 0, 0.4777245, 0, 0, 0, 0.4777245, -14.9
 
 [node name="Tree_1776012618_96057" parent="Objets/Tree" unique_id=1669169237 instance=ExtResource("9_yhicf")]
 transform = Transform3D(0.4777245, 0, 0, 0, 0.4777245, 0, 0, 0, 0.4777245, -5.423689, 0.0023794174, -153.52176)
-
-[node name="Tree_1776012618_96058" parent="Objets/Tree" unique_id=2096547857 instance=ExtResource("9_yhicf")]
-transform = Transform3D(0.4777245, 0, 0, 0, 0.4777245, 0, 0, 0, 0.4777245, 2.0757766, 0.0023794174, -155.4121)
 
 [node name="Tree_1776012618_96059" parent="Objets/Tree" unique_id=1672608100 instance=ExtResource("9_yhicf")]
 transform = Transform3D(0.4777245, 0, 0, 0, 0.4777245, 0, 0, 0, 0.4777245, -28.49859, 0.0023794174, -147.29077)
@@ -2737,9 +2776,6 @@ transform = Transform3D(0.4777245, 0, 0, 0, 0.4777245, 0, 0, 0, 0.4777245, -7.70
 transform = Transform3D(0.4777245, 0, 0, 0, 0.4777245, 0, 0, 0, 0.4777245, -9.280872, 0.0023794174, -154.05203)
 
 [node name="Tree_1776012618_96063" parent="Objets/Tree" unique_id=217409250 instance=ExtResource("9_yhicf")]
-transform = Transform3D(0.4777245, 0, 0, 0, 0.4777245, 0, 0, 0, 0.4777245, -2.248105, 0.0023794174, -157.97597)
-
-[node name="Tree_1776012618_96064" parent="Objets/Tree" unique_id=734949150 instance=ExtResource("9_yhicf")]
 transform = Transform3D(0.4777245, 0, 0, 0, 0.4777245, 0, 0, 0, 0.4777245, -2.248105, 0.0023794174, -157.97597)
 
 [node name="Tree_1776012619_11213" parent="Objets/Tree" unique_id=1585926412 instance=ExtResource("17_ro6to")]
@@ -2958,7 +2994,7 @@ transform = Transform3D(0.45936283, 0, 0, 0, 0.45936283, 0, 0, 0, 0.45936283, -1
 [node name="Tree_1776012817_31516" parent="Objets/Tree" unique_id=391855709 instance=ExtResource("17_ro6to")]
 transform = Transform3D(0.4262963, 0, 0, 0, 0.42629626, 0, 0, 0, 0.4262963, -103.716835, 0.0023798943, -13.632448)
 
-[node name="Tree_1776012817_31517" parent="Objets/Tree" unique_id=741688957 instance=ExtResource("17_ro6to")]
+[node name="Tree_1776012817_31517" parent="Objets/Tree" unique_id=1097923293 instance=ExtResource("17_ro6to")]
 transform = Transform3D(0.42629632, 0, 0, 0, 0.42629626, 0, 0, 0, 0.42629632, -119.72849, 0.0023798943, -12.1044445)
 
 [node name="Tree_1776012818_69868" parent="Objets/Tree" unique_id=352786878 instance=ExtResource("9_yhicf")]
@@ -3208,7 +3244,7 @@ transform = Transform3D(0.4681225, 0, 0, 0, 0.4681225, 0, 0, 0, 0.4681225, -27.0
 transform = Transform3D(0.47671407, 0, 0, 0, 0.47671407, 0, 0, 0, 0.47671407, -24.449171, 0.0023798943, -106.86737)
 
 [node name="Forest" parent="Objets" unique_id=2094210011 instance=ExtResource("17_ttchh")]
-transform = Transform3D(0.9455185, 0, -0.32556814, 0, 1, 0, 0.32556814, 0, 0.9455185, -0.131, -0.5, 0.899)
+transform = Transform3D(0.9455185, 0, -0.32556814, 0, 1, 0, 0.32556814, 0, 0.9455185, -0.13519311, -0.50167847, 0.8970237)
 
 [node name="StaticObj" type="Node3D" parent="Objets" unique_id=544645276]
 
@@ -3412,6 +3448,264 @@ transform = Transform3D(-0.5228852, 0, -1.2986882, 0, 1.4, 0, 1.2986882, 0, -0.5
 
 [node name="bench16" parent="Objets/StaticObj" unique_id=938564943 instance=ExtResource("32_5uot1")]
 transform = Transform3D(0.59474206, 0, 1.2673917, 0, 1.4, 0, -1.2673917, 0, 0.59474206, -72.29632, 0.04701443, 74.76662)
+
+[node name="pylone2" parent="Objets/StaticObj" unique_id=784389755 instance=ExtResource("77_cua6p")]
+transform = Transform3D(0.0040630847, 0, 0.3999793, 0, 0.4, 0, -0.3999793, 0, 0.0040630847, 8.734635, 1.9110749, -13.223802)
+
+[node name="pylone3" parent="Objets/StaticObj" unique_id=137561605 instance=ExtResource("77_cua6p")]
+transform = Transform3D(0.17103778, 0, 0.36158812, 0, 0.40000007, 0, -0.36158812, 0, 0.17103778, 4.9887056, 1.9110754, -68.07987)
+
+[node name="pylone38" parent="Objets/StaticObj" unique_id=1015833789 instance=ExtResource("77_cua6p")]
+transform = Transform3D(0.2019014, 0, 0.34530523, 0, 0.40000007, 0, -0.34530523, 0, 0.2019014, 1.5157268, 1.9110754, 111.490135)
+
+[node name="pylone4" parent="Objets/StaticObj" unique_id=1156736526 instance=ExtResource("77_cua6p")]
+transform = Transform3D(0.33188406, 0, -0.22327755, 0, 0.4000001, 0, 0.22327755, 0, 0.33188406, 105.67251, 1.9110749, -33.464382)
+
+[node name="pylone5" parent="Objets/StaticObj" unique_id=449348823 instance=ExtResource("77_cua6p")]
+transform = Transform3D(-0.13609923, 0, -0.37613413, 0, 0.40000007, 0, 0.37613413, 0, -0.13609923, 31.255512, 1.9110749, -96.83044)
+
+[node name="pylone16" parent="Objets/StaticObj" unique_id=602823227 instance=ExtResource("77_cua6p")]
+transform = Transform3D(-0.2790911, 0, -0.28654504, 0, 0.40000013, 0, 0.28654504, 0, -0.2790911, -86.15477, 1.9110749, -54.64667)
+
+[node name="pylone17" parent="Objets/StaticObj" unique_id=1594346959 instance=ExtResource("77_cua6p")]
+transform = Transform3D(-0.19977613, 0, -0.3465391, 0, 0.40000013, 0, 0.3465391, 0, -0.19977613, -102.25022, 1.9110749, -27.226364)
+
+[node name="pylone47" parent="Objets/StaticObj" unique_id=789707051 instance=ExtResource("77_cua6p")]
+transform = Transform3D(-0.1218259, 0, -0.38099644, 0, 0.4000001, 0, 0.38099644, 0, -0.1218259, -110.45956, 1.9110749, -69.19343)
+
+[node name="pylone48" parent="Objets/StaticObj" unique_id=1642761082 instance=ExtResource("77_cua6p")]
+transform = Transform3D(-0.25818822, 0, -0.3055138, 0, 0.4000001, 0, 0.3055138, 0, -0.25818822, -92.10814, 1.911073, -87.99443)
+
+[node name="pylone49" parent="Objets/StaticObj" unique_id=314372759 instance=ExtResource("77_cua6p")]
+transform = Transform3D(-0.3998144, 0, 0.012180433, 0, 0.4000001, 0, -0.012180433, 0, -0.3998144, -75.03236, 1.911073, -98.80995)
+
+[node name="pylone50" parent="Objets/StaticObj" unique_id=801754220 instance=ExtResource("77_cua6p")]
+transform = Transform3D(-0.37045628, 0, 0.15087116, 0, 0.40000007, 0, -0.15087116, 0, -0.37045628, -35.736423, 1.911073, -111.74107)
+
+[node name="pylone51" parent="Objets/StaticObj" unique_id=2048456049 instance=ExtResource("77_cua6p")]
+transform = Transform3D(-0.38863283, 0, 0.09468092, 0, 0.4, 0, -0.09468092, 0, -0.38863283, -4.8394365, 1.911073, -112.94167)
+
+[node name="pylone18" parent="Objets/StaticObj" unique_id=359091688 instance=ExtResource("77_cua6p")]
+transform = Transform3D(-0.120608404, 0, -0.38138357, 0, 0.4000001, 0, 0.38138357, 0, -0.120608404, -111.37528, 1.9110749, 1.0585241)
+
+[node name="pylone19" parent="Objets/StaticObj" unique_id=333719194 instance=ExtResource("77_cua6p")]
+transform = Transform3D(0.17140369, 0, -0.36141464, 0, 0.4000001, 0, 0.36141464, 0, 0.17140369, -106.26385, 1.9110749, 29.024681)
+
+[node name="pylone20" parent="Objets/StaticObj" unique_id=1739855276 instance=ExtResource("77_cua6p")]
+transform = Transform3D(0.0089982, 0, -0.39989838, 0, 0.40000007, 0, 0.39989838, 0, 0.0089982, 30.978514, 1.9110749, 85.47282)
+
+[node name="pylone35" parent="Objets/StaticObj" unique_id=857729696 instance=ExtResource("77_cua6p")]
+transform = Transform3D(-0.29130024, 0, 0.27412358, 0, 0.4, 0, -0.27412358, 0, -0.29130024, 71.73367, 1.911073, 98.471725)
+
+[node name="pylone21" parent="Objets/StaticObj" unique_id=1248412317 instance=ExtResource("77_cua6p")]
+transform = Transform3D(0.008998215, 0, -0.39989835, 0, 0.40000007, 0, 0.39989835, 0, 0.008998215, 23.583563, 1.9110749, 117.46554)
+
+[node name="pylone22" parent="Objets/StaticObj" unique_id=160253381 instance=ExtResource("77_cua6p")]
+transform = Transform3D(-0.36567843, 0, -0.16210756, 0, 0.40000013, 0, 0.16210756, 0, -0.36567843, 57.0147, 1.9110749, 135.24396)
+
+[node name="pylone23" parent="Objets/StaticObj" unique_id=2013626450 instance=ExtResource("77_cua6p")]
+transform = Transform3D(-0.3656784, 0, -0.16210756, 0, 0.40000013, 0, 0.16210756, 0, -0.3656784, 11.620555, 1.9110749, 148.16391)
+
+[node name="pylone24" parent="Objets/StaticObj" unique_id=1470924557 instance=ExtResource("77_cua6p")]
+transform = Transform3D(-0.29081646, 0, 0.2746367, 0, 0.40000013, 0, -0.2746367, 0, -0.29081646, -39.99471, 1.9110749, 120.50315)
+
+[node name="pylone37" parent="Objets/StaticObj" unique_id=539097740 instance=ExtResource("77_cua6p")]
+transform = Transform3D(-0.29081643, 0, 0.2746367, 0, 0.40000013, 0, -0.2746367, 0, -0.29081643, -55.946476, 1.9110768, 103.33545)
+
+[node name="pylone39" parent="Objets/StaticObj" unique_id=1033784901 instance=ExtResource("77_cua6p")]
+transform = Transform3D(-0.3995901, 0, -0.018089414, 0, 0.4000001, 0, 0.018089414, 0, -0.3995901, -94.84708, 1.9110768, 63.44292)
+
+[node name="pylone40" parent="Objets/StaticObj" unique_id=1215300775 instance=ExtResource("77_cua6p")]
+transform = Transform3D(-0.32352832, 0, 0.23522097, 0, 0.40000007, 0, -0.23522097, 0, -0.32352832, -136.39592, 1.9110768, 51.074905)
+
+[node name="pylone41" parent="Objets/StaticObj" unique_id=1306121891 instance=ExtResource("77_cua6p")]
+transform = Transform3D(-0.020481199, 0, 0.3994747, 0, 0.40000018, 0, -0.3994747, 0, -0.020481199, -142.61858, 1.9110768, 16.999641)
+
+[node name="pylone42" parent="Objets/StaticObj" unique_id=2080773749 instance=ExtResource("77_cua6p")]
+transform = Transform3D(0.37683395, 0, -0.13414745, 0, 0.40000013, 0, 0.13414745, 0, 0.37683395, -150.18692, 1.9110768, -16.722824)
+
+[node name="pylone43" parent="Objets/StaticObj" unique_id=521589863 instance=ExtResource("77_cua6p")]
+transform = Transform3D(0.37683392, 0, -0.13414745, 0, 0.40000013, 0, 0.13414745, 0, 0.37683392, -181.77269, 1.9110768, -34.026012)
+
+[node name="pylone44" parent="Objets/StaticObj" unique_id=488735192 instance=ExtResource("77_cua6p")]
+transform = Transform3D(0.37683386, 0, -0.13414744, 0, 0.40000013, 0, 0.13414744, 0, 0.37683386, -217.76219, 1.9110768, -47.13234)
+
+[node name="pylone45" parent="Objets/StaticObj" unique_id=1428937879 instance=ExtResource("77_cua6p")]
+transform = Transform3D(0.37683383, 0, -0.13414744, 0, 0.40000013, 0, 0.13414744, 0, 0.37683383, -255.52205, 1.9110768, -60.1341)
+
+[node name="pylone46" parent="Objets/StaticObj" unique_id=1683996216 instance=ExtResource("77_cua6p")]
+transform = Transform3D(0.37683383, 0, -0.13414744, 0, 0.40000013, 0, 0.13414744, 0, 0.37683383, -294.0998, 1.9110768, -73.72356)
+
+[node name="pylone25" parent="Objets/StaticObj" unique_id=2093099934 instance=ExtResource("77_cua6p")]
+transform = Transform3D(-0.29081643, 0, 0.2746367, 0, 0.40000013, 0, -0.2746367, 0, -0.29081643, -75.39876, 1.9110749, 87.42202)
+
+[node name="pylone26" parent="Objets/StaticObj" unique_id=270610673 instance=ExtResource("77_cua6p")]
+transform = Transform3D(-0.3021259, 0, -0.26214382, 0, 0.4000001, 0, 0.26214382, 0, -0.3021259, 84.017136, 1.9110749, 132.77544)
+
+[node name="pylone36" parent="Objets/StaticObj" unique_id=623436912 instance=ExtResource("77_cua6p")]
+transform = Transform3D(-0.30212587, 0, -0.26214382, 0, 0.4000001, 0, 0.26214382, 0, -0.30212587, 101.831505, 1.9110749, 123.87282)
+
+[node name="pylone27" parent="Objets/StaticObj" unique_id=1311141490 instance=ExtResource("77_cua6p")]
+transform = Transform3D(-0.25501752, 0, -0.30816472, 0, 0.4000001, 0, 0.30816472, 0, -0.25501752, 120.00482, 1.9110749, 102.37557)
+
+[node name="pylone28" parent="Objets/StaticObj" unique_id=887568908 instance=ExtResource("77_cua6p")]
+transform = Transform3D(-0.17163041, 0, -0.3613065, 0, 0.4000001, 0, 0.3613065, 0, -0.17163041, 143.8312, 1.9110749, 75.166664)
+
+[node name="pylone29" parent="Objets/StaticObj" unique_id=1151752289 instance=ExtResource("77_cua6p")]
+transform = Transform3D(-0.10678068, 0, -0.38548315, 0, 0.40000007, 0, 0.38548315, 0, -0.10678068, 149.61922, 1.9110749, 30.050625)
+
+[node name="pylone30" parent="Objets/StaticObj" unique_id=397982718 instance=ExtResource("77_cua6p")]
+transform = Transform3D(-0.10678068, 0, -0.38548315, 0, 0.40000007, 0, 0.38548315, 0, -0.10678068, 150.46684, 1.9110749, -11.568284)
+
+[node name="pylone31" parent="Objets/StaticObj" unique_id=1008196170 instance=ExtResource("77_cua6p")]
+transform = Transform3D(-0.10678068, 0, -0.38548315, 0, 0.40000007, 0, 0.38548315, 0, -0.10678068, 156.37706, 1.9110749, -29.676395)
+
+[node name="pylone32" parent="Objets/StaticObj" unique_id=143127802 instance=ExtResource("77_cua6p")]
+transform = Transform3D(0.1108452, 0, -0.3843341, 0, 0.40000007, 0, 0.3843341, 0, 0.1108452, 90.81504, 1.9110749, -73.428604)
+
+[node name="pylone33" parent="Objets/StaticObj" unique_id=258906241 instance=ExtResource("77_cua6p")]
+transform = Transform3D(-0.39150897, 0, 0.081975795, 0, 0.40000007, 0, -0.081975795, 0, -0.39150897, 64.85823, 1.9110749, -48.88175)
+
+[node name="pylone34" parent="Objets/StaticObj" unique_id=1183511130 instance=ExtResource("77_cua6p")]
+transform = Transform3D(-0.39150897, 0, 0.08197579, 0, 0.40000007, 0, -0.08197579, 0, -0.39150897, 26.822142, 1.9110749, -62.917583)
+
+[node name="pylone6" parent="Objets/StaticObj" unique_id=58032365 instance=ExtResource("77_cua6p")]
+transform = Transform3D(-0.13609923, 0, -0.3761341, 0, 0.40000007, 0, 0.3761341, 0, -0.13609923, 42.526646, 1.9110749, -129.1597)
+
+[node name="pylone7" parent="Objets/StaticObj" unique_id=1675616037 instance=ExtResource("77_cua6p")]
+transform = Transform3D(-0.13609923, 0, -0.3761341, 0, 0.40000007, 0, 0.3761341, 0, -0.13609923, 53.171127, 1.9110749, -161.28693)
+
+[node name="pylone8" parent="Objets/StaticObj" unique_id=270259348 instance=ExtResource("77_cua6p")]
+transform = Transform3D(-0.13609923, 0, -0.3761341, 0, 0.40000007, 0, 0.3761341, 0, -0.13609923, 66.293945, 1.9110749, -199.80284)
+
+[node name="pylone9" parent="Objets/StaticObj" unique_id=1980407617 instance=ExtResource("77_cua6p")]
+transform = Transform3D(-0.13609923, 0, -0.3761341, 0, 0.40000007, 0, 0.3761341, 0, -0.13609923, 76.7382, 1.9110749, -228.51726)
+
+[node name="pylone10" parent="Objets/StaticObj" unique_id=485074017 instance=ExtResource("77_cua6p")]
+transform = Transform3D(-0.13609923, 0, -0.3761341, 0, 0.40000007, 0, 0.3761341, 0, -0.13609923, 89.74653, 1.9110749, -263.86935)
+
+[node name="pylone11" parent="Objets/StaticObj" unique_id=1160226931 instance=ExtResource("77_cua6p")]
+transform = Transform3D(-0.13609923, 0, -0.3761341, 0, 0.40000007, 0, 0.3761341, 0, -0.13609923, 101.05642, 1.9110749, -295.90674)
+
+[node name="pylone12" parent="Objets/StaticObj" unique_id=509027049 instance=ExtResource("77_cua6p")]
+transform = Transform3D(-0.13609923, 0, -0.3761341, 0, 0.40000007, 0, 0.3761341, 0, -0.13609923, 114.179245, 1.9110749, -334.42264)
+
+[node name="pylone13" parent="Objets/StaticObj" unique_id=199805337 instance=ExtResource("77_cua6p")]
+transform = Transform3D(-0.13609923, 0, -0.3761341, 0, 0.40000007, 0, 0.3761341, 0, -0.13609923, 130.90099, 1.9110749, -378.9414)
+
+[node name="pylone14" parent="Objets/StaticObj" unique_id=895676355 instance=ExtResource("77_cua6p")]
+transform = Transform3D(-0.13609923, 0, -0.3761341, 0, 0.40000007, 0, 0.3761341, 0, -0.13609923, 147.66148, 1.9110749, -423.16827)
+
+[node name="pylone15" parent="Objets/StaticObj" unique_id=945549056 instance=ExtResource("77_cua6p")]
+transform = Transform3D(-0.13609923, 0, -0.3761341, 0, 0.40000007, 0, 0.3761341, 0, -0.13609923, 147.66148, 1.9110749, -423.16827)
+
+[node name="poubelle" parent="Objets/StaticObj" unique_id=820849524 instance=ExtResource("78_74tlw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.010896802, 0, 4.914739)
+
+[node name="poubelle13" parent="Objets/StaticObj" unique_id=476225551 instance=ExtResource("78_74tlw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.522896, 0, 59.381695)
+
+[node name="poubelle14" parent="Objets/StaticObj" unique_id=1984984005 instance=ExtResource("78_74tlw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.639019, 0, 60.324165)
+
+[node name="poubelle15" parent="Objets/StaticObj" unique_id=1730095472 instance=ExtResource("78_74tlw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.408245, 0, 59.79136)
+
+[node name="poubelle16" parent="Objets/StaticObj" unique_id=1957655775 instance=ExtResource("78_74tlw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.453682, 0, 60.787937)
+
+[node name="poubelle17" parent="Objets/StaticObj" unique_id=628203945 instance=ExtResource("78_74tlw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.078922, 0, 61.601715)
+
+[node name="poubelle18" parent="Objets/StaticObj" unique_id=608750082 instance=ExtResource("78_74tlw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.996532, 0, 61.672783)
+
+[node name="poubelle19" parent="Objets/StaticObj" unique_id=2020404086 instance=ExtResource("78_74tlw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.4905663, 0, 66.02555)
+
+[node name="poubelle20" parent="Objets/StaticObj" unique_id=927260767 instance=ExtResource("78_74tlw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.8114614, 0, 69.32479)
+
+[node name="poubelle21" parent="Objets/StaticObj" unique_id=1651620445 instance=ExtResource("78_74tlw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.796054, 0, 68.141365)
+
+[node name="poubelle22" parent="Objets/StaticObj" unique_id=1046605253 instance=ExtResource("78_74tlw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.5005655, 0, 67.566475)
+
+[node name="poubelle23" parent="Objets/StaticObj" unique_id=364166897 instance=ExtResource("78_74tlw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.129403, 0, 69.27836)
+
+[node name="poubelle24" parent="Objets/StaticObj" unique_id=373849435 instance=ExtResource("78_74tlw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.614819, 0, 63.204506)
+
+[node name="poubelle12" parent="Objets/StaticObj" unique_id=1677613362 instance=ExtResource("78_74tlw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40.26566, -9.536743e-07, -10.8240185)
+
+[node name="poubelle2" parent="Objets/StaticObj" unique_id=2143294917 instance=ExtResource("78_74tlw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 75.16209, 0, -89.643)
+
+[node name="poubelle3" parent="Objets/StaticObj" unique_id=1025501779 instance=ExtResource("78_74tlw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 57.30341, 0, -73.28073)
+
+[node name="poubelle4" parent="Objets/StaticObj" unique_id=2027383283 instance=ExtResource("78_74tlw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 33.415974, 0, -79.682655)
+
+[node name="poubelle5" parent="Objets/StaticObj" unique_id=859665289 instance=ExtResource("78_74tlw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 37.820778, 0, -90.2395)
+
+[node name="poubelle6" parent="Objets/StaticObj" unique_id=411613779 instance=ExtResource("78_74tlw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.544645, 0, -79.933105)
+
+[node name="poubelle7" parent="Objets/StaticObj" unique_id=1141325559 instance=ExtResource("78_74tlw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 45.403034, 0, -110.57039)
+
+[node name="poubelle8" parent="Objets/StaticObj" unique_id=903422474 instance=ExtResource("78_74tlw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 72.21757, 0, 17.80397)
+
+[node name="poubelle9" parent="Objets/StaticObj" unique_id=1457368815 instance=ExtResource("78_74tlw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 93.38972, 0, -6.469615)
+
+[node name="poubelle10" parent="Objets/StaticObj" unique_id=335561898 instance=ExtResource("78_74tlw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 141.63368, 0, -32.860992)
+
+[node name="poubelle11" parent="Objets/StaticObj" unique_id=300645972 instance=ExtResource("78_74tlw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 83.116425, 0, 106.30229)
+
+[node name="poubelle25" parent="Objets/StaticObj" unique_id=344957370 instance=ExtResource("78_74tlw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 46.447887, 0, 101.63045)
+
+[node name="poubelle34" parent="Objets/StaticObj" unique_id=181037937 instance=ExtResource("78_74tlw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 52.49405, 0, 58.993206)
+
+[node name="poubelle35" parent="Objets/StaticObj" unique_id=1255517328 instance=ExtResource("78_74tlw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -126.292625, 0, 31.640778)
+
+[node name="poubelle36" parent="Objets/StaticObj" unique_id=1167804005 instance=ExtResource("78_74tlw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -131.44003, 0, 20.71545)
+
+[node name="poubelle26" parent="Objets/StaticObj" unique_id=1392555474 instance=ExtResource("78_74tlw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.150213, 0, 115.50558)
+
+[node name="poubelle27" parent="Objets/StaticObj" unique_id=1619435412 instance=ExtResource("78_74tlw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 42.48832, 0, 122.094154)
+
+[node name="poubelle28" parent="Objets/StaticObj" unique_id=694970315 instance=ExtResource("78_74tlw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -31.626074, 0, 0.9188156)
+
+[node name="poubelle29" parent="Objets/StaticObj" unique_id=754477412 instance=ExtResource("78_74tlw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -32.642292, 0, 0.3484273)
+
+[node name="poubelle30" parent="Objets/StaticObj" unique_id=131721217 instance=ExtResource("78_74tlw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -33.707783, 0, -0.23892641)
+
+[node name="poubelle31" parent="Objets/StaticObj" unique_id=891754619 instance=ExtResource("78_74tlw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -74.85428, 0, -23.114605)
+
+[node name="poubelle32" parent="Objets/StaticObj" unique_id=626537232 instance=ExtResource("78_74tlw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -96.809074, 0, -45.597713)
+
+[node name="poubelle33" parent="Objets/StaticObj" unique_id=227549940 instance=ExtResource("78_74tlw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -92.04723, 0, -57.189266)
 
 [node name="Newspaper" type="Node3D" parent="Objets" unique_id=1110055336]
 
