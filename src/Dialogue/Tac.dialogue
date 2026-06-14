@@ -39,7 +39,7 @@ Tac: Yeah, that's what I told myself.
 Tac: I got really angry!
 Tac: But then I thought about it!
 Tac: We've been friends for as long as I remember, and they never hit me!
-Tac: And I think I might've been rude to them when we were deciding chat cake to bake for Bibi's 
+Tac: And I think I might've been rude to them when we were deciding what cake to bake for Bibi's birthday.
 Tac: Can you talk to Tic, tell them I'm sorry?
 if GlobalVars.tac_visited:
 	- I just talked to them!
@@ -55,7 +55,7 @@ else:
 
 ~ quest_return
 Tac: Have you had time to talk to them?
-if GlobalVars.tac_visited:
+if GlobalVars.tic_visited:
 	- Yeah, I just did!
 		=> quest_return_main
 else:

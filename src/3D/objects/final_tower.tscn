@@ -2,9 +2,9 @@
 
 [ext_resource type="Script" uid="uid://byk7cemodmg6x" path="res://src/3D/objects/final_tower.gd" id="1_lsc47"]
 [ext_resource type="Texture2D" uid="uid://bcni8kmc34rsa" path="res://assets/blender/tourtext.png" id="2_mc2iw"]
-[ext_resource type="PackedScene" uid="uid://hg0oxyvo1415" path="res://assets/blender/echelle.blend" id="2_tuflv"]
 [ext_resource type="Script" uid="uid://sd0g0r1lwus3" path="res://src/3D/interactables/interactable_3d_dialogue.gd" id="3_h5mvg"]
 [ext_resource type="Script" uid="uid://b3imm353l7y6u" path="res://src/3D/interactables/interactable_3d_minigame.gd" id="3_lpbik"]
+[ext_resource type="PackedScene" uid="uid://c3xjv52ao4eio" path="res://src/3D/objects/echelle.tscn" id="3_n6t12"]
 [ext_resource type="PackedScene" uid="uid://bgwp5tg6h76il" path="res://src/minigames/electician_minigame/electician_minigame.tscn" id="4_cbaar"]
 [ext_resource type="PackedScene" uid="uid://ddq2i6ppa2upf" path="res://src/3D/interactables/interactacle_text_3d.tscn" id="5_tuflv"]
 [ext_resource type="Resource" uid="uid://bt2cfkqaa56vk" path="res://src/Dialogue/FinalCinematic/FinalCinematic.dialogue" id="7_lpbik"]
@@ -432,10 +432,10 @@ mesh = SubResource("ArrayMesh_xdeht")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="tourechelle/Rembarde/Rembarde_col" unique_id=145569720]
 shape = SubResource("ConcavePolygonShape3D_fy2lv")
 
-[node name="echelle" parent="." unique_id=1808021067 instance=ExtResource("2_tuflv")]
-transform = Transform3D(-0.14541969, 0, -0.35107422, 0, 0.38, 0, 0.35107422, 0, -0.14541969, 1.5082428, -0.665, 0.6492777)
+[node name="echelle4" parent="." unique_id=1510919725 instance=ExtResource("3_n6t12")]
+transform = Transform3D(-0.1454197, 0, -0.35107425, 0, 0.38000005, 0, 0.35107425, 0, -0.1454197, 1.508243, -0.6649999, 0.64927775)
 
-[node name="echelle2" parent="." unique_id=273484539 instance=ExtResource("2_tuflv")]
+[node name="echelle3" parent="." unique_id=771197094 instance=ExtResource("3_n6t12")]
 transform = Transform3D(-0.11300244, 0, -0.3628091, 0, 0.38, 0, 0.3628091, 0, -0.11300244, 1.4912426, -0.54, 0.6492777)
 
 [node name="Interractable" type="Area3D" parent="." unique_id=2095934099 node_paths=PackedStringArray("text_sprite")]

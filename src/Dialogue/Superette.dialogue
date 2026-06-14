@@ -1,7 +1,7 @@
 ~ start
 $> GlobalVars.visited_superette = true
 Yvonne: Mhhhh?
-- Hey, ummm, I saw that there was a cake for sale?
+- Hey, ummm, I saw thatcd .. there was a cake for sale?
 	$> title = "quick_start"
 	Yvonne: Why do you care?
 	- It's my little sibling's birthday today
@@ -81,7 +81,7 @@ Yvonne: Get out!
 => END
 
 ~ global70
-Yvonne: [wave amp=30 freq=1] Is it just me or is everything wierd?
+Yvonne: [wave amp=30 freq=1] Is it just me or is everything weird?
 => END
 
 ~ global90

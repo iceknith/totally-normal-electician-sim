@@ -10,16 +10,17 @@
 [ext_resource type="Texture2D" uid="uid://bebn8axhpyefo" path="res://src/2D/levels/Arcade/assets/Bornes/borne1.png" id="8_mjrqe"]
 [ext_resource type="PackedScene" uid="uid://cnnuxnjiw3ait" path="res://src/2D/interactables/interactableText.tscn" id="9_2r2t4"]
 [ext_resource type="Resource" uid="uid://bau4icmy6o8ha" path="res://src/Dialogue/Arcade/DialogueArcade.dialogue" id="9_a31al"]
-[ext_resource type="Texture2D" uid="uid://b1sdij61wb0pd" path="res://src/2D/levels/Arcade/assets/Jo/Jo.png" id="10_dd50p"]
 [ext_resource type="Texture2D" uid="uid://b6gsnmfmn5r0i" path="res://src/2D/levels/Arcade/assets/Bornes/borne3.png" id="11_1dopb"]
-[ext_resource type="Texture2D" uid="uid://c4veny6bns2w8" path="res://src/2D/levels/Arcade/assets/Jo/Jolister.png" id="12_vy2sq"]
+[ext_resource type="Texture2D" uid="uid://dfgtxysrl5141" path="res://assets/pixelart/JoVert_Aracde.png" id="12_6qrce"]
 [ext_resource type="Texture2D" uid="uid://d1qr2fx85h3t2" path="res://src/2D/levels/Arcade/assets/Bornes/borne4.png" id="13_ogxnh"]
-[ext_resource type="Texture2D" uid="uid://bsk6vycciopco" path="res://src/2D/levels/Arcade/assets/Jo/BigJo.png" id="14_urhql"]
 [ext_resource type="Texture2D" uid="uid://cs8bblgpa4f63" path="res://src/2D/levels/Arcade/assets/tapisRouge2.png" id="15_07osa"]
+[ext_resource type="Texture2D" uid="uid://cvsx2dfimgeqt" path="res://assets/pixelart/JoBleu_Aracde.png" id="15_l30lm"]
 [ext_resource type="Texture2D" uid="uid://jm84t4qq2tx2" path="res://src/2D/levels/Arcade/assets/tapisRouge1.png" id="16_k3dwm"]
+[ext_resource type="Texture2D" uid="uid://bh0sso451m04j" path="res://assets/pixelart/JoRouget_Aracde.png" id="17_d37ci"]
 [ext_resource type="Texture2D" uid="uid://b7nx8rwfg5g0a" path="res://src/2D/levels/Arcade/assets/Bornes/tapis-export.png" id="17_qffvi"]
 [ext_resource type="Texture2D" uid="uid://dyiicarx06ply" path="res://src/2D/levels/Arcade/assets/Bornes/borne2.png" id="18_6qrce"]
 [ext_resource type="Texture2D" uid="uid://bkgslpu4oqfdq" path="res://src/2D/levels/Arcade/assets/cat-breakdance-Sheet.png" id="19_l30lm"]
+[ext_resource type="Texture2D" uid="uid://db2rvag58voha" path="res://src/2D/levels/Arcade/assets/Bornes/borne5.png" id="21_l30lm"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_83i5v"]
 size = Vector2(838, 114)
@@ -98,7 +99,7 @@ size = Vector2(117, 114.5)
 polygon = PackedVector2Array(-46, 72, -47, 80, 46, 80, 40, 72)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tigbq"]
-size = Vector2(124, 113)
+size = Vector2(122, 113)
 
 [sub_resource type="Gradient" id="Gradient_482mc"]
 offsets = PackedFloat32Array(0.0016501651, 0.5726073)
@@ -364,6 +365,7 @@ expand_mode = 1
 [node name="Node2D" type="Node2D" parent="SubViewportContainer/SubViewport" unique_id=389789798]
 
 [node name="StaticBody2D" type="StaticBody2D" parent="SubViewportContainer/SubViewport/Node2D" unique_id=1520152983]
+visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SubViewportContainer/SubViewport/Node2D/StaticBody2D" unique_id=866662587]
 position = Vector2(652, 88)
@@ -427,7 +429,7 @@ texture = ExtResource("16_k3dwm")
 offset = Vector2(0, 35.725)
 
 [node name="Sprite2D2" type="Sprite2D" parent="SubViewportContainer/SubViewport/Node2D/Y-Sort/TapisRouge" unique_id=295587967]
-position = Vector2(0, 73.36)
+position = Vector2(0, 74)
 texture = ExtResource("16_k3dwm")
 
 [node name="Player2d" parent="SubViewportContainer/SubViewport/Node2D/Y-Sort" unique_id=86314008 instance=ExtResource("3_a31al")]
@@ -450,7 +452,7 @@ expand_mode = 3
 y_sort_enabled = true
 
 [node name="Interactable2DMinigame2" type="Area2D" parent="SubViewportContainer/SubViewport/Node2D/Y-Sort/Interactables" unique_id=588353347 node_paths=PackedStringArray("interractable_dialogue")]
-position = Vector2(379, 180)
+position = Vector2(391, 183)
 script = ExtResource("8_6qrce")
 unique_name = "LittleJo"
 dialogue = ExtResource("9_a31al")
@@ -465,13 +467,14 @@ position = Vector2(-2, -1)
 scale = Vector2(2, 2)
 energy = 1.05
 texture = SubResource("GradientTexture2D_rd26i")
+metadata/_edit_lock_ = true
 
 [node name="Borne1" type="Sprite2D" parent="SubViewportContainer/SubViewport/Node2D/Y-Sort/Interactables/Interactable2DMinigame2" unique_id=262175843]
 y_sort_enabled = true
 texture_filter = 1
-position = Vector2(-2, -1)
 scale = Vector2(2, 2)
-texture = ExtResource("8_mjrqe")
+texture = ExtResource("11_1dopb")
+metadata/_edit_lock_ = true
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="SubViewportContainer/SubViewport/Node2D/Y-Sort/Interactables/Interactable2DMinigame2/Borne1" unique_id=87865383]
 position = Vector2(1, 0.5)
@@ -484,21 +487,21 @@ shape = SubResource("RectangleShape2D_a31al")
 
 [node name="InteractableText" parent="SubViewportContainer/SubViewport/Node2D/Y-Sort/Interactables/Interactable2DMinigame2" unique_id=4744531 instance=ExtResource("9_2r2t4")]
 z_index = 1
-offset_left = -20.0
-offset_top = -100.0
-offset_right = 17.0
-offset_bottom = -37.999977
+offset_left = -72.0
+offset_top = -103.0
+offset_right = 67.0
+offset_bottom = -40.999977
 pivot_offset_ratio = Vector2(0.5, 0.5)
 metadata/_edit_use_anchors_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="SubViewportContainer/SubViewport/Node2D/Y-Sort/Interactables/Interactable2DMinigame2" unique_id=328868824]
 texture_filter = 1
-position = Vector2(-5, 28)
-scale = Vector2(3, 3)
-texture = ExtResource("10_dd50p")
+position = Vector2(34, 29)
+scale = Vector2(2, 2)
+texture = ExtResource("12_6qrce")
 
 [node name="Interactable2DMinigame3" type="Area2D" parent="SubViewportContainer/SubViewport/Node2D/Y-Sort/Interactables" unique_id=1232167287 node_paths=PackedStringArray("interractable_dialogue")]
-position = Vector2(569, 181)
+position = Vector2(596, 183)
 script = ExtResource("8_482mc")
 unique_name = "JoLister"
 dialogue = ExtResource("9_a31al")
@@ -511,9 +514,9 @@ metadata/_custom_type_script = "uid://i1towdpqubly"
 [node name="Borne1" type="Sprite2D" parent="SubViewportContainer/SubViewport/Node2D/Y-Sort/Interactables/Interactable2DMinigame3" unique_id=415306800]
 y_sort_enabled = true
 texture_filter = 1
-position = Vector2(-2, -1)
 scale = Vector2(2, 2)
-texture = ExtResource("11_1dopb")
+texture = ExtResource("13_ogxnh")
+metadata/_edit_lock_ = true
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="SubViewportContainer/SubViewport/Node2D/Y-Sort/Interactables/Interactable2DMinigame3/Borne1" unique_id=1808514130]
 position = Vector2(1, 0.5)
@@ -521,32 +524,34 @@ scale = Vector2(0.5, 0.5)
 occluder = SubResource("OccluderPolygon2D_jau64")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SubViewportContainer/SubViewport/Node2D/Y-Sort/Interactables/Interactable2DMinigame3" unique_id=2131961610]
-position = Vector2(-1, 74.5)
+position = Vector2(-2, 74.5)
 shape = SubResource("RectangleShape2D_tigbq")
 
 [node name="InteractableText" parent="SubViewportContainer/SubViewport/Node2D/Y-Sort/Interactables/Interactable2DMinigame3" unique_id=936344028 instance=ExtResource("9_2r2t4")]
 z_index = 1
-offset_left = -20.0
-offset_top = -100.0
-offset_right = 17.0
-offset_bottom = -37.999977
+offset_left = -72.0
+offset_top = -101.0
+offset_right = 67.0
+offset_bottom = -38.999977
 pivot_offset_ratio = Vector2(0.5, 0.5)
 metadata/_edit_use_anchors_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="SubViewportContainer/SubViewport/Node2D/Y-Sort/Interactables/Interactable2DMinigame3" unique_id=1148004594]
 texture_filter = 1
-position = Vector2(-4, 24)
-scale = Vector2(3, 3)
-texture = ExtResource("12_vy2sq")
+position = Vector2(-13, 25)
+scale = Vector2(2, 2)
+texture = ExtResource("15_l30lm")
+metadata/_edit_lock_ = true
 
 [node name="PointLight2D" type="PointLight2D" parent="SubViewportContainer/SubViewport/Node2D/Y-Sort/Interactables/Interactable2DMinigame3" unique_id=1796077961]
 position = Vector2(-2, -1)
 scale = Vector2(2, 2)
 energy = 0.44
 texture = SubResource("GradientTexture2D_jau64")
+metadata/_edit_lock_ = true
 
 [node name="Interactable2DMinigame4" type="Area2D" parent="SubViewportContainer/SubViewport/Node2D/Y-Sort/Interactables" unique_id=1397647529 node_paths=PackedStringArray("interractable_dialogue")]
-position = Vector2(784, 182)
+position = Vector2(799, 183)
 script = ExtResource("8_482mc")
 unique_name = "BigJo"
 dialogue = ExtResource("9_a31al")
@@ -559,9 +564,9 @@ metadata/_custom_type_script = "uid://i1towdpqubly"
 [node name="Borne1" type="Sprite2D" parent="SubViewportContainer/SubViewport/Node2D/Y-Sort/Interactables/Interactable2DMinigame4" unique_id=700508307]
 y_sort_enabled = true
 texture_filter = 1
-position = Vector2(-2, -1)
 scale = Vector2(2, 2)
-texture = ExtResource("13_ogxnh")
+texture = ExtResource("21_l30lm")
+metadata/_edit_lock_ = true
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="SubViewportContainer/SubViewport/Node2D/Y-Sort/Interactables/Interactable2DMinigame4/Borne1" unique_id=42884825]
 position = Vector2(1, 0.5)
@@ -573,28 +578,30 @@ position = Vector2(0.5, 71.5)
 shape = SubResource("RectangleShape2D_x23mc")
 
 [node name="InteractableText" parent="SubViewportContainer/SubViewport/Node2D/Y-Sort/Interactables/Interactable2DMinigame4" unique_id=252005750 instance=ExtResource("9_2r2t4")]
+visible = false
 z_index = 1
-offset_left = -20.0
-offset_top = -100.0
-offset_right = 17.0
-offset_bottom = -37.999977
+offset_left = -69.0
+offset_top = -99.0
+offset_right = 70.0
+offset_bottom = -36.999977
 pivot_offset_ratio = Vector2(0.5, 0.5)
 metadata/_edit_use_anchors_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="SubViewportContainer/SubViewport/Node2D/Y-Sort/Interactables/Interactable2DMinigame4" unique_id=1964034014]
 texture_filter = 1
-position = Vector2(-7, 24)
-scale = Vector2(3, 3)
-texture = ExtResource("14_urhql")
+position = Vector2(32, 36)
+scale = Vector2(2, 2)
+texture = ExtResource("17_d37ci")
 
 [node name="PointLight2D" type="PointLight2D" parent="SubViewportContainer/SubViewport/Node2D/Y-Sort/Interactables/Interactable2DMinigame4" unique_id=945284601]
 position = Vector2(-6, -3)
 scale = Vector2(4, 4)
 energy = 0.61
 texture = SubResource("GradientTexture2D_482mc")
+metadata/_edit_lock_ = true
 
 [node name="Interactable2DMinigame5" type="Area2D" parent="SubViewportContainer/SubViewport/Node2D/Y-Sort/Interactables" unique_id=1664092853 node_paths=PackedStringArray("interractable_dialogue")]
-position = Vector2(288, 496)
+position = Vector2(302, 500)
 script = ExtResource("8_482mc")
 unique_name = "DancingCat"
 dialogue = ExtResource("9_a31al")
@@ -631,10 +638,10 @@ shape = SubResource("RectangleShape2D_f4nr8")
 
 [node name="InteractableText" parent="SubViewportContainer/SubViewport/Node2D/Y-Sort/Interactables/Interactable2DMinigame5" unique_id=973989285 instance=ExtResource("9_2r2t4")]
 z_index = 1
-offset_left = 119.0
-offset_top = -140.0
-offset_right = 156.0
-offset_bottom = -77.99998
+offset_left = 67.0
+offset_top = -139.0
+offset_right = 206.0
+offset_bottom = -76.99998
 pivot_offset_ratio = Vector2(0.5, 0.5)
 metadata/_edit_use_anchors_ = true
 
@@ -643,6 +650,7 @@ position = Vector2(-6, -3)
 scale = Vector2(4, 4)
 energy = 0.65
 texture = SubResource("GradientTexture2D_482mc")
+metadata/_edit_lock_ = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="SubViewportContainer/SubViewport/Node2D/Y-Sort/Interactables/Interactable2DMinigame5" unique_id=49518385]
 position = Vector2(131, -11.000001)
@@ -656,6 +664,7 @@ position = Vector2(145, 8)
 scale = Vector2(4, 4)
 energy = 0.65
 texture = SubResource("GradientTexture2D_482mc")
+metadata/_edit_lock_ = true
 
 [node name="Interactable2DMinigame6" type="Area2D" parent="SubViewportContainer/SubViewport/Node2D/Y-Sort/Interactables" unique_id=1574295420 node_paths=PackedStringArray("interractable_dialogue")]
 position = Vector2(1014, 304)
@@ -671,7 +680,6 @@ metadata/_custom_type_script = "uid://i1towdpqubly"
 [node name="Borne1" type="Sprite2D" parent="SubViewportContainer/SubViewport/Node2D/Y-Sort/Interactables/Interactable2DMinigame6" unique_id=1329345609]
 y_sort_enabled = true
 texture_filter = 1
-position = Vector2(-2, -1)
 scale = Vector2(2, 2)
 texture = ExtResource("18_6qrce")
 
@@ -686,10 +694,10 @@ shape = SubResource("RectangleShape2D_l30lm")
 
 [node name="InteractableText" parent="SubViewportContainer/SubViewport/Node2D/Y-Sort/Interactables/Interactable2DMinigame6" unique_id=362019212 instance=ExtResource("9_2r2t4")]
 z_index = 1
-offset_left = -20.0
-offset_top = -100.0
-offset_right = 17.0
-offset_bottom = -37.999977
+offset_left = -70.0
+offset_top = -93.0
+offset_right = 69.0
+offset_bottom = -30.999977
 pivot_offset_ratio = Vector2(0.5, 0.5)
 metadata/_edit_use_anchors_ = true
 
@@ -698,9 +706,40 @@ position = Vector2(-6, -3)
 scale = Vector2(4, 4)
 energy = 0.65
 texture = SubResource("GradientTexture2D_482mc")
+metadata/_edit_lock_ = true
 
 [node name="Props" type="Node2D" parent="SubViewportContainer/SubViewport/Node2D/Y-Sort" unique_id=1117184629]
 y_sort_enabled = true
+
+[node name="Borne" type="Sprite2D" parent="SubViewportContainer/SubViewport/Node2D/Y-Sort/Props" unique_id=284478201]
+z_index = -1
+position = Vector2(290, 176)
+scale = Vector2(2, 2)
+texture = ExtResource("8_mjrqe")
+
+[node name="Borne2" type="Sprite2D" parent="SubViewportContainer/SubViewport/Node2D/Y-Sort/Props" unique_id=2113570380]
+z_index = -1
+position = Vector2(492, 176)
+scale = Vector2(2, 2)
+texture = ExtResource("8_mjrqe")
+
+[node name="Borne3" type="Sprite2D" parent="SubViewportContainer/SubViewport/Node2D/Y-Sort/Props" unique_id=1948863438]
+z_index = -1
+position = Vector2(694, 176)
+scale = Vector2(2, 2)
+texture = ExtResource("8_mjrqe")
+
+[node name="Borne4" type="Sprite2D" parent="SubViewportContainer/SubViewport/Node2D/Y-Sort/Props" unique_id=777961243]
+z_index = -1
+position = Vector2(896, 176)
+scale = Vector2(2, 2)
+texture = ExtResource("8_mjrqe")
+
+[node name="Borne5" type="Sprite2D" parent="SubViewportContainer/SubViewport/Node2D/Y-Sort/Props" unique_id=1122866082]
+z_index = -1
+position = Vector2(997, 176)
+scale = Vector2(2, 2)
+texture = ExtResource("8_mjrqe")
 
 [node name="Node2D" type="Node2D" parent="SubViewportContainer/SubViewport/Node2D/Y-Sort" unique_id=1866498207]
 
