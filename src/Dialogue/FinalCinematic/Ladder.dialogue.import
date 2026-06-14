@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://cipvg16hhhvuq"
+path="res://.godot/imported/Ladder.dialogue-a9b1a416ca670248a283ef7e4baf5c35.tres"
+
+[deps]
+
+source_file="res://src/Dialogue/FinalCinematic/Ladder.dialogue"
+dest_files=["res://.godot/imported/Ladder.dialogue-a9b1a416ca670248a283ef7e4baf5c35.tres"]
+
+[params]
+
+defaults=true

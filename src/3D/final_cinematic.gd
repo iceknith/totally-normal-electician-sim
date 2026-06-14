@@ -10,3 +10,6 @@ func setup_signals():
 func playCutscene():
 	play("FinalCinematic")
 	
+func playSound(soundPath:String):
+	SoundManager.play_sfx.emit(soundPath)
+	

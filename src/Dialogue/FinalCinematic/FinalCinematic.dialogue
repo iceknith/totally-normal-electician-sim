@@ -1,35 +1,46 @@
 ~ start
-if GlobalVars.eow_meter > 0.8 
-	It's too late to call the repair team.
-	=> END
-There's one last thing to fix.
-The repair team is around, they could help you set up the ladder but it might take some time.
-Call the repair team ? 
-- Yes 
-	$> MainCommunicator.fadeIn.emit(2)
-	$> SoundManager.stop_music.emit()
-	$> wait(3)
-	You wait for the repair team to arrive. [next=auto]
-	$> wait(1)
-	...   [next=auto]
-	$> wait(2)
-	They're here. 
-	You get to work.
-	You setup the ladder together.
-	Then they leave.
-	Time for a final repair.
-	
-	$> MainCommunicator.fadeOut.emit(2)
-	$> GlobalVars.eow_meter = GlobalVars.eow_music_trigger - 0.01
-	$> GlobalVars.playFinalCutscene.emit()
-	$> wait(20)
-	Do your job now.
-	=> END
-	
-- No
-	=> END
+
+if GlobalVars.completed_all_tower
+	if GlobalVars.eow_meter > 0.8 
+		It's too late to call the repair team.
+		=> END
+	There's one last thing to fix.
+	The repair team is around, they could help you set up the ladder but it might take some time.
+	Call the repair team ? 
+	- Yes 
+		$> MainCommunicator.fadeIn.emit(2)
+		$> SoundManager.stop_music.emit()
+		$> wait(3)
+		You wait for the repair team to arrive. [next=auto]
+		$> wait(1)
+		...   [next=auto]
+		$> wait(2)
+		You keep waiting [next=auto]
+		$> wait(1)
+		They're here. 
+		You get to work.
+
+		
+		You setup the ladder together.
+		$> SoundManager.play_sfx.emit("res://src/Sound/sfx/constructionSound.wav")
+		$> wait(5)
+		Then they leave.
+		Time for a final repair.
+		$> MainCommunicator.fadeOut.emit(2)
+		$> GlobalVars.eow_meter = GlobalVars.eow_music_trigger - 0.01
+		$> SoundManager.reset_music.emit("MainTheme")
+		$> SoundManager.change_music.emit("MainTheme")
+		$> GlobalVars.playFinalCutscene.emit()
+		$> wait(20)
+		Do your job now.
+		=> END
+		
+	- No
+		=> END
+There's a plateform up there with a generator to fix.
+You could setup the ladder to climb the tower but that's not something you could do alone.
 
 => END
 
-~ BillySchool
-Look it's your brother's school.
+
+

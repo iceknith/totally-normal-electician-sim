@@ -12,15 +12,19 @@ var mouse_sentitivity:float = 0.006
 ### Towers ###
 ##############
 
+var final_cinematic_dialogue = preload("res://src/Dialogue/FinalCinematic/WarningFinalTower.dialogue")
 var electrician_minigame_current_stage:ElectricianMinigame.Stages = ElectricianMinigame.Stages.TutorialWires
 signal tower_completed_value_change
 signal all_tower_completed
+var completed_all_tower:bool = false
 var tower_completed:int = 0:
 	set(new_val):
 		tower_completed = new_val
 		tower_completed_value_change.emit()
-		if tower_amount == tower_completed : 
+		if tower_completed >= tower_amount : 
+			completed_all_tower = true
 			all_tower_completed.emit()
+			MainCommunicator.send_signal_to_main(MainCommunicator.SignalType.START_DIALOGUE, [final_cinematic_dialogue, "start", [self]])
 var tower_amount:int = 0
 
 ######################

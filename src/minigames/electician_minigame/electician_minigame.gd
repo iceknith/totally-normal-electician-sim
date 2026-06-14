@@ -32,6 +32,7 @@ signal win
 	Stages.TutorialTiming : "Be careful not to electrify yourself, by letting the fuse touch the ground !\n-\nTo prevent that, press [$interact2$] when the fuse crosses the central line."
 }
 
+
 @export var cables_required:int = 100
 var cables_validated:int:
 	set(new_val):
@@ -97,7 +98,6 @@ func connect_signals() -> void:
 
 func on_cable_validated():
 	cables_validated += 1
-	
 	if cables_validated >= cables_required:
 		end_game()
 	else:
@@ -122,7 +122,8 @@ func on_minigame_failed():
 	tween.tween_property(lose_label, "scale", Vector2.ZERO, 0.5)
 
 func reset_cable():
-	if cable_section: cable_section.queue_free()
+	if cable_section:cable_section.queue_free()
+
 	cable_section = load("res://src/minigames/electician_minigame/cableSection.tscn").instantiate()
 	get_node("MarginContainer/GamesContainer/PanelContainer/SubViewportContainer/CableViewport/Container").add_child(cable_section)
 	cable_section.completed.connect(on_cable_validated)

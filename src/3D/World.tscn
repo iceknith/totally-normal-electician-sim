@@ -20,6 +20,7 @@
 [ext_resource type="PackedScene" uid="uid://cw2thk87em2wo" path="res://assets/blender/maisontexture2.blend" id="12_5f2gp"]
 [ext_resource type="PackedScene" uid="uid://cng5vwx5qm31h" path="res://src/3D/objects/tower.tscn" id="12_clt24"]
 [ext_resource type="Script" uid="uid://c4gbdbfsdgnw7" path="res://src/shaders/shader_applyer.gd" id="12_e0nlv"]
+[ext_resource type="Resource" uid="uid://dv7x30skw2ncq" path="res://src/Dialogue/FinalCinematic/BibiSchool.dialogue" id="12_xkadw"]
 [ext_resource type="PackedScene" uid="uid://d2b7b6sp2kyp2" path="res://src/2D/phase_visual_novel/boulangerie.tscn" id="14_lpsds"]
 [ext_resource type="PackedScene" uid="uid://bxd7l2fjgm1hi" path="res://assets/blender/superette.blend" id="14_w7gwu"]
 [ext_resource type="PackedScene" uid="uid://wkv0le3sa4xf" path="res://src/2D/levels/Arcade/Arcade.tscn" id="14_yhicf"]
@@ -33,7 +34,6 @@
 [ext_resource type="Script" uid="uid://gp32lnioffiv" path="res://addons/scene_object_brush/clean_up_height.gd" id="21_8pvm1"]
 [ext_resource type="PackedScene" uid="uid://cuca3b2go2ndc" path="res://src/2D/phase_visual_novel/superette.tscn" id="21_impf6"]
 [ext_resource type="PackedScene" uid="uid://cpm4sncsn8qu2" path="res://assets/blender/arcade.blend" id="21_wnywt"]
-[ext_resource type="Resource" uid="uid://bt2cfkqaa56vk" path="res://src/Dialogue/FinalCinematic/FinalCinematic.dialogue" id="22_cley4"]
 [ext_resource type="PackedScene" uid="uid://bthe0lnwfgtu4" path="res://assets/blender/garre.blend" id="22_xud6r"]
 [ext_resource type="Resource" uid="uid://dwr51uf31poch" path="res://src/Dialogue/Vera-Math2.dialogue" id="25_6c255"]
 [ext_resource type="Texture2D" uid="uid://c2336ibnyhhyr" path="res://assets/pnjs/tictactoe-3.png" id="25_dygmt"]
@@ -74,6 +74,8 @@
 [ext_resource type="Texture2D" uid="uid://cmf42ixrum0os" path="res://assets/pnjs/rpc-1.png" id="43_e0aau"]
 [ext_resource type="Resource" uid="uid://dhpfsyl8hvq2p" path="res://src/Dialogue/Mathew-Math.dialogue" id="44_doxgq"]
 [ext_resource type="Texture2D" uid="uid://bltwiikv373cw" path="res://assets/pnjs/geenric_png.png" id="45_nmc2l"]
+[ext_resource type="Texture2D" uid="uid://s1eac47kci5y" path="res://assets/pnjs/Willy.png" id="50_o8rpk"]
+[ext_resource type="Texture2D" uid="uid://cq13p5rrhnbml" path="res://assets/pnjs/Billy.png" id="51_xyyw1"]
 [ext_resource type="Resource" uid="uid://wpm8jn0675gk" path="res://src/Dialogue/MaryJolene.dialogue" id="59_bbyu7"]
 [ext_resource type="Texture2D" uid="uid://cncml6vj83b1x" path="res://assets/pnjs/Mary-Joe.png" id="59_u858c"]
 [ext_resource type="Texture2D" uid="uid://dtrnnk6t2jpre" path="res://assets/pnjs/Jolene.png" id="60_bbyu7"]
@@ -94,10 +96,10 @@ tracks/0/path = NodePath("..:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 2.46, 6.633333, 7.2838826, 11.3077545, 12.4, 14.9, 17.9, 18.533333),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0, 1.2333333, 2.4333334, 4.4666667, 6, 7.2, 12.1, 12.266666, 17.533333, 18.933332),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 0,
-"values": [Vector3(49.933, 0.314, -18.223), Vector3(50.108, 0.314, -17.018), Vector3(50.108, 0.314, -17.018), Vector3(49.798, 6.659, -16.998), Vector3(49.923, 8, -16.998), Vector3(49.923, 12, -16.998), Vector3(50.853, 12, -16.998), Vector3(50.853, 12, -16.678), Vector3(49.813, 23.278, -11.796)]
+"values": [Vector3(49.933, 0.314, -18.223), Vector3(48.083, 0.314, -17.242), Vector3(47.913, 0.314, -16.068), Vector3(47.913, 0.314, -16.068), Vector3(48.983, 5.809, -16.378), Vector3(48.983, 5.809, -16.378), Vector3(48.983, 7.049, -16.378), Vector3(48.983, 11.404, -16.378), Vector3(48.983, 11.404, -16.378), Vector3(52.380543, 18.29181, -11.871283)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -106,10 +108,10 @@ tracks/1/path = NodePath(".:rotation")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 3.8666666, 7.3333335, 8.533334, 10.033334, 10.966666, 12.733334, 15.166667, 15.466666, 18.1),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 2.21914, 2.21914, 2.4622905),
+"times": PackedFloat32Array(0, 1.9, 3.6, 4.2, 6.733333, 7.0666666, 9, 10.666667, 12.451361, 13.433333, 15.8, 16.266666, 17.3, 18.1, 18.7, 19),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2.4622905, 2.4622905, 2.4622905),
 "update": 0,
-"values": [Vector3(0, -0.16406095, 0), Vector3(0.83252203, 0.017453292, 0), Vector3(0.83252203, 0.017453292, 0), Vector3(0.83252203, 0.017453292, 0.08726646), Vector3(0.83252203, 0.017453292, 0), Vector3(0.83252203, 0.017453292, 0.08726646), Vector3(0.83252203, 0.017453292, 0), Vector3(-0.30194196, 0.7853982, 0), Vector3(-0.30194196, 0.7853982, 0), Vector3(-0.30194196, 0.23561946, 0)]
+"values": [Vector3(0, -0.16406095, 0), Vector3(0, -0.16406095, 0), Vector3(0.83252203, 1.3840461, 0), Vector3(0.83252203, 1.3840461, 0), Vector3(-0.30194196, 2.0943952, 0), Vector3(0.83252203, 2.0943952, 0.08726646), Vector3(0.83252203, 2.0943952, 0), Vector3(0.83252203, 2.0943952, 0.08726646), Vector3(0.83252203, 2.0943952, 0), Vector3(0.0052359877, 0.017453292, 0), Vector3(0.0052359877, -0.9110619, 0), Vector3(0.0052359877, -0.9110619, 0), Vector3(0.0052359877, -0.3647738, 0), Vector3(-0.30194196, 0.23561946, 0), Vector3(-0.30194196, 2.0385447, 0), Vector3(0, 0, 0)]
 }
 tracks/2/type = "method"
 tracks/2/imported = false
@@ -118,7 +120,7 @@ tracks/2/path = NodePath("../../ShaderCanvasLayer/FadeColorRect")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(3.0666666, 7.633333, 10.633333, 13.733334, 16.2, 19.866667),
+"times": PackedFloat32Array(3.0666666, 7.633333, 10.633333, 12.566667, 16.4, 19.866667),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
 "values": [{
 "args": [1.5],
@@ -164,10 +166,10 @@ tracks/4/path = NodePath("..:rotation")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 18.6, 19.133333),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Vector3(0, -3.0892327, 0)]
+"values": [Vector3(0, -3.0892327, 0), Vector3(0, -3.0892327, 0), Vector3(0, -0.25481808, 0)]
 }
 tracks/5/type = "method"
 tracks/5/imported = false
@@ -176,7 +178,7 @@ tracks/5/path = NodePath("..")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
-"times": PackedFloat32Array(0, 0.53333336, 1.0646642, 1.7826936, 18.766666),
+"times": PackedFloat32Array(0, 0.53333336, 1.0646642, 1.7826936, 19.466667),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "values": [{
 "args": [],
@@ -193,6 +195,37 @@ tracks/5/keys = {
 }, {
 "args": [],
 "method": &"enable_collision"
+}]
+}
+tracks/6/type = "method"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("../../Objets/Towers/FinalTower")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"switch_to_ladder"
+}]
+}
+tracks/7/type = "method"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("../../FinalCinematic")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(4.3333335, 17.366667),
+"transitions": PackedFloat32Array(1, 1),
+"values": [{
+"args": ["res://src/Sound/sfx/Ladder1.wav"],
+"method": &"playSound"
+}, {
+"args": ["res://src/Sound/sfx/Ladder2.wav"],
+"method": &"playSound"
 }]
 }
 
@@ -278,13 +311,21 @@ fog_depth_end = 200.0
 auto_exposure_scale = 0.3
 dof_blur_far_distance = 200.0
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_xkadw"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_2mgps"]
+size = Vector3(1, 3.3145752, 2.397461)
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_cua6p"]
+viewport_path = NodePath("SubViewport")
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xyyw1"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_74tlw"]
 viewport_path = NodePath("SubViewport")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_clt24"]
 size = Vector3(1.341207, 2.3379288, 0.39674377)
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_x6xw6"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_iiaan"]
 viewport_path = NodePath("SubViewport")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_tqnhu"]
@@ -293,27 +334,10 @@ size = Vector3(3.3690002, 3.3618798, 0.39674377)
 [sub_resource type="BoxShape3D" id="BoxShape3D_64pfx"]
 size = Vector3(0.80126953, 2.3551025, 2.69487)
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_o8rpk"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_drvwa"]
 viewport_path = NodePath("SubViewport")
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_xyyw1"]
-viewport_path = NodePath("SubViewport")
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_e8reo"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("45_nmc2l")
-}],
-"loop": true,
-"name": &"normal",
-"speed": 5.0
-}]
-
-[sub_resource type="SphereShape3D" id="SphereShape3D_ivwwh"]
-radius = 2.0122404
-
-[sub_resource type="ViewportTexture" id="ViewportTexture_cua6p"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_r8k0m"]
 viewport_path = NodePath("SubViewport")
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_j4fpo"]
@@ -327,7 +351,10 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_74tlw"]
+[sub_resource type="SphereShape3D" id="SphereShape3D_ivwwh"]
+radius = 2.0122404
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_r8jgy"]
 viewport_path = NodePath("SubViewport")
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_y8yem"]
@@ -341,7 +368,7 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_iiaan"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_d0d3r"]
 viewport_path = NodePath("SubViewport")
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_kr6i8"]
@@ -355,7 +382,7 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_drvwa"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_n1psr"]
 viewport_path = NodePath("SubViewport")
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_7swc5"]
@@ -369,7 +396,7 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_r8k0m"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_lvg38"]
 viewport_path = NodePath("SubViewport")
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_xkadw"]
@@ -383,7 +410,7 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_r8jgy"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_1pwqi"]
 viewport_path = NodePath("SubViewport")
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_x6xw6"]
@@ -397,7 +424,7 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_d0d3r"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_0fw0w"]
 viewport_path = NodePath("SubViewport")
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_o8rpk"]
@@ -411,7 +438,7 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_n1psr"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_hmbph"]
 viewport_path = NodePath("SubViewport")
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_yc2gj"]
@@ -425,7 +452,7 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_lvg38"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_62knr"]
 viewport_path = NodePath("SubViewport")
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_jye0b"]
@@ -439,7 +466,7 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_1pwqi"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_38v5h"]
 viewport_path = NodePath("SubViewport")
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_osieg"]
@@ -453,7 +480,7 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_0fw0w"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_ldli8"]
 viewport_path = NodePath("SubViewport")
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_64pfx"]
@@ -467,7 +494,7 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_hmbph"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_p7tyv"]
 viewport_path = NodePath("SubViewport")
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_r318u"]
@@ -481,7 +508,7 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_62knr"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_k36hp"]
 viewport_path = NodePath("SubViewport")
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_dygmt"]
@@ -498,7 +525,7 @@ animations = [{
 [sub_resource type="SphereShape3D" id="SphereShape3D_e1shr"]
 radius = 2.1577005
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_38v5h"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_2f6ad"]
 viewport_path = NodePath("SubViewport")
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_1pwqi"]
@@ -512,13 +539,38 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_ldli8"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_lk4m0"]
 viewport_path = NodePath("SubViewport")
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_p7tyv"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_rw73f"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("50_o8rpk")
+}],
+"loop": true,
+"name": &"normal",
+"speed": 5.0
+}]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_vxar4"]
 viewport_path = NodePath("SubViewport")
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_k36hp"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_e8reo"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("51_xyyw1")
+}],
+"loop": true,
+"name": &"normal",
+"speed": 5.0
+}]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_s7gtf"]
+radius = 1.055608
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_o8rpk"]
 viewport_path = NodePath("SubViewport")
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_nhq6p"]
@@ -532,7 +584,7 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_2f6ad"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_el6uu"]
 viewport_path = NodePath("SubViewport")
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_pd13m"]
@@ -546,7 +598,7 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_lk4m0"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_5ekyj"]
 viewport_path = NodePath("SubViewport")
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_doxgq"]
@@ -560,7 +612,7 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_yayb3"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_hpb1e"]
 viewport_path = NodePath("SubViewport")
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_lwi55"]
@@ -574,7 +626,7 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_rw73f"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_yf4kw"]
 viewport_path = NodePath("SubViewport")
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_nmc2l"]
@@ -588,7 +640,7 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_vxar4"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_i4ijg"]
 viewport_path = NodePath("SubViewport")
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_1rjro"]
@@ -602,7 +654,7 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_s7gtf"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_tfui1"]
 viewport_path = NodePath("SubViewport")
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_e7fmu"]
@@ -616,7 +668,7 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_el6uu"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_f7jbe"]
 viewport_path = NodePath("SubViewport")
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_24100"]
@@ -630,7 +682,7 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_5ekyj"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_y47dy"]
 viewport_path = NodePath("SubViewport")
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_yayb3"]
@@ -647,7 +699,7 @@ animations = [{
 [sub_resource type="SphereShape3D" id="SphereShape3D_rw73f"]
 radius = 1.5243969
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_hpb1e"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_re48u"]
 viewport_path = NodePath("SubViewport")
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_s7gtf"]
@@ -743,7 +795,7 @@ size = Vector3(1, 50, 400)
 [sub_resource type="BoxShape3D" id="BoxShape3D_w7gwu"]
 size = Vector3(507.2356, 50, 483.65918)
 
-[node name="FinalTower" type="Node3D" unique_id=600883011]
+[node name="World" type="Node3D" unique_id=600883011]
 script = ExtResource("1_co47k")
 phone_call_start_time = 1.5
 skyTopStartColor = Color(0.050980393, 0.5882353, 1, 1)
@@ -771,7 +823,7 @@ mesh = SubResource("PlaneMesh_clt24")
 transform = Transform3D(-0.9986295, 0, -0.05233605, 0, 1, 0, 0.05233605, 0, -0.9986295, 50.853363, 0.3140111, -18.507906)
 
 [node name="CinematicCam" type="Camera3D" parent="Player" unique_id=1471657381]
-transform = Transform3D(0.9999996, 0, 0, 0, 1, 0, 0, 0, 0.9999996, -0.125, 1.465, -5.225)
+transform = Transform3D(0.99999946, 0, 0, 0, 1, 0, 0, 0, 0.9999995, -0.125, 1.465, -5.225)
 
 [node name="Sun" type="DirectionalLight3D" parent="." unique_id=164570066]
 transform = Transform3D(1, 0, 0, 0, -0.8181497, 0.5750051, 0, -0.5750051, -0.8181497, 0, 104.529724, 0)
@@ -833,7 +885,7 @@ transform = Transform3D(-0.45810503, 0, -1.3229284, 0, 1.4, 0, 1.3229284, 0, -0.
 transform = Transform3D(-0.5843255, 0, -1.2722278, 0, 1.4, 0, 1.2722278, 0, -0.5843255, 27.277267, -1.5066012, 1.3914204)
 
 [node name="maisontexture49" parent="Objets/Houses" unique_id=1260569116 instance=ExtResource("8_e0nlv")]
-transform = Transform3D(-0.582282, 0, -1.2731645, 0, 1.4, 0, 1.2731645, 0, -0.582282, 56.08381, -1.5066012, 14.300801)
+transform = Transform3D(-0.58228195, 0, -1.2731645, 0, 1.4, 0, 1.2731645, 0, -0.58228195, 56.701965, -1.5066012, 14.557759)
 
 [node name="maisontexture52" parent="Objets/Houses" unique_id=10088932 instance=ExtResource("8_e0nlv")]
 transform = Transform3D(-0.58297074, 0, -1.2728493, 0, 1.4, 0, 1.2728493, 0, -0.58297074, 64.45919, -1.5066012, 18.357695)
@@ -1450,7 +1502,7 @@ transform = Transform3D(-0.9718789, 0, -0.23548126, 0, 1, 0, 0.23548126, 0, -0.9
 transform = Transform3D(0.76718754, 0, 0.6414229, 0, 1, 0, -0.6414229, 0, 0.76718754, 101.55297, 0, -8.918226)
 
 [node name="FinalTower" parent="Objets/Towers" unique_id=472412556 node_paths=PackedStringArray("player") instance=ExtResource("9_iqkni")]
-transform = Transform3D(0.99933356, 0, 0.03650412, 0, 1, 0, -0.03650412, 0, 0.99933356, 51.754242, 0, 8.731465)
+transform = Transform3D(0.99933356, 0, 0.03650412, 0, 1, 0, -0.03650412, 0, 0.99933356, 51.754, 0.695, 8.731)
 player = NodePath("../../../Player")
 
 [node name="TutorialPivot" type="Node3D" parent="Objets/Towers/FinalTower" unique_id=1430817311]
@@ -1459,6 +1511,33 @@ transform = Transform3D(0.99999994, 0, -2.9802322e-08, 0, 1, 0, 2.9802322e-08, 0
 
 [node name="TpToFinalCutscene" type="Node3D" parent="Objets/Towers/FinalTower" unique_id=1209082726]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 23.075, 0)
+
+[node name="Interactable3DDialogue" type="Area3D" parent="Objets/Towers/FinalTower" unique_id=893791087 node_paths=PackedStringArray("animated_sprite", "text_sprite", "camera_root")]
+transform = Transform3D(0.9999999, 0, -5.9604645e-08, 0, 1, 0, 5.9604645e-08, 0, 0.9999999, 6.0152893, 17.092302, -2.9182215)
+script = ExtResource("11_nho6y")
+unique_name = "Bibi"
+dialogue = ExtResource("12_xkadw")
+animated_sprite = NodePath("AnimatedSprite3D")
+animated_sprite_start_animation = "default"
+text_sprite = NodePath("InteractacleText3D")
+interactionAnimation = 3
+camera_root = NodePath("CameraRoot")
+turn_time = 1.0
+metadata/_custom_type_script = "uid://sd0g0r1lwus3"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Objets/Towers/FinalTower/Interactable3DDialogue" unique_id=1471390778]
+transform = Transform3D(0.82412636, 0, 0.56640625, 0, 1, 0, -0.56640625, 0, 0.82412636, -0.60137177, 1.3163891, 0.110043526)
+shape = SubResource("BoxShape3D_2mgps")
+
+[node name="InteractacleText3D" parent="Objets/Towers/FinalTower/Interactable3DDialogue" unique_id=1576660793 instance=ExtResource("10_e8reo")]
+transform = Transform3D(0.09296842, 0, -0.17707874, 0, 0.2, 0, 0.17707874, 0, 0.09296842, 0, 1.432, 0)
+texture = SubResource("ViewportTexture_cua6p")
+
+[node name="CameraRoot" type="Node3D" parent="Objets/Towers/FinalTower/Interactable3DDialogue" unique_id=1939056848]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 71.529816, -13.040636, -45.76399)
+
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="Objets/Towers/FinalTower/Interactable3DDialogue" unique_id=1716776261]
+sprite_frames = SubResource("SpriteFrames_xyyw1")
 
 [node name="Tower10" parent="Objets/Towers" unique_id=473473871 instance=ExtResource("12_clt24")]
 transform = Transform3D(-0.99023646, 0, -0.1393977, 0, 1, 0, 0.1393977, 0, -0.99023646, 64.335175, 0, -64.802086)
@@ -1556,9 +1635,9 @@ minigame = ExtResource("14_lpsds")
 text_sprite = NodePath("InteractacleText3D")
 metadata/_custom_type_script = "uid://b3imm353l7y6u"
 
-[node name="InteractacleText3D" parent="Objets/Buildings/boulangerie/boulangerie" unique_id=1576660793 instance=ExtResource("10_e8reo")]
+[node name="InteractacleText3D" parent="Objets/Buildings/boulangerie/boulangerie" unique_id=1392304844 instance=ExtResource("10_e8reo")]
 transform = Transform3D(0.30000004, 0, 0, 0, 0.3, 0, 0, 0, 0.30000004, 0, 0.4931178, 0)
-texture = SubResource("ViewportTexture_xkadw")
+texture = SubResource("ViewportTexture_74tlw")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Objets/Buildings/boulangerie/boulangerie" unique_id=1710995515]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0729332, 0.11338568, 0.06949043)
@@ -1580,7 +1659,7 @@ metadata/_custom_type_script = "uid://b3imm353l7y6u"
 
 [node name="InteractacleText3D" parent="Objets/Buildings/superette/superetteInteractable" unique_id=1215462892 instance=ExtResource("10_e8reo")]
 transform = Transform3D(0.30000004, 0, 3.7252903e-09, 0, 0.3, 0, -3.7252903e-09, 0, 0.30000004, -0.0068626404, 0.4931178, -0.07106018)
-texture = SubResource("ViewportTexture_x6xw6")
+texture = SubResource("ViewportTexture_iiaan")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Objets/Buildings/superette/superetteInteractable" unique_id=71863611]
 transform = Transform3D(0.9999865, 0, 8.195639e-08, 0, 0.99998987, 0, -8.195639e-08, 0, 0.9999865, -0.084257126, 0.19547307, -0.18695068)
@@ -1607,7 +1686,7 @@ shape = SubResource("BoxShape3D_64pfx")
 [node name="InteractacleText3D" parent="Objets/Buildings/arcade_building/arcade" unique_id=1563667533 instance=ExtResource("10_e8reo")]
 transform = Transform3D(0.0001361277, 0, 0.20000008, 0, 0.2, 0, -0.20000008, 0, 0.0001361277, 6.0572624, 1.9019911, -6.2214165)
 visible = false
-texture = SubResource("ViewportTexture_o8rpk")
+texture = SubResource("ViewportTexture_drvwa")
 
 [node name="DirectionalLight3D" type="SpotLight3D" parent="Objets/Buildings/arcade_building/arcade" unique_id=1536201746]
 transform = Transform3D(0.026491009, 0, -0.9996492, 0, 1, 0, 0.9996492, 0, 0.026491009, 6.191025, 3.5091667, 1.6140194)
@@ -1640,7 +1719,7 @@ metadata/_custom_type_script = "uid://b3imm353l7y6u"
 
 [node name="InteractacleText3D" parent="Objets/Buildings/poste/posteInteractable" unique_id=1878352434 instance=ExtResource("10_e8reo")]
 transform = Transform3D(0.30000007, 0, 7.450581e-09, 0, 0.30000004, 0, -7.450581e-09, 0, 0.30000007, -0.46167755, 0.49311793, -0.012077332)
-texture = SubResource("ViewportTexture_xyyw1")
+texture = SubResource("ViewportTexture_r8k0m")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Objets/Buildings/poste/posteInteractable" unique_id=1868400818]
 transform = Transform3D(0.99999624, 0, 1.0728836e-06, 0, 0.9999994, 0, -1.0728836e-06, 0, 0.99999624, -0.4843979, -0.103832364, -0.20417786)
@@ -1655,33 +1734,6 @@ transform = Transform3D(-0.52478886, 0, -1.29792, 0, 1.4000001, 0, 1.29792, 0, -
 
 [node name="PNJs" type="Node3D" parent="Objets" unique_id=250600695]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.749743, 0, -0.7360313)
-
-[node name="DebugDialogue" type="Area3D" parent="Objets/PNJs" unique_id=827773963 node_paths=PackedStringArray("animated_sprite", "text_sprite", "camera_root")]
-transform = Transform3D(-0.8454946, 0, 0.5339834, 0, 1, 0, -0.5339834, 0, -0.8454946, 54.266724, 1.2168083, 7.6116943)
-script = ExtResource("11_nho6y")
-unique_name = "FinalCinematic"
-dialogue = ExtResource("22_cley4")
-animated_sprite = NodePath("AnimatedSprite3D")
-animated_sprite_start_animation = "normal"
-text_sprite = NodePath("InteractacleText3D")
-interactionAnimation = 1
-camera_root = NodePath(".")
-metadata/_custom_type_script = "uid://sd0g0r1lwus3"
-
-[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="Objets/PNJs/DebugDialogue" unique_id=1128965945]
-transform = Transform3D(0.17, 0, 0, 0, 0.17, 0, 0, 0, 0.17, -0.1458664, -0.47614765, -0.34827995)
-billboard = 2
-alpha_cut = 1
-sprite_frames = SubResource("SpriteFrames_e8reo")
-animation = &"normal"
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Objets/PNJs/DebugDialogue" unique_id=92960897]
-shape = SubResource("SphereShape3D_ivwwh")
-
-[node name="InteractacleText3D" parent="Objets/PNJs/DebugDialogue" unique_id=1261401867 instance=ExtResource("10_e8reo")]
-transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0.8627713, 0)
-billboard = 2
-texture = SubResource("ViewportTexture_cua6p")
 
 [node name="Mathew-Math" type="Area3D" parent="Objets/PNJs" unique_id=978442564 node_paths=PackedStringArray("animated_sprite", "text_sprite", "camera_root")]
 transform = Transform3D(-0.8454946, 0, 0.5339834, 0, 1, 0, -0.5339834, 0, -0.8454946, -64.48084, 1.032838, -21.841696)
@@ -1708,7 +1760,7 @@ shape = SubResource("SphereShape3D_ivwwh")
 [node name="InteractacleText3D" parent="Objets/PNJs/Mathew-Math" unique_id=2027926951 instance=ExtResource("10_e8reo")]
 transform = Transform3D(0.20000002, 0, -1.4901161e-08, 0, 0.2, 0, 1.4901161e-08, 0, 0.20000002, 0, 1.2223936, 0)
 billboard = 2
-texture = SubResource("ViewportTexture_74tlw")
+texture = SubResource("ViewportTexture_r8jgy")
 
 [node name="Vera-Math2" type="Area3D" parent="Objets/PNJs" unique_id=656674121 node_paths=PackedStringArray("animated_sprite", "text_sprite", "camera_root")]
 transform = Transform3D(-0.8454946, 0, 0.5339834, 0, 1, 0, -0.5339834, 0, -0.8454946, -15.321879, 1.032838, 23.525135)
@@ -1735,7 +1787,7 @@ shape = SubResource("SphereShape3D_ivwwh")
 [node name="InteractacleText3D" parent="Objets/PNJs/Vera-Math2" unique_id=450256475 instance=ExtResource("10_e8reo")]
 transform = Transform3D(0.2, 0, -1.1175871e-08, 0, 0.2, 0, 1.1175871e-08, 0, 0.2, 0, 1.2631384, 0)
 billboard = 2
-texture = SubResource("ViewportTexture_iiaan")
+texture = SubResource("ViewportTexture_d0d3r")
 
 [node name="Tic" type="Area3D" parent="Objets/PNJs" unique_id=2068338831 node_paths=PackedStringArray("animated_sprite", "text_sprite", "camera_root")]
 transform = Transform3D(-0.8454946, 0, 0.5339834, 0, 1, 0, -0.5339834, 0, -0.8454946, 119.998276, 1.032838, 33.49736)
@@ -1762,7 +1814,7 @@ shape = SubResource("SphereShape3D_ivwwh")
 [node name="InteractacleText3D" parent="Objets/PNJs/Tic" unique_id=1435483746 instance=ExtResource("10_e8reo")]
 transform = Transform3D(0.2, 0, -1.1175871e-08, 0, 0.2, 0, 1.1175871e-08, 0, 0.2, 0, 1.3729247, 0)
 billboard = 2
-texture = SubResource("ViewportTexture_drvwa")
+texture = SubResource("ViewportTexture_n1psr")
 
 [node name="Tac" type="Area3D" parent="Objets/PNJs" unique_id=939884958 node_paths=PackedStringArray("animated_sprite", "text_sprite", "camera_root")]
 transform = Transform3D(-0.8454946, 0, 0.5339834, 0, 1, 0, -0.5339834, 0, -0.8454946, 8.300216, 1.032838, -68.15268)
@@ -1789,7 +1841,7 @@ shape = SubResource("SphereShape3D_ivwwh")
 [node name="InteractacleText3D" parent="Objets/PNJs/Tac" unique_id=168760506 instance=ExtResource("10_e8reo")]
 transform = Transform3D(0.2, 0, -1.1175871e-08, 0, 0.2, 0, 1.1175871e-08, 0, 0.2, 0, 1.2969817, 0)
 billboard = 2
-texture = SubResource("ViewportTexture_r8k0m")
+texture = SubResource("ViewportTexture_lvg38")
 
 [node name="Catheline-Cats" type="Area3D" parent="Objets/PNJs" unique_id=969527095 node_paths=PackedStringArray("animated_sprite", "text_sprite", "camera_root")]
 transform = Transform3D(-0.8454946, 0, 0.5339834, 0, 1, 0, -0.5339834, 0, -0.8454946, -126.790985, 1.0328361, 29.191246)
@@ -1816,7 +1868,7 @@ shape = SubResource("SphereShape3D_ivwwh")
 [node name="InteractacleText3D" parent="Objets/PNJs/Catheline-Cats" unique_id=1830970642 instance=ExtResource("10_e8reo")]
 transform = Transform3D(0.2, 0, -1.1175871e-08, 0, 0.2, 0, 1.1175871e-08, 0, 0.2, 0, 1.3472706, 0)
 billboard = 2
-texture = SubResource("ViewportTexture_r8jgy")
+texture = SubResource("ViewportTexture_1pwqi")
 
 [node name="Cloven-Sandwiches" type="Area3D" parent="Objets/PNJs" unique_id=2033902036 node_paths=PackedStringArray("animated_sprite", "text_sprite", "camera_root")]
 transform = Transform3D(-0.8454946, 0, 0.5339834, 0, 1, 0, -0.5339834, 0, -0.8454946, -75.53564, 1.032838, 2.5621984)
@@ -1843,7 +1895,7 @@ shape = SubResource("SphereShape3D_ivwwh")
 [node name="InteractacleText3D" parent="Objets/PNJs/Cloven-Sandwiches" unique_id=1537854191 instance=ExtResource("10_e8reo")]
 transform = Transform3D(0.2, 0, -1.1175871e-08, 0, 0.2, 0, 1.1175871e-08, 0, 0.2, 0, 1.5506791, 0)
 billboard = 2
-texture = SubResource("ViewportTexture_d0d3r")
+texture = SubResource("ViewportTexture_0fw0w")
 
 [node name="Fiona-Wannabe" type="Area3D" parent="Objets/PNJs" unique_id=1338492128 node_paths=PackedStringArray("animated_sprite", "text_sprite", "camera_root")]
 transform = Transform3D(-0.8454946, 0, 0.5339834, 0, 1, 0, -0.5339834, 0, -0.8454946, -8.499789, 1.032838, 86.64496)
@@ -1870,7 +1922,7 @@ shape = SubResource("SphereShape3D_ivwwh")
 [node name="InteractacleText3D" parent="Objets/PNJs/Fiona-Wannabe" unique_id=1919382824 instance=ExtResource("10_e8reo")]
 transform = Transform3D(0.2, 0, -1.1175871e-08, 0, 0.2, 0, 1.1175871e-08, 0, 0.2, 0, 0.84309924, 0)
 billboard = 2
-texture = SubResource("ViewportTexture_n1psr")
+texture = SubResource("ViewportTexture_hmbph")
 
 [node name="TicTacToeCharles" type="Area3D" parent="Objets/PNJs" unique_id=1096544833 node_paths=PackedStringArray("animated_sprite", "text_sprite", "camera_root")]
 transform = Transform3D(-0.8454946, 0, 0.5339834, 0, 1, 0, -0.5339834, 0, -0.8454946, 82.07352, 1.204203, -10.566198)
@@ -1899,7 +1951,7 @@ shape = SubResource("SphereShape3D_ivwwh")
 [node name="InteractacleText3D" parent="Objets/PNJs/TicTacToeCharles" unique_id=644921328 instance=ExtResource("10_e8reo")]
 transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0.8627713, 0)
 billboard = 2
-texture = SubResource("ViewportTexture_lvg38")
+texture = SubResource("ViewportTexture_62knr")
 
 [node name="TicTacToeBob" type="Area3D" parent="Objets/PNJs" unique_id=1093194011 node_paths=PackedStringArray("animated_sprite", "text_sprite", "camera_root")]
 transform = Transform3D(-0.8454946, 0, 0.5339834, 0, 1, 0, -0.5339834, 0, -0.8454946, -38.680233, 1.1798171, 42.162598)
@@ -1927,7 +1979,7 @@ shape = SubResource("SphereShape3D_ivwwh")
 [node name="InteractacleText3D" parent="Objets/PNJs/TicTacToeBob" unique_id=1316842840 instance=ExtResource("10_e8reo")]
 transform = Transform3D(0.2, 0, -3.7252903e-09, 0, 0.2, 0, 3.7252903e-09, 0, 0.2, 0, 0.93411005, 0)
 billboard = 2
-texture = SubResource("ViewportTexture_1pwqi")
+texture = SubResource("ViewportTexture_38v5h")
 
 [node name="TicTacToeJasmine" type="Area3D" parent="Objets/PNJs" unique_id=806482794 node_paths=PackedStringArray("animated_sprite", "text_sprite", "camera_root")]
 transform = Transform3D(-0.8454946, 0, 0.5339834, 0, 1, 0, -0.5339834, 0, -0.8454946, -3.5422888, 1.5928253, 122.8149)
@@ -1955,7 +2007,7 @@ shape = SubResource("SphereShape3D_ivwwh")
 [node name="InteractacleText3D" parent="Objets/PNJs/TicTacToeJasmine" unique_id=1523883230 instance=ExtResource("10_e8reo")]
 transform = Transform3D(0.2, 0, -3.7252903e-09, 0, 0.2, 0, 3.7252903e-09, 0, 0.2, 0, 1.0383664, 0)
 billboard = 2
-texture = SubResource("ViewportTexture_0fw0w")
+texture = SubResource("ViewportTexture_ldli8")
 
 [node name="Connect4Ada" type="Area3D" parent="Objets/PNJs" unique_id=230899438 node_paths=PackedStringArray("animated_sprite", "text_sprite", "camera_root")]
 transform = Transform3D(-0.8454946, 0, 0.5339834, 0, 1, 0, -0.5339834, 0, -0.8454946, 10.333164, 1.1603419, 5.406997)
@@ -1983,7 +2035,7 @@ shape = SubResource("SphereShape3D_ivwwh")
 [node name="InteractacleText3D" parent="Objets/PNJs/Connect4Ada" unique_id=1824979055 instance=ExtResource("10_e8reo")]
 transform = Transform3D(0.2, 0, -7.450581e-09, 0, 0.2, 0, 7.450581e-09, 0, 0.2, 0, 0.69260275, 0)
 billboard = 2
-texture = SubResource("ViewportTexture_hmbph")
+texture = SubResource("ViewportTexture_p7tyv")
 
 [node name="Connect4Noah" type="Area3D" parent="Objets/PNJs" unique_id=618464151 node_paths=PackedStringArray("animated_sprite", "text_sprite", "camera_root")]
 transform = Transform3D(-0.8454946, 0, 0.5339834, 0, 1, 0, -0.5339834, 0, -0.8454946, 59.65341, 1.1798207, -91.717285)
@@ -2011,7 +2063,7 @@ shape = SubResource("SphereShape3D_ivwwh")
 [node name="InteractacleText3D" parent="Objets/PNJs/Connect4Noah" unique_id=52934403 instance=ExtResource("10_e8reo")]
 transform = Transform3D(0.2, 0, -3.7252903e-09, 0, 0.2, 0, 3.7252903e-09, 0, 0.2, 0, 0.8108431, 0)
 billboard = 2
-texture = SubResource("ViewportTexture_62knr")
+texture = SubResource("ViewportTexture_k36hp")
 
 [node name="Connect4Hannah" type="Area3D" parent="Objets/PNJs" unique_id=270299998 node_paths=PackedStringArray("animated_sprite", "text_sprite", "camera_root")]
 transform = Transform3D(-0.8454946, 0, 0.5339834, 0, 1, 0, -0.5339834, 0, -0.8454946, 105.76297, 1.554305, 90.6516)
@@ -2039,7 +2091,7 @@ shape = SubResource("SphereShape3D_e1shr")
 [node name="InteractacleText3D" parent="Objets/PNJs/Connect4Hannah" unique_id=1221517501 instance=ExtResource("10_e8reo")]
 transform = Transform3D(0.2, 0, -3.7252903e-09, 0, 0.2, 0, 3.7252903e-09, 0, 0.2, 0, 1.2467934, 0)
 billboard = 2
-texture = SubResource("ViewportTexture_38v5h")
+texture = SubResource("ViewportTexture_2f6ad")
 
 [node name="RPCStanley" type="Area3D" parent="Objets/PNJs" unique_id=1335970460 node_paths=PackedStringArray("animated_sprite", "text_sprite", "camera_root")]
 transform = Transform3D(-0.40314606, 0, -0.91513556, 0, 1, 0, 0.91513556, 0, -0.40314606, 31.915241, 1.2088314, 42.024513)
@@ -2067,7 +2119,7 @@ shape = SubResource("SphereShape3D_ivwwh")
 [node name="InteractacleText3D" parent="Objets/PNJs/RPCStanley" unique_id=366501995 instance=ExtResource("10_e8reo")]
 transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 1.4779314, 0)
 billboard = 2
-texture = SubResource("ViewportTexture_ldli8")
+texture = SubResource("ViewportTexture_lk4m0")
 
 [node name="RPCWilly" type="Area3D" parent="Objets/PNJs" unique_id=97185346 node_paths=PackedStringArray("animated_sprite", "text_sprite", "camera_root")]
 transform = Transform3D(-0.40314606, 0, -0.91513556, 0, 1, 0, 0.91513556, 0, -0.40314606, -101.53965, 1.1567587, 51.200977)
@@ -2083,22 +2135,22 @@ camera_root = NodePath(".")
 metadata/_custom_type_script = "uid://sd0g0r1lwus3"
 
 [node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="Objets/PNJs/RPCWilly" unique_id=641578095]
-transform = Transform3D(0.17, 0, -6.3329937e-09, 0, 0.17, 0, 6.3329937e-09, 0, 0.17, 0, -0.42, 0)
+transform = Transform3D(0.255, 0, -1.1175871e-08, 0, 0.255, 0, 1.1175871e-08, 0, 0.255, 0.08768463, -0.07376552, 0.07243347)
 billboard = 2
 alpha_cut = 1
-sprite_frames = SubResource("SpriteFrames_e8reo")
+sprite_frames = SubResource("SpriteFrames_rw73f")
 animation = &"normal"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Objets/PNJs/RPCWilly" unique_id=1002696131]
 shape = SubResource("SphereShape3D_ivwwh")
 
 [node name="InteractacleText3D" parent="Objets/PNJs/RPCWilly" unique_id=903367634 instance=ExtResource("10_e8reo")]
-transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0.8627713, 0)
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, -0.02, 1.41, 0)
 billboard = 2
-texture = SubResource("ViewportTexture_p7tyv")
+texture = SubResource("ViewportTexture_vxar4")
 
 [node name="RPCBilly" type="Area3D" parent="Objets/PNJs" unique_id=1623499690 node_paths=PackedStringArray("animated_sprite", "text_sprite", "camera_root")]
-transform = Transform3D(-0.40314606, 0, -0.91513556, 0, 1, 0, 0.91513556, 0, -0.40314606, -81.69094, 1.1959769, -59.98342)
+transform = Transform3D(-0.40314606, 0, -0.91513556, 0, 1, 0, 0.91513556, 0, -0.40314606, -81.62318, 1.5782932, -59.960087)
 script = ExtResource("11_nho6y")
 unique_name = "Billy"
 dialogue = ExtResource("40_cley4")
@@ -2111,19 +2163,20 @@ camera_root = NodePath(".")
 metadata/_custom_type_script = "uid://sd0g0r1lwus3"
 
 [node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="Objets/PNJs/RPCBilly" unique_id=53850588]
-transform = Transform3D(0.17, 0, -6.3329937e-09, 0, 0.17, 0, 6.3329937e-09, 0, 0.17, 0, -0.42, 0)
+transform = Transform3D(0.17, 0, -6.519258e-09, 0, 0.17, 0, 6.519258e-09, 0, 0.17, 0.0013332367, -0.803317, 0.015968323)
 billboard = 2
 alpha_cut = 1
 sprite_frames = SubResource("SpriteFrames_e8reo")
 animation = &"normal"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Objets/PNJs/RPCBilly" unique_id=880043268]
-shape = SubResource("SphereShape3D_ivwwh")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0012969971, -0.5660051, 0.015541077)
+shape = SubResource("SphereShape3D_s7gtf")
 
-[node name="InteractacleText3D" parent="Objets/PNJs/RPCBilly" unique_id=1595881025 instance=ExtResource("10_e8reo")]
-transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0.7498578, 0)
+[node name="InteractacleText3D" parent="Objets/PNJs/RPCBilly" unique_id=1693138033 instance=ExtResource("10_e8reo")]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0.253, 0)
 billboard = 2
-texture = SubResource("ViewportTexture_k36hp")
+texture = SubResource("ViewportTexture_o8rpk")
 
 [node name="Pion" type="Area3D" parent="Objets/PNJs" unique_id=529310728 node_paths=PackedStringArray("animated_sprite", "text_sprite", "camera_root")]
 transform = Transform3D(-0.8454946, 0, 0.5339834, 0, 1, 0, -0.5339834, 0, -0.8454946, 140.40344, 1.3691952, -32.883858)
@@ -2150,7 +2203,7 @@ shape = SubResource("SphereShape3D_ivwwh")
 [node name="InteractacleText3D" parent="Objets/PNJs/Pion" unique_id=440811458 instance=ExtResource("10_e8reo")]
 transform = Transform3D(0.2, 0, -1.1175871e-08, 0, 0.2, 0, 1.1175871e-08, 0, 0.2, 0, 1.1284895, 0)
 billboard = 2
-texture = SubResource("ViewportTexture_2f6ad")
+texture = SubResource("ViewportTexture_el6uu")
 
 [node name="Bibi" type="Area3D" parent="Objets/PNJs" unique_id=621789651 node_paths=PackedStringArray("animated_sprite", "text_sprite", "camera_root")]
 transform = Transform3D(-0.8454946, 0, 0.5339834, 0, 1, 0, -0.5339834, 0, -0.8454946, 128.7238, 0.78955054, -49.547832)
@@ -2177,7 +2230,7 @@ shape = SubResource("SphereShape3D_ivwwh")
 [node name="InteractacleText3D" parent="Objets/PNJs/Bibi" unique_id=1523595930 instance=ExtResource("10_e8reo")]
 transform = Transform3D(0.2, 0, -7.450581e-09, 0, 0.2, 0, 7.450581e-09, 0, 0.2, 0, 0.52253187, 0)
 billboard = 2
-texture = SubResource("ViewportTexture_lk4m0")
+texture = SubResource("ViewportTexture_5ekyj")
 
 [node name="TrainTicketSeller" type="Area3D" parent="Objets/PNJs" unique_id=1473036680 node_paths=PackedStringArray("animated_sprite", "text_sprite", "camera_root")]
 transform = Transform3D(-0.8454946, 0, 0.5339834, 0, 1, 0, -0.5339834, 0, -0.8454946, 43.300503, 1.3708895, -99.835434)
@@ -2205,7 +2258,7 @@ shape = SubResource("SphereShape3D_ivwwh")
 transform = Transform3D(0.2, 0, -7.450581e-09, 0, 0.2, 0, 7.450581e-09, 0, 0.2, 0, 1.1014107, 0)
 billboard = 2
 no_depth_test = true
-texture = SubResource("ViewportTexture_yayb3")
+texture = SubResource("ViewportTexture_hpb1e")
 
 [node name="HampterChild" type="Area3D" parent="Objets/PNJs" unique_id=1037341578 node_paths=PackedStringArray("animated_sprite", "text_sprite", "camera_root")]
 transform = Transform3D(-0.8454946, 0, 0.5339834, 0, 1, 0, -0.5339834, 0, -0.8454946, 149.13922, 0.6742766, -46.30398)
@@ -2232,7 +2285,7 @@ shape = SubResource("SphereShape3D_ivwwh")
 [node name="InteractacleText3D" parent="Objets/PNJs/HampterChild" unique_id=35424463 instance=ExtResource("10_e8reo")]
 transform = Transform3D(0.2, 0, -7.450581e-09, 0, 0.2, 0, 7.450581e-09, 0, 0.2, 0, 0.52253187, 0)
 billboard = 2
-texture = SubResource("ViewportTexture_rw73f")
+texture = SubResource("ViewportTexture_yf4kw")
 
 [node name="FastChild" type="Area3D" parent="Objets/PNJs" unique_id=1759886429 node_paths=PackedStringArray("animated_sprite", "text_sprite", "camera_root")]
 transform = Transform3D(-0.8454946, 0, 0.5339834, 0, 1, 0, -0.5339834, 0, -0.8454946, 139.65714, 1.0273311, -39.769444)
@@ -2259,7 +2312,7 @@ shape = SubResource("SphereShape3D_ivwwh")
 [node name="InteractacleText3D" parent="Objets/PNJs/FastChild" unique_id=1572538758 instance=ExtResource("10_e8reo")]
 transform = Transform3D(0.2, 0, -1.1175871e-08, 0, 0.2, 0, 1.1175871e-08, 0, 0.2, 0, 0.74586236, 0)
 billboard = 2
-texture = SubResource("ViewportTexture_vxar4")
+texture = SubResource("ViewportTexture_i4ijg")
 
 [node name="DuckChild" type="Area3D" parent="Objets/PNJs" unique_id=1275971161 node_paths=PackedStringArray("animated_sprite", "text_sprite", "camera_root")]
 transform = Transform3D(-0.8454946, 0, 0.5339834, 0, 1, 0, -0.5339834, 0, -0.8454946, 143.07727, 1.0273311, -43.288124)
@@ -2286,7 +2339,7 @@ shape = SubResource("SphereShape3D_ivwwh")
 [node name="InteractacleText3D" parent="Objets/PNJs/DuckChild" unique_id=284265059 instance=ExtResource("10_e8reo")]
 transform = Transform3D(0.2, 0, -1.1175871e-08, 0, 0.2, 0, 1.1175871e-08, 0, 0.2, 0, 0.74586236, 0)
 billboard = 2
-texture = SubResource("ViewportTexture_s7gtf")
+texture = SubResource("ViewportTexture_tfui1")
 
 [node name="SlowChild" type="Area3D" parent="Objets/PNJs" unique_id=888616997 node_paths=PackedStringArray("animated_sprite", "text_sprite", "camera_root")]
 transform = Transform3D(-0.8454946, 0, 0.5339834, 0, 1, 0, -0.5339834, 0, -0.8454946, 146.49332, 1.0273311, -36.83585)
@@ -2313,7 +2366,7 @@ shape = SubResource("SphereShape3D_ivwwh")
 [node name="InteractacleText3D" parent="Objets/PNJs/SlowChild" unique_id=622215310 instance=ExtResource("10_e8reo")]
 transform = Transform3D(0.2, 0, -1.1175871e-08, 0, 0.2, 0, 1.1175871e-08, 0, 0.2, 0, 0.74586236, 0)
 billboard = 2
-texture = SubResource("ViewportTexture_el6uu")
+texture = SubResource("ViewportTexture_f7jbe")
 
 [node name="HomeworkChild" type="Area3D" parent="Objets/PNJs" unique_id=505807268 node_paths=PackedStringArray("animated_sprite", "text_sprite", "camera_root")]
 transform = Transform3D(-0.8454946, 0, 0.5339834, 0, 1, 0, -0.5339834, 0, -0.8454946, 137.54628, 1.0273311, -50.816757)
@@ -2340,7 +2393,7 @@ shape = SubResource("SphereShape3D_ivwwh")
 [node name="InteractacleText3D" parent="Objets/PNJs/HomeworkChild" unique_id=1183915907 instance=ExtResource("10_e8reo")]
 transform = Transform3D(0.2, 0, -1.1175871e-08, 0, 0.2, 0, 1.1175871e-08, 0, 0.2, 0, 0.74586236, 0)
 billboard = 2
-texture = SubResource("ViewportTexture_5ekyj")
+texture = SubResource("ViewportTexture_y47dy")
 
 [node name="MaryJo" type="Area3D" parent="Objets/PNJs" unique_id=1348588607 node_paths=PackedStringArray("animated_sprite", "text_sprite", "camera_root")]
 transform = Transform3D(-0.8454946, 0, 0.5339834, 0, 1, 0, -0.5339834, 0, -0.8454946, 133.16463, 1.2988452, 94.08548)
@@ -2368,7 +2421,7 @@ shape = SubResource("SphereShape3D_rw73f")
 [node name="InteractacleText3D" parent="Objets/PNJs/MaryJo" unique_id=1660474670 instance=ExtResource("10_e8reo")]
 transform = Transform3D(0.2000001, 0, -1.8626451e-08, 0, 0.2, 0, 1.8626451e-08, 0, 0.2000001, -0.58447266, 1.5395316, -0.1663742)
 billboard = 2
-texture = SubResource("ViewportTexture_hpb1e")
+texture = SubResource("ViewportTexture_re48u")
 
 [node name="CameraRoot" type="Node3D" parent="Objets/PNJs/MaryJo" unique_id=757847060]
 transform = Transform3D(1.0000002, 0, -1.4901161e-08, 0, 1, 0, 1.4901161e-08, 0, 1.0000002, -0.3657074, 0.5911205, -0.021770477)
@@ -2839,7 +2892,7 @@ transform = Transform3D(0.5038384, 0, 0, 0, 0.5038384, 0, 0, 0, 0.5038384, -81.8
 transform = Transform3D(0.46382236, 0, 0, 0, 0.46382236, 0, 0, 0, 0.46382236, -94.43547, 0.0023794174, 52.08044)
 
 [node name="Tree_1776012798_67163" parent="Objets/Tree" unique_id=1720666747 instance=ExtResource("17_ro6to")]
-transform = Transform3D(0.5157559, 0, 0, 0, 0.5157559, 0, 0, 0, 0.5157559, -84.08477, 0.0023798943, 67.2145)
+transform = Transform3D(0.5157559, 0, 0, 0, 0.5157559, 0, 0, 0, 0.5157559, -82.64585, 0.0023796558, 64.46384)
 
 [node name="Tree_1776012799_12855" parent="Objets/Tree" unique_id=109834521 instance=ExtResource("9_yhicf")]
 transform = Transform3D(0.49722418, 0, 0, 0, 0.49722418, 0, 0, 0, 0.49722418, -86.543594, 0.0023796558, 65.788185)

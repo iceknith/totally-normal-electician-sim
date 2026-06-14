@@ -50,6 +50,10 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_5ci1u")
 cables_required = 3
+music_when_entering = null
+change_music = null
+animationDuration = null
+baseMinigameLayoutActive = null
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1525369528]
 visible = false

@@ -278,6 +278,8 @@ func update_choice_stock(choice):
 func text_animation(label: RichTextLabel, text: String, duration: float = 1, color:Color = Color.WHITE ):
 	label.text = text
 	label.modulate = color
+	label.scroll_active = false
+	label.scale = Vector2.ZERO
 	var tween = create_tween() #tween d'animation du texte
 	tween.set_ease(Tween.EASE_IN_OUT).set_trans(Tween.TRANS_CIRC)
 	

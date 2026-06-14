@@ -1,24 +1,39 @@
 [gd_scene format=3 uid="uid://cv7hgmdgx06t7"]
 
-[ext_resource type="Script" path="res://src/3D/objects/final_tower.gd" id="1_lsc47"]
+[ext_resource type="Script" uid="uid://byk7cemodmg6x" path="res://src/3D/objects/final_tower.gd" id="1_lsc47"]
+[ext_resource type="PackedScene" uid="uid://cjhu2p2uo8l78" path="res://assets/blender/tourechelle.blend" id="2_cbaar"]
 [ext_resource type="PackedScene" uid="uid://dtparhw6m7xuv" path="res://assets/blender/tour.blend" id="2_h5mvg"]
+[ext_resource type="PackedScene" uid="uid://hg0oxyvo1415" path="res://assets/blender/echelle.blend" id="2_tuflv"]
+[ext_resource type="PackedScene" uid="uid://b8o0kp7iqmfmw" path="res://assets/blender/pylone.blend" id="2_yjdau"]
 [ext_resource type="Script" uid="uid://sd0g0r1lwus3" path="res://src/3D/interactables/interactable_3d_dialogue.gd" id="3_h5mvg"]
 [ext_resource type="Script" uid="uid://b3imm353l7y6u" path="res://src/3D/interactables/interactable_3d_minigame.gd" id="3_lpbik"]
 [ext_resource type="PackedScene" uid="uid://bgwp5tg6h76il" path="res://src/minigames/electician_minigame/electician_minigame.tscn" id="4_cbaar"]
 [ext_resource type="PackedScene" uid="uid://ddq2i6ppa2upf" path="res://src/3D/interactables/interactacle_text_3d.tscn" id="5_tuflv"]
 [ext_resource type="Resource" uid="uid://bt2cfkqaa56vk" path="res://src/Dialogue/FinalCinematic/FinalCinematic.dialogue" id="7_lpbik"]
+[ext_resource type="Resource" uid="uid://cipvg16hhhvuq" path="res://src/Dialogue/FinalCinematic/Ladder.dialogue" id="11_n6h7u"]
+[ext_resource type="Script" uid="uid://uaxvi0lb0o2m" path="res://src/minigames/electician_minigame/electician_minigame.gd" id="12_m0rdy"]
+[ext_resource type="Texture2D" uid="uid://cmcjq2rksef24" path="res://assets/pixelart/backgroundwires.png" id="13_mc2iw"]
+[ext_resource type="PackedScene" uid="uid://dxl4itljpgtn5" path="res://src/minigames/electician_minigame/timing_section.tscn" id="14_qodbd"]
+[ext_resource type="Texture2D" uid="uid://c0dvn55rjo3t3" path="res://assets/pixelart/bar.png" id="15_dtub1"]
+[ext_resource type="PackedScene" uid="uid://dogrjgdvi4jl4" path="res://src/minigames/electician_minigame/moving_section.tscn" id="16_q2bst"]
+[ext_resource type="FontFile" uid="uid://dcu0gks0yl1lh" path="res://assets/gui/fonts/Jersey10-Regular.ttf" id="17_scq1h"]
+[ext_resource type="FontFile" uid="uid://dhoixqrkemx30" path="res://assets/gui/ithaca-font/Ithaca-LVB75.ttf" id="18_yc4t4"]
+[ext_resource type="Theme" uid="uid://cykgqgnvokfvb" path="res://assets/gui/minigameTheme.tres" id="19_q0hlb"]
+[ext_resource type="Script" uid="uid://c3gj62w5i6thr" path="res://src/misc/key_adaptative_label.gd" id="20_na0w7"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_fgjub"]
 size = Vector3(0.7093904, 0.6569786, 0.3464985)
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_lpbik"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_tuflv"]
 viewport_path = NodePath("SubViewport")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_lpbik"]
-size = Vector3(1, 1.1303711, 1.168457)
+size = Vector3(2.7988434, 0.88586426, 1.7220459)
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_cbaar"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_yjdau"]
 viewport_path = NodePath("SubViewport")
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_4ge1e"]
 
 [sub_resource type="Animation" id="Animation_fgjub"]
 length = 0.001
@@ -118,23 +133,108 @@ _data = {
 &"alarm": SubResource("Animation_sqo52")
 }
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_tuflv"]
-size = Vector3(3.909, 10, 1)
+[sub_resource type="BoxShape3D" id="BoxShape3D_yjdau"]
+size = Vector3(1, 4.9989014, 8.339355)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_n6h7u"]
+size = Vector3(1, 4.9989014, 8.339355)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_4ge1e"]
+size = Vector3(1, 4.9989014, 8.339355)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_1i7fi"]
+size = Vector3(1, 4.9989014, 8.339355)
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_lsc47"]
 data = PackedVector3Array(-1.5, 0.049999997, 1.5, 1.5, 0.049999997, 1.5, -1.5, -0.049999997, 1.5, 1.5, 0.049999997, 1.5, 1.5, -0.049999997, 1.5, -1.5, -0.049999997, 1.5, 1.5, 0.049999997, -1.5, -1.5, 0.049999997, -1.5, 1.5, -0.049999997, -1.5, -1.5, 0.049999997, -1.5, -1.5, -0.049999997, -1.5, 1.5, -0.049999997, -1.5, 1.5, 0.049999997, 1.5, 1.5, 0.049999997, -1.5, 1.5, -0.049999997, 1.5, 1.5, 0.049999997, -1.5, 1.5, -0.049999997, -1.5, 1.5, -0.049999997, 1.5, -1.5, 0.049999997, -1.5, -1.5, 0.049999997, 1.5, -1.5, -0.049999997, -1.5, -1.5, 0.049999997, 1.5, -1.5, -0.049999997, 1.5, -1.5, -0.049999997, -1.5, 1.5, 0.049999997, 1.5, -1.5, 0.049999997, 1.5, 1.5, 0.049999997, -1.5, -1.5, 0.049999997, 1.5, -1.5, 0.049999997, -1.5, 1.5, 0.049999997, -1.5, -1.5, -0.049999997, 1.5, 1.5, -0.049999997, 1.5, -1.5, -0.049999997, -1.5, 1.5, -0.049999997, 1.5, 1.5, -0.049999997, -1.5, -1.5, -0.049999997, -1.5)
 
-[sub_resource type="BoxMesh" id="BoxMesh_lsc47"]
-size = Vector3(3, 0.1, 3)
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yjdau"]
+albedo_color = Color(0, 1, 1, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_n6h7u"]
+material = SubResource("StandardMaterial3D_yjdau")
+size = Vector3(5.745, 0.175, 5.825)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_n6h7u"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_mf3uy"]
+size = Vector3(1.4765625, 1, 1.4379883)
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_m11ur"]
+viewport_path = NodePath("SubViewport")
+
+[sub_resource type="LabelSettings" id="LabelSettings_a2g5q"]
+font = ExtResource("17_scq1h")
+font_size = 36
+outline_size = 6
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_7t0ye"]
+font = ExtResource("17_scq1h")
+font_size = 100
+font_color = Color(1, 0.69803923, 0, 1)
+outline_size = 10
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_3uqwc"]
+font = ExtResource("18_yc4t4")
+font_size = 150
+font_color = Color(1, 1, 0, 1)
+outline_size = 10
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_gf3wi"]
+font = ExtResource("17_scq1h")
+font_size = 150
+font_color = Color(1, 0, 0, 1)
+outline_size = 10
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_nmo0h"]
+font = ExtResource("17_scq1h")
+font_size = 36
+
+[sub_resource type="PackedScene" id="PackedScene_hff5p"]
+_bundled = {
+"conn_count": 0,
+"conns": PackedInt32Array(),
+"editable_instances": [],
+"id_paths": [PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array()],
+"names": PackedStringArray("ElecticianMinigame", "Control", "layout_mode", "anchors_preset", "anchor_right", "anchor_bottom", "grow_horizontal", "grow_vertical", "script", "cables_required", "ColorRect", "ColorRect", "visible", "z_index", "layout_mode", "anchors_preset", "anchor_right", "anchor_bottom", "grow_horizontal", "grow_vertical", "color", "MarginContainer", "MarginContainer", "layout_mode", "anchors_preset", "anchor_right", "anchor_bottom", "grow_horizontal", "grow_vertical", "theme_override_constants/margin_left", "theme_override_constants/margin_top", "theme_override_constants/margin_right", "theme_override_constants/margin_bottom", "GamesContainer", "HBoxContainer", "layout_mode", "theme_override_constants/separation", "alignment", "PanelContainer", "PanelContainer", "clip_contents", "custom_minimum_size", "layout_mode", "size_flags_horizontal", "size_flags_vertical", "SubViewportContainer", "SubViewportContainer", "texture_filter", "layout_mode", "stretch", "stretch_shrink", "mouse_target", "CableViewport", "SubViewport", "disable_3d", "transparent_bg", "handle_input_locally", "canvas_item_default_texture_filter", "size", "render_target_update_mode", "TextureRect", "TextureRect", "texture_filter", "anchors_preset", "anchor_right", "anchor_bottom", "grow_horizontal", "grow_vertical", "texture", "expand_mode", "Container", "Control", "layout_mode", "anchors_preset", "offset_left", "offset_top", "offset_right", "offset_bottom", "TimingContainer", "Control", "texture_filter", "custom_minimum_size", "layout_mode", "size_flags_horizontal", "size_flags_vertical", "TimingSection", "layout_mode", "offset_right", "offset_bottom", "scale", "cube_travel_duration", "cube_duration", "TextureRect", "TextureRect", "layout_mode", "offset_left", "offset_top", "offset_right", "offset_bottom", "scale", "texture", "stretch_mode", "MovingContainer", "Control", "custom_minimum_size", "layout_mode", "size_flags_horizontal", "size_flags_vertical", "MovingSection", "layout_mode", "anchors_preset", "anchor_right", "anchor_bottom", "offset_right", "offset_bottom", "grow_horizontal", "grow_vertical", "player_acceleration", "CableValidated", "Label", "z_index", "layout_mode", "size_flags_horizontal", "size_flags_vertical", "text", "label_settings", "horizontal_alignment", "Exit", "Button", "visible", "z_index", "layout_mode", "size_flags_horizontal", "size_flags_vertical", "theme_override_fonts/font", "theme_override_font_sizes/font_size", "text", "YayLabel", "Label", "z_index", "layout_mode", "anchors_preset", "anchor_left", "anchor_top", "anchor_right", "anchor_bottom", "offset_left", "offset_top", "offset_right", "offset_bottom", "grow_horizontal", "grow_vertical", "pivot_offset_ratio", "size_flags_horizontal", "text", "label_settings", "horizontal_alignment", "vertical_alignment", "WinLabel", "Label", "z_index", "layout_mode", "anchors_preset", "anchor_left", "anchor_top", "anchor_right", "anchor_bottom", "offset_left", "offset_top", "offset_right", "offset_bottom", "grow_horizontal", "grow_vertical", "pivot_offset_ratio", "size_flags_horizontal", "text", "label_settings", "horizontal_alignment", "vertical_alignment", "Loselabel", "Label", "z_index", "layout_mode", "anchors_preset", "anchor_left", "anchor_top", "anchor_right", "anchor_bottom", "offset_left", "offset_top", "offset_right", "offset_bottom", "grow_horizontal", "grow_vertical", "pivot_offset_ratio", "size_flags_horizontal", "text", "label_settings", "horizontal_alignment", "vertical_alignment", "InfoVboxContainer", "VBoxContainer", "layout_mode", "anchors_preset", "anchor_left", "anchor_top", "anchor_right", "anchor_bottom", "offset_left", "offset_top", "offset_right", "offset_bottom", "grow_horizontal", "grow_vertical", "pivot_offset_ratio", "theme", "InfoContainer", "PanelContainer", "layout_mode", "size_flags_vertical", "MarginContainer", "MarginContainer", "layout_mode", "theme_override_constants/margin_left", "theme_override_constants/margin_top", "theme_override_constants/margin_right", "theme_override_constants/margin_bottom", "InfoLabel", "Label", "custom_minimum_size", "layout_mode", "text", "label_settings", "horizontal_alignment", "vertical_alignment", "autowrap_mode", "script", "metadata/_custom_type_script", "Button", "Button", "layout_mode", "size_flags_horizontal", "theme_override_fonts/font", "theme_override_font_sizes/font_size", "text", "TextureRect", "TextureRect", "layout_mode", "offset_right", "offset_bottom"),
+"node_count": 25,
+"node_ids": PackedInt32Array(1566750814, 1525369528, 94672229, 1991544890, 2037701015, 1968100106, 391995723, 1183150134, 1514276817, 246739791, 746000392, 857863525, 1030260395, 5641690, 1553075054, 1598856706, 136798406, 1628073265, 299981627, 1025125168, 785610125, 417354383, 1393530913, 1263216879, 893568058),
+"node_paths": [NodePath("."), NodePath("."), NodePath("./MarginContainer"), NodePath("./MarginContainer/GamesContainer"), NodePath("./MarginContainer/GamesContainer/PanelContainer"), NodePath("./MarginContainer/GamesContainer/PanelContainer/SubViewportContainer"), NodePath("./MarginContainer/GamesContainer/PanelContainer/SubViewportContainer/CableViewport"), NodePath("./MarginContainer/GamesContainer/PanelContainer/SubViewportContainer/CableViewport"), NodePath("./MarginContainer/GamesContainer"), NodePath("./MarginContainer/GamesContainer/TimingContainer"), NodePath("./MarginContainer/GamesContainer/TimingContainer"), NodePath("./MarginContainer/GamesContainer"), NodePath("./MarginContainer/GamesContainer/MovingContainer"), NodePath("./MarginContainer"), NodePath("./MarginContainer"), NodePath("."), NodePath("."), NodePath("."), NodePath("."), NodePath("./InfoVboxContainer"), NodePath("./InfoVboxContainer/InfoContainer"), NodePath("./InfoVboxContainer/InfoContainer/MarginContainer"), NodePath("./InfoVboxContainer"), NodePath(".")],
+"nodes": PackedInt32Array(-1, -1, 1, 0, -1, 8, 2, 0, 3, 1, 4, 2, 5, 3, 6, 4, 7, 5, 8, 6, 9, 7, 0, 1073741824, 0, 11, 10, -1, 9, 12, 8, 13, 9, 14, 10, 15, 11, 16, 12, 17, 13, 18, 14, 19, 15, 20, 16, 0, 1073741825, 0, 22, 21, -1, 10, 23, 17, 24, 18, 25, 19, 26, 20, 27, 21, 28, 22, 29, 23, 30, 24, 31, 25, 32, 26, 0, 1073741826, 0, 34, 33, -1, 3, 35, 27, 36, 28, 37, 29, 0, 1073741827, 0, 39, 38, -1, 5, 40, 30, 41, 31, 42, 32, 43, 33, 44, 34, 0, 1073741828, 0, 46, 45, -1, 5, 47, 35, 48, 36, 49, 37, 50, 38, 51, 39, 0, 1073741829, 0, 53, 52, -1, 6, 54, 40, 55, 41, 56, 42, 57, 43, 58, 44, 59, 45, 0, 1073741830, 0, 61, 60, -1, 8, 62, 46, 63, 47, 64, 48, 65, 49, 66, 50, 67, 51, 68, 52, 69, 53, 0, 1073741831, 0, 71, 70, -1, 6, 72, 54, 73, 55, 74, 56, 75, 57, 76, 58, 77, 59, 0, 1073741832, 0, 79, 78, -1, 5, 80, 60, 81, 61, 82, 62, 83, 63, 84, 64, 0, 1073741833, 0, 2147483647, 85, 65, 6, 86, 66, 87, 67, 88, 68, 89, 69, 90, 70, 91, 71, 0, 1073741834, 0, 93, 92, -1, 8, 94, 72, 95, 73, 96, 74, 97, 75, 98, 76, 99, 77, 100, 78, 101, 79, 0, 1073741835, 0, 103, 102, -1, 4, 104, 80, 105, 81, 106, 82, 107, 83, 0, 1073741836, 0, 2147483647, 108, 84, 9, 109, 85, 110, 86, 111, 87, 112, 88, 113, 89, 114, 90, 115, 91, 116, 92, 117, 93, 0, 1073741837, 0, 119, 118, -1, 7, 120, 94, 121, 95, 122, 96, 123, 97, 124, 98, 125, 99, 126, 100, 0, 1073741838, 0, 128, 127, -1, 8, 129, 101, 130, 102, 131, 103, 132, 104, 133, 105, 134, 106, 135, 107, 136, 108, 0, 1073741839, 0, 138, 137, -1, 19, 139, 109, 140, 110, 141, 111, 142, 112, 143, 113, 144, 114, 145, 115, 146, 116, 147, 117, 148, 118, 149, 119, 150, 120, 151, 121, 152, 122, 153, 123, 154, 124, 155, 125, 156, 126, 157, 127, 0, 1073741840, 0, 159, 158, -1, 19, 160, 128, 161, 129, 162, 130, 163, 131, 164, 132, 165, 133, 166, 134, 167, 135, 168, 136, 169, 137, 170, 138, 171, 139, 172, 140, 173, 141, 174, 142, 175, 143, 176, 144, 177, 145, 178, 146, 0, 1073741841, 0, 180, 179, -1, 19, 181, 147, 182, 148, 183, 149, 184, 150, 185, 151, 186, 152, 187, 153, 188, 154, 189, 155, 190, 156, 191, 157, 192, 158, 193, 159, 194, 160, 195, 161, 196, 162, 197, 163, 198, 164, 199, 165, 0, 1073741842, 0, 201, 200, -1, 14, 202, 166, 203, 167, 204, 168, 205, 169, 206, 170, 207, 171, 208, 172, 209, 173, 210, 174, 211, 175, 212, 176, 213, 177, 214, 178, 215, 179, 0, 1073741843, 0, 217, 216, -1, 2, 218, 180, 219, 181, 0, 1073741844, 0, 221, 220, -1, 5, 222, 182, 223, 183, 224, 184, 225, 185, 226, 186, 0, 1073741845, 0, 228, 227, -1, 9, 229, 187, 230, 188, 231, 189, 232, 190, 233, 191, 234, 192, 235, 193, 236, 194, 237, 195, 0, 1073741846, 0, 239, 238, -1, 5, 240, 196, 241, 197, 242, 198, 243, 199, 244, 200, 0, 1073741847, 0, 246, 245, -1, 3, 247, 201, 248, 202, 249, 203, 0),
+"variants": [3, 15, 1.0, 1.0, 2, 2, ExtResource("12_m0rdy"), 3, false, -10, 1, 15, 1.0, 1.0, 2, 2, Color(0.08235294, 0.08235294, 0.15294118, 1), 1, 15, 1.0, 1.0, 2, 2, 50, 30, 50, 30, 2, 30, 1, true, Vector2(500, 500), 2, 6, 4, 1, 2, true, 4, true, true, true, false, 0, Vector2i(125, 125), 4, 1, 15, 1.0, 1.0, 2, 2, ExtResource("13_mc2iw"), 2, 3, 0, 13.0, 13.0, 112.0, 112.0, 1, Vector2(60, 500), 2, 4, 4, ExtResource("14_qodbd"), 1, -44.0, -375.0, Vector2(4, 4), 7.5, 1.5, 0, -12.0, 230.0, 10.0, 240.0, Vector2(4, 4), ExtResource("15_dtub1"), 2, Vector2(450, 500), 2, 4, 4, ExtResource("16_q2bst"), 0, 0, 0.0, 0.0, 112.5, 125.0, 1, 1, 50.0, 10, 2, 0, 0, "xx/xx", SubResource("LabelSettings_a2g5q"), 1, false, 10, 2, 8, 0, ExtResource("18_yc4t4"), 36, " Exit ", 10, 1, 8, 0.5, 0.5, 0.5, 0.5, -92.0, -68.5, 92.0, 68.5, 2, 2, Vector2(0.5, 0.5), 4, "YAY", SubResource("LabelSettings_7t0ye"), 1, 1, 10, 1, 8, 0.5, 0.5, 0.5, 0.5, -307.5, -85.5, 307.5, 85.5, 2, 2, Vector2(0.5, 0.5), 4, "You win !!!", SubResource("LabelSettings_3uqwc"), 1, 1, 10, 1, 8, 0.5, 0.5, 0.5, 0.5, -309.5, -85.5, 309.5, 85.5, 2, 2, Vector2(0.5, 0.5), 4, "Try again !", SubResource("LabelSettings_gf3wi"), 1, 1, 1, 8, 0.5, 0.5, 0.5, 0.5, -250.0, -200.0, 250.0, 200.0, 2, 2, Vector2(0.5, 0.5), ExtResource("19_q0hlb"), 2, 3, 2, 10, 10, 10, 10, Vector2(400, 0), 2, "Connectez les fils de la même couleur avec [clic gauche]
+-
+Déconnectez les fils avec [clic droit]", SubResource("LabelSettings_nmo0h"), 1, 1, 2, ExtResource("20_na0w7"), "uid://c3gj62w5i6thr", 2, 4, ExtResource("17_scq1h"), 40, " Okay ", 0, 40.0, 40.0],
+"version": 3
+}
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_n6h7u"]
+viewport_path = NodePath("SubViewport")
 
 [node name="Tower" type="Node3D" unique_id=472412556]
 script = ExtResource("1_lsc47")
 
+[node name="pylone" parent="." unique_id=1796212853 instance=ExtResource("2_yjdau")]
+transform = Transform3D(-0.35327154, 0, 0.12579435, 0, 0.375, 0, -0.12579435, 0, -0.35327154, 4.498258, 19.330494, 1.2568476)
+
+[node name="echelle" parent="." unique_id=1808021067 instance=ExtResource("2_tuflv")]
+transform = Transform3D(-0.14541969, 0, -0.35107422, 0, 0.38, 0, 0.35107422, 0, -0.14541969, 1.5082428, -0.665, 0.6492777)
+
+[node name="echelle2" parent="." unique_id=273484539 instance=ExtResource("2_tuflv")]
+transform = Transform3D(-0.11300244, 0, -0.3628091, 0, 0.38, 0, 0.3628091, 0, -0.11300244, 1.4912426, -0.54, 0.6492777)
+
+[node name="tourechelle" parent="." unique_id=912731947 instance=ExtResource("2_cbaar")]
+transform = Transform3D(0.39, 0, 0, 0, 0.375, 0, 0, 0, 0.39, 0, 3.183, -0.016)
+visible = false
+
 [node name="tour" parent="." unique_id=500165753 instance=ExtResource("2_h5mvg")]
-transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0, 4.3276844, -0.016131878)
+transform = Transform3D(0.4, 0, 0, 0, 0.475, 0, 0, 0, 0.4, 0, 4.408, -0.016)
 
 [node name="Interractable" type="Area3D" parent="." unique_id=2095934099 node_paths=PackedStringArray("text_sprite")]
-transform = Transform3D(-0.9373976, 0, 0.34826136, 0, 1, 0, -0.34826136, 0, -0.9373976, 0.16412556, 1.0637094, -0.41626066)
+transform = Transform3D(-0.9373976, 0, 0.34826136, 0, 1, 0, -0.34826136, 0, -0.9373976, 0.16106045, 0.5939454, -0.42556667)
 collision_layer = 0
 collision_mask = 0
 script = ExtResource("3_lpbik")
@@ -148,22 +248,36 @@ shape = SubResource("BoxShape3D_fgjub")
 
 [node name="InteractacleText3D" parent="Interractable" unique_id=2065454063 instance=ExtResource("5_tuflv")]
 transform = Transform3D(0.16992693, 0, -0.004983961, 0, 0.17, 0, 0.004983961, 0, 0.16992693, -0.005797118, 0.12886083, 0.267196)
-texture = SubResource("ViewportTexture_lpbik")
+texture = SubResource("ViewportTexture_tuflv")
 
-[node name="FinalInterractable" type="Area3D" parent="." unique_id=731977804 node_paths=PackedStringArray("text_sprite")]
+[node name="FinalInterractable" type="Area3D" parent="." unique_id=731977804 node_paths=PackedStringArray("animated_sprite", "text_sprite", "camera_root")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.6426318, 0.18939376, 0.803)
 script = ExtResource("3_h5mvg")
 unique_name = "FinalCinematic"
 dialogue = ExtResource("7_lpbik")
+animated_sprite = NodePath("AnimatedSprite3D")
+animated_sprite_start_animation = "default"
 text_sprite = NodePath("InteractacleText3D")
+interactionAnimation = 1
+camera_root = NodePath("ZoomRoot")
+turn_time = 1.5
+zoom_time = 0.8
 metadata/_custom_type_script = "uid://sd0g0r1lwus3"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="FinalInterractable" unique_id=1783539144]
-transform = Transform3D(-0.7489556, 0, -0.66262, 0, 1, 0, 0.66262, 0, -0.7489556, 0.038335163, 1.0377741, -0.05955855)
+transform = Transform3D(-0.32556808, 0, -0.9455185, 0, 1, 0, 0.9455185, 0, -0.32556808, 0.17647481, -0.502288, 0.803)
 shape = SubResource("BoxShape3D_lpbik")
 
 [node name="InteractacleText3D" parent="FinalInterractable" unique_id=1576660793 instance=ExtResource("5_tuflv")]
-transform = Transform3D(0.16992693, 0, -0.004983961, 0, 0.17, 0, 0.004983961, 0, 0.16992693, -0.005797118, 0.12886083, 0.267196)
-texture = SubResource("ViewportTexture_cbaar")
+transform = Transform3D(-0.16930035, 0, 0.015407526, 0, 0.17, 0, -0.015407526, 0, -0.16930035, -0.181, 0.129, 0.803)
+texture = SubResource("ViewportTexture_yjdau")
+
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="FinalInterractable" unique_id=436867683]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -17.811, 0.803)
+sprite_frames = SubResource("SpriteFrames_4ge1e")
+
+[node name="ZoomRoot" type="Node3D" parent="FinalInterractable" unique_id=732206342]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 23, 0)
 
 [node name="AlarmBot" type="OmniLight3D" parent="." unique_id=617167616]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3381364, 1.3172702, -0.81733996)
@@ -203,26 +317,28 @@ libraries/ = SubResource("AnimationLibrary_2y3h0")
 autoplay = &"alarm"
 
 [node name="Walls" type="StaticBody3D" parent="." unique_id=769531870]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 17.39, 0)
 collision_layer = 3
 collision_mask = 3
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Walls" unique_id=678961403]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.059, 24, -2.052)
-shape = SubResource("BoxShape3D_tuflv")
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Walls" unique_id=1545465731]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.089741, 2.0907612, -0.19213867)
+shape = SubResource("BoxShape3D_yjdau")
 
-[node name="CollisionShape3D2" type="CollisionShape3D" parent="Walls" unique_id=1560099274]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.12674832, 24.233713, 2.088971)
-shape = SubResource("BoxShape3D_tuflv")
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Walls" unique_id=1541192750]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.7350993, 2.0907612, 0.14889336)
+shape = SubResource("BoxShape3D_n6h7u")
 
-[node name="CollisionShape3D3" type="CollisionShape3D" parent="Walls" unique_id=37601869]
-transform = Transform3D(-0.034027368, 0, -0.9994209, 0, 1, 0, 0.9994209, 0, -0.034027368, 1.955215, 24.233713, 0.2768517)
-shape = SubResource("BoxShape3D_tuflv")
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="Walls" unique_id=859483127]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 2.7656255, 2.06497, -3.535576)
+shape = SubResource("BoxShape3D_4ge1e")
 
-[node name="CollisionShape3D4" type="CollisionShape3D" parent="Walls" unique_id=1014878367]
-transform = Transform3D(-0.034027368, 0, -0.9994209, 0, 1, 0, 0.9994209, 0, -0.034027368, -2.0606225, 24.233713, 0.06874341)
-shape = SubResource("BoxShape3D_tuflv")
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="Walls" unique_id=2047660350]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 2.773109, 2.06497, 3.1258967)
+shape = SubResource("BoxShape3D_1i7fi")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=1615815383]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 17.515, 0)
 collision_layer = 3
 collision_mask = 3
 
@@ -230,8 +346,49 @@ collision_mask = 3
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0022877455, 23.147451, 2.3841858e-07)
 shape = SubResource("ConcavePolygonShape3D_lsc47")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D" unique_id=1019859920]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0022877455, 23.147451, 2.3841858e-07)
-mesh = SubResource("BoxMesh_lsc47")
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D" unique_id=105322624]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.636268, 0, 0.06710434)
+mesh = SubResource("BoxMesh_n6h7u")
+
+[node name="Ladder" type="Area3D" parent="." unique_id=1450354670 node_paths=PackedStringArray("animated_sprite", "text_sprite", "camera_root")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 17.811, -0.133)
+script = ExtResource("3_h5mvg")
+unique_name = "Ladder"
+dialogue = ExtResource("11_n6h7u")
+animated_sprite = NodePath("AnimatedSprite3D")
+animated_sprite_start_animation = "default"
+text_sprite = NodePath("InteractacleText3D")
+interactionAnimation = 1
+camera_root = NodePath(".")
+metadata/_custom_type_script = "uid://sd0g0r1lwus3"
+
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="Ladder" unique_id=1358730793]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -17.811, 0.133)
+sprite_frames = SubResource("SpriteFrames_n6h7u")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Ladder" unique_id=1780681344]
+transform = Transform3D(0.9999999, 0, 0, 0, 1, 0, 0, 0, 0.9999999, -0.21688163, 0.56620216, 0.035275877)
+shape = SubResource("BoxShape3D_mf3uy")
+
+[node name="InteractacleText3D" parent="Ladder" unique_id=2090397398 instance=ExtResource("5_tuflv")]
+transform = Transform3D(-7.430936e-09, 0, 0.17, 0, 0.17, 0, -0.17, 0, -7.430936e-09, -0.585, 0.533, -0.165)
+texture = SubResource("ViewportTexture_m11ur")
+
+[node name="FinalMinigame" type="Area3D" parent="." unique_id=1492570691 node_paths=PackedStringArray("text_sprite")]
+transform = Transform3D(-0.611527, 0, -0.7912237, 0, 1, 0, 0.7912237, 0, -0.611527, 4.0557675, 19.1, 0.928192)
+collision_layer = 0
+collision_mask = 0
+script = ExtResource("3_lpbik")
+minigame = SubResource("PackedScene_hff5p")
+text_sprite = NodePath("InteractacleText3D")
+metadata/_custom_type_script = "uid://b3imm353l7y6u"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="FinalMinigame" unique_id=833267607]
+transform = Transform3D(0.99931514, 0, -0.0369927, 0, 1, 0, 0.0369927, 0, 0.99931514, 0.005224377, 0.12697792, 0.06675798)
+shape = SubResource("BoxShape3D_fgjub")
+
+[node name="InteractacleText3D" parent="FinalMinigame" unique_id=1556505926 instance=ExtResource("5_tuflv")]
+transform = Transform3D(0.16992693, 0, -0.004983961, 0, 0.17, 0, 0.004983961, 0, 0.16992693, -0.005797118, 0.12886083, 0.267196)
+texture = SubResource("ViewportTexture_n6h7u")
 
 [connection signal="body_entered" from="FinalInterractable" to="." method="_on_final_interractable_body_entered"]

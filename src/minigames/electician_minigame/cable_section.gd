@@ -29,6 +29,11 @@ var current_color:int
 var start_circle_pos:Vector2
 var current_circle_pos:Vector2
 
+@onready var link_sound_effect = preload("res://src/minigames/electician_minigame/sfx/link.wav")
+@onready var cancel_sound_effect = preload("res://src/minigames/electician_minigame/sfx/cancel.wav")
+@onready var sfx_stream = $AudioStreamPlayer
+
+
 func _ready() -> void:
 	cell_size = size/grid_size
 	#circle_size = min(cell_size.x, cell_size.y)
@@ -223,6 +228,13 @@ func cable_selected_handler():
 	if Input.is_action_just_released("left click"):
 		unvalidate_path(current_color)
 		current_state = States.Idle
+		
+		sfx_stream.stream = cancel_sound_effect
+		sfx_stream.volume_db = -6
+		sfx_stream.play()
+		await sfx_stream.finished
+		sfx_stream.volume_db = 0
+		
 
 func validate_path(color_index:int):
 	var current_cable:Line2D = cables[color_index]
@@ -231,6 +243,9 @@ func validate_path(color_index:int):
 		var circle_pos:Vector2 = get_circle_pos(current_cable.get_point_position(i))
 		set_circle_color(circle_pos, -2-color_count-color_index)
 	completed_count += 1
+	sfx_stream.stream = link_sound_effect
+	sfx_stream.pitch_scale = randf_range(0.8, 1.2)
+	sfx_stream.play()
 	
 	if completed_count >= color_count:
 		completed.emit()

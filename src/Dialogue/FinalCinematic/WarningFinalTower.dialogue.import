@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://gn065wmwthdv"
+path="res://.godot/imported/WarningFinalTower.dialogue-c8847da7bf9cf5e9b7efb3987f760bb1.tres"
+
+[deps]
+
+source_file="res://src/Dialogue/FinalCinematic/WarningFinalTower.dialogue"
+dest_files=["res://.godot/imported/WarningFinalTower.dialogue-c8847da7bf9cf5e9b7efb3987f760bb1.tres"]
+
+[params]
+
+defaults=true

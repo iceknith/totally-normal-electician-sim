@@ -4,6 +4,8 @@ if GlobalVars.eow_meter < 0.8
 		Mary Joe: Hey you ! Wanna see a cool trick ?
 		- No 
 			Mary Joe: Well, I'll do it anyway.
+			$> SoundManager.play_sfx.emit("res://src/Sound/sfx/guitarRiff.mp3")
+			$> wait(3)
 		- Yes
 			Mary Joe: Let me show you.
 			Mary Joe: Hum, Hum...
@@ -53,7 +55,7 @@ if GlobalVars.eow_meter < 0.8
 		Mary Joe: Ok... I know what to do then.
 		Jolene: What ?
 		Mary Joe: I'm just going to get lost in your [speed=0.2][font_size=40][rainbow] [wait=0.5] [wave amp=60 freq=5]Beautiful eyes[/wave][/rainbow][/font_size].
-		Jolene: Hey ! Stop it ! Someone's listening  [font_size=15] Not that I don't like when you talk to me like that. [\font_size] 
+		Jolene: Hey ! Stop it ! Someone's listening  [font_size=15] Not that I don't like when you talk to me like that. [/font_size] 
 		Mary Joe: [wave amp=40 freq=5] I'm not listening ! [/wave] 
 		Jolene: Fine ! I'll also get lost in your beautiful eyes !
 		They start staring at each other intensely.

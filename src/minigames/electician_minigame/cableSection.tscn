@@ -23,3 +23,5 @@ cable_textures = Array[Texture2D]([ExtResource("2_tjnga"), ExtResource("3_3sk35"
 button_textures = Array[Texture2D]([ExtResource("6_c63jk"), ExtResource("7_osch5"), ExtResource("8_yrln3"), ExtResource("9_3ltdq")])
 min_border_perc = 0.52
 cable_width = 8.0
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=2095826830]

@@ -206,18 +206,18 @@ Willy: Right then, enough faffing about. Let's bloody play!!!
 	
 ~ StanlyGameWin
 Stanly: Thanks play with Stanly.
+Stanly: Stanly happy.
+Stanly: If beat Stanley, Stanley tell you interesting fact.
+=> END
+
+~ StanlyGameLose
+Stanly: Thanks play with Stanly.
 Stanly: Stanley happy.
 Stanly: Stanley tell you interesting fact then.
 Stanly: Competitive Rock Papers Scissors is mental game.
 Stanly: Players have habits.
 Stanly: If you find pattern, can win everytime.
 Stanly: That's why Stanley never sees his card before playing.
-=> END
-
-~ StanlyGameLose
-Stanly: Thanks play with Stanly.
-Stanly: Stanly happy.
-Stanly: If beat Stanley, Stanley tell you interesting fact.
 => END
 
 	

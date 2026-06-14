@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://dv7x30skw2ncq"
+path="res://.godot/imported/BibiSchool.dialogue-377601f41c9315722a7b196a6d2114c6.tres"
+
+[deps]
+
+source_file="res://src/Dialogue/FinalCinematic/BibiSchool.dialogue"
+dest_files=["res://.godot/imported/BibiSchool.dialogue-377601f41c9315722a7b196a6d2114c6.tres"]
+
+[params]
+
+defaults=true
