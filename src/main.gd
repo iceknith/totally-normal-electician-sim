@@ -58,7 +58,7 @@ func _init() -> void:
 
 func _ready() -> void:
 
-	print(world3D.name)
+
 	set_global_vars()
 	connect_signals()
 	create_eow_timers()
@@ -160,7 +160,6 @@ func add_minigame(data:Array):
 		create_minigame(data)
 
 func remove_minigame():
-	print(minigames.size())
 	if minigames.size() <= 1:
 		show_game3D()
 		

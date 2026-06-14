@@ -51,7 +51,6 @@ func _ready():
 	await get_tree().process_frame
 
 	eow_music_start_perc = (GlobalVars.eow_max_time_s - (eow_music_start_time + eow_silence_time + eow_music_fadeout_time)) / GlobalVars.eow_max_time_s
-	print(eow_music_start_perc)
 	GlobalVars.eow_music_trigger = eow_music_start_perc
 	
 	
@@ -191,7 +190,6 @@ func stop_music(fade_duration: float = 0.6):
 	current_music = ""
 	
 func playSfx(sfxPath: String):
-	print(sfxPath)
 	var sfx := load(sfxPath) as AudioStream
 	
 	if sfx == null:
