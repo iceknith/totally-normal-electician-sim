@@ -24,7 +24,7 @@ var phone_call:DialogueResource = preload("res://src/Dialogue/phone_call.dialogu
 
 
 func _ready() -> void:
-	GlobalVars.tower_amount = count_towers(self)
+	&.tower_amount = count_towers(self)
 	GlobalVars.max_ducks = count_ducks(self)
 	worldBoxBig.body_exited.connect(_on_body_leave_world_box_big)
 
